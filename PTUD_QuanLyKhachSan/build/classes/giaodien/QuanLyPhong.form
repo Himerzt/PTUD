@@ -2526,19 +2526,21 @@
                                               <Component id="radPhongTieuChuan" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                               <Component id="radPhongTrong" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="lbltime" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="radPhongNangCao" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="radPhongDangThue" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="lbltime" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="radPhongDangThue" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="radPhongNangCao" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="radPhongCaoCap" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="radPhongDaDat" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="lblcurrentTime" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="radPhongThuongGia" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
