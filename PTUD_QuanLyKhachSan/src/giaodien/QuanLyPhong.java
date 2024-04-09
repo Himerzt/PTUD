@@ -24,6 +24,8 @@ import menu.MenuEvent;
  * @author Huynguyen
  */
 public class QuanLyPhong extends javax.swing.JFrame {
+    
+    private String getTenPhong;
 
     public QuanLyPhong() {
          
@@ -43,7 +45,7 @@ public class QuanLyPhong extends javax.swing.JFrame {
             @Override
             public void selected(int index, int subIndex) {
                 if (index == 6) {
-                System.exit(0); 
+                    System.exit(0); 
                 }
                 
                 
@@ -58,6 +60,8 @@ public class QuanLyPhong extends javax.swing.JFrame {
         });
         
     }
+    
+    
 
 public void datetime(){
     Date d = new Date();
@@ -2263,11 +2267,8 @@ public void times(){
 
     private void datPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datPhongActionPerformed
         // TODO add your handling code here:
-        JFrame fDatPhong = new DatPhong();
-        JPanel firstPanel = getFirstPanelFromFrame(fDatPhong);
-        fDatPhong.show();
-//        firstPanel.show();
-
+        JFrame datphongz = new DatPhong(getTenPhong);
+        datphongz.show();
     }//GEN-LAST:event_datPhongActionPerformed
     private JPanel getFirstPanelFromFrame(JFrame frame) {
         // Lấy tất cả các thành phần con của JFrame
@@ -2557,31 +2558,47 @@ public void times(){
             lblTrangThai38, lblTrangThai39, lblTrangThai40, lblTrangThai41, lblTrangThai42,
             
         };
+        
+        JLabel[] tenPhong = {lblTenPhong2, lblTenPhong3, lblTenPhong4, lblTenPhong5, lblTenPhong6, 
+             lblTenPhong9, lblTenPhong10, lblTenPhong11, 
+            lblTenPhong13, lblTenPhong14,  lblTenPhong17, lblTenPhong18, 
+            lblTenPhong19, lblTenPhong20, lblTenPhong21,  lblTenPhong24, 
+            lblTenPhong25, lblTenPhong26, lblTenPhong27, lblTenPhong28, 
+            lblTenPhong31, lblTenPhong32, lblTenPhong33, lblTenPhong34, lblTenPhong35, 
+            lblTenPhong38, lblTenPhong39, lblTenPhong40, lblTenPhong41, lblTenPhong42,
+            
+        };
+        
 
         for (int i = 0; i < phong.length; i++) {
             JPanel p = phong[i];
             JLabel loaiP = loaiPhong[i]; 
             JLabel ttP = trangThai[i]; 
+            JLabel tenP = tenPhong[i];
             p.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     if (SwingUtilities.isRightMouseButton(e)) { 
-                        chucNang.show(p, e.getX(), e.getY());
-                        datPhong.show();
-                        huyDatPhong.show();
-                        doiPhong.show();
-                        traPhong.show();
+                                           
+                        datPhong.hide();
+                        huyDatPhong.hide();
+                        doiPhong.hide();
+                        traPhong.hide();
+                            
+                            
                         if (ttP.getText().equalsIgnoreCase("Đang trống")) {
-                            doiPhong.hide();
-                            traPhong.hide();
-                            huyDatPhong.hide();
+                            datPhong.show();
                         } else if (ttP.getText().equalsIgnoreCase("Đang thuê")) {
-                            datPhong.hide();
-                            huyDatPhong.hide();
+                            doiPhong.show();
+                            traPhong.show();
                         } else if (ttP.getText().equalsIgnoreCase("Đã đặt")) {
-                            datPhong.hide();
-                            traPhong.hide();
+                            doiPhong.show();
+                            huyDatPhong.show();
                         } 
+                        
+                        chucNang.show(p, e.getX(), e.getY());     
+                        
+                        getTenPhong = tenP.getText();
                     }
                 }
             });

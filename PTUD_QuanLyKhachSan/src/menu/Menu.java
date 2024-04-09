@@ -30,7 +30,8 @@ public class Menu extends  JComponent{
     private MigLayout layout;
     private String [][] menuItems= new String[][]{
     {"Trang chủ"},
-    {"Quản lý phòng","Đặt phòng","Thuê phòng","Đổi phòng","Trả phòng","Hủy đặt phòng","Xem chi tiết"},
+//    {"Quản lý phòng","Đặt phòng","Thuê phòng","Đổi phòng","Trả phòng","Hủy đặt phòng","Xem chi tiết"},
+    {"Quản lý phòng"},
     {"Nhân viên"},
     {"Dịch vụ"},
     {"Khuyến mãi"},
