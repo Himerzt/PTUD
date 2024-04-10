@@ -501,8 +501,8 @@ public class DatPhong extends javax.swing.JFrame {
         // Lấy model hiện tại từ tableDV
         DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
         for (DichVuPhong dv : danhSachDichVu) {
-            if (chossedItem.equalsIgnoreCase(dv.getName())) {
-                giadichVu = dv.getPrices();
+            if (chossedItem.equalsIgnoreCase(dv.())) {
+                giadichVu = dv.get();
                 break;
             }
         }
