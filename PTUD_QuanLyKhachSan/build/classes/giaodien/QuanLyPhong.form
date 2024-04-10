@@ -245,7 +245,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="29" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -257,37 +257,34 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="phong2" min="-2" max="-2" attributes="0"/>
-                                          <Component id="phong7" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="phong3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="phong8" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="phong9" max="32767" attributes="0"/>
-                                          <Component id="phong4" max="32767" attributes="0"/>
+                                          <Component id="phong2" max="32767" attributes="0"/>
+                                          <Component id="phong7" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="phong8" max="32767" attributes="0"/>
+                                          <Component id="phong3" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="phong10" max="32767" attributes="0"/>
-                                          <Component id="phong5" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="phong4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="phong5" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="phong6" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="phong9" max="32767" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="phong10" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="phong11" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="124" max="32767" attributes="0"/>
+                                      <EmptySpace pref="115" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -296,23 +293,20 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="phong2" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="phong2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="phong6" max="32767" attributes="0"/>
                                           <Component id="phong5" max="32767" attributes="0"/>
                                           <Component id="phong3" alignment="0" max="32767" attributes="0"/>
                                           <Component id="phong4" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="phong6" alignment="1" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="phong10" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="phong9" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="phong8" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="phong7" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="phong11" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="phong11" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="phong10" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="phong9" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="phong8" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="phong7" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -411,7 +405,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="lblLoaiPhong3" pref="155" max="32767" attributes="0"/>
+                                                  <Component id="lblLoaiPhong3" max="32767" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="checkBoxPhong3" min="-2" max="-2" attributes="0"/>
                                               </Group>
@@ -485,7 +479,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="lblLoaiPhong4" max="32767" attributes="0"/>
+                                                  <Component id="lblLoaiPhong4" pref="155" max="32767" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="checkBoxPhong4" min="-2" max="-2" attributes="0"/>
                                               </Group>
@@ -559,7 +553,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="lblLoaiPhong5" max="32767" attributes="0"/>
+                                                  <Component id="lblLoaiPhong5" pref="155" max="32767" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="checkBoxPhong5" min="-2" max="-2" attributes="0"/>
                                               </Group>
@@ -780,7 +774,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="lblLoaiPhong9" pref="155" max="32767" attributes="0"/>
+                                                  <Component id="lblLoaiPhong9" max="32767" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="checkBoxPhong9" min="-2" max="-2" attributes="0"/>
                                               </Group>
@@ -932,7 +926,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="lblLoaiPhong7" pref="155" max="32767" attributes="0"/>
+                                                  <Component id="lblLoaiPhong7" max="32767" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="checkBoxPhong7" min="-2" max="-2" attributes="0"/>
                                               </Group>
@@ -1025,7 +1019,7 @@
                                               <Component id="lblLoaiPhong11" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="checkBoxPhong11" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="12" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Component id="lblTenPhong11" min="-2" pref="25" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblTrangThai11" min="-2" max="-2" attributes="0"/>
