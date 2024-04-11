@@ -11,7 +11,7 @@ import entity.TaiKhoan;
 
 public class TaiKhoanDao {
 	ArrayList<TaiKhoan> dsTaiKhoan = new ArrayList<TaiKhoan>();
-	TaiKhoan tk = new TaiKhoan();
+	TaiKhoan tk;
 
 	public TaiKhoanDao() {
 		dsTaiKhoan = new ArrayList<TaiKhoan>();
@@ -49,7 +49,7 @@ public class TaiKhoanDao {
 		if (dsTaiKhoan.contains(tk)) {
 			try {
 				stmt = con.createStatement();
-				String sql = "insert into TaiKhoan values('" + tk.getTenDangNhap() + "','" + tk.getMatKhau() + "')";
+				String sql = "insert into TaiKhoan values('" + tk.getMaNhanVien() + "','" + tk.getTenDangNhap() + "','" + tk.getMatKhau() + "')";
 				n = stmt.executeUpdate(sql);
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -58,6 +58,7 @@ public class TaiKhoanDao {
 		}
 		return false;
 	}
+
 	// xóa tài khoản
 	public boolean xoaTaiKhoan(TaiKhoan tk) {
 		ConnectDB.getInstance();
@@ -76,7 +77,7 @@ public class TaiKhoanDao {
 		}
 		return false;
 	}
-	
+
 	// sửa tài khoản
 	public boolean suaTaiKhoan(TaiKhoan tk) {
 		ConnectDB.getInstance();
@@ -86,8 +87,7 @@ public class TaiKhoanDao {
 		if (dsTaiKhoan.contains(tk)) {
 			try {
 				stmt = con.createStatement();
-				String sql = "update TaiKhoan set matKhau = '" + tk.getMatKhau() + "' where tenDangNhap = '"
-						+ tk.getTenDangNhap() + "'";
+				String sql = "update TaiKhoan set matKhau = '" + tk.getMatKhau() + "' where tenDangNhap = '" + tk.getTenDangNhap() + "'";
 				n = stmt.executeUpdate(sql);
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -96,22 +96,22 @@ public class TaiKhoanDao {
 		}
 		return false;
 	}
-	
+
 	// tìm tài khoản theo tên đăng nhập
 	public TaiKhoan timTaiKhoanTheoTenDangNhap(String tenDangNhap) {
-        try {
-            Connection con = ConnectDB.getInstance().getConnection();
-            String sql = "Select * from TaiKhoan where tenDangNhap = '" + tenDangNhap + "'";
-            Statement statement = con.createStatement();
-            ResultSet rs = statement.executeQuery(sql);
-            while (rs.next()) {
-                String matKhau = rs.getString(2);
-                tk = new TaiKhoan(tenDangNhap, matKhau);
-            }
-        } catch (SQLException e) {e.printStackTrace();}
-        
-	return tk;}
+		try {
+			Connection con = ConnectDB.getInstance().getConnection();
+			String sql = "Select * from TaiKhoan where tenDangNhap = '" + tenDangNhap + "'";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				String matKhau = rs.getString(2);
+				tk = new TaiKhoan(tenDangNhap, matKhau);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
-	
-
+		return tk;
+	}
 }
