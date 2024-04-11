@@ -15,9 +15,13 @@ import javax.swing.UIManager;
 public class GiaoDien {
     public static void main(String[] args) {
         UIManager.put("Button.select", new Color(0, 0, 0,0));
-        Login LoginFrame = new Login();
-        LoginFrame.setVisible(true);
-        LoginFrame.pack();
-        LoginFrame.setLocationRelativeTo(null); // center
+        try {
+        	Login LoginFrame = new Login();
+            LoginFrame.setVisible(true);
+            LoginFrame.pack();
+            LoginFrame.setLocationRelativeTo(null); // center
+        } catch (Exception e) {
+			// TODO: handle exception
+		}
     }
 }

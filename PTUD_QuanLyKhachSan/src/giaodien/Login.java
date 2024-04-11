@@ -2,10 +2,19 @@
 package giaodien;
 import giaodien.CustomClass.ChangePassword;
 import java.awt.Color;
-public class Login extends javax.swing.JFrame {
+import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.SQLException;
 
-    public Login() {
+import javax.swing.JOptionPane;
+
+import connectDB.ConnectDB;
+import dao.TaiKhoanDao;
+public class Login extends javax.swing.JFrame implements Serializable{
+
+    public Login() throws SQLException {
         initComponents();
+        ConnectDB.getInstance().getConnection();
     }
 
 
@@ -185,15 +194,39 @@ public class Login extends javax.swing.JFrame {
 
     private void btnDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiMatKhauActionPerformed
         // TODO add your handling code here:
-        ChangePassword changePasswordFrame = new ChangePassword();
-        changePasswordFrame.setVisible(true);
-        changePasswordFrame.pack();
-        changePasswordFrame.setLocationRelativeTo(null);
-        this.dispose();
+        try {
+        	ChangePassword changePasswordFrame = new ChangePassword();
+            changePasswordFrame.setVisible(true);
+            changePasswordFrame.pack();
+            changePasswordFrame.setLocationRelativeTo(null);
+            this.dispose();
+		} catch (SQLException e) {
+			// TODO: handle exception
+		}
+        
+        
     }//GEN-LAST:event_btnDoiMatKhauActionPerformed
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
-        // TODO add your handling code here:
+        TaiKhoanDao taiKhoanDao = new TaiKhoanDao();
+        String tenDangNhap = txtTenDangNhap.getText();
+        char[] matKhau = txtMatKhau.getPassword();
+        String matKhauString = new String(matKhau);
+		if (!tenDangNhap.equals("")) {
+			JOptionPane.showMessageDialog(null, "Tài khoản không tồn tại");
+		} 
+		else if (!taiKhoanDao.timTaiKhoanTheoTenDangNhap(tenDangNhap).getMatKhau().equals(matKhauString)) {
+			JOptionPane.showMessageDialog(null, "Sai mật khẩu");
+		} else {
+			JOptionPane.showMessageDialog(null, "Đăng nhập thành công");
+//			Ma nhan vien: SRNV04022024001
+//			Neu la "NV" thi se vao giao dien nhan vien, neu la "QL" thi se vao giao dien quan ly
+			if (taiKhoanDao.timTaiKhoanTheoTenDangNhap(tenDangNhap).getMaNhanVien().substring(0, 2).equals("NV")) {
+				// Giao dien nhan vien
+			} if (taiKhoanDao.timTaiKhoanTheoTenDangNhap(tenDangNhap).getMaNhanVien().substring(0, 2).equals("QL")) {
+				// Giao dien quan ly
+			}
+		}
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     /**
@@ -212,4 +245,14 @@ public class Login extends javax.swing.JFrame {
     private giaodien.CustomClass.PasswordField txtMatKhau;
     private giaodien.CustomClass.TextField txtTenDangNhap;
     // End of variables declaration//GEN-END:variables
+    
+    public static void main(String[] args) {
+		java.awt.EventQueue.invokeLater(() -> {
+			try {
+				new Login().setVisible(true);
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
+		});
+	}
 }

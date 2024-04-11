@@ -1,12 +1,20 @@
 package giaodien.CustomClass;
 import giaodien.Login;
 import java.awt.Color;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+import connectDB.ConnectDB;
+import dao.TaiKhoanDao;
+import entity.TaiKhoan;
 
 public class ChangePassword extends javax.swing.JFrame {
 
 
-    public ChangePassword() {
+    public ChangePassword() throws SQLException{
         initComponents();
+        ConnectDB.getInstance().getConnection();
     }
 
     /**
@@ -24,11 +32,11 @@ public class ChangePassword extends javax.swing.JFrame {
         Left = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        textField1 = new giaodien.CustomClass.TextField();
-        button1 = new giaodien.CustomClass.Button();
-        passwordField1 = new giaodien.CustomClass.PasswordField();
-        passwordField2 = new giaodien.CustomClass.PasswordField();
-        passwordField3 = new giaodien.CustomClass.PasswordField();
+        txtTenDangNhap = new giaodien.CustomClass.TextField();
+        btnDoiMatKhau = new giaodien.CustomClass.Button();
+        txtMatKhauMoi1 = new giaodien.CustomClass.PasswordField();
+        txtMatKhauCu = new giaodien.CustomClass.PasswordField();
+        txtMatKhauMoi2 = new giaodien.CustomClass.PasswordField();
         button2 = new giaodien.CustomClass.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,40 +80,45 @@ public class ChangePassword extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
         jLabel6.setText("StaRail Hotel  Management");
 
-        textField1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        textField1.setLabelText("Tên đăng nhập");
-        textField1.setLineColor(new java.awt.Color(23, 195, 178));
-        textField1.setPreferredSize(new java.awt.Dimension(64, 50));
+        txtTenDangNhap.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtTenDangNhap.setLabelText("Tên đăng nhập");
+        txtTenDangNhap.setLineColor(new java.awt.Color(23, 195, 178));
+        txtTenDangNhap.setPreferredSize(new java.awt.Dimension(64, 50));
 
-        button1.setBackground(new java.awt.Color(23, 195, 178));
-        button1.setBorder(null);
-        button1.setText("THAY ĐỔI");
-        button1.setBorderColor(new java.awt.Color(23, 195, 178));
-        button1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        button1.setPreferredSize(new java.awt.Dimension(125, 35));
-        button1.setRadius(20);
-        button1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnDoiMatKhau.setBackground(new java.awt.Color(23, 195, 178));
+        btnDoiMatKhau.setBorder(null);
+        btnDoiMatKhau.setText("THAY ĐỔI");
+        btnDoiMatKhau.setBorderColor(new java.awt.Color(23, 195, 178));
+        btnDoiMatKhau.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        btnDoiMatKhau.setPreferredSize(new java.awt.Dimension(125, 35));
+        btnDoiMatKhau.setRadius(20);
+        btnDoiMatKhau.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                button1MouseExited(evt);
+                btnDoiMatKhauMouseExited(evt);
             }
         });
-
-        passwordField1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        passwordField1.setLabelText("Mật khẩu mới");
-        passwordField1.setLineColor(new java.awt.Color(23, 195, 178));
-        passwordField1.addActionListener(new java.awt.event.ActionListener() {
+        btnDoiMatKhau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordField1ActionPerformed(evt);
+                btnDoiMatKhauActionPerformed(evt);
             }
         });
 
-        passwordField2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        passwordField2.setLabelText("Mật khẩu cũ");
-        passwordField2.setLineColor(new java.awt.Color(23, 195, 178));
+        txtMatKhauMoi1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtMatKhauMoi1.setLabelText("Mật khẩu mới");
+        txtMatKhauMoi1.setLineColor(new java.awt.Color(23, 195, 178));
+        txtMatKhauMoi1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMatKhauMoi1ActionPerformed(evt);
+            }
+        });
 
-        passwordField3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        passwordField3.setLabelText("Mật khẩu mới");
-        passwordField3.setLineColor(new java.awt.Color(23, 195, 178));
+        txtMatKhauCu.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtMatKhauCu.setLabelText("Mật khẩu cũ");
+        txtMatKhauCu.setLineColor(new java.awt.Color(23, 195, 178));
+
+        txtMatKhauMoi2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtMatKhauMoi2.setLabelText("Mật khẩu mới");
+        txtMatKhauMoi2.setLineColor(new java.awt.Color(23, 195, 178));
 
         button2.setBorder(null);
         button2.setText("Quay lại");
@@ -129,11 +142,11 @@ public class ChangePassword extends javax.swing.JFrame {
                         .addGroup(LeftLayout.createSequentialGroup()
                             .addGap(85, 85, 85)
                             .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(passwordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                .addComponent(textField1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                .addComponent(passwordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                .addComponent(passwordField3, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtMatKhauMoi1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                                .addComponent(txtMatKhauCu, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                                .addComponent(txtMatKhauMoi2, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                                .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(LeftLayout.createSequentialGroup()
                                     .addGap(46, 46, 46)
                                     .addComponent(jLabel2))))
@@ -152,15 +165,15 @@ public class ChangePassword extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
-                .addComponent(passwordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMatKhauCu, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
-                .addComponent(passwordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMatKhauMoi1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
-                .addComponent(passwordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMatKhauMoi2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(93, 93, 93))
         );
 
@@ -186,35 +199,84 @@ public class ChangePassword extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button1MouseExited
-        button1.setBackground(new Color(23,195,178));
-    }//GEN-LAST:event_button1MouseExited
+    private void btnDoiMatKhauMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDoiMatKhauMouseExited
+        btnDoiMatKhau.setBackground(new Color(23,195,178));
+    }//GEN-LAST:event_btnDoiMatKhauMouseExited
 
-    private void passwordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordField1ActionPerformed
+    private void txtMatKhauMoi1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatKhauMoi1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordField1ActionPerformed
+    }//GEN-LAST:event_txtMatKhauMoi1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        Login LoginFrame = new Login();
-        LoginFrame.setVisible(true);
-        LoginFrame.pack();
-        LoginFrame.setLocationRelativeTo(null); // center
-        this.dispose();
+        try {
+            Login LoginFrame = new Login();
+            LoginFrame.setVisible(true);
+            LoginFrame.pack();
+            LoginFrame.setLocationRelativeTo(null); // center
+            this.dispose();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_button2ActionPerformed
+
+    private void btnDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiMatKhauActionPerformed
+        String tenDangNhap = txtTenDangNhap.getText();
+        char[] matKhauCu = txtMatKhauCu.getPassword();
+        char[] matKhauMoi1 = txtMatKhauMoi1.getPassword();
+        char[] matKhauMoi2 = txtMatKhauMoi2.getPassword();
+        String mkCu = String.valueOf(matKhauCu);
+        String mkMoi1 = String.valueOf(matKhauMoi1);
+        String mkMoi2 = String.valueOf(matKhauMoi2);
+        TaiKhoanDao tkDao = new TaiKhoanDao();
+        TaiKhoan taiKhoan = tkDao.timTaiKhoanTheoTenDangNhap(tenDangNhap);
+		if (tenDangNhap.equals("") || mkCu.equals("") || mkMoi1.equals("") || mkMoi2.equals("")) {
+			JOptionPane.showMessageDialog(null, "Vui lòng nhập đầy đủ thông tin");
+		} else {
+			if (taiKhoan == null) {
+				JOptionPane.showMessageDialog(null, "Tên đăng nhập không tồn tại");
+			} else {
+				if (!taiKhoan.getMatKhau().equals(mkCu)) {
+					JOptionPane.showMessageDialog(null, "Mật khẩu cũ không đúng");
+				} if (mkCu.equals(mkMoi1)) {
+					JOptionPane.showMessageDialog(null, "Mật khẩu bị trùng với cái cũ, đổi lại đi");
+				}else {
+					if (!mkMoi1.equals(mkMoi2)) {
+						JOptionPane.showMessageDialog(null, "Mật khẩu mới không trùng khớp");
+					} else {
+						taiKhoan.setMatKhau(mkMoi1);
+						tkDao.suaTaiKhoan(taiKhoan);
+						JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công");
+					}
+				}
+			}
+		}
+    }//GEN-LAST:event_btnDoiMatKhauActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Left;
     private javax.swing.JPanel Right;
-    private giaodien.CustomClass.Button button1;
+    private giaodien.CustomClass.Button btnDoiMatKhau;
     private giaodien.CustomClass.Button button2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private giaodien.CustomClass.PasswordField passwordField1;
-    private giaodien.CustomClass.PasswordField passwordField2;
-    private giaodien.CustomClass.PasswordField passwordField3;
-    private giaodien.CustomClass.TextField textField1;
+    private giaodien.CustomClass.PasswordField txtMatKhauCu;
+    private giaodien.CustomClass.PasswordField txtMatKhauMoi1;
+    private giaodien.CustomClass.PasswordField txtMatKhauMoi2;
+    private giaodien.CustomClass.TextField txtTenDangNhap;
     // End of variables declaration//GEN-END:variables
+    
+    public static void main(String[] args) {
+		java.awt.EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					new ChangePassword().setVisible(true);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 }
