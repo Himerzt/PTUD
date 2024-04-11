@@ -500,12 +500,12 @@ public class DatPhong extends javax.swing.JFrame {
         String chossedItem = comboBoxDichVu.getSelectedItem().toString();
         // Lấy model hiện tại từ tableDV
         DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
-        for (DichVuPhong dv : danhSachDichVu) {
-            if (chossedItem.equalsIgnoreCase(dv.getName())) {
-                giadichVu = dv.getPrices();
-                break;
-            }
-        }
+//        for (DichVuPhong dv : danhSachDichVu) {
+//            if (chossedItem.equalsIgnoreCase(dv.())) {
+//                giadichVu = dv.get();
+//                break;
+//            }
+//        }
         // Duyệt qua các hàng trong model để kiểm tra nếu dịch vụ đã tồn tại
         for (int i = 0; i < model.getRowCount(); i++) {
             String serviceName = model.getValueAt(i, 1).toString();
@@ -662,11 +662,11 @@ public class DatPhong extends javax.swing.JFrame {
         };
         
         
-        for (int i = 0; i < tenDichVu.length; i++) {
-            DichVuPhong dv = new DichVuPhong(tenDichVu[i], giaDichVu[i]);
-            danhSachDichVu.add(dv);
-        }
-        
+//        for (int i = 0; i < tenDichVu.length; i++) {
+//            DichVuPhong dv = new DichVuPhong(tenDichVu[i], giaDichVu[i]);
+//            danhSachDichVu.add(dv);
+//        }
+//        
         
     }
 

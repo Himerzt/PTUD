@@ -493,10 +493,10 @@ public class TraPhong extends javax.swing.JFrame {
         };
         
         
-        for (int i = 0; i < tenDichVu.length; i++) {
-            DichVuPhong dv = new DichVuPhong(tenDichVu[i], giaDichVu[i]);
-            danhSachDichVu.add(dv);
-        }
+//        for (int i = 0; i < tenDichVu.length; i++) {
+//            DichVuPhong dv = new DichVuPhong(tenDichVu[i], giaDichVu[i]);
+//            danhSachDichVu.add(dv);
+//        }
         
         
     }
