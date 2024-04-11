@@ -49,9 +49,9 @@ public class DatPhong extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        button4 = new giaodien.Button();
-        btnNgaySinh = new giaodien.Button();
-        btnNgayDat = new giaodien.Button();
+        button4 = new giaodien.CustomClass.Button();
+        btnNgaySinh = new giaodien.CustomClass.Button();
+        btnNgayDat = new giaodien.CustomClass.Button();
         txtTenKH = new javax.swing.JTextField();
         txtQuocTich = new javax.swing.JTextField();
         txtHangThanhVien = new javax.swing.JTextField();
@@ -566,10 +566,10 @@ public class DatPhong extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDatPhong;
     private javax.swing.JButton btnHuy;
-    private giaodien.Button btnNgayDat;
-    private giaodien.Button btnNgaySinh;
+    private giaodien.CustomClass.Button btnNgayDat;
+    private giaodien.CustomClass.Button btnNgaySinh;
     private javax.swing.JButton btnThemDichVu;
-    private giaodien.Button button4;
+    private giaodien.CustomClass.Button button4;
     private javax.swing.JComboBox<String> cbBoxGioiTinh;
     private javax.swing.JComboBox<String> comboBoxDichVu;
     private javax.swing.JButton jButton1;

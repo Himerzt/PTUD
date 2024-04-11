@@ -1,5 +1,6 @@
 
 package giaodien;
+import giaodien.CustomClass.ChangePassword;
 import java.awt.Color;
 public class Login extends javax.swing.JFrame {
 
@@ -19,10 +20,10 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        textField1 = new giaodien.TextField();
-        passwordField1 = new giaodien.PasswordField();
-        button1 = new giaodien.Button();
-        button2 = new giaodien.Button();
+        textField1 = new giaodien.CustomClass.TextField();
+        passwordField1 = new giaodien.CustomClass.PasswordField();
+        button1 = new giaodien.CustomClass.Button();
+        button2 = new giaodien.CustomClass.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN");
@@ -204,14 +205,14 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Left;
     private javax.swing.JPanel Right;
-    private giaodien.Button button1;
-    private giaodien.Button button2;
+    private giaodien.CustomClass.Button button1;
+    private giaodien.CustomClass.Button button2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private giaodien.PasswordField passwordField1;
-    private giaodien.TextField textField1;
+    private giaodien.CustomClass.PasswordField passwordField1;
+    private giaodien.CustomClass.TextField textField1;
     // End of variables declaration//GEN-END:variables
 }

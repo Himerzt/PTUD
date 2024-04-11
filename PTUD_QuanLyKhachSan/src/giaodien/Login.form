@@ -215,7 +215,7 @@
                 <Property name="text" type="java.lang.String" value="StaRail Hotel  Management"/>
               </Properties>
             </Component>
-            <Component class="giaodien.TextField" name="textField1">
+            <Component class="giaodien.CustomClass.TextField" name="textField1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="15" style="0"/>
@@ -229,7 +229,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="giaodien.PasswordField" name="passwordField1">
+            <Component class="giaodien.CustomClass.PasswordField" name="passwordField1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="15" style="0"/>
@@ -240,7 +240,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="giaodien.Button" name="button1">
+            <Component class="giaodien.CustomClass.Button" name="button1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="b2" green="c3" red="17" type="rgb"/>
@@ -261,7 +261,7 @@
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button1MouseExited"/>
               </Events>
             </Component>
-            <Component class="giaodien.Button" name="button2">
+            <Component class="giaodien.CustomClass.Button" name="button2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="73" green="6d" red="fe" type="rgb"/>

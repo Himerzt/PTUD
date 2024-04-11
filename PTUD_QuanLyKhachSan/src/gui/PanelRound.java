@@ -1,6 +1,6 @@
-
 package gui;
 
+import giaodien.*;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -95,7 +95,6 @@ public class PanelRound extends JPanel {
         int roundY = Math.min(height, roundTopRight);
         Area area = new Area(new RoundRectangle2D.Double(0, 0, width, height, roundX, roundY));
         area.add(new Area(new Rectangle2D.Double(0, 0, width - roundX / 2, height)));
-        
         area.add(new Area(new Rectangle2D.Double(0, roundY / 2, width, height - roundY / 2)));
         return area;
     }

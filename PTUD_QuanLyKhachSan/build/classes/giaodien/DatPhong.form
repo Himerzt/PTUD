@@ -387,7 +387,7 @@
                 <Property name="text" type="java.lang.String" value="Ng&#xe0;y &#x111;&#x1eb7;t"/>
               </Properties>
             </Component>
-            <Component class="giaodien.Button" name="button4">
+            <Component class="giaodien.CustomClass.Button" name="button4">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -407,7 +407,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button4ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="giaodien.Button" name="btnNgaySinh">
+            <Component class="giaodien.CustomClass.Button" name="btnNgaySinh">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -427,7 +427,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNgaySinhActionPerformed"/>
               </Events>
             </Component>
-            <Component class="giaodien.Button" name="btnNgayDat">
+            <Component class="giaodien.CustomClass.Button" name="btnNgayDat">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
