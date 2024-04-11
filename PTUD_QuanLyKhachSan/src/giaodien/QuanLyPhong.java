@@ -112,7 +112,7 @@ public void times(){
         Header = new component.Header();
         pnMenu = new javax.swing.JPanel();
         Menu = new menu.Menu();
-        jPanel5 = new javax.swing.JPanel();
+        pnQuanLyPhong = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         pnBody = new javax.swing.JPanel();
         Tang2 = new javax.swing.JPanel();
@@ -2378,20 +2378,20 @@ public void times(){
                 .addGap(12, 12, 12))
         );
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnQuanLyPhongLayout = new javax.swing.GroupLayout(pnQuanLyPhong);
+        pnQuanLyPhong.setLayout(pnQuanLyPhongLayout);
+        pnQuanLyPhongLayout.setHorizontalGroup(
+            pnQuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnQuanLyPhongLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(pnQuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(funtionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1253, Short.MAX_VALUE))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        pnQuanLyPhongLayout.setVerticalGroup(
+            pnQuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnQuanLyPhongLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(funtionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2399,7 +2399,7 @@ public void times(){
                 .addContainerGap(126, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel5, java.awt.BorderLayout.CENTER);
+        jPanel1.add(pnQuanLyPhong, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -2735,7 +2735,6 @@ public void times(){
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
@@ -2887,6 +2886,7 @@ public void times(){
     private javax.swing.JPanel pnBody;
     private javax.swing.JPanel pnHeader;
     private javax.swing.JPanel pnMenu;
+    private javax.swing.JPanel pnQuanLyPhong;
     private javax.swing.JRadioButton radPhongCaoCap;
     private javax.swing.JRadioButton radPhongDaDat;
     private javax.swing.JRadioButton radPhongDangThue;
