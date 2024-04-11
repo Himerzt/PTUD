@@ -455,6 +455,10 @@ public void times(){
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        pnNhanVien = new javax.swing.JPanel();
+        pnDichVu = new javax.swing.JPanel();
+        pnKhuyenMai = new javax.swing.JPanel();
+        pnKhachHang = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -2094,7 +2098,7 @@ public void times(){
                     .addComponent(Tang2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Tang1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Tang4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         pnBody1Layout.setVerticalGroup(
             pnBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4150,7 +4154,7 @@ public void times(){
                 .addGroup(pnQuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(funtionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1253, Short.MAX_VALUE))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         pnQuanLyPhongLayout.setVerticalGroup(
             pnQuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4163,6 +4167,58 @@ public void times(){
         );
 
         jTabbedPane1.addTab("tab2", pnQuanLyPhong);
+
+        javax.swing.GroupLayout pnNhanVienLayout = new javax.swing.GroupLayout(pnNhanVien);
+        pnNhanVien.setLayout(pnNhanVienLayout);
+        pnNhanVienLayout.setHorizontalGroup(
+            pnNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1313, Short.MAX_VALUE)
+        );
+        pnNhanVienLayout.setVerticalGroup(
+            pnNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 805, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab3", pnNhanVien);
+
+        javax.swing.GroupLayout pnDichVuLayout = new javax.swing.GroupLayout(pnDichVu);
+        pnDichVu.setLayout(pnDichVuLayout);
+        pnDichVuLayout.setHorizontalGroup(
+            pnDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1313, Short.MAX_VALUE)
+        );
+        pnDichVuLayout.setVerticalGroup(
+            pnDichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 805, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab4", pnDichVu);
+
+        javax.swing.GroupLayout pnKhuyenMaiLayout = new javax.swing.GroupLayout(pnKhuyenMai);
+        pnKhuyenMai.setLayout(pnKhuyenMaiLayout);
+        pnKhuyenMaiLayout.setHorizontalGroup(
+            pnKhuyenMaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1313, Short.MAX_VALUE)
+        );
+        pnKhuyenMaiLayout.setVerticalGroup(
+            pnKhuyenMaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 805, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab5", pnKhuyenMai);
+
+        javax.swing.GroupLayout pnKhachHangLayout = new javax.swing.GroupLayout(pnKhachHang);
+        pnKhachHang.setLayout(pnKhachHangLayout);
+        pnKhachHangLayout.setHorizontalGroup(
+            pnKhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1313, Short.MAX_VALUE)
+        );
+        pnKhachHangLayout.setVerticalGroup(
+            pnKhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 805, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab6", pnKhachHang);
 
         jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 1310, 840));
 
@@ -4775,8 +4831,12 @@ public void times(){
     private javax.swing.JPanel phong9;
     private javax.swing.JPanel pnBody1;
     private javax.swing.JPanel pnBody2;
+    private javax.swing.JPanel pnDichVu;
     private javax.swing.JPanel pnHeader;
+    private javax.swing.JPanel pnKhachHang;
+    private javax.swing.JPanel pnKhuyenMai;
     private javax.swing.JPanel pnMenu;
+    private javax.swing.JPanel pnNhanVien;
     private javax.swing.JPanel pnQuanLyPhong;
     private javax.swing.JPanel pnTrangChu;
     private javax.swing.JRadioButton radPhongCaoCap;
