@@ -2,11 +2,6 @@
 package giaodien;
 import giaodien.CustomClass.ChangePassword;
 import java.awt.Color;
-import java.sql.Connection;
-
-import javax.swing.JOptionPane;
-
-import dao.TaiKhoanDao;
 public class Login extends javax.swing.JFrame {
 
     public Login() {
@@ -24,7 +19,7 @@ public class Login extends javax.swing.JFrame {
         Left = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtTenTaiKhoan = new giaodien.CustomClass.TextField();
+        txtTenDangNhap = new giaodien.CustomClass.TextField();
         txtMatKhau = new giaodien.CustomClass.PasswordField();
         btnDangNhap = new giaodien.CustomClass.Button();
         btnDoiMatKhau = new giaodien.CustomClass.Button();
@@ -74,24 +69,14 @@ public class Login extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
         jLabel6.setText("StaRail Hotel  Management");
 
-        txtTenTaiKhoan.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        txtTenTaiKhoan.setLabelText("Tên đăng nhập");
-        txtTenTaiKhoan.setLineColor(new java.awt.Color(23, 195, 178));
-        txtTenTaiKhoan.setPreferredSize(new java.awt.Dimension(64, 50));
-        txtTenTaiKhoan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTenTaiKhoanActionPerformed(evt);
-            }
-        });
+        txtTenDangNhap.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtTenDangNhap.setLabelText("Tên đăng nhập");
+        txtTenDangNhap.setLineColor(new java.awt.Color(23, 195, 178));
+        txtTenDangNhap.setPreferredSize(new java.awt.Dimension(64, 50));
 
         txtMatKhau.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         txtMatKhau.setLabelText("Mật khẩu");
         txtMatKhau.setLineColor(new java.awt.Color(23, 195, 178));
-        txtMatKhau.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMatKhauActionPerformed(evt);
-            }
-        });
 
         btnDangNhap.setBackground(new java.awt.Color(23, 195, 178));
         btnDangNhap.setBorder(null);
@@ -134,26 +119,6 @@ public class Login extends javax.swing.JFrame {
             .addGroup(LeftLayout.createSequentialGroup()
                 .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LeftLayout.createSequentialGroup()
-<<<<<<< HEAD
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeftLayout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(101, 101, 101))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeftLayout.createSequentialGroup()
-                            .addComponent(jLabel6)
-                            .addGap(67, 67, 67)))))
-            .addGroup(LeftLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtTenTaiKhoan, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                    .addComponent(txtMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
                         .addGap(132, 132, 132)
                         .addComponent(jLabel1))
                     .addGroup(LeftLayout.createSequentialGroup()
@@ -162,13 +127,12 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(LeftLayout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(textField1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                .addComponent(passwordField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                                .addComponent(txtMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(26, Short.MAX_VALUE))
->>>>>>> 0701fdbabffa59a3da6a3858f6e1202803a949ec
         );
         LeftLayout.setVerticalGroup(
             LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,31 +141,15 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
-<<<<<<< HEAD
-                .addGap(32, 32, 32)
-                .addComponent(txtTenTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-=======
                 .addGap(26, 26, 26)
-                .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> 0701fdbabffa59a3da6a3858f6e1202803a949ec
+                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-<<<<<<< HEAD
                 .addComponent(btnDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(jLabel6)
-                .addGap(42, 42, 42))
-=======
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(97, Short.MAX_VALUE))
->>>>>>> 0701fdbabffa59a3da6a3858f6e1202803a949ec
         );
 
         jPanel1.add(Left);
@@ -244,31 +192,8 @@ public class Login extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnDoiMatKhauActionPerformed
 
-    private void txtMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatKhauActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMatKhauActionPerformed
-
-    private void txtTenTaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenTaiKhoanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTenTaiKhoanActionPerformed
-
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
-        String tenTaiKhoan = txtTenTaiKhoan.getText();
-        char[] matKhau = txtMatKhau.getPassword();
-        String matKhauString = new String(matKhau);
-        TaiKhoanDao taiKhoanDao = new TaiKhoanDao();
-        if (taiKhoanDao.timTaiKhoanTheoTenDangNhap(tenTaiKhoan) == null) {
-            JOptionPane.showMessageDialog(this, "Tên đăng nhập không tồn tại");
-        }
-//        if (taiKhoanDao.timTaiKhoanTheoTenDangNhap(tenTaiKhoan).getMatKhau().equals(matKhauString)) {
-//            JOptionPane.showMessageDialog(this, "Đăng nhập thành công");
-//            this.dispose();
-//            new Login().setVisible(true);
-//        }
-//        else {
-//            JOptionPane.showMessageDialog(this, "Sai mật khẩu");
-//        }
-        
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     /**
@@ -285,14 +210,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private giaodien.CustomClass.PasswordField txtMatKhau;
-    private giaodien.CustomClass.TextField txtTenTaiKhoan;
+    private giaodien.CustomClass.TextField txtTenDangNhap;
     // End of variables declaration//GEN-END:variables
-    
-    public static void main(String[] args) {
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new Login().setVisible(true);
-			}
-		});
-	}
 }
