@@ -57,7 +57,7 @@ public class DatPhong extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        btnThemKhachHang = new giaodien.CustomClass.Button();
+        btnNgayTra = new giaodien.CustomClass.Button();
         btnNgaySinh = new giaodien.CustomClass.Button();
         btnNgayDat = new giaodien.CustomClass.Button();
         txtTenKH = new javax.swing.JTextField();
@@ -73,7 +73,7 @@ public class DatPhong extends javax.swing.JFrame {
         txtDiaChi = new javax.swing.JTextField();
         txtGiaThue = new javax.swing.JTextField();
         cbBoxGioiTinh = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        btnThemKhachHang = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel32 = new javax.swing.JLabel();
         jScrollPane2 = new ScollBar1.ScrollPaneWin11();
@@ -151,14 +151,14 @@ public class DatPhong extends javax.swing.JFrame {
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel31.setText("Ngày đặt");
 
-        btnThemKhachHang.setBorder(null);
-        btnThemKhachHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgLogin/calendar.png"))); // NOI18N
-        btnThemKhachHang.setBorderColor(new java.awt.Color(255, 255, 255));
-        btnThemKhachHang.setColorOver(new java.awt.Color(204, 204, 204));
-        btnThemKhachHang.setRadius(10);
-        btnThemKhachHang.addActionListener(new java.awt.event.ActionListener() {
+        btnNgayTra.setBorder(null);
+        btnNgayTra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgLogin/calendar.png"))); // NOI18N
+        btnNgayTra.setBorderColor(new java.awt.Color(255, 255, 255));
+        btnNgayTra.setColorOver(new java.awt.Color(204, 204, 204));
+        btnNgayTra.setRadius(10);
+        btnNgayTra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	btnThemKhachHangActionPerformed(evt);
+                btnNgayTraActionPerformed(evt);
             }
         });
 
@@ -210,7 +210,12 @@ public class DatPhong extends javax.swing.JFrame {
 
         cbBoxGioiTinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
 
-        jButton1.setText("+");
+        btnThemKhachHang.setText("+");
+        btnThemKhachHang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemKhachHangActionPerformed(evt);
+            }
+        });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theo ngày", "Theo giờ", "Qua đêm" }));
 
@@ -254,11 +259,11 @@ public class DatPhong extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(txtCheckOut, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnThemKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnNgayTra, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(txtCCCD)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
+                        .addComponent(btnThemKhachHang)))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -304,7 +309,7 @@ public class DatPhong extends javax.swing.JFrame {
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtHangThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtCCCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1))
+                        .addComponent(btnThemKhachHang))
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,7 +329,7 @@ public class DatPhong extends javax.swing.JFrame {
                         .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnThemKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNgayTra, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -487,32 +492,6 @@ public class DatPhong extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnThemKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
-        KhachHang kh = new KhachHang();
-        KhachHangDAO khDAO = new KhachHangDAO();
-        kh.setCCCD_Visa(txtCCCD.getText());
-        // Tìm khách hàng bằng CCCD. Nếu tìm thấy thì tự fill các textfield còn lại, nếu không thì thông báo hỏi có thêm khách hàng vào CSDL hay không
-		if (khDAO.timTheoCCCD(kh.getCCCD_Visa()) != null) {
-			kh = khDAO.timTheoCCCD(kh.getCCCD_Visa());
-			txtTenKH.setText(kh.getHoTenKH());
-			txtNgaySinh.setText(kh.getNgaySinh().toString());
-			txtSoDienThoai.setText(kh.getSoDT());
-			txtQuocTich.setText(kh.getQuocTich());
-			txtHangThanhVien.setText(kh.getHangThanhVien().getMaHang());
-		} else {
-			// Thông báo bằng JOptionpane hỏi có muốn thêm khách hàng vào CSDL không
-			JOptionPane.showConfirmDialog(this, "Khách hàng không tồn tại. Bạn có muốn thêm khách hàng vào CSDL không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
-			if (JOptionPane.YES_OPTION == 0) {
-				// Mở form thêm khách hàng
-				
-				// Thêm khách hàng vào CSDL
-				
-				// Sau khi thêm xong thì fill các textfield còn lại
-			}
-		}
-        
-    }//GEN-LAST:event_button4ActionPerformed
-
     private void btnNgaySinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNgaySinhActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNgaySinhActionPerformed
@@ -557,6 +536,36 @@ public class DatPhong extends javax.swing.JFrame {
         this.hide();
     }//GEN-LAST:event_btnHuyActionPerformed
 
+    private void btnThemKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemKhachHangActionPerformed
+        KhachHang kh = new KhachHang();
+        KhachHangDAO khDAO = new KhachHangDAO();
+        kh.setCCCD_Visa(txtCCCD.getText());
+        // Tìm khách hàng bằng CCCD. Nếu tìm thấy thì tự fill các textfield còn lại, nếu không thì thông báo hỏi có thêm khách hàng vào CSDL hay không
+		if (khDAO.timTheoCCCD(kh.getCCCD_Visa()) != null) {
+			kh = khDAO.timTheoCCCD(kh.getCCCD_Visa());
+			txtTenKH.setText(kh.getHoTenKH());
+			txtNgaySinh.setText(kh.getNgaySinh().toString());
+			txtSoDienThoai.setText(kh.getSoDT());
+			txtQuocTich.setText(kh.getQuocTich());
+			txtHangThanhVien.setText(kh.getHangThanhVien().getMaHang());
+		} else {
+			// Thông báo bằng JOptionpane hỏi có muốn thêm khách hàng vào CSDL không
+			JOptionPane.showConfirmDialog(this, "Khách hàng không tồn tại. Bạn có muốn thêm khách hàng vào CSDL không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+			if (JOptionPane.YES_OPTION == 0) {
+				// Mở form thêm khách hàng
+				
+				// Thêm khách hàng vào CSDL
+				
+				// Sau khi thêm xong thì fill các textfield còn lại
+			}
+		}
+        
+    }//GEN-LAST:event_btnThemKhachHangActionPerformed
+
+    private void btnNgayTraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNgayTraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNgayTraActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -597,11 +606,11 @@ public class DatPhong extends javax.swing.JFrame {
     private javax.swing.JButton btnHuy;
     private giaodien.CustomClass.Button btnNgayDat;
     private giaodien.CustomClass.Button btnNgaySinh;
+    private giaodien.CustomClass.Button btnNgayTra;
     private javax.swing.JButton btnThemDichVu;
-    private giaodien.CustomClass.Button btnThemKhachHang;
+    private javax.swing.JButton btnThemKhachHang;
     private javax.swing.JComboBox<String> cbBoxGioiTinh;
     private javax.swing.JComboBox<String> comboBoxDichVu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;

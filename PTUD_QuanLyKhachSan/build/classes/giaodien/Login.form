@@ -142,11 +142,11 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="button2" min="-2" pref="101" max="-2" attributes="0"/>
+                                  <Component id="btnDoiMatKhau" min="-2" pref="101" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="textField1" pref="240" max="32767" attributes="0"/>
-                                      <Component id="passwordField1" max="32767" attributes="0"/>
-                                      <Component id="button1" max="32767" attributes="0"/>
+                                      <Component id="txtTenDangNhap" pref="240" max="32767" attributes="0"/>
+                                      <Component id="txtMatKhau" max="32767" attributes="0"/>
+                                      <Component id="btnDangNhap" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -163,13 +163,13 @@
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="textField1" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="txtTenDangNhap" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="passwordField1" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="txtMatKhau" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="button1" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="btnDangNhap" min="-2" pref="37" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="button2" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnDoiMatKhau" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace pref="97" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -198,7 +198,7 @@
                 <Property name="text" type="java.lang.String" value="StaRail Hotel  Management"/>
               </Properties>
             </Component>
-            <Component class="giaodien.CustomClass.TextField" name="textField1">
+            <Component class="giaodien.CustomClass.TextField" name="txtTenDangNhap">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="15" style="0"/>
@@ -212,7 +212,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="giaodien.CustomClass.PasswordField" name="passwordField1">
+            <Component class="giaodien.CustomClass.PasswordField" name="txtMatKhau">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="15" style="0"/>
@@ -223,7 +223,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="giaodien.CustomClass.Button" name="button1">
+            <Component class="giaodien.CustomClass.Button" name="btnDangNhap">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="b2" green="c3" red="17" type="rgb"/>
@@ -241,10 +241,11 @@
                 <Property name="radius" type="int" value="20"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button1MouseExited"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnDangNhapMouseExited"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDangNhapActionPerformed"/>
               </Events>
             </Component>
-            <Component class="giaodien.CustomClass.Button" name="button2">
+            <Component class="giaodien.CustomClass.Button" name="btnDoiMatKhau">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="73" green="6d" red="fe" type="rgb"/>
@@ -262,8 +263,8 @@
                 <Property name="radius" type="int" value="15"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button2MouseExited"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button2ActionPerformed"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnDoiMatKhauMouseExited"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDoiMatKhauActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
