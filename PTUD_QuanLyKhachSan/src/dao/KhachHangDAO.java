@@ -170,6 +170,33 @@ public class KhachHangDAO {
 		return dsKH;
 	}
 	
+	// Tìm khách hàng theo CCCD
+	public KhachHang timTheoCCCD(String CCCD) {
+		KhachHang kh = null;
+		try {
+			Connection con = ConnectDB.getInstance().getConnection();
+			String sql = "Select * from KhachHang where CCCD_Visa = '" + CCCD + "'";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			if (rs.next()) {
+				String maKH = rs.getString(1);
+				String hoTen = rs.getString(2);
+				String gioiTinh = rs.getString(3);
+				LocalDate ngaySinh = rs.getDate(4).toLocalDate();
+				String soDT = rs.getString(5);
+				String CCCD_Visa = rs.getString(6);
+				double chiTieu = rs.getDouble(7);
+				HangThanhVien hangThanhVien = new HangThanhVien(rs.getString(8));
+				String quocTich = rs.getString(9);
+				kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, hangThanhVien, quocTich);
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+			// Đóng kết nối
+		}
+		return kh;
+	}
+	
 	// tìm kiếm khách hàng theo hạng thành viên
 	public ArrayList<KhachHang> timKhachHangTheoHangThanhVien(String maHang) {
 		ArrayList<KhachHang> dsKH = new ArrayList<KhachHang>();
