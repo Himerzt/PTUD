@@ -1,20 +1,26 @@
 package giaodien;
 
+import dao.DichVuDao;
+import entity.DichVu;
 import static java.awt.Color.red;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 import menu.MenuEvent;
 /**
- *
  * @author Huynguyen
  */
 public class TrangChu extends javax.swing.JFrame {
@@ -53,6 +59,8 @@ public class TrangChu extends javax.swing.JFrame {
                 }
                 if ( index == 3){
                     pnedUngDung.setSelectedIndex(3);
+                    loadTableDichVu();
+                    enventClickOnTableDichVu();
                 }
                 
                 if ( index == 4){
@@ -67,36 +75,84 @@ public class TrangChu extends javax.swing.JFrame {
         });
         
     }
-
-public void datetime(){
-    Date d = new Date();
     
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MMM-dd");
-    String df = format.format(d);
-    
-//    lbl_current_date.setText(df);
-}
-
-
-public void times(){
-    Timer time;
-    
-    time = new Timer(0, new ActionListener(){
-        @Override
-        public void actionPerformed(ActionEvent ae) {
+    /**
+    *  Khởi tạo ngày hiện tại để in lên ngày **
+    * *****************************************
+    */
+    public void datetime(){
         Date d = new Date();
-        
-        SimpleDateFormat dformat;
-        dformat =  new SimpleDateFormat("hh:mm:ss a");
-        
-        String timeindate = dformat.format(d);
-//        lbl_time.setText(timeindate);
-        
-        }        
-    });
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MMM-dd");
+        String df = format.format(d);
+
+    //    lbl_current_date.setText(df);
+    }
+
+     /**
+    *  Khởi tạo giờ hiện tại để in lên giờ **
+    * *****************************************
+    */
+    public void times(){
+        Timer time;
+
+        time = new Timer(0, new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+            Date d = new Date();
+
+            SimpleDateFormat dformat;
+            dformat =  new SimpleDateFormat("hh:mm:ss a");
+
+            String timeindate = dformat.format(d);
+    //        lbl_time.setText(timeindate);
+
+            }        
+        });
+
+        time.start();
+    }
     
-    time.start();
-}
+     /**
+    *  Load thông tin dịch vụ lên bảng dịch vụ hiện có trong pnDichVu**
+    * *****************************************************************
+    */
+    public void loadTableDichVu(){
+        
+        DichVuDao dichVuDao = new DichVuDao();
+        ArrayList<DichVu> dsDichVu = dichVuDao.timTatCaDichVu();
+        DefaultTableModel model = (DefaultTableModel) TableDichVu.getModel();
+        
+        model.setRowCount(0);
+        
+        for (int i = 0; i < dsDichVu.size(); i++) {
+            DichVu dv = dsDichVu.get(i);
+            Object[] rowData = {i + 1, dv.getMaDV(), dv.getTenDV(), dv.getGiaDV()};
+            model.addRow(rowData);
+        }
+        
+    };
+    
+     /**
+    *  Lắng nghe sự kiện khi người dùng chọn một dòng trong bảng**
+    * *****************************************************************
+    */
+    public void enventClickOnTableDichVu(){
+        TableDichVu.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    int selectedRow = TableDichVu.getSelectedRow();
+                    if (selectedRow != -1) { // Đảm bảo có hàng được chọn
+                        txtMaDichVu.setText((String) TableDichVu.getValueAt(selectedRow, 1));
+                        txtTenDichVu.setText((String) TableDichVu.getValueAt(selectedRow, 2));
+                        txtDonGiaDichVu.setText(String.valueOf(TableDichVu.getValueAt(selectedRow, 3)));
+                    }
+                }
+            }
+        });
+    };
+    
     
     
     @SuppressWarnings("unchecked")
@@ -511,7 +567,7 @@ public void times(){
         jLabel16 = new javax.swing.JLabel();
         btnCapNhapDichVu = new javax.swing.JButton();
         btnThemDichVu = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        btnXoaTrangDichVu = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         TableDichVu = new javax.swing.JTable();
         pnKhuyenMai = new javax.swing.JPanel();
@@ -4535,10 +4591,25 @@ public void times(){
         jLabel16.setPreferredSize(new java.awt.Dimension(120, 21));
 
         btnCapNhapDichVu.setText("Cập nhập dịch vụ");
+        btnCapNhapDichVu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCapNhapDichVuActionPerformed(evt);
+            }
+        });
 
         btnThemDichVu.setText("Thêm dịch vụ");
+        btnThemDichVu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemDichVuActionPerformed(evt);
+            }
+        });
 
-        jButton13.setText("Xóa trắng");
+        btnXoaTrangDichVu.setText("Xóa trắng");
+        btnXoaTrangDichVu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaTrangDichVuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -4565,7 +4636,7 @@ public void times(){
                         .addGap(18, 18, 18)
                         .addComponent(btnCapNhapDichVu)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton13)))
+                        .addComponent(btnXoaTrangDichVu)))
                 .addGap(65, 65, 65))
         );
         jPanel14Layout.setVerticalGroup(
@@ -4586,7 +4657,7 @@ public void times(){
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTenDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton13))
+                        .addComponent(btnXoaTrangDichVu))
                     .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtMaDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -4595,10 +4666,7 @@ public void times(){
 
         TableDichVu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "STT", "Mã dịch vụ", "Tên dịch vụ", "Đơn giá dịch vụ"
@@ -5310,6 +5378,49 @@ public void times(){
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSoDienThoaiKhachHangActionPerformed
 
+    private void btnXoaTrangDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaTrangDichVuActionPerformed
+        // TODO add your handling code here:
+        txtMaDichVu.setText("");
+        txtTenDichVu.setText("");
+        txtDonGiaDichVu.setText("");
+    }//GEN-LAST:event_btnXoaTrangDichVuActionPerformed
+
+    
+    /**
+    *  Code nút cập nhập dịch vụ**
+    * *****************************************************************
+    */
+    private void btnCapNhapDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhapDichVuActionPerformed
+        String maDichVu = txtMaDichVu.getText();
+        String tenDichVu = txtTenDichVu.getText();
+        double donGiaDichVu = Double.parseDouble(txtDonGiaDichVu.getText());
+        DichVu dv = new DichVu(maDichVu, tenDichVu, donGiaDichVu);
+        DichVuDao dvdao = new DichVuDao();
+        
+        boolean capNhapThanhCong = dvdao.suaDichVu(dv);
+        if(capNhapThanhCong){
+            JOptionPane.showMessageDialog(this, "okay");
+        } else {
+            JOptionPane.showMessageDialog(this, "notokay");
+        }
+        
+    }//GEN-LAST:event_btnCapNhapDichVuActionPerformed
+
+    private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDichVuActionPerformed
+        // TODO add your handling code here:
+        String maDichVu = txtMaDichVu.getText();
+        String tenDichVu = txtTenDichVu.getText();
+        double donGiaDichVu = Double.parseDouble(txtDonGiaDichVu.getText());
+        DichVu dv = new DichVu(maDichVu, tenDichVu, donGiaDichVu);
+        DichVuDao dvdao = new DichVuDao();
+        boolean themThanhCong = dvdao.themDichVu(dv);
+        if(themThanhCong){
+            JOptionPane.showMessageDialog(this, "okay");
+        } else {
+            JOptionPane.showMessageDialog(this, "notokay");
+        }
+    }//GEN-LAST:event_btnThemDichVuActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -5390,6 +5501,7 @@ public void times(){
     private javax.swing.JButton btnThemNhanVien;
     private giaodien.CustomClass.Button btnThoiGianBatDauKhuyenMai;
     private giaodien.CustomClass.Button btnThoiGianKetThucKhuyenMai;
+    private javax.swing.JButton btnXoaTrangDichVu;
     private javax.swing.JButton btnXoaTrangKhuyenMai;
     private javax.swing.JButton btnXoaTrangNhanVien;
     private javax.swing.JComboBox<String> cbxChucVuNhanVien;
@@ -5434,7 +5546,6 @@ public void times(){
     private javax.swing.JCheckBox checkBoxPhong9;
     private javax.swing.JPanel funtionPanel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

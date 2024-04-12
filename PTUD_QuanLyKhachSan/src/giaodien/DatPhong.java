@@ -34,6 +34,7 @@ public class DatPhong extends javax.swing.JFrame {
         txtTenPhong.setText(tenPhong);
         loadDulieuPhong();
     }
+     
 
     
     @SuppressWarnings("unchecked")
