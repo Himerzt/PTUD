@@ -179,3 +179,6 @@ ADD FOREIGN KEY (MaKM) REFERENCES KhuyenMai(MaKhuyenMai);
 
 ALTER TABLE LichSuDoiPhong
 ADD FOREIGN KEY (MaTTDTP) REFERENCES ThongTinDatThuePhong(MaTTDTP);
+
+
+Select * from Phong
