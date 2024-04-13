@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;PTUD_QuanLyKhachSan&apos;" deleteContents="false" description="Delete resource &apos;PTUD_QuanLyKhachSan&apos;" element1="/PTUD_QuanLyKhachSan" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1712990953860"/>&#x0A;<refactoring comment="Delete resource &apos;PTUD_QuanLyKhachSan_GUI&apos;" deleteContents="false" description="Delete resource &apos;PTUD_QuanLyKhachSan_GUI&apos;" element1="/PTUD_QuanLyKhachSan_GUI" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1712992474951"/>
+</session>
