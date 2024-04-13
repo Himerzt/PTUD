@@ -2,6 +2,7 @@ package entity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class KhachHang {
 	private String maKH;
@@ -102,8 +103,6 @@ public class KhachHang {
 		this.quocTich = quocTich;
 	}
 
-	
-
 	public KhachHang() {
 		super();
 	}
@@ -113,16 +112,24 @@ public class KhachHang {
 		this.maKH = maKH;
 	}
 
-	
-
-	public boolean equals(Object o) {
-		if (o == null)
-			return false;
-		if (o instanceof KhachHang) {
-			KhachHang kh = (KhachHang) o;
-			return this.maKH.equals(kh.maKH);
-		}
-		return false;
+	@Override
+	public int hashCode() {
+		return Objects.hash(CCCD_Visa);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		KhachHang other = (KhachHang) obj;
+		if (!CCCD_Visa.equals(other.CCCD_Visa))
+			return false;
+		return true;
+	}
+
+	
 }

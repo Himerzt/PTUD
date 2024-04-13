@@ -48,9 +48,13 @@ public class QuanLyThongTinPhong extends javax.swing.JFrame {
                 
                 
                 if ( index == 0){
-                    TrangChu tc = new TrangChu();
-                    tc.show();
-                    dispose();
+                	try {
+                    	TrangChu tc = new TrangChu();
+                        tc.show();
+                        dispose();
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
                 }
                 
             }

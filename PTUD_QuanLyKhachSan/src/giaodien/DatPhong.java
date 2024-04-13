@@ -15,7 +15,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import dao.KhachHangDAO;
+import dao.KhachHangDao;
 
 /**
  *
@@ -539,7 +539,7 @@ public class DatPhong extends javax.swing.JFrame {
 
     private void btnThemKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemKhachHangActionPerformed
         KhachHang kh = new KhachHang();
-        KhachHangDAO khDAO = new KhachHangDAO();
+        KhachHangDao khDAO = new KhachHangDao();
         kh.setCCCD_Visa(txtCCCD.getText());
         // Tìm khách hàng bằng CCCD. Nếu tìm thấy thì tự fill các textfield còn lại, nếu không thì thông báo hỏi có thêm khách hàng vào CSDL hay không
 		if (khDAO.timTheoCCCD(kh.getCCCD_Visa()) != null) {

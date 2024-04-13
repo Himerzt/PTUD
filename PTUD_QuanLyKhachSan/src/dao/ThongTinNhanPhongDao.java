@@ -99,7 +99,7 @@ public class ThongTinNhanPhongDao {
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				String maTTPN = rs.getString(1);
-				KhachHang khachHang = new KhachHangDAO().timTheoMaKhachHang(rs.getString(2));
+				KhachHang khachHang = new KhachHangDao().timTheoMaKhachHang(rs.getString(2));
 				Date ngayNhanPhong = rs.getDate(3);
 				Date ngayDatPhong = rs.getDate(4);
 				LoaiPhong maLoaiPhong = new LoaiPhongDao().timTheoMaLoaiPhong(rs.getString(5));

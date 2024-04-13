@@ -3,6 +3,7 @@ package entity;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class NhanVien {
 	private String maNV;
@@ -15,7 +16,6 @@ public class NhanVien {
 	private String diaChi;
 	private ChucVu chucVu;
 	private LocalDate ngayVaoLam;
-	private int soNgayNghi;
 
 	public String getMaNV() {
 		return maNV;
@@ -97,16 +97,8 @@ public class NhanVien {
 		this.ngayVaoLam = ngayVaoLam;
 	}
 
-	public int getSoNgayNghi() {
-		return soNgayNghi;
-	}
-
-	public void setSoNgayNghi(int soNgayNghi) {
-		this.soNgayNghi = soNgayNghi;
-	}
-
 	public NhanVien(String maNV, String hoTenNV, LocalDate ngaySinh, String gioiTinh, String soDT, String email,
-			String cCCD, String diaChi, ChucVu chucVu, LocalDate ngayVaoLam, int soNgayNghi) {
+			String cCCD, String diaChi, ChucVu chucVu, LocalDate ngayVaoLam) {
 		super();
 		this.maNV = maNV;
 		this.hoTenNV = hoTenNV;
@@ -118,7 +110,6 @@ public class NhanVien {
 		this.diaChi = diaChi;
 		this.chucVu = chucVu;
 		this.ngayVaoLam = ngayVaoLam;
-		this.soNgayNghi = soNgayNghi;
 
 	}
 
@@ -130,4 +121,25 @@ public class NhanVien {
 		super();
 		this.maNV = maNV;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(CCCD);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NhanVien other = (NhanVien) obj;
+		if(!CCCD.equals(other.CCCD)) {
+			return false;
+		}
+		return true;
+	}
+
 }

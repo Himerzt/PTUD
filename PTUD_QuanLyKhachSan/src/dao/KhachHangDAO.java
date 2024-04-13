@@ -13,13 +13,30 @@ import connectDB.ConnectDB;
 import entity.HangThanhVien;
 import entity.KhachHang;
 
-public class KhachHangDAO {
+public class KhachHangDao {
 	ArrayList<KhachHang> dsKH = new ArrayList<KhachHang>();
 	KhachHang khachHang;
 
-	public KhachHangDAO() {
+	public KhachHangDao() {
 		dsKH = new ArrayList<KhachHang>();
       khachHang = new KhachHang();
+	}
+	
+	public int demTongSoKhachHang() {
+		int dem = 0;
+		try {
+			Connection con = ConnectDB.getInstance().getConnection();
+			String sql = "Select count(*) from KhachHang";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			if (rs.next()) {
+				dem = rs.getInt(1);
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+			// Đóng kết nối
+		}
+		return dem;
 	}
 	
 	
@@ -83,28 +100,20 @@ public class KhachHangDAO {
 	//Thêm khách hàng
 	public boolean themKhachHang(KhachHang kh) {
 		try {
-			ConnectDB.getInstance();
-			Connection con = ConnectDB.getConnection();
-			PreparedStatement stml = null;
-			 Date ngaySinhSQL = Date.valueOf(kh.getNgaySinh());
-			int n = 0;
-//			if (kh.getMaKH() != null) {
-				String sql = "Insert into KhachHang values(?,?,?,?,?,?,?,?,?)";
-				stml = con.prepareStatement(sql);
-				stml.setString(1, kh.getMaKH());
-				stml.setString(2, kh.getHoTenKH());
-				stml.setString(3, kh.getGioiTinh());
-				stml.setDate(4, ngaySinhSQL);
-				stml.setString(5, kh.getSoDT());
-				stml.setString(6, kh.getCCCD_Visa());
-				stml.setDouble(7, kh.getChiTieu());
-				stml.setString(8, kh.getHangThanhVien().getMaHang());
-				stml.setString(9, kh.getQuocTich());
-				n = stml.executeUpdate();
-			
-			if (n > 0) {
-				return true;
-			}
+			Connection con = ConnectDB.getInstance().getConnection();
+			String sql = "Insert into KhachHang values(?,?,?,?,?,?,?,?,?,?)";
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, kh.getMaKH());
+			pst.setString(2, kh.getHoTenKH());
+			pst.setString(3, kh.getGioiTinh());
+			pst.setDate(4, Date.valueOf(kh.getNgaySinh()));
+			pst.setString(5, kh.getSoDT());
+			pst.setString(6, kh.getCCCD_Visa());
+			pst.setDouble(7, kh.getChiTieu());
+			pst.setString(8, kh.getHangThanhVien().getMaHang());
+			pst.setString(9, kh.getQuocTich());
+			pst.executeUpdate();
+			return true;
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 			// Đóng kết nối

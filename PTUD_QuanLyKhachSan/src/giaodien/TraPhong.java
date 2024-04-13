@@ -257,27 +257,23 @@ public class TraPhong extends javax.swing.JFrame {
 
             },
             new String [] {
-                "STT", "Tên phòng", "Loại phòng", "Kiểu thuê", "Ngày đặt", "Ngày nhận", "Ngày trả"
+                "STT", "Mã phòng", "Tên phòng", "Loại phòng", "Kiểu thuê", "Ngày đặt", "Ngày nhận", "Ngày trả"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                true, true, false, false, true, true, true
+                java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
         });
         tableDanhSachPhong.setRowHeight(40);
         tableDanhSachPhong.setSelectionBackground(new java.awt.Color(254, 109, 115));
         jScrollPane2.setViewportView(tableDanhSachPhong);
+        if (tableDanhSachPhong.getColumnModel().getColumnCount() > 0) {
+            tableDanhSachPhong.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Danh sách dịch vụ");
@@ -287,11 +283,11 @@ public class TraPhong extends javax.swing.JFrame {
 
             },
             new String [] {
-                "STT", "Tên dịch vụ", "Số lượng", "Phòng", "Giá"
+                "STT", "Mã dịch vụ", "Tên dịch vụ", "Số lượng", "Phòng", "Giá"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -300,6 +296,9 @@ public class TraPhong extends javax.swing.JFrame {
         });
         tableDV.setRowHeight(40);
         jScrollPane1.setViewportView(tableDV);
+        if (tableDV.getColumnModel().getColumnCount() > 0) {
+            tableDV.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
 
         btnHuy.setText("Hủy");
         btnHuy.addActionListener(new java.awt.event.ActionListener() {
@@ -446,15 +445,11 @@ public class TraPhong extends javax.swing.JFrame {
     
     
     private void loadDulieuPhong() {
-        String[] columnNames = {"STT", "Tên phòng", "Loại phòng", "Kiểu thuê", "Ngày đặt", "Ngày nhận", "Ngày trả"};
+        String[] columnNames = {"STT","Mã hóa đơn", "Tên phòng", "Loại phòng", "Kiểu thuê", "Ngày đặt", "Ngày nhận", "Ngày trả"};
         
         Object[][] data = {
-            {1,txtTenPhong.getText(),"Tiêu chuẩn","Theo ngày","20/20/2000","20/20/2000","20/20/2000"},
-            {2,txtTenPhong.getText(),"Tiêu chuẩn","Theo ngày","20/20/2000","20/20/2000","20/20/2000"},
-            {3,txtTenPhong.getText(),"Tiêu chuẩn","Theo ngày","20/20/2000","20/20/2000","20/20/2000"},
-            {4,txtTenPhong.getText(),"Tiêu chuẩn","Theo ngày","20/20/2000","20/20/2000","20/20/2000"}
+            {1,txtTenPhong.getText(),"HD1029","Tiêu chuẩn","Theo ngày","20/20/2000","20/20/2000","20/20/2000"}
         };
-        
         DefaultTableModel model = new DefaultTableModel(data, columnNames);
         tableDanhSachPhong.setModel(model);
        

@@ -55,4 +55,11 @@ public class ChucVu {
 		this.maChucVu = maChucVu;
 	}
 
+	@Override
+	public String toString() {
+		return "tenChucVu=" + tenChucVu;
+	}
+	
+	
+
 }

@@ -100,7 +100,12 @@ public class Login extends javax.swing.JFrame implements Serializable{
         });
         btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDangNhapActionPerformed(evt);
+                try {
+					btnDangNhapActionPerformed(evt);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
 
@@ -207,7 +212,7 @@ public class Login extends javax.swing.JFrame implements Serializable{
         
     }//GEN-LAST:event_btnDoiMatKhauActionPerformed
 
-    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
+    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_btnDangNhapActionPerformed
         TaiKhoanDao taiKhoanDao = new TaiKhoanDao();
         String tenDangNhap = txtTenDangNhap.getText();
         char[] matKhau = txtMatKhau.getPassword();
@@ -222,9 +227,19 @@ public class Login extends javax.swing.JFrame implements Serializable{
 //			Ma nhan vien: SRNV04022024001
 //			Neu la "NV" thi se vao giao dien nhan vien, neu la "QL" thi se vao giao dien quan ly
 			if (taiKhoanDao.timTaiKhoanTheoTenDangNhap(tenDangNhap).getMaNhanVien().substring(0, 2).equals("NV")) {
-				// Giao dien nhan vien
+				try {
+					new TrangChu_NhanVien().setVisible(true);
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
 			} if (taiKhoanDao.timTaiKhoanTheoTenDangNhap(tenDangNhap).getMaNhanVien().substring(0, 2).equals("QL")) {
-				// Giao dien quan ly
+				try {
+					new TrangChu().setVisible(true);
+				} catch (SQLException e) {
+					e.printStackTrace();
+					// TODO: handle exception
+				}
 			}
 		}
     }//GEN-LAST:event_btnDangNhapActionPerformed

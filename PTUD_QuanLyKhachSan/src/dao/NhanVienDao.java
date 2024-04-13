@@ -21,6 +21,23 @@ public class NhanVienDao {
 		nv = new NhanVien();
 	}
 
+	public int demTongSoNhanVien() {
+		int n = 0;
+		try {
+			Connection con = ConnectDB.getInstance().getConnection();
+			String sql = "Select count(*) from NhanVien";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				n = rs.getInt(1);
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+			// Đóng kết nối
+		}
+		return n;
+	}
+
 	public ArrayList<NhanVien> timTatCaNhanVien() {
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
@@ -36,40 +53,37 @@ public class NhanVienDao {
 				String email = rs.getString(6);
 				String CCCD = rs.getString(7);
 				String diaChi = rs.getString(8);
-
 				ChucVu chucVu = new ChucVu(rs.getString(9));
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				int soNgayNghi = rs.getInt(11);
-
-				NhanVien nv = new NhanVien(maNV, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu,
-						ngayVaoLam, soNgayNghi);
-
+				nv = new NhanVien(maNV, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu, ngayVaoLam);
 				dsnv.add(nv);
 			}
-		} catch (SQLException ex) {
-			ex.printStackTrace();
-			// Đóng kết nối
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return dsnv;
 	}
 
 	// thêm nhân viên
 	public boolean themNhanVien(NhanVien nv) {
-		ConnectDB.getInstance();
-		Connection con = ConnectDB.getConnection();
-		Statement stmt = null;
+		Connection con = ConnectDB.getInstance().getConnection();
+		PreparedStatement stmt = null;
 		int n = 0;
-		if (dsnv.contains(nv)) {
-			try {
-				stmt = con.createStatement();
-				String sql = "insert into NhanVien values('" + nv.getMaNV() + "', N'" + nv.getHoTenNV() + "', '"
-						+ nv.getNgaySinh() + "', N'" + nv.getGioiTinh() + "', '" + nv.getSoDT() + "', '" + nv.getEmail()
-						+ "', '" + nv.getCCCD() + "', N'" + nv.getDiaChi() + "', '" + nv.getChucVu().getMaChucVu()
-						+ "', '" + nv.getNgayVaoLam() + "', '" + nv.getSoNgayNghi() + "')";
-				n = stmt.executeUpdate(sql);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+		try {
+			stmt = con.prepareStatement("insert into NhanVien values(?,?,?,?,?,?,?,?,?,?)");
+			stmt.setString(1, nv.getMaNV());
+			stmt.setString(2, nv.getHoTenNV());
+			stmt.setDate(3, java.sql.Date.valueOf(nv.getNgaySinh()));
+			stmt.setString(4, nv.getGioiTinh());
+			stmt.setString(5, nv.getSoDT());
+			stmt.setString(6, nv.getEmail());
+			stmt.setString(7, nv.getCCCD());
+			stmt.setString(8, nv.getDiaChi());
+			stmt.setString(9, nv.getChucVu().getMaChucVu());
+			stmt.setDate(10, java.sql.Date.valueOf(nv.getNgayVaoLam()));
+			n = stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return n > 0;
 	}
@@ -79,10 +93,10 @@ public class NhanVienDao {
 		Connection con = ConnectDB.getInstance().getConnection();
 		PreparedStatement stmt = null;
 		int n = 0;
-		if (!dsnv.contains(nv)) {
+		if (dsnv.contains(nv)) {
 			try {
 				stmt = con.prepareStatement(
-						"update NhanVien set hoTenNV = ?, ngaySinh = ?, gioiTinh = ?, soDT = ?, email = ?, CCCD = ?, diaChi = ?, maChucVu = ?, ngayVaoLam = ?, soNgayNghi = ? where maNV = ?");
+						"update NhanVien set hoTenNV = ?, ngaySinh = ?, gioiTinh = ?, soDT = ?, email = ?, CCCD = ?, diaChi = ?, maChucVu = ?, ngayVaoLam = ? where maNV = ?");
 				stmt.setString(1, nv.getHoTenNV());
 				stmt.setDate(2, java.sql.Date.valueOf(nv.getNgaySinh()));
 				stmt.setString(3, nv.getGioiTinh());
@@ -92,7 +106,6 @@ public class NhanVienDao {
 				stmt.setString(7, nv.getDiaChi());
 				stmt.setString(8, nv.getChucVu().getMaChucVu());
 				stmt.setDate(9, java.sql.Date.valueOf(nv.getNgayVaoLam()));
-				stmt.setInt(10, nv.getSoNgayNghi());
 				stmt.setString(11, nv.getMaNV());
 				n = stmt.executeUpdate();
 			} catch (SQLException e) {
@@ -138,10 +151,8 @@ public class NhanVienDao {
 
 				ChucVu chucVu = new ChucVu(rs.getString(9));
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				int soNgayNghi = rs.getInt(11);
 
-				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu, ngayVaoLam,
-						soNgayNghi);
+				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu, ngayVaoLam);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -169,10 +180,8 @@ public class NhanVienDao {
 
 				ChucVu chucVu = new ChucVu(rs.getString(9));
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				int soNgayNghi = rs.getInt(11);
 
-				nv = new NhanVien(maNV1, hoTenNV1, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu, ngayVaoLam,
-						soNgayNghi);
+				nv = new NhanVien(maNV1, hoTenNV1, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu, ngayVaoLam);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -199,9 +208,8 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				int soNgayNghi = rs.getInt(11);
 				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, new ChucVu(maChucVu),
-						ngayVaoLam, soNgayNghi);
+						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -228,9 +236,8 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam1 = rs.getDate(10).toLocalDate();
-				int soNgayNghi = rs.getInt(11);
 				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, new ChucVu(chucVu),
-						ngayVaoLam1, soNgayNghi);
+						ngayVaoLam1);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -257,9 +264,8 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu1 = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				int soNgayNghi = rs.getInt(11);
 				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, new ChucVu(chucVu1),
-						ngayVaoLam, soNgayNghi);
+						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -286,9 +292,8 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				int soNgayNghi = rs.getInt(11);
 				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh1, soDT, email, CCCD, diaChi, new ChucVu(chucVu),
-						ngayVaoLam, soNgayNghi);
+						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -315,9 +320,8 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				int soNgayNghi = rs.getInt(11);
 				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT1, email, CCCD, diaChi, new ChucVu(chucVu),
-						ngayVaoLam, soNgayNghi);
+						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -344,9 +348,8 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				int soNgayNghi = rs.getInt(11);
 				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email1, CCCD, diaChi, new ChucVu(chucVu),
-						ngayVaoLam, soNgayNghi);
+						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -373,9 +376,8 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				int soNgayNghi = rs.getInt(11);
 				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD1, diaChi, new ChucVu(chucVu),
-						ngayVaoLam, soNgayNghi);
+						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -402,9 +404,8 @@ public class NhanVienDao {
 				String diaChi1 = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				int soNgayNghi = rs.getInt(11);
 				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi1, new ChucVu(chucVu),
-						ngayVaoLam, soNgayNghi);
+						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();

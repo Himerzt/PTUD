@@ -2,6 +2,8 @@ package giaodien.CustomClass;
 import giaodien.Login;
 import java.awt.Color;
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.JOptionPane;
 
@@ -218,6 +220,15 @@ public class ChangePassword extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_button2ActionPerformed
+    
+	private boolean regMatKhau(String matKhau) {
+		String regex = "^(?=.*[A-Z])(?=.*\\d).{8,}$";
+
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(matKhau);
+
+		return matcher.matches();
+	}
 
     private void btnDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiMatKhauActionPerformed
         String tenDangNhap = txtTenDangNhap.getText();
@@ -242,7 +253,10 @@ public class ChangePassword extends javax.swing.JFrame {
 				}else {
 					if (!mkMoi1.equals(mkMoi2)) {
 						JOptionPane.showMessageDialog(null, "Mật khẩu mới không trùng khớp");
-					} else {
+					} if (regMatKhau(mkMoi1) == false) {
+						JOptionPane.showMessageDialog(null, "Mật khẩu mới phải có ít nhất 8 ký tự, bao gồm 1 chữ hoa và 1 số");
+					}
+					else {
 						taiKhoan.setMatKhau(mkMoi1);
 						tkDao.suaTaiKhoan(taiKhoan);
 						JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công");
