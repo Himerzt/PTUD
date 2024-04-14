@@ -1,0 +1,11 @@
+package dao;
+
+import entity.LoaiThue;
+
+public class LoaiThueDao {
+	LoaiThue loaiThue;
+	
+	public LoaiThueDao() {
+		loaiThue = new LoaiThue();
+	}
+}

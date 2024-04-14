@@ -57,24 +57,18 @@ public class PhongDao {
 
 	// sửa phòng
 	public boolean suaPhong(Phong phong) {
-		connectDB.ConnectDB.getInstance();
-		ConnectDB con = (ConnectDB) ConnectDB.getConnection();
-		PreparedStatement stmt = null;
-		int n = 0;
-		if (dsPhong.contains(phong)) {
-			try {
-				stmt = ((Connection) con).prepareStatement(
-						"update Phong set soPhong = ?, maLoaiPhong = ?, trangThai = ? where maPhong = ?");
-				stmt.setInt(1, phong.getSoPhong());
-				stmt.setString(2, phong.getMaLoaiPhong());
-				stmt.setString(3, phong.getTrangThai());
-				stmt.setString(4, phong.getMaPhong());
-				n = stmt.executeUpdate();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			return n > 0;
-		}
+		try {
+            Connection con = ConnectDB.getConnection();
+            PreparedStatement stmt = con.prepareStatement("update Phong set soPhong = ?, maLoaiPhong = ?, trangThai = ? where maPhong = ?");
+            stmt.setInt(1, phong.getSoPhong());
+            stmt.setString(2, phong.getMaLoaiPhong());
+            stmt.setString(3, phong.getTrangThai());
+            stmt.setString(4, phong.getMaPhong());
+            int n = stmt.executeUpdate();
+            return n > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            }
 		return false;
 	}
 
@@ -96,18 +90,15 @@ public class PhongDao {
 
 	// tìm phòng theo mã phòng
 	public Phong timPhongTheoMaPhong(String maPhong) {
-		connectDB.ConnectDB.getInstance();
-		ConnectDB con = (ConnectDB) ConnectDB.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
 		try {
-			stmt = ((Connection) con).prepareStatement("select * from Phong where maPhong = ?");
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con.prepareStatement("select * from Phong where maPhong = ?");
 			stmt.setString(1, maPhong);
-			rs = stmt.executeQuery();
+			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				phong = new Phong(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4));
 			}
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return phong;
@@ -115,18 +106,15 @@ public class PhongDao {
 
 	// tìm phòng theo số phòng
 	public Phong timPhongTheoSoPhong(int soPhong) {
-		connectDB.ConnectDB.getInstance();
-		ConnectDB con = (ConnectDB) ConnectDB.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
 		try {
-			stmt = ((Connection) con).prepareStatement("select * from Phong where soPhong = ?");
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con.prepareStatement("select * from Phong where soPhong = ?");
 			stmt.setInt(1, soPhong);
-			rs = stmt.executeQuery();
+			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				phong = new Phong(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4));
 			}
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return phong;

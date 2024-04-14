@@ -489,5 +489,60 @@ public class ThongTinDatThuePhongDao {
 		}
 		return n > 0;
 	}
+	
+	public ArrayList<Phong> timphongTheoDanhSachMa(ArrayList<String> soPhong) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		Statement stmt = null;
+		ArrayList<Integer> intList = new ArrayList<Integer>();
+		for (String str : soPhong) {
+			// Chuyển đổi từ String sang Integer và thêm vào ArrayList<Integer>
+			intList.add(Integer.parseInt(str));
+		}
+
+		for (int a : intList) {
+			try {
+				stmt = con.createStatement();
+				String sql = "select * from Phong where soPhong = '" + a + "'";
+				ResultSet rs = stmt.executeQuery(sql);
+				while (rs.next()) {
+					String maPhong = rs.getString(1);
+					int mama = rs.getInt(2);
+					String maLoaiPhong = rs.getString(3);
+					String trangThai = rs.getString(4);
+
+					Phong phong = new Phong(maPhong, mama, maLoaiPhong, trangThai);
+					dsPhong.add(phong);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+
+			}
+		}
+
+		return null;
+	}
+
+	// đặt phòng
+	public boolean datPhong(ArrayList<Phong> phong, KhachHang kh, LocalDate ngayDatPhong, LocalDate ngayNhanPhong, String maLoaiThue,
+			LocalDate ngayTraPhong) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		Statement stmt = null;
+		int i = 1;
+		for (Phong phong2 : phong) {
+			try {
+				stmt = con.createStatement();
+				String sql = "insert into ThongTinDatThuePhong values('"+(kh.getMaKH() + "i") +"', '"+ kh.getMaKH()+ "', '"+ phong2.getMaPhong() + "', '"+ ngayDatPhong + "', '"+ ngayNhanPhong + "', '"+ ngayTraPhong + "','" +maLoaiThue+"', 'Đã Thuê' )";
+				stmt.executeUpdate(sql);
+				i++;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return false;
+
+	}
 
 }

@@ -2548,7 +2548,8 @@ public void times(){
 
     private void datPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datPhongActionPerformed
         // TODO add your handling code here:
-      
+        JFrame datphongz = new DatPhong(getTenPhong);
+        datphongz.show();
     }//GEN-LAST:event_datPhongActionPerformed
     private JPanel getFirstPanelFromFrame(JFrame frame) {
         // Lấy tất cả các thành phần con của JFrame
@@ -2639,7 +2640,6 @@ public void times(){
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-  
     }//GEN-LAST:event_jButton4ActionPerformed
 
     

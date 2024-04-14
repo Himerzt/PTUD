@@ -55,10 +55,6 @@ public class TrangChu extends javax.swing.JFrame {
 //        setUndecorated(true);
 //        setAlwaysOnTop(true);
 		setResizable(false);
-		Toolkit tk = Toolkit.getDefaultToolkit();
-		int x = (int) tk.getScreenSize().getWidth();
-		int y = (int) tk.getScreenSize().getHeight();
-		setSize(x, y);
 		initComponents();
 		datetime();
 		times();
@@ -182,7 +178,7 @@ public class TrangChu extends javax.swing.JFrame {
 			model.addRow(rowData);
 		}
 	}
-	
+
 	public void loadTableKhachHang() {
 
 		KhachHangDao khachHangDao = new KhachHangDao();
@@ -713,10 +709,6 @@ public class TrangChu extends javax.swing.JFrame {
 		dateNgaySinhKhachHang.setTextRefernce(txtNgaySinhKhachHang);
 
 //		TTK - Them phongQuanLyTrangChu
-//		phongTrangChu1 = new javax.swing.JPanel();
-//		lblTenPhongTrangChu1 = new javax.swing.JLabel();
-//		lblLoaiPhongTrangChu1 = new javax.swing.JLabel();
-//		lblTrangThaiTrangChu1 = new javax.swing.JLabel();
 		phongTrangChu = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
@@ -726,7 +718,7 @@ public class TrangChu extends javax.swing.JFrame {
 				e.printStackTrace();
 			}
 		}
-		
+
 		tenPhongTrangChu = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
@@ -736,7 +728,7 @@ public class TrangChu extends javax.swing.JFrame {
 				e.printStackTrace();
 			}
 		}
-		
+
 		loaiPhongTrangChu = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
@@ -746,7 +738,7 @@ public class TrangChu extends javax.swing.JFrame {
 				e.printStackTrace();
 			}
 		}
-		
+
 		trangThaiPhongTrangChu = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
@@ -5852,14 +5844,14 @@ public class TrangChu extends javax.swing.JFrame {
 		return maKhachHang;
 	}
 
-	//NGUYỄN QUỐC HUY chỉnh sửa phương thức kiểm tra tên chuỗi tiếng việt
-    private boolean regTen(String ten) {
-        String regex = "^[A-Z][a-zA-Z\\p{L}]+(\\s+[A-Za-z\\p{L}]+)*$";
-        Pattern pattern = Pattern.compile(regex, Pattern.CANON_EQ);
-        Matcher matcher = pattern.matcher(ten);    
-        return matcher.matches();
+	// NGUYỄN QUỐC HUY chỉnh sửa phương thức kiểm tra tên chuỗi tiếng việt
+	private boolean regTen(String ten) {
+		String regex = "^[A-Z][a-zA-Z\\p{L}]+(\\s+[A-Za-z\\p{L}]+)*$";
+		Pattern pattern = Pattern.compile(regex, Pattern.CANON_EQ);
+		Matcher matcher = pattern.matcher(ten);
+		return matcher.matches();
 
-    }
+	}
 
 	private boolean regSoDienThoai(String soDienThoai) {
 		String regex = "^0\\d{9}$";
@@ -5914,8 +5906,8 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String quocTich = txtQuocTichKhachHang.getText();
 		String maKhachHang = taoMaKhachHang();
-		KhachHang kh = new KhachHang(maKhachHang, tenKhachHang, gioiTinh, ngaySinh, soDienThoai, CCCD_Visa, 0d,
-				"HB", quocTich);
+		KhachHang kh = new KhachHang(maKhachHang, tenKhachHang, gioiTinh, ngaySinh, soDienThoai, CCCD_Visa, 0d, "HB",
+				quocTich);
 		KhachHangDao khDao = new KhachHangDao();
 		boolean themKhachHang = khDao.themKhachHang(kh);
 		if (themKhachHang) {
@@ -6241,7 +6233,15 @@ public class TrangChu extends javax.swing.JFrame {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					new TrangChu().setVisible(true);
+					TrangChu trangChu = new TrangChu();
+					// Đặt cửa sổ để hiển thị full màn hình nhưng vẫn giữ lại thanh taskbar
+				       trangChu.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+				        // Thiết lập loại đóng cửa sổ mặc định
+				       trangChu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+				        // Hiển thị JFrame
+				        trangChu.setVisible(true);
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -6277,7 +6277,7 @@ public class TrangChu extends javax.swing.JFrame {
 			if (trangThai.getText().equalsIgnoreCase("Trống")) {
 				phongPanel.setBackground(Color.green);
 			} else if (loaiPhong.getText().equalsIgnoreCase("Đã đặt")) {
-				phongPanel.setBackground(Color.lightGray);
+				phongPanel.setBackground(Color.red);
 			} else if (loaiPhong.getText().equalsIgnoreCase("Đã thuê")) {
 				phongPanel.setBackground(Color.yellow);
 			}
@@ -6287,7 +6287,7 @@ public class TrangChu extends javax.swing.JFrame {
 			}
 		}
 	}
-	
+
 	private void ganDuLieuPhongVaoQuanLyPhong() {
 		PhongDao phongDao = new PhongDao();
 		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
@@ -6314,7 +6314,7 @@ public class TrangChu extends javax.swing.JFrame {
 			if (trangThai.getText().equalsIgnoreCase("Trống")) {
 				phongPanel.setBackground(Color.green);
 			} else if (loaiPhong.getText().equalsIgnoreCase("Đã đặt")) {
-				phongPanel.setBackground(Color.lightGray);
+				phongPanel.setBackground(Color.red);
 			} else if (loaiPhong.getText().equalsIgnoreCase("Đã thuê")) {
 				phongPanel.setBackground(Color.yellow);
 			}

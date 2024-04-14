@@ -55,4 +55,11 @@ public class Phong {
 		this.maPhong = maPhong;
 	}
 
+	@Override
+	public String toString() {
+		return "Phong [maPhong=" + maPhong + ", soPhong=" + soPhong + ", maLoaiPhong=" + maLoaiPhong + ", trangThai="
+				+ trangThai + "]";
+	}
+
+	
 }

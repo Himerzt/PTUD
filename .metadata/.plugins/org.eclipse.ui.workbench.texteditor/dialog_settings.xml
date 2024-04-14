@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="ganDuLieuPhongVaoTrangChu"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
-		<item key="casesensitive" value="true"/>
+		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="TTK"/>
+			<item value="TTk"/>
+			<item value="default "/>
+			<item value="setD"/>
+			<item value="phong.getMaLoaiPhong()"/>
+			<item value="ToolKit"/>
 			<item value="ganDuLieuPhongVaoTrangChu"/>
 			<item value="loadTableNhanVien"/>
 			<item value="getHangThanhVien()."/>
@@ -17,22 +23,17 @@
 			<item value="btnNgay"/>
 			<item value="&lt;&lt;&lt;"/>
 			<item value="===="/>
-			<item value="&gt;&gt;&gt;&gt;"/>
-			<item value="&lt;&lt;&lt;&lt;"/>
-			<item value="y[i]"/>
-			<item value="load"/>
-			<item value="loadDanh"/>
-			<item value="loadPhong"/>
 		</list>
 		<list key="replacehistory">
+			<item value="maLoai"/>
 			<item value="ganDuLieuPhongVaoQuanLyPhong"/>
 			<item value="ganDuLieuPhongVaoGiaoDien"/>
 			<item value="y.get(i)"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1102"/>
-		<item key="DIALOG_Y_ORIGIN" value="465"/>
+		<item key="DIALOG_X_ORIGIN" value="1178"/>
+		<item key="DIALOG_Y_ORIGIN" value="418"/>
 		<item key="DIALOG_WIDTH" value="414"/>
 		<item key="DIALOG_HEIGHT" value="442"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

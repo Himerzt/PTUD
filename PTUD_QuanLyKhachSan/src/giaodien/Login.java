@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import connectDB.ConnectDB;
@@ -229,7 +230,8 @@ public class Login extends javax.swing.JFrame implements Serializable{
 //			Neu la "NV" thi se vao giao dien nhan vien, neu la "QL" thi se vao giao dien quan ly
 			if (taiKhoanDao.timTaiKhoanTheoTenDangNhap(tenDangNhap).getMaNhanVien().substring(0, 2).equals("NV")) {
 				try {
-					new TrangChu_NhanVien().setVisible(true);
+					TrangChu trangChu = new TrangChu();
+					trangChu.setVisible(true);
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
