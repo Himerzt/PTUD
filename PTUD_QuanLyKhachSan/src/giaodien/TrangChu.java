@@ -38,6 +38,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
+import chooserDay.DateChooser;
 import connectDB.ConnectDB;
 import dao.PhongDao;
 import javax.swing.JFrame;
@@ -47,8 +48,6 @@ import menu.MenuEvent;
  * @author Huynguyen
  */
 public class TrangChu extends javax.swing.JFrame {
-
-	private String[] chuoiDSTPDat;
 
 	public TrangChu() throws Exception {
 
@@ -216,6 +215,11 @@ public class TrangChu extends javax.swing.JFrame {
 
 		btnGROUPLoaiPhong = new javax.swing.ButtonGroup();
 		btnGROUPTrangThai = new javax.swing.ButtonGroup();
+		dateNgaySinhNhanVien = new chooserDay.DateChooser();
+		dateNgayVaoLam = new chooserDay.DateChooser();
+		dateNgayBatDauKM = new chooserDay.DateChooser();
+		dateNgayKetThucKM = new chooserDay.DateChooser();
+		dateNgaySinhKhachHang = new chooserDay.DateChooser();
 		jPanel1 = new javax.swing.JPanel();
 		pnHeader = new javax.swing.JPanel();
 		Header = new component.Header();
@@ -674,8 +678,23 @@ public class TrangChu extends javax.swing.JFrame {
 		txtHangThanhVien = new javax.swing.JTextField();
 		jScrollPane6 = new javax.swing.JScrollPane();
 		TableKhachHang = new javax.swing.JTable();
+		dateNgaySinhNhanVien.setForeground(new java.awt.Color(255, 203, 119));
+		dateNgaySinhNhanVien.setTextRefernce(txtNgaySinhNhanVien);
+
+		dateNgayVaoLam.setForeground(new java.awt.Color(255, 203, 119));
+		dateNgayVaoLam.setTextRefernce(txtNgayVaoLamNhanVien);
+
+		dateNgayBatDauKM.setForeground(new java.awt.Color(255, 203, 119));
+		dateNgayBatDauKM.setTextRefernce(txtNgayBatDauKhuyenMai);
+
+		dateNgayKetThucKM.setForeground(new java.awt.Color(255, 203, 119));
+		dateNgayKetThucKM.setTextRefernce(txtNgayKetThucKhuyenMai);
+
+		dateNgaySinhKhachHang.setForeground(new java.awt.Color(255, 203, 119));
+		dateNgaySinhKhachHang.setTextRefernce(txtNgaySinhKhachHang);
 
 		// TTK - Thêm phongQuanLy.get(i), i chạy từ 1 đến 35 vào list
+		phongQuanLy = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
 				phongQuanLy.add((JPanel) getClass().getDeclaredField("phongQuanLy" + i).get(this));
@@ -684,7 +703,7 @@ public class TrangChu extends javax.swing.JFrame {
 				e.printStackTrace();
 			}
 		}
-		
+
 		loaiPhongQuanLy = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
@@ -694,7 +713,7 @@ public class TrangChu extends javax.swing.JFrame {
 				e.printStackTrace();
 			}
 		}
-		
+
 		tenPhongQuanLy = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
@@ -704,7 +723,7 @@ public class TrangChu extends javax.swing.JFrame {
 				e.printStackTrace();
 			}
 		}
-		
+
 		trangThaiPhongQuanLy = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
@@ -714,7 +733,7 @@ public class TrangChu extends javax.swing.JFrame {
 				e.printStackTrace();
 			}
 		}
-		
+
 		checkBoxPhongQuanLy = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
@@ -5966,23 +5985,23 @@ public class TrangChu extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton4ActionPerformed
 
 	private void btnNgaySinhNhanVienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgaySinhNhanVienActionPerformed
-		// TODO add your handling code here:
+		dateNgaySinhNhanVien.showPopup();
 	}// GEN-LAST:event_btnNgaySinhNhanVienActionPerformed
 
 	private void btnNgayVaoLamNhanVienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgayVaoLamNhanVienActionPerformed
-		// TODO add your handling code here:
+		dateNgayVaoLam.showPopup();
 	}// GEN-LAST:event_btnNgayVaoLamNhanVienActionPerformed
 
 	private void btnThoiGianKetThucKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThoiGianKetThucKhuyenMaiActionPerformed
-		// TODO add your handling code here:
+		dateNgayKetThucKM.showPopup();
 	}// GEN-LAST:event_btnThoiGianKetThucKhuyenMaiActionPerformed
 
 	private void btnNgaySinhNhanVien3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgaySinhNhanVien3ActionPerformed
-		// TODO add your handling code here:
+		dateNgaySinhKhachHang.showPopup();
 	}// GEN-LAST:event_btnNgaySinhNhanVien3ActionPerformed
 
 	private void btnThoiGianBatDauKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThoiGianBatDauKhuyenMaiActionPerformed
-		// TODO add your handling code here:
+		dateNgayBatDauKM.showPopup();
 	}// GEN-LAST:event_btnThoiGianBatDauKhuyenMaiActionPerformed
 
 	private void txtSoDienThoaiKhachHangActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtSoDienThoaiKhachHangActionPerformed
@@ -6657,6 +6676,12 @@ public class TrangChu extends javax.swing.JFrame {
 	private ArrayList<javax.swing.JLabel> tenPhongQuanLy;
 	private ArrayList<javax.swing.JLabel> trangThaiPhongQuanLy;
 	private ArrayList<JCheckBox> checkBoxPhongQuanLy;
+	private String[] chuoiDSTPDat;
+	private DateChooser dateNgaySinhNhanVien;
+	private DateChooser dateNgayVaoLam;
+	private DateChooser dateNgayBatDauKM;
+	private DateChooser dateNgayKetThucKM;
+	private DateChooser dateNgaySinhKhachHang;
 	// End of variables declaration//GEN-END:variables
 
 	private JFrame DatPhong(List<String> dsTenPhong) {

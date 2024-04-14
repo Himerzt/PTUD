@@ -111,9 +111,11 @@ public class Login extends javax.swing.JFrame implements Serializable{
 
         btnDoiMatKhau.setBackground(new java.awt.Color(254, 109, 115));
         btnDoiMatKhau.setBorder(null);
-        btnDoiMatKhau.setText("Đổi mật khẩu");
+        btnDoiMatKhau.setText("ĐỔI MẬT KHẨU");
         btnDoiMatKhau.setBorderColor(new java.awt.Color(254, 109, 115));
-        btnDoiMatKhau.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnDoiMatKhau.setColorClick(new java.awt.Color(204, 204, 204));
+        btnDoiMatKhau.setColorOver(new java.awt.Color(255, 51, 51));
+        btnDoiMatKhau.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         btnDoiMatKhau.setRadius(15);
         btnDoiMatKhau.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -140,12 +142,11 @@ public class Login extends javax.swing.JFrame implements Serializable{
                         .addComponent(jLabel6))
                     .addGroup(LeftLayout.createSequentialGroup()
                         .addGap(76, 76, 76)
-                        .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                .addComponent(txtMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                            .addComponent(txtMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         LeftLayout.setVerticalGroup(
@@ -162,8 +163,8 @@ public class Login extends javax.swing.JFrame implements Serializable{
                 .addGap(28, 28, 28)
                 .addComponent(btnDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         jPanel1.add(Left);

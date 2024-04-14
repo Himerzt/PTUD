@@ -6,6 +6,56 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="btnGROUPTrangThai">
     </Component>
+    <Component class="chooserDay.DateChooser" name="dateNgaySinhNhanVien">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="77" green="cb" red="ff" type="rgb"/>
+        </Property>
+        <Property name="textRefernce" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="txtNgaySinhNhanVien"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="chooserDay.DateChooser" name="dateNgayVaoLam">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="77" green="cb" red="ff" type="rgb"/>
+        </Property>
+        <Property name="textRefernce" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="txtNgayVaoLamNhanVien"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="chooserDay.DateChooser" name="dateNgayBatDauKM">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="77" green="cb" red="ff" type="rgb"/>
+        </Property>
+        <Property name="textRefernce" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="txtNgayBatDauKhuyenMai"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="chooserDay.DateChooser" name="dateNgayKetThucKM">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="77" green="cb" red="ff" type="rgb"/>
+        </Property>
+        <Property name="textRefernce" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="txtNgayKetThucKhuyenMai"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="chooserDay.DateChooser" name="dateNgaySinhKhachHang">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="77" green="cb" red="ff" type="rgb"/>
+        </Property>
+        <Property name="textRefernce" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="txtNgaySinhKhachHang"/>
+        </Property>
+      </Properties>
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -6676,9 +6726,6 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtNgayVaoLamNhanVien">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Ng&#xe0;y v&#xe0;o l&#xe0;m"/>
-                          </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel7">
                           <Properties>
@@ -6717,9 +6764,6 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtNgaySinhNhanVien">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh nh&#xe2;n vi&#xea;n"/>
-                          </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel13">
                           <Properties>
@@ -7456,9 +7500,6 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtNgayBatDauKhuyenMai">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="B&#x1eaf;t &#x111;&#x1ea7;u khuy&#x1ebf;n m&#xe3;i"/>
-                          </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel22">
                           <Properties>
@@ -7492,9 +7533,6 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtNgayKetThucKhuyenMai">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="K&#x1ebf;t th&#xfa;c khuy&#x1ebf;n m&#xe3;i"/>
-                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtGiaTriKhuyenMai">
                           <Properties>
@@ -7966,9 +8004,6 @@
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtNgaySinhKhachHang">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh"/>
-                          </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel32">
                           <Properties>

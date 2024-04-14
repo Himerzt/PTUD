@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
+<<<<<<< HEAD
 <Form version="1.4" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+=======
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+>>>>>>> 91774cc2aa5d798b6e04a999335b3a7d691ca199
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -177,12 +181,20 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="26" max="-2" attributes="0"/>
                   <EmptySpace pref="90" max="32767" attributes="0"/>
+<<<<<<< HEAD
                   <Group type="103" groupAlignment="3" attributes="0">
+=======
+                  <Group type="103" groupAlignment="0" attributes="0">
+>>>>>>> 91774cc2aa5d798b6e04a999335b3a7d691ca199
                       <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="tongTien" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
+<<<<<<< HEAD
                   <Group type="103" groupAlignment="3" attributes="0">
+=======
+                  <Group type="103" groupAlignment="0" attributes="0">
+>>>>>>> 91774cc2aa5d798b6e04a999335b3a7d691ca199
                       <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="tienCoc" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
