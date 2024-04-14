@@ -361,8 +361,7 @@ public class QuanLyThongTinPhong extends javax.swing.JFrame {
 
     private void datPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datPhongActionPerformed
         // TODO add your handling code here:
-        JFrame datphongz = new DatPhong(getTenPhong);
-        datphongz.show();
+        
     }//GEN-LAST:event_datPhongActionPerformed
 
     

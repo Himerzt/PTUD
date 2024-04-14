@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package giaodien;
 
 import entity.DichVu;
@@ -25,22 +22,30 @@ import dao.KhachHangDao;
  * @author Huynguyen
  */
 public class DatPhong extends javax.swing.JFrame {
-	private List<DichVuPhong> danhSachDichVu;
 
-	/**
-	 * Creates new form DatPhong
-	 */
-	public DatPhong() {
-		ConnectDB.getInstance().getConnection();
-		initComponents();
-	}
+	//connect db
+    private List<DichVuPhong> danhSachDichVu;
+    private String[] dsPhongDat;
+    List<String> dsTenPhong;
+    
+    /**
+     * Creates new form DatPhong
+     */
+    public DatPhong() {
+    	ConnectDB.getInstance().getConnection();
+        initComponents();
+    }
+    
+    
+    public DatPhong(List<String> dsTenPhong){
+    	ConnectDB.getInstance().getConnection();
+        initComponents();
+        for (String roomName : dsTenPhong) {
+            System.out.println(roomName);
+        }
 
-	public DatPhong(String tenPhong) {
-		ConnectDB.getInstance().getConnection();
-		initComponents();
-		txtTenPhong.setText(tenPhong);
-		loadDulieuPhong();
-	}
+      
+    }
 
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
@@ -427,6 +432,7 @@ public class DatPhong extends javax.swing.JFrame {
 				return types[columnIndex];
 			}
 
+
 			public boolean isCellEditable(int rowIndex, int columnIndex) {
 				return canEdit[columnIndex];
 			}
@@ -437,8 +443,7 @@ public class DatPhong extends javax.swing.JFrame {
 		jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
 		comboBoxDichVu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel<>(
-				loadDanhSachDichVu()));
+		comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel<>(loadDanhSachDichVu()));
 
 		btnThemDichVu.setText("Thêm dịch vụ");
 		btnThemDichVu.addActionListener(new java.awt.event.ActionListener() {
@@ -546,6 +551,7 @@ public class DatPhong extends javax.swing.JFrame {
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
 
+
 	private void btnNgaySinhActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgaySinhActionPerformed
 		// TODO add your handling code here:
 	}// GEN-LAST:event_btnNgaySinhActionPerformed
@@ -650,9 +656,6 @@ public class DatPhong extends javax.swing.JFrame {
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(DatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
-		// </editor-fold>
-
-		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new DatPhong().setVisible(true);
@@ -710,15 +713,7 @@ public class DatPhong extends javax.swing.JFrame {
 	private javax.swing.JTextField txtTenPhong;
 	// End of variables declaration//GEN-END:variables
 
-	private void loadDulieuPhong() {
-		// TODO Auto-generated method stub
-		DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
-		Object[] rowData = { 1, txtTenPhong.getText(), txtLoaiPhong.getText(), jComboBox2.getSelectedItem().toString(),
-				txtCheckIn.getText(), txtCheckOut.getText(), txtCheckOut.getText() };
-		model.addRow(rowData);
-		tableDanhSachPhong.setModel(model);
-
-	}
+	
 
 	private static String[] loadDanhSachDichVu() {
 		DichVuDao dvDao = new DichVuDao();
