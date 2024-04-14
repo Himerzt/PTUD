@@ -23,24 +23,21 @@ public class PhongDao {
 		phong = new Phong();
 	}
 
-	public ArrayList<Phong> timTatCaPhong() {
-		try (Connection con = ConnectDB.getInstance().getConnection()) {
-			String sql = "Select * from Phong";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
+	public ArrayList<Phong> timTatCaPhongSapXepTheoSoPhong() {
+		connectDB.ConnectDB.getInstance();
+		ConnectDB con = (ConnectDB) ConnectDB.getConnection();
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			stmt = ((Connection) con).createStatement();
+			rs = stmt.executeQuery("select * from Phong order by soPhong");
 			while (rs.next()) {
-				String maPhong = rs.getString(1);
-				int soPhong = rs.getInt(2);
 				LoaiPhong loaiPhong = new LoaiPhong(rs.getString(3));
-
-				String trangThaiPhong = rs.getString(4);
-
-				Phong phong = new Phong(maPhong, soPhong, loaiPhong, trangThaiPhong);
+				phong = new Phong(rs.getString(1), rs.getInt(2), loaiPhong, rs.getString(4));
 				dsPhong.add(phong);
 			}
-		} catch (SQLException ex) {
-			ex.printStackTrace();
-			// Đóng kết nối
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return dsPhong;
 	}
