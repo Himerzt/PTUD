@@ -4,6 +4,7 @@
  */
 package giaodien;
 
+import entity.DichVu;
 import entity.DichVuPhong;
 import entity.KhachHang;
 
@@ -15,6 +16,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+import connectDB.ConnectDB;
+import dao.DichVuDao;
 import dao.KhachHangDao;
 
 /**
@@ -22,18 +25,31 @@ import dao.KhachHangDao;
  * @author Huynguyen
  */
 public class DatPhong extends javax.swing.JFrame {
+	//connect db
     private List<DichVuPhong> danhSachDichVu;
+    private String[] dsPhongDat;
+    List<String> dsTenPhong;
+    
     /**
      * Creates new form DatPhong
      */
     public DatPhong() {
+    	ConnectDB.getInstance().getConnection();
         initComponents();
     }
-    public DatPhong(String tenPhong){
+    
+    
+    public DatPhong(List<String> dsTenPhong){
+    	ConnectDB.getInstance().getConnection();
         initComponents();
-        txtTenPhong.setText(tenPhong);
-        loadDulieuPhong();
+        for (String roomName : dsTenPhong) {
+            System.out.println(roomName);
+        }
+
+        loadDulieuPhong2();
     }
+    
+   
      
 
     
@@ -396,7 +412,7 @@ public class DatPhong extends javax.swing.JFrame {
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         comboBoxDichVu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ăn sáng", "Ăn trưa", "Ăn chiều", "Giặt quần áo", "Đưa đón khách", "Thêm giường", "Thêm gối", "Thêm chăn", "Nước ngọt", "Nước suối", "Gọi món tại phòng" }));
+        comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel<>(loadDanhSachDichVu()));
 
         btnThemDichVu.setText("Thêm dịch vụ");
         btnThemDichVu.addActionListener(new java.awt.event.ActionListener() {
@@ -511,7 +527,7 @@ public class DatPhong extends javax.swing.JFrame {
     private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDichVuActionPerformed
         // TODO add your handling code here:
         
-        taoDanhSachDichVu();
+    	loadDanhSachDichVu();
         double giadichVu = 0;
         String chossedItem = comboBoxDichVu.getSelectedItem().toString();
         // Lấy model hiện tại từ tableDV
@@ -675,45 +691,21 @@ public class DatPhong extends javax.swing.JFrame {
        
     }
     
-    private void taoDanhSachDichVu(){
-        danhSachDichVu  = new ArrayList<>();
-        
-        String[] tenDichVu = {
-            "Ăn sáng",
-            "Ăn trưa",
-            "Ăn tối",
-            "Giặt quần áo",
-            "Đưa đón khách",
-            "Thêm giường",
-            "Thêm gối",
-            "Thêm chăn",
-            "Nước ngọt",
-            "Nước suối",
-            "Gọi món tại phòng"
-        };
-        
-        
-        double[] giaDichVu = {
-            10.0, // Ăn sáng
-            15.0, // Ăn trưa
-            20.0, // Ăn tối
-            5.0,  // Giặt quần áo
-            8.0,  // Đưa đón khách
-            25.0, // Thêm giường
-            10.0, // Thêm gối
-            15.0, // Thêm chăn
-            3.0,  // Nước ngọt
-            2.5,  // Nước suối
-            12.0  // Gọi món tại phòng
-        };
-        
-        
-//        for (int i = 0; i < tenDichVu.length; i++) {
-//            DichVuPhong dv = new DichVuPhong(tenDichVu[i], giaDichVu[i]);
-//            danhSachDichVu.add(dv);
-//        }
-//        
-        
+    private static String[] loadDanhSachDichVu() {
+        DichVuDao dvDao = new DichVuDao();
+        ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
+        String[] tenDV = new String[danhSachDV.size()];
+        for (int i = 0; i < danhSachDV.size(); i++) {
+            tenDV[i] = danhSachDV.get(i).getTenDV();
+        }
+        return tenDV;
+    }
+
+    private void loadDulieuPhong2() {
+    	//So sánh phần tử trong dsTenPhong so sánh với cơ sở dữ liệu rồi up lên table
+//    	Lấy dữ liệu từ cơ sở dữ liệu
+    	
+    	
     }
 
 
