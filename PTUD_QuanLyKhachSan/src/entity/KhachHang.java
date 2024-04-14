@@ -12,7 +12,7 @@ public class KhachHang {
 	private String soDT;
 	private String CCCD_Visa;
 	private double chiTieu;
-	private HangThanhVien hangThanhVien;
+	private String maHangThanhVien;
 	private String quocTich;
 
 
@@ -42,7 +42,7 @@ public class KhachHang {
 
 
 	public KhachHang(String maKH, String hoTenKH, String gioiTinh, LocalDate ngaySinh, String soDT, String cCCD_Visa,
-			double chiTieu, HangThanhVien hangThanhVien, String quocTich) {
+			double chiTieu, String maHangThanhVien, String quocTich) {
 		super();
 		this.maKH = maKH;
 		this.hoTenKH = hoTenKH;
@@ -51,7 +51,7 @@ public class KhachHang {
 		this.soDT = soDT;
 		CCCD_Visa = cCCD_Visa;
 		this.chiTieu = chiTieu;
-		this.hangThanhVien = hangThanhVien;
+		this.maHangThanhVien = maHangThanhVien;
 		this.quocTich = quocTich;
 	}
 
@@ -87,12 +87,12 @@ public class KhachHang {
 		this.chiTieu = chiTieu;
 	}
 
-	public HangThanhVien getHangThanhVien() {
-		return hangThanhVien;
+	public String getMaHangThanhVien() {
+		return maHangThanhVien;
 	}
-
-	public void setHangThanhVien(HangThanhVien hangThanhVien) {
-		this.hangThanhVien = hangThanhVien;
+	
+	public void setMaHangThanhVien(String maHangThanhVien) {
+		this.maHangThanhVien = maHangThanhVien;
 	}
 
 	public String getQuocTich() {

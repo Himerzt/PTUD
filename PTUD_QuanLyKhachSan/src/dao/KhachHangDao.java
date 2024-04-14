@@ -53,9 +53,9 @@ public class KhachHangDao {
 				String soDT = rs.getString(5);
 				String CCCD_Visa = rs.getString(6);
 				double chiTieu = rs.getDouble(7);
-				HangThanhVien hangThanhVien = new HangThanhVien(rs.getString(8));
+				String maHangThanhVien = rs.getString(8);
 				String quocTich = rs.getString(9);
-				KhachHang kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, hangThanhVien, quocTich);
+				KhachHang kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, maHangThanhVien, quocTich);
 				dsKH.add(kh);
 			} 
 		} catch(SQLException ex) {
@@ -86,9 +86,9 @@ public class KhachHangDao {
 				String soDT = rs.getString(5);
 				String CCCD_Visa = rs.getString(6);
 				double chiTieu = rs.getDouble(7);
-				HangThanhVien hangThanhVien = new HangThanhVien(rs.getString(8));
+				String maHangThanhVien = rs.getString(8);
 				String quocTich = rs.getString(9);
-				khachHang = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, hangThanhVien,quocTich);
+				khachHang = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, maHangThanhVien, quocTich);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -101,7 +101,7 @@ public class KhachHangDao {
 	public boolean themKhachHang(KhachHang kh) {
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Insert into KhachHang values(?,?,?,?,?,?,?,?,?,?)";
+			String sql = "Insert into KhachHang values(?,?,?,?,?,?,?,?,?)";
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setString(1, kh.getMaKH());
 			pst.setString(2, kh.getHoTenKH());
@@ -110,7 +110,7 @@ public class KhachHangDao {
 			pst.setString(5, kh.getSoDT());
 			pst.setString(6, kh.getCCCD_Visa());
 			pst.setDouble(7, kh.getChiTieu());
-			pst.setString(8, kh.getHangThanhVien().getMaHang());
+			pst.setString(8, kh.getMaHangThanhVien());
 			pst.setString(9, kh.getQuocTich());
 			pst.executeUpdate();
 			return true;
@@ -128,7 +128,7 @@ public class KhachHangDao {
 			String sql = "Update KhachHang set hoTenKH = N'" + kh.getHoTenKH() + "', gioiTinh = N'" + kh.getGioiTinh()
 					+ "', ngaySinh = '" + kh.getNgaySinh() + "', soDT = '" + kh.getSoDT() + "', CCCD_Visa = '"
 					+ kh.getCCCD_Visa() + "', chiTieu = " + kh.getChiTieu() + ", maHang = '"
-					+ kh.getHangThanhVien().getMaHang() + "', quocTich = N'" + kh.getQuocTich() + "' where maKH = '"
+					+ kh.getMaHangThanhVien() + "', quocTich = N'" + kh.getQuocTich() + "' where maKH = '"
 					+ kh.getMaKH() + "'";
 			Statement statement = con.createStatement();
 			statement.executeUpdate(sql);
@@ -167,9 +167,9 @@ public class KhachHangDao {
 				String soDT = rs.getString(5);
 				String CCCD_Visa = rs.getString(6);
 				double chiTieu = rs.getDouble(7);
-				HangThanhVien hangThanhVien = new HangThanhVien(rs.getString(8));
+				String maHangThanhVien = rs.getString(8);
 				String quocTich = rs.getString(9);
-				KhachHang kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, hangThanhVien,quocTich);
+				KhachHang kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, maHangThanhVien,quocTich);
 				dsKH.add(kh);
 			}
 		} catch (SQLException ex) {
@@ -195,9 +195,9 @@ public class KhachHangDao {
 				String soDT = rs.getString(5);
 				String CCCD_Visa = rs.getString(6);
 				double chiTieu = rs.getDouble(7);
-				HangThanhVien hangThanhVien = new HangThanhVien(rs.getString(8));
+				String maHangThanhVien = rs.getString(8);
 				String quocTich = rs.getString(9);
-				kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, hangThanhVien, quocTich);
+				kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, maHangThanhVien, quocTich);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -222,9 +222,9 @@ public class KhachHangDao {
 				String soDT = rs.getString(5);
 				String CCCD_Visa = rs.getString(6);
 				double chiTieu = rs.getFloat(7);
-				HangThanhVien hangThanhVien = new HangThanhVien(rs.getString(8));
+				String maHangThanhVien = rs.getString(8);
 				String quocTich = rs.getString(9);
-				KhachHang kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, hangThanhVien,
+				KhachHang kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, maHangThanhVien,
 						quocTich);
 				dsKH.add(kh);
 			}
@@ -251,9 +251,9 @@ public class KhachHangDao {
 				String soDT = rs.getString(5);
 				String CCCD_Visa = rs.getString(6);
 				double chiTieu = rs.getFloat(7);
-				HangThanhVien hangThanhVien = new HangThanhVien(rs.getString(8));
+				String maHangThanhVien = rs.getString(8);
 				String quocTich1 = rs.getString(9);
-				KhachHang kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, hangThanhVien,
+				KhachHang kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, maHangThanhVien,
 						quocTich1);
 				dsKH.add(kh);
 			}

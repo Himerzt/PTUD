@@ -62,7 +62,7 @@ public class TrangChu extends javax.swing.JFrame {
 		initComponents();
 		datetime();
 		times();
-
+		ganDuLieuPhongVaoTrangChu();
 		Menu.setEvent(new MenuEvent() {
 			@Override
 			public void selected(int index, int subIndex) {
@@ -77,11 +77,12 @@ public class TrangChu extends javax.swing.JFrame {
 
 				if (index == 1) {
 					pnedUngDung.setSelectedIndex(1);
-					loadDuLieuPhonglenGiaoDien();
+					ganDuLieuPhongVaoQuanLyPhong();
 				}
 
 				if (index == 2) {
 					pnedUngDung.setSelectedIndex(2);
+					loadTableNhanVien();
 				}
 				if (index == 3) {
 					pnedUngDung.setSelectedIndex(3);
@@ -94,6 +95,7 @@ public class TrangChu extends javax.swing.JFrame {
 				}
 				if (index == 5) {
 					pnedUngDung.setSelectedIndex(5);
+					loadTableKhachHang();
 				}
 
 			}
@@ -180,8 +182,22 @@ public class TrangChu extends javax.swing.JFrame {
 			model.addRow(rowData);
 		}
 	}
+	
+	public void loadTableKhachHang() {
 
-	;
+		KhachHangDao khachHangDao = new KhachHangDao();
+		ArrayList<KhachHang> dsKhachHang = khachHangDao.timTatCaKhachHang();
+		DefaultTableModel model = (DefaultTableModel) TableKhachHang.getModel();
+
+		model.setRowCount(0);
+
+		for (int i = 0; i < dsKhachHang.size(); i++) {
+			KhachHang kh = dsKhachHang.get(i);
+			Object[] rowData = { i + 1, kh.getMaKH(), kh.getHoTenKH(), kh.getGioiTinh(), kh.getNgaySinh(), kh.getSoDT(),
+					kh.getCCCD_Visa(), kh.getChiTieu(), kh.getMaHangThanhVien(), kh.getQuocTich() };
+			model.addRow(rowData);
+		}
+	};
 
 	/**
 	 * Lắng nghe sự kiện khi người dùng chọn một dòng trong bảng**
@@ -643,6 +659,7 @@ public class TrangChu extends javax.swing.JFrame {
 		txtGiaTriKhuyenMai = new javax.swing.JTextField();
 		jLabel24 = new javax.swing.JLabel();
 		jLabel25 = new javax.swing.JLabel();
+//		TTK merge từ file của VLMQ
 		btnThoiGianKetThucKhuyenMai = new giaodien.CustomClass.Button();
 		btnThoiGianBatDauKhuyenMai = new giaodien.CustomClass.Button();
 		btnCapNhapKhuyenMai = new javax.swing.JButton();
@@ -678,6 +695,8 @@ public class TrangChu extends javax.swing.JFrame {
 		txtHangThanhVien = new javax.swing.JTextField();
 		jScrollPane6 = new javax.swing.JScrollPane();
 		TableKhachHang = new javax.swing.JTable();
+
+//		TTK merge
 		dateNgaySinhNhanVien.setForeground(new java.awt.Color(255, 203, 119));
 		dateNgaySinhNhanVien.setTextRefernce(txtNgaySinhNhanVien);
 
@@ -693,7 +712,52 @@ public class TrangChu extends javax.swing.JFrame {
 		dateNgaySinhKhachHang.setForeground(new java.awt.Color(255, 203, 119));
 		dateNgaySinhKhachHang.setTextRefernce(txtNgaySinhKhachHang);
 
-		// TTK - Thêm phongQuanLy.get(i), i chạy từ 1 đến 35 vào list
+//		TTK - Them phongQuanLyTrangChu
+//		phongTrangChu1 = new javax.swing.JPanel();
+//		lblTenPhongTrangChu1 = new javax.swing.JLabel();
+//		lblLoaiPhongTrangChu1 = new javax.swing.JLabel();
+//		lblTrangThaiTrangChu1 = new javax.swing.JLabel();
+		phongTrangChu = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				phongTrangChu.add((JPanel) getClass().getDeclaredField("phongTrangChu" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		tenPhongTrangChu = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				tenPhongTrangChu.add((JLabel) getClass().getDeclaredField("lblTenPhongTrangChu" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		loaiPhongTrangChu = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				loaiPhongTrangChu.add((JLabel) getClass().getDeclaredField("lblLoaiPhongTrangChu" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		trangThaiPhongTrangChu = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				trangThaiPhongTrangChu.add((JLabel) getClass().getDeclaredField("lblTrangThaiTrangChu" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+//		TTK - Thêm phongQuanLy i chạy từ 1 đến 35 vào list
 		phongQuanLy = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
@@ -5788,14 +5852,14 @@ public class TrangChu extends javax.swing.JFrame {
 		return maKhachHang;
 	}
 
-	private boolean regTen(String ten) {
-		String regex = "^[A-Z][a-zA-Z]+(\\s[A-Za-z]+)+$";
+	//NGUYỄN QUỐC HUY chỉnh sửa phương thức kiểm tra tên chuỗi tiếng việt
+    private boolean regTen(String ten) {
+        String regex = "^[A-Z][a-zA-Z\\p{L}]+(\\s+[A-Za-z\\p{L}]+)*$";
+        Pattern pattern = Pattern.compile(regex, Pattern.CANON_EQ);
+        Matcher matcher = pattern.matcher(ten);    
+        return matcher.matches();
 
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(ten);
-
-		return matcher.matches();
-	}
+    }
 
 	private boolean regSoDienThoai(String soDienThoai) {
 		String regex = "^0\\d{9}$";
@@ -5833,7 +5897,7 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String gioiTinh = cbxGioiTinhKhachHang.getSelectedItem().toString();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		LocalDate ngaySinhKhachHangFormat = LocalDate.parse(txtNgaySinhNhanVien.getText(), formatter);
+		LocalDate ngaySinhKhachHangFormat = LocalDate.parse(txtNgaySinhKhachHang.getText(), formatter);
 		LocalDate ngaySinh = LocalDate.of(ngaySinhKhachHangFormat.getYear(), ngaySinhKhachHangFormat.getMonth(),
 				ngaySinhKhachHangFormat.getDayOfMonth());
 		String soDienThoai = txtSoDienThoaiKhachHang.getText();
@@ -5848,13 +5912,10 @@ public class TrangChu extends javax.swing.JFrame {
 			JOptionPane.showMessageDialog(null, "CCCD / Visa không hợp lệ");
 			return;
 		}
-		double chiTieu = 0;
-		HangThanhVienDao htvDao = new HangThanhVienDao();
-		HangThanhVien hangTV = htvDao.timHangThanhVienTheoChiTieu(chiTieu);
 		String quocTich = txtQuocTichKhachHang.getText();
 		String maKhachHang = taoMaKhachHang();
-		KhachHang kh = new KhachHang(maKhachHang, tenKhachHang, gioiTinh, ngaySinh, soDienThoai, CCCD_Visa, chiTieu,
-				hangTV, quocTich);
+		KhachHang kh = new KhachHang(maKhachHang, tenKhachHang, gioiTinh, ngaySinh, soDienThoai, CCCD_Visa, 0d,
+				"HB", quocTich);
 		KhachHangDao khDao = new KhachHangDao();
 		boolean themKhachHang = khDao.themKhachHang(kh);
 		if (themKhachHang) {
@@ -5895,7 +5956,7 @@ public class TrangChu extends javax.swing.JFrame {
 
 	private void btnTimTheoDieuKienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnFindbyPhoneActionPerformed
 		if (radPhongTieuChuan.isSelected()) {
-			loadDuLieuPhonglenGiaoDien();
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < loaiPhongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -5904,7 +5965,7 @@ public class TrangChu extends javax.swing.JFrame {
 				}
 			}
 		} else if (radPhongNangCao.isSelected()) {
-			loadDuLieuPhonglenGiaoDien();
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -5913,7 +5974,7 @@ public class TrangChu extends javax.swing.JFrame {
 				}
 			}
 		} else if (radPhongCaoCap.isSelected()) {
-			loadDuLieuPhonglenGiaoDien();
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -5923,7 +5984,7 @@ public class TrangChu extends javax.swing.JFrame {
 				}
 			}
 		} else if (radPhongThuongGia.isSelected()) {
-			loadDuLieuPhonglenGiaoDien();
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -5935,7 +5996,7 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 
 		if (radPhongTrong.isSelected()) {
-			loadDuLieuPhonglenGiaoDien();
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
@@ -5945,7 +6006,7 @@ public class TrangChu extends javax.swing.JFrame {
 				}
 			}
 		} else if (radPhongDaDat.isSelected()) {
-			loadDuLieuPhonglenGiaoDien();
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
@@ -5955,7 +6016,7 @@ public class TrangChu extends javax.swing.JFrame {
 				}
 			}
 		} else if (radPhongDangThue.isSelected()) {
-			loadDuLieuPhonglenGiaoDien();
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
@@ -5969,7 +6030,7 @@ public class TrangChu extends javax.swing.JFrame {
 
 	private void btnResetTrangThaiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnResetTrangThaiActionPerformed
 		// TODO add your handling code here:
-		loadDuLieuPhonglenGiaoDien();
+		ganDuLieuPhongVaoQuanLyPhong();
 		radPhongTieuChuan.setSelected(false);
 		radPhongNangCao.setSelected(false);
 		radPhongCaoCap.setSelected(false);
@@ -6189,22 +6250,77 @@ public class TrangChu extends javax.swing.JFrame {
 	}
 
 //    TTK
-	private void loadDuLieuPhonglenGiaoDien() {
-		for (int i = 0; i < phongQuanLy.size(); i++) {
-			JPanel phong = phongQuanLy.get(i);
-			JLabel loaiPhong = loaiPhongQuanLy.get(i);
-			JLabel soPhong = tenPhongQuanLy.get(i);
+	private void ganDuLieuPhongVaoTrangChu() {
+		PhongDao phongDao = new PhongDao();
+		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
+		for (int i = 0; i < phongTrangChu.size(); i++) {
+			Phong phong = dsPhong.get(i);
+//			LoaiPhong lPhong = 
+			JPanel phongPanel = phongTrangChu.get(i);
+			JLabel loaiPhong = loaiPhongTrangChu.get(i);
+			JLabel soPhong = tenPhongTrangChu.get(i);
+			JLabel trangThai = trangThaiPhongTrangChu.get(i);
 
-			if (loaiPhong.getText().equalsIgnoreCase("Tiêu chuẩn")) {
-				phong.setBackground(Color.green);
-			} else if (loaiPhong.getText().equalsIgnoreCase("Nâng cao")) {
-				phong.setBackground(Color.lightGray);
-			} else if (loaiPhong.getText().equalsIgnoreCase("Cao cấp")) {
-				phong.setBackground(Color.yellow);
+			// Gán thông tin phòng lên label
+			soPhong.setText(Integer.toString(phong.getSoPhong()));
+			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+				loaiPhong.setText("Tiêu chuẩn");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+				loaiPhong.setText("Nâng cao");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+				loaiPhong.setText("Cao cấp");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
+				loaiPhong.setText("Thương gia");
+			}
+			trangThai.setText(phong.getTrangThai());
+
+			if (trangThai.getText().equalsIgnoreCase("Trống")) {
+				phongPanel.setBackground(Color.green);
+			} else if (loaiPhong.getText().equalsIgnoreCase("Đã đặt")) {
+				phongPanel.setBackground(Color.lightGray);
+			} else if (loaiPhong.getText().equalsIgnoreCase("Đã thuê")) {
+				phongPanel.setBackground(Color.yellow);
 			}
 
-			if (phong.isVisible() == false) {
-				phong.show();
+			if (phongPanel.isVisible() == false) {
+				phongPanel.show();
+			}
+		}
+	}
+	
+	private void ganDuLieuPhongVaoQuanLyPhong() {
+		PhongDao phongDao = new PhongDao();
+		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			Phong phong = dsPhong.get(i);
+			JPanel phongPanel = phongQuanLy.get(i);
+			JLabel loaiPhong = loaiPhongQuanLy.get(i);
+			JLabel soPhong = tenPhongQuanLy.get(i);
+			JLabel trangThai = trangThaiPhongQuanLy.get(i);
+
+			// Gán thông tin phòng lên label
+			soPhong.setText(Integer.toString(phong.getSoPhong()));
+			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+				loaiPhong.setText("Tiêu chuẩn");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+				loaiPhong.setText("Nâng cao");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+				loaiPhong.setText("Cao cấp");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
+				loaiPhong.setText("Thương gia");
+			}
+			trangThai.setText(phong.getTrangThai());
+
+			if (trangThai.getText().equalsIgnoreCase("Trống")) {
+				phongPanel.setBackground(Color.green);
+			} else if (loaiPhong.getText().equalsIgnoreCase("Đã đặt")) {
+				phongPanel.setBackground(Color.lightGray);
+			} else if (loaiPhong.getText().equalsIgnoreCase("Đã thuê")) {
+				phongPanel.setBackground(Color.yellow);
+			}
+
+			if (phongPanel.isVisible() == false) {
+				phongPanel.show();
 			}
 		}
 
@@ -6671,6 +6787,11 @@ public class TrangChu extends javax.swing.JFrame {
 	private javax.swing.JTextField txtTenDichVu;
 	private javax.swing.JTextField txtTenKhachHang;
 	private javax.swing.JTextField txtTenKhuyenMai;
+//	TTK
+	private ArrayList<javax.swing.JPanel> phongTrangChu;
+	private ArrayList<javax.swing.JLabel> loaiPhongTrangChu;
+	private ArrayList<javax.swing.JLabel> tenPhongTrangChu;
+	private ArrayList<javax.swing.JLabel> trangThaiPhongTrangChu;
 	private ArrayList<javax.swing.JPanel> phongQuanLy;
 	private ArrayList<javax.swing.JLabel> loaiPhongQuanLy;
 	private ArrayList<javax.swing.JLabel> tenPhongQuanLy;

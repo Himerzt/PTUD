@@ -35,7 +35,7 @@ public class HangThanhVienDao {
 	
 	public HangThanhVien timHangThanhVienTheoChiTieu(double chiTieu) {
 		if (chiTieu >= 0d) {
-			return timHangThanhVienTheoMa("HD");
+			return timHangThanhVienTheoMa("HB");
 		} else if (chiTieu >= 3000000d) {
 			return timHangThanhVienTheoMa("HV");
 		} else if (chiTieu >= 5000000d) {

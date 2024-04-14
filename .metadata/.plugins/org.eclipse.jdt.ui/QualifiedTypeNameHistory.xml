@@ -4,5 +4,6 @@
     <fullyQualifiedTypeName name="dao.DichVuDao"/>
     <fullyQualifiedTypeName name="entity.DichVu"/>
     <fullyQualifiedTypeName name="javax.swing.JLabel"/>
+    <fullyQualifiedTypeName name="dao.PhongDao"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

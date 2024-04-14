@@ -3,7 +3,7 @@ package entity;
 public class Phong {
 	private String maPhong;
 	private int soPhong;
-	private LoaiPhong loaiPhong;
+	private String maLoaiPhong;
 	private String trangThai;
 
 	public String getMaPhong() {
@@ -22,12 +22,12 @@ public class Phong {
 		this.soPhong = soPhong;
 	}
 
-	public LoaiPhong getLoaiPhong() {
-		return loaiPhong;
+	public String getMaLoaiPhong() {
+		return maLoaiPhong;
 	}
 
-	public void setLoaiPhong(LoaiPhong loaiPhong) {
-		this.loaiPhong = loaiPhong;
+	public void setMaLoaiPhong(String maLoaiPhong) {
+		this.maLoaiPhong = maLoaiPhong;
 	}
 
 	public String getTrangThai() {
@@ -38,11 +38,11 @@ public class Phong {
 		this.trangThai = trangThai;
 	}
 
-	public Phong(String maPhong, int soPhong, LoaiPhong loaiPhong, String trangThai) {
+	public Phong(String maPhong, int soPhong, String maLoaiPhong, String trangThai) {
 		super();
 		this.maPhong = maPhong;
 		this.soPhong = soPhong;
-		this.loaiPhong = loaiPhong;
+		this.maLoaiPhong = maLoaiPhong;
 		this.trangThai = trangThai;
 	}
 

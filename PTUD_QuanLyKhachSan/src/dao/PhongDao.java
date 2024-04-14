@@ -26,16 +26,13 @@ public class PhongDao {
 	public ArrayList<Phong> timTatCaPhongSapXepTheoSoPhong() {
 		try {
 			Connection con = ConnectDB.getConnection();
-			String sql = "Select * from Phong order by soPhong";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from Phong order by soPhong");
 			while (rs.next()) {
-				LoaiPhong loaiPhong = new LoaiPhong(rs.getString(3));
-				phong = new Phong(rs.getString(1), rs.getInt(2), loaiPhong, rs.getString(4));
+				phong = new Phong(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4));
 				dsPhong.add(phong);
 			}
-			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return dsPhong;
@@ -48,7 +45,7 @@ public class PhongDao {
 			PreparedStatement stmt = con.prepareStatement("insert into Phong values(?,?,?,?)");
 			stmt.setString(1, phong.getMaPhong());
 			stmt.setInt(2, phong.getSoPhong());
-			stmt.setString(3, phong.getLoaiPhong().getMaLoaiPhong());
+			stmt.setString(3, phong.getMaLoaiPhong());
 			stmt.setString(4, phong.getTrangThai());
 			int n = stmt.executeUpdate();
 			return n > 0;
@@ -69,7 +66,7 @@ public class PhongDao {
 				stmt = ((Connection) con).prepareStatement(
 						"update Phong set soPhong = ?, maLoaiPhong = ?, trangThai = ? where maPhong = ?");
 				stmt.setInt(1, phong.getSoPhong());
-				stmt.setString(2, phong.getLoaiPhong().getMaLoaiPhong());
+				stmt.setString(2, phong.getMaLoaiPhong());
 				stmt.setString(3, phong.getTrangThai());
 				stmt.setString(4, phong.getMaPhong());
 				n = stmt.executeUpdate();
@@ -108,8 +105,7 @@ public class PhongDao {
 			stmt.setString(1, maPhong);
 			rs = stmt.executeQuery();
 			if (rs.next()) {
-				LoaiPhong loaiPhong = new LoaiPhong(rs.getString(3));
-				phong = new Phong(rs.getString(1), rs.getInt(2), loaiPhong, rs.getString(4));
+				phong = new Phong(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -128,8 +124,7 @@ public class PhongDao {
 			stmt.setInt(1, soPhong);
 			rs = stmt.executeQuery();
 			if (rs.next()) {
-				LoaiPhong loaiPhong = new LoaiPhong(rs.getString(3));
-				phong = new Phong(rs.getString(1), rs.getInt(2), loaiPhong, rs.getString(4));
+				phong = new Phong(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -149,8 +144,7 @@ public class PhongDao {
 			stmt.setString(1, maLoaiPhong);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
-				LoaiPhong loaiPhong = new LoaiPhong(rs.getString(3));
-				phong = new Phong(rs.getString(1), rs.getInt(2), loaiPhong, rs.getString(4));
+				phong = new Phong(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4));
 				dsPhong.add(phong);
 			}
 		} catch (SQLException e) {
@@ -171,8 +165,7 @@ public class PhongDao {
 			stmt.setString(1, trangThai);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
-				LoaiPhong loaiPhong = new LoaiPhong(rs.getString(3));
-				phong = new Phong(rs.getString(1), rs.getInt(2), loaiPhong, rs.getString(4));
+				phong = new Phong(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4));
 				dsPhong.add(phong);
 			}
 		} catch (SQLException e) {
@@ -194,8 +187,7 @@ public class PhongDao {
 			stmt.setString(2, trangThai);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
-				LoaiPhong loaiPhong = new LoaiPhong(rs.getString(3));
-				phong = new Phong(rs.getString(1), rs.getInt(2), loaiPhong, rs.getString(4));
+				phong = new Phong(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4));
 				dsPhong.add(phong);
 			}
 		} catch (SQLException e) {
@@ -219,8 +211,7 @@ public class PhongDao {
 			stmt.setString(3, trangThai);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
-				LoaiPhong loaiPhong = new LoaiPhong(rs.getString(3));
-				phong = new Phong(rs.getString(1), rs.getInt(2), loaiPhong, rs.getString(4));
+				phong = new Phong(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4));
 				dsPhong.add(phong);
 			}
 		} catch (SQLException e) {

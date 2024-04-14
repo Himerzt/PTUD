@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="btnNgay"/>
+		<item key="selection" value="ganDuLieuPhongVaoTrangChu"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="ganDuLieuPhongVaoTrangChu"/>
+			<item value="loadTableNhanVien"/>
+			<item value="getHangThanhVien()."/>
+			<item value="ganDuLieuPhongVaoQuanLyPhong"/>
+			<item value="ganDuLieuPhongVaoGiaoDien"/>
+			<item value="loadDuLieuPhonglenGiaoDien"/>
 			<item value="btnNgay"/>
 			<item value="&lt;&lt;&lt;"/>
 			<item value="===="/>
@@ -17,14 +23,10 @@
 			<item value="load"/>
 			<item value="loadDanh"/>
 			<item value="loadPhong"/>
-			<item value="==="/>
-			<item value="&lt;&lt;&lt;HEAD"/>
-			<item value="&lt;&lt;"/>
-			<item value="HEad"/>
-			<item value="HEAD"/>
-			<item value="=="/>
 		</list>
 		<list key="replacehistory">
+			<item value="ganDuLieuPhongVaoQuanLyPhong"/>
+			<item value="ganDuLieuPhongVaoGiaoDien"/>
 			<item value="y.get(i)"/>
 		</list>
 	</section>

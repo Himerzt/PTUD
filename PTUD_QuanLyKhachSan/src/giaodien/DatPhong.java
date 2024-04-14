@@ -39,6 +39,9 @@ public class DatPhong extends javax.swing.JDialog {
     
     
     public DatPhong(List<String> dsTenPhong){
+    	for (String string : dsTenPhong) {
+			System.out.println(string);
+		}
     	ConnectDB.getInstance().getConnection();
         initComponents();
     }
@@ -634,7 +637,7 @@ public class DatPhong extends javax.swing.JDialog {
 			txtNgaySinh.setText(kh.getNgaySinh().toString());
 			txtSoDienThoai.setText(kh.getSoDT());
 			txtQuocTich.setText(kh.getQuocTich());
-			txtHangThanhVien.setText(kh.getHangThanhVien().getMaHang());
+			txtHangThanhVien.setText(kh.getMaHangThanhVien());
 		} else {
 			// Thông báo bằng JOptionpane hỏi có muốn thêm khách hàng vào CSDL không
 			JOptionPane.showConfirmDialog(this, "Khách hàng không tồn tại. Bạn có muốn thêm khách hàng vào CSDL không?",
