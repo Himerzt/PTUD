@@ -24,18 +24,17 @@ public class PhongDao {
 	}
 
 	public ArrayList<Phong> timTatCaPhongSapXepTheoSoPhong() {
-		connectDB.ConnectDB.getInstance();
-		ConnectDB con = (ConnectDB) ConnectDB.getConnection();
-		Statement stmt = null;
-		ResultSet rs = null;
 		try {
-			stmt = ((Connection) con).createStatement();
-			rs = stmt.executeQuery("select * from Phong order by soPhong");
+			Connection con = ConnectDB.getConnection();
+			String sql = "Select * from Phong order by soPhong";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
 			while (rs.next()) {
 				LoaiPhong loaiPhong = new LoaiPhong(rs.getString(3));
 				phong = new Phong(rs.getString(1), rs.getInt(2), loaiPhong, rs.getString(4));
 				dsPhong.add(phong);
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -44,25 +43,19 @@ public class PhongDao {
 
 	// thêm phòng
 	public boolean themPhong(Phong phong) {
-		connectDB.ConnectDB.getInstance();
-		ConnectDB con = (ConnectDB) ConnectDB.getConnection();
-		PreparedStatement stmt = null;
-		int n = 0;
-		if (dsPhong.contains(phong)) {
-			try {
-				stmt = ((Connection) con).prepareStatement("insert into Phong values(?,?,?,?)");
-				stmt.setString(1, phong.getMaPhong());
-				stmt.setInt(2, phong.getSoPhong());
-				stmt.setString(3, phong.getLoaiPhong().getMaLoaiPhong());
-				stmt.setString(4, phong.getTrangThai());
-				n = stmt.executeUpdate();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+		try {
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con.prepareStatement("insert into Phong values(?,?,?,?)");
+			stmt.setString(1, phong.getMaPhong());
+			stmt.setInt(2, phong.getSoPhong());
+			stmt.setString(3, phong.getLoaiPhong().getMaLoaiPhong());
+			stmt.setString(4, phong.getTrangThai());
+			int n = stmt.executeUpdate();
 			return n > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
 		}
-		return false;
-
 	}
 
 	// sửa phòng
@@ -187,19 +180,18 @@ public class PhongDao {
 		}
 		return dsPhong;
 	}
-	// tìm phòng theo loại phòng, trạng thái và số lượng
-	public ArrayList<Phong> timPhongTheoLoaiPhongTrangThaiSoLuong(String maLoaiPhong, String trangThai, int soLuongPhong) {
+	
+	// tìm phòng theo loại phòng, trạng thái
+	public ArrayList<Phong> timPhongTheoLoaiPhongTrangThai(String maLoaiPhong, String trangThai) {
 		connectDB.ConnectDB.getInstance();
 		ConnectDB con = (ConnectDB) ConnectDB.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
 		try {
-			stmt = ((Connection) con)
-					.prepareStatement("select * from Phong where maLoaiPhong = ? and trangThai = ? limit ?");
+			stmt = ((Connection) con).prepareStatement("select * from Phong where maLoaiPhong = ? and trangThai = ?");
 			stmt.setString(1, maLoaiPhong);
 			stmt.setString(2, trangThai);
-			stmt.setInt(3, soLuongPhong);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 				LoaiPhong loaiPhong = new LoaiPhong(rs.getString(3));
@@ -211,6 +203,32 @@ public class PhongDao {
 		}
 		return dsPhong;
 	}
+	
+	// tìm phòng theo loại phòng, trạng thái, số lượng
+	public ArrayList<Phong> timPhongTheoLoaiPhongTrangThaiSoLuong(String maLoaiPhong, String trangThai, int soLuong) {
+		connectDB.ConnectDB.getInstance();
+		ConnectDB con = (ConnectDB) ConnectDB.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
+		try {
+			stmt = ((Connection) con)
+					.prepareStatement("select top (?) * from Phong where maLoaiPhong = ? and trangThai = ?");
+			stmt.setInt(1, soLuong);
+			stmt.setString(2, maLoaiPhong);
+			stmt.setString(3, trangThai);
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+				LoaiPhong loaiPhong = new LoaiPhong(rs.getString(3));
+				phong = new Phong(rs.getString(1), rs.getInt(2), loaiPhong, rs.getString(4));
+				dsPhong.add(phong);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return dsPhong;
+	}
+	
 	public int size() {
 		return dsPhong.size();
 	}

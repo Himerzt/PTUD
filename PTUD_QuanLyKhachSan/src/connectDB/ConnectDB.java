@@ -35,9 +35,5 @@ public class ConnectDB {
 				ex.printStackTrace();
 			}
 	}
-
-
-	
-	
 }
 
