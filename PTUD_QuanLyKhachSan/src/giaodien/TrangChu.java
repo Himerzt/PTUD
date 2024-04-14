@@ -217,6 +217,11 @@ public class TrangChu extends javax.swing.JFrame {
 
         btnGROUPLoaiPhong = new javax.swing.ButtonGroup();
         btnGROUPTrangThai = new javax.swing.ButtonGroup();
+        dateNgaySinhNhanVien = new chooserDay.DateChooser();
+        dateNgayVaoLam = new chooserDay.DateChooser();
+        dateNgayBatDauKM = new chooserDay.DateChooser();
+        dateNgayKetThucKM = new chooserDay.DateChooser();
+        dateNgaySinhKhachHang = new chooserDay.DateChooser();
         jPanel1 = new javax.swing.JPanel();
         pnHeader = new javax.swing.JPanel();
         Header = new component.Header();
@@ -675,6 +680,21 @@ public class TrangChu extends javax.swing.JFrame {
         txtHangThanhVien = new javax.swing.JTextField();
         jScrollPane6 = new javax.swing.JScrollPane();
         TableKhachHang = new javax.swing.JTable();
+
+        dateNgaySinhNhanVien.setForeground(new java.awt.Color(255, 203, 119));
+        dateNgaySinhNhanVien.setTextRefernce(txtNgaySinhNhanVien);
+
+        dateNgayVaoLam.setForeground(new java.awt.Color(255, 203, 119));
+        dateNgayVaoLam.setTextRefernce(txtNgayVaoLamNhanVien);
+
+        dateNgayBatDauKM.setForeground(new java.awt.Color(255, 203, 119));
+        dateNgayBatDauKM.setTextRefernce(txtNgayBatDauKhuyenMai);
+
+        dateNgayKetThucKM.setForeground(new java.awt.Color(255, 203, 119));
+        dateNgayKetThucKM.setTextRefernce(txtNgayKetThucKhuyenMai);
+
+        dateNgaySinhKhachHang.setForeground(new java.awt.Color(255, 203, 119));
+        dateNgaySinhKhachHang.setTextRefernce(txtNgaySinhKhachHang);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -4451,8 +4471,6 @@ public class TrangChu extends javax.swing.JFrame {
         txtMaNhanVien.setText("Mã nhân viên");
         txtMaNhanVien.setEnabled(false);
 
-        txtNgayVaoLamNhanVien.setText("Ngày vào làm");
-
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Họ tên nhân viên");
@@ -4468,8 +4486,6 @@ public class TrangChu extends javax.swing.JFrame {
         txtHoTenNhanVien.setText("Họ tên nhân viên");
 
         txtSoDienThoaiNhanVien.setText("Số điện thoại nhân viên");
-
-        txtNgaySinhNhanVien.setText("Ngày sinh nhân viên");
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -4897,8 +4913,6 @@ public class TrangChu extends javax.swing.JFrame {
 
         txtMaKhuyenMai.setText("Mã khuyến mãi");
 
-        txtNgayBatDauKhuyenMai.setText("Bắt đầu khuyến mãi");
-
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel22.setText("Tên khuyến mãi");
@@ -4912,8 +4926,6 @@ public class TrangChu extends javax.swing.JFrame {
         jLabel23.setPreferredSize(new java.awt.Dimension(120, 21));
 
         txtTenKhuyenMai.setText("Tên khuyến mãi");
-
-        txtNgayKetThucKhuyenMai.setText("Kết thúc khuyến mãi");
 
         txtGiaTriKhuyenMai.setText("Giá trị khuyến mãi");
 
@@ -5159,8 +5171,6 @@ public class TrangChu extends javax.swing.JFrame {
                 txtSoDienThoaiKhachHangActionPerformed(evt);
             }
         });
-
-        txtNgaySinhKhachHang.setText("Ngày sinh");
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -5648,23 +5658,23 @@ public class TrangChu extends javax.swing.JFrame {
     }// GEN-LAST:event_jButton4ActionPerformed
 
     private void btnNgaySinhNhanVienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgaySinhNhanVienActionPerformed
-        // TODO add your handling code here:
+        dateNgaySinhNhanVien.showPopup();
     }// GEN-LAST:event_btnNgaySinhNhanVienActionPerformed
 
     private void btnNgayVaoLamNhanVienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgayVaoLamNhanVienActionPerformed
-        // TODO add your handling code here:
+        dateNgayVaoLam.showPopup();
     }// GEN-LAST:event_btnNgayVaoLamNhanVienActionPerformed
 
     private void btnThoiGianKetThucKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThoiGianKetThucKhuyenMaiActionPerformed
-        // TODO add your handling code here:
+        dateNgayKetThucKM.showPopup();
     }// GEN-LAST:event_btnThoiGianKetThucKhuyenMaiActionPerformed
 
     private void btnNgaySinhNhanVien3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgaySinhNhanVien3ActionPerformed
-        // TODO add your handling code here:
+        dateNgaySinhKhachHang.showPopup();
     }// GEN-LAST:event_btnNgaySinhNhanVien3ActionPerformed
 
     private void btnThoiGianBatDauKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThoiGianBatDauKhuyenMaiActionPerformed
-        // TODO add your handling code here:
+        dateNgayBatDauKM.showPopup();
     }// GEN-LAST:event_btnThoiGianBatDauKhuyenMaiActionPerformed
 
     private void txtSoDienThoaiKhachHangActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtSoDienThoaiKhachHangActionPerformed
@@ -5986,6 +5996,11 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkBoxPhongQL7;
     private javax.swing.JCheckBox checkBoxPhongQL8;
     private javax.swing.JCheckBox checkBoxPhongQL9;
+    private chooserDay.DateChooser dateNgayBatDauKM;
+    private chooserDay.DateChooser dateNgayKetThucKM;
+    private chooserDay.DateChooser dateNgaySinhKhachHang;
+    private chooserDay.DateChooser dateNgaySinhNhanVien;
+    private chooserDay.DateChooser dateNgayVaoLam;
     private javax.swing.JPanel funtionPanel;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
