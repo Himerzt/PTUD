@@ -8,7 +8,6 @@ import entity.DichVu;
 import entity.DichVuPhong;
 import entity.KhachHang;
 
-import java.sql.Connection;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -17,7 +16,6 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import connectDB.ConnectDB;
 import dao.DichVuDao;
 import dao.KhachHangDao;
 
@@ -32,7 +30,6 @@ public class DatPhong extends javax.swing.JFrame {
 	 * Creates new form DatPhong
 	 */
 	public DatPhong() {
-		ConnectDB.getInstance().getConnection();
 		initComponents();
 	}
 
@@ -399,7 +396,7 @@ public class DatPhong extends javax.swing.JFrame {
 		}, new String[] { "STT", "Tên phòng", "Loại phòng", "Kiểu thuê", "Ngày đặt", "Ngày nhận", "Ngày trả" }) {
 			Class[] types = new Class[] { java.lang.Integer.class, java.lang.String.class, java.lang.String.class,
 					java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class };
-			boolean[] canEdit = new boolean[] { false, false, false, false, false, false, false};
+			boolean[] canEdit = new boolean[] { false, false, false, false, false, false, false };
 
 			public Class getColumnClass(int columnIndex) {
 				return types[columnIndex];
@@ -421,9 +418,14 @@ public class DatPhong extends javax.swing.JFrame {
 		}, new String[] { "STT", "Tên dịch vụ", "Số lượng", "Phòng", "Giá" }) {
 			Class[] types = new Class[] { java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class,
 					java.lang.Object.class, java.lang.Object.class };
+			boolean[] canEdit = new boolean[] { false, false, false, false, false };
 
 			public Class getColumnClass(int columnIndex) {
 				return types[columnIndex];
+			}
+
+			public boolean isCellEditable(int rowIndex, int columnIndex) {
+				return canEdit[columnIndex];
 			}
 		});
 		tableDV.setRowHeight(40);
@@ -432,7 +434,9 @@ public class DatPhong extends javax.swing.JFrame {
 		jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
 		comboBoxDichVu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel<>(loadDanhSachDichVu()));
+		comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel<>(
+				new String[] { "Ăn sáng", "Ăn trưa", "Ăn chiều", "Giặt quần áo", "Đưa đón khách", "Thêm giường",
+						"Thêm gối", "Thêm chăn", "Nước ngọt", "Nước suối", "Gọi món tại phòng" }));
 
 		btnThemDichVu.setText("Thêm dịch vụ");
 		btnThemDichVu.addActionListener(new java.awt.event.ActionListener() {
@@ -541,7 +545,7 @@ public class DatPhong extends javax.swing.JFrame {
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void btnNgaySinhActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgaySinhActionPerformed
-		
+		// TODO add your handling code here:
 	}// GEN-LAST:event_btnNgaySinhActionPerformed
 
 	private void btnNgayDatActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgayDatActionPerformed
@@ -549,11 +553,19 @@ public class DatPhong extends javax.swing.JFrame {
 	}// GEN-LAST:event_btnNgayDatActionPerformed
 
 	private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemDichVuActionPerformed
+		// TODO add your handling code here:
+
 		loadDanhSachDichVu();
 		double giadichVu = 0;
 		String chossedItem = comboBoxDichVu.getSelectedItem().toString();
 		// Lấy model hiện tại từ tableDV
 		DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
+//        for (DichVuPhong dv : danhSachDichVu) {
+//            if (chossedItem.equalsIgnoreCase(dv.())) {
+//                giadichVu = dv.get();
+//                break;
+//            }
+//        }
 		// Duyệt qua các hàng trong model để kiểm tra nếu dịch vụ đã tồn tại
 		for (int i = 0; i < model.getRowCount(); i++) {
 			String serviceName = model.getValueAt(i, 1).toString();
@@ -595,7 +607,7 @@ public class DatPhong extends javax.swing.JFrame {
 					"Xác nhận", JOptionPane.YES_NO_OPTION);
 			if (JOptionPane.YES_OPTION == 0) {
 				// Mở form thêm khách hàng
-				
+
 				// Thêm khách hàng vào CSDL
 
 				// Sau khi thêm xong thì fill các textfield còn lại
@@ -644,8 +656,6 @@ public class DatPhong extends javax.swing.JFrame {
 				new DatPhong().setVisible(true);
 			}
 		});
-		
-		
 	}
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
@@ -717,5 +727,4 @@ public class DatPhong extends javax.swing.JFrame {
 		}
 		return tenDV;
 	}
-	
 }
