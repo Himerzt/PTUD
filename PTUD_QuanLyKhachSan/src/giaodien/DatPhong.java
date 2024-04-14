@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,7 +22,7 @@ import dao.KhachHangDao;
  *
  * @author Huynguyen
  */
-public class DatPhong extends javax.swing.JFrame {
+public class DatPhong extends javax.swing.JDialog {
 
 	//connect db
     private List<DichVuPhong> danhSachDichVu;
@@ -40,11 +41,6 @@ public class DatPhong extends javax.swing.JFrame {
     public DatPhong(List<String> dsTenPhong){
     	ConnectDB.getInstance().getConnection();
         initComponents();
-        for (String roomName : dsTenPhong) {
-            System.out.println(roomName);
-        }
-
-      
     }
 
 	@SuppressWarnings("unchecked")
@@ -100,7 +96,9 @@ public class DatPhong extends javax.swing.JFrame {
 		btnHuy = new javax.swing.JButton();
 		btnDatPhong = new javax.swing.JButton();
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+//		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+//		TTK - Đóng cửa sổ nhưng không đóng ứng dụng
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
 		jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
 		jLabel1.setText("Đặt phòng");
