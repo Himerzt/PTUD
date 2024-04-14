@@ -66,15 +66,17 @@ public class TrangChu extends javax.swing.JFrame {
 			public void selected(int index, int subIndex) {
 				if (index == 6) {
 					System.exit(0);
+                                       
 				}
 
 				if (index == 0) {
+                                        
 					pnedUngDung.setSelectedIndex(0);
 				}
 
 				if (index == 1) {
-					pnedUngDung.setSelectedIndex(1);
-//                                        loadDuLieuPhonglenGiaoDien();
+                                	pnedUngDung.setSelectedIndex(1);                                       
+//                                      loadDuLieuPhonglenGiaoDien();
 				}
 
 				if (index == 2) {
@@ -109,7 +111,7 @@ public class TrangChu extends javax.swing.JFrame {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MMM-dd");
 		String df = format.format(d);
 
-		// lbl_current_date.setText(df);
+		lblcurrentdate.setText(df);
 	}
 
 	/**
@@ -128,7 +130,7 @@ public class TrangChu extends javax.swing.JFrame {
 				dformat = new SimpleDateFormat("hh:mm:ss a");
 
 				String timeindate = dformat.format(d);
-				// lbl_time.setText(timeindate);
+				lblcurrentTime.setText(timeindate);
 
 			}
 		});
@@ -215,156 +217,155 @@ public class TrangChu extends javax.swing.JFrame {
         pnedUngDung = new javax.swing.JTabbedPane();
         pnTrangChu = new javax.swing.JPanel();
         pnLayOutTrangChu = new javax.swing.JPanel();
-        ScrollPaneTrangChu = new javax.swing.JScrollPane();
         pnBody1 = new javax.swing.JPanel();
         Tang1_TrangChu = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        phong2 = new javax.swing.JPanel();
-        lblTenPhong2 = new javax.swing.JLabel();
-        lblLoaiPhong2 = new javax.swing.JLabel();
-        lblTrangThai2 = new javax.swing.JLabel();
-        phong3 = new javax.swing.JPanel();
-        lblTenPhong3 = new javax.swing.JLabel();
-        lblLoaiPhong3 = new javax.swing.JLabel();
-        lblTrangThai3 = new javax.swing.JLabel();
-        phong4 = new javax.swing.JPanel();
-        lblTenPhong4 = new javax.swing.JLabel();
-        lblLoaiPhong4 = new javax.swing.JLabel();
-        lblTrangThai4 = new javax.swing.JLabel();
-        phong5 = new javax.swing.JPanel();
-        lblTenPhong5 = new javax.swing.JLabel();
-        lblLoaiPhong5 = new javax.swing.JLabel();
-        lblTrangThai5 = new javax.swing.JLabel();
-        phong6 = new javax.swing.JPanel();
-        lblTenPhong6 = new javax.swing.JLabel();
-        lblLoaiPhong6 = new javax.swing.JLabel();
-        lblTrangThai6 = new javax.swing.JLabel();
-        phong9 = new javax.swing.JPanel();
-        lblTenPhong9 = new javax.swing.JLabel();
-        lblLoaiPhong9 = new javax.swing.JLabel();
-        lblTrangThai9 = new javax.swing.JLabel();
-        phong10 = new javax.swing.JPanel();
-        lblTenPhong10 = new javax.swing.JLabel();
-        lblLoaiPhong10 = new javax.swing.JLabel();
-        lblTrangThai10 = new javax.swing.JLabel();
-        phong11 = new javax.swing.JPanel();
-        lblTenPhong11 = new javax.swing.JLabel();
-        lblLoaiPhong11 = new javax.swing.JLabel();
-        lblTrangThai11 = new javax.swing.JLabel();
-        phong13 = new javax.swing.JPanel();
-        lblTenPhong13 = new javax.swing.JLabel();
-        lblLoaiPhong13 = new javax.swing.JLabel();
-        lblTrangThai13 = new javax.swing.JLabel();
-        phong14 = new javax.swing.JPanel();
-        lblTenPhong14 = new javax.swing.JLabel();
-        lblLoaiPhong14 = new javax.swing.JLabel();
-        lblTrangThai14 = new javax.swing.JLabel();
-        Tang2_TrangChu = new javax.swing.JPanel();
+        phongTrangChu1 = new javax.swing.JPanel();
+        lblTenPhongTrangChu1 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu1 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu1 = new javax.swing.JLabel();
+        phongTrangChu2 = new javax.swing.JPanel();
+        lblTenPhongTrangChu2 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu2 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu2 = new javax.swing.JLabel();
+        phongTrangChu3 = new javax.swing.JPanel();
+        lblTenPhongTrangChu3 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu3 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu3 = new javax.swing.JLabel();
+        phongTrangChu4 = new javax.swing.JPanel();
+        lblTenPhongTrangChu4 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu4 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu4 = new javax.swing.JLabel();
+        phongTrangChu5 = new javax.swing.JPanel();
+        lblTenPhongTrangChu5 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu5 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu5 = new javax.swing.JLabel();
+        phongTrangChu6 = new javax.swing.JPanel();
+        lblTenPhongTrangChu6 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu6 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu6 = new javax.swing.JLabel();
+        phongTrangChu7 = new javax.swing.JPanel();
+        lblTenPhongTrangChu7 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu7 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu7 = new javax.swing.JLabel();
+        phongTrangChu8 = new javax.swing.JPanel();
+        lblTenPhongTrangChu8 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu8 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu8 = new javax.swing.JLabel();
+        phongTrangChu9 = new javax.swing.JPanel();
+        lblTenPhongTrangChu9 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu9 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu9 = new javax.swing.JLabel();
+        phongTrangChu10 = new javax.swing.JPanel();
+        lblTenPhongTrangChu10 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu10 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu10 = new javax.swing.JLabel();
+        Tang1_TrangChu1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        phong17 = new javax.swing.JPanel();
-        lblTenPhong17 = new javax.swing.JLabel();
-        lblLoaiPhong17 = new javax.swing.JLabel();
-        lblTrangThai17 = new javax.swing.JLabel();
-        phong18 = new javax.swing.JPanel();
-        lblTenPhong18 = new javax.swing.JLabel();
-        lblLoaiPhong18 = new javax.swing.JLabel();
-        lblTrangThai18 = new javax.swing.JLabel();
-        phong19 = new javax.swing.JPanel();
-        lblTenPhong19 = new javax.swing.JLabel();
-        lblLoaiPhong19 = new javax.swing.JLabel();
-        lblTrangThai19 = new javax.swing.JLabel();
-        phong20 = new javax.swing.JPanel();
-        lblTenPhong20 = new javax.swing.JLabel();
-        lblLoaiPhong20 = new javax.swing.JLabel();
-        lblTrangThai20 = new javax.swing.JLabel();
-        phong21 = new javax.swing.JPanel();
-        lblTenPhong21 = new javax.swing.JLabel();
-        lblLoaiPhong21 = new javax.swing.JLabel();
-        lblTrangThai21 = new javax.swing.JLabel();
-        phong24 = new javax.swing.JPanel();
-        lblTenPhong24 = new javax.swing.JLabel();
-        lblLoaiPhong24 = new javax.swing.JLabel();
-        lblTrangThai24 = new javax.swing.JLabel();
-        phong25 = new javax.swing.JPanel();
-        lblTenPhong25 = new javax.swing.JLabel();
-        lblLoaiPhong25 = new javax.swing.JLabel();
-        lblTrangThai25 = new javax.swing.JLabel();
-        phong26 = new javax.swing.JPanel();
-        lblTenPhong26 = new javax.swing.JLabel();
-        lblTrangThai26 = new javax.swing.JLabel();
-        phong27 = new javax.swing.JPanel();
-        lblTenPhong27 = new javax.swing.JLabel();
-        lblLoaiPhong27 = new javax.swing.JLabel();
-        lblTrangThai27 = new javax.swing.JLabel();
-        lblLoaiPhong26 = new javax.swing.JLabel();
-        phong28 = new javax.swing.JPanel();
-        lblTenPhong28 = new javax.swing.JLabel();
-        lblLoaiPhong28 = new javax.swing.JLabel();
-        lblTrangThai28 = new javax.swing.JLabel();
-        Tang3_TrangChu = new javax.swing.JPanel();
+        phongTrangChu11 = new javax.swing.JPanel();
+        lblTenPhongTrangChu11 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu11 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu11 = new javax.swing.JLabel();
+        phongTrangChu12 = new javax.swing.JPanel();
+        lblTenPhongTrangChu12 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu12 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu12 = new javax.swing.JLabel();
+        phongTrangChu13 = new javax.swing.JPanel();
+        lblTenPhongTrangChu13 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu13 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu13 = new javax.swing.JLabel();
+        phongTrangChu14 = new javax.swing.JPanel();
+        lblTenPhongTrangChu14 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu14 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu14 = new javax.swing.JLabel();
+        phongTrangChu15 = new javax.swing.JPanel();
+        lblTenPhongTrangChu15 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu15 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu15 = new javax.swing.JLabel();
+        phongTrangChu16 = new javax.swing.JPanel();
+        lblTenPhongTrangChu16 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu16 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu16 = new javax.swing.JLabel();
+        phongTrangChu17 = new javax.swing.JPanel();
+        lblTenPhongTrangChu17 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu17 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu17 = new javax.swing.JLabel();
+        phongTrangChu18 = new javax.swing.JPanel();
+        lblTenPhongTrangChu18 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu18 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu18 = new javax.swing.JLabel();
+        phongTrangChu19 = new javax.swing.JPanel();
+        lblTenPhongTrangChu19 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu19 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu19 = new javax.swing.JLabel();
+        phongTrangChu20 = new javax.swing.JPanel();
+        lblTenPhongTrangChu20 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu20 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu20 = new javax.swing.JLabel();
+        Tang1_TrangChu2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        phong31 = new javax.swing.JPanel();
-        lblTenPhong31 = new javax.swing.JLabel();
-        lblLoaiPhong31 = new javax.swing.JLabel();
-        lblTrangThai31 = new javax.swing.JLabel();
-        phong32 = new javax.swing.JPanel();
-        lblTenPhong32 = new javax.swing.JLabel();
-        lblLoaiPhong32 = new javax.swing.JLabel();
-        lblTrangThai32 = new javax.swing.JLabel();
-        phong33 = new javax.swing.JPanel();
-        lblTenPhong33 = new javax.swing.JLabel();
-        lblLoaiPhong33 = new javax.swing.JLabel();
-        lblTrangThai33 = new javax.swing.JLabel();
-        phong34 = new javax.swing.JPanel();
-        lblTenPhong34 = new javax.swing.JLabel();
-        lblLoaiPhong34 = new javax.swing.JLabel();
-        lblTrangThai34 = new javax.swing.JLabel();
-        phong35 = new javax.swing.JPanel();
-        lblTenPhong35 = new javax.swing.JLabel();
-        lblLoaiPhong35 = new javax.swing.JLabel();
-        lblTrangThai35 = new javax.swing.JLabel();
-        phong38 = new javax.swing.JPanel();
-        lblTenPhong38 = new javax.swing.JLabel();
-        lblLoaiPhong38 = new javax.swing.JLabel();
-        lblTrangThai38 = new javax.swing.JLabel();
-        phong39 = new javax.swing.JPanel();
-        lblTenPhong39 = new javax.swing.JLabel();
-        lblLoaiPhong39 = new javax.swing.JLabel();
-        lblTrangThai39 = new javax.swing.JLabel();
-        phong40 = new javax.swing.JPanel();
-        lblTenPhong40 = new javax.swing.JLabel();
-        lblLoaiPhong40 = new javax.swing.JLabel();
-        lblTrangThai40 = new javax.swing.JLabel();
-        phong41 = new javax.swing.JPanel();
-        lblTenPhong41 = new javax.swing.JLabel();
-        lblLoaiPhong41 = new javax.swing.JLabel();
-        lblTrangThai41 = new javax.swing.JLabel();
-        phong42 = new javax.swing.JPanel();
-        lblTenPhong42 = new javax.swing.JLabel();
-        lblLoaiPhong42 = new javax.swing.JLabel();
-        lblTrangThai42 = new javax.swing.JLabel();
-        Tang4_TrangChu = new javax.swing.JPanel();
+        phongTrangChu21 = new javax.swing.JPanel();
+        lblTenPhongTrangChu21 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu21 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu21 = new javax.swing.JLabel();
+        phongTrangChu22 = new javax.swing.JPanel();
+        lblTenPhongTrangChu22 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu22 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu22 = new javax.swing.JLabel();
+        phongTrangChu23 = new javax.swing.JPanel();
+        lblTenPhongTrangChu23 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu23 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu23 = new javax.swing.JLabel();
+        phongTrangChu24 = new javax.swing.JPanel();
+        lblTenPhongTrangChu24 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu24 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu24 = new javax.swing.JLabel();
+        phongTrangChu25 = new javax.swing.JPanel();
+        lblTenPhongTrangChu25 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu25 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu25 = new javax.swing.JLabel();
+        phongTrangChu26 = new javax.swing.JPanel();
+        lblTenPhongTrangChu26 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu26 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu26 = new javax.swing.JLabel();
+        phongTrangChu27 = new javax.swing.JPanel();
+        lblTenPhongTrangChu27 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu27 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu27 = new javax.swing.JLabel();
+        phongTrangChu28 = new javax.swing.JPanel();
+        lblTenPhongTrangChu28 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu28 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu28 = new javax.swing.JLabel();
+        phongTrangChu29 = new javax.swing.JPanel();
+        lblTenPhongTrangChu29 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu29 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu29 = new javax.swing.JLabel();
+        phongTrangChu30 = new javax.swing.JPanel();
+        lblTenPhongTrangChu30 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu30 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu30 = new javax.swing.JLabel();
+        Tang1_TrangChu3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        phong36 = new javax.swing.JPanel();
-        lblTenPhong36 = new javax.swing.JLabel();
-        lblLoaiPhong36 = new javax.swing.JLabel();
-        lblTrangThai36 = new javax.swing.JLabel();
-        phong37 = new javax.swing.JPanel();
-        lblTenPhong37 = new javax.swing.JLabel();
-        lblLoaiPhong37 = new javax.swing.JLabel();
-        lblTrangThai37 = new javax.swing.JLabel();
-        phong48 = new javax.swing.JPanel();
-        lblTenPhong48 = new javax.swing.JLabel();
-        lblLoaiPhong48 = new javax.swing.JLabel();
-        lblTrangThai48 = new javax.swing.JLabel();
-        phong49 = new javax.swing.JPanel();
-        lblTenPhong49 = new javax.swing.JLabel();
-        lblLoaiPhong49 = new javax.swing.JLabel();
-        lblTrangThai49 = new javax.swing.JLabel();
-        phong50 = new javax.swing.JPanel();
-        lblTenPhong50 = new javax.swing.JLabel();
-        lblLoaiPhong50 = new javax.swing.JLabel();
-        lblTrangThai50 = new javax.swing.JLabel();
+        phongTrangChu31 = new javax.swing.JPanel();
+        lblTenPhongTrangChu31 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu31 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu31 = new javax.swing.JLabel();
+        phongTrangChu32 = new javax.swing.JPanel();
+        lblTenPhongTrangChu32 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu32 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu32 = new javax.swing.JLabel();
+        phongTrangChu33 = new javax.swing.JPanel();
+        lblTenPhongTrangChu33 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu33 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu33 = new javax.swing.JLabel();
+        phongTrangChu34 = new javax.swing.JPanel();
+        lblTenPhongTrangChu34 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu34 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu34 = new javax.swing.JLabel();
+        phongTrangChu35 = new javax.swing.JPanel();
+        lblTenPhongTrangChu35 = new javax.swing.JLabel();
+        lblLoaiPhongTrangChu35 = new javax.swing.JLabel();
+        lblTrangThaiTrangChu35 = new javax.swing.JLabel();
         pnQuanLyPhong = new javax.swing.JPanel();
         ScrollPaneQuanLyPhong = new javax.swing.JScrollPane();
         pnBody2 = new javax.swing.JPanel();
@@ -745,383 +746,373 @@ public class TrangChu extends javax.swing.JFrame {
         Tang1_TrangChu.setBackground(new java.awt.Color(255, 255, 255));
         Tang1_TrangChu.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 1", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
 
-        phong2.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu1.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu1.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong2.setText("101TC");
+        lblTenPhongTrangChu1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu1.setText("101TC");
 
-        lblLoaiPhong2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong2.setText("Tiêu chuẩn");
+        lblLoaiPhongTrangChu1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu1.setText("Tiêu chuẩn");
 
-        lblTrangThai2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai2.setText("Đang thuê");
+        lblTrangThaiTrangChu1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu1.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong2Layout = new javax.swing.GroupLayout(phong2);
-        phong2.setLayout(phong2Layout);
-        phong2Layout.setHorizontalGroup(
-            phong2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong2Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu1Layout = new javax.swing.GroupLayout(phongTrangChu1);
+        phongTrangChu1.setLayout(phongTrangChu1Layout);
+        phongTrangChu1Layout.setHorizontalGroup(
+            phongTrangChu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai2, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
+                .addGroup(phongTrangChu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu1, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(lblTenPhong2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblTenPhongTrangChu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong2Layout.setVerticalGroup(
-            phong2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong2Layout.createSequentialGroup()
+        phongTrangChu1Layout.setVerticalGroup(
+            phongTrangChu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai2)
-                .addContainerGap())
-        );
-
-        phong3.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong3.setText("102NC");
-
-        lblLoaiPhong3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong3.setText("Nâng cao");
-
-        lblTrangThai3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai3.setText("Đang trống");
-
-        javax.swing.GroupLayout phong3Layout = new javax.swing.GroupLayout(phong3);
-        phong3.setLayout(phong3Layout);
-        phong3Layout.setHorizontalGroup(
-            phong3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai3, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong3Layout.setVerticalGroup(
-            phong3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai3)
+                .addComponent(lblLoaiPhongTrangChu1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu1)
                 .addContainerGap())
         );
 
-        phong4.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu2.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu2.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong4.setText("103CC");
+        lblTenPhongTrangChu2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu2.setText("101TC");
 
-        lblLoaiPhong4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong4.setText("Cao cấp");
+        lblLoaiPhongTrangChu2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu2.setText("Tiêu chuẩn");
 
-        lblTrangThai4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai4.setText("Đã đặt");
+        lblTrangThaiTrangChu2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu2.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong4Layout = new javax.swing.GroupLayout(phong4);
-        phong4.setLayout(phong4Layout);
-        phong4Layout.setHorizontalGroup(
-            phong4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong4Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu2Layout = new javax.swing.GroupLayout(phongTrangChu2);
+        phongTrangChu2.setLayout(phongTrangChu2Layout);
+        phongTrangChu2Layout.setHorizontalGroup(
+            phongTrangChu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai4, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
+                .addGroup(phongTrangChu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu2, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(lblTenPhongTrangChu2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong4Layout.setVerticalGroup(
-            phong4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong4Layout.createSequentialGroup()
+        phongTrangChu2Layout.setVerticalGroup(
+            phongTrangChu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai4)
-                .addContainerGap())
-        );
-
-        phong5.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong5.setText("109TC");
-
-        lblLoaiPhong5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong5.setText("Thương gia");
-
-        lblTrangThai5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai5.setText("Đang thuê");
-
-        javax.swing.GroupLayout phong5Layout = new javax.swing.GroupLayout(phong5);
-        phong5.setLayout(phong5Layout);
-        phong5Layout.setHorizontalGroup(
-            phong5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai5, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong5Layout.setVerticalGroup(
-            phong5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai5)
+                .addComponent(lblLoaiPhongTrangChu2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu2)
                 .addContainerGap())
         );
 
-        phong6.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu3.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu3.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong6.setText("102TC");
+        lblTenPhongTrangChu3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu3.setText("101TC");
 
-        lblLoaiPhong6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong6.setText("Tiêu chuẩn");
+        lblLoaiPhongTrangChu3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu3.setText("Tiêu chuẩn");
 
-        lblTrangThai6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai6.setText("Trạng thái");
+        lblTrangThaiTrangChu3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu3.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong6Layout = new javax.swing.GroupLayout(phong6);
-        phong6.setLayout(phong6Layout);
-        phong6Layout.setHorizontalGroup(
-            phong6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong6Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu3Layout = new javax.swing.GroupLayout(phongTrangChu3);
+        phongTrangChu3.setLayout(phongTrangChu3Layout);
+        phongTrangChu3Layout.setHorizontalGroup(
+            phongTrangChu3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai6, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
+                .addGroup(phongTrangChu3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu3, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(lblTenPhongTrangChu3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong6Layout.setVerticalGroup(
-            phong6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong6Layout.createSequentialGroup()
+        phongTrangChu3Layout.setVerticalGroup(
+            phongTrangChu3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai6)
-                .addContainerGap())
-        );
-
-        phong9.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong9.setText("Tên phòng");
-
-        lblLoaiPhong9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong9.setText("Loại phòng");
-
-        lblTrangThai9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai9.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong9Layout = new javax.swing.GroupLayout(phong9);
-        phong9.setLayout(phong9Layout);
-        phong9Layout.setHorizontalGroup(
-            phong9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong9, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(phong9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLoaiPhong9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong9Layout.setVerticalGroup(
-            phong9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        phong10.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong10.setText("Tên phòng");
-
-        lblLoaiPhong10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong10.setText("Loại phòng");
-
-        lblTrangThai10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai10.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong10Layout = new javax.swing.GroupLayout(phong10);
-        phong10.setLayout(phong10Layout);
-        phong10Layout.setHorizontalGroup(
-            phong10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong10, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLoaiPhong10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong10Layout.setVerticalGroup(
-            phong10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai10)
+                .addComponent(lblLoaiPhongTrangChu3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu3)
                 .addContainerGap())
         );
 
-        phong11.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu4.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu4.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong11.setText("Tên phòng");
+        lblTenPhongTrangChu4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu4.setText("101TC");
 
-        lblLoaiPhong11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong11.setText("Loại phòng");
+        lblLoaiPhongTrangChu4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu4.setText("Tiêu chuẩn");
 
-        lblTrangThai11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai11.setText("Trạng thái");
+        lblTrangThaiTrangChu4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu4.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong11Layout = new javax.swing.GroupLayout(phong11);
-        phong11.setLayout(phong11Layout);
-        phong11Layout.setHorizontalGroup(
-            phong11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong11, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(phong11Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu4Layout = new javax.swing.GroupLayout(phongTrangChu4);
+        phongTrangChu4.setLayout(phongTrangChu4Layout);
+        phongTrangChu4Layout.setHorizontalGroup(
+            phongTrangChu4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLoaiPhong11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu4, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu4Layout.setVerticalGroup(
+            phongTrangChu4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu4)
                 .addContainerGap())
         );
-        phong11Layout.setVerticalGroup(
-            phong11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong11Layout.createSequentialGroup()
+
+        phongTrangChu5.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu5.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu5.setText("101TC");
+
+        lblLoaiPhongTrangChu5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu5.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu5.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu5Layout = new javax.swing.GroupLayout(phongTrangChu5);
+        phongTrangChu5.setLayout(phongTrangChu5Layout);
+        phongTrangChu5Layout.setHorizontalGroup(
+            phongTrangChu5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu5, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        phong13.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong13.setText("Tên phòng");
-
-        lblLoaiPhong13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong13.setText("Loại phòng");
-
-        lblTrangThai13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai13.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong13Layout = new javax.swing.GroupLayout(phong13);
-        phong13.setLayout(phong13Layout);
-        phong13Layout.setHorizontalGroup(
-            phong13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong13, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(phong13Layout.createSequentialGroup()
+        phongTrangChu5Layout.setVerticalGroup(
+            phongTrangChu5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLoaiPhong13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lblLoaiPhongTrangChu5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu5)
                 .addContainerGap())
         );
-        phong13Layout.setVerticalGroup(
-            phong13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong13Layout.createSequentialGroup()
+
+        phongTrangChu6.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu6.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu6.setText("101TC");
+
+        lblLoaiPhongTrangChu6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu6.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu6.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu6Layout = new javax.swing.GroupLayout(phongTrangChu6);
+        phongTrangChu6.setLayout(phongTrangChu6Layout);
+        phongTrangChu6Layout.setHorizontalGroup(
+            phongTrangChu6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai13)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu6, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        phong14.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong14.setText("Tên phòng");
-
-        lblLoaiPhong14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong14.setText("Loại phòng");
-
-        lblTrangThai14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai14.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong14Layout = new javax.swing.GroupLayout(phong14);
-        phong14.setLayout(phong14Layout);
-        phong14Layout.setHorizontalGroup(
-            phong14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong14, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong14Layout.createSequentialGroup()
+        phongTrangChu6Layout.setVerticalGroup(
+            phongTrangChu6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLoaiPhong14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lblLoaiPhongTrangChu6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu6)
                 .addContainerGap())
         );
-        phong14Layout.setVerticalGroup(
-            phong14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong14Layout.createSequentialGroup()
+
+        phongTrangChu7.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu7.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu7.setText("101TC");
+
+        lblLoaiPhongTrangChu7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu7.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu7.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu7Layout = new javax.swing.GroupLayout(phongTrangChu7);
+        phongTrangChu7.setLayout(phongTrangChu7Layout);
+        phongTrangChu7Layout.setHorizontalGroup(
+            phongTrangChu7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong14, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai14)
+                .addGroup(phongTrangChu7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu7, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu7Layout.setVerticalGroup(
+            phongTrangChu7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu7)
+                .addContainerGap())
+        );
+
+        phongTrangChu8.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu8.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu8.setText("101TC");
+
+        lblLoaiPhongTrangChu8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu8.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu8.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu8Layout = new javax.swing.GroupLayout(phongTrangChu8);
+        phongTrangChu8.setLayout(phongTrangChu8Layout);
+        phongTrangChu8Layout.setHorizontalGroup(
+            phongTrangChu8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu8, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu8Layout.setVerticalGroup(
+            phongTrangChu8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu8)
+                .addContainerGap())
+        );
+
+        phongTrangChu9.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu9.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu9.setText("101TC");
+
+        lblLoaiPhongTrangChu9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu9.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu9.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu9Layout = new javax.swing.GroupLayout(phongTrangChu9);
+        phongTrangChu9.setLayout(phongTrangChu9Layout);
+        phongTrangChu9Layout.setHorizontalGroup(
+            phongTrangChu9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu9, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu9Layout.setVerticalGroup(
+            phongTrangChu9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu9)
+                .addContainerGap())
+        );
+
+        phongTrangChu10.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu10.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu10.setText("101TC");
+
+        lblLoaiPhongTrangChu10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu10.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu10.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu10Layout = new javax.swing.GroupLayout(phongTrangChu10);
+        phongTrangChu10.setLayout(phongTrangChu10Layout);
+        phongTrangChu10Layout.setHorizontalGroup(
+            phongTrangChu10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu10, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu10Layout.setVerticalGroup(
+            phongTrangChu10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu10)
                 .addContainerGap())
         );
 
@@ -1130,48 +1121,44 @@ public class TrangChu extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(phong2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(phong9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(phongTrangChu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(phong6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(phong14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(phongTrangChu10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Tang1_TrangChuLayout = new javax.swing.GroupLayout(Tang1_TrangChu);
@@ -1186,390 +1173,380 @@ public class TrangChu extends javax.swing.JFrame {
         Tang1_TrangChuLayout.setVerticalGroup(
             Tang1_TrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Tang1_TrangChuLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        Tang2_TrangChu.setBackground(new java.awt.Color(255, 255, 255));
-        Tang2_TrangChu.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 2", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+        Tang1_TrangChu1.setBackground(new java.awt.Color(255, 255, 255));
+        Tang1_TrangChu1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 2", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
 
-        phong17.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu11.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu11.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong17.setText("Tên phòng");
+        lblTenPhongTrangChu11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu11.setText("101TC");
 
-        lblLoaiPhong17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong17.setText("Loại phòng");
+        lblLoaiPhongTrangChu11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu11.setText("Tiêu chuẩn");
 
-        lblTrangThai17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai17.setText("Trạng thái");
+        lblTrangThaiTrangChu11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu11.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong17Layout = new javax.swing.GroupLayout(phong17);
-        phong17.setLayout(phong17Layout);
-        phong17Layout.setHorizontalGroup(
-            phong17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong17Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu11Layout = new javax.swing.GroupLayout(phongTrangChu11);
+        phongTrangChu11.setLayout(phongTrangChu11Layout);
+        phongTrangChu11Layout.setHorizontalGroup(
+            phongTrangChu11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu11, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(lblTenPhong17, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+            .addComponent(lblTenPhongTrangChu11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong17Layout.setVerticalGroup(
-            phong17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong17Layout.createSequentialGroup()
+        phongTrangChu11Layout.setVerticalGroup(
+            phongTrangChu11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong17, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai17)
-                .addContainerGap())
-        );
-
-        phong18.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong18.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong18.setText("Tên phòng");
-
-        lblLoaiPhong18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong18.setText("Loại phòng");
-
-        lblTrangThai18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai18.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong18Layout = new javax.swing.GroupLayout(phong18);
-        phong18.setLayout(phong18Layout);
-        phong18Layout.setHorizontalGroup(
-            phong18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong18, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong18Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong18Layout.setVerticalGroup(
-            phong18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong18Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong18, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai18)
-                .addContainerGap())
-        );
-
-        phong19.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong19.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong19.setText("Tên phòng");
-
-        lblLoaiPhong19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong19.setText("Loại phòng");
-
-        lblTrangThai19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai19.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong19Layout = new javax.swing.GroupLayout(phong19);
-        phong19.setLayout(phong19Layout);
-        phong19Layout.setHorizontalGroup(
-            phong19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong19, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong19Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong19Layout.setVerticalGroup(
-            phong19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong19Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong19)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong19, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai19)
-                .addContainerGap())
-        );
-
-        phong20.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong20.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong20.setText("Tên phòng");
-
-        lblLoaiPhong20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong20.setText("Loại phòng");
-
-        lblTrangThai20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai20.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong20Layout = new javax.swing.GroupLayout(phong20);
-        phong20.setLayout(phong20Layout);
-        phong20Layout.setHorizontalGroup(
-            phong20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong20, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong20Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong20Layout.setVerticalGroup(
-            phong20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong20Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(lblTenPhong20, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai20)
-                .addContainerGap())
-        );
-
-        phong21.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong21.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong21.setText("Tên phòng");
-
-        lblLoaiPhong21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong21.setText("Loại phòng");
-
-        lblTrangThai21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai21.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong21Layout = new javax.swing.GroupLayout(phong21);
-        phong21.setLayout(phong21Layout);
-        phong21Layout.setHorizontalGroup(
-            phong21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong21, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong21Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong21Layout.setVerticalGroup(
-            phong21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong21Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong21, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblLoaiPhongTrangChu11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblTrangThai21)
+                .addComponent(lblTrangThaiTrangChu11)
                 .addContainerGap())
         );
 
-        phong24.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu12.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu12.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong24.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong24.setText("Tên phòng");
+        lblTenPhongTrangChu12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu12.setText("101TC");
 
-        lblLoaiPhong24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong24.setText("Loại phòng");
+        lblLoaiPhongTrangChu12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu12.setText("Tiêu chuẩn");
 
-        lblTrangThai24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai24.setText("Trạng thái");
+        lblTrangThaiTrangChu12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu12.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong24Layout = new javax.swing.GroupLayout(phong24);
-        phong24.setLayout(phong24Layout);
-        phong24Layout.setHorizontalGroup(
-            phong24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong24Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu12Layout = new javax.swing.GroupLayout(phongTrangChu12);
+        phongTrangChu12.setLayout(phongTrangChu12Layout);
+        phongTrangChu12Layout.setHorizontalGroup(
+            phongTrangChu12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu12, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(lblTenPhong24, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+            .addComponent(lblTenPhongTrangChu12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong24Layout.setVerticalGroup(
-            phong24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong24Layout.createSequentialGroup()
+        phongTrangChu12Layout.setVerticalGroup(
+            phongTrangChu12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong24, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(lblTrangThai24)
-                .addContainerGap())
-        );
-
-        phong25.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong25.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong25.setText("Tên phòng");
-
-        lblLoaiPhong25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong25.setText("Loại phòng");
-
-        lblTrangThai25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai25.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong25Layout = new javax.swing.GroupLayout(phong25);
-        phong25.setLayout(phong25Layout);
-        phong25Layout.setHorizontalGroup(
-            phong25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong25Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addComponent(lblTenPhong25, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-        );
-        phong25Layout.setVerticalGroup(
-            phong25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong25Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong25, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai25)
-                .addContainerGap())
-        );
-
-        phong26.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong26.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong26.setText("Tên phòng");
-
-        lblTrangThai26.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai26.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong26Layout = new javax.swing.GroupLayout(phong26);
-        phong26.setLayout(phong26Layout);
-        phong26Layout.setHorizontalGroup(
-            phong26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong26Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTrangThai26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addComponent(lblTenPhong26, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-        );
-        phong26Layout.setVerticalGroup(
-            phong26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong26Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(lblTenPhong26, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai26)
-                .addContainerGap())
-        );
-
-        phong27.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong27.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong27.setText("Tên phòng");
-
-        lblLoaiPhong27.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong27.setText("Loại phòng");
-
-        lblTrangThai27.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai27.setText("Trạng thái");
-
-        lblLoaiPhong26.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong26.setText("Loại phòng");
-
-        javax.swing.GroupLayout phong27Layout = new javax.swing.GroupLayout(phong27);
-        phong27.setLayout(phong27Layout);
-        phong27Layout.setHorizontalGroup(
-            phong27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong27Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong26, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                .addComponent(lblLoaiPhongTrangChu12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu12, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(phong27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong27, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addComponent(lblTenPhong27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        phong27Layout.setVerticalGroup(
-            phong27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong27Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblLoaiPhong27)
-                    .addComponent(lblLoaiPhong26))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong27, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai27)
+                .addComponent(lblTrangThaiTrangChu12)
                 .addContainerGap())
         );
 
-        phong28.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu13.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu13.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong28.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong28.setText("Tên phòng");
+        lblTenPhongTrangChu13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu13.setText("101TC");
 
-        lblLoaiPhong28.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong28.setText("Loại phòng");
+        lblLoaiPhongTrangChu13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu13.setText("Tiêu chuẩn");
 
-        lblTrangThai28.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai28.setText("Trạng thái");
+        lblTrangThaiTrangChu13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu13.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong28Layout = new javax.swing.GroupLayout(phong28);
-        phong28.setLayout(phong28Layout);
-        phong28Layout.setHorizontalGroup(
-            phong28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong28Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu13Layout = new javax.swing.GroupLayout(phongTrangChu13);
+        phongTrangChu13.setLayout(phongTrangChu13Layout);
+        phongTrangChu13Layout.setHorizontalGroup(
+            phongTrangChu13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu13, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(lblTenPhong28, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+            .addComponent(lblTenPhongTrangChu13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong28Layout.setVerticalGroup(
-            phong28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong28Layout.createSequentialGroup()
+        phongTrangChu13Layout.setVerticalGroup(
+            phongTrangChu13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong28)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong28, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai28)
+                .addComponent(lblLoaiPhongTrangChu13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu13)
+                .addContainerGap())
+        );
+
+        phongTrangChu14.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu14.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu14.setText("101TC");
+
+        lblLoaiPhongTrangChu14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu14.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu14.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu14Layout = new javax.swing.GroupLayout(phongTrangChu14);
+        phongTrangChu14.setLayout(phongTrangChu14Layout);
+        phongTrangChu14Layout.setHorizontalGroup(
+            phongTrangChu14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu14, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu14Layout.setVerticalGroup(
+            phongTrangChu14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu14, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu14)
+                .addContainerGap())
+        );
+
+        phongTrangChu15.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu15.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu15.setText("101TC");
+
+        lblLoaiPhongTrangChu15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu15.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu15.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu15Layout = new javax.swing.GroupLayout(phongTrangChu15);
+        phongTrangChu15.setLayout(phongTrangChu15Layout);
+        phongTrangChu15Layout.setHorizontalGroup(
+            phongTrangChu15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu15, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu15Layout.setVerticalGroup(
+            phongTrangChu15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu15, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu15)
+                .addContainerGap())
+        );
+
+        phongTrangChu16.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu16.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu16.setText("101TC");
+
+        lblLoaiPhongTrangChu16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu16.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu16.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu16Layout = new javax.swing.GroupLayout(phongTrangChu16);
+        phongTrangChu16.setLayout(phongTrangChu16Layout);
+        phongTrangChu16Layout.setHorizontalGroup(
+            phongTrangChu16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu16, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu16Layout.setVerticalGroup(
+            phongTrangChu16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu16, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu16)
+                .addContainerGap())
+        );
+
+        phongTrangChu17.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu17.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu17.setText("101TC");
+
+        lblLoaiPhongTrangChu17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu17.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu17.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu17Layout = new javax.swing.GroupLayout(phongTrangChu17);
+        phongTrangChu17.setLayout(phongTrangChu17Layout);
+        phongTrangChu17Layout.setHorizontalGroup(
+            phongTrangChu17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu17, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu17Layout.setVerticalGroup(
+            phongTrangChu17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu17, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu17)
+                .addContainerGap())
+        );
+
+        phongTrangChu18.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu18.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu18.setText("101TC");
+
+        lblLoaiPhongTrangChu18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu18.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu18.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu18Layout = new javax.swing.GroupLayout(phongTrangChu18);
+        phongTrangChu18.setLayout(phongTrangChu18Layout);
+        phongTrangChu18Layout.setHorizontalGroup(
+            phongTrangChu18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu18, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu18Layout.setVerticalGroup(
+            phongTrangChu18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu18, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu18)
+                .addContainerGap())
+        );
+
+        phongTrangChu19.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu19.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu19.setText("101TC");
+
+        lblLoaiPhongTrangChu19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu19.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu19.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu19Layout = new javax.swing.GroupLayout(phongTrangChu19);
+        phongTrangChu19.setLayout(phongTrangChu19Layout);
+        phongTrangChu19Layout.setHorizontalGroup(
+            phongTrangChu19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu19, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu19Layout.setVerticalGroup(
+            phongTrangChu19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu19, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu19)
+                .addContainerGap())
+        );
+
+        phongTrangChu20.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu20.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu20.setText("101TC");
+
+        lblLoaiPhongTrangChu20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu20.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu20.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu20Layout = new javax.swing.GroupLayout(phongTrangChu20);
+        phongTrangChu20.setLayout(phongTrangChu20Layout);
+        phongTrangChu20Layout.setHorizontalGroup(
+            phongTrangChu20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu20, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu20Layout.setVerticalGroup(
+            phongTrangChu20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu20, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu20)
                 .addContainerGap())
         );
 
@@ -1578,444 +1555,433 @@ public class TrangChu extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(phong17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(phong24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(phongTrangChu11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(phong21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(phong24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(phongTrangChu20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout Tang2_TrangChuLayout = new javax.swing.GroupLayout(Tang2_TrangChu);
-        Tang2_TrangChu.setLayout(Tang2_TrangChuLayout);
-        Tang2_TrangChuLayout.setHorizontalGroup(
-            Tang2_TrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Tang2_TrangChuLayout.createSequentialGroup()
+        javax.swing.GroupLayout Tang1_TrangChu1Layout = new javax.swing.GroupLayout(Tang1_TrangChu1);
+        Tang1_TrangChu1.setLayout(Tang1_TrangChu1Layout);
+        Tang1_TrangChu1Layout.setHorizontalGroup(
+            Tang1_TrangChu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tang1_TrangChu1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        Tang1_TrangChu1Layout.setVerticalGroup(
+            Tang1_TrangChu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tang1_TrangChu1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-        Tang2_TrangChuLayout.setVerticalGroup(
-            Tang2_TrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Tang3_TrangChu.setBackground(new java.awt.Color(255, 255, 255));
-        Tang3_TrangChu.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 3", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+        Tang1_TrangChu2.setBackground(new java.awt.Color(255, 255, 255));
+        Tang1_TrangChu2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 3", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
 
-        phong31.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu21.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu21.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong31.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong31.setText("Tên phòng");
+        lblTenPhongTrangChu21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu21.setText("101TC");
 
-        lblLoaiPhong31.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong31.setText("Loại phòng");
+        lblLoaiPhongTrangChu21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu21.setText("Tiêu chuẩn");
 
-        lblTrangThai31.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai31.setText("Trạng thái");
+        lblTrangThaiTrangChu21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu21.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong31Layout = new javax.swing.GroupLayout(phong31);
-        phong31.setLayout(phong31Layout);
-        phong31Layout.setHorizontalGroup(
-            phong31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong31Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu21Layout = new javax.swing.GroupLayout(phongTrangChu21);
+        phongTrangChu21.setLayout(phongTrangChu21Layout);
+        phongTrangChu21Layout.setHorizontalGroup(
+            phongTrangChu21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu21Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu21, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(lblTenPhong31, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+            .addComponent(lblTenPhongTrangChu21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong31Layout.setVerticalGroup(
-            phong31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong31Layout.createSequentialGroup()
+        phongTrangChu21Layout.setVerticalGroup(
+            phongTrangChu21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu21Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong31)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong31, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai31)
-                .addContainerGap())
-        );
-
-        phong32.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong32.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong32.setText("Tên phòng");
-
-        lblLoaiPhong32.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong32.setText("Loại phòng");
-
-        lblTrangThai32.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai32.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai32.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong32Layout = new javax.swing.GroupLayout(phong32);
-        phong32.setLayout(phong32Layout);
-        phong32Layout.setHorizontalGroup(
-            phong32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong32, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong32Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong32Layout.setVerticalGroup(
-            phong32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong32Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong32)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong32, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblLoaiPhongTrangChu21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu21, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblTrangThai32)
+                .addComponent(lblTrangThaiTrangChu21)
                 .addContainerGap())
         );
 
-        phong33.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu22.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu22.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong33.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong33.setText("Tên phòng");
+        lblTenPhongTrangChu22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu22.setText("101TC");
 
-        lblLoaiPhong33.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong33.setText("Loại phòng");
+        lblLoaiPhongTrangChu22.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu22.setText("Tiêu chuẩn");
 
-        lblTrangThai33.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai33.setText("Trạng thái");
+        lblTrangThaiTrangChu22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu22.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong33Layout = new javax.swing.GroupLayout(phong33);
-        phong33.setLayout(phong33Layout);
-        phong33Layout.setHorizontalGroup(
-            phong33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong33, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong33Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu22Layout = new javax.swing.GroupLayout(phongTrangChu22);
+        phongTrangChu22.setLayout(phongTrangChu22Layout);
+        phongTrangChu22Layout.setHorizontalGroup(
+            phongTrangChu22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu22Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu22, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(lblTenPhongTrangChu22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong33Layout.setVerticalGroup(
-            phong33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong33Layout.createSequentialGroup()
+        phongTrangChu22Layout.setVerticalGroup(
+            phongTrangChu22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu22Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong33)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai33)
-                .addContainerGap())
-        );
-
-        phong34.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong34.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong34.setText("Tên phòng");
-
-        lblLoaiPhong34.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong34.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong34.setText("Loại phòng");
-
-        lblTrangThai34.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai34.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai34.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong34Layout = new javax.swing.GroupLayout(phong34);
-        phong34.setLayout(phong34Layout);
-        phong34Layout.setHorizontalGroup(
-            phong34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong34, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong34Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong34Layout.setVerticalGroup(
-            phong34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong34Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong34)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong34, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai34)
+                .addComponent(lblLoaiPhongTrangChu22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu22, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu22)
                 .addContainerGap())
         );
 
-        phong35.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu23.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu23.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong35.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong35.setText("Tên phòng");
+        lblTenPhongTrangChu23.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu23.setText("101TC");
 
-        lblLoaiPhong35.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong35.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong35.setText("Loại phòng");
+        lblLoaiPhongTrangChu23.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu23.setText("Tiêu chuẩn");
 
-        lblTrangThai35.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai35.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai35.setText("Trạng thái");
+        lblTrangThaiTrangChu23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu23.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong35Layout = new javax.swing.GroupLayout(phong35);
-        phong35.setLayout(phong35Layout);
-        phong35Layout.setHorizontalGroup(
-            phong35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong35, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong35Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu23Layout = new javax.swing.GroupLayout(phongTrangChu23);
+        phongTrangChu23.setLayout(phongTrangChu23Layout);
+        phongTrangChu23Layout.setHorizontalGroup(
+            phongTrangChu23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu23Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu23, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(lblTenPhongTrangChu23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong35Layout.setVerticalGroup(
-            phong35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong35Layout.createSequentialGroup()
+        phongTrangChu23Layout.setVerticalGroup(
+            phongTrangChu23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu23Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong35)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong35, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(lblTrangThai35)
-                .addContainerGap())
-        );
-
-        phong38.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong38.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong38.setText("Tên phòng");
-
-        lblLoaiPhong38.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong38.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong38.setText("Loại phòng");
-
-        lblTrangThai38.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai38.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai38.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong38Layout = new javax.swing.GroupLayout(phong38);
-        phong38.setLayout(phong38Layout);
-        phong38Layout.setHorizontalGroup(
-            phong38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong38Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addComponent(lblTenPhong38, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-        );
-        phong38Layout.setVerticalGroup(
-            phong38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong38Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong38)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(lblTenPhong38, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai38)
+                .addComponent(lblLoaiPhongTrangChu23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu23, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu23)
                 .addContainerGap())
         );
 
-        phong39.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu24.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu24.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong39.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong39.setText("Tên phòng");
+        lblTenPhongTrangChu24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu24.setText("101TC");
 
-        lblLoaiPhong39.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong39.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong39.setText("Loại phòng");
+        lblLoaiPhongTrangChu24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu24.setText("Tiêu chuẩn");
 
-        lblTrangThai39.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai39.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai39.setText("Trạng thái");
+        lblTrangThaiTrangChu24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu24.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong39Layout = new javax.swing.GroupLayout(phong39);
-        phong39.setLayout(phong39Layout);
-        phong39Layout.setHorizontalGroup(
-            phong39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong39Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu24Layout = new javax.swing.GroupLayout(phongTrangChu24);
+        phongTrangChu24.setLayout(phongTrangChu24Layout);
+        phongTrangChu24Layout.setHorizontalGroup(
+            phongTrangChu24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu24Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu24, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(lblTenPhong39, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+            .addComponent(lblTenPhongTrangChu24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong39Layout.setVerticalGroup(
-            phong39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong39Layout.createSequentialGroup()
+        phongTrangChu24Layout.setVerticalGroup(
+            phongTrangChu24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu24Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong39)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong39, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai39)
-                .addContainerGap())
-        );
-
-        phong40.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong40.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong40.setText("Tên phòng");
-
-        lblLoaiPhong40.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong40.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong40.setText("Loại phòng");
-
-        lblTrangThai40.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai40.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai40.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong40Layout = new javax.swing.GroupLayout(phong40);
-        phong40.setLayout(phong40Layout);
-        phong40Layout.setHorizontalGroup(
-            phong40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong40Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addComponent(lblTenPhong40, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-        );
-        phong40Layout.setVerticalGroup(
-            phong40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong40Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong40)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong40, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai40)
+                .addComponent(lblLoaiPhongTrangChu24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu24, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu24)
                 .addContainerGap())
         );
 
-        phong41.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu25.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu25.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong41.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong41.setText("Tên phòng");
+        lblTenPhongTrangChu25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu25.setText("101TC");
 
-        lblLoaiPhong41.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong41.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong41.setText("Loại phòng");
+        lblLoaiPhongTrangChu25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu25.setText("Tiêu chuẩn");
 
-        lblTrangThai41.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai41.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai41.setText("Trạng thái");
+        lblTrangThaiTrangChu25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu25.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong41Layout = new javax.swing.GroupLayout(phong41);
-        phong41.setLayout(phong41Layout);
-        phong41Layout.setHorizontalGroup(
-            phong41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong41Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu25Layout = new javax.swing.GroupLayout(phongTrangChu25);
+        phongTrangChu25.setLayout(phongTrangChu25Layout);
+        phongTrangChu25Layout.setHorizontalGroup(
+            phongTrangChu25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu25Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu25, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(lblTenPhong41, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+            .addComponent(lblTenPhongTrangChu25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong41Layout.setVerticalGroup(
-            phong41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong41Layout.createSequentialGroup()
+        phongTrangChu25Layout.setVerticalGroup(
+            phongTrangChu25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu25Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong41)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong41, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai41)
+                .addComponent(lblLoaiPhongTrangChu25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu25, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu25)
                 .addContainerGap())
         );
 
-        phong42.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu26.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu26.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong42.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong42.setText("Tên phòng");
+        lblTenPhongTrangChu26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu26.setText("101TC");
 
-        lblLoaiPhong42.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong42.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong42.setText("Loại phòng");
+        lblLoaiPhongTrangChu26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu26.setText("Tiêu chuẩn");
 
-        lblTrangThai42.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai42.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai42.setText("Trạng thái");
+        lblTrangThaiTrangChu26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu26.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong42Layout = new javax.swing.GroupLayout(phong42);
-        phong42.setLayout(phong42Layout);
-        phong42Layout.setHorizontalGroup(
-            phong42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong42Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu26Layout = new javax.swing.GroupLayout(phongTrangChu26);
+        phongTrangChu26.setLayout(phongTrangChu26Layout);
+        phongTrangChu26Layout.setHorizontalGroup(
+            phongTrangChu26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu26Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu26, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(lblTenPhong42, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+            .addComponent(lblTenPhongTrangChu26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong42Layout.setVerticalGroup(
-            phong42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong42Layout.createSequentialGroup()
+        phongTrangChu26Layout.setVerticalGroup(
+            phongTrangChu26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu26Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong42)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong42, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai42)
+                .addComponent(lblLoaiPhongTrangChu26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu26, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu26)
+                .addContainerGap())
+        );
+
+        phongTrangChu27.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu27.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu27.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu27.setText("101TC");
+
+        lblLoaiPhongTrangChu27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu27.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu27.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu27Layout = new javax.swing.GroupLayout(phongTrangChu27);
+        phongTrangChu27.setLayout(phongTrangChu27Layout);
+        phongTrangChu27Layout.setHorizontalGroup(
+            phongTrangChu27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu27Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu27, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu27Layout.setVerticalGroup(
+            phongTrangChu27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu27Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu27, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu27)
+                .addContainerGap())
+        );
+
+        phongTrangChu28.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu28.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu28.setText("101TC");
+
+        lblLoaiPhongTrangChu28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu28.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu28.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu28Layout = new javax.swing.GroupLayout(phongTrangChu28);
+        phongTrangChu28.setLayout(phongTrangChu28Layout);
+        phongTrangChu28Layout.setHorizontalGroup(
+            phongTrangChu28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu28, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu28Layout.setVerticalGroup(
+            phongTrangChu28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu28, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu28)
+                .addContainerGap())
+        );
+
+        phongTrangChu29.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu29.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu29.setText("101TC");
+
+        lblLoaiPhongTrangChu29.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu29.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu29.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu29.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu29Layout = new javax.swing.GroupLayout(phongTrangChu29);
+        phongTrangChu29.setLayout(phongTrangChu29Layout);
+        phongTrangChu29Layout.setHorizontalGroup(
+            phongTrangChu29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu29Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu29, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu29Layout.setVerticalGroup(
+            phongTrangChu29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu29Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu29, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu29)
+                .addContainerGap())
+        );
+
+        phongTrangChu30.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu30.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu30.setText("101TC");
+
+        lblLoaiPhongTrangChu30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu30.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu30.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu30.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu30Layout = new javax.swing.GroupLayout(phongTrangChu30);
+        phongTrangChu30.setLayout(phongTrangChu30Layout);
+        phongTrangChu30Layout.setHorizontalGroup(
+            phongTrangChu30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu30Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu30, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu30Layout.setVerticalGroup(
+            phongTrangChu30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu30Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu30, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu30)
                 .addContainerGap())
         );
 
@@ -2024,254 +1990,248 @@ public class TrangChu extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(phong31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(phong38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phong42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(phongTrangChu21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(phong35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(phong38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(phongTrangChu30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout Tang3_TrangChuLayout = new javax.swing.GroupLayout(Tang3_TrangChu);
-        Tang3_TrangChu.setLayout(Tang3_TrangChuLayout);
-        Tang3_TrangChuLayout.setHorizontalGroup(
-            Tang3_TrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Tang3_TrangChuLayout.createSequentialGroup()
+        javax.swing.GroupLayout Tang1_TrangChu2Layout = new javax.swing.GroupLayout(Tang1_TrangChu2);
+        Tang1_TrangChu2.setLayout(Tang1_TrangChu2Layout);
+        Tang1_TrangChu2Layout.setHorizontalGroup(
+            Tang1_TrangChu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tang1_TrangChu2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        Tang3_TrangChuLayout.setVerticalGroup(
-            Tang3_TrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        Tang1_TrangChu2Layout.setVerticalGroup(
+            Tang1_TrangChu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tang1_TrangChu2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Tang4_TrangChu.setBackground(new java.awt.Color(255, 255, 255));
-        Tang4_TrangChu.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Tầng 4", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+        Tang1_TrangChu3.setBackground(new java.awt.Color(255, 255, 255));
+        Tang1_TrangChu3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 4", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
 
-        phong36.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu31.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu31.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong36.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong36.setText("Tên phòng");
+        lblTenPhongTrangChu31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu31.setText("101TC");
 
-        lblLoaiPhong36.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong36.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong36.setText("Loại phòng");
+        lblLoaiPhongTrangChu31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu31.setText("Tiêu chuẩn");
 
-        lblTrangThai36.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai36.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai36.setText("Trạng thái");
+        lblTrangThaiTrangChu31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu31.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong36Layout = new javax.swing.GroupLayout(phong36);
-        phong36.setLayout(phong36Layout);
-        phong36Layout.setHorizontalGroup(
-            phong36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong36Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu31Layout = new javax.swing.GroupLayout(phongTrangChu31);
+        phongTrangChu31.setLayout(phongTrangChu31Layout);
+        phongTrangChu31Layout.setHorizontalGroup(
+            phongTrangChu31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu31Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu31, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(lblTenPhong36, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+            .addComponent(lblTenPhongTrangChu31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong36Layout.setVerticalGroup(
-            phong36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong36Layout.createSequentialGroup()
+        phongTrangChu31Layout.setVerticalGroup(
+            phongTrangChu31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu31Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong36)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong36, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai36)
-                .addContainerGap())
-        );
-
-        phong37.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong37.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong37.setText("Tên phòng");
-
-        lblLoaiPhong37.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong37.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong37.setText("Loại phòng");
-
-        lblTrangThai37.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai37.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai37.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong37Layout = new javax.swing.GroupLayout(phong37);
-        phong37.setLayout(phong37Layout);
-        phong37Layout.setHorizontalGroup(
-            phong37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong37, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong37Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong37Layout.setVerticalGroup(
-            phong37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong37Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong37)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong37, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblLoaiPhongTrangChu31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu31, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblTrangThai37)
+                .addComponent(lblTrangThaiTrangChu31)
                 .addContainerGap())
         );
 
-        phong48.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu32.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu32.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong48.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong48.setText("Tên phòng");
+        lblTenPhongTrangChu32.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu32.setText("101TC");
 
-        lblLoaiPhong48.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong48.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong48.setText("Loại phòng");
+        lblLoaiPhongTrangChu32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu32.setText("Tiêu chuẩn");
 
-        lblTrangThai48.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai48.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai48.setText("Trạng thái");
+        lblTrangThaiTrangChu32.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu32.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong48Layout = new javax.swing.GroupLayout(phong48);
-        phong48.setLayout(phong48Layout);
-        phong48Layout.setHorizontalGroup(
-            phong48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong48, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong48Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu32Layout = new javax.swing.GroupLayout(phongTrangChu32);
+        phongTrangChu32.setLayout(phongTrangChu32Layout);
+        phongTrangChu32Layout.setHorizontalGroup(
+            phongTrangChu32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu32Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu32, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(lblTenPhongTrangChu32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        phong48Layout.setVerticalGroup(
-            phong48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong48Layout.createSequentialGroup()
+        phongTrangChu32Layout.setVerticalGroup(
+            phongTrangChu32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu32Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong48)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong48, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTrangThai48)
-                .addContainerGap())
-        );
-
-        phong49.setBackground(new java.awt.Color(255, 255, 153));
-
-        lblTenPhong49.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong49.setText("Tên phòng");
-
-        lblLoaiPhong49.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong49.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong49.setText("Loại phòng");
-
-        lblTrangThai49.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai49.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai49.setText("Trạng thái");
-
-        javax.swing.GroupLayout phong49Layout = new javax.swing.GroupLayout(phong49);
-        phong49.setLayout(phong49Layout);
-        phong49Layout.setHorizontalGroup(
-            phong49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong49, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong49Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(phong49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        phong49Layout.setVerticalGroup(
-            phong49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong49Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLoaiPhong49)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTenPhong49, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTrangThai49)
+                .addComponent(lblLoaiPhongTrangChu32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu32, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu32)
                 .addContainerGap())
         );
 
-        phong50.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu33.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu33.setPreferredSize(new java.awt.Dimension(109, 85));
 
-        lblTenPhong50.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTenPhong50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenPhong50.setText("Tên phòng");
+        lblTenPhongTrangChu33.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu33.setText("101TC");
 
-        lblLoaiPhong50.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLoaiPhong50.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLoaiPhong50.setText("Loại phòng");
+        lblLoaiPhongTrangChu33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu33.setText("Tiêu chuẩn");
 
-        lblTrangThai50.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTrangThai50.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblTrangThai50.setText("Trạng thái");
+        lblTrangThaiTrangChu33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu33.setText("Đang thuê");
 
-        javax.swing.GroupLayout phong50Layout = new javax.swing.GroupLayout(phong50);
-        phong50.setLayout(phong50Layout);
-        phong50Layout.setHorizontalGroup(
-            phong50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTenPhong50, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phong50Layout.createSequentialGroup()
+        javax.swing.GroupLayout phongTrangChu33Layout = new javax.swing.GroupLayout(phongTrangChu33);
+        phongTrangChu33.setLayout(phongTrangChu33Layout);
+        phongTrangChu33Layout.setHorizontalGroup(
+            phongTrangChu33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu33Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phong50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLoaiPhong50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThai50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(phongTrangChu33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu33, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu33Layout.setVerticalGroup(
+            phongTrangChu33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu33Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu33)
                 .addContainerGap())
         );
-        phong50Layout.setVerticalGroup(
-            phong50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(phong50Layout.createSequentialGroup()
+
+        phongTrangChu34.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu34.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu34.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu34.setText("101TC");
+
+        lblLoaiPhongTrangChu34.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu34.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu34.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu34.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu34Layout = new javax.swing.GroupLayout(phongTrangChu34);
+        phongTrangChu34.setLayout(phongTrangChu34Layout);
+        phongTrangChu34Layout.setHorizontalGroup(
+            phongTrangChu34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu34Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoaiPhong50)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTenPhong50, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(lblTrangThai50)
+                .addGroup(phongTrangChu34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu34, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu34Layout.setVerticalGroup(
+            phongTrangChu34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu34Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu34, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu34)
+                .addContainerGap())
+        );
+
+        phongTrangChu35.setBackground(new java.awt.Color(255, 255, 153));
+        phongTrangChu35.setPreferredSize(new java.awt.Dimension(109, 85));
+
+        lblTenPhongTrangChu35.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTenPhongTrangChu35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenPhongTrangChu35.setText("101TC");
+
+        lblLoaiPhongTrangChu35.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLoaiPhongTrangChu35.setText("Tiêu chuẩn");
+
+        lblTrangThaiTrangChu35.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblTrangThaiTrangChu35.setText("Đang thuê");
+
+        javax.swing.GroupLayout phongTrangChu35Layout = new javax.swing.GroupLayout(phongTrangChu35);
+        phongTrangChu35.setLayout(phongTrangChu35Layout);
+        phongTrangChu35Layout.setHorizontalGroup(
+            phongTrangChu35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongTrangChu35Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(phongTrangChu35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoaiPhongTrangChu35, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(lblTrangThaiTrangChu35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(lblTenPhongTrangChu35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        phongTrangChu35Layout.setVerticalGroup(
+            phongTrangChu35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(phongTrangChu35Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLoaiPhongTrangChu35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(lblTenPhongTrangChu35, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTrangThaiTrangChu35)
                 .addContainerGap())
         );
 
@@ -2280,46 +2240,46 @@ public class TrangChu extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(phong36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(phong37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(phong48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(phong49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(phong50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(phongTrangChu31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phongTrangChu35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(phong50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(phong36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(phongTrangChu35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phongTrangChu31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout Tang4_TrangChuLayout = new javax.swing.GroupLayout(Tang4_TrangChu);
-        Tang4_TrangChu.setLayout(Tang4_TrangChuLayout);
-        Tang4_TrangChuLayout.setHorizontalGroup(
-            Tang4_TrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Tang4_TrangChuLayout.createSequentialGroup()
+        javax.swing.GroupLayout Tang1_TrangChu3Layout = new javax.swing.GroupLayout(Tang1_TrangChu3);
+        Tang1_TrangChu3.setLayout(Tang1_TrangChu3Layout);
+        Tang1_TrangChu3Layout.setHorizontalGroup(
+            Tang1_TrangChu3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tang1_TrangChu3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        Tang4_TrangChuLayout.setVerticalGroup(
-            Tang4_TrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Tang4_TrangChuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        Tang1_TrangChu3Layout.setVerticalGroup(
+            Tang1_TrangChu3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tang1_TrangChu3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnBody1Layout = new javax.swing.GroupLayout(pnBody1);
@@ -2328,12 +2288,12 @@ public class TrangChu extends javax.swing.JFrame {
             pnBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBody1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Tang3_TrangChu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Tang2_TrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Tang1_TrangChu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Tang4_TrangChu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addGroup(pnBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Tang1_TrangChu2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Tang1_TrangChu1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Tang1_TrangChu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Tang1_TrangChu3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnBody1Layout.setVerticalGroup(
             pnBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2341,52 +2301,46 @@ public class TrangChu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Tang1_TrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Tang2_TrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tang1_TrangChu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Tang3_TrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tang1_TrangChu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Tang4_TrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tang1_TrangChu3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        ScrollPaneTrangChu.setViewportView(pnBody1);
 
         javax.swing.GroupLayout pnLayOutTrangChuLayout = new javax.swing.GroupLayout(pnLayOutTrangChu);
         pnLayOutTrangChu.setLayout(pnLayOutTrangChuLayout);
         pnLayOutTrangChuLayout.setHorizontalGroup(
             pnLayOutTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnLayOutTrangChuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ScrollPaneTrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, 1230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(pnBody1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnLayOutTrangChuLayout.setVerticalGroup(
             pnLayOutTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnLayOutTrangChuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ScrollPaneTrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(pnBody1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnTrangChuLayout = new javax.swing.GroupLayout(pnTrangChu);
         pnTrangChu.setLayout(pnTrangChuLayout);
         pnTrangChuLayout.setHorizontalGroup(
             pnTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
-            .addGroup(pnTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnTrangChuLayout.createSequentialGroup()
-                    .addGap(0, 8, Short.MAX_VALUE)
-                    .addComponent(pnLayOutTrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 7, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnTrangChuLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnLayOutTrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
         pnTrangChuLayout.setVerticalGroup(
             pnTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 805, Short.MAX_VALUE)
-            .addGroup(pnTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnTrangChuLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(pnLayOutTrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(pnTrangChuLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(pnLayOutTrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         pnedUngDung.addTab("tab1", pnTrangChu);
@@ -2398,6 +2352,7 @@ public class TrangChu extends javax.swing.JFrame {
         Tang1_QuanLyPhong.setMinimumSize(new java.awt.Dimension(1150, 120));
 
         phongQuanLy1.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy1.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2442,6 +2397,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy2.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy2.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2480,12 +2436,13 @@ public class TrangChu extends javax.swing.JFrame {
                     .addComponent(lblLoaiPhongQL2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTenPhongQL2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTrangThaiQL2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         phongQuanLy3.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy3.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2532,6 +2489,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy4.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy4.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2576,6 +2534,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy5.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy5.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2622,6 +2581,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy6.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy6.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2666,6 +2626,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy7.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy7.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2710,6 +2671,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy8.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy8.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2731,14 +2693,15 @@ public class TrangChu extends javax.swing.JFrame {
             .addGroup(phongQuanLy8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(phongQuanLy8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(phongQuanLy8Layout.createSequentialGroup()
-                        .addComponent(lblTrangThaiQL8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
                     .addComponent(lblTenPhongQL8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy8Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkBoxPhongQL8))))
+                    .addGroup(phongQuanLy8Layout.createSequentialGroup()
+                        .addGroup(phongQuanLy8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTrangThaiQL8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy8Layout.createSequentialGroup()
+                                .addComponent(lblLoaiPhongQL8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(checkBoxPhongQL8)))
+                        .addContainerGap())))
         );
         phongQuanLy8Layout.setVerticalGroup(
             phongQuanLy8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2755,6 +2718,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy9.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy9.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2799,6 +2763,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy10.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy10.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2818,15 +2783,17 @@ public class TrangChu extends javax.swing.JFrame {
         phongQuanLy10.setLayout(phongQuanLy10Layout);
         phongQuanLy10Layout.setHorizontalGroup(
             phongQuanLy10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy10Layout.createSequentialGroup()
+            .addGroup(phongQuanLy10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phongQuanLy10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblTenPhongQL10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThaiQL10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(phongQuanLy10Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkBoxPhongQL10)
+                .addGroup(phongQuanLy10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTenPhongQL10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy10Layout.createSequentialGroup()
+                        .addGroup(phongQuanLy10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy10Layout.createSequentialGroup()
+                                .addComponent(lblLoaiPhongQL10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(checkBoxPhongQL10))
+                            .addComponent(lblTrangThaiQL10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         phongQuanLy10Layout.setVerticalGroup(
@@ -2911,6 +2878,7 @@ public class TrangChu extends javax.swing.JFrame {
         jPanel11.setMinimumSize(new java.awt.Dimension(1150, 120));
 
         phongQuanLy11.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy11.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2955,6 +2923,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy12.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy12.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3001,6 +2970,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy13.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy13.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3045,6 +3015,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy14.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy14.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3063,16 +3034,16 @@ public class TrangChu extends javax.swing.JFrame {
         phongQuanLy14.setLayout(phongQuanLy14Layout);
         phongQuanLy14Layout.setHorizontalGroup(
             phongQuanLy14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTenPhongQL14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy14Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(phongQuanLy14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTrangThaiQL14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy14Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongQL14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkBoxPhongQL14)
-                        .addContainerGap())))
-            .addComponent(lblTenPhongQL14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(checkBoxPhongQL14))
+                    .addComponent(lblTrangThaiQL14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         phongQuanLy14Layout.setVerticalGroup(
             phongQuanLy14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3089,6 +3060,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy15.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy15.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3127,12 +3099,13 @@ public class TrangChu extends javax.swing.JFrame {
                     .addComponent(lblLoaiPhongQL15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTenPhongQL15, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTrangThaiQL15)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         phongQuanLy16.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy16.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3177,6 +3150,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy17.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy17.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3223,6 +3197,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy18.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy18.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3269,6 +3244,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy19.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy19.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3292,11 +3268,12 @@ public class TrangChu extends javax.swing.JFrame {
                 .addGroup(phongQuanLy19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhongQL19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy19Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkBoxPhongQL19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy19Layout.createSequentialGroup()
-                        .addComponent(lblTrangThaiQL19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(phongQuanLy19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy19Layout.createSequentialGroup()
+                                .addComponent(lblLoaiPhongQL19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(checkBoxPhongQL19))
+                            .addComponent(lblTrangThaiQL19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         phongQuanLy19Layout.setVerticalGroup(
@@ -3314,6 +3291,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy20.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy20.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3428,6 +3406,7 @@ public class TrangChu extends javax.swing.JFrame {
         Tang3_QuanLyPhong.setPreferredSize(new java.awt.Dimension(72, 16));
 
         phongQuanLy21.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy21.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3446,16 +3425,20 @@ public class TrangChu extends javax.swing.JFrame {
         phongQuanLy21.setLayout(phongQuanLy21Layout);
         phongQuanLy21Layout.setHorizontalGroup(
             phongQuanLy21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy21Layout.createSequentialGroup()
+            .addGroup(phongQuanLy21Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phongQuanLy21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblTenPhongQL21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThaiQL21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(phongQuanLy21Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL21, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                        .addGap(2, 2, 2)
-                        .addComponent(checkBoxPhongQL21)))
-                .addGap(4, 4, 4))
+                .addGroup(phongQuanLy21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy21Layout.createSequentialGroup()
+                        .addGroup(phongQuanLy21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblTenPhongQL21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(phongQuanLy21Layout.createSequentialGroup()
+                                .addComponent(lblLoaiPhongQL21, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                .addGap(2, 2, 2)
+                                .addComponent(checkBoxPhongQL21)))
+                        .addGap(4, 4, 4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy21Layout.createSequentialGroup()
+                        .addComponent(lblTrangThaiQL21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         phongQuanLy21Layout.setVerticalGroup(
             phongQuanLy21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3472,6 +3455,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy22.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy22.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3496,7 +3480,7 @@ public class TrangChu extends javax.swing.JFrame {
                     .addComponent(lblTenPhongQL22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiQL22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(phongQuanLy22Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL22, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                        .addComponent(lblLoaiPhongQL22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(checkBoxPhongQL22)))
                 .addContainerGap())
@@ -3516,6 +3500,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy23.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy23.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL23.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3540,7 +3525,7 @@ public class TrangChu extends javax.swing.JFrame {
                     .addComponent(lblTenPhongQL23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiQL23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(phongQuanLy23Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL23, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                        .addComponent(lblLoaiPhongQL23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(checkBoxPhongQL23)))
                 .addContainerGap())
@@ -3560,6 +3545,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy24.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy24.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3585,7 +3571,7 @@ public class TrangChu extends javax.swing.JFrame {
                         .addGroup(phongQuanLy24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblTenPhongQL24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(phongQuanLy24Layout.createSequentialGroup()
-                                .addComponent(lblLoaiPhongQL24, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                                .addComponent(lblLoaiPhongQL24, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                                 .addGap(4, 4, 4)
                                 .addComponent(checkBoxPhongQL24)))
                         .addGap(4, 4, 4))
@@ -3608,6 +3594,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy25.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy25.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3626,15 +3613,17 @@ public class TrangChu extends javax.swing.JFrame {
         phongQuanLy25.setLayout(phongQuanLy25Layout);
         phongQuanLy25Layout.setHorizontalGroup(
             phongQuanLy25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy25Layout.createSequentialGroup()
+            .addGroup(phongQuanLy25Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phongQuanLy25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblTenPhongQL25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThaiQL25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(phongQuanLy25Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkBoxPhongQL25)
+                .addGroup(phongQuanLy25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTenPhongQL25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy25Layout.createSequentialGroup()
+                        .addGroup(phongQuanLy25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy25Layout.createSequentialGroup()
+                                .addComponent(lblLoaiPhongQL25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(checkBoxPhongQL25))
+                            .addComponent(lblTrangThaiQL25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         phongQuanLy25Layout.setVerticalGroup(
@@ -3652,6 +3641,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy26.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy26.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3698,6 +3688,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy27.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy27.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL27.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3722,7 +3713,7 @@ public class TrangChu extends javax.swing.JFrame {
                     .addComponent(lblTenPhongQL27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiQL27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(phongQuanLy27Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL27, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                        .addComponent(lblLoaiPhongQL27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(checkBoxPhongQL27)))
                 .addContainerGap())
@@ -3742,6 +3733,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy28.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy28.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3786,6 +3778,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy29.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy29.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3804,15 +3797,18 @@ public class TrangChu extends javax.swing.JFrame {
         phongQuanLy29.setLayout(phongQuanLy29Layout);
         phongQuanLy29Layout.setHorizontalGroup(
             phongQuanLy29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy29Layout.createSequentialGroup()
+            .addGroup(phongQuanLy29Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phongQuanLy29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblTenPhongQL29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThaiQL29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(phongQuanLy29Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkBoxPhongQL29))))
+                .addGroup(phongQuanLy29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTenPhongQL29, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy29Layout.createSequentialGroup()
+                        .addGroup(phongQuanLy29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy29Layout.createSequentialGroup()
+                                .addComponent(lblLoaiPhongQL29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(checkBoxPhongQL29))
+                            .addComponent(lblTrangThaiQL29, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         phongQuanLy29Layout.setVerticalGroup(
             phongQuanLy29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3829,6 +3825,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy30.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy30.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3853,7 +3850,7 @@ public class TrangChu extends javax.swing.JFrame {
                     .addComponent(lblTenPhongQL30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiQL30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(phongQuanLy30Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL30, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                        .addComponent(lblLoaiPhongQL30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(checkBoxPhongQL30)))
                 .addContainerGap())
@@ -3897,7 +3894,7 @@ public class TrangChu extends javax.swing.JFrame {
                 .addComponent(phongQuanLy29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phongQuanLy30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3938,6 +3935,7 @@ public class TrangChu extends javax.swing.JFrame {
         Tang4_QuanLyPhong.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 4", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
 
         phongQuanLy31.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy31.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3956,16 +3954,16 @@ public class TrangChu extends javax.swing.JFrame {
         phongQuanLy31.setLayout(phongQuanLy31Layout);
         phongQuanLy31Layout.setHorizontalGroup(
             phongQuanLy31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy31Layout.createSequentialGroup()
+            .addGroup(phongQuanLy31Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(phongQuanLy31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblTenPhongQL31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThaiQL31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(phongQuanLy31Layout.createSequentialGroup()
+                .addGroup(phongQuanLy31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTrangThaiQL31, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy31Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongQL31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkBoxPhongQL31)
-                        .addContainerGap())))
+                        .addComponent(checkBoxPhongQL31))
+                    .addComponent(lblTenPhongQL31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         phongQuanLy31Layout.setVerticalGroup(
             phongQuanLy31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3974,14 +3972,15 @@ public class TrangChu extends javax.swing.JFrame {
                 .addGroup(phongQuanLy31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkBoxPhongQL31)
                     .addComponent(lblLoaiPhongQL31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblTenPhongQL31, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTenPhongQL31, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTrangThaiQL31)
                 .addContainerGap())
         );
 
         phongQuanLy32.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy32.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL32.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -4026,6 +4025,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy33.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy33.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL33.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -4070,6 +4070,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy34.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy34.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL34.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -4114,6 +4115,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         phongQuanLy35.setBackground(new java.awt.Color(255, 255, 153));
+        phongQuanLy35.setPreferredSize(new java.awt.Dimension(108, 84));
 
         lblTenPhongQL35.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTenPhongQL35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -4172,7 +4174,7 @@ public class TrangChu extends javax.swing.JFrame {
                 .addComponent(phongQuanLy34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phongQuanLy35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4206,16 +4208,14 @@ public class TrangChu extends javax.swing.JFrame {
         pnBody2Layout.setHorizontalGroup(
             pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBody2Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Tang1_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Tang2_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Tang3_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE, 1208, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pnBody2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Tang4_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Tang1_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Tang3_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE, 1208, Short.MAX_VALUE)
+                        .addComponent(Tang2_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Tang4_QuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         pnBody2Layout.setVerticalGroup(
             pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4395,9 +4395,11 @@ public class TrangChu extends javax.swing.JFrame {
             .addGroup(pnQuanLyPhongLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnQuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ScrollPaneQuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 1253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(funtionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnQuanLyPhongLayout.createSequentialGroup()
+                        .addComponent(funtionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 23, Short.MAX_VALUE))
+                    .addComponent(ScrollPaneQuanLyPhong))
+                .addContainerGap())
         );
         pnQuanLyPhongLayout.setVerticalGroup(
             pnQuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5887,19 +5889,18 @@ public class TrangChu extends javax.swing.JFrame {
     private component.Header Header;
     private menu.Menu Menu;
     private javax.swing.JScrollPane ScrollPaneQuanLyPhong;
-    private javax.swing.JScrollPane ScrollPaneTrangChu;
     private javax.swing.JTable TableDichVu;
     private javax.swing.JTable TableKhachHang;
     private javax.swing.JTable TableKhuyenMai;
     private javax.swing.JTable TableNhanVien;
     private javax.swing.JPanel Tang1_QuanLyPhong;
     private javax.swing.JPanel Tang1_TrangChu;
+    private javax.swing.JPanel Tang1_TrangChu1;
+    private javax.swing.JPanel Tang1_TrangChu2;
+    private javax.swing.JPanel Tang1_TrangChu3;
     private javax.swing.JPanel Tang2_QuanLyPhong;
-    private javax.swing.JPanel Tang2_TrangChu;
     private javax.swing.JPanel Tang3_QuanLyPhong;
-    private javax.swing.JPanel Tang3_TrangChu;
     private javax.swing.JPanel Tang4_QuanLyPhong;
-    private javax.swing.JPanel Tang4_TrangChu;
     private javax.swing.JButton btnCapNhapDichVu;
     private javax.swing.JButton btnCapNhapKhachHang;
     private javax.swing.JButton btnCapNhapKhuyenMai;
@@ -6015,41 +6016,6 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JLabel lblLoaiPhong10;
-    private javax.swing.JLabel lblLoaiPhong11;
-    private javax.swing.JLabel lblLoaiPhong13;
-    private javax.swing.JLabel lblLoaiPhong14;
-    private javax.swing.JLabel lblLoaiPhong17;
-    private javax.swing.JLabel lblLoaiPhong18;
-    private javax.swing.JLabel lblLoaiPhong19;
-    private javax.swing.JLabel lblLoaiPhong2;
-    private javax.swing.JLabel lblLoaiPhong20;
-    private javax.swing.JLabel lblLoaiPhong21;
-    private javax.swing.JLabel lblLoaiPhong24;
-    private javax.swing.JLabel lblLoaiPhong25;
-    private javax.swing.JLabel lblLoaiPhong26;
-    private javax.swing.JLabel lblLoaiPhong27;
-    private javax.swing.JLabel lblLoaiPhong28;
-    private javax.swing.JLabel lblLoaiPhong3;
-    private javax.swing.JLabel lblLoaiPhong31;
-    private javax.swing.JLabel lblLoaiPhong32;
-    private javax.swing.JLabel lblLoaiPhong33;
-    private javax.swing.JLabel lblLoaiPhong34;
-    private javax.swing.JLabel lblLoaiPhong35;
-    private javax.swing.JLabel lblLoaiPhong36;
-    private javax.swing.JLabel lblLoaiPhong37;
-    private javax.swing.JLabel lblLoaiPhong38;
-    private javax.swing.JLabel lblLoaiPhong39;
-    private javax.swing.JLabel lblLoaiPhong4;
-    private javax.swing.JLabel lblLoaiPhong40;
-    private javax.swing.JLabel lblLoaiPhong41;
-    private javax.swing.JLabel lblLoaiPhong42;
-    private javax.swing.JLabel lblLoaiPhong48;
-    private javax.swing.JLabel lblLoaiPhong49;
-    private javax.swing.JLabel lblLoaiPhong5;
-    private javax.swing.JLabel lblLoaiPhong50;
-    private javax.swing.JLabel lblLoaiPhong6;
-    private javax.swing.JLabel lblLoaiPhong9;
     private javax.swing.JLabel lblLoaiPhongQL1;
     private javax.swing.JLabel lblLoaiPhongQL10;
     private javax.swing.JLabel lblLoaiPhongQL11;
@@ -6085,41 +6051,41 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JLabel lblLoaiPhongQL7;
     private javax.swing.JLabel lblLoaiPhongQL8;
     private javax.swing.JLabel lblLoaiPhongQL9;
-    private javax.swing.JLabel lblTenPhong10;
-    private javax.swing.JLabel lblTenPhong11;
-    private javax.swing.JLabel lblTenPhong13;
-    private javax.swing.JLabel lblTenPhong14;
-    private javax.swing.JLabel lblTenPhong17;
-    private javax.swing.JLabel lblTenPhong18;
-    private javax.swing.JLabel lblTenPhong19;
-    private javax.swing.JLabel lblTenPhong2;
-    private javax.swing.JLabel lblTenPhong20;
-    private javax.swing.JLabel lblTenPhong21;
-    private javax.swing.JLabel lblTenPhong24;
-    private javax.swing.JLabel lblTenPhong25;
-    private javax.swing.JLabel lblTenPhong26;
-    private javax.swing.JLabel lblTenPhong27;
-    private javax.swing.JLabel lblTenPhong28;
-    private javax.swing.JLabel lblTenPhong3;
-    private javax.swing.JLabel lblTenPhong31;
-    private javax.swing.JLabel lblTenPhong32;
-    private javax.swing.JLabel lblTenPhong33;
-    private javax.swing.JLabel lblTenPhong34;
-    private javax.swing.JLabel lblTenPhong35;
-    private javax.swing.JLabel lblTenPhong36;
-    private javax.swing.JLabel lblTenPhong37;
-    private javax.swing.JLabel lblTenPhong38;
-    private javax.swing.JLabel lblTenPhong39;
-    private javax.swing.JLabel lblTenPhong4;
-    private javax.swing.JLabel lblTenPhong40;
-    private javax.swing.JLabel lblTenPhong41;
-    private javax.swing.JLabel lblTenPhong42;
-    private javax.swing.JLabel lblTenPhong48;
-    private javax.swing.JLabel lblTenPhong49;
-    private javax.swing.JLabel lblTenPhong5;
-    private javax.swing.JLabel lblTenPhong50;
-    private javax.swing.JLabel lblTenPhong6;
-    private javax.swing.JLabel lblTenPhong9;
+    private javax.swing.JLabel lblLoaiPhongTrangChu1;
+    private javax.swing.JLabel lblLoaiPhongTrangChu10;
+    private javax.swing.JLabel lblLoaiPhongTrangChu11;
+    private javax.swing.JLabel lblLoaiPhongTrangChu12;
+    private javax.swing.JLabel lblLoaiPhongTrangChu13;
+    private javax.swing.JLabel lblLoaiPhongTrangChu14;
+    private javax.swing.JLabel lblLoaiPhongTrangChu15;
+    private javax.swing.JLabel lblLoaiPhongTrangChu16;
+    private javax.swing.JLabel lblLoaiPhongTrangChu17;
+    private javax.swing.JLabel lblLoaiPhongTrangChu18;
+    private javax.swing.JLabel lblLoaiPhongTrangChu19;
+    private javax.swing.JLabel lblLoaiPhongTrangChu2;
+    private javax.swing.JLabel lblLoaiPhongTrangChu20;
+    private javax.swing.JLabel lblLoaiPhongTrangChu21;
+    private javax.swing.JLabel lblLoaiPhongTrangChu22;
+    private javax.swing.JLabel lblLoaiPhongTrangChu23;
+    private javax.swing.JLabel lblLoaiPhongTrangChu24;
+    private javax.swing.JLabel lblLoaiPhongTrangChu25;
+    private javax.swing.JLabel lblLoaiPhongTrangChu26;
+    private javax.swing.JLabel lblLoaiPhongTrangChu27;
+    private javax.swing.JLabel lblLoaiPhongTrangChu28;
+    private javax.swing.JLabel lblLoaiPhongTrangChu29;
+    private javax.swing.JLabel lblLoaiPhongTrangChu3;
+    private javax.swing.JLabel lblLoaiPhongTrangChu30;
+    private javax.swing.JLabel lblLoaiPhongTrangChu31;
+    private javax.swing.JLabel lblLoaiPhongTrangChu32;
+    private javax.swing.JLabel lblLoaiPhongTrangChu33;
+    private javax.swing.JLabel lblLoaiPhongTrangChu34;
+    private javax.swing.JLabel lblLoaiPhongTrangChu35;
+    private javax.swing.JLabel lblLoaiPhongTrangChu4;
+    private javax.swing.JLabel lblLoaiPhongTrangChu5;
+    private javax.swing.JLabel lblLoaiPhongTrangChu6;
+    private javax.swing.JLabel lblLoaiPhongTrangChu7;
+    private javax.swing.JLabel lblLoaiPhongTrangChu8;
+    private javax.swing.JLabel lblLoaiPhongTrangChu9;
     private javax.swing.JLabel lblTenPhongQL1;
     private javax.swing.JLabel lblTenPhongQL10;
     private javax.swing.JLabel lblTenPhongQL11;
@@ -6155,41 +6121,41 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JLabel lblTenPhongQL7;
     private javax.swing.JLabel lblTenPhongQL8;
     private javax.swing.JLabel lblTenPhongQL9;
-    private javax.swing.JLabel lblTrangThai10;
-    private javax.swing.JLabel lblTrangThai11;
-    private javax.swing.JLabel lblTrangThai13;
-    private javax.swing.JLabel lblTrangThai14;
-    private javax.swing.JLabel lblTrangThai17;
-    private javax.swing.JLabel lblTrangThai18;
-    private javax.swing.JLabel lblTrangThai19;
-    private javax.swing.JLabel lblTrangThai2;
-    private javax.swing.JLabel lblTrangThai20;
-    private javax.swing.JLabel lblTrangThai21;
-    private javax.swing.JLabel lblTrangThai24;
-    private javax.swing.JLabel lblTrangThai25;
-    private javax.swing.JLabel lblTrangThai26;
-    private javax.swing.JLabel lblTrangThai27;
-    private javax.swing.JLabel lblTrangThai28;
-    private javax.swing.JLabel lblTrangThai3;
-    private javax.swing.JLabel lblTrangThai31;
-    private javax.swing.JLabel lblTrangThai32;
-    private javax.swing.JLabel lblTrangThai33;
-    private javax.swing.JLabel lblTrangThai34;
-    private javax.swing.JLabel lblTrangThai35;
-    private javax.swing.JLabel lblTrangThai36;
-    private javax.swing.JLabel lblTrangThai37;
-    private javax.swing.JLabel lblTrangThai38;
-    private javax.swing.JLabel lblTrangThai39;
-    private javax.swing.JLabel lblTrangThai4;
-    private javax.swing.JLabel lblTrangThai40;
-    private javax.swing.JLabel lblTrangThai41;
-    private javax.swing.JLabel lblTrangThai42;
-    private javax.swing.JLabel lblTrangThai48;
-    private javax.swing.JLabel lblTrangThai49;
-    private javax.swing.JLabel lblTrangThai5;
-    private javax.swing.JLabel lblTrangThai50;
-    private javax.swing.JLabel lblTrangThai6;
-    private javax.swing.JLabel lblTrangThai9;
+    private javax.swing.JLabel lblTenPhongTrangChu1;
+    private javax.swing.JLabel lblTenPhongTrangChu10;
+    private javax.swing.JLabel lblTenPhongTrangChu11;
+    private javax.swing.JLabel lblTenPhongTrangChu12;
+    private javax.swing.JLabel lblTenPhongTrangChu13;
+    private javax.swing.JLabel lblTenPhongTrangChu14;
+    private javax.swing.JLabel lblTenPhongTrangChu15;
+    private javax.swing.JLabel lblTenPhongTrangChu16;
+    private javax.swing.JLabel lblTenPhongTrangChu17;
+    private javax.swing.JLabel lblTenPhongTrangChu18;
+    private javax.swing.JLabel lblTenPhongTrangChu19;
+    private javax.swing.JLabel lblTenPhongTrangChu2;
+    private javax.swing.JLabel lblTenPhongTrangChu20;
+    private javax.swing.JLabel lblTenPhongTrangChu21;
+    private javax.swing.JLabel lblTenPhongTrangChu22;
+    private javax.swing.JLabel lblTenPhongTrangChu23;
+    private javax.swing.JLabel lblTenPhongTrangChu24;
+    private javax.swing.JLabel lblTenPhongTrangChu25;
+    private javax.swing.JLabel lblTenPhongTrangChu26;
+    private javax.swing.JLabel lblTenPhongTrangChu27;
+    private javax.swing.JLabel lblTenPhongTrangChu28;
+    private javax.swing.JLabel lblTenPhongTrangChu29;
+    private javax.swing.JLabel lblTenPhongTrangChu3;
+    private javax.swing.JLabel lblTenPhongTrangChu30;
+    private javax.swing.JLabel lblTenPhongTrangChu31;
+    private javax.swing.JLabel lblTenPhongTrangChu32;
+    private javax.swing.JLabel lblTenPhongTrangChu33;
+    private javax.swing.JLabel lblTenPhongTrangChu34;
+    private javax.swing.JLabel lblTenPhongTrangChu35;
+    private javax.swing.JLabel lblTenPhongTrangChu4;
+    private javax.swing.JLabel lblTenPhongTrangChu5;
+    private javax.swing.JLabel lblTenPhongTrangChu6;
+    private javax.swing.JLabel lblTenPhongTrangChu7;
+    private javax.swing.JLabel lblTenPhongTrangChu8;
+    private javax.swing.JLabel lblTenPhongTrangChu9;
     private javax.swing.JLabel lblTrangThaiQL1;
     private javax.swing.JLabel lblTrangThaiQL10;
     private javax.swing.JLabel lblTrangThaiQL11;
@@ -6225,45 +6191,45 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JLabel lblTrangThaiQL7;
     private javax.swing.JLabel lblTrangThaiQL8;
     private javax.swing.JLabel lblTrangThaiQL9;
+    private javax.swing.JLabel lblTrangThaiTrangChu1;
+    private javax.swing.JLabel lblTrangThaiTrangChu10;
+    private javax.swing.JLabel lblTrangThaiTrangChu11;
+    private javax.swing.JLabel lblTrangThaiTrangChu12;
+    private javax.swing.JLabel lblTrangThaiTrangChu13;
+    private javax.swing.JLabel lblTrangThaiTrangChu14;
+    private javax.swing.JLabel lblTrangThaiTrangChu15;
+    private javax.swing.JLabel lblTrangThaiTrangChu16;
+    private javax.swing.JLabel lblTrangThaiTrangChu17;
+    private javax.swing.JLabel lblTrangThaiTrangChu18;
+    private javax.swing.JLabel lblTrangThaiTrangChu19;
+    private javax.swing.JLabel lblTrangThaiTrangChu2;
+    private javax.swing.JLabel lblTrangThaiTrangChu20;
+    private javax.swing.JLabel lblTrangThaiTrangChu21;
+    private javax.swing.JLabel lblTrangThaiTrangChu22;
+    private javax.swing.JLabel lblTrangThaiTrangChu23;
+    private javax.swing.JLabel lblTrangThaiTrangChu24;
+    private javax.swing.JLabel lblTrangThaiTrangChu25;
+    private javax.swing.JLabel lblTrangThaiTrangChu26;
+    private javax.swing.JLabel lblTrangThaiTrangChu27;
+    private javax.swing.JLabel lblTrangThaiTrangChu28;
+    private javax.swing.JLabel lblTrangThaiTrangChu29;
+    private javax.swing.JLabel lblTrangThaiTrangChu3;
+    private javax.swing.JLabel lblTrangThaiTrangChu30;
+    private javax.swing.JLabel lblTrangThaiTrangChu31;
+    private javax.swing.JLabel lblTrangThaiTrangChu32;
+    private javax.swing.JLabel lblTrangThaiTrangChu33;
+    private javax.swing.JLabel lblTrangThaiTrangChu34;
+    private javax.swing.JLabel lblTrangThaiTrangChu35;
+    private javax.swing.JLabel lblTrangThaiTrangChu4;
+    private javax.swing.JLabel lblTrangThaiTrangChu5;
+    private javax.swing.JLabel lblTrangThaiTrangChu6;
+    private javax.swing.JLabel lblTrangThaiTrangChu7;
+    private javax.swing.JLabel lblTrangThaiTrangChu8;
+    private javax.swing.JLabel lblTrangThaiTrangChu9;
     private javax.swing.JLabel lblcurrentTime;
     private javax.swing.JLabel lblcurrentdate;
     private javax.swing.JLabel lbldate;
     private javax.swing.JLabel lbltime;
-    private javax.swing.JPanel phong10;
-    private javax.swing.JPanel phong11;
-    private javax.swing.JPanel phong13;
-    private javax.swing.JPanel phong14;
-    private javax.swing.JPanel phong17;
-    private javax.swing.JPanel phong18;
-    private javax.swing.JPanel phong19;
-    private javax.swing.JPanel phong2;
-    private javax.swing.JPanel phong20;
-    private javax.swing.JPanel phong21;
-    private javax.swing.JPanel phong24;
-    private javax.swing.JPanel phong25;
-    private javax.swing.JPanel phong26;
-    private javax.swing.JPanel phong27;
-    private javax.swing.JPanel phong28;
-    private javax.swing.JPanel phong3;
-    private javax.swing.JPanel phong31;
-    private javax.swing.JPanel phong32;
-    private javax.swing.JPanel phong33;
-    private javax.swing.JPanel phong34;
-    private javax.swing.JPanel phong35;
-    private javax.swing.JPanel phong36;
-    private javax.swing.JPanel phong37;
-    private javax.swing.JPanel phong38;
-    private javax.swing.JPanel phong39;
-    private javax.swing.JPanel phong4;
-    private javax.swing.JPanel phong40;
-    private javax.swing.JPanel phong41;
-    private javax.swing.JPanel phong42;
-    private javax.swing.JPanel phong48;
-    private javax.swing.JPanel phong49;
-    private javax.swing.JPanel phong5;
-    private javax.swing.JPanel phong50;
-    private javax.swing.JPanel phong6;
-    private javax.swing.JPanel phong9;
     private javax.swing.JPanel phongQuanLy1;
     private javax.swing.JPanel phongQuanLy10;
     private javax.swing.JPanel phongQuanLy11;
@@ -6299,6 +6265,41 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JPanel phongQuanLy7;
     private javax.swing.JPanel phongQuanLy8;
     private javax.swing.JPanel phongQuanLy9;
+    private javax.swing.JPanel phongTrangChu1;
+    private javax.swing.JPanel phongTrangChu10;
+    private javax.swing.JPanel phongTrangChu11;
+    private javax.swing.JPanel phongTrangChu12;
+    private javax.swing.JPanel phongTrangChu13;
+    private javax.swing.JPanel phongTrangChu14;
+    private javax.swing.JPanel phongTrangChu15;
+    private javax.swing.JPanel phongTrangChu16;
+    private javax.swing.JPanel phongTrangChu17;
+    private javax.swing.JPanel phongTrangChu18;
+    private javax.swing.JPanel phongTrangChu19;
+    private javax.swing.JPanel phongTrangChu2;
+    private javax.swing.JPanel phongTrangChu20;
+    private javax.swing.JPanel phongTrangChu21;
+    private javax.swing.JPanel phongTrangChu22;
+    private javax.swing.JPanel phongTrangChu23;
+    private javax.swing.JPanel phongTrangChu24;
+    private javax.swing.JPanel phongTrangChu25;
+    private javax.swing.JPanel phongTrangChu26;
+    private javax.swing.JPanel phongTrangChu27;
+    private javax.swing.JPanel phongTrangChu28;
+    private javax.swing.JPanel phongTrangChu29;
+    private javax.swing.JPanel phongTrangChu3;
+    private javax.swing.JPanel phongTrangChu30;
+    private javax.swing.JPanel phongTrangChu31;
+    private javax.swing.JPanel phongTrangChu32;
+    private javax.swing.JPanel phongTrangChu33;
+    private javax.swing.JPanel phongTrangChu34;
+    private javax.swing.JPanel phongTrangChu35;
+    private javax.swing.JPanel phongTrangChu4;
+    private javax.swing.JPanel phongTrangChu5;
+    private javax.swing.JPanel phongTrangChu6;
+    private javax.swing.JPanel phongTrangChu7;
+    private javax.swing.JPanel phongTrangChu8;
+    private javax.swing.JPanel phongTrangChu9;
     private javax.swing.JPanel pnBody1;
     private javax.swing.JPanel pnBody2;
     private javax.swing.JPanel pnDichVu;
