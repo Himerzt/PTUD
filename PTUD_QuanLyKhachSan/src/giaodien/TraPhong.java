@@ -7,6 +7,7 @@ package giaodien;
 import entity.DichVuPhong;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -322,6 +323,11 @@ public class TraPhong extends javax.swing.JFrame {
         });
 
         btnDatPhong.setText("Trả phòng");
+        btnDatPhong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDatPhongActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -380,6 +386,18 @@ public class TraPhong extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.hide();
     }//GEN-LAST:event_btnHuyActionPerformed
+
+    private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatPhongActionPerformed
+        // TODO add your handling code here:
+//         Tạo một đối tượng mới của HoaDonThanhToan
+    HoaDonThanhToan hoaDonThanhToan = new HoaDonThanhToan();
+    
+    // Đặt phương thức để đóng cửa sổ khi người dùng đóng cửa sổ mới
+    hoaDonThanhToan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    
+    // Hiển thị cửa sổ mới
+    hoaDonThanhToan.setVisible(true);
+    }//GEN-LAST:event_btnDatPhongActionPerformed
 
     /**
      * @param args the command line arguments

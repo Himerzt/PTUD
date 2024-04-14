@@ -575,6 +575,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Tr&#x1ea3; ph&#xf2;ng"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDatPhongActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
