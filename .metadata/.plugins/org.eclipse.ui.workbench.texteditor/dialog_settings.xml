@@ -8,8 +8,10 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="&lt;&lt;&lt;"/>
+			<item value="javax.swing."/>
+			<item value="ganDuLieuPhongVaoTrangChu"/>
 			<item value="ganDuLieuPhongVaoQuanLyPhong"/>
+			<item value="&lt;&lt;&lt;"/>
 			<item value="btnDatPhong"/>
 			<item value="getTenPhong"/>
 			<item value="&lt;&lt;&lt;&lt;"/>
@@ -21,8 +23,6 @@
 			<item value="default "/>
 			<item value="setD"/>
 			<item value="phong.getMaLoaiPhong()"/>
-			<item value="ToolKit"/>
-			<item value="ganDuLieuPhongVaoTrangChu"/>
 		</list>
 		<list key="replacehistory">
 			<item value="maLoai"/>
