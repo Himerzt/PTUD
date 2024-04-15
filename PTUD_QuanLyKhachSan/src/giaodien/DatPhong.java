@@ -479,26 +479,31 @@ public class DatPhong extends javax.swing.JDialog {
 			jPanel1Layout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(jPanel1Layout.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
-						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
-						.addGroup(jPanel1Layout.createSequentialGroup()
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 1117, Short.MAX_VALUE)
+						.addComponent(jLabel1, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
+						.addGroup(Alignment.LEADING, jPanel1Layout.createSequentialGroup()
 							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 								.addComponent(jLabel32)
 								.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, 291, GroupLayout.PREFERRED_SIZE))
 							.addGap(18)
 							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 525, GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel2))
-							.addGap(18)
-							.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-									.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, 229, GroupLayout.PREFERRED_SIZE)
-									.addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE))
+								.addComponent(jLabel2)
 								.addGroup(jPanel1Layout.createSequentialGroup()
-									.addComponent(btnDatPhong)
 									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(btnHuy, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)))))
+									.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 525, GroupLayout.PREFERRED_SIZE)))
+							.addPreferredGap(ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+									.addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE)
+									.addGap(60))
+								.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+									.addComponent(btnDatPhong)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(btnHuy, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE))
+								.addGroup(jPanel1Layout.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, 246, GroupLayout.PREFERRED_SIZE)))))
 					.addContainerGap())
 		);
 		jPanel1Layout.setVerticalGroup(
@@ -507,28 +512,29 @@ public class DatPhong extends javax.swing.JDialog {
 					.addContainerGap()
 					.addComponent(jLabel1)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, 175, GroupLayout.PREFERRED_SIZE)
+					.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, 212, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(jLabel32)
 						.addComponent(jLabel2)
 						.addComponent(jLabel3))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING, false)
-						.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, 151, GroupLayout.PREFERRED_SIZE)
-						.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 151, GroupLayout.PREFERRED_SIZE)
-						.addGroup(jPanel1Layout.createSequentialGroup()
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
 							.addComponent(jPanel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addGap(10)
+							.addGap(127)
 							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
 								.addComponent(btnHuy, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnDatPhong, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))))
-					.addContainerGap(168, Short.MAX_VALUE))
+								.addComponent(btnDatPhong, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+							.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
+							.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap())
 		);
 		jPanel1.setLayout(jPanel1Layout);
 
 		getContentPane().add(jPanel1, BorderLayout.SOUTH);
-		loadDanhSachPhongDat();
+//		loadDanhSachPhongDat();
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
 
@@ -555,22 +561,22 @@ public class DatPhong extends javax.swing.JDialog {
 			return "Thương gia";
 	}
 
-	public void loadDanhSachPhongDat() {
-		// Hiện danh sách phòng vào bảng
-		String[] dsPhongDat = layDanhSachPhongDat();
-		PhongDao phongDao = new PhongDao();
-		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
-		for (String tenPhong : dsPhongDat) {
-			dsPhong.add(phongDao.timPhongTheoSoPhong(Integer.parseInt(tenPhong)));
-		}
-		DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
-		String loaiPhong = "";
-		for (Phong phong : dsPhong) {
-			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
-			Object[] rowData = { model.getRowCount() + 1, phong.getSoPhong(), loaiPhong};
-			model.addRow(rowData);
-		}
-	}
+//	public void loadDanhSachPhongDat() {
+//		// Hiện danh sách phòng vào bảng
+//		String[] dsPhongDat = layDanhSachPhongDat();
+//		PhongDao phongDao = new PhongDao();
+//		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
+//		for (String tenPhong : dsPhongDat) {
+//			dsPhong.add(phongDao.timPhongTheoSoPhong(Integer.parseInt(tenPhong)));
+//		}
+//		DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
+//		String loaiPhong = "";
+//		for (Phong phong : dsPhong) {
+//			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
+//			Object[] rowData = { model.getRowCount() + 1, phong.getSoPhong(), loaiPhong};
+//			model.addRow(rowData);
+//		}
+//	}
 
 	private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
 		String[] dsPhongDat = layDanhSachPhongDat();

@@ -70,7 +70,7 @@ public class Phong {
 		PhongDao phongDao = new PhongDao();
 		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
 		for (Phong phong : dsPhong) {
-			System.out.println(phong.toString());
+			System.out.println(phong.getSoPhong());
 		}
 		
 	}
