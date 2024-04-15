@@ -532,17 +532,18 @@ public class ThongTinDatThuePhongDao {
 		int i = 1;
 		for (Phong phong2 : phong) {
 			try {
+				String maDP = String.format("%s%s", kh.getMaKH(), i);
 				stmt = con.createStatement();
-				String sql = "insert into ThongTinDatThuePhong values('"+(kh.getMaKH() + "i") +"', '"+ kh.getMaKH()+ "', '"+ phong2.getMaPhong() + "', '"+ ngayDatPhong + "', '"+ ngayNhanPhong + "', '"+ ngayTraPhong + "','" +maLoaiThue+"', 'Đã Thuê' )";
+				String sql = "insert into ThongTinDatThuePhong values('"+(maDP) +"', '"+ kh.getMaKH()+ "', '"+ phong2.getMaPhong() + "', '"+ ngayDatPhong + "', '"+ ngayNhanPhong + "', '"+ ngayTraPhong + "','" +maLoaiThue+"')";
+				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã đặt' WHERE maPhong = '" + phong2.getMaPhong() + "'";
 				stmt.executeUpdate(sql);
+				stmt.executeUpdate(sql1);
 				i++;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-
-		return false;
-
+		return true;
 	}
 
 }
