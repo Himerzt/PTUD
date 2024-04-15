@@ -45,6 +45,8 @@ import dao.TaiKhoanDao;
 
 import javax.swing.JFrame;
 import menu.MenuEvent;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
 
 /**
  * @author Huynguyen
@@ -74,11 +76,13 @@ public class TrangChu extends javax.swing.JFrame {
 				if (index == 1) {
 					pnedUngDung.setSelectedIndex(1);
 					ganDuLieuPhongVaoQuanLyPhong();
+					addCheckBoxListeners();
 				}
 
 				if (index == 2) {
 					pnedUngDung.setSelectedIndex(2);
 					loadTableNhanVien();
+					eventClickOnTableNhanVien();
 				}
 				if (index == 3) {
 					pnedUngDung.setSelectedIndex(3);
@@ -663,6 +667,16 @@ public class TrangChu extends javax.swing.JFrame {
 		btnNgungKhuyenMai = new javax.swing.JButton();
 		btnThemKhuyenMai = new javax.swing.JButton();
 		btnXoaTrangKhuyenMai = new javax.swing.JButton();
+		btnXoaTrangKhuyenMai.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				txtMaKhuyenMai.setText("");
+				txtTenKhuyenMai.setText("");
+				txtNgayBatDauKhuyenMai.setText("");
+				txtNgayKetThucKhuyenMai.setText("");
+				txtGiaTriKhuyenMai.setText("");
+				cbxDieuKienApDungKhuyenMai.setSelectedIndex(0);
+			}
+		});
 		cbxDieuKienApDungKhuyenMai = new javax.swing.JComboBox<>();
 		jScrollPane5 = new javax.swing.JScrollPane();
 		TableKhuyenMai = new javax.swing.JTable();
@@ -818,39 +832,41 @@ public class TrangChu extends javax.swing.JFrame {
 		jLabel10.setText("jLabel10");
 
 		javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+		jPanel5Layout.setHorizontalGroup(
+			jPanel5Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel5Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jLabel10, GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		jPanel5Layout.setVerticalGroup(
+			jPanel5Layout.createParallelGroup(Alignment.TRAILING)
+				.addComponent(jLabel10, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+		);
 		jPanel5.setLayout(jPanel5Layout);
-		jPanel5Layout.setHorizontalGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel5Layout
-						.createSequentialGroup().addGap(19, 19, 19).addComponent(jLabel10,
-								javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(20, Short.MAX_VALUE)));
-		jPanel5Layout.setVerticalGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-						jPanel5Layout.createSequentialGroup()
-								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(jLabel10).addContainerGap()));
 
 		javax.swing.GroupLayout pnHeaderLayout = new javax.swing.GroupLayout(pnHeader);
-		pnHeader.setLayout(pnHeaderLayout);
-		pnHeaderLayout.setHorizontalGroup(pnHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+		pnHeaderLayout.setHorizontalGroup(
+			pnHeaderLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(pnHeaderLayout.createSequentialGroup()
-						.addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 1077,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(77, 77, 77)
-						.addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(37, 37, 37).addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(46, Short.MAX_VALUE)));
-		pnHeaderLayout.setVerticalGroup(pnHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-						Short.MAX_VALUE)
-				.addGroup(pnHeaderLayout.createSequentialGroup().addGap(22, 22, 22)
-						.addGroup(pnHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-								.addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addContainerGap(19, Short.MAX_VALUE)));
+					.addComponent(Header, GroupLayout.PREFERRED_SIZE, 1077, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(jPanel5, GroupLayout.PREFERRED_SIZE, 295, GroupLayout.PREFERRED_SIZE)
+					.addGap(37)
+					.addComponent(jButton9, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(46, Short.MAX_VALUE))
+		);
+		pnHeaderLayout.setVerticalGroup(
+			pnHeaderLayout.createParallelGroup(Alignment.LEADING)
+				.addComponent(Header, GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+				.addGroup(pnHeaderLayout.createSequentialGroup()
+					.addGap(19)
+					.addGroup(pnHeaderLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(jPanel5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jButton9, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(16, Short.MAX_VALUE))
+		);
+		pnHeader.setLayout(pnHeaderLayout);
 
 		jPanel1.add(pnHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1520, -1));
 
@@ -6209,7 +6225,16 @@ public class TrangChu extends javax.swing.JFrame {
 		// TODO add your handling code here:
 	}// GEN-LAST:event_btnCapNhapNhanVienActionPerformed
 
+	// NGUYEN QUỐC HUY CHỈNH SỬA Ở ĐÂY
 	private void btnXoaTrangNhanVienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXoaTrangNhanVienActionPerformed
+		txtHoTenNhanVien.setText("");
+		txtNgaySinhNhanVien.setText("");
+		txtSoDienThoaiNhanVien.setText("");
+		txtEmailNhanVien1.setText("");
+		txtCanCuocCongDanNhanVien.setText("");
+		cbxGioiTinh.setSelectedIndex(0);
+		cbxChucVuNhanVien.setSelectedIndex(0);
+		txtNgayVaoLamNhanVien.setText("");
 		// TODO add your handling code here:
 	}// GEN-LAST:event_btnXoaTrangNhanVienActionPerformed
 
@@ -6858,4 +6883,86 @@ public class TrangChu extends javax.swing.JFrame {
         });
         
     }
+	
+	//Nguyễn Quốc Huy thêm event click on table nhân viên
+	protected void eventClickOnTableNhanVien() {
+		TableNhanVien.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    int selectedRow = TableNhanVien.getSelectedRow();
+                    if (selectedRow != -1) { // Đảm bảo có hàng được chọn
+						txtMaNhanVien.setText((String) TableNhanVien.getValueAt(selectedRow, 1));
+						txtHoTenNhanVien.setText((String) TableNhanVien.getValueAt(selectedRow, 2));
+						String gioiTinh = (String) TableNhanVien.getValueAt(selectedRow, 3);
+						cbxGioiTinh.setSelectedItem(gioiTinh);
+						LocalDate ngaySinh = (LocalDate) TableNhanVien.getValueAt(selectedRow, 4);
+						String ngaySinhStr = String.format("%02d-%02d-%d", ngaySinh.getDayOfMonth(), ngaySinh.getMonthValue(), ngaySinh.getYear());
+						txtNgaySinhNhanVien.setText(ngaySinhStr);
+						txtSoDienThoaiNhanVien.setText((String) TableNhanVien.getValueAt(selectedRow, 5));
+						txtCanCuocCongDanNhanVien.setText((String) TableNhanVien.getValueAt(selectedRow, 6));
+						LocalDate ngayVaoLam = (LocalDate) TableNhanVien.getValueAt(selectedRow, 7);
+						String ngayVaoLamStr = String.format("%02d-%02d-%d", ngayVaoLam.getDayOfMonth(), ngayVaoLam.getMonthValue(), ngayVaoLam.getYear());
+						txtNgayVaoLamNhanVien.setText(ngayVaoLamStr);
+						cbxChucVuNhanVien.setSelectedItem((String) TableNhanVien.getValueAt(selectedRow, 8));
+                    }
+                }
+            }
+        });
+	}
+	
+	// Kiểm tra click vào checkbox phòng và enable các button khi chọn xong các check box
+	private void kiemTraClickCheckBoxPhong() {
+		int status1 = 0;
+		int status2 = 0;
+		int status3 = 0;
+		int status4 = 0;
+		for (int i = 0; i < checkBoxPhongQuanLy.size(); i++) {
+			JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+			if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Trống")) {
+				btnDatPhong.setEnabled(true);
+				btnDoiPhong.setEnabled(false);
+				btnTraPhong.setEnabled(false);
+				btnHuyDatPhong.setEnabled(false);
+				status4++;
+				status2++;
+				status3++;
+			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đã đặt")) {
+				btnDatPhong.setEnabled(false);
+				btnDoiPhong.setEnabled(true);
+				btnTraPhong.setEnabled(false);
+				btnHuyDatPhong.setEnabled(true);
+				status4++;
+				status1++;
+				status3++;
+			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
+				btnDatPhong.setEnabled(false);
+				btnDoiPhong.setEnabled(true);
+				btnHuyDatPhong.setEnabled(false);
+				btnTraPhong.setEnabled(true);
+				status4++;
+				status1++;
+				status2++;
+			} 
+		}
+		
+		
+		if (status1 != 0 && status2 != 0 && status3 != 0) {
+			btnDatPhong.setEnabled(false);
+			btnDoiPhong.setEnabled(false);
+			btnTraPhong.setEnabled(false);
+			btnHuyDatPhong.setEnabled(false);
+		}
+		if (status4 == 0) {
+			btnDatPhong.setEnabled(true);
+			btnDoiPhong.setEnabled(true);
+			btnTraPhong.setEnabled(true);
+			btnHuyDatPhong.setEnabled(true);
+		}
+	}
+	private void addCheckBoxListeners() {
+	    for (JCheckBox checkBox : checkBoxPhongQuanLy) {
+	        checkBox.addItemListener(e -> kiemTraClickCheckBoxPhong());
+	    }
+	}
 }
