@@ -43,6 +43,8 @@ import connectDB.ConnectDB;
 import dao.PhongDao;
 import javax.swing.JFrame;
 import menu.MenuEvent;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
 
 /**
  * @author Huynguyen
@@ -828,39 +830,41 @@ public class TrangChu extends javax.swing.JFrame {
 		jLabel10.setText("jLabel10");
 
 		javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+		jPanel5Layout.setHorizontalGroup(
+			jPanel5Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel5Layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jLabel10, GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		jPanel5Layout.setVerticalGroup(
+			jPanel5Layout.createParallelGroup(Alignment.TRAILING)
+				.addComponent(jLabel10, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+		);
 		jPanel5.setLayout(jPanel5Layout);
-		jPanel5Layout.setHorizontalGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel5Layout
-						.createSequentialGroup().addGap(19, 19, 19).addComponent(jLabel10,
-								javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(20, Short.MAX_VALUE)));
-		jPanel5Layout.setVerticalGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-						jPanel5Layout.createSequentialGroup()
-								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(jLabel10).addContainerGap()));
 
 		javax.swing.GroupLayout pnHeaderLayout = new javax.swing.GroupLayout(pnHeader);
-		pnHeader.setLayout(pnHeaderLayout);
-		pnHeaderLayout.setHorizontalGroup(pnHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+		pnHeaderLayout.setHorizontalGroup(
+			pnHeaderLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(pnHeaderLayout.createSequentialGroup()
-						.addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 1077,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(77, 77, 77)
-						.addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(37, 37, 37).addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(46, Short.MAX_VALUE)));
-		pnHeaderLayout.setVerticalGroup(pnHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-						Short.MAX_VALUE)
-				.addGroup(pnHeaderLayout.createSequentialGroup().addGap(22, 22, 22)
-						.addGroup(pnHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-								.addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addContainerGap(19, Short.MAX_VALUE)));
+					.addComponent(Header, GroupLayout.PREFERRED_SIZE, 1077, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(jPanel5, GroupLayout.PREFERRED_SIZE, 295, GroupLayout.PREFERRED_SIZE)
+					.addGap(37)
+					.addComponent(jButton9, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(46, Short.MAX_VALUE))
+		);
+		pnHeaderLayout.setVerticalGroup(
+			pnHeaderLayout.createParallelGroup(Alignment.LEADING)
+				.addComponent(Header, GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+				.addGroup(pnHeaderLayout.createSequentialGroup()
+					.addGap(19)
+					.addGroup(pnHeaderLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(jPanel5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jButton9, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(16, Short.MAX_VALUE))
+		);
+		pnHeader.setLayout(pnHeaderLayout);
 
 		jPanel1.add(pnHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1520, -1));
 
