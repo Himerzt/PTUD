@@ -22,8 +22,8 @@
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="javax.swing.SwingUtilities"/>
     <fullyQualifiedTypeName name="giaodien.TrangChu"/>
-    <fullyQualifiedTypeName name="dao.DichVuDao"/>
     <fullyQualifiedTypeName name="dao.TaiKhoanDao"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="dao.DichVuDao"/>
 </qualifiedTypeNameHistroy>
