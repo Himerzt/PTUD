@@ -370,6 +370,11 @@
                           </Layout>
                           <SubComponents>
                             <Container class="javax.swing.JPanel" name="jPanel2">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                              </Properties>
 
                               <Layout>
                                 <DimensionLayout dim="0">
@@ -1084,6 +1089,11 @@
                           </Layout>
                           <SubComponents>
                             <Container class="javax.swing.JPanel" name="jPanel3">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                              </Properties>
 
                               <Layout>
                                 <DimensionLayout dim="0">
@@ -1798,6 +1808,11 @@
                           </Layout>
                           <SubComponents>
                             <Container class="javax.swing.JPanel" name="jPanel4">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                              </Properties>
 
                               <Layout>
                                 <DimensionLayout dim="0">
@@ -2512,6 +2527,11 @@
                           </Layout>
                           <SubComponents>
                             <Container class="javax.swing.JPanel" name="jPanel6">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                              </Properties>
 
                               <Layout>
                                 <DimensionLayout dim="0">
@@ -2904,11 +2924,17 @@
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JScrollPane" name="ScrollPaneQuanLyPhong">
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ScollBar1.ScrollPaneWin11()"/>
+                  </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="pnBody2">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                             <LineBorder/>
@@ -2992,6 +3018,11 @@
                           </Layout>
                           <SubComponents>
                             <Container class="javax.swing.JPanel" name="jPanel8">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                              </Properties>
 
                               <Layout>
                                 <DimensionLayout dim="0">
@@ -3909,6 +3940,9 @@
                           <SubComponents>
                             <Container class="javax.swing.JPanel" name="jPanel11">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
                                 <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                                   <Dimension value="[1150, 120]"/>
                                 </Property>
@@ -4836,6 +4870,11 @@
                           </Layout>
                           <SubComponents>
                             <Container class="javax.swing.JPanel" name="jPanel13">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                              </Properties>
 
                               <Layout>
                                 <DimensionLayout dim="0">
@@ -5763,6 +5802,11 @@
                           </Layout>
                           <SubComponents>
                             <Container class="javax.swing.JPanel" name="jPanel15">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                              </Properties>
 
                               <Layout>
                                 <DimensionLayout dim="0">
@@ -6210,7 +6254,7 @@
                 <Container class="javax.swing.JPanel" name="funtionPanel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                      <Color blue="ef" green="f9" red="fe" type="rgb"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -6420,6 +6464,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnTimTheoDieuKien">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="77" green="cb" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="T&#xec;m"/>
                       </Properties>
                       <Events>
@@ -6444,6 +6491,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnResetTrangThai">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="77" green="cb" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Reset"/>
                       </Properties>
                       <Events>
@@ -6452,21 +6502,33 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnTraPhong">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="77" green="cb" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Tr&#x1ea3; ph&#xf2;ng"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnDoiPhong">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="77" green="cb" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="&#x110;&#x1ed5;i ph&#xf2;ng"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnHuyDatPhong">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="77" green="cb" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="H&#x1ee7;y &#x111;&#x1eb7;t ph&#xf2;ng"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnDatPhong">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="77" green="cb" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="&#x110;&#x1eb7;t ph&#xf2;ng"/>
                       </Properties>
                       <Events>
@@ -6510,7 +6572,7 @@
                 <Container class="javax.swing.JPanel" name="pnLayOutNhanVien">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -6548,6 +6610,11 @@
                   </Layout>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="jPanel12">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ef" green="f9" red="fe" type="rgb"/>
+                        </Property>
+                      </Properties>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -6880,6 +6947,9 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnCapNhapNhanVien">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;p nh&#xe2;n vi&#xea;n"/>
                           </Properties>
                           <Events>
@@ -6888,6 +6958,9 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnTamChoNghiNhanVien">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="T&#x1ea1;m cho ngh&#x1ec9;"/>
                           </Properties>
                           <Events>
@@ -6896,6 +6969,9 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnThemNhanVien">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="Th&#xea;m nh&#xe2;n vi&#xea;n"/>
                           </Properties>
                           <Events>
@@ -6904,6 +6980,9 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnXoaTrangNhanVien">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="X&#xf3;a tr&#x1eaf;ng"/>
                           </Properties>
                           <Events>
@@ -7042,7 +7121,7 @@
                 <Container class="javax.swing.JPanel" name="pnLayOutDichVu">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -7080,6 +7159,11 @@
                   </Layout>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="jPanel14">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ef" green="f9" red="fe" type="rgb"/>
+                        </Property>
+                      </Properties>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -7198,6 +7282,9 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnCapNhapDichVu">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;p d&#x1ecb;ch v&#x1ee5;"/>
                           </Properties>
                           <Events>
@@ -7206,6 +7293,9 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnThemDichVu">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="Th&#xea;m d&#x1ecb;ch v&#x1ee5;"/>
                           </Properties>
                           <Events>
@@ -7214,6 +7304,9 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnXoaTrangDichVu">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="X&#xf3;a tr&#x1eaf;ng"/>
                           </Properties>
                           <Events>
@@ -7304,7 +7397,7 @@
                 <Container class="javax.swing.JPanel" name="pnLayOutKhuyenMai">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -7342,6 +7435,11 @@
                   </Layout>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="jPanel16">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ef" green="f9" red="fe" type="rgb"/>
+                        </Property>
+                      </Properties>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -7600,23 +7698,38 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnCapNhapKhuyenMai">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;p khuy&#x1ebf;n m&#xe3;i"/>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t khuy&#x1ebf;n m&#xe3;i"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="btnNgungKhuyenMai">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Cho ng&#x1eeb;ng khuy&#x1ec5;n m&#xe3;i"/>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="K&#x1ebf;t th&#xfa;c khuy&#x1ec5;n m&#xe3;i"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="btnThemKhuyenMai">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="Th&#xea;m khuy&#x1ebf;n m&#xe3;i"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="btnXoaTrangKhuyenMai">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="X&#xf3;a tr&#x1eaf;ng"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaTrangKhuyenMaiActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="cbxDieuKienApDungKhuyenMai">
                           <Properties>
@@ -7737,7 +7850,7 @@
                 <Container class="javax.swing.JPanel" name="pnLayOutKhachKhachHang">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -7775,6 +7888,11 @@
                   </Layout>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="jPanel18">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ef" green="f9" red="fe" type="rgb"/>
+                        </Property>
+                      </Properties>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -7832,6 +7950,8 @@
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="btnXoaTrangKhachHangQL" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="btnThemKhachHang" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="btnCapNhapKhachHang" min="-2" max="-2" attributes="0"/>
@@ -7899,6 +8019,7 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="btnCapNhapKhachHang" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="btnThemKhachHang" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnXoaTrangKhachHangQL" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="22" max="32767" attributes="0"/>
                               </Group>
@@ -8078,6 +8199,9 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnCapNhapKhachHang">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;p kh&#xe1;ch h&#xe0;ng"/>
                           </Properties>
                           <Events>
@@ -8086,6 +8210,9 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnThemKhachHang">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="Th&#xea;m kh&#xe1;ch h&#xe0;ng"/>
                           </Properties>
                           <Events>
@@ -8117,6 +8244,17 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtHangThanhVienActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="btnXoaTrangKhachHangQL">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="77" green="cb" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="X&#xf3;a tr&#x1eaf;ng"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaTrangKhachHangQLActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
