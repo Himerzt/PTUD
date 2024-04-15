@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JCheckBox;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -23,11 +24,6 @@ public class TrangChu_NhanVien extends javax.swing.JFrame {
          
 //        setUndecorated(true);
 //        setAlwaysOnTop(true);
-        setResizable(false);
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        int x=(int) tk.getScreenSize().getWidth();
-        int y=(int) tk.getScreenSize().getHeight();
-        setSize(x, y);
         initComponents();
         datetime();
         times();
@@ -4728,7 +4724,9 @@ public void times(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new TrangChu_NhanVien().setVisible(true);
+
             }
         });
     }

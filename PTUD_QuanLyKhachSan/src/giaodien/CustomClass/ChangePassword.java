@@ -75,7 +75,7 @@ public class ChangePassword extends javax.swing.JFrame {
 
         Left.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(23, 195, 178));
         jLabel2.setText("ĐỔI MẬT KHẨU");
 
@@ -91,6 +91,7 @@ public class ChangePassword extends javax.swing.JFrame {
         btnDoiMatKhau.setBorder(null);
         btnDoiMatKhau.setText("THAY ĐỔI");
         btnDoiMatKhau.setBorderColor(new java.awt.Color(23, 195, 178));
+        btnDoiMatKhau.setColorOver(new java.awt.Color(0, 255, 204));
         btnDoiMatKhau.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         btnDoiMatKhau.setPreferredSize(new java.awt.Dimension(125, 35));
         btnDoiMatKhau.setRadius(20);
@@ -144,18 +145,19 @@ public class ChangePassword extends javax.swing.JFrame {
                         .addGroup(LeftLayout.createSequentialGroup()
                             .addGap(85, 85, 85)
                             .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtMatKhauMoi1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                .addComponent(txtMatKhauCu, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                .addComponent(txtMatKhauMoi2, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(LeftLayout.createSequentialGroup()
-                                    .addGap(46, 46, 46)
-                                    .addComponent(jLabel2))))
+                                .addComponent(txtMatKhauMoi1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtMatKhauCu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtMatKhauMoi2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)))
                         .addGroup(LeftLayout.createSequentialGroup()
                             .addGap(34, 34, 34)
                             .addComponent(jLabel6))))
                 .addContainerGap(20, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeftLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(95, 95, 95))
         );
         LeftLayout.setVerticalGroup(
             LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,7 +166,7 @@ public class ChangePassword extends javax.swing.JFrame {
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
-                .addGap(10, 10, 10)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,7 +178,7 @@ public class ChangePassword extends javax.swing.JFrame {
                 .addComponent(txtMatKhauMoi2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93))
+                .addContainerGap())
         );
 
         jPanel1.add(Left);

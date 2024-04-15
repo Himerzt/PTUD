@@ -431,6 +431,7 @@ public class TraPhong extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TraPhong().setVisible(true);
+
             }
         });
     }
