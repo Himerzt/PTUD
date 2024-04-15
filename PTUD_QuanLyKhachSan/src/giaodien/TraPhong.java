@@ -15,6 +15,7 @@ import connectDB.ConnectDB;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JButton;
 
 /**
  *
@@ -60,7 +61,7 @@ public class TraPhong extends javax.swing.JDialog {
         jLabel25 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        txtTenKH = new javax.swing.JTextField();
+        txtCCCD = new javax.swing.JTextField();
         txtHangThanhVienKH = new javax.swing.JTextField();
         txtHangThanhVienKH.setEnabled(false);
         txtSodienthoaiKH = new javax.swing.JTextField();
@@ -84,7 +85,7 @@ public class TraPhong extends javax.swing.JDialog {
         jScrollPane1 = new ScollBar1.ScrollPaneWin11();
         tableDV = new javax.swing.JTable();
         btnHuy = new javax.swing.JButton();
-        btnDatPhong = new javax.swing.JButton();
+        btnTraPhong = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -95,7 +96,7 @@ public class TraPhong extends javax.swing.JDialog {
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel17.setText("Tên khách hàng");
+        jLabel17.setText("CCCD");
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -137,7 +138,7 @@ public class TraPhong extends javax.swing.JDialog {
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel31.setText("Ngày đặt");
 
-        txtTenKH.setText("Tên khách hàng");
+        txtCCCD.setText("CCCD");
 
         txtHangThanhVienKH.setText("Hạng thành viên");
 
@@ -157,6 +158,8 @@ public class TraPhong extends javax.swing.JDialog {
 
         txtTienCanThu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtTienCanThu.setText("Tống số tiền cần thu thêm");
+        
+        JButton btnCCCD = new JButton("+");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2Layout.setHorizontalGroup(
@@ -178,7 +181,10 @@ public class TraPhong extends javax.swing.JDialog {
         				.addComponent(txtCheckOut)
         				.addComponent(txtSodienthoaiKH, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         				.addComponent(txtHangThanhVienKH, Alignment.LEADING)
-        				.addComponent(txtTenKH, Alignment.LEADING))
+        				.addGroup(Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+        					.addComponent(txtCCCD)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(btnCCCD)))
         			.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
         				.addGroup(jPanel2Layout.createSequentialGroup()
         					.addGap(42)
@@ -217,9 +223,10 @@ public class TraPhong extends javax.swing.JDialog {
         					.addComponent(jLabel17, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
         					.addComponent(jLabel19, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
         					.addComponent(jLabel18, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-        					.addComponent(txtTenKH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        					.addComponent(txtCCCD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         					.addComponent(txtNgaySinh, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        					.addComponent(txtTongHoaDon, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        					.addComponent(txtTongHoaDon, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        					.addComponent(btnCCCD))
         				.addGroup(jPanel2Layout.createSequentialGroup()
         					.addGap(40)
         					.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
@@ -245,7 +252,7 @@ public class TraPhong extends javax.swing.JDialog {
         						.addComponent(txtCheckOut, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         						.addComponent(jLabel30, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)))
         				.addComponent(txtTienCanThu, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-        			.addContainerGap(94, Short.MAX_VALUE))
+        			.addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel2.setLayout(jPanel2Layout);
 
@@ -305,8 +312,8 @@ public class TraPhong extends javax.swing.JDialog {
             }
         });
 
-        btnDatPhong.setText("Trả phòng");
-        btnDatPhong.addActionListener(new java.awt.event.ActionListener() {
+        btnTraPhong.setText("Trả phòng");
+        btnTraPhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDatPhongActionPerformed(evt);
             }
@@ -334,7 +341,7 @@ public class TraPhong extends javax.swing.JDialog {
         							.addGap(18)
         							.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
         								.addComponent(btnHuy, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
-        								.addComponent(btnDatPhong, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
+        								.addComponent(btnTraPhong, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
         						.addGroup(jPanel1Layout.createSequentialGroup()
         							.addComponent(jLabel2)
         							.addPreferredGap(ComponentPlacement.RELATED, 536, Short.MAX_VALUE)))))
@@ -358,7 +365,7 @@ public class TraPhong extends javax.swing.JDialog {
         						.addComponent(jScrollPane1, 0, 0, Short.MAX_VALUE)
         						.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, 154, GroupLayout.PREFERRED_SIZE)))
         				.addGroup(jPanel1Layout.createSequentialGroup()
-        					.addComponent(btnDatPhong, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
+        					.addComponent(btnTraPhong, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
         					.addPreferredGap(ComponentPlacement.UNRELATED)
         					.addComponent(btnHuy, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)))
         			.addGap(37))
@@ -425,7 +432,7 @@ public class TraPhong extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDatPhong;
+    private javax.swing.JButton btnTraPhong;
     private javax.swing.JButton btnHuy;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
@@ -453,7 +460,7 @@ public class TraPhong extends javax.swing.JDialog {
     private javax.swing.JTextField txtHangThanhVienKH;
     private javax.swing.JTextField txtNgaySinh;
     private javax.swing.JTextField txtSodienthoaiKH;
-    private javax.swing.JTextField txtTenKH;
+    private javax.swing.JTextField txtCCCD;
     private javax.swing.JTextField txtThue;
     private javax.swing.JTextField txtTienCanThu;
     private javax.swing.JTextField txtTongHoaDon;
@@ -506,7 +513,4 @@ public class TraPhong extends javax.swing.JDialog {
         
         
     }
-
-
-
 }
