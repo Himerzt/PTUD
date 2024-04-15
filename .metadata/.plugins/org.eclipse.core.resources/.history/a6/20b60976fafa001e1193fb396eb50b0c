@@ -481,7 +481,7 @@ public class DatPhong extends javax.swing.JDialog {
 					.addContainerGap()
 					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 						.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
-						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
+						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 1081, Short.MAX_VALUE)
 						.addGroup(jPanel1Layout.createSequentialGroup()
 							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 								.addComponent(jLabel32)
@@ -596,13 +596,7 @@ public class DatPhong extends javax.swing.JDialog {
 		for (Phong phong : dsPhong) {
 			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
 			maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), loaiPhong);
-			if (ngayDat.equals(ngayNhan))
-				soTienCoc = 0;
-			else if (ngayDat.isBefore(ngayNhan)) {
-				soTienCoc += loaiThueDao.timGiaCocTheoMaThue(maLoaiThue) * dsPhong.size();
-			}
 		}
-		txtGiaCoc.setText(Double.toString(soTienCoc));
 		// Tính tiền cọc
 		if (ngayDat.equals(ngayNhan))
 			txtGiaCoc.setText("0");

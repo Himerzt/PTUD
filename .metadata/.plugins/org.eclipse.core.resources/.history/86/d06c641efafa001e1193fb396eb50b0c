@@ -481,7 +481,7 @@ public class DatPhong extends javax.swing.JDialog {
 					.addContainerGap()
 					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 						.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
-						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
+						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 1081, Short.MAX_VALUE)
 						.addGroup(jPanel1Layout.createSequentialGroup()
 							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 								.addComponent(jLabel32)
@@ -567,7 +567,9 @@ public class DatPhong extends javax.swing.JDialog {
 		String loaiPhong = "";
 		for (Phong phong : dsPhong) {
 			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
-			Object[] rowData = { model.getRowCount() + 1, phong.getSoPhong(), loaiPhong};
+			Object[] rowData = { model.getRowCount() + 1, phong.getSoPhong(), loaiPhong,
+					cbKieuThue.getSelectedItem().toString(), txtCheckIn.getText(), txtNgayNhan.getText(),
+					txtCheckOut.getText() };
 			model.addRow(rowData);
 		}
 	}
@@ -590,24 +592,12 @@ public class DatPhong extends javax.swing.JDialog {
 		LocalDate ngayDat = LocalDate.parse(txtCheckIn.getText(), formatter);
 		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), formatter);
 		LocalDate ngayTra = LocalDate.parse(txtCheckOut.getText(), formatter);
-		String loaiPhong = "";
-		String maLoaiThue = "";
-		double soTienCoc = 0;
-		for (Phong phong : dsPhong) {
-			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
-			maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), loaiPhong);
-			if (ngayDat.equals(ngayNhan))
-				soTienCoc = 0;
-			else if (ngayDat.isBefore(ngayNhan)) {
-				soTienCoc += loaiThueDao.timGiaCocTheoMaThue(maLoaiThue) * dsPhong.size();
-			}
-		}
-		txtGiaCoc.setText(Double.toString(soTienCoc));
+		String maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), loaiPhong);
 		// Tính tiền cọc
 		if (ngayDat.equals(ngayNhan))
 			txtGiaCoc.setText("0");
 		else if (ngayDat.isBefore(ngayNhan)) {
-			soTienCoc = loaiThueDao.timGiaCocTheoMaThue(maLoaiThue) * dsPhong.size();
+			double soTienCoc = loaiThueDao.timGiaCocTheoMaThue(maLoaiThue) * dsPhong.size();
 			txtGiaCoc.setText(Double.toString(soTienCoc));
 		}
 

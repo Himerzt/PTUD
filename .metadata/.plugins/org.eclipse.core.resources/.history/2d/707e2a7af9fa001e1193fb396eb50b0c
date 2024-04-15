@@ -46,7 +46,10 @@ import menu.MenuEvent;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+<<<<<<< HEAD
 import java.awt.Font;
+=======
+>>>>>>> 21f52c5152cfea0b18337b6656f6f4f13a92332f
 
 /**
  * @author Huynguyen
@@ -6223,8 +6226,13 @@ public class TrangChu extends javax.swing.JFrame {
 			public void run() {
 				try {
 					TrangChu trangChu = new TrangChu();
+					// Đặt cửa sổ để hiển thị full màn hình nhưng vẫn giữ lại thanh taskbar
 					trangChu.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+					// Thiết lập loại đóng cửa sổ mặc định
 					trangChu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+					// Hiển thị JFrame
 					trangChu.setVisible(true);
 				} catch (Exception e) {
 					// TODO: handle exception
