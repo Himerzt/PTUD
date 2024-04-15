@@ -41,4 +41,10 @@ public class DichVuPhong {
 
 	public DichVuPhong() {
 	}
+
+	@Override
+	public String toString() {
+        return "DichVuPhong [maPhong=" + this.maPhong + ", maDichVu=" + this.maDichVu + ", soLuong=" + this.soLuong
+                + "]";
+    }
 }

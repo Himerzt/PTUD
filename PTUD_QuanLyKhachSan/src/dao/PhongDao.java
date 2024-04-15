@@ -23,6 +23,21 @@ public class PhongDao {
 		phong = new Phong();
 	}
 
+	public String timMaPhongTheoTenPhong(String tenPhong) {
+		try {
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con.prepareStatement("select maPhong from Phong where soPhong = ?");
+			stmt.setString(1, tenPhong);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				return rs.getString(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 	public ArrayList<Phong> timTatCaPhongSapXepTheoSoPhong() {
 		try {
 			Connection con = ConnectDB.getConnection();
@@ -58,17 +73,18 @@ public class PhongDao {
 	// sửa phòng
 	public boolean suaPhong(Phong phong) {
 		try {
-            Connection con = ConnectDB.getConnection();
-            PreparedStatement stmt = con.prepareStatement("update Phong set soPhong = ?, maLoaiPhong = ?, trangThai = ? where maPhong = ?");
-            stmt.setInt(1, phong.getSoPhong());
-            stmt.setString(2, phong.getMaLoaiPhong());
-            stmt.setString(3, phong.getTrangThai());
-            stmt.setString(4, phong.getMaPhong());
-            int n = stmt.executeUpdate();
-            return n > 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-            }
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con
+					.prepareStatement("update Phong set soPhong = ?, maLoaiPhong = ?, trangThai = ? where maPhong = ?");
+			stmt.setInt(1, phong.getSoPhong());
+			stmt.setString(2, phong.getMaLoaiPhong());
+			stmt.setString(3, phong.getTrangThai());
+			stmt.setString(4, phong.getMaPhong());
+			int n = stmt.executeUpdate();
+			return n > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 
@@ -161,7 +177,7 @@ public class PhongDao {
 		}
 		return dsPhong;
 	}
-	
+
 	// tìm phòng theo loại phòng, trạng thái
 	public ArrayList<Phong> timPhongTheoLoaiPhongTrangThai(String maLoaiPhong, String trangThai) {
 		connectDB.ConnectDB.getInstance();
@@ -183,7 +199,7 @@ public class PhongDao {
 		}
 		return dsPhong;
 	}
-	
+
 	// tìm phòng theo loại phòng, trạng thái, số lượng
 	public ArrayList<Phong> timPhongTheoLoaiPhongTrangThaiSoLuong(String maLoaiPhong, String trangThai, int soLuong) {
 		connectDB.ConnectDB.getInstance();
@@ -207,34 +223,58 @@ public class PhongDao {
 		}
 		return dsPhong;
 	}
-	
+
 	public int size() {
 		return dsPhong.size();
 	}
 
 	public boolean capNhatTrangThaiDaDat(String maPhong) {
 		try {
-            Connection con = ConnectDB.getConnection();
-            PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = 'Đã đặt' where maPhong = ?");
-            stmt.setString(1, maPhong);
-            int n = stmt.executeUpdate();
-            return n > 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = 'Đã đặt' where maPhong = ?");
+			stmt.setString(1, maPhong);
+			int n = stmt.executeUpdate();
+			return n > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
-	
+
 	public boolean capNhatTrangThaiDaThue(String maPhong) {
 		try {
-            Connection con = ConnectDB.getConnection();
-            PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = 'Đã thuê' where maPhong = ?");
-            stmt.setString(1, maPhong);
-            int n = stmt.executeUpdate();
-            return n > 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = 'Đã thuê' where maPhong = ?");
+			stmt.setString(1, maPhong);
+			int n = stmt.executeUpdate();
+			return n > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	public String timMaLoaiPhongTheoMaPhong(String maPhong) {
+		try {
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con.prepareStatement("select maLoaiPhong from Phong where maPhong = ?");
+			stmt.setString(1, maPhong);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				return rs.getString(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	// chuyển ArrayList<String > thành ArrayList<Phong>
+	public ArrayList<Phong> chuyenDoi(ArrayList<String> dsMaPhong) {
+		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
+		for (String maPhong : dsMaPhong) {
+			dsPhong.add(timPhongTheoMaPhong(maPhong));
+		}
+		return dsPhong;
 	}
 }
