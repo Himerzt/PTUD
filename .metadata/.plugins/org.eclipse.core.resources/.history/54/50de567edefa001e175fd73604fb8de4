@@ -5928,7 +5928,7 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String quocTich = txtQuocTichKhachHang.getText();
 		String maKhachHang = txtMaKhachHang.getText();
-		double chiTieu = Double.parseDouble(txtChiTieuKhachHang.getText());
+		int chiTieu = Integer.parseInt(txtChiTieuKhachHang.getText());
 		String maHangThanhVien = txtHangThanhVien.getText();
 		KhachHang kh = new KhachHang(maKhachHang, tenKhachHang, gioiTinh, ngaySinh, soDienThoai, CCCD_Visa, chiTieu, "HB",
 				quocTich);

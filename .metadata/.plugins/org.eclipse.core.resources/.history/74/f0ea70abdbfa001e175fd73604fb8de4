@@ -5896,50 +5896,13 @@ public class TrangChu extends javax.swing.JFrame {
 		boolean themKhachHang = khDao.themKhachHang(kh);
 		if (themKhachHang) {
 			JOptionPane.showMessageDialog(null, "Thêm khách hàng thành công");
-			loadTableKhachHang();
 		} else {
 			JOptionPane.showMessageDialog(null, "Thêm khách hàng thất bại");
 		}
 	}// GEN-LAST:event_btnThemKhachHangActionPerformed
 
 	private void btnCapNhapKhachHangActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCapNhapKhachHangActionPerformed
-		String tenKhachHang = txtTenKhachHang.getText();
-		// Kiểm tra tên
-		if (regTen(tenKhachHang) == false) {
-			JOptionPane.showMessageDialog(null, "Tên khách hàng không hợp lệ");
-			return;
-		}
-		String gioiTinh = cbxGioiTinhKhachHang.getSelectedItem().toString();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		LocalDate ngaySinhKhachHangFormat = LocalDate.parse(txtNgaySinhKhachHang.getText(), formatter);
-		LocalDate ngaySinh = LocalDate.of(ngaySinhKhachHangFormat.getYear(), ngaySinhKhachHangFormat.getMonth(),
-				ngaySinhKhachHangFormat.getDayOfMonth());
-		String soDienThoai = txtSoDienThoaiKhachHang.getText();
-		// Kiểm tra số điện thoại
-		if (regSoDienThoai(soDienThoai) == false) {
-			JOptionPane.showMessageDialog(null, "Số điện thoại không hợp lệ");
-			return;
-		}
-		String CCCD_Visa = txtCanCuocKhachHang.getText();
-		// Kiểm tra CCCD / Visa
-		if (regCCCD_Visa(CCCD_Visa) == false) {
-			JOptionPane.showMessageDialog(null, "CCCD / Visa không hợp lệ");
-			return;
-		}
-		String quocTich = txtQuocTichKhachHang.getText();
-		String maKhachHang = txtMaKhachHang.getText();
-		double chiTieu = Double.parseDouble(txtChiTieuKhachHang.getText());
-		String maHangThanhVien = txtHangThanhVien.getText();
-		KhachHang kh = new KhachHang(maKhachHang, tenKhachHang, gioiTinh, ngaySinh, soDienThoai, CCCD_Visa, chiTieu, "HB",
-				quocTich);
-		KhachHangDao khDao = new KhachHangDao();
-		boolean capNhapKhachHang = khDao.suaThongTinKhachHang(kh);
-		if (capNhapKhachHang) {
-			JOptionPane.showMessageDialog(null, "Cập nhập khách hàng thành công");
-			loadTableKhachHang();
-		} else {
-			JOptionPane.showMessageDialog(null, "Cập nhập khách hàng thất bại");
-		}
+		// TODO add your handling code here:
 	}// GEN-LAST:event_btnCapNhapKhachHangActionPerformed
 
 	private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
@@ -6830,19 +6793,6 @@ public class TrangChu extends javax.swing.JFrame {
 																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 	
-	public String layHangThanhVien(String maHang) {
-		if (maHang.equalsIgnoreCase("HB"))
-			return "Hạng Bạc";
-		else if (maHang.equalsIgnoreCase("HV"))
-			return "Hạng Vàng";
-		else if (maHang.equalsIgnoreCase("BK"))
-			return "Bạch Kim";
-		else if (maHang.equalsIgnoreCase("LB"))
-			return "Lục Bảo";
-		else
-			return "Hạng Kim Cương";
-	}
-	
 	protected void eventClickOnTableKhachHang() {
         TableKhachHang.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -6855,14 +6805,12 @@ public class TrangChu extends javax.swing.JFrame {
                         String gioiTinh = (String) TableKhachHang.getValueAt(selectedRow, 3);
                         cbxGioiTinhKhachHang.setSelectedItem(gioiTinh);
 //                         FORMAT get date from table chưa làm được
-                        LocalDate ngaySinh = (LocalDate) TableKhachHang.getValueAt(selectedRow, 4);
-                        String ngaySinhStr = String.format("%02d-%02d-%d", ngaySinh.getDayOfMonth(), ngaySinh.getMonthValue(), ngaySinh.getYear());
-                        txtNgaySinhKhachHang.setText(ngaySinhStr);
+                        txtNgaySinhKhachHang.setText("01-01-2000");
+                        
                         txtSoDienThoaiKhachHang.setText((String) TableKhachHang.getValueAt(selectedRow, 5));
                         txtCanCuocKhachHang.setText((String) TableKhachHang.getValueAt(selectedRow, 6));
                         txtChiTieuKhachHang.setText(String.valueOf(TableKhachHang.getValueAt(selectedRow, 7)));
-                        String hangThanhVien = layHangThanhVien((String) TableKhachHang.getValueAt(selectedRow, 8));
-                        txtHangThanhVien.setText(hangThanhVien);
+                        txtHangThanhVien.setText((String) TableKhachHang.getValueAt(selectedRow, 8));
                         txtQuocTichKhachHang.setText((String) TableKhachHang.getValueAt(selectedRow, 9));
                     }
                 }

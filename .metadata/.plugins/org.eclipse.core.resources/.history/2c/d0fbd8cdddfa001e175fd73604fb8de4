@@ -5928,9 +5928,8 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String quocTich = txtQuocTichKhachHang.getText();
 		String maKhachHang = txtMaKhachHang.getText();
-		double chiTieu = Double.parseDouble(txtChiTieuKhachHang.getText());
-		String maHangThanhVien = txtHangThanhVien.getText();
-		KhachHang kh = new KhachHang(maKhachHang, tenKhachHang, gioiTinh, ngaySinh, soDienThoai, CCCD_Visa, chiTieu, "HB",
+		int chiTieu = txtChiTieuKhachHang.getText();
+		KhachHang kh = new KhachHang(maKhachHang, tenKhachHang, gioiTinh, ngaySinh, soDienThoai, CCCD_Visa, 0d, "HB",
 				quocTich);
 		KhachHangDao khDao = new KhachHangDao();
 		boolean capNhapKhachHang = khDao.suaThongTinKhachHang(kh);
@@ -6830,19 +6829,6 @@ public class TrangChu extends javax.swing.JFrame {
 																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 	
-	public String layHangThanhVien(String maHang) {
-		if (maHang.equalsIgnoreCase("HB"))
-			return "Hạng Bạc";
-		else if (maHang.equalsIgnoreCase("HV"))
-			return "Hạng Vàng";
-		else if (maHang.equalsIgnoreCase("BK"))
-			return "Bạch Kim";
-		else if (maHang.equalsIgnoreCase("LB"))
-			return "Lục Bảo";
-		else
-			return "Hạng Kim Cương";
-	}
-	
 	protected void eventClickOnTableKhachHang() {
         TableKhachHang.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -6861,8 +6847,7 @@ public class TrangChu extends javax.swing.JFrame {
                         txtSoDienThoaiKhachHang.setText((String) TableKhachHang.getValueAt(selectedRow, 5));
                         txtCanCuocKhachHang.setText((String) TableKhachHang.getValueAt(selectedRow, 6));
                         txtChiTieuKhachHang.setText(String.valueOf(TableKhachHang.getValueAt(selectedRow, 7)));
-                        String hangThanhVien = layHangThanhVien((String) TableKhachHang.getValueAt(selectedRow, 8));
-                        txtHangThanhVien.setText(hangThanhVien);
+                        txtHangThanhVien.setText((String) TableKhachHang.getValueAt(selectedRow, 8));
                         txtQuocTichKhachHang.setText((String) TableKhachHang.getValueAt(selectedRow, 9));
                     }
                 }

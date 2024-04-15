@@ -13,7 +13,6 @@
     <fullyQualifiedTypeName name="giaodien.DatPhong"/>
     <fullyQualifiedTypeName name="dao.KhachHangDao"/>
     <fullyQualifiedTypeName name="entity.KhachHang"/>
-    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="entity.LoaiThue"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="connectDB.ConnectDB"/>
@@ -22,4 +21,5 @@
     <fullyQualifiedTypeName name="dao.LoaiThueDao"/>
     <fullyQualifiedTypeName name="javax.swing.JDialog"/>
     <fullyQualifiedTypeName name="javax.swing.WindowConstants"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
 </qualifiedTypeNameHistroy>

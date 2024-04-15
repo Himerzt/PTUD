@@ -5928,7 +5928,7 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String quocTich = txtQuocTichKhachHang.getText();
 		String maKhachHang = txtMaKhachHang.getText();
-		double chiTieu = Double.parseDouble(txtChiTieuKhachHang.getText());
+		int chiTieu = Integer.parseInt(txtChiTieuKhachHang.getText());
 		String maHangThanhVien = txtHangThanhVien.getText();
 		KhachHang kh = new KhachHang(maKhachHang, tenKhachHang, gioiTinh, ngaySinh, soDienThoai, CCCD_Visa, chiTieu, "HB",
 				quocTich);
@@ -6861,8 +6861,8 @@ public class TrangChu extends javax.swing.JFrame {
                         txtSoDienThoaiKhachHang.setText((String) TableKhachHang.getValueAt(selectedRow, 5));
                         txtCanCuocKhachHang.setText((String) TableKhachHang.getValueAt(selectedRow, 6));
                         txtChiTieuKhachHang.setText(String.valueOf(TableKhachHang.getValueAt(selectedRow, 7)));
-                        String hangThanhVien = layHangThanhVien((String) TableKhachHang.getValueAt(selectedRow, 8));
-                        txtHangThanhVien.setText(hangThanhVien);
+                        String hangThanhVien = get
+                        txtHangThanhVien.setText();
                         txtQuocTichKhachHang.setText((String) TableKhachHang.getValueAt(selectedRow, 9));
                     }
                 }
