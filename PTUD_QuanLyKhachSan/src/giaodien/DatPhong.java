@@ -481,7 +481,7 @@ public class DatPhong extends javax.swing.JDialog {
 					.addContainerGap()
 					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 						.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
-						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 1081, Short.MAX_VALUE)
+						.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
 						.addGroup(jPanel1Layout.createSequentialGroup()
 							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
 								.addComponent(jLabel32)
