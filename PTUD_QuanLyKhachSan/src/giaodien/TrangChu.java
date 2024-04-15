@@ -72,11 +72,13 @@ public class TrangChu extends javax.swing.JFrame {
 				if (index == 1) {
 					pnedUngDung.setSelectedIndex(1);
 					ganDuLieuPhongVaoQuanLyPhong();
+					addCheckBoxListeners();
 				}
 
 				if (index == 2) {
 					pnedUngDung.setSelectedIndex(2);
 					loadTableNhanVien();
+					eventClickOnTableNhanVien();
 				}
 				if (index == 3) {
 					pnedUngDung.setSelectedIndex(3);
@@ -6888,4 +6890,86 @@ public class TrangChu extends javax.swing.JFrame {
         });
         
     }
+	
+	//Nguyễn Quốc Huy thêm event click on table nhân viên
+	protected void eventClickOnTableNhanVien() {
+		TableNhanVien.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    int selectedRow = TableNhanVien.getSelectedRow();
+                    if (selectedRow != -1) { // Đảm bảo có hàng được chọn
+						txtMaNhanVien.setText((String) TableNhanVien.getValueAt(selectedRow, 1));
+						txtHoTenNhanVien.setText((String) TableNhanVien.getValueAt(selectedRow, 2));
+						String gioiTinh = (String) TableNhanVien.getValueAt(selectedRow, 3);
+						cbxGioiTinh.setSelectedItem(gioiTinh);
+						LocalDate ngaySinh = (LocalDate) TableNhanVien.getValueAt(selectedRow, 4);
+						String ngaySinhStr = String.format("%02d-%02d-%d", ngaySinh.getDayOfMonth(), ngaySinh.getMonthValue(), ngaySinh.getYear());
+						txtNgaySinhNhanVien.setText(ngaySinhStr);
+						txtSoDienThoaiNhanVien.setText((String) TableNhanVien.getValueAt(selectedRow, 5));
+						txtCanCuocCongDanNhanVien.setText((String) TableNhanVien.getValueAt(selectedRow, 6));
+						LocalDate ngayVaoLam = (LocalDate) TableNhanVien.getValueAt(selectedRow, 7);
+						String ngayVaoLamStr = String.format("%02d-%02d-%d", ngayVaoLam.getDayOfMonth(), ngayVaoLam.getMonthValue(), ngayVaoLam.getYear());
+						txtNgayVaoLamNhanVien.setText(ngayVaoLamStr);
+						cbxChucVuNhanVien.setSelectedItem((String) TableNhanVien.getValueAt(selectedRow, 8));
+                    }
+                }
+            }
+        });
+	}
+	
+	// Kiểm tra click vào checkbox phòng và enable các button khi chọn xong các check box
+	private void kiemTraClickCheckBoxPhong() {
+		int status1 = 0;
+		int status2 = 0;
+		int status3 = 0;
+		int status4 = 0;
+		for (int i = 0; i < checkBoxPhongQuanLy.size(); i++) {
+			JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+			if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Trống")) {
+				btnDatPhong.setEnabled(true);
+				btnDoiPhong.setEnabled(false);
+				btnTraPhong.setEnabled(false);
+				btnHuyDatPhong.setEnabled(false);
+				status4++;
+				status2++;
+				status3++;
+			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đã đặt")) {
+				btnDatPhong.setEnabled(false);
+				btnDoiPhong.setEnabled(true);
+				btnTraPhong.setEnabled(false);
+				btnHuyDatPhong.setEnabled(true);
+				status4++;
+				status1++;
+				status3++;
+			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
+				btnDatPhong.setEnabled(false);
+				btnDoiPhong.setEnabled(true);
+				btnHuyDatPhong.setEnabled(false);
+				btnTraPhong.setEnabled(true);
+				status4++;
+				status1++;
+				status2++;
+			} 
+		}
+		
+		
+		if (status1 != 0 && status2 != 0 && status3 != 0) {
+			btnDatPhong.setEnabled(false);
+			btnDoiPhong.setEnabled(false);
+			btnTraPhong.setEnabled(false);
+			btnHuyDatPhong.setEnabled(false);
+		}
+		if (status4 == 0) {
+			btnDatPhong.setEnabled(true);
+			btnDoiPhong.setEnabled(true);
+			btnTraPhong.setEnabled(true);
+			btnHuyDatPhong.setEnabled(true);
+		}
+	}
+	private void addCheckBoxListeners() {
+	    for (JCheckBox checkBox : checkBoxPhongQuanLy) {
+	        checkBox.addItemListener(e -> kiemTraClickCheckBoxPhong());
+	    }
+	}
 }
