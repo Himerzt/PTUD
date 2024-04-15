@@ -1,5 +1,9 @@
 package entity;
 
+import java.util.ArrayList;
+
+import dao.PhongDao;
+
 public class Phong {
 	private String maPhong;
 	private int soPhong;
@@ -59,6 +63,16 @@ public class Phong {
 	public String toString() {
 		return "Phong [maPhong=" + maPhong + ", soPhong=" + soPhong + ", maLoaiPhong=" + maLoaiPhong + ", trangThai="
 				+ trangThai + "]";
+	}
+	
+	public static void main(String[] args) {
+//		test lay phong tu csdl
+		PhongDao phongDao = new PhongDao();
+		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
+		for (Phong phong : dsPhong) {
+			System.out.println(phong.toString());
+		}
+		
 	}
 
 	
