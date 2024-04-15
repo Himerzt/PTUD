@@ -62,7 +62,7 @@ public class TrangChu extends javax.swing.JFrame {
 		initComponents();
 		datetime();
 		times();
-//		ganDuLieuPhongVaoTrangChu();
+		ganDuLieuPhongVaoTrangChu();
 		Menu.setEvent(new MenuEvent() {
 			@Override
 			public void selected(int index, int subIndex) {
@@ -247,7 +247,6 @@ public class TrangChu extends javax.swing.JFrame {
 		pnMenu = new javax.swing.JPanel();
 		Menu = new menu.Menu();
 		pnedUngDung = new javax.swing.JTabbedPane();
-		pnedUngDung.setSelectedIndex(1);
 		pnQuanLyPhong = new javax.swing.JPanel();
 		ScrollPaneQuanLyPhong = new javax.swing.JScrollPane();
 		pnBody2 = new javax.swing.JPanel();
@@ -6221,14 +6220,15 @@ public class TrangChu extends javax.swing.JFrame {
 		// </editor-fold>
 		// </editor-fold>
 
-		TrangChu trangChu;
-		try {
-			trangChu = new TrangChu();
-			trangChu.setVisible(true);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		/* Create and display the form */
+		SwingUtilities.invokeLater(() -> {
+			try {
+				TrangChu trangChu = new TrangChu();
+				trangChu.setVisible(true);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		});
 	}
 
 //    TTK

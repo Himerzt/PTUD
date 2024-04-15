@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="entity.DichVu"/>
     <fullyQualifiedTypeName name="javax.swing.JLabel"/>
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
-    <fullyQualifiedTypeName name="giaodien.TrangChu"/>
     <fullyQualifiedTypeName name="dao.ThongTinDatThuePhongDao"/>
     <fullyQualifiedTypeName name="dao.PhongDao"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -22,4 +21,6 @@
     <fullyQualifiedTypeName name="javax.swing.JDialog"/>
     <fullyQualifiedTypeName name="javax.swing.WindowConstants"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="javax.swing.SwingUtilities"/>
+    <fullyQualifiedTypeName name="giaodien.TrangChu"/>
 </qualifiedTypeNameHistroy>
