@@ -70,7 +70,7 @@ public class NhanVienDao {
 		PreparedStatement stmt = null;
 		int n = 0;
 		try {
-			stmt = con.prepareStatement("insert into NhanVien values(?,?,?,?,?,?,?,?,?,?)");
+			stmt = con.prepareStatement("insert into NhanVien values(?,?,?,?,?,?,?,?,?)");
 			stmt.setString(1, nv.getMaNV());
 			stmt.setString(2, nv.getHoTenNV());
 			stmt.setDate(3, java.sql.Date.valueOf(nv.getNgaySinh()));
@@ -78,9 +78,8 @@ public class NhanVienDao {
 			stmt.setString(5, nv.getSoDT());
 			stmt.setString(6, nv.getEmail());
 			stmt.setString(7, nv.getCCCD());
-			stmt.setString(8, nv.getDiaChi());
-			stmt.setString(9, nv.getChucVu().getMaChucVu());
-			stmt.setDate(10, java.sql.Date.valueOf(nv.getNgayVaoLam()));
+			stmt.setString(8, nv.getChucVu().getMaChucVu());
+			stmt.setDate(9, java.sql.Date.valueOf(nv.getNgayVaoLam()));
 			n = stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
