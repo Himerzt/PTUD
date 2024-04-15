@@ -31,4 +31,20 @@ public class LoaiThueDao {
 		}
 		return maLoaiThue;
 	}
+	
+	public double timGiaCocTheoMaThue(String maThue) {
+		double tienCoc = 0;
+        try {
+            Connection con = ConnectDB.getConnection();
+            PreparedStatement stmt = con.prepareStatement("select giaCocToiThieu from LoaiThue where maLoaiThue = ?");
+            stmt.setString(1, maThue);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                tienCoc = rs.getDouble("giaCocToiThieu");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return tienCoc;
+	}
 }

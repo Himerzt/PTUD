@@ -58,6 +58,7 @@ public class DatPhong extends javax.swing.JDialog {
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
+	// <editor-fold defaultstate="collapsed" desc="Generated
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
@@ -96,7 +97,7 @@ public class DatPhong extends javax.swing.JDialog {
 		txtLoaiPhong = new javax.swing.JTextField();
 		txtCheckOut = new javax.swing.JTextField();
 		txtDiaChi = new javax.swing.JTextField();
-		txtGiaThue = new javax.swing.JTextField();
+		txtGiaCoc = new javax.swing.JTextField();
 		cbBoxGioiTinh = new javax.swing.JComboBox<>();
 		btnThemKhachHang = new javax.swing.JButton();
 		cbKieuThue = new javax.swing.JComboBox<>();
@@ -175,7 +176,7 @@ public class DatPhong extends javax.swing.JDialog {
 
 		jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 		jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel27.setText("Giá thuê");
+		jLabel27.setText("Giá cọc");
 
 		jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 		jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -227,6 +228,7 @@ public class DatPhong extends javax.swing.JDialog {
 		txtQuocTich.setText("Quốc Tịch");
 
 		txtHangThanhVien.setText("Hạng thành viên");
+		txtHangThanhVien.setEnabled(false);
 
 		txtTenPhong.setText("Tên phòng");
 
@@ -243,8 +245,6 @@ public class DatPhong extends javax.swing.JDialog {
 		});
 
 		txtDiaChi.setText("Địa chỉ");
-
-		txtGiaThue.setText("Giá thuê phòng");
 
 		cbBoxGioiTinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
 
@@ -350,7 +350,7 @@ public class DatPhong extends javax.swing.JDialog {
 										.addGroup(jPanel2Layout
 												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
 												.addComponent(txtDiaChi)
-												.addComponent(txtGiaThue, javax.swing.GroupLayout.DEFAULT_SIZE, 200,
+												.addComponent(txtGiaCoc, javax.swing.GroupLayout.DEFAULT_SIZE, 200,
 														Short.MAX_VALUE)
 												.addComponent(cbBoxGioiTinh, javax.swing.GroupLayout.Alignment.TRAILING,
 														0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -442,7 +442,7 @@ public class DatPhong extends javax.swing.JDialog {
 										.addComponent(txtLoaiPhong, javax.swing.GroupLayout.PREFERRED_SIZE,
 												javax.swing.GroupLayout.DEFAULT_SIZE,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(txtGiaThue, javax.swing.GroupLayout.PREFERRED_SIZE,
+										.addComponent(txtGiaCoc, javax.swing.GroupLayout.PREFERRED_SIZE,
 												javax.swing.GroupLayout.DEFAULT_SIZE,
 												javax.swing.GroupLayout.PREFERRED_SIZE)))
 						.addGap(18, 18, 18)
@@ -561,11 +561,6 @@ public class DatPhong extends javax.swing.JDialog {
 		});
 
 		btnDatPhong.setText("Đặt phòng");
-		btnDatPhong.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnDatPhongActionPerformed(evt);
-			}
-		});
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1.setLayout(jPanel1Layout);
@@ -631,7 +626,7 @@ public class DatPhong extends javax.swing.JDialog {
 						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
 		getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
-
+		loadDanhSachPhongDat();
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
 
@@ -656,6 +651,25 @@ public class DatPhong extends javax.swing.JDialog {
 			return "Nâng cao";
 		else
 			return "Thương gia";
+	}
+
+	public void loadDanhSachPhongDat() {
+		// Hiện danh sách phòng vào bảng
+		String[] dsPhongDat = layDanhSachPhongDat();
+		PhongDao phongDao = new PhongDao();
+		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
+		for (String tenPhong : dsPhongDat) {
+			dsPhong.add(phongDao.timPhongTheoSoPhong(Integer.parseInt(tenPhong)));
+		}
+		DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
+		String loaiPhong = "";
+		for (Phong phong : dsPhong) {
+			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
+			Object[] rowData = { model.getRowCount() + 1, phong.getSoPhong(), loaiPhong,
+					cbKieuThue.getSelectedItem().toString(), txtCheckIn.getText(), txtNgayNhan.getText(),
+					txtCheckOut.getText() };
+			model.addRow(rowData);
+		}
 	}
 
 	private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
@@ -688,8 +702,17 @@ public class DatPhong extends javax.swing.JDialog {
 		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), formatter);
 		LocalDate ngayTra = LocalDate.parse(txtCheckOut.getText(), formatter);
 		String maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), loaiPhong);
+		// Tính tiền cọc
+		if (ngayDat.equals(ngayNhan))
+			txtGiaCoc.setText("0");
+		else if (ngayDat.isBefore(ngayNhan)) {
+			double soTienCoc = loaiThueDao.timGiaCocTheoMaThue(maLoaiThue) * dsPhong.size();
+			txtGiaCoc.setText(Double.toString(soTienCoc));
+		}
+
 		if (thongTinDatThuePhongDao.datPhong(dsPhong, khachHang, ngayDat, ngayNhan, maLoaiThue, ngayTra)) {
 			JOptionPane.showMessageDialog(this, "Đặt phòng thành công");
+			DatPhong.this.hide();
 		} else {
 			JOptionPane.showMessageDialog(this, "Đặt phòng thất bại");
 		}
@@ -801,7 +824,7 @@ public class DatPhong extends javax.swing.JDialog {
 			public void run() {
 				DatPhong guiDatPhong = new DatPhong();
 				guiDatPhong.setVisible(true);
-				guiDatPhong.setDefaultCloseOperation(javax.swing.JDialog.DISPOSE_ON_CLOSE);
+				guiDatPhong.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 			}
 		});
 
@@ -817,12 +840,12 @@ public class DatPhong extends javax.swing.JDialog {
 	private javax.swing.JButton btnThemDichVu;
 	private javax.swing.JButton btnThemKhachHang;
 	private javax.swing.JComboBox<String> cbBoxGioiTinh;
+	private javax.swing.JComboBox<String> cbKieuThue;
 	private javax.swing.JComboBox<String> comboBoxDichVu;
 	private chooserDay.DateChooser dateNgayDat;
 	private chooserDay.DateChooser dateNgayNhan;
 	private chooserDay.DateChooser dateNgaySinh;
 	private chooserDay.DateChooser dateNgayTra;
-	private javax.swing.JComboBox<String> cbKieuThue;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JLabel jLabel17;
 	private javax.swing.JLabel jLabel18;
@@ -853,7 +876,7 @@ public class DatPhong extends javax.swing.JDialog {
 	private javax.swing.JTextField txtCheckIn;
 	private javax.swing.JTextField txtCheckOut;
 	private javax.swing.JTextField txtDiaChi;
-	private javax.swing.JTextField txtGiaThue;
+	private javax.swing.JTextField txtGiaCoc;
 	private javax.swing.JTextField txtHangThanhVien;
 	private javax.swing.JTextField txtLoaiPhong;
 	private javax.swing.JTextField txtNgayNhan;

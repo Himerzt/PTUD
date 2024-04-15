@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="setDe"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="setDe"/>
 			<item value="TTK"/>
 			<item value="TTk"/>
 			<item value="default "/>
@@ -22,7 +23,6 @@
 			<item value="loadDuLieuPhonglenGiaoDien"/>
 			<item value="btnNgay"/>
 			<item value="&lt;&lt;&lt;"/>
-			<item value="===="/>
 		</list>
 		<list key="replacehistory">
 			<item value="maLoai"/>

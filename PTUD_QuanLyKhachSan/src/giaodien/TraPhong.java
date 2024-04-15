@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Huynguyen
  */
-public class TraPhong extends javax.swing.JFrame {
+public class TraPhong extends javax.swing.JDialog {
     private List<DichVuPhong> danhSachDichVu;
     /**
      * Creates new form DatPhong
@@ -71,7 +71,7 @@ public class TraPhong extends javax.swing.JFrame {
         btnHuy = new javax.swing.JButton();
         btnDatPhong = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel1.setText("Trả phòng");

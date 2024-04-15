@@ -212,6 +212,29 @@ public class PhongDao {
 		return dsPhong.size();
 	}
 
+	public boolean capNhatTrangThaiDaDat(String maPhong) {
+		try {
+            Connection con = ConnectDB.getConnection();
+            PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = 'Đã đặt' where maPhong = ?");
+            stmt.setString(1, maPhong);
+            int n = stmt.executeUpdate();
+            return n > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+	}
 	
-	
+	public boolean capNhatTrangThaiDaThue(String maPhong) {
+		try {
+            Connection con = ConnectDB.getConnection();
+            PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = 'Đã thuê' where maPhong = ?");
+            stmt.setString(1, maPhong);
+            int n = stmt.executeUpdate();
+            return n > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+	}
 }

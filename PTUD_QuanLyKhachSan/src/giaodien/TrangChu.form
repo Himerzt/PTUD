@@ -7162,10 +7162,6 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtMaDichVu">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="M&#xe3; d&#x1ecb;ch v&#x1ee5;"/>
-                            <Property name="enabled" type="boolean" value="false"/>
-                          </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel12">
                           <Properties>
@@ -7181,9 +7177,6 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtTenDichVu">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="T&#xea;n d&#x1ecb;ch v&#x1ee5;"/>
-                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtDonGiaDichVu">
                           <Properties>
