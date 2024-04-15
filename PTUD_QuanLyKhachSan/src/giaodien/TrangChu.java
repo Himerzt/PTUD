@@ -5968,8 +5968,8 @@ public class TrangChu extends javax.swing.JFrame {
 	}// GEN-LAST:event_radPhongTrongActionPerformed
 
 	private void btnTimTheoDieuKienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnFindbyPhoneActionPerformed
-		ganDuLieuPhongVaoQuanLyPhong();
 		if (radPhongTieuChuan.isSelected()) {
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < loaiPhongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -5977,7 +5977,8 @@ public class TrangChu extends javax.swing.JFrame {
 					p.setVisible(false);
 				}
 			}
-		} if (radPhongNangCao.isSelected()) {
+		} else if (radPhongNangCao.isSelected()) {
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -5985,7 +5986,8 @@ public class TrangChu extends javax.swing.JFrame {
 					p.setVisible(false);
 				}
 			}
-		} if (radPhongCaoCap.isSelected()) {
+		} else if (radPhongCaoCap.isSelected()) {
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -5994,7 +5996,8 @@ public class TrangChu extends javax.swing.JFrame {
 					p.setVisible(false);
 				}
 			}
-		} if (radPhongThuongGia.isSelected()) {
+		} else if (radPhongThuongGia.isSelected()) {
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -6006,15 +6009,17 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 
 		if (radPhongTrong.isSelected()) {
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
 
-				if (!trangThaiP.getText().equalsIgnoreCase("Trống")) {
+				if (!trangThaiP.getText().equalsIgnoreCase("Đang trống")) {
 					p.setVisible(false);
 				}
 			}
-		} if (radPhongDaDat.isSelected()) {
+		} else if (radPhongDaDat.isSelected()) {
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
@@ -6023,12 +6028,13 @@ public class TrangChu extends javax.swing.JFrame {
 					p.setVisible(false);
 				}
 			}
-		} if (radPhongDangThue.isSelected()) {
+		} else if (radPhongDangThue.isSelected()) {
+			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
 
-				if (!trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
+				if (!trangThaiP.getText().equalsIgnoreCase("Đang thuê")) {
 					p.setVisible(false);
 				}
 			}
@@ -6848,7 +6854,6 @@ public class TrangChu extends javax.swing.JFrame {
                         txtTenKhachHang.setText((String) TableKhachHang.getValueAt(selectedRow, 2));
                         String gioiTinh = (String) TableKhachHang.getValueAt(selectedRow, 3);
                         cbxGioiTinhKhachHang.setSelectedItem(gioiTinh);
-//                         FORMAT get date from table chưa làm được
                         LocalDate ngaySinh = (LocalDate) TableKhachHang.getValueAt(selectedRow, 4);
                         String ngaySinhStr = String.format("%02d-%02d-%d", ngaySinh.getDayOfMonth(), ngaySinh.getMonthValue(), ngaySinh.getYear());
                         txtNgaySinhKhachHang.setText(ngaySinhStr);

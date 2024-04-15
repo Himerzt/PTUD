@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="table"/>
+		<item key="selection" value="btnXoa"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="btnXoa"/>
+			<item value="&gt;&gt;&gt;"/>
+			<item value="&lt;&lt;&lt;"/>
+			<item value="&lt;&lt;&lt;&apos;"/>
+			<item value="==="/>
+			<item value="===="/>
+			<item value="&lt;&lt;&lt;&lt;"/>
 			<item value="table"/>
 			<item value="eventClickOnTableKhachHang"/>
 			<item value="loadDanhSachPhongDat"/>
 			<item value="jlabel10"/>
 			<item value="jlabel "/>
-			<item value="&lt;&lt;&lt;"/>
-			<item value="==="/>
 			<item value="javax.swing."/>
 			<item value="ganDuLieuPhongVaoTrangChu"/>
 			<item value="ganDuLieuPhongVaoQuanLyPhong"/>
-			<item value="btnDatPhong"/>
-			<item value="getTenPhong"/>
-			<item value="&lt;&lt;&lt;&lt;"/>
-			<item value="===="/>
-			<item value="&gt;&gt;&gt;"/>
 		</list>
 		<list key="replacehistory">
 			<item value="maLoai"/>
