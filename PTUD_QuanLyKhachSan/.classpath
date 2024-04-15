@@ -11,6 +11,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/lib/itextpdf-5.5.9.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="D:/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/lib/java-swing-drawer.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
@@ -32,11 +37,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="D:/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/lib/TimingFramework-0.55.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="D:/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/lib/itextpdf-5.5.9.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
