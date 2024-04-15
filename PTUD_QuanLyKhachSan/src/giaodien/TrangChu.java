@@ -41,6 +41,8 @@ import javax.swing.table.DefaultTableModel;
 import chooserDay.DateChooser;
 import connectDB.ConnectDB;
 import dao.PhongDao;
+import dao.TaiKhoanDao;
+
 import javax.swing.JFrame;
 import menu.MenuEvent;
 import javax.swing.GroupLayout.Alignment;
@@ -5850,7 +5852,6 @@ public class TrangChu extends javax.swing.JFrame {
 		Pattern pattern = Pattern.compile(regex, Pattern.CANON_EQ);
 		Matcher matcher = pattern.matcher(ten);
 		return matcher.matches();
-
 	}
 
 	private boolean regSoDienThoai(String soDienThoai) {
@@ -5984,8 +5985,8 @@ public class TrangChu extends javax.swing.JFrame {
 	}// GEN-LAST:event_radPhongTrongActionPerformed
 
 	private void btnTimTheoDieuKienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnFindbyPhoneActionPerformed
+		ganDuLieuPhongVaoQuanLyPhong();
 		if (radPhongTieuChuan.isSelected()) {
-			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < loaiPhongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -5993,8 +5994,7 @@ public class TrangChu extends javax.swing.JFrame {
 					p.setVisible(false);
 				}
 			}
-		} else if (radPhongNangCao.isSelected()) {
-			ganDuLieuPhongVaoQuanLyPhong();
+		}  if (radPhongNangCao.isSelected()) {
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -6003,7 +6003,6 @@ public class TrangChu extends javax.swing.JFrame {
 				}
 			}
 		} else if (radPhongCaoCap.isSelected()) {
-			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -6013,7 +6012,6 @@ public class TrangChu extends javax.swing.JFrame {
 				}
 			}
 		} else if (radPhongThuongGia.isSelected()) {
-			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel loaiP = loaiPhongQuanLy.get(i);
@@ -6025,17 +6023,15 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 
 		if (radPhongTrong.isSelected()) {
-			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
 
-				if (!trangThaiP.getText().equalsIgnoreCase("Đang trống")) {
+				if (!trangThaiP.getText().equalsIgnoreCase("Trống")) {
 					p.setVisible(false);
 				}
 			}
 		} else if (radPhongDaDat.isSelected()) {
-			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
@@ -6045,12 +6041,11 @@ public class TrangChu extends javax.swing.JFrame {
 				}
 			}
 		} else if (radPhongDangThue.isSelected()) {
-			ganDuLieuPhongVaoQuanLyPhong();
 			for (int i = 0; i < phongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
 				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
 
-				if (!trangThaiP.getText().equalsIgnoreCase("Đang thuê")) {
+				if (!trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
 					p.setVisible(false);
 				}
 			}
@@ -6280,13 +6275,8 @@ public class TrangChu extends javax.swing.JFrame {
 			public void run() {
 				try {
 					TrangChu trangChu = new TrangChu();
-					// Đặt cửa sổ để hiển thị full màn hình nhưng vẫn giữ lại thanh taskbar
 					trangChu.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
-					// Thiết lập loại đóng cửa sổ mặc định
 					trangChu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-					// Hiển thị JFrame
 					trangChu.setVisible(true);
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -6301,7 +6291,6 @@ public class TrangChu extends javax.swing.JFrame {
 		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
 		for (int i = 0; i < phongTrangChu.size(); i++) {
 			Phong phong = dsPhong.get(i);
-//			LoaiPhong lPhong = 
 			JPanel phongPanel = phongTrangChu.get(i);
 			JLabel loaiPhong = loaiPhongTrangChu.get(i);
 			JLabel soPhong = tenPhongTrangChu.get(i);
@@ -6322,9 +6311,9 @@ public class TrangChu extends javax.swing.JFrame {
 
 			if (trangThai.getText().equalsIgnoreCase("Trống")) {
 				phongPanel.setBackground(Color.green);
-			} else if (loaiPhong.getText().equalsIgnoreCase("Đã đặt")) {
+			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
 				phongPanel.setBackground(Color.red);
-			} else if (loaiPhong.getText().equalsIgnoreCase("Đã thuê")) {
+			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
 				phongPanel.setBackground(Color.yellow);
 			}
 
@@ -6359,9 +6348,9 @@ public class TrangChu extends javax.swing.JFrame {
 
 			if (trangThai.getText().equalsIgnoreCase("Trống")) {
 				phongPanel.setBackground(Color.green);
-			} else if (loaiPhong.getText().equalsIgnoreCase("Đã đặt")) {
+			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
 				phongPanel.setBackground(Color.red);
-			} else if (loaiPhong.getText().equalsIgnoreCase("Đã thuê")) {
+			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
 				phongPanel.setBackground(Color.yellow);
 			}
 

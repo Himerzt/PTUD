@@ -5,6 +5,7 @@ public class LoaiThue {
 	private String tenLoaiThue;
 	private double giaThue;
 	private double giaCocToiThieu;
+	private String maLoaiPhong;
 
 	public String getMaLoaiThue() {
 		return maLoaiThue;
@@ -38,16 +39,24 @@ public class LoaiThue {
 		this.giaCocToiThieu = giaCocToiThieu;
 	}
 
-	public LoaiThue(String maLoaiThue, String tenLoaiThue, double giaThue, double giaCocToiThieu) {
+	public String getMaLoaiPhong() {
+		return maLoaiPhong;
+	}
+
+	public void setMaLoaiPhong(String maLoaiPhong) {
+		this.maLoaiPhong = maLoaiPhong;
+	}
+
+	public LoaiThue(String maLoaiThue, String tenLoaiThue, double giaThue, double giaCocToiThieu, String maLoaiPhong) {
 		super();
 		this.maLoaiThue = maLoaiThue;
 		this.tenLoaiThue = tenLoaiThue;
 		this.giaThue = giaThue;
 		this.giaCocToiThieu = giaCocToiThieu;
+		this.maLoaiPhong = maLoaiPhong;
 	}
 
 	public LoaiThue(String maLoaiThue) {
-
 		this.maLoaiThue = maLoaiThue;
 	}
 
