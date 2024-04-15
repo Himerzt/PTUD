@@ -4,14 +4,11 @@
  */
 package giaodien;
 
-import entity.DichVu;
 import entity.DichVuPhong;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-
-import dao.DichVuDao;
 
 /**
  *
@@ -29,7 +26,6 @@ public class TraPhong extends javax.swing.JDialog {
         initComponents();
         txtTenPhong.setText(tenPhong);
         loadDulieuPhong();
-        loadDanhSachDichVu();
     }
 
     
@@ -435,6 +431,7 @@ public class TraPhong extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TraPhong().setVisible(true);
+
             }
         });
     }
@@ -491,15 +488,10 @@ public class TraPhong extends javax.swing.JDialog {
        
     }
     
-    private static String[] loadDanhSachDichVu() {
-		DichVuDao dvDao = new DichVuDao();
-		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
-		String[] tenDV = new String[danhSachDV.size()];
-		for (int i = 0; i < danhSachDV.size(); i++) {
-			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
-		}
-		return tenDV;
-	}
+    private void taoDanhSachDichVu(){
+        
+        
+    }
 
 
 

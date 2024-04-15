@@ -208,7 +208,7 @@ public class DichVuDao {
         double giaTong = 0.0;
 
         for (double double1 : arGia) {
-			giaTong += double1;
+			
 		}
 
         return giaTong;

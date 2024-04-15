@@ -8,19 +8,15 @@ import java.util.ArrayList;
 
 import connectDB.ConnectDB;
 import entity.DichVu;
-import entity.DichVuPhong;
 
 public class DichVuDao {
 	ArrayList<DichVu> dsDichVu = new ArrayList<DichVu>();
 	DichVu dv = new DichVu();
-	DichVuDao dvDao;
-	DichVuPhong dvp;
-	ArrayList<Double> arGia = new ArrayList<Double>();
 
 	public DichVuDao() {
 		dsDichVu = new ArrayList<DichVu>();
 		dv = new DichVu();
-		dvDao = new DichVuDao();
+
 	}
 
 	public ArrayList<DichVu> timTatCaDichVu() {
@@ -184,34 +180,5 @@ public class DichVuDao {
 		}
 		return dsDichVu;
 	}
-	
-	public double tinhGiaDichVuCuaMotPhong(String maPhong) {
-        try {
-            ConnectDB.getInstance();
-            Connection con = ConnectDB.getConnection();
-            String sql = "Select * from DichVuPhong where maPhong = '" + maPhong + "'";
-            Statement statement = con.createStatement();
-            ResultSet rs = statement.executeQuery(sql);
-
-            while(rs.next()) {
-                String maDV = rs.getString(1);
-                String maPhong1 = rs.getString(2);
-                double gia = dvDao.timTheoMaDichVu(maDV).getGiaDV();
-                int soLuong = rs.getInt(3);
-                dvp = new DichVuPhong(maDV, maPhong1, soLuong);
-                arGia.add(gia * (double)soLuong);
-            }
-        } catch (Exception var11) {
-            var11.printStackTrace();
-        }
-
-        double giaTong = 0.0;
-
-        for (double double1 : arGia) {
-			giaTong += double1;
-		}
-
-        return giaTong;
-    }
 
 }

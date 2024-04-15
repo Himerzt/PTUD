@@ -4,14 +4,11 @@
  */
 package giaodien;
 
-import entity.DichVu;
 import entity.DichVuPhong;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-
-import dao.DichVuDao;
 
 /**
  *
@@ -29,7 +26,6 @@ public class TraPhong extends javax.swing.JDialog {
         initComponents();
         txtTenPhong.setText(tenPhong);
         loadDulieuPhong();
-        loadDanhSachDichVu();
     }
 
     
@@ -435,6 +431,7 @@ public class TraPhong extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TraPhong().setVisible(true);
+
             }
         });
     }
@@ -491,15 +488,46 @@ public class TraPhong extends javax.swing.JDialog {
        
     }
     
-    private static String[] loadDanhSachDichVu() {
-		DichVuDao dvDao = new DichVuDao();
-		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
-		String[] tenDV = new String[danhSachDV.size()];
-		for (int i = 0; i < danhSachDV.size(); i++) {
-			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
-		}
-		return tenDV;
-	}
+    private void taoDanhSachDichVu(){
+        danhSachDichVu  = new ArrayList<>();
+        
+        String[] tenDichVu = {
+            "Ăn sáng",
+            "Ăn trưa",
+            "Ăn tối",
+            "Giặt quần áo",
+            "Đưa đón khách",
+            "Thêm giường",
+            "Thêm gối",
+            "Thêm chăn",
+            "Nước ngọt",
+            "Nước suối",
+            "Gọi món tại phòng"
+        };
+        
+        
+        double[] giaDichVu = {
+            10.0, // Ăn sáng
+            15.0, // Ăn trưa
+            20.0, // Ăn tối
+            5.0,  // Giặt quần áo
+            8.0,  // Đưa đón khách
+            25.0, // Thêm giường
+            10.0, // Thêm gối
+            15.0, // Thêm chăn
+            3.0,  // Nước ngọt
+            2.5,  // Nước suối
+            12.0  // Gọi món tại phòng
+        };
+        
+        
+//        for (int i = 0; i < tenDichVu.length; i++) {
+//            DichVuPhong dv = new DichVuPhong(tenDichVu[i], giaDichVu[i]);
+//            danhSachDichVu.add(dv);
+//        }
+        
+        
+    }
 
 
 

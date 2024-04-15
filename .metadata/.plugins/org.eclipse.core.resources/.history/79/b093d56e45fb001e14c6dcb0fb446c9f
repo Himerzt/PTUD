@@ -207,9 +207,10 @@ public class DichVuDao {
 
         double giaTong = 0.0;
 
-        for (double double1 : arGia) {
-			giaTong += double1;
-		}
+        Double double1;
+        for(Iterator var14 = this.arGia.iterator(); var14.hasNext(); giaTong += double1) {
+            double1 = (Double)var14.next();
+        }
 
         return giaTong;
     }

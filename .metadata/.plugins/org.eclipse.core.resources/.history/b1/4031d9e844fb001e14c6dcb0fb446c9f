@@ -8,19 +8,15 @@ import java.util.ArrayList;
 
 import connectDB.ConnectDB;
 import entity.DichVu;
-import entity.DichVuPhong;
 
 public class DichVuDao {
 	ArrayList<DichVu> dsDichVu = new ArrayList<DichVu>();
 	DichVu dv = new DichVu();
-	DichVuDao dvDao;
-	DichVuPhong dvp;
-	ArrayList<Double> arGia = new ArrayList<Double>();
 
 	public DichVuDao() {
 		dsDichVu = new ArrayList<DichVu>();
 		dv = new DichVu();
-		dvDao = new DichVuDao();
+
 	}
 
 	public ArrayList<DichVu> timTatCaDichVu() {
@@ -196,10 +192,10 @@ public class DichVuDao {
             while(rs.next()) {
                 String maDV = rs.getString(1);
                 String maPhong1 = rs.getString(2);
-                double gia = dvDao.timTheoMaDichVu(maDV).getGiaDV();
+                double gia = this.dvDao.timTheoMaDichVu(maDV).getGiaDV();
                 int soLuong = rs.getInt(3);
-                dvp = new DichVuPhong(maDV, maPhong1, soLuong);
-                arGia.add(gia * (double)soLuong);
+                this.dvp = new DichVuPhong(maDV, maPhong1, soLuong);
+                this.arGia.add(gia * (double)soLuong);
             }
         } catch (Exception var11) {
             var11.printStackTrace();
@@ -207,9 +203,10 @@ public class DichVuDao {
 
         double giaTong = 0.0;
 
-        for (double double1 : arGia) {
-			giaTong += double1;
-		}
+        Double double1;
+        for(Iterator var14 = this.arGia.iterator(); var14.hasNext(); giaTong += double1) {
+            double1 = (Double)var14.next();
+        }
 
         return giaTong;
     }
