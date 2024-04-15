@@ -122,20 +122,22 @@ public class KhachHangDao {
 	}
 	
 	//Sửa thông tin khách hàng
-	public void suaThongTinKhachHang(KhachHang kh) {
+	public boolean suaThongTinKhachHang(KhachHang kh) {
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Update KhachHang set hoTenKH = N'" + kh.getHoTenKH() + "', gioiTinh = N'" + kh.getGioiTinh()
-					+ "', ngaySinh = '" + kh.getNgaySinh() + "', soDT = '" + kh.getSoDT() + "', CCCD_Visa = '"
+			String sql = "Update KhachHang set TenKhachHang = N'" + kh.getHoTenKH() + "', gioiTinh = N'" + kh.getGioiTinh()
+					+ "', ngaySinhKH = '" + kh.getNgaySinh() + "', soDienThoai = '" + kh.getSoDT() + "', CCCD_Visa = '"
 					+ kh.getCCCD_Visa() + "', chiTieu = " + kh.getChiTieu() + ", maHang = '"
 					+ kh.getMaHangThanhVien() + "', quocTich = N'" + kh.getQuocTich() + "' where maKH = '"
 					+ kh.getMaKH() + "'";
 			Statement statement = con.createStatement();
 			statement.executeUpdate(sql);
+			return true;
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 			// Đóng kết nối
 		}
+		return false;
 	}
 	
 	//Xóa khách hàng

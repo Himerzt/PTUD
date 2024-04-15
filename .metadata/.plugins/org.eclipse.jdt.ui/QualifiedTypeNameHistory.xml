@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="entity.DichVu"/>
     <fullyQualifiedTypeName name="javax.swing.JLabel"/>
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
-    <fullyQualifiedTypeName name="giaodien.TrangChu"/>
     <fullyQualifiedTypeName name="dao.ThongTinDatThuePhongDao"/>
     <fullyQualifiedTypeName name="dao.PhongDao"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -13,7 +12,6 @@
     <fullyQualifiedTypeName name="giaodien.DatPhong"/>
     <fullyQualifiedTypeName name="dao.KhachHangDao"/>
     <fullyQualifiedTypeName name="entity.KhachHang"/>
-    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="entity.LoaiThue"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="connectDB.ConnectDB"/>
@@ -22,4 +20,7 @@
     <fullyQualifiedTypeName name="dao.LoaiThueDao"/>
     <fullyQualifiedTypeName name="javax.swing.JDialog"/>
     <fullyQualifiedTypeName name="javax.swing.WindowConstants"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="javax.swing.SwingUtilities"/>
+    <fullyQualifiedTypeName name="giaodien.TrangChu"/>
 </qualifiedTypeNameHistroy>

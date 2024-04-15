@@ -3739,3 +3739,1398 @@ java.util.concurrent.TimeoutException
 	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
 	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2024-04-15 09:36:16.861 -----------------------------------------------
+eclipse.buildId=4.31.0.20240307-1200
+java.version=17.0.10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-04-15 09:36:19.902
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 09:36:20.235
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 09:36:24.583
+!MESSAGE Logback config file: D:\document\Lesson\PTUD\PTUD\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.0.20240217-1525.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-04-15 09:36:30.149
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\TheKhoiTran'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 09:36:33.218
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-04-15 09:36:33.271
+!MESSAGE [Info]	Registering request handler for workspace/didChangeWorkspaceFolders failed.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 09:36:36.721
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2024-04-15 10:01:55.144
+!MESSAGE Server returned lastModified <= 0 for https://raw.github.com/entirej/mavenrepo/gh-pages/p2/plugin/content.jar
+!SESSION 2024-04-15 11:15:31.529 -----------------------------------------------
+eclipse.buildId=4.31.0.20240307-1200
+java.version=17.0.10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-04-15 11:15:35.371
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 11:15:35.771
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 11:15:39.681
+!MESSAGE Logback config file: D:\document\Lesson\PTUD\PTUD\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.0.20240217-1525.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-04-15 11:15:49.387
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\TheKhoiTran'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 11:15:52.036
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 11:15:53.783
+!MESSAGE Timeout while checking Copilot status
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 11:15:55.540
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-04-15 11:15:56.673
+!MESSAGE [Info]	Registering request handler for workspace/didChangeWorkspaceFolders failed.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 11:15:59.127
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2024-04-15 11:27:47.221
+!MESSAGE Server returned lastModified <= 0 for https://raw.github.com/entirej/mavenrepo/gh-pages/p2/plugin/content.jar
+!SESSION 2024-04-15 13:36:05.986 -----------------------------------------------
+eclipse.buildId=4.31.0.20240307-1200
+java.version=17.0.10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-04-15 13:36:12.965
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 13:36:13.372
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 13:36:17.346
+!MESSAGE Logback config file: D:\document\Lesson\PTUD\PTUD\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.0.20240217-1525.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-04-15 13:36:28.347
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\TheKhoiTran'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 13:36:31.161
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-04-15 13:36:34.353
+!MESSAGE [Info]	Registering request handler for workspace/didChangeWorkspaceFolders failed.
+
+!ENTRY org.eclipse.epp.mpc.ui 1 0 2024-04-15 13:45:45.996
+!MESSAGE Performing Marketplace install request from https://marketplace.eclipse.org/marketplace-client-intro?mpc_install=3085446
+!SESSION 2024-04-15 13:47:42.655 -----------------------------------------------
+eclipse.buildId=4.31.0.20240307-1200
+java.version=17.0.10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data file:/D:/document/Lesson/PTUD/PTUD/
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-04-15 13:47:47.465
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 13:47:47.633
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 13:47:50.579
+!MESSAGE Logback config file: D:\document\Lesson\PTUD\PTUD\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.0.20240217-1525.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-04-15 13:47:57.309
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\TheKhoiTran'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 13:48:00.260
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-04-15 13:48:00.778
+!MESSAGE [Info]	Registering request handler for workspace/didChangeWorkspaceFolders failed.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 13:48:03.766
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wb.core.java 2 0 2024-04-15 13:49:34.378
+!MESSAGE The file '/wbp-meta/javax/swing/Box.wbp-factory.xml' should use 'http://www.eclipse.org/wb/WBPComponent' instead of the default namespace.
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:57:45.187
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:57:56.165
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:57:56.272
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:04.284
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:22.392
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:24.021
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:27.262
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:31.135
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:31.292
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:31.430
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:31.580
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:31.735
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:36.547
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:39.073
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:41.899
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:42.054
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:42.198
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:42.333
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:42.481
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:45.522
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:45.636
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:58:48.088
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:59:23.031
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:59:23.895
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:59:24.282
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:59:30.148
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:59:30.272
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:59:30.406
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:59:30.531
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:59:30.647
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 13:59:31.334
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY org.eclipse.wb.core 4 4 2024-04-15 14:23:02.383
+!MESSAGE Designer [1.15.0.202402200547.202404151423]: new javax.swing.GroupLayout(pnLayOutNhanVien)
+!STACK 0
+java.lang.Error: new javax.swing.GroupLayout(pnLayOutNhanVien)
+	at org.eclipse.wb.core.eval.AstEvaluationEngine.evaluate(AstEvaluationEngine.java:70)
+	at org.eclipse.wb.internal.core.model.JavaInfoEvaluationHelper.evaluateExpression(JavaInfoEvaluationHelper.java:622)
+	at org.eclipse.wb.internal.core.model.JavaInfoEvaluationHelper.evaluate(JavaInfoEvaluationHelper.java:499)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser.evaluateNode(JavaInfoParser.java:1312)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser$ExecutionFlowParseVisitor$3.run(JavaInfoParser.java:603)
+	at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils.runRethrow(ExecutionUtils.java:120)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser$ExecutionFlowParseVisitor.postVisit(JavaInfoParser.java:592)
+	at org.eclipse.jdt.core.dom.ASTNode.accept(ASTNode.java:3303)
+	at org.eclipse.jdt.core.dom.ASTNode.acceptChild(ASTNode.java:3348)
+	at org.eclipse.jdt.core.dom.VariableDeclarationFragment.accept0(VariableDeclarationFragment.java:238)
+	at org.eclipse.jdt.core.dom.ASTNode.accept(ASTNode.java:3300)
+	at org.eclipse.jdt.core.dom.ASTNode.acceptChildren(ASTNode.java:3371)
+	at org.eclipse.jdt.core.dom.FieldDeclaration.accept0(FieldDeclaration.java:273)
+	at org.eclipse.jdt.core.dom.ASTNode.accept(ASTNode.java:3300)
+	at org.eclipse.wb.core.eval.ExecutionFlowUtils.visitFields(ExecutionFlowUtils.java:271)
+	at org.eclipse.wb.core.eval.ExecutionFlowUtils.visit(ExecutionFlowUtils.java:227)
+	at org.eclipse.wb.core.eval.ExecutionFlowUtils.visit(ExecutionFlowUtils.java:195)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser.parseRootMethods(JavaInfoParser.java:312)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser.parse(JavaInfoParser.java:268)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser$1.runObject(JavaInfoParser.java:152)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser$1.runObject(JavaInfoParser.java:1)
+	at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils.runDesignTime(ExecutionUtils.java:160)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser.parse(JavaInfoParser.java:149)
+	at org.eclipse.wb.internal.core.editor.DesignPage.internal_refreshGEF(DesignPage.java:551)
+	at org.eclipse.wb.internal.core.editor.DesignPage$8$1.run(DesignPage.java:466)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:183)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4803)
+	at org.eclipse.wb.internal.core.editor.DesignPage$8.run(DesignPage.java:462)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:434)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:354)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:470)
+	at org.eclipse.wb.internal.core.editor.DesignPage.internal_refreshGEF_withProgress(DesignPage.java:482)
+	at org.eclipse.wb.internal.core.editor.DesignPage.internal_refreshGEF(DesignPage.java:430)
+	at org.eclipse.wb.internal.core.editor.UndoManager.refreshDesignerEditor(UndoManager.java:385)
+	at org.eclipse.wb.internal.core.editor.DesignPage.refreshGEF(DesignPage.java:407)
+	at org.eclipse.wb.internal.core.editor.DesignPage$4.run(DesignPage.java:296)
+	at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils.runLog(ExecutionUtils.java:107)
+	at org.eclipse.wb.internal.core.editor.DesignPage.checkDependenciesOnDesignPageActivation(DesignPage.java:290)
+	at org.eclipse.wb.internal.core.editor.DesignPage$1$1.run(DesignPage.java:104)
+	at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils.runLog(ExecutionUtils.java:107)
+	at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils$4.run(ExecutionUtils.java:207)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4047)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3663)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:152)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1432)
+Caused by: org.eclipse.wb.internal.core.utils.exception.DesignerException: 307 (Exception during constructor evaluation). new javax.swing.GroupLayout(pnLayOutNhanVien) GroupLayout(Container) {<null>} java.lang.IllegalArgumentException: Container must be non-null
+	at java.desktop/javax.swing.GroupLayout.<init>(GroupLayout.java:377)
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor108.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.eclipse.wb.internal.core.eval.evaluators.InvocationEvaluator.createConstructorProblemException(InvocationEvaluator.java:613)
+	at org.eclipse.wb.internal.core.eval.evaluators.InvocationEvaluator.evaluate(InvocationEvaluator.java:271)
+	at org.eclipse.wb.internal.core.eval.evaluators.InvocationEvaluator.evaluate(InvocationEvaluator.java:84)
+	at org.eclipse.wb.core.eval.AstEvaluationEngine.evaluate0(AstEvaluationEngine.java:160)
+	at org.eclipse.wb.core.eval.AstEvaluationEngine.evaluate(AstEvaluationEngine.java:59)
+	... 67 more
+Caused by: java.lang.IllegalArgumentException: Container must be non-null
+	at java.desktop/javax.swing.GroupLayout.<init>(GroupLayout.java:377)
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor108.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.eclipse.wb.internal.core.eval.evaluators.InvocationEvaluator.evaluate(InvocationEvaluator.java:265)
+	... 70 more
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-04-15 14:25:45.906
+!MESSAGE [Info]	Registering request handler for workspace/didChangeWorkspaceFolders failed.
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:25:46.558
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: 
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2024-04-15 14:27:05.523
+!MESSAGE Server returned lastModified <= 0 for https://raw.github.com/entirej/mavenrepo/gh-pages/p2/plugin/content.jar
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:30:38.622
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:30:57.933
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:31:04.947
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:31:33.584
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:31:35.060
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:31:36.182
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:31:42.116
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:31:45.289
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:28.515
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:28.795
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:28.972
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:29.121
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:29.234
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:29.272
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:29.469
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:30.156
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:30.212
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:30.516
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:30.712
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:30.812
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:31.170
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:31.208
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:31.332
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:31.539
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:31.769
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:31.899
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:32.100
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:32.432
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:33.372
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:33.449
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:33.831
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:34.403
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:34.962
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:35.741
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:39.209
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:39.339
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:39.475
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:39.617
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:39.754
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:39.905
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:40.052
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:42.832
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:54.323
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:54.644
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:54.761
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:54.992
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:55.428
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:56.076
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:32:56.412
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:03.156
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:03.363
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:04.531
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:04.632
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:04.912
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:05.177
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:08.433
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:08.574
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:08.729
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:08.856
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:08.994
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:09.135
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:09.269
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:19.531
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:19.803
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:27.166
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:29.755
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:30.326
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:30.429
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:30.763
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:30.926
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:31.041
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:31.643
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:31.693
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:33:31.806
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:34:06.813
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:34:14.445
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:34:39.818
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:35:39.338
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:35:40.210
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: 
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:35:41.761
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: 
+!SESSION 2024-04-15 14:37:17.379 -----------------------------------------------
+eclipse.buildId=4.31.0.20240307-1200
+java.version=17.0.10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-04-15 14:37:19.531
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 14:37:19.842
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 14:37:22.590
+!MESSAGE Logback config file: D:\document\Lesson\PTUD\PTUD\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.0.20240217-1525.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-04-15 14:37:29.789
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\TheKhoiTran'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 14:37:32.802
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-04-15 14:37:32.960
+!MESSAGE [Info]	Registering request handler for workspace/didChangeWorkspaceFolders failed.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 14:37:36.305
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wb.core.java 2 0 2024-04-15 14:44:11.045
+!MESSAGE The file '/wbp-meta/javax/swing/Box.wbp-factory.xml' should use 'http://www.eclipse.org/wb/WBPComponent' instead of the default namespace.
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:28.874
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:29.583
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:34.150
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:34.314
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:34.812
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:47.862
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:49.342
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:49.583
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:50.305
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:50.510
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:50.882
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:54.079
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:54.236
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:58.262
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:59.201
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:59.464
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:48:59.750
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:00.125
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:00.968
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:01.372
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:01.637
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:01.778
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:04.374
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:04.645
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:04.977
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:05.127
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:05.306
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:05.613
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:05.913
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:06.187
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:06.387
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:06.571
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:06.645
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:06.710
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:06.897
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:07.048
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:07.144
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:07.679
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:07.831
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:07.965
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:08.107
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:08.262
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:08.919
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:09.139
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:09.362
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:09.512
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:09.968
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:10.072
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:10.631
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:10.790
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:11.134
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:11.312
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:11.531
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:11.726
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:12.088
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:12.359
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:12.496
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:13.001
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:13.153
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:13.253
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:13.590
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:13.779
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:13.891
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:14.582
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:15.002
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:15.657
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:16.124
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:16.428
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:18.936
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:19.855
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:20.877
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:21.972
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:22.214
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:22.329
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:23.267
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:24.571
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:24.837
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:24.982
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:25.362
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:26.000
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:26.335
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:26.650
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:26.984
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:28.171
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:29.748
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:29.833
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:30.021
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:56.602
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:56.957
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:58.055
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:49:58.569
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:01.324
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:02.104
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:34.965
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:36.873
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:37.029
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:37.182
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:37.714
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:37.895
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:38.200
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:38.271
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:38.352
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:38.717
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:38.888
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:38.997
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:41.124
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:41.340
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:41.409
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:41.661
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:41.974
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:42.348
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:42.490
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:42.614
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:42.768
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:42.936
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:42.977
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:43.063
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:43.466
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:43.684
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:43.828
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:44.148
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:44.603
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:45.144
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:45.423
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:45.683
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:45.971
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:54.123
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:54.257
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:54.301
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:55.394
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:56.206
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:56.283
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:50:56.477
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:01.589
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:02.341
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:02.878
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:04.635
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:04.853
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:04.910
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:06.943
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:07.514
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:07.744
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:07.866
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:08.194
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:08.920
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:09.109
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:09.874
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:10.226
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:11.374
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:11.482
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:11.571
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:12.837
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:20.538
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:51:34.630
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:53:22.814
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:53:24.207
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:53:24.707
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:53:25.542
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:53:52.915
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:53:54.041
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:53:55.172
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:54:08.090
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:54:08.490
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:54:08.806
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:54:09.567
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:54:23.564
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:55:20.571
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:55:23.066
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:55:25.875
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:55:26.297
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:55:26.548
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:55:27.144
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:55:40.307
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:55:40.431
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:55:42.907
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 14:59:35.353
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2024-04-15 15:03:28.664
+!MESSAGE Server returned lastModified <= 0 for https://raw.github.com/entirej/mavenrepo/gh-pages/p2/plugin/content.jar
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 4 1002 2024-04-15 15:04:16.705
+!MESSAGE Unable to read repository at https://download.eclipse.org/technology/epp/packages/latest/compositeContent.xml.
+!STACK 0
+java.net.NoRouteToHostException: No route to host: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.lambda$connectSocket$0(SSLConnectionSocketFactory.java:232)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:231)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:181)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:251)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 4 1002 2024-04-15 15:04:16.726
+!MESSAGE Unable to read repository at https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/release/4.30.0/content.xml.xz.
+!STACK 0
+java.net.NoRouteToHostException: No route to host: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.lambda$connectSocket$0(SSLConnectionSocketFactory.java:232)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:231)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:181)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:251)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 4 1002 2024-04-15 15:04:16.767
+!MESSAGE Unable to read repository at https://download.eclipse.org/oomph/updates/milestone/latest/compositeContent.xml.
+!STACK 0
+java.net.NoRouteToHostException: No route to host: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.lambda$connectSocket$0(SSLConnectionSocketFactory.java:232)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:231)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:181)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:251)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 4 1002 2024-04-15 15:04:16.777
+!MESSAGE Unable to read repository at https://download.eclipse.org/e4/snapshots/org.eclipse.e4.ui/content.xml.xz.
+!STACK 0
+java.net.NoRouteToHostException: No route to host: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.lambda$connectSocket$0(SSLConnectionSocketFactory.java:232)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:231)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:181)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:251)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.genuitec.copilot4eclipse 2 0 2024-04-15 15:08:10.102
+!MESSAGE Document for URI could not be found: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/TrangChu.java, URIs of the known document are: file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/giaodien/DatPhong.java, file:///d%3A/document/Lesson/PTUD/PTUD/PTUD_QuanLyKhachSan/src/dao/PhongDao.java
+!SESSION 2024-04-15 15:08:53.387 -----------------------------------------------
+eclipse.buildId=4.31.0.20240307-1200
+java.version=17.0.10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-04-15 15:08:56.640
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 15:08:56.905
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-04-15 15:08:59.249
+!MESSAGE Logback config file: D:\document\Lesson\PTUD\PTUD\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.0.20240217-1525.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-04-15 15:09:06.678
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\TheKhoiTran'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 15:09:09.646
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-04-15 15:09:10.354
+!MESSAGE [Info]	Registering request handler for workspace/didChangeWorkspaceFolders failed.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-04-15 15:09:13.150
+!MESSAGE <null>
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse.lambda$0(Unknown Source)
+	at com.genuitec.copilot4eclipse.Copilot4Eclipse$1.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
