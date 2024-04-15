@@ -725,2253 +725,6 @@ public class TrangChu extends javax.swing.JFrame {
 
 		pnedUngDung.setBackground(new java.awt.Color(255, 153, 102));
 
-		pnBody2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-		Tang1_QuanLyPhong.setBackground(new java.awt.Color(255, 255, 255));
-		Tang1_QuanLyPhong.setBorder(javax.swing.BorderFactory.createTitledBorder(
-				javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 1",
-				javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION,
-				new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
-		Tang1_QuanLyPhong.setMinimumSize(new java.awt.Dimension(1180, 140));
-		Tang1_QuanLyPhong.setPreferredSize(new java.awt.Dimension(1180, 140));
-
-		phongQuanLy1.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy1.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL1.setText("101TC");
-
-		lblLoaiPhongQL1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL1.setText("Tiêu chuẩn");
-		lblLoaiPhongQL1.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL1.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL1.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL1.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy1Layout = new javax.swing.GroupLayout(phongQuanLy1);
-		phongQuanLy1.setLayout(phongQuanLy1Layout);
-		phongQuanLy1Layout.setHorizontalGroup(phongQuanLy1Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy1Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL1, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL1, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy1Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL1, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL1)))
-						.addContainerGap()));
-		phongQuanLy1Layout.setVerticalGroup(phongQuanLy1Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy1Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL1).addComponent(lblLoaiPhongQL1,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL1, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL1).addContainerGap()));
-
-		phongQuanLy2.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy2.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL2.setText("101TC");
-
-		lblLoaiPhongQL2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL2.setText("Tiêu chuẩn");
-		lblLoaiPhongQL2.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL2.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL2.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL2.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy2Layout = new javax.swing.GroupLayout(phongQuanLy2);
-		phongQuanLy2.setLayout(phongQuanLy2Layout);
-		phongQuanLy2Layout.setHorizontalGroup(phongQuanLy2Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy2Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL2, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL2, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy2Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL2, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL2)))
-						.addContainerGap()));
-		phongQuanLy2Layout.setVerticalGroup(phongQuanLy2Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy2Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL2).addComponent(lblLoaiPhongQL2,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL2, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL2).addContainerGap()));
-
-		phongQuanLy3.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy3.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL3.setText("101TC");
-
-		lblLoaiPhongQL3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL3.setText("Tiêu chuẩn");
-		lblLoaiPhongQL3.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL3.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL3.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL3.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy3Layout = new javax.swing.GroupLayout(phongQuanLy3);
-		phongQuanLy3.setLayout(phongQuanLy3Layout);
-		phongQuanLy3Layout.setHorizontalGroup(phongQuanLy3Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy3Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy3Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL3, javax.swing.GroupLayout.Alignment.TRAILING,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGroup(phongQuanLy3Layout.createSequentialGroup().addGroup(phongQuanLy3Layout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(lblTrangThaiQL3, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										phongQuanLy3Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL3, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL3)))
-								.addContainerGap()))));
-		phongQuanLy3Layout.setVerticalGroup(phongQuanLy3Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy3Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL3).addComponent(lblLoaiPhongQL3,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL3, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL3).addContainerGap()));
-
-		phongQuanLy4.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy4.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL4.setText("101TC");
-
-		lblLoaiPhongQL4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL4.setText("Tiêu chuẩn");
-		lblLoaiPhongQL4.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL4.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL4.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL4.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy4Layout = new javax.swing.GroupLayout(phongQuanLy4);
-		phongQuanLy4.setLayout(phongQuanLy4Layout);
-		phongQuanLy4Layout.setHorizontalGroup(phongQuanLy4Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy4Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL4, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy4Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL4, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL4))
-								.addComponent(lblTrangThaiQL4, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE))
-						.addContainerGap()));
-		phongQuanLy4Layout.setVerticalGroup(phongQuanLy4Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy4Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL4).addComponent(lblLoaiPhongQL4,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL4, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL4).addContainerGap()));
-
-		phongQuanLy5.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy5.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL5.setText("101TC");
-
-		lblLoaiPhongQL5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL5.setText("Thương gia");
-		lblLoaiPhongQL5.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL5.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL5.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL5.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy5Layout = new javax.swing.GroupLayout(phongQuanLy5);
-		phongQuanLy5.setLayout(phongQuanLy5Layout);
-		phongQuanLy5Layout.setHorizontalGroup(phongQuanLy5Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy5Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy5Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL5, javax.swing.GroupLayout.Alignment.TRAILING,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGroup(phongQuanLy5Layout.createSequentialGroup()
-								.addGroup(phongQuanLy5Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(phongQuanLy5Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL5, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(checkBoxPhongQL5))
-										.addComponent(lblTrangThaiQL5, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-								.addContainerGap()))));
-		phongQuanLy5Layout.setVerticalGroup(phongQuanLy5Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy5Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL5).addComponent(lblLoaiPhongQL5,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL5, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL5).addContainerGap()));
-
-		phongQuanLy6.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy6.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL6.setText("101TC");
-
-		lblLoaiPhongQL6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL6.setText("Tiêu chuẩn");
-		lblLoaiPhongQL6.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL6.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL6.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL6.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy6Layout = new javax.swing.GroupLayout(phongQuanLy6);
-		phongQuanLy6.setLayout(phongQuanLy6Layout);
-		phongQuanLy6Layout.setHorizontalGroup(phongQuanLy6Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy6Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(lblTenPhongQL6, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL6, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										phongQuanLy6Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL6, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL6)))
-						.addContainerGap()));
-		phongQuanLy6Layout.setVerticalGroup(phongQuanLy6Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy6Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(checkBoxPhongQL6).addComponent(lblLoaiPhongQL6,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL6, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL6).addContainerGap()));
-
-		phongQuanLy7.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy7.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL7.setText("101TC");
-
-		lblLoaiPhongQL7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL7.setText("Tiêu chuẩn");
-		lblLoaiPhongQL7.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL7.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL7.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL7.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy7Layout = new javax.swing.GroupLayout(phongQuanLy7);
-		phongQuanLy7.setLayout(phongQuanLy7Layout);
-		phongQuanLy7Layout.setHorizontalGroup(phongQuanLy7Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy7Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(lblTenPhongQL7, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL7, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										phongQuanLy7Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL7, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL7)))
-						.addContainerGap()));
-		phongQuanLy7Layout.setVerticalGroup(phongQuanLy7Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy7Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL7).addComponent(lblLoaiPhongQL7,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL7, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL7).addContainerGap()));
-
-		phongQuanLy8.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy8.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL8.setText("101TC");
-
-		lblLoaiPhongQL8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL8.setText("Tiêu chuẩn");
-		lblLoaiPhongQL8.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL8.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL8.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL8.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy8Layout = new javax.swing.GroupLayout(phongQuanLy8);
-		phongQuanLy8.setLayout(phongQuanLy8Layout);
-		phongQuanLy8Layout.setHorizontalGroup(phongQuanLy8Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy8Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy8Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL8, javax.swing.GroupLayout.Alignment.TRAILING,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGroup(phongQuanLy8Layout.createSequentialGroup().addGroup(phongQuanLy8Layout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(lblTrangThaiQL8, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										phongQuanLy8Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL8, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL8)))
-								.addContainerGap()))));
-		phongQuanLy8Layout.setVerticalGroup(phongQuanLy8Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy8Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL8).addComponent(lblLoaiPhongQL8,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL8, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL8).addContainerGap()));
-
-		phongQuanLy9.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy9.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL9.setText("101TC");
-
-		lblLoaiPhongQL9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL9.setText("Tiêu chuẩn");
-		lblLoaiPhongQL9.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL9.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL9.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL9.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy9Layout = new javax.swing.GroupLayout(phongQuanLy9);
-		phongQuanLy9.setLayout(phongQuanLy9Layout);
-		phongQuanLy9Layout.setHorizontalGroup(phongQuanLy9Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy9Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL9, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL9, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy9Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL9, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL9)))
-						.addContainerGap()));
-		phongQuanLy9Layout.setVerticalGroup(phongQuanLy9Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy9Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL9).addComponent(lblLoaiPhongQL9,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL9, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL9).addContainerGap()));
-
-		phongQuanLy10.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy10.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL10.setText("101TC");
-
-		lblLoaiPhongQL10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL10.setText("Thương gia");
-		lblLoaiPhongQL10.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL10.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL10.setName(""); // NOI18N
-		lblLoaiPhongQL10.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL10.setText("Đã đặt");
-
-		javax.swing.GroupLayout phongQuanLy10Layout = new javax.swing.GroupLayout(phongQuanLy10);
-		phongQuanLy10.setLayout(phongQuanLy10Layout);
-		phongQuanLy10Layout.setHorizontalGroup(phongQuanLy10Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy10Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy10Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL10, javax.swing.GroupLayout.Alignment.TRAILING,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy10Layout.createSequentialGroup().addGroup(phongQuanLy10Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy10Layout
-												.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL10, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL10))
-										.addComponent(lblTrangThaiQL10, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addContainerGap()))));
-		phongQuanLy10Layout.setVerticalGroup(phongQuanLy10Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy10Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL10).addComponent(lblLoaiPhongQL10,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL10, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL10).addContainerGap()));
-
-		javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-		jPanel8.setLayout(jPanel8Layout);
-		jPanel8Layout.setHorizontalGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel8Layout.createSequentialGroup().addContainerGap()
-						.addComponent(phongQuanLy1, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy2, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy3, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy4, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy5, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy6, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy7, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy8, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy9, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy10, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		jPanel8Layout.setVerticalGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel8Layout.createSequentialGroup().addGap(12, 12, 12)
-						.addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(phongQuanLy10, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy6, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy5, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy4, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy2, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy1, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy7, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy8, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy9, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy3, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-
-		javax.swing.GroupLayout Tang1_QuanLyPhongLayout = new javax.swing.GroupLayout(Tang1_QuanLyPhong);
-		Tang1_QuanLyPhong.setLayout(Tang1_QuanLyPhongLayout);
-		Tang1_QuanLyPhongLayout.setHorizontalGroup(Tang1_QuanLyPhongLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(Tang1_QuanLyPhongLayout.createSequentialGroup().addContainerGap().addComponent(jPanel8,
-						javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addContainerGap()));
-		Tang1_QuanLyPhongLayout.setVerticalGroup(Tang1_QuanLyPhongLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(Tang1_QuanLyPhongLayout.createSequentialGroup().addComponent(jPanel8,
-						javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addContainerGap()));
-
-		Tang2_QuanLyPhong.setBackground(new java.awt.Color(255, 255, 255));
-		Tang2_QuanLyPhong.setBorder(javax.swing.BorderFactory.createTitledBorder(
-				javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 2",
-				javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION,
-				new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
-		Tang2_QuanLyPhong.setMinimumSize(new java.awt.Dimension(1180, 140));
-		Tang2_QuanLyPhong.setPreferredSize(new java.awt.Dimension(1180, 140));
-
-		jPanel11.setMinimumSize(new java.awt.Dimension(1150, 120));
-
-		phongQuanLy11.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy11.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL11.setText("101TC");
-
-		lblLoaiPhongQL11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL11.setText("Tiêu chuẩn");
-		lblLoaiPhongQL11.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL11.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL11.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL11.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy11Layout = new javax.swing.GroupLayout(phongQuanLy11);
-		phongQuanLy11.setLayout(phongQuanLy11Layout);
-		phongQuanLy11Layout.setHorizontalGroup(phongQuanLy11Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy11Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL11, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL11, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy11Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL11, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL11)))
-						.addContainerGap()));
-		phongQuanLy11Layout.setVerticalGroup(phongQuanLy11Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy11Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL11).addComponent(lblLoaiPhongQL11,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL11, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL11).addContainerGap()));
-
-		phongQuanLy12.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy12.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL12.setText("101TC");
-
-		lblLoaiPhongQL12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL12.setText("Thương gia");
-		lblLoaiPhongQL12.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL12.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL12.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL12.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy12Layout = new javax.swing.GroupLayout(phongQuanLy12);
-		phongQuanLy12.setLayout(phongQuanLy12Layout);
-		phongQuanLy12Layout.setHorizontalGroup(phongQuanLy12Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy12Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy12Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL12, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(phongQuanLy12Layout.createSequentialGroup().addGroup(phongQuanLy12Layout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(lblTrangThaiQL12, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										phongQuanLy12Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL12, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL12)))
-								.addContainerGap()))));
-		phongQuanLy12Layout.setVerticalGroup(phongQuanLy12Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy12Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL12).addComponent(lblLoaiPhongQL12,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL12, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL12).addContainerGap()));
-
-		phongQuanLy13.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy13.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL13.setText("101TC");
-
-		lblLoaiPhongQL13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL13.setText("Nâng cao");
-		lblLoaiPhongQL13.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL13.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL13.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL13.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy13Layout = new javax.swing.GroupLayout(phongQuanLy13);
-		phongQuanLy13.setLayout(phongQuanLy13Layout);
-		phongQuanLy13Layout.setHorizontalGroup(phongQuanLy13Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy13Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTrangThaiQL13, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy13Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL13, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL13)))
-						.addContainerGap())
-				.addComponent(lblTenPhongQL13, javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-		phongQuanLy13Layout.setVerticalGroup(phongQuanLy13Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy13Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL13).addComponent(lblLoaiPhongQL13,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL13, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL13).addContainerGap()));
-
-		phongQuanLy14.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy14.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL14.setText("101TC");
-
-		lblLoaiPhongQL14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL14.setText("Nâng cao");
-		lblLoaiPhongQL14.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL14.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL14.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL14.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy14Layout = new javax.swing.GroupLayout(phongQuanLy14);
-		phongQuanLy14.setLayout(phongQuanLy14Layout);
-		phongQuanLy14Layout.setHorizontalGroup(phongQuanLy14Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addComponent(lblTenPhongQL14, javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy14Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										phongQuanLy14Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL14, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL14))
-								.addComponent(lblTrangThaiQL14, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE))
-						.addContainerGap()));
-		phongQuanLy14Layout.setVerticalGroup(phongQuanLy14Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy14Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL14).addComponent(lblLoaiPhongQL14,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL14, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL14).addContainerGap()));
-
-		phongQuanLy15.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy15.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL15.setText("101TC");
-
-		lblLoaiPhongQL15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL15.setText("Thương gia");
-		lblLoaiPhongQL15.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL15.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL15.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL15.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy15Layout = new javax.swing.GroupLayout(phongQuanLy15);
-		phongQuanLy15.setLayout(phongQuanLy15Layout);
-		phongQuanLy15Layout.setHorizontalGroup(phongQuanLy15Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy15Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										phongQuanLy15Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL15, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL15))
-								.addComponent(lblTenPhongQL15, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL15, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE))
-						.addContainerGap()));
-		phongQuanLy15Layout.setVerticalGroup(phongQuanLy15Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy15Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL15).addComponent(lblLoaiPhongQL15,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL15, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL15).addContainerGap()));
-
-		phongQuanLy16.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy16.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL16.setText("101TC");
-
-		lblLoaiPhongQL16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL16.setText("Cao cấp");
-		lblLoaiPhongQL16.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL16.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL16.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL16.setText("Đặt đặt");
-
-		javax.swing.GroupLayout phongQuanLy16Layout = new javax.swing.GroupLayout(phongQuanLy16);
-		phongQuanLy16.setLayout(phongQuanLy16Layout);
-		phongQuanLy16Layout.setHorizontalGroup(phongQuanLy16Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy16Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL16, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL16, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy16Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL16, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL16)))
-						.addContainerGap()));
-		phongQuanLy16Layout.setVerticalGroup(phongQuanLy16Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy16Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL16).addComponent(lblLoaiPhongQL16,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL16, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL16).addContainerGap()));
-
-		phongQuanLy17.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy17.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL17.setText("101TC");
-
-		lblLoaiPhongQL17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL17.setText("Tiêu chuẩn");
-		lblLoaiPhongQL17.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL17.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL17.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL17.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy17Layout = new javax.swing.GroupLayout(phongQuanLy17);
-		phongQuanLy17.setLayout(phongQuanLy17Layout);
-		phongQuanLy17Layout.setHorizontalGroup(phongQuanLy17Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy17Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy17Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL17, javax.swing.GroupLayout.Alignment.TRAILING,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy17Layout.createSequentialGroup().addGroup(phongQuanLy17Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy17Layout
-												.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL17, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL17))
-										.addComponent(lblTrangThaiQL17, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addContainerGap()))));
-		phongQuanLy17Layout.setVerticalGroup(phongQuanLy17Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy17Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL17).addComponent(lblLoaiPhongQL17,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL17, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL17).addContainerGap()));
-
-		phongQuanLy18.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy18.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL18.setText("101TC");
-
-		lblLoaiPhongQL18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL18.setText("Tiêu chuẩn");
-		lblLoaiPhongQL18.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL18.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL18.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL18.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy18Layout = new javax.swing.GroupLayout(phongQuanLy18);
-		phongQuanLy18.setLayout(phongQuanLy18Layout);
-		phongQuanLy18Layout.setHorizontalGroup(phongQuanLy18Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy18Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy18Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL18, javax.swing.GroupLayout.Alignment.TRAILING,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy18Layout.createSequentialGroup().addGroup(phongQuanLy18Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy18Layout
-												.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL18, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL18))
-										.addComponent(lblTrangThaiQL18, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addContainerGap()))));
-		phongQuanLy18Layout.setVerticalGroup(phongQuanLy18Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy18Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL18).addComponent(lblLoaiPhongQL18,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL18, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL18).addContainerGap()));
-
-		phongQuanLy19.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy19.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL19.setText("101TC");
-
-		lblLoaiPhongQL19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL19.setText("Cao cấp");
-		lblLoaiPhongQL19.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL19.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL19.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL19.setText("Đang trống");
-
-		javax.swing.GroupLayout phongQuanLy19Layout = new javax.swing.GroupLayout(phongQuanLy19);
-		phongQuanLy19.setLayout(phongQuanLy19Layout);
-		phongQuanLy19Layout.setHorizontalGroup(phongQuanLy19Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy19Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy19Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL19, javax.swing.GroupLayout.Alignment.TRAILING,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy19Layout.createSequentialGroup().addGroup(phongQuanLy19Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy19Layout
-												.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL19, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL19))
-										.addComponent(lblTrangThaiQL19, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addContainerGap()))));
-		phongQuanLy19Layout.setVerticalGroup(phongQuanLy19Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy19Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL19).addComponent(lblLoaiPhongQL19,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL19, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL19).addContainerGap()));
-
-		phongQuanLy20.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy20.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL20.setText("101TC");
-
-		lblLoaiPhongQL20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL20.setText("Tiêu chuẩn");
-		lblLoaiPhongQL20.setMaximumSize(new java.awt.Dimension(80, 16));
-		lblLoaiPhongQL20.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL20.setName(""); // NOI18N
-		lblLoaiPhongQL20.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL20.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy20Layout = new javax.swing.GroupLayout(phongQuanLy20);
-		phongQuanLy20.setLayout(phongQuanLy20Layout);
-		phongQuanLy20Layout.setHorizontalGroup(phongQuanLy20Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy20Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy20Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL20, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy20Layout.createSequentialGroup().addGroup(phongQuanLy20Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy20Layout
-												.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL20, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL20))
-										.addComponent(lblTrangThaiQL20, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addContainerGap()))));
-		phongQuanLy20Layout.setVerticalGroup(phongQuanLy20Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy20Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL20).addComponent(lblLoaiPhongQL20,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL20, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL20).addContainerGap()));
-
-		javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-		jPanel11.setLayout(jPanel11Layout);
-		jPanel11Layout.setHorizontalGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel11Layout.createSequentialGroup().addContainerGap()
-						.addComponent(phongQuanLy11, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy12, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy13, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy14, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy15, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy16, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy17, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy18, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy19, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy20, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		jPanel11Layout.setVerticalGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel11Layout.createSequentialGroup()
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(phongQuanLy19, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy20, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy18, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy17, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy16, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy15, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy13, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy12, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy11, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(phongQuanLy14, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addGap(17, 17, 17)));
-
-		javax.swing.GroupLayout Tang2_QuanLyPhongLayout = new javax.swing.GroupLayout(Tang2_QuanLyPhong);
-		Tang2_QuanLyPhong.setLayout(Tang2_QuanLyPhongLayout);
-		Tang2_QuanLyPhongLayout.setHorizontalGroup(Tang2_QuanLyPhongLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(Tang2_QuanLyPhongLayout.createSequentialGroup().addContainerGap().addComponent(jPanel11,
-						javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addContainerGap()));
-		Tang2_QuanLyPhongLayout
-				.setVerticalGroup(Tang2_QuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(Tang2_QuanLyPhongLayout.createSequentialGroup()
-								.addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 102, Short.MAX_VALUE)
-								.addContainerGap()));
-
-		Tang3_QuanLyPhong.setBackground(new java.awt.Color(255, 255, 255));
-		Tang3_QuanLyPhong.setBorder(javax.swing.BorderFactory.createTitledBorder(
-				javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 3",
-				javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION,
-				new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
-		Tang3_QuanLyPhong.setMaximumSize(new java.awt.Dimension(1150, 120));
-		Tang3_QuanLyPhong.setMinimumSize(new java.awt.Dimension(1180, 140));
-		Tang3_QuanLyPhong.setPreferredSize(new java.awt.Dimension(1180, 140));
-
-		phongQuanLy21.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy21.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL21.setText("101TC");
-
-		lblLoaiPhongQL21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL21.setText("Tiêu chuẩn");
-		lblLoaiPhongQL21.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL21.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL21.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL21.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy21Layout = new javax.swing.GroupLayout(phongQuanLy21);
-		phongQuanLy21.setLayout(phongQuanLy21Layout);
-		phongQuanLy21Layout.setHorizontalGroup(phongQuanLy21Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy21Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy21Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy21Layout.createSequentialGroup().addGroup(phongQuanLy21Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-										.addComponent(lblTenPhongQL21, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addGroup(phongQuanLy21Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL21, javax.swing.GroupLayout.DEFAULT_SIZE,
-														77, Short.MAX_VALUE)
-												.addGap(2, 2, 2).addComponent(checkBoxPhongQL21)))
-										.addGap(4, 4, 4))
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy21Layout.createSequentialGroup()
-										.addComponent(lblTrangThaiQL21, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addContainerGap()))));
-		phongQuanLy21Layout.setVerticalGroup(phongQuanLy21Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy21Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL21).addComponent(lblLoaiPhongQL21,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL21, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL21).addContainerGap()));
-
-		phongQuanLy22.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy22.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL22.setText("101TC");
-
-		lblLoaiPhongQL22.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL22.setText("Nâng cao");
-		lblLoaiPhongQL22.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL22.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL22.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL22.setText("Đã đặt");
-
-		javax.swing.GroupLayout phongQuanLy22Layout = new javax.swing.GroupLayout(phongQuanLy22);
-		phongQuanLy22.setLayout(phongQuanLy22Layout);
-		phongQuanLy22Layout.setHorizontalGroup(phongQuanLy22Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy22Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL22, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL22, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy22Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL22, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL22)))
-						.addContainerGap()));
-		phongQuanLy22Layout.setVerticalGroup(phongQuanLy22Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy22Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL22).addComponent(lblLoaiPhongQL22,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL22, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL22, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap()));
-
-		phongQuanLy23.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy23.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL23.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL23.setText("101TC");
-
-		lblLoaiPhongQL23.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL23.setText("Tiêu chuẩn");
-		lblLoaiPhongQL23.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL23.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL23.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL23.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy23Layout = new javax.swing.GroupLayout(phongQuanLy23);
-		phongQuanLy23.setLayout(phongQuanLy23Layout);
-		phongQuanLy23Layout.setHorizontalGroup(phongQuanLy23Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy23Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL23, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL23, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy23Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL23, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL23)))
-						.addContainerGap()));
-		phongQuanLy23Layout.setVerticalGroup(phongQuanLy23Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy23Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL23).addComponent(lblLoaiPhongQL23,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL23, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL23).addContainerGap()));
-
-		phongQuanLy24.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy24.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL24.setText("101TC");
-
-		lblLoaiPhongQL24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL24.setText("Tiêu chuẩn");
-		lblLoaiPhongQL24.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL24.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL24.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL24.setText("Đã đặt");
-
-		javax.swing.GroupLayout phongQuanLy24Layout = new javax.swing.GroupLayout(phongQuanLy24);
-		phongQuanLy24.setLayout(phongQuanLy24Layout);
-		phongQuanLy24Layout.setHorizontalGroup(phongQuanLy24Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy24Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy24Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy24Layout.createSequentialGroup().addGroup(phongQuanLy24Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-										.addComponent(lblTenPhongQL24, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addGroup(phongQuanLy24Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL24, javax.swing.GroupLayout.DEFAULT_SIZE,
-														75, Short.MAX_VALUE)
-												.addGap(4, 4, 4).addComponent(checkBoxPhongQL24)))
-										.addGap(4, 4, 4))
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy24Layout.createSequentialGroup()
-										.addComponent(lblTrangThaiQL24, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addContainerGap()))));
-		phongQuanLy24Layout.setVerticalGroup(phongQuanLy24Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy24Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL24).addComponent(lblLoaiPhongQL24,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL24, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL24).addContainerGap()));
-
-		phongQuanLy25.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy25.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL25.setText("101TC");
-
-		lblLoaiPhongQL25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL25.setText("Tiêu chuẩn");
-		lblLoaiPhongQL25.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL25.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL25.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL25.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy25Layout = new javax.swing.GroupLayout(phongQuanLy25);
-		phongQuanLy25.setLayout(phongQuanLy25Layout);
-		phongQuanLy25Layout.setHorizontalGroup(phongQuanLy25Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy25Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy25Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL25, javax.swing.GroupLayout.Alignment.TRAILING,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy25Layout.createSequentialGroup().addGroup(phongQuanLy25Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy25Layout
-												.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL25, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL25))
-										.addComponent(lblTrangThaiQL25, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addContainerGap()))));
-		phongQuanLy25Layout.setVerticalGroup(phongQuanLy25Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy25Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL25).addComponent(lblLoaiPhongQL25,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL25, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL25).addContainerGap()));
-
-		phongQuanLy26.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy26.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL26.setText("101TC");
-
-		lblLoaiPhongQL26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL26.setText("Nâng cao");
-		lblLoaiPhongQL26.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL26.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL26.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL26.setText("Đang trống");
-
-		javax.swing.GroupLayout phongQuanLy26Layout = new javax.swing.GroupLayout(phongQuanLy26);
-		phongQuanLy26.setLayout(phongQuanLy26Layout);
-		phongQuanLy26Layout.setHorizontalGroup(phongQuanLy26Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy26Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy26Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL26, javax.swing.GroupLayout.Alignment.TRAILING,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy26Layout.createSequentialGroup().addGroup(phongQuanLy26Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy26Layout
-												.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL26, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL26))
-										.addComponent(lblTrangThaiQL26, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addContainerGap()))));
-		phongQuanLy26Layout.setVerticalGroup(phongQuanLy26Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy26Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL26).addComponent(lblLoaiPhongQL26,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL26, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTrangThaiQL26, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-
-		phongQuanLy27.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy27.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL27.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL27.setText("101TC");
-
-		lblLoaiPhongQL27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL27.setText("Thương gia");
-		lblLoaiPhongQL27.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL27.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL27.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL27.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy27Layout = new javax.swing.GroupLayout(phongQuanLy27);
-		phongQuanLy27.setLayout(phongQuanLy27Layout);
-		phongQuanLy27Layout.setHorizontalGroup(phongQuanLy27Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy27Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL27, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL27, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy27Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL27, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL27)))
-						.addContainerGap()));
-		phongQuanLy27Layout.setVerticalGroup(phongQuanLy27Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy27Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL27).addComponent(lblLoaiPhongQL27,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL27, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTrangThaiQL27)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-
-		phongQuanLy28.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy28.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL28.setText("101TC");
-
-		lblLoaiPhongQL28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL28.setText("Cao cấp");
-		lblLoaiPhongQL28.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL28.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL28.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL28.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy28Layout = new javax.swing.GroupLayout(phongQuanLy28);
-		phongQuanLy28.setLayout(phongQuanLy28Layout);
-		phongQuanLy28Layout.setHorizontalGroup(phongQuanLy28Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy28Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(lblTenPhongQL28, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL28, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										phongQuanLy28Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL28, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL28)))
-						.addContainerGap()));
-		phongQuanLy28Layout.setVerticalGroup(phongQuanLy28Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy28Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL28).addComponent(lblLoaiPhongQL28,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL28, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL28).addContainerGap()));
-
-		phongQuanLy29.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy29.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL29.setText("101TC");
-
-		lblLoaiPhongQL29.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL29.setText("Nâng cao");
-		lblLoaiPhongQL29.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL29.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL29.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL29.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL29.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy29Layout = new javax.swing.GroupLayout(phongQuanLy29);
-		phongQuanLy29.setLayout(phongQuanLy29Layout);
-		phongQuanLy29Layout.setHorizontalGroup(phongQuanLy29Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy29Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy29Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(lblTenPhongQL29, javax.swing.GroupLayout.Alignment.TRAILING,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE)
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-								phongQuanLy29Layout.createSequentialGroup().addGroup(phongQuanLy29Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy29Layout
-												.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL29, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL29))
-										.addComponent(lblTrangThaiQL29, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-										.addContainerGap()))));
-		phongQuanLy29Layout.setVerticalGroup(phongQuanLy29Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy29Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL29).addComponent(lblLoaiPhongQL29,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL29, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL29).addContainerGap()));
-
-		phongQuanLy30.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy30.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL30.setText("101TC");
-
-		lblLoaiPhongQL30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL30.setText("Thương gia");
-		lblLoaiPhongQL30.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL30.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL30.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL30.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL30.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy30Layout = new javax.swing.GroupLayout(phongQuanLy30);
-		phongQuanLy30.setLayout(phongQuanLy30Layout);
-		phongQuanLy30Layout.setHorizontalGroup(phongQuanLy30Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy30Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL30, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL30, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy30Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL30, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL30)))
-						.addContainerGap()));
-		phongQuanLy30Layout.setVerticalGroup(phongQuanLy30Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy30Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL30).addComponent(lblLoaiPhongQL30,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL30, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL30).addContainerGap()));
-
-		javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-		jPanel13.setLayout(jPanel13Layout);
-		jPanel13Layout.setHorizontalGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel13Layout.createSequentialGroup().addContainerGap()
-						.addComponent(phongQuanLy21, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy22, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy23, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy24, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy25, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy26, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy27, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy28, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy29, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy30, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(18, Short.MAX_VALUE)));
-		jPanel13Layout.setVerticalGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel13Layout.createSequentialGroup().addGap(12, 12, 12).addGroup(jPanel13Layout
-						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-								.addComponent(phongQuanLy28, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy27, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy26, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy24, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy25, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy23, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy22, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy21, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy30, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE))
-						.addComponent(phongQuanLy29, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-
-		javax.swing.GroupLayout Tang3_QuanLyPhongLayout = new javax.swing.GroupLayout(Tang3_QuanLyPhong);
-		Tang3_QuanLyPhong.setLayout(Tang3_QuanLyPhongLayout);
-		Tang3_QuanLyPhongLayout.setHorizontalGroup(Tang3_QuanLyPhongLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(Tang3_QuanLyPhongLayout.createSequentialGroup().addContainerGap().addComponent(jPanel13,
-						javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addContainerGap()));
-		Tang3_QuanLyPhongLayout.setVerticalGroup(Tang3_QuanLyPhongLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(Tang3_QuanLyPhongLayout.createSequentialGroup().addComponent(jPanel13,
-						javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addContainerGap()));
-
-		Tang4_QuanLyPhong.setBackground(new java.awt.Color(255, 255, 255));
-		Tang4_QuanLyPhong.setBorder(javax.swing.BorderFactory.createTitledBorder(
-				javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 4",
-				javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION,
-				new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
-		Tang4_QuanLyPhong.setMinimumSize(new java.awt.Dimension(1180, 140));
-		Tang4_QuanLyPhong.setPreferredSize(new java.awt.Dimension(1180, 140));
-
-		phongQuanLy31.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy31.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL31.setText("101TC");
-
-		lblLoaiPhongQL31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL31.setText("Tiêu chuẩn");
-		lblLoaiPhongQL31.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL31.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL31.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL31.setText("Đang trống");
-
-		javax.swing.GroupLayout phongQuanLy31Layout = new javax.swing.GroupLayout(phongQuanLy31);
-		phongQuanLy31.setLayout(phongQuanLy31Layout);
-		phongQuanLy31Layout.setHorizontalGroup(phongQuanLy31Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy31Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(lblTrangThaiQL31, javax.swing.GroupLayout.Alignment.TRAILING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										phongQuanLy31Layout.createSequentialGroup()
-												.addComponent(lblLoaiPhongQL31, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(checkBoxPhongQL31))
-								.addComponent(lblTenPhongQL31, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addContainerGap()));
-		phongQuanLy31Layout.setVerticalGroup(phongQuanLy31Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy31Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL31).addComponent(lblLoaiPhongQL31,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTenPhongQL31, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTrangThaiQL31).addContainerGap()));
-
-		phongQuanLy32.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy32.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL32.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL32.setText("101TC");
-
-		lblLoaiPhongQL32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL32.setText("Thương gia");
-		lblLoaiPhongQL32.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL32.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL32.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL32.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL32.setText("Đã đặt");
-
-		javax.swing.GroupLayout phongQuanLy32Layout = new javax.swing.GroupLayout(phongQuanLy32);
-		phongQuanLy32.setLayout(phongQuanLy32Layout);
-		phongQuanLy32Layout.setHorizontalGroup(phongQuanLy32Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy32Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL32, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL32, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy32Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL32, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL32)))
-						.addContainerGap()));
-		phongQuanLy32Layout.setVerticalGroup(phongQuanLy32Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy32Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL32).addComponent(lblLoaiPhongQL32,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL32, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL32).addContainerGap()));
-
-		phongQuanLy33.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy33.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL33.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL33.setText("101TC");
-
-		lblLoaiPhongQL33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL33.setText("Tiêu chuẩn");
-		lblLoaiPhongQL33.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL33.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL33.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL33.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy33Layout = new javax.swing.GroupLayout(phongQuanLy33);
-		phongQuanLy33.setLayout(phongQuanLy33Layout);
-		phongQuanLy33Layout.setHorizontalGroup(phongQuanLy33Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy33Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL33, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL33, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy33Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL33, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL33)))
-						.addContainerGap()));
-		phongQuanLy33Layout.setVerticalGroup(phongQuanLy33Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy33Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL33).addComponent(lblLoaiPhongQL33,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL33, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL33).addContainerGap()));
-
-		phongQuanLy34.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy34.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL34.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL34.setText("101TC");
-
-		lblLoaiPhongQL34.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL34.setText("Tiêu chuẩn");
-		lblLoaiPhongQL34.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL34.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL34.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL34.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL34.setText("Đã đặt");
-
-		javax.swing.GroupLayout phongQuanLy34Layout = new javax.swing.GroupLayout(phongQuanLy34);
-		phongQuanLy34.setLayout(phongQuanLy34Layout);
-		phongQuanLy34Layout.setHorizontalGroup(phongQuanLy34Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy34Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL34, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL34, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy34Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL34, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL34)))
-						.addContainerGap()));
-		phongQuanLy34Layout.setVerticalGroup(phongQuanLy34Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy34Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL34).addComponent(lblLoaiPhongQL34,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL34, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL34).addContainerGap()));
-
-		phongQuanLy35.setBackground(new java.awt.Color(255, 255, 153));
-		phongQuanLy35.setPreferredSize(new java.awt.Dimension(108, 84));
-
-		lblTenPhongQL35.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-		lblTenPhongQL35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		lblTenPhongQL35.setText("101TC");
-
-		lblLoaiPhongQL35.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-		lblLoaiPhongQL35.setText("Thương gia");
-		lblLoaiPhongQL35.setMaximumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL35.setMinimumSize(new java.awt.Dimension(72, 16));
-		lblLoaiPhongQL35.setPreferredSize(new java.awt.Dimension(72, 16));
-
-		lblTrangThaiQL35.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		lblTrangThaiQL35.setText("Đang thuê");
-
-		javax.swing.GroupLayout phongQuanLy35Layout = new javax.swing.GroupLayout(phongQuanLy35);
-		phongQuanLy35.setLayout(phongQuanLy35Layout);
-		phongQuanLy35Layout.setHorizontalGroup(phongQuanLy35Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy35Layout.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(phongQuanLy35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addComponent(lblTenPhongQL35, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(lblTrangThaiQL35, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGroup(phongQuanLy35Layout.createSequentialGroup()
-										.addComponent(lblLoaiPhongQL35, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(checkBoxPhongQL35)))
-						.addContainerGap()));
-		phongQuanLy35Layout.setVerticalGroup(phongQuanLy35Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(phongQuanLy35Layout.createSequentialGroup().addContainerGap()
-						.addGroup(phongQuanLy35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(checkBoxPhongQL35).addComponent(lblLoaiPhongQL35,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(lblTenPhongQL35, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblTrangThaiQL35).addContainerGap()));
-
-		javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-		jPanel15.setLayout(jPanel15Layout);
-		jPanel15Layout.setHorizontalGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel15Layout.createSequentialGroup().addContainerGap()
-						.addComponent(phongQuanLy31, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy32, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy33, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy34, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(phongQuanLy35, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		jPanel15Layout.setVerticalGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel15Layout.createSequentialGroup().addGap(12, 12, 12)
-						.addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-								.addComponent(phongQuanLy34, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy33, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy32, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy31, javax.swing.GroupLayout.Alignment.LEADING,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(phongQuanLy35, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-
-		javax.swing.GroupLayout Tang4_QuanLyPhongLayout = new javax.swing.GroupLayout(Tang4_QuanLyPhong);
-		Tang4_QuanLyPhong.setLayout(Tang4_QuanLyPhongLayout);
-		Tang4_QuanLyPhongLayout.setHorizontalGroup(Tang4_QuanLyPhongLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(Tang4_QuanLyPhongLayout.createSequentialGroup().addContainerGap().addComponent(jPanel15,
-						javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addContainerGap()));
-		Tang4_QuanLyPhongLayout.setVerticalGroup(Tang4_QuanLyPhongLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(Tang4_QuanLyPhongLayout.createSequentialGroup().addComponent(jPanel15,
-						javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addContainerGap()));
-
-		javax.swing.GroupLayout pnBody2Layout = new javax.swing.GroupLayout(pnBody2);
-		pnBody2.setLayout(pnBody2Layout);
-		pnBody2Layout.setHorizontalGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(pnBody2Layout.createSequentialGroup().addContainerGap()
-						.addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(Tang1_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(Tang3_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(Tang2_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(Tang4_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		pnBody2Layout.setVerticalGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(pnBody2Layout.createSequentialGroup().addGap(12, 12, 12)
-						.addComponent(Tang1_QuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(Tang2_QuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(Tang3_QuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(Tang4_QuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-
-		ScrollPaneQuanLyPhong.setViewportView(pnBody2);
-
-		funtionPanel.setBackground(new java.awt.Color(204, 255, 204));
-		funtionPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quản lý phòng",
-				javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION,
-				new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
-
-		lbldate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-		lbldate.setText("Date");
-
-		lbltime.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-		lbltime.setText("Time");
-
-		lblcurrentdate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-		lblcurrentdate.setText("currentDate");
-
-		lblcurrentTime.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-		lblcurrentTime.setText("currentTime");
-
-		btnGROUPLoaiPhong.add(radPhongTieuChuan);
-		radPhongTieuChuan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		radPhongTieuChuan.setText("Phòng tiêu chuẩn");
-		radPhongTieuChuan.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				radPhongTieuChuanActionPerformed(evt);
-			}
-		});
-
-		btnGROUPLoaiPhong.add(radPhongNangCao);
-		radPhongNangCao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		radPhongNangCao.setText("Phòng nâng cao");
-
-		btnGROUPLoaiPhong.add(radPhongCaoCap);
-		radPhongCaoCap.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		radPhongCaoCap.setText("Phòng cao cấp");
-
-		btnGROUPLoaiPhong.add(radPhongThuongGia);
-		radPhongThuongGia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		radPhongThuongGia.setText("Phòng thương gia");
-
-		btnGROUPTrangThai.add(radPhongTrong);
-		radPhongTrong.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		radPhongTrong.setText("Phòng trống");
-		radPhongTrong.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				radPhongTrongActionPerformed(evt);
-			}
-		});
-
-		btnGROUPTrangThai.add(radPhongDaDat);
-		radPhongDaDat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		radPhongDaDat.setText("Phòng đã đặt");
-
-		btnGROUPTrangThai.add(radPhongDangThue);
-		radPhongDangThue.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		radPhongDangThue.setText("Phòng đã thuê");
-
-		btnTimTheoDieuKien.setText("Tìm");
-		btnTimTheoDieuKien.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnTimTheoDieuKienActionPerformed(evt);
-			}
-		});
-
-		jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-		jLabel1.setText("Tìm phòng theo trạng thái");
-
-		jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-		jLabel2.setText("Tìm phòng theo loại phòng");
-
-		btnResetTrangThai.setText("Reset");
-		btnResetTrangThai.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnResetTrangThaiActionPerformed(evt);
-			}
-		});
-
-		btnTraPhong.setText("Trả phòng");
-
-		btnDoiPhong.setText("Đổi phòng");
-
-		btnHuyDatPhong.setText("Hủy đặt phòng");
-
-		btnDatPhong.setText("Đặt phòng");
-		btnDatPhong.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnDatPhongActionPerformed(evt);
-			}
-		});
-
-		javax.swing.GroupLayout funtionPanelLayout = new javax.swing.GroupLayout(funtionPanel);
-		funtionPanelLayout.setHorizontalGroup(
-			funtionPanelLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(funtionPanelLayout.createSequentialGroup()
-					.addGap(66)
-					.addGroup(funtionPanelLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblcurrentdate, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblcurrentTime, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lbltime, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lbldate, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
-					.addGap(41)
-					.addGroup(funtionPanelLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(radPhongTieuChuan)
-						.addComponent(radPhongNangCao, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)
-						.addComponent(radPhongThuongGia)
-						.addComponent(radPhongCaoCap, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)
-						.addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 266, GroupLayout.PREFERRED_SIZE))
-					.addGap(40)
-					.addGroup(funtionPanelLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(radPhongTrong, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE)
-						.addComponent(jLabel1)
-						.addComponent(btnTimTheoDieuKien, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-						.addGroup(funtionPanelLayout.createParallelGroup(Alignment.TRAILING, false)
-							.addComponent(radPhongDangThue, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(radPhongDaDat, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)))
-					.addGap(38)
-					.addGroup(funtionPanelLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(btnTraPhong, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnDoiPhong, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnHuyDatPhong, GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-						.addComponent(btnDatPhong, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnResetTrangThai, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-					.addContainerGap(219, Short.MAX_VALUE))
-		);
-		funtionPanelLayout.setVerticalGroup(
-			funtionPanelLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(funtionPanelLayout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(funtionPanelLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lbldate, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(jLabel2)
-						.addComponent(jLabel1)
-						.addComponent(btnDatPhong))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(funtionPanelLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblcurrentdate)
-						.addComponent(radPhongTieuChuan, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(radPhongTrong)
-						.addComponent(btnHuyDatPhong))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(funtionPanelLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lbltime)
-						.addComponent(radPhongNangCao)
-						.addComponent(radPhongDangThue)
-						.addComponent(btnDoiPhong))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(funtionPanelLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(radPhongCaoCap)
-						.addComponent(radPhongDaDat)
-						.addComponent(lblcurrentTime)
-						.addComponent(btnTraPhong))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(funtionPanelLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(radPhongThuongGia)
-						.addComponent(btnResetTrangThai, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnTimTheoDieuKien))
-					.addGap(12))
-		);
-		funtionPanel.setLayout(funtionPanelLayout);
-
-		javax.swing.GroupLayout pnQuanLyPhongLayout = new javax.swing.GroupLayout(pnQuanLyPhong);
-		pnQuanLyPhong.setLayout(pnQuanLyPhongLayout);
-		pnQuanLyPhongLayout
-				.setHorizontalGroup(pnQuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(pnQuanLyPhongLayout.createSequentialGroup().addContainerGap()
-								.addGroup(pnQuanLyPhongLayout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-										.addComponent(funtionPanel, javax.swing.GroupLayout.DEFAULT_SIZE,
-												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(ScrollPaneQuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 0,
-												Short.MAX_VALUE))
-								.addContainerGap(44, Short.MAX_VALUE)));
-		pnQuanLyPhongLayout
-				.setVerticalGroup(pnQuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(pnQuanLyPhongLayout.createSequentialGroup().addContainerGap()
-								.addComponent(funtionPanel, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-								.addComponent(ScrollPaneQuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 406,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(150, Short.MAX_VALUE)));
-
-		pnedUngDung.addTab("tab2", pnQuanLyPhong);
-
 		pnLayOutNhanVien.setBackground(new java.awt.Color(255, 204, 204));
 		pnLayOutNhanVien.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quản lý nhân viên",
 				javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION,
@@ -4894,6 +2647,2459 @@ public class TrangChu extends javax.swing.JFrame {
 																																																																																																																																																																																																																																																																																																																																																																																																						.addContainerGap(142, Short.MAX_VALUE)));
 																																																																																																																																																																																																																																																																																																																																																																																																
 																																																																																																																																																																																																																																																																																																																																																																																																		pnedUngDung.addTab("tab1", pnTrangChu);
+		pnQuanLyPhong = new javax.swing.JPanel();
+		ScrollPaneQuanLyPhong = new javax.swing.JScrollPane();
+		pnBody2 = new javax.swing.JPanel();
+		Tang1_QuanLyPhong = new javax.swing.JPanel();
+		jPanel8 = new javax.swing.JPanel();
+		phongQuanLy1 = new javax.swing.JPanel();
+		lblTenPhongQL1 = new javax.swing.JLabel();
+		lblLoaiPhongQL1 = new javax.swing.JLabel();
+		lblTrangThaiQL1 = new javax.swing.JLabel();
+		checkBoxPhongQL1 = new javax.swing.JCheckBox();
+		phongQuanLy2 = new javax.swing.JPanel();
+		lblTenPhongQL2 = new javax.swing.JLabel();
+		lblLoaiPhongQL2 = new javax.swing.JLabel();
+		lblTrangThaiQL2 = new javax.swing.JLabel();
+		checkBoxPhongQL2 = new javax.swing.JCheckBox();
+		phongQuanLy3 = new javax.swing.JPanel();
+		lblTenPhongQL3 = new javax.swing.JLabel();
+		lblLoaiPhongQL3 = new javax.swing.JLabel();
+		lblTrangThaiQL3 = new javax.swing.JLabel();
+		checkBoxPhongQL3 = new javax.swing.JCheckBox();
+		phongQuanLy4 = new javax.swing.JPanel();
+		lblTenPhongQL4 = new javax.swing.JLabel();
+		lblLoaiPhongQL4 = new javax.swing.JLabel();
+		lblTrangThaiQL4 = new javax.swing.JLabel();
+		checkBoxPhongQL4 = new javax.swing.JCheckBox();
+		phongQuanLy5 = new javax.swing.JPanel();
+		lblTenPhongQL5 = new javax.swing.JLabel();
+		lblLoaiPhongQL5 = new javax.swing.JLabel();
+		lblTrangThaiQL5 = new javax.swing.JLabel();
+		checkBoxPhongQL5 = new javax.swing.JCheckBox();
+		phongQuanLy6 = new javax.swing.JPanel();
+		lblTenPhongQL6 = new javax.swing.JLabel();
+		lblLoaiPhongQL6 = new javax.swing.JLabel();
+		lblTrangThaiQL6 = new javax.swing.JLabel();
+		checkBoxPhongQL6 = new javax.swing.JCheckBox();
+		phongQuanLy7 = new javax.swing.JPanel();
+		lblTenPhongQL7 = new javax.swing.JLabel();
+		lblLoaiPhongQL7 = new javax.swing.JLabel();
+		lblTrangThaiQL7 = new javax.swing.JLabel();
+		checkBoxPhongQL7 = new javax.swing.JCheckBox();
+		phongQuanLy8 = new javax.swing.JPanel();
+		lblTenPhongQL8 = new javax.swing.JLabel();
+		lblLoaiPhongQL8 = new javax.swing.JLabel();
+		lblTrangThaiQL8 = new javax.swing.JLabel();
+		checkBoxPhongQL8 = new javax.swing.JCheckBox();
+		phongQuanLy9 = new javax.swing.JPanel();
+		lblTenPhongQL9 = new javax.swing.JLabel();
+		lblLoaiPhongQL9 = new javax.swing.JLabel();
+		lblTrangThaiQL9 = new javax.swing.JLabel();
+		checkBoxPhongQL9 = new javax.swing.JCheckBox();
+		phongQuanLy10 = new javax.swing.JPanel();
+		lblTenPhongQL10 = new javax.swing.JLabel();
+		lblLoaiPhongQL10 = new javax.swing.JLabel();
+		lblTrangThaiQL10 = new javax.swing.JLabel();
+		checkBoxPhongQL10 = new javax.swing.JCheckBox();
+		Tang2_QuanLyPhong = new javax.swing.JPanel();
+		jPanel11 = new javax.swing.JPanel();
+		phongQuanLy11 = new javax.swing.JPanel();
+		lblTenPhongQL11 = new javax.swing.JLabel();
+		lblLoaiPhongQL11 = new javax.swing.JLabel();
+		lblTrangThaiQL11 = new javax.swing.JLabel();
+		checkBoxPhongQL11 = new javax.swing.JCheckBox();
+		phongQuanLy12 = new javax.swing.JPanel();
+		lblTenPhongQL12 = new javax.swing.JLabel();
+		lblLoaiPhongQL12 = new javax.swing.JLabel();
+		lblTrangThaiQL12 = new javax.swing.JLabel();
+		checkBoxPhongQL12 = new javax.swing.JCheckBox();
+		phongQuanLy13 = new javax.swing.JPanel();
+		lblTenPhongQL13 = new javax.swing.JLabel();
+		lblLoaiPhongQL13 = new javax.swing.JLabel();
+		lblTrangThaiQL13 = new javax.swing.JLabel();
+		checkBoxPhongQL13 = new javax.swing.JCheckBox();
+		phongQuanLy14 = new javax.swing.JPanel();
+		lblTenPhongQL14 = new javax.swing.JLabel();
+		lblLoaiPhongQL14 = new javax.swing.JLabel();
+		lblTrangThaiQL14 = new javax.swing.JLabel();
+		checkBoxPhongQL14 = new javax.swing.JCheckBox();
+		phongQuanLy15 = new javax.swing.JPanel();
+		lblTenPhongQL15 = new javax.swing.JLabel();
+		lblLoaiPhongQL15 = new javax.swing.JLabel();
+		lblTrangThaiQL15 = new javax.swing.JLabel();
+		checkBoxPhongQL15 = new javax.swing.JCheckBox();
+		phongQuanLy16 = new javax.swing.JPanel();
+		lblTenPhongQL16 = new javax.swing.JLabel();
+		lblLoaiPhongQL16 = new javax.swing.JLabel();
+		lblTrangThaiQL16 = new javax.swing.JLabel();
+		checkBoxPhongQL16 = new javax.swing.JCheckBox();
+		phongQuanLy17 = new javax.swing.JPanel();
+		lblTenPhongQL17 = new javax.swing.JLabel();
+		lblLoaiPhongQL17 = new javax.swing.JLabel();
+		lblTrangThaiQL17 = new javax.swing.JLabel();
+		checkBoxPhongQL17 = new javax.swing.JCheckBox();
+		phongQuanLy18 = new javax.swing.JPanel();
+		lblTenPhongQL18 = new javax.swing.JLabel();
+		lblLoaiPhongQL18 = new javax.swing.JLabel();
+		lblTrangThaiQL18 = new javax.swing.JLabel();
+		checkBoxPhongQL18 = new javax.swing.JCheckBox();
+		phongQuanLy19 = new javax.swing.JPanel();
+		lblTenPhongQL19 = new javax.swing.JLabel();
+		lblLoaiPhongQL19 = new javax.swing.JLabel();
+		lblTrangThaiQL19 = new javax.swing.JLabel();
+		checkBoxPhongQL19 = new javax.swing.JCheckBox();
+		phongQuanLy20 = new javax.swing.JPanel();
+		lblTenPhongQL20 = new javax.swing.JLabel();
+		lblLoaiPhongQL20 = new javax.swing.JLabel();
+		lblTrangThaiQL20 = new javax.swing.JLabel();
+		checkBoxPhongQL20 = new javax.swing.JCheckBox();
+		Tang3_QuanLyPhong = new javax.swing.JPanel();
+		jPanel13 = new javax.swing.JPanel();
+		phongQuanLy21 = new javax.swing.JPanel();
+		lblTenPhongQL21 = new javax.swing.JLabel();
+		lblLoaiPhongQL21 = new javax.swing.JLabel();
+		lblTrangThaiQL21 = new javax.swing.JLabel();
+		checkBoxPhongQL21 = new javax.swing.JCheckBox();
+		phongQuanLy22 = new javax.swing.JPanel();
+		lblTenPhongQL22 = new javax.swing.JLabel();
+		lblLoaiPhongQL22 = new javax.swing.JLabel();
+		lblTrangThaiQL22 = new javax.swing.JLabel();
+		checkBoxPhongQL22 = new javax.swing.JCheckBox();
+		phongQuanLy23 = new javax.swing.JPanel();
+		lblTenPhongQL23 = new javax.swing.JLabel();
+		lblLoaiPhongQL23 = new javax.swing.JLabel();
+		lblTrangThaiQL23 = new javax.swing.JLabel();
+		checkBoxPhongQL23 = new javax.swing.JCheckBox();
+		phongQuanLy24 = new javax.swing.JPanel();
+		lblTenPhongQL24 = new javax.swing.JLabel();
+		lblLoaiPhongQL24 = new javax.swing.JLabel();
+		lblTrangThaiQL24 = new javax.swing.JLabel();
+		checkBoxPhongQL24 = new javax.swing.JCheckBox();
+		phongQuanLy25 = new javax.swing.JPanel();
+		lblTenPhongQL25 = new javax.swing.JLabel();
+		lblLoaiPhongQL25 = new javax.swing.JLabel();
+		lblTrangThaiQL25 = new javax.swing.JLabel();
+		checkBoxPhongQL25 = new javax.swing.JCheckBox();
+		phongQuanLy26 = new javax.swing.JPanel();
+		lblTenPhongQL26 = new javax.swing.JLabel();
+		lblLoaiPhongQL26 = new javax.swing.JLabel();
+		lblTrangThaiQL26 = new javax.swing.JLabel();
+		checkBoxPhongQL26 = new javax.swing.JCheckBox();
+		phongQuanLy27 = new javax.swing.JPanel();
+		lblTenPhongQL27 = new javax.swing.JLabel();
+		lblLoaiPhongQL27 = new javax.swing.JLabel();
+		lblTrangThaiQL27 = new javax.swing.JLabel();
+		checkBoxPhongQL27 = new javax.swing.JCheckBox();
+		phongQuanLy28 = new javax.swing.JPanel();
+		lblTenPhongQL28 = new javax.swing.JLabel();
+		lblLoaiPhongQL28 = new javax.swing.JLabel();
+		lblTrangThaiQL28 = new javax.swing.JLabel();
+		checkBoxPhongQL28 = new javax.swing.JCheckBox();
+		phongQuanLy29 = new javax.swing.JPanel();
+		lblTenPhongQL29 = new javax.swing.JLabel();
+		lblLoaiPhongQL29 = new javax.swing.JLabel();
+		lblTrangThaiQL29 = new javax.swing.JLabel();
+		checkBoxPhongQL29 = new javax.swing.JCheckBox();
+		phongQuanLy30 = new javax.swing.JPanel();
+		lblTenPhongQL30 = new javax.swing.JLabel();
+		lblLoaiPhongQL30 = new javax.swing.JLabel();
+		lblTrangThaiQL30 = new javax.swing.JLabel();
+		checkBoxPhongQL30 = new javax.swing.JCheckBox();
+		Tang4_QuanLyPhong = new javax.swing.JPanel();
+		jPanel15 = new javax.swing.JPanel();
+		phongQuanLy31 = new javax.swing.JPanel();
+		lblTenPhongQL31 = new javax.swing.JLabel();
+		lblLoaiPhongQL31 = new javax.swing.JLabel();
+		lblTrangThaiQL31 = new javax.swing.JLabel();
+		checkBoxPhongQL31 = new javax.swing.JCheckBox();
+		phongQuanLy32 = new javax.swing.JPanel();
+		lblTenPhongQL32 = new javax.swing.JLabel();
+		lblLoaiPhongQL32 = new javax.swing.JLabel();
+		lblTrangThaiQL32 = new javax.swing.JLabel();
+		checkBoxPhongQL32 = new javax.swing.JCheckBox();
+		phongQuanLy33 = new javax.swing.JPanel();
+		lblTenPhongQL33 = new javax.swing.JLabel();
+		lblLoaiPhongQL33 = new javax.swing.JLabel();
+		lblTrangThaiQL33 = new javax.swing.JLabel();
+		checkBoxPhongQL33 = new javax.swing.JCheckBox();
+		phongQuanLy34 = new javax.swing.JPanel();
+		lblTenPhongQL34 = new javax.swing.JLabel();
+		lblLoaiPhongQL34 = new javax.swing.JLabel();
+		lblTrangThaiQL34 = new javax.swing.JLabel();
+		checkBoxPhongQL34 = new javax.swing.JCheckBox();
+		phongQuanLy35 = new javax.swing.JPanel();
+		lblTenPhongQL35 = new javax.swing.JLabel();
+		lblLoaiPhongQL35 = new javax.swing.JLabel();
+		lblTrangThaiQL35 = new javax.swing.JLabel();
+		checkBoxPhongQL35 = new javax.swing.JCheckBox();
+		funtionPanel = new javax.swing.JPanel();
+		lbldate = new javax.swing.JLabel();
+		lbltime = new javax.swing.JLabel();
+		lblcurrentdate = new javax.swing.JLabel();
+		lblcurrentTime = new javax.swing.JLabel();
+		radPhongTieuChuan = new javax.swing.JRadioButton();
+		radPhongNangCao = new javax.swing.JRadioButton();
+		radPhongCaoCap = new javax.swing.JRadioButton();
+		radPhongThuongGia = new javax.swing.JRadioButton();
+		radPhongTrong = new javax.swing.JRadioButton();
+		radPhongDaDat = new javax.swing.JRadioButton();
+		radPhongDangThue = new javax.swing.JRadioButton();
+		btnTimTheoDieuKien = new javax.swing.JButton();
+		jLabel1 = new javax.swing.JLabel();
+		jLabel2 = new javax.swing.JLabel();
+		btnResetTrangThai = new javax.swing.JButton();
+		btnTraPhong = new javax.swing.JButton();
+		btnDoiPhong = new javax.swing.JButton();
+		btnHuyDatPhong = new javax.swing.JButton();
+		btnDatPhong = new javax.swing.JButton();
+		
+				pnBody2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+				
+						Tang1_QuanLyPhong.setBackground(new java.awt.Color(255, 255, 255));
+						Tang1_QuanLyPhong.setBorder(javax.swing.BorderFactory.createTitledBorder(
+								javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 1",
+								javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION,
+								new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+						Tang1_QuanLyPhong.setMinimumSize(new java.awt.Dimension(1180, 140));
+						Tang1_QuanLyPhong.setPreferredSize(new java.awt.Dimension(1180, 140));
+						
+								phongQuanLy1.setBackground(new java.awt.Color(255, 255, 153));
+								phongQuanLy1.setPreferredSize(new java.awt.Dimension(108, 84));
+								
+										lblTenPhongQL1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+										lblTenPhongQL1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+										lblTenPhongQL1.setText("101TC");
+										
+												lblLoaiPhongQL1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+												lblLoaiPhongQL1.setText("Tiêu chuẩn");
+												lblLoaiPhongQL1.setMaximumSize(new java.awt.Dimension(80, 16));
+												lblLoaiPhongQL1.setMinimumSize(new java.awt.Dimension(72, 16));
+												lblLoaiPhongQL1.setPreferredSize(new java.awt.Dimension(72, 16));
+												
+														lblTrangThaiQL1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+														lblTrangThaiQL1.setText("Đang thuê");
+														
+																javax.swing.GroupLayout phongQuanLy1Layout = new javax.swing.GroupLayout(phongQuanLy1);
+																phongQuanLy1.setLayout(phongQuanLy1Layout);
+																phongQuanLy1Layout.setHorizontalGroup(phongQuanLy1Layout
+																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																		.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy1Layout.createSequentialGroup()
+																				.addContainerGap()
+																				.addGroup(phongQuanLy1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																						.addComponent(lblTenPhongQL1, javax.swing.GroupLayout.DEFAULT_SIZE,
+																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																						.addComponent(lblTrangThaiQL1, javax.swing.GroupLayout.DEFAULT_SIZE,
+																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																						.addGroup(phongQuanLy1Layout.createSequentialGroup()
+																								.addComponent(lblLoaiPhongQL1, javax.swing.GroupLayout.DEFAULT_SIZE,
+																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																								.addComponent(checkBoxPhongQL1)))
+																				.addContainerGap()));
+																phongQuanLy1Layout.setVerticalGroup(phongQuanLy1Layout
+																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																		.addGroup(phongQuanLy1Layout.createSequentialGroup().addContainerGap()
+																				.addGroup(phongQuanLy1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																						.addComponent(checkBoxPhongQL1).addComponent(lblLoaiPhongQL1,
+																								javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																								javax.swing.GroupLayout.PREFERRED_SIZE))
+																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																				.addComponent(lblTenPhongQL1, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																						javax.swing.GroupLayout.PREFERRED_SIZE)
+																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																				.addComponent(lblTrangThaiQL1).addContainerGap()));
+																
+																		phongQuanLy2.setBackground(new java.awt.Color(255, 255, 153));
+																		phongQuanLy2.setPreferredSize(new java.awt.Dimension(108, 84));
+																		
+																				lblTenPhongQL2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																				lblTenPhongQL2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																				lblTenPhongQL2.setText("101TC");
+																				
+																						lblLoaiPhongQL2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																						lblLoaiPhongQL2.setText("Tiêu chuẩn");
+																						lblLoaiPhongQL2.setMaximumSize(new java.awt.Dimension(80, 16));
+																						lblLoaiPhongQL2.setMinimumSize(new java.awt.Dimension(72, 16));
+																						lblLoaiPhongQL2.setPreferredSize(new java.awt.Dimension(72, 16));
+																						
+																								lblTrangThaiQL2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																								lblTrangThaiQL2.setText("Đang thuê");
+																								
+																										javax.swing.GroupLayout phongQuanLy2Layout = new javax.swing.GroupLayout(phongQuanLy2);
+																										phongQuanLy2.setLayout(phongQuanLy2Layout);
+																										phongQuanLy2Layout.setHorizontalGroup(phongQuanLy2Layout
+																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																												.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy2Layout.createSequentialGroup()
+																														.addContainerGap()
+																														.addGroup(phongQuanLy2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																.addComponent(lblTenPhongQL2, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																.addComponent(lblTrangThaiQL2, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																.addGroup(phongQuanLy2Layout.createSequentialGroup()
+																																		.addComponent(lblLoaiPhongQL2, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																		.addComponent(checkBoxPhongQL2)))
+																														.addContainerGap()));
+																										phongQuanLy2Layout.setVerticalGroup(phongQuanLy2Layout
+																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																												.addGroup(phongQuanLy2Layout.createSequentialGroup().addContainerGap()
+																														.addGroup(phongQuanLy2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																.addComponent(checkBoxPhongQL2).addComponent(lblLoaiPhongQL2,
+																																		javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																		javax.swing.GroupLayout.PREFERRED_SIZE))
+																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																														.addComponent(lblTenPhongQL2, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																javax.swing.GroupLayout.PREFERRED_SIZE)
+																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																														.addComponent(lblTrangThaiQL2).addContainerGap()));
+																										
+																												phongQuanLy3.setBackground(new java.awt.Color(255, 255, 153));
+																												phongQuanLy3.setPreferredSize(new java.awt.Dimension(108, 84));
+																												
+																														lblTenPhongQL3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																														lblTenPhongQL3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																														lblTenPhongQL3.setText("101TC");
+																														
+																																lblLoaiPhongQL3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																lblLoaiPhongQL3.setText("Tiêu chuẩn");
+																																lblLoaiPhongQL3.setMaximumSize(new java.awt.Dimension(80, 16));
+																																lblLoaiPhongQL3.setMinimumSize(new java.awt.Dimension(72, 16));
+																																lblLoaiPhongQL3.setPreferredSize(new java.awt.Dimension(72, 16));
+																																
+																																		lblTrangThaiQL3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																		lblTrangThaiQL3.setText("Đang thuê");
+																																		
+																																				javax.swing.GroupLayout phongQuanLy3Layout = new javax.swing.GroupLayout(phongQuanLy3);
+																																				phongQuanLy3.setLayout(phongQuanLy3Layout);
+																																				phongQuanLy3Layout.setHorizontalGroup(phongQuanLy3Layout
+																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																						.addGroup(phongQuanLy3Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy3Layout
+																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																								.addComponent(lblTenPhongQL3, javax.swing.GroupLayout.Alignment.TRAILING,
+																																										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																										Short.MAX_VALUE)
+																																								.addGroup(phongQuanLy3Layout.createSequentialGroup().addGroup(phongQuanLy3Layout
+																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																										.addComponent(lblTrangThaiQL3, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																												phongQuanLy3Layout.createSequentialGroup()
+																																														.addComponent(lblLoaiPhongQL3, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																														.addComponent(checkBoxPhongQL3)))
+																																										.addContainerGap()))));
+																																				phongQuanLy3Layout.setVerticalGroup(phongQuanLy3Layout
+																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																						.addGroup(phongQuanLy3Layout.createSequentialGroup().addContainerGap()
+																																								.addGroup(phongQuanLy3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																										.addComponent(checkBoxPhongQL3).addComponent(lblLoaiPhongQL3,
+																																												javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																												javax.swing.GroupLayout.PREFERRED_SIZE))
+																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																								.addComponent(lblTenPhongQL3, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																										javax.swing.GroupLayout.PREFERRED_SIZE)
+																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																								.addComponent(lblTrangThaiQL3).addContainerGap()));
+																																				
+																																						phongQuanLy4.setBackground(new java.awt.Color(255, 255, 153));
+																																						phongQuanLy4.setPreferredSize(new java.awt.Dimension(108, 84));
+																																						
+																																								lblTenPhongQL4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																								lblTenPhongQL4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																								lblTenPhongQL4.setText("101TC");
+																																								
+																																										lblLoaiPhongQL4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																										lblLoaiPhongQL4.setText("Tiêu chuẩn");
+																																										lblLoaiPhongQL4.setMaximumSize(new java.awt.Dimension(80, 16));
+																																										lblLoaiPhongQL4.setMinimumSize(new java.awt.Dimension(72, 16));
+																																										lblLoaiPhongQL4.setPreferredSize(new java.awt.Dimension(72, 16));
+																																										
+																																												lblTrangThaiQL4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																												lblTrangThaiQL4.setText("Đang thuê");
+																																												
+																																														javax.swing.GroupLayout phongQuanLy4Layout = new javax.swing.GroupLayout(phongQuanLy4);
+																																														phongQuanLy4.setLayout(phongQuanLy4Layout);
+																																														phongQuanLy4Layout.setHorizontalGroup(phongQuanLy4Layout
+																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy4Layout.createSequentialGroup()
+																																																		.addContainerGap()
+																																																		.addGroup(phongQuanLy4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																				.addComponent(lblTenPhongQL4, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																				.addGroup(phongQuanLy4Layout.createSequentialGroup()
+																																																						.addComponent(lblLoaiPhongQL4, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																						.addComponent(checkBoxPhongQL4))
+																																																				.addComponent(lblTrangThaiQL4, javax.swing.GroupLayout.Alignment.LEADING,
+																																																						javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																						Short.MAX_VALUE))
+																																																		.addContainerGap()));
+																																														phongQuanLy4Layout.setVerticalGroup(phongQuanLy4Layout
+																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																.addGroup(phongQuanLy4Layout.createSequentialGroup().addContainerGap()
+																																																		.addGroup(phongQuanLy4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																				.addComponent(checkBoxPhongQL4).addComponent(lblLoaiPhongQL4,
+																																																						javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																						javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																		.addComponent(lblTenPhongQL4, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																				javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																		.addComponent(lblTrangThaiQL4).addContainerGap()));
+																																														
+																																																phongQuanLy5.setBackground(new java.awt.Color(255, 255, 153));
+																																																phongQuanLy5.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																
+																																																		lblTenPhongQL5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																		lblTenPhongQL5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																		lblTenPhongQL5.setText("101TC");
+																																																		
+																																																				lblLoaiPhongQL5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																				lblLoaiPhongQL5.setText("Thương gia");
+																																																				lblLoaiPhongQL5.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																				lblLoaiPhongQL5.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																				lblLoaiPhongQL5.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																				
+																																																						lblTrangThaiQL5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																						lblTrangThaiQL5.setText("Đang thuê");
+																																																						
+																																																								javax.swing.GroupLayout phongQuanLy5Layout = new javax.swing.GroupLayout(phongQuanLy5);
+																																																								phongQuanLy5.setLayout(phongQuanLy5Layout);
+																																																								phongQuanLy5Layout.setHorizontalGroup(phongQuanLy5Layout
+																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																										.addGroup(phongQuanLy5Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy5Layout
+																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																												.addComponent(lblTenPhongQL5, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																														Short.MAX_VALUE)
+																																																												.addGroup(phongQuanLy5Layout.createSequentialGroup()
+																																																														.addGroup(phongQuanLy5Layout
+																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																.addGroup(phongQuanLy5Layout.createSequentialGroup()
+																																																																		.addComponent(lblLoaiPhongQL5, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																				javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																				javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																		.addComponent(checkBoxPhongQL5))
+																																																																.addComponent(lblTrangThaiQL5, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																		javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																														.addContainerGap()))));
+																																																								phongQuanLy5Layout.setVerticalGroup(phongQuanLy5Layout
+																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																										.addGroup(phongQuanLy5Layout.createSequentialGroup().addContainerGap()
+																																																												.addGroup(phongQuanLy5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																														.addComponent(checkBoxPhongQL5).addComponent(lblLoaiPhongQL5,
+																																																																javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																												.addComponent(lblTenPhongQL5, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																														javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																												.addComponent(lblTrangThaiQL5).addContainerGap()));
+																																																								
+																																																										phongQuanLy6.setBackground(new java.awt.Color(255, 255, 153));
+																																																										phongQuanLy6.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																										
+																																																												lblTenPhongQL6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																												lblTenPhongQL6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																												lblTenPhongQL6.setText("101TC");
+																																																												
+																																																														lblLoaiPhongQL6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																														lblLoaiPhongQL6.setText("Tiêu chuẩn");
+																																																														lblLoaiPhongQL6.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																														lblLoaiPhongQL6.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																														lblLoaiPhongQL6.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																														
+																																																																lblTrangThaiQL6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																lblTrangThaiQL6.setText("Đang thuê");
+																																																																
+																																																																		javax.swing.GroupLayout phongQuanLy6Layout = new javax.swing.GroupLayout(phongQuanLy6);
+																																																																		phongQuanLy6.setLayout(phongQuanLy6Layout);
+																																																																		phongQuanLy6Layout.setHorizontalGroup(phongQuanLy6Layout
+																																																																				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																				.addGroup(phongQuanLy6Layout.createSequentialGroup().addContainerGap()
+																																																																						.addGroup(phongQuanLy6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																								.addComponent(lblTenPhongQL6, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																								.addComponent(lblTrangThaiQL6, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																										Short.MAX_VALUE)
+																																																																								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																										phongQuanLy6Layout.createSequentialGroup()
+																																																																												.addComponent(lblLoaiPhongQL6, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																												.addComponent(checkBoxPhongQL6)))
+																																																																						.addContainerGap()));
+																																																																		phongQuanLy6Layout.setVerticalGroup(phongQuanLy6Layout
+																																																																				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																				.addGroup(phongQuanLy6Layout.createSequentialGroup().addContainerGap()
+																																																																						.addGroup(phongQuanLy6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																								.addComponent(checkBoxPhongQL6).addComponent(lblLoaiPhongQL6,
+																																																																										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																										javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																						.addComponent(lblTenPhongQL6, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																								javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																						.addComponent(lblTrangThaiQL6).addContainerGap()));
+																																																																		
+																																																																				phongQuanLy7.setBackground(new java.awt.Color(255, 255, 153));
+																																																																				phongQuanLy7.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																				
+																																																																						lblTenPhongQL7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																						lblTenPhongQL7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																						lblTenPhongQL7.setText("101TC");
+																																																																						
+																																																																								lblLoaiPhongQL7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																								lblLoaiPhongQL7.setText("Tiêu chuẩn");
+																																																																								lblLoaiPhongQL7.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																								lblLoaiPhongQL7.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																								lblLoaiPhongQL7.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																								
+																																																																										lblTrangThaiQL7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																										lblTrangThaiQL7.setText("Đang thuê");
+																																																																										
+																																																																												javax.swing.GroupLayout phongQuanLy7Layout = new javax.swing.GroupLayout(phongQuanLy7);
+																																																																												phongQuanLy7.setLayout(phongQuanLy7Layout);
+																																																																												phongQuanLy7Layout.setHorizontalGroup(phongQuanLy7Layout
+																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																														.addGroup(phongQuanLy7Layout.createSequentialGroup().addContainerGap()
+																																																																																.addGroup(phongQuanLy7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																		.addComponent(lblTenPhongQL7, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																		.addComponent(lblTrangThaiQL7, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																				Short.MAX_VALUE)
+																																																																																		.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																				phongQuanLy7Layout.createSequentialGroup()
+																																																																																						.addComponent(lblLoaiPhongQL7, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																						.addComponent(checkBoxPhongQL7)))
+																																																																																.addContainerGap()));
+																																																																												phongQuanLy7Layout.setVerticalGroup(phongQuanLy7Layout
+																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																														.addGroup(phongQuanLy7Layout.createSequentialGroup().addContainerGap()
+																																																																																.addGroup(phongQuanLy7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																		.addComponent(checkBoxPhongQL7).addComponent(lblLoaiPhongQL7,
+																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																.addComponent(lblTenPhongQL7, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																.addComponent(lblTrangThaiQL7).addContainerGap()));
+																																																																												
+																																																																														phongQuanLy8.setBackground(new java.awt.Color(255, 255, 153));
+																																																																														phongQuanLy8.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																														
+																																																																																lblTenPhongQL8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																lblTenPhongQL8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																lblTenPhongQL8.setText("101TC");
+																																																																																
+																																																																																		lblLoaiPhongQL8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																		lblLoaiPhongQL8.setText("Tiêu chuẩn");
+																																																																																		lblLoaiPhongQL8.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																		lblLoaiPhongQL8.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																		lblLoaiPhongQL8.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																		
+																																																																																				lblTrangThaiQL8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																				lblTrangThaiQL8.setText("Đang thuê");
+																																																																																				
+																																																																																						javax.swing.GroupLayout phongQuanLy8Layout = new javax.swing.GroupLayout(phongQuanLy8);
+																																																																																						phongQuanLy8.setLayout(phongQuanLy8Layout);
+																																																																																						phongQuanLy8Layout.setHorizontalGroup(phongQuanLy8Layout
+																																																																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																								.addGroup(phongQuanLy8Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy8Layout
+																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																										.addComponent(lblTenPhongQL8, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																												Short.MAX_VALUE)
+																																																																																										.addGroup(phongQuanLy8Layout.createSequentialGroup().addGroup(phongQuanLy8Layout
+																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																												.addComponent(lblTrangThaiQL8, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																												.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																														phongQuanLy8Layout.createSequentialGroup()
+																																																																																																.addComponent(lblLoaiPhongQL8, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																.addComponent(checkBoxPhongQL8)))
+																																																																																												.addContainerGap()))));
+																																																																																						phongQuanLy8Layout.setVerticalGroup(phongQuanLy8Layout
+																																																																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																								.addGroup(phongQuanLy8Layout.createSequentialGroup().addContainerGap()
+																																																																																										.addGroup(phongQuanLy8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																												.addComponent(checkBoxPhongQL8).addComponent(lblLoaiPhongQL8,
+																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																										.addComponent(lblTenPhongQL8, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																												javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																										.addComponent(lblTrangThaiQL8).addContainerGap()));
+																																																																																						
+																																																																																								phongQuanLy9.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																								phongQuanLy9.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																								
+																																																																																										lblTenPhongQL9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																										lblTenPhongQL9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																										lblTenPhongQL9.setText("101TC");
+																																																																																										
+																																																																																												lblLoaiPhongQL9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																												lblLoaiPhongQL9.setText("Tiêu chuẩn");
+																																																																																												lblLoaiPhongQL9.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																												lblLoaiPhongQL9.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																												lblLoaiPhongQL9.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																												
+																																																																																														lblTrangThaiQL9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																														lblTrangThaiQL9.setText("Đang thuê");
+																																																																																														
+																																																																																																javax.swing.GroupLayout phongQuanLy9Layout = new javax.swing.GroupLayout(phongQuanLy9);
+																																																																																																phongQuanLy9.setLayout(phongQuanLy9Layout);
+																																																																																																phongQuanLy9Layout.setHorizontalGroup(phongQuanLy9Layout
+																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																		.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy9Layout.createSequentialGroup()
+																																																																																																				.addContainerGap()
+																																																																																																				.addGroup(phongQuanLy9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																						.addComponent(lblTenPhongQL9, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																						.addComponent(lblTrangThaiQL9, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																						.addGroup(phongQuanLy9Layout.createSequentialGroup()
+																																																																																																								.addComponent(lblLoaiPhongQL9, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																								.addComponent(checkBoxPhongQL9)))
+																																																																																																				.addContainerGap()));
+																																																																																																phongQuanLy9Layout.setVerticalGroup(phongQuanLy9Layout
+																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																		.addGroup(phongQuanLy9Layout.createSequentialGroup().addContainerGap()
+																																																																																																				.addGroup(phongQuanLy9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																						.addComponent(checkBoxPhongQL9).addComponent(lblLoaiPhongQL9,
+																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																				.addComponent(lblTenPhongQL9, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																				.addComponent(lblTrangThaiQL9).addContainerGap()));
+																																																																																																
+																																																																																																		phongQuanLy10.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																		phongQuanLy10.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																		
+																																																																																																				lblTenPhongQL10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																				lblTenPhongQL10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																				lblTenPhongQL10.setText("101TC");
+																																																																																																				
+																																																																																																						lblLoaiPhongQL10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																						lblLoaiPhongQL10.setText("Thương gia");
+																																																																																																						lblLoaiPhongQL10.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																																						lblLoaiPhongQL10.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																						lblLoaiPhongQL10.setName(""); // NOI18N
+																																																																																																						lblLoaiPhongQL10.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																						
+																																																																																																								lblTrangThaiQL10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																								lblTrangThaiQL10.setText("Đã đặt");
+																																																																																																								
+																																																																																																										javax.swing.GroupLayout phongQuanLy10Layout = new javax.swing.GroupLayout(phongQuanLy10);
+																																																																																																										phongQuanLy10.setLayout(phongQuanLy10Layout);
+																																																																																																										phongQuanLy10Layout.setHorizontalGroup(phongQuanLy10Layout
+																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																												.addGroup(phongQuanLy10Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy10Layout
+																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																														.addComponent(lblTenPhongQL10, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																Short.MAX_VALUE)
+																																																																																																														.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																phongQuanLy10Layout.createSequentialGroup().addGroup(phongQuanLy10Layout
+																																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																		.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy10Layout
+																																																																																																																				.createSequentialGroup()
+																																																																																																																				.addComponent(lblLoaiPhongQL10, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																				.addComponent(checkBoxPhongQL10))
+																																																																																																																		.addComponent(lblTrangThaiQL10, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																		.addContainerGap()))));
+																																																																																																										phongQuanLy10Layout.setVerticalGroup(phongQuanLy10Layout
+																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																												.addGroup(phongQuanLy10Layout.createSequentialGroup().addContainerGap()
+																																																																																																														.addGroup(phongQuanLy10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																.addComponent(checkBoxPhongQL10).addComponent(lblLoaiPhongQL10,
+																																																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																														.addComponent(lblTenPhongQL10, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																														.addComponent(lblTrangThaiQL10).addContainerGap()));
+																																																																																																										
+																																																																																																												javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+																																																																																																												jPanel8.setLayout(jPanel8Layout);
+																																																																																																												jPanel8Layout.setHorizontalGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																														.addGroup(jPanel8Layout.createSequentialGroup().addContainerGap()
+																																																																																																																.addComponent(phongQuanLy1, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																.addComponent(phongQuanLy2, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																.addComponent(phongQuanLy3, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																.addComponent(phongQuanLy4, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																.addComponent(phongQuanLy5, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																.addComponent(phongQuanLy6, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																.addComponent(phongQuanLy7, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																.addComponent(phongQuanLy8, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																.addComponent(phongQuanLy9, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																.addComponent(phongQuanLy10, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+																																																																																																												jPanel8Layout.setVerticalGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																														.addGroup(jPanel8Layout.createSequentialGroup().addGap(12, 12, 12)
+																																																																																																																.addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+																																																																																																																		.addComponent(phongQuanLy10, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																		.addComponent(phongQuanLy6, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																		.addComponent(phongQuanLy5, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																		.addComponent(phongQuanLy4, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																		.addComponent(phongQuanLy2, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																		.addComponent(phongQuanLy1, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																		.addComponent(phongQuanLy7, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																		.addComponent(phongQuanLy8, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																		.addComponent(phongQuanLy9, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																		.addComponent(phongQuanLy3, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+																																																																																																												
+																																																																																																														javax.swing.GroupLayout Tang1_QuanLyPhongLayout = new javax.swing.GroupLayout(Tang1_QuanLyPhong);
+																																																																																																														Tang1_QuanLyPhong.setLayout(Tang1_QuanLyPhongLayout);
+																																																																																																														Tang1_QuanLyPhongLayout.setHorizontalGroup(Tang1_QuanLyPhongLayout
+																																																																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																.addGroup(Tang1_QuanLyPhongLayout.createSequentialGroup().addContainerGap().addComponent(jPanel8,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																		.addContainerGap()));
+																																																																																																														Tang1_QuanLyPhongLayout.setVerticalGroup(Tang1_QuanLyPhongLayout
+																																																																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																.addGroup(Tang1_QuanLyPhongLayout.createSequentialGroup().addComponent(jPanel8,
+																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																		.addContainerGap()));
+																																																																																																														
+																																																																																																																Tang2_QuanLyPhong.setBackground(new java.awt.Color(255, 255, 255));
+																																																																																																																Tang2_QuanLyPhong.setBorder(javax.swing.BorderFactory.createTitledBorder(
+																																																																																																																		javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 2",
+																																																																																																																		javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION,
+																																																																																																																		new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+																																																																																																																Tang2_QuanLyPhong.setMinimumSize(new java.awt.Dimension(1180, 140));
+																																																																																																																Tang2_QuanLyPhong.setPreferredSize(new java.awt.Dimension(1180, 140));
+																																																																																																																
+																																																																																																																		jPanel11.setMinimumSize(new java.awt.Dimension(1150, 120));
+																																																																																																																		
+																																																																																																																				phongQuanLy11.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																				phongQuanLy11.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																				
+																																																																																																																						lblTenPhongQL11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																						lblTenPhongQL11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																						lblTenPhongQL11.setText("101TC");
+																																																																																																																						
+																																																																																																																								lblLoaiPhongQL11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																								lblLoaiPhongQL11.setText("Tiêu chuẩn");
+																																																																																																																								lblLoaiPhongQL11.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																																																								lblLoaiPhongQL11.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																								lblLoaiPhongQL11.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																								
+																																																																																																																										lblTrangThaiQL11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																										lblTrangThaiQL11.setText("Đang thuê");
+																																																																																																																										
+																																																																																																																												javax.swing.GroupLayout phongQuanLy11Layout = new javax.swing.GroupLayout(phongQuanLy11);
+																																																																																																																												phongQuanLy11.setLayout(phongQuanLy11Layout);
+																																																																																																																												phongQuanLy11Layout.setHorizontalGroup(phongQuanLy11Layout
+																																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																														.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy11Layout.createSequentialGroup()
+																																																																																																																																.addContainerGap()
+																																																																																																																																.addGroup(phongQuanLy11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																		.addComponent(lblTenPhongQL11, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																		.addComponent(lblTrangThaiQL11, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																		.addGroup(phongQuanLy11Layout.createSequentialGroup()
+																																																																																																																																				.addComponent(lblLoaiPhongQL11, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																				.addComponent(checkBoxPhongQL11)))
+																																																																																																																																.addContainerGap()));
+																																																																																																																												phongQuanLy11Layout.setVerticalGroup(phongQuanLy11Layout
+																																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																														.addGroup(phongQuanLy11Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																.addGroup(phongQuanLy11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																		.addComponent(checkBoxPhongQL11).addComponent(lblLoaiPhongQL11,
+																																																																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																.addComponent(lblTenPhongQL11, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																.addComponent(lblTrangThaiQL11).addContainerGap()));
+																																																																																																																												
+																																																																																																																														phongQuanLy12.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																														phongQuanLy12.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																														
+																																																																																																																																lblTenPhongQL12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																lblTenPhongQL12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																lblTenPhongQL12.setText("101TC");
+																																																																																																																																
+																																																																																																																																		lblLoaiPhongQL12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																		lblLoaiPhongQL12.setText("Thương gia");
+																																																																																																																																		lblLoaiPhongQL12.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																																																																		lblLoaiPhongQL12.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																		lblLoaiPhongQL12.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																		
+																																																																																																																																				lblTrangThaiQL12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																				lblTrangThaiQL12.setText("Đang thuê");
+																																																																																																																																				
+																																																																																																																																						javax.swing.GroupLayout phongQuanLy12Layout = new javax.swing.GroupLayout(phongQuanLy12);
+																																																																																																																																						phongQuanLy12.setLayout(phongQuanLy12Layout);
+																																																																																																																																						phongQuanLy12Layout.setHorizontalGroup(phongQuanLy12Layout
+																																																																																																																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																								.addGroup(phongQuanLy12Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy12Layout
+																																																																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																										.addComponent(lblTenPhongQL12, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																										.addGroup(phongQuanLy12Layout.createSequentialGroup().addGroup(phongQuanLy12Layout
+																																																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																												.addComponent(lblTrangThaiQL12, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																												.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																														phongQuanLy12Layout.createSequentialGroup()
+																																																																																																																																																.addComponent(lblLoaiPhongQL12, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																.addComponent(checkBoxPhongQL12)))
+																																																																																																																																												.addContainerGap()))));
+																																																																																																																																						phongQuanLy12Layout.setVerticalGroup(phongQuanLy12Layout
+																																																																																																																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																								.addGroup(phongQuanLy12Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																										.addGroup(phongQuanLy12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																												.addComponent(checkBoxPhongQL12).addComponent(lblLoaiPhongQL12,
+																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																										.addComponent(lblTenPhongQL12, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																												javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																										.addComponent(lblTrangThaiQL12).addContainerGap()));
+																																																																																																																																						
+																																																																																																																																								phongQuanLy13.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																								phongQuanLy13.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																								
+																																																																																																																																										lblTenPhongQL13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																										lblTenPhongQL13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																										lblTenPhongQL13.setText("101TC");
+																																																																																																																																										
+																																																																																																																																												lblLoaiPhongQL13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																												lblLoaiPhongQL13.setText("Nâng cao");
+																																																																																																																																												lblLoaiPhongQL13.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																																																																												lblLoaiPhongQL13.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																												lblLoaiPhongQL13.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																												
+																																																																																																																																														lblTrangThaiQL13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																														lblTrangThaiQL13.setText("Đang thuê");
+																																																																																																																																														
+																																																																																																																																																javax.swing.GroupLayout phongQuanLy13Layout = new javax.swing.GroupLayout(phongQuanLy13);
+																																																																																																																																																phongQuanLy13.setLayout(phongQuanLy13Layout);
+																																																																																																																																																phongQuanLy13Layout.setHorizontalGroup(phongQuanLy13Layout
+																																																																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																		.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy13Layout.createSequentialGroup()
+																																																																																																																																																				.addContainerGap()
+																																																																																																																																																				.addGroup(phongQuanLy13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																						.addComponent(lblTrangThaiQL13, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																						.addGroup(phongQuanLy13Layout.createSequentialGroup()
+																																																																																																																																																								.addComponent(lblLoaiPhongQL13, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																								.addComponent(checkBoxPhongQL13)))
+																																																																																																																																																				.addContainerGap())
+																																																																																																																																																		.addComponent(lblTenPhongQL13, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+																																																																																																																																																phongQuanLy13Layout.setVerticalGroup(phongQuanLy13Layout
+																																																																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																		.addGroup(phongQuanLy13Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																				.addGroup(phongQuanLy13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																						.addComponent(checkBoxPhongQL13).addComponent(lblLoaiPhongQL13,
+																																																																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																				.addComponent(lblTenPhongQL13, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																				.addComponent(lblTrangThaiQL13).addContainerGap()));
+																																																																																																																																																
+																																																																																																																																																		phongQuanLy14.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																		phongQuanLy14.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																		
+																																																																																																																																																				lblTenPhongQL14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																				lblTenPhongQL14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																				lblTenPhongQL14.setText("101TC");
+																																																																																																																																																				
+																																																																																																																																																						lblLoaiPhongQL14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																						lblLoaiPhongQL14.setText("Nâng cao");
+																																																																																																																																																						lblLoaiPhongQL14.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																						lblLoaiPhongQL14.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																						lblLoaiPhongQL14.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																						
+																																																																																																																																																								lblTrangThaiQL14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																								lblTrangThaiQL14.setText("Đang thuê");
+																																																																																																																																																								
+																																																																																																																																																										javax.swing.GroupLayout phongQuanLy14Layout = new javax.swing.GroupLayout(phongQuanLy14);
+																																																																																																																																																										phongQuanLy14.setLayout(phongQuanLy14Layout);
+																																																																																																																																																										phongQuanLy14Layout.setHorizontalGroup(phongQuanLy14Layout
+																																																																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																												.addComponent(lblTenPhongQL14, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																												.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy14Layout.createSequentialGroup()
+																																																																																																																																																														.addContainerGap()
+																																																																																																																																																														.addGroup(phongQuanLy14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																		phongQuanLy14Layout.createSequentialGroup()
+																																																																																																																																																																				.addComponent(lblLoaiPhongQL14, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																				.addComponent(checkBoxPhongQL14))
+																																																																																																																																																																.addComponent(lblTrangThaiQL14, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																		Short.MAX_VALUE))
+																																																																																																																																																														.addContainerGap()));
+																																																																																																																																																										phongQuanLy14Layout.setVerticalGroup(phongQuanLy14Layout
+																																																																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																												.addGroup(phongQuanLy14Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																														.addGroup(phongQuanLy14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																.addComponent(checkBoxPhongQL14).addComponent(lblLoaiPhongQL14,
+																																																																																																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																														.addComponent(lblTenPhongQL14, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																														.addComponent(lblTrangThaiQL14).addContainerGap()));
+																																																																																																																																																										
+																																																																																																																																																												phongQuanLy15.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																												phongQuanLy15.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																												
+																																																																																																																																																														lblTenPhongQL15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																														lblTenPhongQL15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																														lblTenPhongQL15.setText("101TC");
+																																																																																																																																																														
+																																																																																																																																																																lblLoaiPhongQL15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																lblLoaiPhongQL15.setText("Thương gia");
+																																																																																																																																																																lblLoaiPhongQL15.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																																																																																																lblLoaiPhongQL15.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																lblLoaiPhongQL15.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																
+																																																																																																																																																																		lblTrangThaiQL15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																		lblTrangThaiQL15.setText("Đang thuê");
+																																																																																																																																																																		
+																																																																																																																																																																				javax.swing.GroupLayout phongQuanLy15Layout = new javax.swing.GroupLayout(phongQuanLy15);
+																																																																																																																																																																				phongQuanLy15.setLayout(phongQuanLy15Layout);
+																																																																																																																																																																				phongQuanLy15Layout.setHorizontalGroup(phongQuanLy15Layout
+																																																																																																																																																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																						.addGroup(phongQuanLy15Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																								.addGroup(phongQuanLy15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																												phongQuanLy15Layout.createSequentialGroup()
+																																																																																																																																																																														.addComponent(lblLoaiPhongQL15, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																														.addComponent(checkBoxPhongQL15))
+																																																																																																																																																																										.addComponent(lblTenPhongQL15, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																										.addComponent(lblTrangThaiQL15, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																												Short.MAX_VALUE))
+																																																																																																																																																																								.addContainerGap()));
+																																																																																																																																																																				phongQuanLy15Layout.setVerticalGroup(phongQuanLy15Layout
+																																																																																																																																																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																						.addGroup(phongQuanLy15Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																								.addGroup(phongQuanLy15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																										.addComponent(checkBoxPhongQL15).addComponent(lblLoaiPhongQL15,
+																																																																																																																																																																												javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																												javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																								.addComponent(lblTenPhongQL15, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																										javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																								.addComponent(lblTrangThaiQL15).addContainerGap()));
+																																																																																																																																																																				
+																																																																																																																																																																						phongQuanLy16.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																						phongQuanLy16.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																						
+																																																																																																																																																																								lblTenPhongQL16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																								lblTenPhongQL16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																								lblTenPhongQL16.setText("101TC");
+																																																																																																																																																																								
+																																																																																																																																																																										lblLoaiPhongQL16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																										lblLoaiPhongQL16.setText("Cao cấp");
+																																																																																																																																																																										lblLoaiPhongQL16.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																																																																																																										lblLoaiPhongQL16.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																										lblLoaiPhongQL16.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																										
+																																																																																																																																																																												lblTrangThaiQL16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																												lblTrangThaiQL16.setText("Đặt đặt");
+																																																																																																																																																																												
+																																																																																																																																																																														javax.swing.GroupLayout phongQuanLy16Layout = new javax.swing.GroupLayout(phongQuanLy16);
+																																																																																																																																																																														phongQuanLy16.setLayout(phongQuanLy16Layout);
+																																																																																																																																																																														phongQuanLy16Layout.setHorizontalGroup(phongQuanLy16Layout
+																																																																																																																																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy16Layout.createSequentialGroup()
+																																																																																																																																																																																		.addContainerGap()
+																																																																																																																																																																																		.addGroup(phongQuanLy16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																																																				.addComponent(lblTenPhongQL16, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																				.addComponent(lblTrangThaiQL16, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																				.addGroup(phongQuanLy16Layout.createSequentialGroup()
+																																																																																																																																																																																						.addComponent(lblLoaiPhongQL16, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																						.addComponent(checkBoxPhongQL16)))
+																																																																																																																																																																																		.addContainerGap()));
+																																																																																																																																																																														phongQuanLy16Layout.setVerticalGroup(phongQuanLy16Layout
+																																																																																																																																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																.addGroup(phongQuanLy16Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																		.addGroup(phongQuanLy16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																				.addComponent(checkBoxPhongQL16).addComponent(lblLoaiPhongQL16,
+																																																																																																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																		.addComponent(lblTenPhongQL16, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																		.addComponent(lblTrangThaiQL16).addContainerGap()));
+																																																																																																																																																																														
+																																																																																																																																																																																phongQuanLy17.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																phongQuanLy17.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																
+																																																																																																																																																																																		lblTenPhongQL17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																		lblTenPhongQL17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																		lblTenPhongQL17.setText("101TC");
+																																																																																																																																																																																		
+																																																																																																																																																																																				lblLoaiPhongQL17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																				lblLoaiPhongQL17.setText("Tiêu chuẩn");
+																																																																																																																																																																																				lblLoaiPhongQL17.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																																																																																																																				lblLoaiPhongQL17.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																				lblLoaiPhongQL17.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																				
+																																																																																																																																																																																						lblTrangThaiQL17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																						lblTrangThaiQL17.setText("Đang thuê");
+																																																																																																																																																																																						
+																																																																																																																																																																																								javax.swing.GroupLayout phongQuanLy17Layout = new javax.swing.GroupLayout(phongQuanLy17);
+																																																																																																																																																																																								phongQuanLy17.setLayout(phongQuanLy17Layout);
+																																																																																																																																																																																								phongQuanLy17Layout.setHorizontalGroup(phongQuanLy17Layout
+																																																																																																																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																										.addGroup(phongQuanLy17Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy17Layout
+																																																																																																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																												.addComponent(lblTenPhongQL17, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																														Short.MAX_VALUE)
+																																																																																																																																																																																												.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																														phongQuanLy17Layout.createSequentialGroup().addGroup(phongQuanLy17Layout
+																																																																																																																																																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy17Layout
+																																																																																																																																																																																																		.createSequentialGroup()
+																																																																																																																																																																																																		.addComponent(lblLoaiPhongQL17, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																		.addComponent(checkBoxPhongQL17))
+																																																																																																																																																																																																.addComponent(lblTrangThaiQL17, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																.addContainerGap()))));
+																																																																																																																																																																																								phongQuanLy17Layout.setVerticalGroup(phongQuanLy17Layout
+																																																																																																																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																										.addGroup(phongQuanLy17Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																												.addGroup(phongQuanLy17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																														.addComponent(checkBoxPhongQL17).addComponent(lblLoaiPhongQL17,
+																																																																																																																																																																																																javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																												.addComponent(lblTenPhongQL17, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																												.addComponent(lblTrangThaiQL17).addContainerGap()));
+																																																																																																																																																																																								
+																																																																																																																																																																																										phongQuanLy18.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																										phongQuanLy18.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																										
+																																																																																																																																																																																												lblTenPhongQL18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																												lblTenPhongQL18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																												lblTenPhongQL18.setText("101TC");
+																																																																																																																																																																																												
+																																																																																																																																																																																														lblLoaiPhongQL18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																														lblLoaiPhongQL18.setText("Tiêu chuẩn");
+																																																																																																																																																																																														lblLoaiPhongQL18.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																																																																																																																														lblLoaiPhongQL18.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																														lblLoaiPhongQL18.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																														
+																																																																																																																																																																																																lblTrangThaiQL18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																lblTrangThaiQL18.setText("Đang thuê");
+																																																																																																																																																																																																
+																																																																																																																																																																																																		javax.swing.GroupLayout phongQuanLy18Layout = new javax.swing.GroupLayout(phongQuanLy18);
+																																																																																																																																																																																																		phongQuanLy18.setLayout(phongQuanLy18Layout);
+																																																																																																																																																																																																		phongQuanLy18Layout.setHorizontalGroup(phongQuanLy18Layout
+																																																																																																																																																																																																				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																				.addGroup(phongQuanLy18Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy18Layout
+																																																																																																																																																																																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																						.addComponent(lblTenPhongQL18, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																								Short.MAX_VALUE)
+																																																																																																																																																																																																						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																								phongQuanLy18Layout.createSequentialGroup().addGroup(phongQuanLy18Layout
+																																																																																																																																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy18Layout
+																																																																																																																																																																																																												.createSequentialGroup()
+																																																																																																																																																																																																												.addComponent(lblLoaiPhongQL18, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																												.addComponent(checkBoxPhongQL18))
+																																																																																																																																																																																																										.addComponent(lblTrangThaiQL18, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																										.addContainerGap()))));
+																																																																																																																																																																																																		phongQuanLy18Layout.setVerticalGroup(phongQuanLy18Layout
+																																																																																																																																																																																																				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																				.addGroup(phongQuanLy18Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																						.addGroup(phongQuanLy18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																								.addComponent(checkBoxPhongQL18).addComponent(lblLoaiPhongQL18,
+																																																																																																																																																																																																										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																										javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																						.addComponent(lblTenPhongQL18, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																						.addComponent(lblTrangThaiQL18).addContainerGap()));
+																																																																																																																																																																																																		
+																																																																																																																																																																																																				phongQuanLy19.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																				phongQuanLy19.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																				
+																																																																																																																																																																																																						lblTenPhongQL19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																						lblTenPhongQL19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																						lblTenPhongQL19.setText("101TC");
+																																																																																																																																																																																																						
+																																																																																																																																																																																																								lblLoaiPhongQL19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																								lblLoaiPhongQL19.setText("Cao cấp");
+																																																																																																																																																																																																								lblLoaiPhongQL19.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																																																																																																																																								lblLoaiPhongQL19.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																								lblLoaiPhongQL19.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																								
+																																																																																																																																																																																																										lblTrangThaiQL19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																										lblTrangThaiQL19.setText("Đang trống");
+																																																																																																																																																																																																										
+																																																																																																																																																																																																												javax.swing.GroupLayout phongQuanLy19Layout = new javax.swing.GroupLayout(phongQuanLy19);
+																																																																																																																																																																																																												phongQuanLy19.setLayout(phongQuanLy19Layout);
+																																																																																																																																																																																																												phongQuanLy19Layout.setHorizontalGroup(phongQuanLy19Layout
+																																																																																																																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																														.addGroup(phongQuanLy19Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy19Layout
+																																																																																																																																																																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																.addComponent(lblTenPhongQL19, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																		Short.MAX_VALUE)
+																																																																																																																																																																																																																.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																		phongQuanLy19Layout.createSequentialGroup().addGroup(phongQuanLy19Layout
+																																																																																																																																																																																																																				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy19Layout
+																																																																																																																																																																																																																						.createSequentialGroup()
+																																																																																																																																																																																																																						.addComponent(lblLoaiPhongQL19, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																						.addComponent(checkBoxPhongQL19))
+																																																																																																																																																																																																																				.addComponent(lblTrangThaiQL19, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																																				.addContainerGap()))));
+																																																																																																																																																																																																												phongQuanLy19Layout.setVerticalGroup(phongQuanLy19Layout
+																																																																																																																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																														.addGroup(phongQuanLy19Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																.addGroup(phongQuanLy19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																		.addComponent(checkBoxPhongQL19).addComponent(lblLoaiPhongQL19,
+																																																																																																																																																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																.addComponent(lblTenPhongQL19, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																.addComponent(lblTrangThaiQL19).addContainerGap()));
+																																																																																																																																																																																																												
+																																																																																																																																																																																																														phongQuanLy20.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																														phongQuanLy20.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																														
+																																																																																																																																																																																																																lblTenPhongQL20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																lblTenPhongQL20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																lblTenPhongQL20.setText("101TC");
+																																																																																																																																																																																																																
+																																																																																																																																																																																																																		lblLoaiPhongQL20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																		lblLoaiPhongQL20.setText("Tiêu chuẩn");
+																																																																																																																																																																																																																		lblLoaiPhongQL20.setMaximumSize(new java.awt.Dimension(80, 16));
+																																																																																																																																																																																																																		lblLoaiPhongQL20.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																		lblLoaiPhongQL20.setName(""); // NOI18N
+																																																																																																																																																																																																																		lblLoaiPhongQL20.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																		
+																																																																																																																																																																																																																				lblTrangThaiQL20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																				lblTrangThaiQL20.setText("Đang thuê");
+																																																																																																																																																																																																																				
+																																																																																																																																																																																																																						javax.swing.GroupLayout phongQuanLy20Layout = new javax.swing.GroupLayout(phongQuanLy20);
+																																																																																																																																																																																																																						phongQuanLy20.setLayout(phongQuanLy20Layout);
+																																																																																																																																																																																																																						phongQuanLy20Layout.setHorizontalGroup(phongQuanLy20Layout
+																																																																																																																																																																																																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																								.addGroup(phongQuanLy20Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy20Layout
+																																																																																																																																																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																										.addComponent(lblTenPhongQL20, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																												phongQuanLy20Layout.createSequentialGroup().addGroup(phongQuanLy20Layout
+																																																																																																																																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																														.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy20Layout
+																																																																																																																																																																																																																																.createSequentialGroup()
+																																																																																																																																																																																																																																.addComponent(lblLoaiPhongQL20, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																.addComponent(checkBoxPhongQL20))
+																																																																																																																																																																																																																														.addComponent(lblTrangThaiQL20, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																																														.addContainerGap()))));
+																																																																																																																																																																																																																						phongQuanLy20Layout.setVerticalGroup(phongQuanLy20Layout
+																																																																																																																																																																																																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																								.addGroup(phongQuanLy20Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																										.addGroup(phongQuanLy20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																												.addComponent(checkBoxPhongQL20).addComponent(lblLoaiPhongQL20,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																										.addComponent(lblTenPhongQL20, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																												javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																										.addComponent(lblTrangThaiQL20).addContainerGap()));
+																																																																																																																																																																																																																						
+																																																																																																																																																																																																																								javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+																																																																																																																																																																																																																								jPanel11.setLayout(jPanel11Layout);
+																																																																																																																																																																																																																								jPanel11Layout.setHorizontalGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																										.addGroup(jPanel11Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																												.addComponent(phongQuanLy11, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																												.addComponent(phongQuanLy12, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																												.addComponent(phongQuanLy13, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																												.addComponent(phongQuanLy14, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																												.addComponent(phongQuanLy15, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																												.addComponent(phongQuanLy16, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																												.addComponent(phongQuanLy17, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																												.addComponent(phongQuanLy18, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																												.addComponent(phongQuanLy19, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																												.addComponent(phongQuanLy20, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																												.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+																																																																																																																																																																																																																								jPanel11Layout.setVerticalGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																										.addGroup(jPanel11Layout.createSequentialGroup()
+																																																																																																																																																																																																																												.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																												.addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+																																																																																																																																																																																																																														.addComponent(phongQuanLy19, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																														.addComponent(phongQuanLy20, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																														.addComponent(phongQuanLy18, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																														.addComponent(phongQuanLy17, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																														.addComponent(phongQuanLy16, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																														.addComponent(phongQuanLy15, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																														.addComponent(phongQuanLy13, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																														.addComponent(phongQuanLy12, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																														.addComponent(phongQuanLy11, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																														.addComponent(phongQuanLy14, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																																												.addGap(17, 17, 17)));
+																																																																																																																																																																																																																								
+																																																																																																																																																																																																																										javax.swing.GroupLayout Tang2_QuanLyPhongLayout = new javax.swing.GroupLayout(Tang2_QuanLyPhong);
+																																																																																																																																																																																																																										Tang2_QuanLyPhong.setLayout(Tang2_QuanLyPhongLayout);
+																																																																																																																																																																																																																										Tang2_QuanLyPhongLayout.setHorizontalGroup(Tang2_QuanLyPhongLayout
+																																																																																																																																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																												.addGroup(Tang2_QuanLyPhongLayout.createSequentialGroup().addContainerGap().addComponent(jPanel11,
+																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																														.addContainerGap()));
+																																																																																																																																																																																																																										Tang2_QuanLyPhongLayout
+																																																																																																																																																																																																																												.setVerticalGroup(Tang2_QuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																														.addGroup(Tang2_QuanLyPhongLayout.createSequentialGroup()
+																																																																																																																																																																																																																																.addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 102, Short.MAX_VALUE)
+																																																																																																																																																																																																																																.addContainerGap()));
+																																																																																																																																																																																																																										
+																																																																																																																																																																																																																												Tang3_QuanLyPhong.setBackground(new java.awt.Color(255, 255, 255));
+																																																																																																																																																																																																																												Tang3_QuanLyPhong.setBorder(javax.swing.BorderFactory.createTitledBorder(
+																																																																																																																																																																																																																														javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 3",
+																																																																																																																																																																																																																														javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION,
+																																																																																																																																																																																																																														new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+																																																																																																																																																																																																																												Tang3_QuanLyPhong.setMaximumSize(new java.awt.Dimension(1150, 120));
+																																																																																																																																																																																																																												Tang3_QuanLyPhong.setMinimumSize(new java.awt.Dimension(1180, 140));
+																																																																																																																																																																																																																												Tang3_QuanLyPhong.setPreferredSize(new java.awt.Dimension(1180, 140));
+																																																																																																																																																																																																																												
+																																																																																																																																																																																																																														phongQuanLy21.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																														phongQuanLy21.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																lblTenPhongQL21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																lblTenPhongQL21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																lblTenPhongQL21.setText("101TC");
+																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																		lblLoaiPhongQL21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																		lblLoaiPhongQL21.setText("Tiêu chuẩn");
+																																																																																																																																																																																																																																		lblLoaiPhongQL21.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																		lblLoaiPhongQL21.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																		lblLoaiPhongQL21.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																				lblTrangThaiQL21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																				lblTrangThaiQL21.setText("Đang thuê");
+																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																						javax.swing.GroupLayout phongQuanLy21Layout = new javax.swing.GroupLayout(phongQuanLy21);
+																																																																																																																																																																																																																																						phongQuanLy21.setLayout(phongQuanLy21Layout);
+																																																																																																																																																																																																																																						phongQuanLy21Layout.setHorizontalGroup(phongQuanLy21Layout
+																																																																																																																																																																																																																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																								.addGroup(phongQuanLy21Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy21Layout
+																																																																																																																																																																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																												phongQuanLy21Layout.createSequentialGroup().addGroup(phongQuanLy21Layout
+																																																																																																																																																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																																																																																																														.addComponent(lblTenPhongQL21, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																														.addGroup(phongQuanLy21Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																.addComponent(lblLoaiPhongQL21, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																		77, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																.addGap(2, 2, 2).addComponent(checkBoxPhongQL21)))
+																																																																																																																																																																																																																																														.addGap(4, 4, 4))
+																																																																																																																																																																																																																																										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																												phongQuanLy21Layout.createSequentialGroup()
+																																																																																																																																																																																																																																														.addComponent(lblTrangThaiQL21, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																														.addContainerGap()))));
+																																																																																																																																																																																																																																						phongQuanLy21Layout.setVerticalGroup(phongQuanLy21Layout
+																																																																																																																																																																																																																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																								.addGroup(phongQuanLy21Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																										.addGroup(phongQuanLy21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																												.addComponent(checkBoxPhongQL21).addComponent(lblLoaiPhongQL21,
+																																																																																																																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																										.addComponent(lblTenPhongQL21, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																												javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																										.addComponent(lblTrangThaiQL21).addContainerGap()));
+																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																								phongQuanLy22.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																								phongQuanLy22.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																										lblTenPhongQL22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																										lblTenPhongQL22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																										lblTenPhongQL22.setText("101TC");
+																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																												lblLoaiPhongQL22.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																												lblLoaiPhongQL22.setText("Nâng cao");
+																																																																																																																																																																																																																																												lblLoaiPhongQL22.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																												lblLoaiPhongQL22.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																												lblLoaiPhongQL22.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																														lblTrangThaiQL22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																														lblTrangThaiQL22.setText("Đã đặt");
+																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																javax.swing.GroupLayout phongQuanLy22Layout = new javax.swing.GroupLayout(phongQuanLy22);
+																																																																																																																																																																																																																																																phongQuanLy22.setLayout(phongQuanLy22Layout);
+																																																																																																																																																																																																																																																phongQuanLy22Layout.setHorizontalGroup(phongQuanLy22Layout
+																																																																																																																																																																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																		.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy22Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																				.addContainerGap()
+																																																																																																																																																																																																																																																				.addGroup(phongQuanLy22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																																																																																																																						.addComponent(lblTenPhongQL22, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																						.addComponent(lblTrangThaiQL22, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																						.addGroup(phongQuanLy22Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																								.addComponent(lblLoaiPhongQL22, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																								.addComponent(checkBoxPhongQL22)))
+																																																																																																																																																																																																																																																				.addContainerGap()));
+																																																																																																																																																																																																																																																phongQuanLy22Layout.setVerticalGroup(phongQuanLy22Layout
+																																																																																																																																																																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																		.addGroup(phongQuanLy22Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																				.addGroup(phongQuanLy22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																						.addComponent(checkBoxPhongQL22).addComponent(lblLoaiPhongQL22,
+																																																																																																																																																																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																				.addComponent(lblTenPhongQL22, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																				.addComponent(lblTrangThaiQL22, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
+																																																																																																																																																																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																				.addContainerGap()));
+																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																		phongQuanLy23.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																		phongQuanLy23.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																				lblTenPhongQL23.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																				lblTenPhongQL23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																				lblTenPhongQL23.setText("101TC");
+																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																						lblLoaiPhongQL23.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																						lblLoaiPhongQL23.setText("Tiêu chuẩn");
+																																																																																																																																																																																																																																																						lblLoaiPhongQL23.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																						lblLoaiPhongQL23.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																						lblLoaiPhongQL23.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																								lblTrangThaiQL23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																								lblTrangThaiQL23.setText("Đang thuê");
+																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																										javax.swing.GroupLayout phongQuanLy23Layout = new javax.swing.GroupLayout(phongQuanLy23);
+																																																																																																																																																																																																																																																										phongQuanLy23.setLayout(phongQuanLy23Layout);
+																																																																																																																																																																																																																																																										phongQuanLy23Layout.setHorizontalGroup(phongQuanLy23Layout
+																																																																																																																																																																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																												.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy23Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																														.addContainerGap()
+																																																																																																																																																																																																																																																														.addGroup(phongQuanLy23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																																																																																																																																.addComponent(lblTenPhongQL23, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																.addComponent(lblTrangThaiQL23, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																.addGroup(phongQuanLy23Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																		.addComponent(lblLoaiPhongQL23, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																		.addComponent(checkBoxPhongQL23)))
+																																																																																																																																																																																																																																																														.addContainerGap()));
+																																																																																																																																																																																																																																																										phongQuanLy23Layout.setVerticalGroup(phongQuanLy23Layout
+																																																																																																																																																																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																												.addGroup(phongQuanLy23Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																														.addGroup(phongQuanLy23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																.addComponent(checkBoxPhongQL23).addComponent(lblLoaiPhongQL23,
+																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																														.addComponent(lblTenPhongQL23, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																														.addComponent(lblTrangThaiQL23).addContainerGap()));
+																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																												phongQuanLy24.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																												phongQuanLy24.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																														lblTenPhongQL24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																														lblTenPhongQL24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																														lblTenPhongQL24.setText("101TC");
+																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																lblLoaiPhongQL24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																lblLoaiPhongQL24.setText("Tiêu chuẩn");
+																																																																																																																																																																																																																																																																lblLoaiPhongQL24.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																lblLoaiPhongQL24.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																lblLoaiPhongQL24.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																		lblTrangThaiQL24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																		lblTrangThaiQL24.setText("Đã đặt");
+																																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																																				javax.swing.GroupLayout phongQuanLy24Layout = new javax.swing.GroupLayout(phongQuanLy24);
+																																																																																																																																																																																																																																																																				phongQuanLy24.setLayout(phongQuanLy24Layout);
+																																																																																																																																																																																																																																																																				phongQuanLy24Layout.setHorizontalGroup(phongQuanLy24Layout
+																																																																																																																																																																																																																																																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																						.addGroup(phongQuanLy24Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy24Layout
+																																																																																																																																																																																																																																																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																										phongQuanLy24Layout.createSequentialGroup().addGroup(phongQuanLy24Layout
+																																																																																																																																																																																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																																																																																																																																												.addComponent(lblTenPhongQL24, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																												.addGroup(phongQuanLy24Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																														.addComponent(lblLoaiPhongQL24, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																75, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																														.addGap(4, 4, 4).addComponent(checkBoxPhongQL24)))
+																																																																																																																																																																																																																																																																												.addGap(4, 4, 4))
+																																																																																																																																																																																																																																																																								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																										phongQuanLy24Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																												.addComponent(lblTrangThaiQL24, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																												.addContainerGap()))));
+																																																																																																																																																																																																																																																																				phongQuanLy24Layout.setVerticalGroup(phongQuanLy24Layout
+																																																																																																																																																																																																																																																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																						.addGroup(phongQuanLy24Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																								.addGroup(phongQuanLy24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																										.addComponent(checkBoxPhongQL24).addComponent(lblLoaiPhongQL24,
+																																																																																																																																																																																																																																																																												javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																												javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																								.addComponent(lblTenPhongQL24, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																								.addComponent(lblTrangThaiQL24).addContainerGap()));
+																																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																																						phongQuanLy25.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																																						phongQuanLy25.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																								lblTenPhongQL25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																																								lblTenPhongQL25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																																								lblTenPhongQL25.setText("101TC");
+																																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																																										lblLoaiPhongQL25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																										lblLoaiPhongQL25.setText("Tiêu chuẩn");
+																																																																																																																																																																																																																																																																										lblLoaiPhongQL25.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																										lblLoaiPhongQL25.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																										lblLoaiPhongQL25.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																																												lblTrangThaiQL25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																												lblTrangThaiQL25.setText("Đang thuê");
+																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																														javax.swing.GroupLayout phongQuanLy25Layout = new javax.swing.GroupLayout(phongQuanLy25);
+																																																																																																																																																																																																																																																																														phongQuanLy25.setLayout(phongQuanLy25Layout);
+																																																																																																																																																																																																																																																																														phongQuanLy25Layout.setHorizontalGroup(phongQuanLy25Layout
+																																																																																																																																																																																																																																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																.addGroup(phongQuanLy25Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy25Layout
+																																																																																																																																																																																																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																		.addComponent(lblTenPhongQL25, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																				Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																		.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																				phongQuanLy25Layout.createSequentialGroup().addGroup(phongQuanLy25Layout
+																																																																																																																																																																																																																																																																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy25Layout
+																																																																																																																																																																																																																																																																																								.createSequentialGroup()
+																																																																																																																																																																																																																																																																																								.addComponent(lblLoaiPhongQL25, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																								.addComponent(checkBoxPhongQL25))
+																																																																																																																																																																																																																																																																																						.addComponent(lblTrangThaiQL25, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																																																																																																						.addContainerGap()))));
+																																																																																																																																																																																																																																																																														phongQuanLy25Layout.setVerticalGroup(phongQuanLy25Layout
+																																																																																																																																																																																																																																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																.addGroup(phongQuanLy25Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																		.addGroup(phongQuanLy25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																				.addComponent(checkBoxPhongQL25).addComponent(lblLoaiPhongQL25,
+																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																		.addComponent(lblTenPhongQL25, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																		.addComponent(lblTrangThaiQL25).addContainerGap()));
+																																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																																phongQuanLy26.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																																																phongQuanLy26.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																																		lblTenPhongQL26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																																																		lblTenPhongQL26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																																																		lblTenPhongQL26.setText("101TC");
+																																																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																																																				lblLoaiPhongQL26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																																				lblLoaiPhongQL26.setText("Nâng cao");
+																																																																																																																																																																																																																																																																																				lblLoaiPhongQL26.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																				lblLoaiPhongQL26.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																				lblLoaiPhongQL26.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																																																						lblTrangThaiQL26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																																						lblTrangThaiQL26.setText("Đang trống");
+																																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout phongQuanLy26Layout = new javax.swing.GroupLayout(phongQuanLy26);
+																																																																																																																																																																																																																																																																																								phongQuanLy26.setLayout(phongQuanLy26Layout);
+																																																																																																																																																																																																																																																																																								phongQuanLy26Layout.setHorizontalGroup(phongQuanLy26Layout
+																																																																																																																																																																																																																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																										.addGroup(phongQuanLy26Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy26Layout
+																																																																																																																																																																																																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																												.addComponent(lblTenPhongQL26, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																														Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																												.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																														phongQuanLy26Layout.createSequentialGroup().addGroup(phongQuanLy26Layout
+																																																																																																																																																																																																																																																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy26Layout
+																																																																																																																																																																																																																																																																																																		.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																		.addComponent(lblLoaiPhongQL26, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																		.addComponent(checkBoxPhongQL26))
+																																																																																																																																																																																																																																																																																																.addComponent(lblTrangThaiQL26, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																																																																																																																.addContainerGap()))));
+																																																																																																																																																																																																																																																																																								phongQuanLy26Layout.setVerticalGroup(phongQuanLy26Layout
+																																																																																																																																																																																																																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																										.addGroup(phongQuanLy26Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																												.addGroup(phongQuanLy26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																														.addComponent(checkBoxPhongQL26).addComponent(lblLoaiPhongQL26,
+																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																												.addComponent(lblTenPhongQL26, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																												.addComponent(lblTrangThaiQL26, javax.swing.GroupLayout.PREFERRED_SIZE, 16,
+																																																																																																																																																																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																												.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+																																																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																																																										phongQuanLy27.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																																																										phongQuanLy27.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																																																												lblTenPhongQL27.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																																																												lblTenPhongQL27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																																																												lblTenPhongQL27.setText("101TC");
+																																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																																														lblLoaiPhongQL27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																																														lblLoaiPhongQL27.setText("Thương gia");
+																																																																																																																																																																																																																																																																																														lblLoaiPhongQL27.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																														lblLoaiPhongQL27.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																														lblLoaiPhongQL27.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																																																lblTrangThaiQL27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																																																lblTrangThaiQL27.setText("Đang thuê");
+																																																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout phongQuanLy27Layout = new javax.swing.GroupLayout(phongQuanLy27);
+																																																																																																																																																																																																																																																																																																		phongQuanLy27.setLayout(phongQuanLy27Layout);
+																																																																																																																																																																																																																																																																																																		phongQuanLy27Layout.setHorizontalGroup(phongQuanLy27Layout
+																																																																																																																																																																																																																																																																																																				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy27Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																						.addContainerGap()
+																																																																																																																																																																																																																																																																																																						.addGroup(phongQuanLy27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																																																																																																																																																																								.addComponent(lblTenPhongQL27, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																								.addComponent(lblTrangThaiQL27, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																								.addGroup(phongQuanLy27Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																										.addComponent(lblLoaiPhongQL27, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																										.addComponent(checkBoxPhongQL27)))
+																																																																																																																																																																																																																																																																																																						.addContainerGap()));
+																																																																																																																																																																																																																																																																																																		phongQuanLy27Layout.setVerticalGroup(phongQuanLy27Layout
+																																																																																																																																																																																																																																																																																																				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																				.addGroup(phongQuanLy27Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																						.addGroup(phongQuanLy27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																								.addComponent(checkBoxPhongQL27).addComponent(lblLoaiPhongQL27,
+																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																						.addComponent(lblTenPhongQL27, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																						.addComponent(lblTrangThaiQL27)
+																																																																																																																																																																																																																																																																																																						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+																																																																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																																																																				phongQuanLy28.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																																																																				phongQuanLy28.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																																																																						lblTenPhongQL28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																																																																						lblTenPhongQL28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																																																																						lblTenPhongQL28.setText("101TC");
+																																																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																																																								lblLoaiPhongQL28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																																																								lblLoaiPhongQL28.setText("Cao cấp");
+																																																																																																																																																																																																																																																																																																								lblLoaiPhongQL28.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																								lblLoaiPhongQL28.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																								lblLoaiPhongQL28.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																																																																										lblTrangThaiQL28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																																																										lblTrangThaiQL28.setText("Đang thuê");
+																																																																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout phongQuanLy28Layout = new javax.swing.GroupLayout(phongQuanLy28);
+																																																																																																																																																																																																																																																																																																												phongQuanLy28.setLayout(phongQuanLy28Layout);
+																																																																																																																																																																																																																																																																																																												phongQuanLy28Layout.setHorizontalGroup(phongQuanLy28Layout
+																																																																																																																																																																																																																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																														.addGroup(phongQuanLy28Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																.addGroup(phongQuanLy28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																		.addComponent(lblTenPhongQL28, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																		.addComponent(lblTrangThaiQL28, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																				Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																		.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																																																				phongQuanLy28Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																						.addComponent(lblLoaiPhongQL28, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																						.addComponent(checkBoxPhongQL28)))
+																																																																																																																																																																																																																																																																																																																.addContainerGap()));
+																																																																																																																																																																																																																																																																																																												phongQuanLy28Layout.setVerticalGroup(phongQuanLy28Layout
+																																																																																																																																																																																																																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																														.addGroup(phongQuanLy28Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																.addGroup(phongQuanLy28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																		.addComponent(checkBoxPhongQL28).addComponent(lblLoaiPhongQL28,
+																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																.addComponent(lblTenPhongQL28, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																.addComponent(lblTrangThaiQL28).addContainerGap()));
+																																																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																																																														phongQuanLy29.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																																																																														phongQuanLy29.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																																																																lblTenPhongQL29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																																																																																lblTenPhongQL29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																																																																																lblTenPhongQL29.setText("101TC");
+																																																																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																																																																		lblLoaiPhongQL29.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																																																																		lblLoaiPhongQL29.setText("Nâng cao");
+																																																																																																																																																																																																																																																																																																																		lblLoaiPhongQL29.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																		lblLoaiPhongQL29.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																		lblLoaiPhongQL29.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																																																																																				lblTrangThaiQL29.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																																																																				lblTrangThaiQL29.setText("Đang thuê");
+																																																																																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout phongQuanLy29Layout = new javax.swing.GroupLayout(phongQuanLy29);
+																																																																																																																																																																																																																																																																																																																						phongQuanLy29.setLayout(phongQuanLy29Layout);
+																																																																																																																																																																																																																																																																																																																						phongQuanLy29Layout.setHorizontalGroup(phongQuanLy29Layout
+																																																																																																																																																																																																																																																																																																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																								.addGroup(phongQuanLy29Layout.createSequentialGroup().addContainerGap().addGroup(phongQuanLy29Layout
+																																																																																																																																																																																																																																																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																										.addComponent(lblTenPhongQL29, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																												Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																																																												phongQuanLy29Layout.createSequentialGroup().addGroup(phongQuanLy29Layout
+																																																																																																																																																																																																																																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																														.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy29Layout
+																																																																																																																																																																																																																																																																																																																																.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																.addComponent(lblLoaiPhongQL29, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																.addComponent(checkBoxPhongQL29))
+																																																																																																																																																																																																																																																																																																																														.addComponent(lblTrangThaiQL29, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																																																																																																																																														.addContainerGap()))));
+																																																																																																																																																																																																																																																																																																																						phongQuanLy29Layout.setVerticalGroup(phongQuanLy29Layout
+																																																																																																																																																																																																																																																																																																																								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																								.addGroup(phongQuanLy29Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																										.addGroup(phongQuanLy29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																												.addComponent(checkBoxPhongQL29).addComponent(lblLoaiPhongQL29,
+																																																																																																																																																																																																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																										.addComponent(lblTenPhongQL29, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																										.addComponent(lblTrangThaiQL29).addContainerGap()));
+																																																																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																																																																								phongQuanLy30.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																																																																																								phongQuanLy30.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																																																																																										lblTenPhongQL30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																																																																																										lblTenPhongQL30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																																																																																										lblTenPhongQL30.setText("101TC");
+																																																																																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																																																																																												lblLoaiPhongQL30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																																																																												lblLoaiPhongQL30.setText("Thương gia");
+																																																																																																																																																																																																																																																																																																																												lblLoaiPhongQL30.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																												lblLoaiPhongQL30.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																												lblLoaiPhongQL30.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																																																																														lblTrangThaiQL30.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																																																																														lblTrangThaiQL30.setText("Đang thuê");
+																																																																																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout phongQuanLy30Layout = new javax.swing.GroupLayout(phongQuanLy30);
+																																																																																																																																																																																																																																																																																																																																phongQuanLy30.setLayout(phongQuanLy30Layout);
+																																																																																																																																																																																																																																																																																																																																phongQuanLy30Layout.setHorizontalGroup(phongQuanLy30Layout
+																																																																																																																																																																																																																																																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																		.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy30Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																				.addContainerGap()
+																																																																																																																																																																																																																																																																																																																																				.addGroup(phongQuanLy30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(lblTenPhongQL30, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(lblTrangThaiQL30, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																						.addGroup(phongQuanLy30Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																								.addComponent(lblLoaiPhongQL30, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																								.addComponent(checkBoxPhongQL30)))
+																																																																																																																																																																																																																																																																																																																																				.addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																phongQuanLy30Layout.setVerticalGroup(phongQuanLy30Layout
+																																																																																																																																																																																																																																																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																		.addGroup(phongQuanLy30Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																				.addGroup(phongQuanLy30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(checkBoxPhongQL30).addComponent(lblLoaiPhongQL30,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																				.addComponent(lblTenPhongQL30, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																				.addComponent(lblTrangThaiQL30).addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+																																																																																																																																																																																																																																																																																																																																		jPanel13.setLayout(jPanel13Layout);
+																																																																																																																																																																																																																																																																																																																																		jPanel13Layout.setHorizontalGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																				.addGroup(jPanel13Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																						.addComponent(phongQuanLy21, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(phongQuanLy22, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(phongQuanLy23, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(phongQuanLy24, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(phongQuanLy25, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(phongQuanLy26, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(phongQuanLy27, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(phongQuanLy28, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(phongQuanLy29, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																						.addComponent(phongQuanLy30, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																						.addContainerGap(18, Short.MAX_VALUE)));
+																																																																																																																																																																																																																																																																																																																																		jPanel13Layout.setVerticalGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																				.addGroup(jPanel13Layout.createSequentialGroup().addGap(12, 12, 12).addGroup(jPanel13Layout
+																																																																																																																																																																																																																																																																																																																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																						.addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+																																																																																																																																																																																																																																																																																																																																								.addComponent(phongQuanLy28, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																										Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																								.addComponent(phongQuanLy27, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																										Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																								.addComponent(phongQuanLy26, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																										Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																								.addComponent(phongQuanLy24, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																										Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																								.addComponent(phongQuanLy25, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																										Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																								.addComponent(phongQuanLy23, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																										Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																								.addComponent(phongQuanLy22, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																										Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																								.addComponent(phongQuanLy21, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																										Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																								.addComponent(phongQuanLy30, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																										Short.MAX_VALUE))
+																																																																																																																																																																																																																																																																																																																																						.addComponent(phongQuanLy29, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																																																						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+																																																																																																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout Tang3_QuanLyPhongLayout = new javax.swing.GroupLayout(Tang3_QuanLyPhong);
+																																																																																																																																																																																																																																																																																																																																				Tang3_QuanLyPhong.setLayout(Tang3_QuanLyPhongLayout);
+																																																																																																																																																																																																																																																																																																																																				Tang3_QuanLyPhongLayout.setHorizontalGroup(Tang3_QuanLyPhongLayout
+																																																																																																																																																																																																																																																																																																																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																						.addGroup(Tang3_QuanLyPhongLayout.createSequentialGroup().addContainerGap().addComponent(jPanel13,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																								.addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																				Tang3_QuanLyPhongLayout.setVerticalGroup(Tang3_QuanLyPhongLayout
+																																																																																																																																																																																																																																																																																																																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																						.addGroup(Tang3_QuanLyPhongLayout.createSequentialGroup().addComponent(jPanel13,
+																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																								.addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																																																																																																						Tang4_QuanLyPhong.setBackground(new java.awt.Color(255, 255, 255));
+																																																																																																																																																																																																																																																																																																																																						Tang4_QuanLyPhong.setBorder(javax.swing.BorderFactory.createTitledBorder(
+																																																																																																																																																																																																																																																																																																																																								javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tầng 4",
+																																																																																																																																																																																																																																																																																																																																								javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION,
+																																																																																																																																																																																																																																																																																																																																								new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+																																																																																																																																																																																																																																																																																																																																						Tang4_QuanLyPhong.setMinimumSize(new java.awt.Dimension(1180, 140));
+																																																																																																																																																																																																																																																																																																																																						Tang4_QuanLyPhong.setPreferredSize(new java.awt.Dimension(1180, 140));
+																																																																																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																																																																																								phongQuanLy31.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																																																																																																								phongQuanLy31.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																																																																																																										lblTenPhongQL31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																										lblTenPhongQL31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																																																																																																										lblTenPhongQL31.setText("101TC");
+																																																																																																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																																																																																																												lblLoaiPhongQL31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																																																																																												lblLoaiPhongQL31.setText("Tiêu chuẩn");
+																																																																																																																																																																																																																																																																																																																																												lblLoaiPhongQL31.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																												lblLoaiPhongQL31.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																												lblLoaiPhongQL31.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																																																																																														lblTrangThaiQL31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																																																																																														lblTrangThaiQL31.setText("Đang trống");
+																																																																																																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout phongQuanLy31Layout = new javax.swing.GroupLayout(phongQuanLy31);
+																																																																																																																																																																																																																																																																																																																																																phongQuanLy31.setLayout(phongQuanLy31Layout);
+																																																																																																																																																																																																																																																																																																																																																phongQuanLy31Layout.setHorizontalGroup(phongQuanLy31Layout
+																																																																																																																																																																																																																																																																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																		.addGroup(phongQuanLy31Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																				.addGroup(phongQuanLy31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																						.addComponent(lblTrangThaiQL31, javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																								Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+																																																																																																																																																																																																																																																																																																																																																								phongQuanLy31Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																																										.addComponent(lblLoaiPhongQL31, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																										.addComponent(checkBoxPhongQL31))
+																																																																																																																																																																																																																																																																																																																																																						.addComponent(lblTenPhongQL31, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																																																																																																																																																																				.addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																phongQuanLy31Layout.setVerticalGroup(phongQuanLy31Layout
+																																																																																																																																																																																																																																																																																																																																																		.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																		.addGroup(phongQuanLy31Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																				.addGroup(phongQuanLy31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																						.addComponent(checkBoxPhongQL31).addComponent(lblLoaiPhongQL31,
+																																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																				.addComponent(lblTenPhongQL31, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																				.addComponent(lblTrangThaiQL31).addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																																																																																																		phongQuanLy32.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																																																																																																																		phongQuanLy32.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																																																																																																																				lblTenPhongQL32.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																				lblTenPhongQL32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																																																																																																																				lblTenPhongQL32.setText("101TC");
+																																																																																																																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																																																																																																																						lblLoaiPhongQL32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																																																																																																						lblLoaiPhongQL32.setText("Thương gia");
+																																																																																																																																																																																																																																																																																																																																																						lblLoaiPhongQL32.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																						lblLoaiPhongQL32.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																						lblLoaiPhongQL32.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																																																																																																								lblTrangThaiQL32.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																																																																																																								lblTrangThaiQL32.setText("Đã đặt");
+																																																																																																																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout phongQuanLy32Layout = new javax.swing.GroupLayout(phongQuanLy32);
+																																																																																																																																																																																																																																																																																																																																																										phongQuanLy32.setLayout(phongQuanLy32Layout);
+																																																																																																																																																																																																																																																																																																																																																										phongQuanLy32Layout.setHorizontalGroup(phongQuanLy32Layout
+																																																																																																																																																																																																																																																																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																												.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy32Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																																														.addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																														.addGroup(phongQuanLy32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																																																																																																																																																																																																																																.addComponent(lblTenPhongQL32, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																.addComponent(lblTrangThaiQL32, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																.addGroup(phongQuanLy32Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																																																		.addComponent(lblLoaiPhongQL32, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																		.addComponent(checkBoxPhongQL32)))
+																																																																																																																																																																																																																																																																																																																																																														.addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																										phongQuanLy32Layout.setVerticalGroup(phongQuanLy32Layout
+																																																																																																																																																																																																																																																																																																																																																												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																												.addGroup(phongQuanLy32Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																														.addGroup(phongQuanLy32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																.addComponent(checkBoxPhongQL32).addComponent(lblLoaiPhongQL32,
+																																																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																														.addComponent(lblTenPhongQL32, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																														.addComponent(lblTrangThaiQL32).addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																																																																																																																												phongQuanLy33.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																																																																																																																												phongQuanLy33.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																																																																																																														lblTenPhongQL33.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																														lblTenPhongQL33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																																																																																																																														lblTenPhongQL33.setText("101TC");
+																																																																																																																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																																																																																																																lblLoaiPhongQL33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																																																																																																																lblLoaiPhongQL33.setText("Tiêu chuẩn");
+																																																																																																																																																																																																																																																																																																																																																																lblLoaiPhongQL33.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																																lblLoaiPhongQL33.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																																lblLoaiPhongQL33.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																																																																																																																		lblTrangThaiQL33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																																																																																																																		lblTrangThaiQL33.setText("Đang thuê");
+																																																																																																																																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout phongQuanLy33Layout = new javax.swing.GroupLayout(phongQuanLy33);
+																																																																																																																																																																																																																																																																																																																																																																				phongQuanLy33.setLayout(phongQuanLy33Layout);
+																																																																																																																																																																																																																																																																																																																																																																				phongQuanLy33Layout.setHorizontalGroup(phongQuanLy33Layout
+																																																																																																																																																																																																																																																																																																																																																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy33Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																																																								.addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																																								.addGroup(phongQuanLy33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																																																																																																																																																																																																																																										.addComponent(lblTenPhongQL33, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																										.addComponent(lblTrangThaiQL33, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																										.addGroup(phongQuanLy33Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																																																												.addComponent(lblLoaiPhongQL33, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																												.addComponent(checkBoxPhongQL33)))
+																																																																																																																																																																																																																																																																																																																																																																								.addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																																				phongQuanLy33Layout.setVerticalGroup(phongQuanLy33Layout
+																																																																																																																																																																																																																																																																																																																																																																						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																						.addGroup(phongQuanLy33Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																																								.addGroup(phongQuanLy33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																										.addComponent(checkBoxPhongQL33).addComponent(lblLoaiPhongQL33,
+																																																																																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																																																																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																								.addComponent(lblTenPhongQL33, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																								.addComponent(lblTrangThaiQL33).addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																																																																																																																																						phongQuanLy34.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																																																																																																																																						phongQuanLy34.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																																																																																																																								lblTenPhongQL34.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																								lblTenPhongQL34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																																																																																																																																								lblTenPhongQL34.setText("101TC");
+																																																																																																																																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																																																																																																																																										lblLoaiPhongQL34.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																																																																																																																										lblLoaiPhongQL34.setText("Tiêu chuẩn");
+																																																																																																																																																																																																																																																																																																																																																																										lblLoaiPhongQL34.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																																										lblLoaiPhongQL34.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																																										lblLoaiPhongQL34.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																																																																																																																																												lblTrangThaiQL34.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																																																																																																																												lblTrangThaiQL34.setText("Đã đặt");
+																																																																																																																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																																																																																																																														javax.swing.GroupLayout phongQuanLy34Layout = new javax.swing.GroupLayout(phongQuanLy34);
+																																																																																																																																																																																																																																																																																																																																																																														phongQuanLy34.setLayout(phongQuanLy34Layout);
+																																																																																																																																																																																																																																																																																																																																																																														phongQuanLy34Layout.setHorizontalGroup(phongQuanLy34Layout
+																																																																																																																																																																																																																																																																																																																																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy34Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																																																																		.addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																																																		.addGroup(phongQuanLy34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																																																																																																																																																																																																																																																				.addComponent(lblTenPhongQL34, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																				.addComponent(lblTrangThaiQL34, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																				.addGroup(phongQuanLy34Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																																																																						.addComponent(lblLoaiPhongQL34, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																																						.addComponent(checkBoxPhongQL34)))
+																																																																																																																																																																																																																																																																																																																																																																																		.addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																																														phongQuanLy34Layout.setVerticalGroup(phongQuanLy34Layout
+																																																																																																																																																																																																																																																																																																																																																																																.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																.addGroup(phongQuanLy34Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																																																		.addGroup(phongQuanLy34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																				.addComponent(checkBoxPhongQL34).addComponent(lblLoaiPhongQL34,
+																																																																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																																		.addComponent(lblTenPhongQL34, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																		.addComponent(lblTrangThaiQL34).addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																																																																																																																																phongQuanLy35.setBackground(new java.awt.Color(255, 255, 153));
+																																																																																																																																																																																																																																																																																																																																																																																phongQuanLy35.setPreferredSize(new java.awt.Dimension(108, 84));
+																																																																																																																																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																																																																																																																																		lblTenPhongQL35.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																		lblTenPhongQL35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+																																																																																																																																																																																																																																																																																																																																																																																		lblTenPhongQL35.setText("101TC");
+																																																																																																																																																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																																																																																																																																																				lblLoaiPhongQL35.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+																																																																																																																																																																																																																																																																																																																																																																																				lblLoaiPhongQL35.setText("Thương gia");
+																																																																																																																																																																																																																																																																																																																																																																																				lblLoaiPhongQL35.setMaximumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																																																				lblLoaiPhongQL35.setMinimumSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																																																				lblLoaiPhongQL35.setPreferredSize(new java.awt.Dimension(72, 16));
+																																																																																																																																																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																																																																																																																																																						lblTrangThaiQL35.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+																																																																																																																																																																																																																																																																																																																																																																																						lblTrangThaiQL35.setText("Đang thuê");
+																																																																																																																																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																																																																																																																																								javax.swing.GroupLayout phongQuanLy35Layout = new javax.swing.GroupLayout(phongQuanLy35);
+																																																																																																																																																																																																																																																																																																																																																																																								phongQuanLy35.setLayout(phongQuanLy35Layout);
+																																																																																																																																																																																																																																																																																																																																																																																								phongQuanLy35Layout.setHorizontalGroup(phongQuanLy35Layout
+																																																																																																																																																																																																																																																																																																																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phongQuanLy35Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																																																																												.addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																																																												.addGroup(phongQuanLy35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(lblTenPhongQL35, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(lblTrangThaiQL35, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																														.addGroup(phongQuanLy35Layout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																																																																																.addComponent(lblLoaiPhongQL35, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																																																.addComponent(checkBoxPhongQL35)))
+																																																																																																																																																																																																																																																																																																																																																																																												.addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																																																								phongQuanLy35Layout.setVerticalGroup(phongQuanLy35Layout
+																																																																																																																																																																																																																																																																																																																																																																																										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																										.addGroup(phongQuanLy35Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																																																												.addGroup(phongQuanLy35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(checkBoxPhongQL35).addComponent(lblLoaiPhongQL35,
+																																																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																																												.addComponent(lblTenPhongQL35, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+																																																																																																																																																																																																																																																																																																																																																																																														javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+																																																																																																																																																																																																																																																																																																																																																																																														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																												.addComponent(lblTrangThaiQL35).addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+																																																																																																																																																																																																																																																																																																																																																																																										jPanel15.setLayout(jPanel15Layout);
+																																																																																																																																																																																																																																																																																																																																																																																										jPanel15Layout.setHorizontalGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																												.addGroup(jPanel15Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(phongQuanLy31, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(phongQuanLy32, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(phongQuanLy33, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(phongQuanLy34, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																														.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(phongQuanLy35, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																														.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+																																																																																																																																																																																																																																																																																																																																																																																										jPanel15Layout.setVerticalGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																												.addGroup(jPanel15Layout.createSequentialGroup().addGap(12, 12, 12)
+																																																																																																																																																																																																																																																																																																																																																																																														.addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+																																																																																																																																																																																																																																																																																																																																																																																																.addComponent(phongQuanLy34, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																		Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																.addComponent(phongQuanLy33, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																		Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																.addComponent(phongQuanLy32, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																		Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																.addComponent(phongQuanLy31, javax.swing.GroupLayout.Alignment.LEADING,
+																																																																																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																		Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																.addComponent(phongQuanLy35, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																		javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																																																																																																																																																																																																														.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+																																																																																																																																																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout Tang4_QuanLyPhongLayout = new javax.swing.GroupLayout(Tang4_QuanLyPhong);
+																																																																																																																																																																																																																																																																																																																																																																																												Tang4_QuanLyPhong.setLayout(Tang4_QuanLyPhongLayout);
+																																																																																																																																																																																																																																																																																																																																																																																												Tang4_QuanLyPhongLayout.setHorizontalGroup(Tang4_QuanLyPhongLayout
+																																																																																																																																																																																																																																																																																																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																														.addGroup(Tang4_QuanLyPhongLayout.createSequentialGroup().addContainerGap().addComponent(jPanel15,
+																																																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																.addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																																																												Tang4_QuanLyPhongLayout.setVerticalGroup(Tang4_QuanLyPhongLayout
+																																																																																																																																																																																																																																																																																																																																																																																														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																														.addGroup(Tang4_QuanLyPhongLayout.createSequentialGroup().addComponent(jPanel15,
+																																																																																																																																																																																																																																																																																																																																																																																																javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																.addContainerGap()));
+																																																																																																																																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																																																																																																																																														javax.swing.GroupLayout pnBody2Layout = new javax.swing.GroupLayout(pnBody2);
+																																																																																																																																																																																																																																																																																																																																																																																														pnBody2.setLayout(pnBody2Layout);
+																																																																																																																																																																																																																																																																																																																																																																																														pnBody2Layout.setHorizontalGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																																.addGroup(pnBody2Layout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																																																																		.addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+																																																																																																																																																																																																																																																																																																																																																																																																				.addComponent(Tang1_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																				.addComponent(Tang3_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																				.addComponent(Tang2_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																				.addComponent(Tang4_QuanLyPhong, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																																																																																																																																																																																																																		.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+																																																																																																																																																																																																																																																																																																																																																																																														pnBody2Layout.setVerticalGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																																.addGroup(pnBody2Layout.createSequentialGroup().addGap(12, 12, 12)
+																																																																																																																																																																																																																																																																																																																																																																																																		.addComponent(Tang1_QuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																																																		.addComponent(Tang2_QuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																																																		.addComponent(Tang3_QuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																																																																																																																																																																																																																																																																																																																																																																																																		.addComponent(Tang4_QuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																		.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+																																																																																																																																																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																																																																																																																																																ScrollPaneQuanLyPhong.setViewportView(pnBody2);
+																																																																																																																																																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																																																																																																																																																		funtionPanel.setBackground(new java.awt.Color(204, 255, 204));
+																																																																																																																																																																																																																																																																																																																																																																																																		funtionPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quản lý phòng",
+																																																																																																																																																																																																																																																																																																																																																																																																				javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION,
+																																																																																																																																																																																																																																																																																																																																																																																																				new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																																																																																																																																																																				lbldate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																				lbldate.setText("Date");
+																																																																																																																																																																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																																																																																																																																																																						lbltime.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																						lbltime.setText("Time");
+																																																																																																																																																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																																																																																																																																																								lblcurrentdate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																								lblcurrentdate.setText("currentDate");
+																																																																																																																																																																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																																																																																																																																																																										lblcurrentTime.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																										lblcurrentTime.setText("currentTime");
+																																																																																																																																																																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																																																																																																																																																																												btnGROUPLoaiPhong.add(radPhongTieuChuan);
+																																																																																																																																																																																																																																																																																																																																																																																																												radPhongTieuChuan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																												radPhongTieuChuan.setText("Phòng tiêu chuẩn");
+																																																																																																																																																																																																																																																																																																																																																																																																												radPhongTieuChuan.addActionListener(new java.awt.event.ActionListener() {
+																																																																																																																																																																																																																																																																																																																																																																																																													public void actionPerformed(java.awt.event.ActionEvent evt) {
+																																																																																																																																																																																																																																																																																																																																																																																																														radPhongTieuChuanActionPerformed(evt);
+																																																																																																																																																																																																																																																																																																																																																																																																													}
+																																																																																																																																																																																																																																																																																																																																																																																																												});
+																																																																																																																																																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																																																																																																																																																														btnGROUPLoaiPhong.add(radPhongNangCao);
+																																																																																																																																																																																																																																																																																																																																																																																																														radPhongNangCao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																														radPhongNangCao.setText("Phòng nâng cao");
+																																																																																																																																																																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																																																																																																																																																																btnGROUPLoaiPhong.add(radPhongCaoCap);
+																																																																																																																																																																																																																																																																																																																																																																																																																radPhongCaoCap.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																																radPhongCaoCap.setText("Phòng cao cấp");
+																																																																																																																																																																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																																																																																																																																																																		btnGROUPLoaiPhong.add(radPhongThuongGia);
+																																																																																																																																																																																																																																																																																																																																																																																																																		radPhongThuongGia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																																		radPhongThuongGia.setText("Phòng thương gia");
+																																																																																																																																																																																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																																																																																																																																																																																				btnGROUPTrangThai.add(radPhongTrong);
+																																																																																																																																																																																																																																																																																																																																																																																																																				radPhongTrong.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																																				radPhongTrong.setText("Phòng trống");
+																																																																																																																																																																																																																																																																																																																																																																																																																				radPhongTrong.addActionListener(new java.awt.event.ActionListener() {
+																																																																																																																																																																																																																																																																																																																																																																																																																					public void actionPerformed(java.awt.event.ActionEvent evt) {
+																																																																																																																																																																																																																																																																																																																																																																																																																						radPhongTrongActionPerformed(evt);
+																																																																																																																																																																																																																																																																																																																																																																																																																					}
+																																																																																																																																																																																																																																																																																																																																																																																																																				});
+																																																																																																																																																																																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																																																																																																																																																																																						btnGROUPTrangThai.add(radPhongDaDat);
+																																																																																																																																																																																																																																																																																																																																																																																																																						radPhongDaDat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																																						radPhongDaDat.setText("Phòng đã đặt");
+																																																																																																																																																																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																																																																																																																																																																								btnGROUPTrangThai.add(radPhongDangThue);
+																																																																																																																																																																																																																																																																																																																																																																																																																								radPhongDangThue.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																																								radPhongDangThue.setText("Phòng đã thuê");
+																																																																																																																																																																																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																																																																																																																																																																																										btnTimTheoDieuKien.setText("Tìm");
+																																																																																																																																																																																																																																																																																																																																																																																																																										btnTimTheoDieuKien.addActionListener(new java.awt.event.ActionListener() {
+																																																																																																																																																																																																																																																																																																																																																																																																																											public void actionPerformed(java.awt.event.ActionEvent evt) {
+																																																																																																																																																																																																																																																																																																																																																																																																																												btnTimTheoDieuKienActionPerformed(evt);
+																																																																																																																																																																																																																																																																																																																																																																																																																											}
+																																																																																																																																																																																																																																																																																																																																																																																																																										});
+																																																																																																																																																																																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																																																																																																																																																																																												jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																																												jLabel1.setText("Tìm phòng theo trạng thái");
+																																																																																																																																																																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																																																																																																																																																																														jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+																																																																																																																																																																																																																																																																																																																																																																																																																														jLabel2.setText("Tìm phòng theo loại phòng");
+																																																																																																																																																																																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																																																																																																																																																																																btnResetTrangThai.setText("Reset");
+																																																																																																																																																																																																																																																																																																																																																																																																																																btnResetTrangThai.addActionListener(new java.awt.event.ActionListener() {
+																																																																																																																																																																																																																																																																																																																																																																																																																																	public void actionPerformed(java.awt.event.ActionEvent evt) {
+																																																																																																																																																																																																																																																																																																																																																																																																																																		btnResetTrangThaiActionPerformed(evt);
+																																																																																																																																																																																																																																																																																																																																																																																																																																	}
+																																																																																																																																																																																																																																																																																																																																																																																																																																});
+																																																																																																																																																																																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																																																																																																																																																																																		btnTraPhong.setText("Trả phòng");
+																																																																																																																																																																																																																																																																																																																																																																																																																																		
+																																																																																																																																																																																																																																																																																																																																																																																																																																				btnDoiPhong.setText("Đổi phòng");
+																																																																																																																																																																																																																																																																																																																																																																																																																																				
+																																																																																																																																																																																																																																																																																																																																																																																																																																						btnHuyDatPhong.setText("Hủy đặt phòng");
+																																																																																																																																																																																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																																																																																																																																																																																								btnDatPhong.setText("Đặt phòng");
+																																																																																																																																																																																																																																																																																																																																																																																																																																								btnDatPhong.addActionListener(new java.awt.event.ActionListener() {
+																																																																																																																																																																																																																																																																																																																																																																																																																																									public void actionPerformed(java.awt.event.ActionEvent evt) {
+																																																																																																																																																																																																																																																																																																																																																																																																																																										btnDatPhongActionPerformed(evt);
+																																																																																																																																																																																																																																																																																																																																																																																																																																									}
+																																																																																																																																																																																																																																																																																																																																																																																																																																								});
+																																																																																																																																																																																																																																																																																																																																																																																																																																								
+																																																																																																																																																																																																																																																																																																																																																																																																																																										javax.swing.GroupLayout funtionPanelLayout = new javax.swing.GroupLayout(funtionPanel);
+																																																																																																																																																																																																																																																																																																																																																																																																																																										funtionPanelLayout.setHorizontalGroup(
+																																																																																																																																																																																																																																																																																																																																																																																																																																											funtionPanelLayout.createParallelGroup(Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																																																																												.addGroup(funtionPanelLayout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGap(66)
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGroup(funtionPanelLayout.createParallelGroup(Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(lblcurrentdate, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(lblcurrentTime, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(lbltime, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(lbldate, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGap(41)
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGroup(funtionPanelLayout.createParallelGroup(Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongTieuChuan)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongNangCao, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongThuongGia)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongCaoCap, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 266, GroupLayout.PREFERRED_SIZE))
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGap(40)
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGroup(funtionPanelLayout.createParallelGroup(Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongTrong, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(jLabel1)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnTimTheoDieuKien, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addGroup(funtionPanelLayout.createParallelGroup(Alignment.TRAILING, false)
+																																																																																																																																																																																																																																																																																																																																																																																																																																															.addComponent(radPhongDangThue, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																															.addComponent(radPhongDaDat, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)))
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGap(38)
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGroup(funtionPanelLayout.createParallelGroup(Alignment.LEADING, false)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnTraPhong, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnDoiPhong, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnHuyDatPhong, GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnDatPhong, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnResetTrangThai, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addContainerGap(219, Short.MAX_VALUE))
+																																																																																																																																																																																																																																																																																																																																																																																																																																										);
+																																																																																																																																																																																																																																																																																																																																																																																																																																										funtionPanelLayout.setVerticalGroup(
+																																																																																																																																																																																																																																																																																																																																																																																																																																											funtionPanelLayout.createParallelGroup(Alignment.TRAILING)
+																																																																																																																																																																																																																																																																																																																																																																																																																																												.addGroup(funtionPanelLayout.createSequentialGroup()
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGroup(funtionPanelLayout.createParallelGroup(Alignment.BASELINE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(lbldate, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(jLabel2)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(jLabel1)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnDatPhong))
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addPreferredGap(ComponentPlacement.UNRELATED)
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGroup(funtionPanelLayout.createParallelGroup(Alignment.BASELINE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(lblcurrentdate)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongTieuChuan, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongTrong)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnHuyDatPhong))
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addPreferredGap(ComponentPlacement.UNRELATED)
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGroup(funtionPanelLayout.createParallelGroup(Alignment.BASELINE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(lbltime)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongNangCao)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongDangThue)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnDoiPhong))
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addPreferredGap(ComponentPlacement.UNRELATED)
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGroup(funtionPanelLayout.createParallelGroup(Alignment.BASELINE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongCaoCap)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongDaDat)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(lblcurrentTime)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnTraPhong))
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addPreferredGap(ComponentPlacement.UNRELATED)
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGroup(funtionPanelLayout.createParallelGroup(Alignment.BASELINE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(radPhongThuongGia)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnResetTrangThai, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.addComponent(btnTimTheoDieuKien))
+																																																																																																																																																																																																																																																																																																																																																																																																																																													.addGap(12))
+																																																																																																																																																																																																																																																																																																																																																																																																																																										);
+																																																																																																																																																																																																																																																																																																																																																																																																																																										funtionPanel.setLayout(funtionPanelLayout);
+																																																																																																																																																																																																																																																																																																																																																																																																																																										
+																																																																																																																																																																																																																																																																																																																																																																																																																																												javax.swing.GroupLayout pnQuanLyPhongLayout = new javax.swing.GroupLayout(pnQuanLyPhong);
+																																																																																																																																																																																																																																																																																																																																																																																																																																												pnQuanLyPhong.setLayout(pnQuanLyPhongLayout);
+																																																																																																																																																																																																																																																																																																																																																																																																																																												pnQuanLyPhongLayout
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.setHorizontalGroup(pnQuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																																																																																.addGroup(pnQuanLyPhongLayout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																																																																																																																		.addGroup(pnQuanLyPhongLayout
+																																																																																																																																																																																																																																																																																																																																																																																																																																																				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+																																																																																																																																																																																																																																																																																																																																																																																																																																																				.addComponent(funtionPanel, javax.swing.GroupLayout.DEFAULT_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																																																																						javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																																				.addComponent(ScrollPaneQuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 0,
+																																																																																																																																																																																																																																																																																																																																																																																																																																																						Short.MAX_VALUE))
+																																																																																																																																																																																																																																																																																																																																																																																																																																																		.addContainerGap(44, Short.MAX_VALUE)));
+																																																																																																																																																																																																																																																																																																																																																																																																																																												pnQuanLyPhongLayout
+																																																																																																																																																																																																																																																																																																																																																																																																																																														.setVerticalGroup(pnQuanLyPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																																																																																																																																																																																																																																																																																																																																																																																																																																.addGroup(pnQuanLyPhongLayout.createSequentialGroup().addContainerGap()
+																																																																																																																																																																																																																																																																																																																																																																																																																																																		.addComponent(funtionPanel, javax.swing.GroupLayout.PREFERRED_SIZE,
+																																																																																																																																																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+																																																																																																																																																																																																																																																																																																																																																																																																																																																		.addComponent(ScrollPaneQuanLyPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 406,
+																																																																																																																																																																																																																																																																																																																																																																																																																																																				javax.swing.GroupLayout.PREFERRED_SIZE)
+																																																																																																																																																																																																																																																																																																																																																																																																																																																		.addContainerGap(150, Short.MAX_VALUE)));
+																																																																																																																																																																																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																																																																																																																																																																																														pnedUngDung.addTab("tab2", pnQuanLyPhong);
 
 		jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 		jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -6245,6 +6451,7 @@ public class TrangChu extends javax.swing.JFrame {
 
 			// Gán thông tin phòng lên label
 			soPhong.setText(Integer.toString(phong.getSoPhong()));
+			
 			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
 				loaiPhong.setText("Tiêu chuẩn");
 			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
