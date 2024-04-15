@@ -71,7 +71,7 @@ public class Login extends javax.swing.JFrame implements Serializable{
         Left.setPreferredSize(new java.awt.Dimension(400, 500));
 
         jLabel1.setBackground(new java.awt.Color(23, 195, 178));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(23, 195, 178));
         jLabel1.setText("ĐĂNG NHẬP");
 
@@ -91,6 +91,7 @@ public class Login extends javax.swing.JFrame implements Serializable{
         btnDangNhap.setBorder(null);
         btnDangNhap.setText("ĐĂNG NHẬP");
         btnDangNhap.setBorderColor(new java.awt.Color(23, 195, 178));
+        btnDangNhap.setColorOver(new java.awt.Color(0, 255, 204));
         btnDangNhap.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         btnDangNhap.setRadius(20);
         btnDangNhap.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -108,10 +109,9 @@ public class Login extends javax.swing.JFrame implements Serializable{
         btnDoiMatKhau.setBorder(null);
         btnDoiMatKhau.setText("ĐỔI MẬT KHẨU");
         btnDoiMatKhau.setBorderColor(new java.awt.Color(254, 109, 115));
-        btnDoiMatKhau.setColorClick(new java.awt.Color(204, 204, 204));
-        btnDoiMatKhau.setColorOver(new java.awt.Color(255, 51, 51));
+        btnDoiMatKhau.setColorOver(new java.awt.Color(255, 102, 102));
         btnDoiMatKhau.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        btnDoiMatKhau.setRadius(15);
+        btnDoiMatKhau.setRadius(20);
         btnDoiMatKhau.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnDoiMatKhauMouseExited(evt);
@@ -127,39 +127,40 @@ public class Login extends javax.swing.JFrame implements Serializable{
         Left.setLayout(LeftLayout);
         LeftLayout.setHorizontalGroup(
             LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeftLayout.createSequentialGroup()
+                .addGap(0, 29, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(25, 25, 25))
             .addGroup(LeftLayout.createSequentialGroup()
                 .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LeftLayout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(jLabel1))
-                    .addGroup(LeftLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel6))
                     .addGroup(LeftLayout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                             .addComponent(txtMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(26, Short.MAX_VALUE))
+                            .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(LeftLayout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LeftLayout.setVerticalGroup(
             LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LeftLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addGap(36, 36, 36)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel1)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(34, 34, 34)
                 .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(btnDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGap(53, 53, 53))
         );
 
         jPanel1.add(Left);

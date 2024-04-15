@@ -503,6 +503,11 @@ public class DatPhong extends javax.swing.JFrame {
         });
 
         btnDatPhong.setText("Đặt phòng");
+        btnDatPhong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDatPhongActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -577,6 +582,10 @@ public class DatPhong extends javax.swing.JFrame {
     private void btnNgayNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNgayNhanActionPerformed
         dateNgayNhan.showPopup();
     }//GEN-LAST:event_btnNgayNhanActionPerformed
+
+    private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatPhongActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDatPhongActionPerformed
 
 
 	private void btnNgaySinhActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgaySinhActionPerformed

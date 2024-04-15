@@ -57,11 +57,7 @@ public class TrangChu extends javax.swing.JFrame {
         ConnectDB.getInstance().getConnection();
 //        setUndecorated(true);
 //        setAlwaysOnTop(true);
-        setResizable(false);
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        int x = (int) tk.getScreenSize().getWidth();
-        int y = (int) tk.getScreenSize().getHeight();
-        setSize(x, y);
+
         initComponents();
         datetime();
         times();
