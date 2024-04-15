@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -361,7 +362,7 @@ public class QuanLyThongTinPhong extends javax.swing.JFrame {
 
     private void datPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datPhongActionPerformed
         // TODO add your handling code here:
-        JFrame datphongz = new DatPhong(getTenPhong);
+        JDialog datphongz = new DatPhong(getTenPhong);
         datphongz.show();
     }//GEN-LAST:event_datPhongActionPerformed
 
@@ -372,7 +373,7 @@ public class QuanLyThongTinPhong extends javax.swing.JFrame {
 
     private void traPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_traPhongActionPerformed
         // TODO add your handling code here:
-        JFrame traPhong = new TraPhong(getTenPhong);
+        JDialog traPhong = new TraPhong(getTenPhong);
         traPhong.show();
     }//GEN-LAST:event_traPhongActionPerformed
 
