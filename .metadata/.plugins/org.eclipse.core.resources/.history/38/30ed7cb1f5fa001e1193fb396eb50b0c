@@ -46,7 +46,6 @@ import menu.MenuEvent;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import java.awt.Font;
 
 /**
  * @author Huynguyen
@@ -814,9 +813,9 @@ public class TrangChu extends javax.swing.JFrame {
 		jButton9.setPreferredSize(new java.awt.Dimension(36, 36));
 
 		jPanel5.setBackground(new java.awt.Color(34, 124, 157));
-		jPanel5.setBorder(null);
+		jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-		lblTenNhanVienHeader.setFont(new Font("Segoe UI", Font.BOLD, 18)); // NOI18N
+		lblTenNhanVienHeader.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 		lblTenNhanVienHeader.setText("Tên nhân viên");
 
 		javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -4646,7 +4645,7 @@ public class TrangChu extends javax.swing.JFrame {
 
 		btnGROUPTrangThai.add(radPhongDangThue);
 		radPhongDangThue.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-		radPhongDangThue.setText("Phòng đã thuê");
+		radPhongDangThue.setText("Phòng đang thuê");
 
 		btnTimTheoDieuKien.setText("Tìm");
 		btnTimTheoDieuKien.addActionListener(new java.awt.event.ActionListener() {
@@ -5991,7 +5990,7 @@ public class TrangChu extends javax.swing.JFrame {
 				JPanel p = phongQuanLy.get(i);
 				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
 
-				if (!trangThaiP.getText().equalsIgnoreCase("Trống")) {
+				if (!trangThaiP.getText().equalsIgnoreCase("Đang trống")) {
 					p.setVisible(false);
 				}
 			}
@@ -6011,7 +6010,7 @@ public class TrangChu extends javax.swing.JFrame {
 				JPanel p = phongQuanLy.get(i);
 				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
 
-				if (!trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
+				if (!trangThaiP.getText().equalsIgnoreCase("Đang thuê")) {
 					p.setVisible(false);
 				}
 			}
