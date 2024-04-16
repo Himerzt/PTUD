@@ -470,7 +470,7 @@ public class TraPhong extends javax.swing.JDialog {
 
 	private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed
 		// TODO add your handling code here:
-		this.hide();
+		this.setVisible(false);//update
 	}// GEN-LAST:event_btnHuyActionPerformed
 
 	private void btnTraPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
@@ -553,7 +553,6 @@ public class TraPhong extends javax.swing.JDialog {
 	private javax.swing.JTextField txtHangThanhVienKH;
 	private javax.swing.JTextField txtNgaySinh;
 	private javax.swing.JTextField txtSodienthoaiKH;
-	private javax.swing.JTextField txtTenKH;
 	private javax.swing.JTextField txtThue;
 	private javax.swing.JTextField txtTienCanThu;
 	private javax.swing.JTextField txtTongHoaDon;
