@@ -6052,6 +6052,7 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 	}// GEN-LAST:event_btnFindbyPhoneActionPerformed
 
+	//Them xoa check box nuts reset
 	private void btnResetTrangThaiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnResetTrangThaiActionPerformed
 		// TODO add your handling code here:
 		ganDuLieuPhongVaoQuanLyPhong();
@@ -6063,6 +6064,10 @@ public class TrangChu extends javax.swing.JFrame {
 		radPhongDaDat.setSelected(false);
 		btnGROUPLoaiPhong.clearSelection();
 		btnGROUPTrangThai.clearSelection();
+		for (int i = 0; i < checkBoxPhongQuanLy.size(); i++) {
+			checkBoxPhongQuanLy.get(i).setSelected(false);
+		}
+		
 	}// GEN-LAST:event_btnResetTrangThaiActionPerformed
 
 	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton4ActionPerformed
