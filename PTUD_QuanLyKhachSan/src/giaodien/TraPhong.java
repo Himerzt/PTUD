@@ -447,7 +447,7 @@ public class TraPhong extends javax.swing.JDialog {
             i++;
 		}
 		
-		// Hiển thị danh sách dịch vụ vào table tableDV - chưa xong
+		// Hiển thị danh sách dịch vụ vào table tableDV
 		DefaultTableModel modelDV = (DefaultTableModel) tableDV.getModel();
 		modelDV.setRowCount(0);
 		DichVuPhongDao dvDao = new DichVuPhongDao();

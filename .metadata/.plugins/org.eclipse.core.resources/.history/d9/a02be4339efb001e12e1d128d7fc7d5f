@@ -206,7 +206,7 @@ public class KhachHangDao {
 			ex.printStackTrace();
 			// Đóng kết nối
 		}
-		return kh;
+		return null;
 	}
 	
 	// tìm kiếm khách hàng theo hạng thành viên

@@ -83,7 +83,7 @@ public class ThongTinDatThuePhongDao {
 	public ThongTinDatThuePhong timThongTinDatThuePhongTheoMa(String maDatThue) {
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from ThongTinDatThuePhong where maDatThue = '" + maDatThue + "'";
+			String sql = "Select * from ThongTinDatThuePhong where maTTDTP = '" + maDatThue + "'";
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 			while (rs.next()) {
@@ -161,14 +161,16 @@ public class ThongTinDatThuePhongDao {
 			String sql = "Select * from ThongTinDatThuePhong where Phong = '" + maPhong + "'";
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
-			String maDatThue = rs.getString(1);
-			String maKhachHang = rs.getString(2);
-			LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
-			LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
-			LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
-			String maLoaiThue = rs.getString(7);
-			tt = new ThongTinDatThuePhong(maDatThue, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
-					maLoaiThue);
+			while (rs.next()) {
+				String maDatThue = rs.getString(1);
+				String maKhachHang = rs.getString(2);
+				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
+				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
+				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
+				String maLoaiThue = rs.getString(7);
+				tt = new ThongTinDatThuePhong(maDatThue, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong,
+						ngayTraPhong, maLoaiThue);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

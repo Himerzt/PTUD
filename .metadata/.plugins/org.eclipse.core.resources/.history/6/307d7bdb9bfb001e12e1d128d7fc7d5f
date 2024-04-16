@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
 import dao.DichVuDao;
+import dao.DichVuPhongDao;
 import dao.KhachHangDao;
 import dao.LoaiPhongDao;
 import dao.LoaiThueDao;
@@ -511,6 +512,35 @@ public class DatPhong extends javax.swing.JDialog {
 
 
 		btnDatPhong.setText("Đặt phòng");
+		tableDV.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+			@Override
+
+			public void valueChanged(ListSelectionEvent e) {
+				ArrayList<String> dv = new ArrayList<String>();
+				ArrayList<Integer> sl = new ArrayList<Integer>();
+				ArrayList<String> phong = new ArrayList<String>();
+				for (int i = 0; i < tableDV.getRowCount(); i++) {
+					for (int j = 0; j < tableDV.getColumnCount(); j++) {
+
+						if (j == 1) {
+							String chuoiCat = tableDV.getValueAt(i, j).toString().substring(0,5);
+							dv.add(chuoiCat);
+						}
+						if (j == 2) {
+							sl.add(Integer.parseInt(tableDV.getValueAt(i, j).toString()));
+						}
+						if (j == 3) {
+							phong.add(tableDV.getValueAt(i, j).toString());
+						}
+
+					}
+				}
+
+				DichVuPhongDao dichVuPhong = new DichVuPhongDao();
+
+				System.out.println(dichVuPhong.themDanhSachDichVuPhong(phong, dv, sl));
+			}
+		});
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING).addGroup(jPanel1Layout
@@ -658,7 +688,6 @@ public class DatPhong extends javax.swing.JDialog {
 		ThongTinDatThuePhongDao thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
 		KhachHangDao khachHangDao = new KhachHangDao();
 		KhachHang khachHang = khachHangDao.timTheoCCCD(txtCCCD.getText());
-		LoaiThueDao loaiThueDao = new LoaiThueDao();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		LocalDate ngayDat = LocalDate.parse(txtCheckIn.getText(), formatter);
 		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), formatter);
@@ -676,14 +705,43 @@ public class DatPhong extends javax.swing.JDialog {
 		
 		for (Phong phong : dsPhong) {
 			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
-			maLoaiThue = loaiThueDao.timLoaiThueTheoTenLoaiThueVaMaLoaiPhong(kieuThue, loaiPhong).getMaLoaiThue();
-			System.out.println(maLoaiThue);
+			if (loaiPhong.equalsIgnoreCase("Tiêu chuẩn"))
+				loaiPhong = "TC";
+			else if (loaiPhong.equalsIgnoreCase("Cao cấp"))
+				loaiPhong = "CC";
+			else if (loaiPhong.equalsIgnoreCase("Nâng cao"))
+				loaiPhong = "NC";
+			else
+				loaiPhong = "TG";
+			maLoaiThue = String.format("%s%s", kieuThue, loaiPhong);
 		}
-		double tienCoc = setGiaCoc();
+		
+		// Lưu dịch vụ sử dụng trong bảng Dịch vụ xuống db
+		ArrayList<String> dv = new ArrayList<String>();
+		ArrayList<Integer> sl = new ArrayList<Integer>();
+		ArrayList<String> phong = new ArrayList<String>();
+		for (int i = 0; i < tableDV.getRowCount(); i++) {
+			for (int j = 0; j < tableDV.getColumnCount(); j++) {
 
-		if (thongTinDatThuePhongDao.datPhong(dsPhong, khachHang, ngayDat, ngayNhan, maLoaiThue, ngayTra, tienCoc)) {
+				if (j == 1) {
+					String chuoiCat = tableDV.getValueAt(i, j).toString().substring(0, 5);
+					dv.add(chuoiCat);
+				}
+				if (j == 2) {
+					sl.add(Integer.parseInt(tableDV.getValueAt(i, j).toString()));
+				}
+				if (j == 3) {
+					phong.add(tableDV.getValueAt(i, j).toString());
+				}
+
+			}
+		}
+		DichVuPhongDao dichVuPhong = new DichVuPhongDao();
+		System.out.println(dichVuPhong.themDanhSachDichVuPhong(phong, dv, sl));
+		
+		if (thongTinDatThuePhongDao.datPhong(dsPhong, khachHang, ngayDat, ngayNhan, maLoaiThue, ngayTra)) {
 			JOptionPane.showMessageDialog(this, "Đặt phòng thành công");
-//			DatPhong.this.dispose();
+			DatPhong.this.dispose();
 		} else {
 			JOptionPane.showMessageDialog(this, "Đặt phòng thất bại");
 		}
@@ -702,11 +760,16 @@ public class DatPhong extends javax.swing.JDialog {
 
 	private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDichVuActionPerformed
 	    loadDanhSachDichVu();
+	    PhongDao phongDao = new PhongDao();
 	    DichVuDao dvDao = new DichVuDao();
+	    DichVuPhongDao dvPhongDao = new DichVuPhongDao();
+	    DichVuPhong dvPhong = new DichVuPhong();
 	    int selectedPhong = tableDanhSachPhong.getSelectedRow();
 	    if (selectedPhong != -1) {
 	        String tenPhong = tableDanhSachPhong.getValueAt(selectedPhong, 1).toString();
 	        String maDichVu = comboBoxDichVu.getSelectedItem().toString().split(" ")[0];
+	        dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tenPhong));
+	        dvPhong.setMaDichVu(maDichVu);
 	        double giaDichVu = dvDao.timTheoMaDichVu(maDichVu).getGiaDV();
 	        DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
 	        // Kiểm tra và tăng giá trị cột số lượng nếu trùng tên phòng và mã dịch vụ
@@ -718,11 +781,10 @@ public class DatPhong extends javax.swing.JDialog {
 	                int soLuongHienTai = Integer.parseInt(model.getValueAt(i, 2).toString());
 	                int soLuongMoi = soLuongHienTai + 1;
 	                model.setValueAt(soLuongMoi, i, 2);
-	                
+	                dvPhong.setSoLuong(soLuongMoi);
 	                // Cập nhật lại giá dịch vụ
 	                double giaMoi = giaDichVu * soLuongMoi;
 	                model.setValueAt(giaMoi, i, 4);
-	                
 	                daThem = true;
 	                break;
 	            }

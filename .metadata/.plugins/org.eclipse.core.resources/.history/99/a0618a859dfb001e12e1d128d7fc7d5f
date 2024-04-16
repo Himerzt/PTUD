@@ -20,6 +20,7 @@ public class ThongTinDatThuePhongDao {
 	DichVuPhongDao dichVuPhongDao = new DichVuPhongDao();
 	PhongDao phongDao = new PhongDao();
 	LoaiThueDao loaiThueDao = new LoaiThueDao();
+	
 	double tongTien = 0;
 
 	public ThongTinDatThuePhongDao() {
@@ -44,12 +45,8 @@ public class ThongTinDatThuePhongDao {
 				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
 				String maLoaiThue = rs.getString(7);
 
-				KhachHang kh = new KhachHang(maKhachHang);
-				Phong phong = new Phong(maPhong);
-				LoaiThue loaiThue = new LoaiThue(maLoaiThue);
-
-				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maDatThue, kh, phong, ngayDatPhong, ngayNhanPhong,
-						ngayTraPhong, loaiThue);
+				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maDatThue, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
+						maLoaiThue);
 
 				dsThongTin.add(tt);
 //			
@@ -71,9 +68,9 @@ public class ThongTinDatThuePhongDao {
 			try {
 				stmt = con.createStatement();
 				String sql = "insert into ThongTinDatThuePhong values('" + tt.getMaDatPhong() + "','"
-						+ tt.getKhachHang().getMaKH() + "','" + tt.getPhong().getMaPhong() + "','"
+						+ tt.getMaKhachHang() + "','" + tt.getMaPhong() + "','"
 						+ tt.getNgayDatPhong() + "','" + tt.getNgayNhanPhong() + "','" + tt.getNgayTraPhong() + "','"
-						+ tt.getLoaiThue().getMaLoaiThue() + "')";
+						+ tt.getMaLoaiThue() + "')";
 				n = stmt.executeUpdate(sql);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -96,11 +93,8 @@ public class ThongTinDatThuePhongDao {
 				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
 				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
 				String maLoaiThue = rs.getString(7);
-				KhachHang kh = new KhachHang(maKhachHang);
-				Phong phong = new Phong(maPhong);
-				LoaiThue loaiThue = new LoaiThue(maLoaiThue);
-				tt = new ThongTinDatThuePhong(maDatThue, kh, phong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
-						loaiThue);
+				tt = new ThongTinDatThuePhong(maDatThue, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
+						maLoaiThue);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -122,11 +116,8 @@ public class ThongTinDatThuePhongDao {
 				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
 				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
 				String maLoaiThue = rs.getString(7);
-				Phong phong = new Phong(maPhong);
-				KhachHang khachHang = new KhachHang(maKhachHang);
-				LoaiThue loaiThue = new LoaiThue(maLoaiThue);
-				tt = new ThongTinDatThuePhong(maDatThue, khachHang, phong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
-						loaiThue);
+				tt = new ThongTinDatThuePhong(maDatThue, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
+						maLoaiThue);
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
@@ -136,55 +127,52 @@ public class ThongTinDatThuePhongDao {
 
 		return dsThongTin;
 	}
-	
-	public double tinhTienTungPhong(String maPhong, String loaiThue) {
-        double giaDV = this.dichVuPhongDao.tinhGiaDichVuCuaMotPhong(maPhong);
-        KhachHangDao khachHangDao = new KhachHangDao();
-        HangThanhVienDao hangThanhVienDao = new HangThanhVienDao();
-        String loaiPhong = this.phongDao.timMaLoaiPhongTheoMaPhong(maPhong);
-        double giaPhong = this.loaiThueDao.timLoaiThueTheoTenLoaiThueVaMaLoaiPhong(loaiPhong, loaiThue).getGiaThue();
-         double chietkhau = hangThanhVienDao.timHangThanhVienTheoMa( khachHangDao.timTheoMaKhachHang(timThongTinDatThuePhongTheoMa(maPhong).getKhachHang()).getMaHangThanhVien()).getTiLeChietKhau();
-         
-        return (giaDV + giaPhong)* (1-chietkhau);
-    }
-	
-    public double tinhTienTheoDanhSachPhong(ArrayList<Phong> dsPhong) {
-     
-        ThongTinDatThuePhong tt;
-        for (Phong phong2 : dsPhong) {
-	
-            tt = timThongTinDatThuePhongTheoMaPhong(phong2.getMaPhong());
-            tongTien += tinhTienTungPhong(phong2.getMaPhong(), tt.getLoaiThue());
-        }
 
-        return tongTien;
-    }
+	public double tinhTienTungPhong(String maPhong, String loaiThue) {
+		double giaDV = this.dichVuPhongDao.tinhGiaDichVuCuaMotPhong(maPhong);
+		KhachHangDao khachHangDao = new KhachHangDao();
+		HangThanhVienDao hangThanhVienDao = new HangThanhVienDao();
+		String loaiPhong = this.phongDao.timMaLoaiPhongTheoMaPhong(maPhong);
+		double giaPhong = this.loaiThueDao.timLoaiThueTheoTenLoaiThueVaMaLoaiPhong(loaiPhong, loaiThue).getGiaThue();
+		double chietkhau = hangThanhVienDao
+				.timHangThanhVienTheoMa(khachHangDao
+						.timTheoMaKhachHang(timThongTinDatThuePhongTheoMa(maPhong).getMaKhachHang()).getMaHangThanhVien())
+				.getTiLeChietKhau();
+
+		return (giaDV + giaPhong) * (1 - chietkhau);
+	}
+
+	public double tinhTienTheoDanhSachPhong(ArrayList<Phong> dsPhong) {
+
+		ThongTinDatThuePhong tt;
+		for (Phong phong2 : dsPhong) {
+
+			tt = timThongTinDatThuePhongTheoMaPhong(phong2.getMaPhong());
+			tongTien += tinhTienTungPhong(phong2.getMaPhong(), tt.getMaLoaiThue());
+		}
+
+		return tongTien;
+	}
 
 	// tìm thông tin đặt thuê theo mã phòng
-	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoMaPhong(String maPhong) {
+	public ThongTinDatThuePhong timThongTinDatThuePhongTheoMaPhong(String maPhong) {
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from ThongTinDatThuePhong where maPhong = '" + maPhong + "'";
+			String sql = "Select * from ThongTinDatThuePhong where Phong = '" + maPhong + "'";
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
-			while (rs.next()) {
-				String maDatThue = rs.getString(1);
-				String maKhachHang = rs.getString(2);
-				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
-				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
-				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
-				String maLoaiThue = rs.getString(7);
-				KhachHang kh = new KhachHang(maKhachHang);
-				Phong phong = new Phong(maPhong);
-				LoaiThue loaiThue = new LoaiThue(maLoaiThue);
-				tt = new ThongTinDatThuePhong(maDatThue, kh, phong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
-						loaiThue);
-				dsThongTin.add(tt);
-			}
+			String maDatThue = rs.getString(1);
+			String maKhachHang = rs.getString(2);
+			LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
+			LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
+			LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
+			String maLoaiThue = rs.getString(7);
+			tt = new ThongTinDatThuePhong(maDatThue, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
+					maLoaiThue);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return dsThongTin;
+		return tt;
 	}
 
 	// tìm thông tin đặt thuê theo ngày nhận phòng
@@ -201,11 +189,8 @@ public class ThongTinDatThuePhongDao {
 				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
 				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
 				String maLoaiThue = rs.getString(7);
-				KhachHang kh = new KhachHang(maKhachHang);
-				Phong phong = new Phong(maPhong);
-				LoaiThue loaiThue = new LoaiThue(maLoaiThue);
-				tt = new ThongTinDatThuePhong(maDatThue, kh, phong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
-						loaiThue);
+				tt = new ThongTinDatThuePhong(maDatThue, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
+						maLoaiThue);
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
@@ -228,11 +213,8 @@ public class ThongTinDatThuePhongDao {
 				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
 				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
 				String maLoaiThue = rs.getString(7);
-				KhachHang kh = new KhachHang(maKhachHang);
-				Phong phong = new Phong(maPhong);
-				LoaiThue loaiThue = new LoaiThue(maLoaiThue);
-				tt = new ThongTinDatThuePhong(maDatThue, kh, phong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
-						loaiThue);
+				tt = new ThongTinDatThuePhong(maDatThue, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
+						maLoaiThue);
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
@@ -258,8 +240,8 @@ public class ThongTinDatThuePhongDao {
 				KhachHang kh = new KhachHang(maKhachHang);
 				Phong phong = new Phong(maPhong);
 				LoaiThue loaiThue = new LoaiThue(maLoaiThue);
-				tt = new ThongTinDatThuePhong(maDatThue, kh, phong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
-						loaiThue);
+				tt = new ThongTinDatThuePhong(maDatThue, kh.getMaKH(), phong.getMaLoaiPhong(), ngayDatPhong, ngayNhanPhong, ngayTraPhong,
+						loaiThue.getMaLoaiThue());
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
@@ -285,8 +267,8 @@ public class ThongTinDatThuePhongDao {
 				KhachHang kh = new KhachHang(maKhachHang);
 				Phong phong = new Phong(maPhong);
 				LoaiThue loaiThue = new LoaiThue(maLoaiThue);
-				tt = new ThongTinDatThuePhong(maDatThue, kh, phong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
-						loaiThue);
+				tt = new ThongTinDatThuePhong(maDatThue, kh.getMaKH(), phong.getMaLoaiPhong(), ngayDatPhong,
+						ngayNhanPhong, ngayTraPhong, loaiThue.getMaLoaiThue());
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
@@ -306,43 +288,14 @@ public class ThongTinDatThuePhongDao {
 
 		int i = 0;
 		for (Phong phong : dsPhong) {
-			bdtp = new ThongTinDatThuePhong(maKH + 'i', new KhachHang(maKH), phong, ngayDat, ngayNhan, ngayTra,
-					new LoaiThue(maLoaiThue));
+			bdtp = new ThongTinDatThuePhong(maKH + i, new KhachHang(maKH).getMaKH(), phong.getMaLoaiPhong(), ngayDat,
+					ngayNhan, ngayTra, maLoaiThue);
 			ds.add(bdtp);
 			i++;
 		}
 
 		return ds;
 
-	}
-
-	// DAT NHIỀU PHÒNG
-	public boolean datNhieuPhong(ArrayList<ThongTinDatThuePhong> dsDatThuePhong) {
-		ConnectDB.getInstance();
-		Connection con = ConnectDB.getConnection();
-		Statement stmt = null;
-		Statement stmts = null;
-		int n = 0;
-		for (ThongTinDatThuePhong bangDatThuePhong : dsDatThuePhong) {
-			if (dsDatThuePhong.contains(bangDatThuePhong)) {
-				try {
-					stmt = con.createStatement();
-					stmts = con.createStatement();
-					String sql = "insert into BangDatThuePhong values('" + bangDatThuePhong.getMaDatPhong() + "','"
-							+ bangDatThuePhong.getKhachHang().getMaKH() + "','"
-							+ bangDatThuePhong.getPhong().getMaPhong() + "','" + bangDatThuePhong.getNgayDatPhong()
-							+ "','" + bangDatThuePhong.getNgayNhanPhong() + "','" + bangDatThuePhong.getNgayTraPhong()
-							+ "','" + bangDatThuePhong.getLoaiThue().getMaLoaiThue() + "',')";
-					String sqls = "update Phong set trangThai = 'Đã đặt' where maPhong = '"
-							+ bangDatThuePhong.getPhong().getMaPhong() + "'";
-					n = stmt.executeUpdate(sql);
-					stmts.executeUpdate(sqls);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		return n > 0;
 	}
 
 	// thêm danh sách phòng thuê
@@ -355,8 +308,8 @@ public class ThongTinDatThuePhongDao {
 
 		int i = 0;
 		for (Phong phong : dsPhong) {
-			bdtp = new ThongTinDatThuePhong(maKH + 'i', new KhachHang(maKH), phong, null, ngayNhan, ngayTra,
-					new LoaiThue(maLoaiThue));
+			bdtp = new ThongTinDatThuePhong(maKH + 'i', new KhachHang(maKH).getMaKH(), phong.getMaLoaiPhong(), null, ngayNhan, ngayTra,
+					maLoaiThue);
 			ds.add(bdtp);
 			i++;
 		}
@@ -378,12 +331,12 @@ public class ThongTinDatThuePhongDao {
 					stmt = con.createStatement();
 					stmts = con.createStatement();
 					String sql = "insert into BangDatThuePhong values('" + bangDatThuePhong.getMaDatPhong() + "','"
-							+ bangDatThuePhong.getKhachHang().getMaKH() + "','"
-							+ bangDatThuePhong.getPhong().getMaPhong() + "','" + bangDatThuePhong.getNgayDatPhong()
+							+ bangDatThuePhong.getMaKhachHang() + "','"
+							+ bangDatThuePhong.getMaPhong() + "','" + bangDatThuePhong.getNgayDatPhong()
 							+ "','" + bangDatThuePhong.getNgayNhanPhong() + "','" + bangDatThuePhong.getNgayTraPhong()
-							+ "','" + bangDatThuePhong.getLoaiThue().getMaLoaiThue() + "',')";
+							+ "','" + bangDatThuePhong.getMaLoaiThue() + "',')";
 					String sqls = "update Phong set trangThai = 'Đã Thuê' where maPhong = '"
-							+ bangDatThuePhong.getPhong().getMaPhong() + "'";
+							+ bangDatThuePhong.getMaPhong() + "'";
 					n = stmt.executeUpdate(sql);
 					stmts.executeUpdate(sqls);
 				} catch (Exception e) {
@@ -458,10 +411,11 @@ public class ThongTinDatThuePhongDao {
 		double tongTien = 0;
 		try {
 			stmt = con.createStatement();
-			
+
 			String sqls =
 
-					"SELECT dp.maDVPhong, dp.maPhongThue, SUM(dp.soLuong * dv.GiaThue) AS TongTien FROM DichVuPhong dp JOIN DichVu dv ON dp.maDV = dv.maDV WHERE dp.maDatPhong = '"+ maDatPhong + "' GROUP BY dp.maDVPhong, dp.maPhongThue;";
+					"SELECT dp.maDVPhong, dp.maPhongThue, SUM(dp.soLuong * dv.GiaThue) AS TongTien FROM DichVuPhong dp JOIN DichVu dv ON dp.maDV = dv.maDV WHERE dp.maDatPhong = '"
+							+ maDatPhong + "' GROUP BY dp.maDVPhong, dp.maPhongThue;";
 			ResultSet rs = stmt.executeQuery(sqls);
 			while (rs.next()) {
 				tongTien = rs.getDouble(1);
@@ -469,32 +423,6 @@ public class ThongTinDatThuePhongDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return tongTien;
-	}
-
-	// tính tổng tiền phòng
-	public double tinhTongTienPhong(String maKhachHang) {
-		ConnectDB.getInstance();
-		Connection con = ConnectDB.getConnection();
-		Statement stmt = null;
-		double tongTien = 0;
-		try {
-			stmt = con.createStatement();
-			String sql = "SELECT dp.maLoaiThue, dp.maPhongThue, SUM(dp.soLuong * dv.GiaThue) AS TongTien FROM LoaiThue dp JOIN ThongTinPhongDatThue dv ON dp.maLoaiThue = dv.maLoaiThue WHERE dp.khachHang = '"+ maKhachHang + "' GROUP BY dp.khachHang, dp.maPhongThue;";
-			ResultSet rs = stmt.executeQuery(sql);
-			while (rs.next()) {
-				tongTien = rs.getDouble(1);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return tongTien;
-	}
-
-	// tính tổng tiền
-	public double tinhTongTien(String maDatPhong) {
-		double tongTien = 0;
-		tongTien = tinhTongTienDichVu(maDatPhong) + tinhTongTienPhong(maDatPhong);
 		return tongTien;
 	}
 
@@ -515,7 +443,7 @@ public class ThongTinDatThuePhongDao {
 		}
 		return n > 0;
 	}
-	
+
 	public ArrayList<Phong> timphongTheoDanhSachMa(ArrayList<String> soPhong) {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
@@ -550,8 +478,8 @@ public class ThongTinDatThuePhongDao {
 	}
 
 	// đặt phòng
-	public boolean datPhong(ArrayList<Phong> phong, KhachHang kh, LocalDate ngayDatPhong, LocalDate ngayNhanPhong, String maLoaiThue,
-			LocalDate ngayTraPhong) {
+	public boolean datPhong(ArrayList<Phong> phong, KhachHang kh, LocalDate ngayDatPhong, LocalDate ngayNhanPhong,
+			String maLoaiThue, LocalDate ngayTraPhong) {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
@@ -560,8 +488,11 @@ public class ThongTinDatThuePhongDao {
 			try {
 				String maDP = String.format("%s%s", kh.getMaKH(), i);
 				stmt = con.createStatement();
-				String sql = "insert into ThongTinDatThuePhong values('"+(maDP) +"', '"+ kh.getMaKH()+ "', '"+ phong2.getMaPhong() + "', '"+ ngayDatPhong + "', '"+ ngayNhanPhong + "', '"+ ngayTraPhong + "','" +maLoaiThue+"')";
-				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã đặt' WHERE maPhong = '" + phong2.getMaPhong() + "'";
+				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
+						+ phong2.getMaPhong() + "', '" + ngayDatPhong + "', '" + ngayNhanPhong + "', '" + ngayTraPhong
+						+ "','" + maLoaiThue + "')";
+				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã đặt' WHERE maPhong = '" + phong2.getMaPhong()
+						+ "'";
 				stmt.executeUpdate(sql);
 				stmt.executeUpdate(sql1);
 				i++;
@@ -570,6 +501,24 @@ public class ThongTinDatThuePhongDao {
 			}
 		}
 		return true;
+	}
+
+	public ArrayList<String> layDanhSachPhongTheoMaKhachHang(String maKH) {
+		ArrayList<String> dsPhong = new ArrayList<String>();
+		try {
+			Connection con = ConnectDB.getInstance().getConnection();
+			String sql = "Select * from ThongTinDatThuePhong where maKhachHang = '" + maKH + "'";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				String maPhong = rs.getString(3);
+				dsPhong.add(maPhong);
+			}
+			return dsPhong;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dsPhong;
 	}
 
 }

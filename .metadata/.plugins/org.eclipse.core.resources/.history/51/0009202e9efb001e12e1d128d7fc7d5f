@@ -200,7 +200,6 @@ public class KhachHangDao {
 				String maHangThanhVien = rs.getString(8);
 				String quocTich = rs.getString(9);
 				kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, maHangThanhVien, quocTich);
-				return kh;
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();

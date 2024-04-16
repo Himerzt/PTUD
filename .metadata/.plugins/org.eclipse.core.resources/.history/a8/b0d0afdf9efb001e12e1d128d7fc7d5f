@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
 import dao.DichVuDao;
+import dao.DichVuPhongDao;
 import dao.KhachHangDao;
 import dao.LoaiPhongDao;
 import dao.LoaiThueDao;
@@ -433,7 +434,7 @@ public class DatPhong extends javax.swing.JDialog {
 
 		comboBoxDichVu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 		comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel<>(loadDanhSachDichVu()));
-		
+
 		btnDatPhong.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				btnDatPhongActionPerformed(evt);
@@ -474,7 +475,7 @@ public class DatPhong extends javax.swing.JDialog {
 				btnHuyActionPerformed(evt);
 			}
 		});
-		
+
 		// Tính giá cọc mỗi khi chọn kiểu thuê
 		cbKieuThue.addActionListener(e -> setGiaCoc());
 		// Mỗi khi ngày đặt / ngày nhận thay đổi thì tính lại giá cọc
@@ -483,10 +484,12 @@ public class DatPhong extends javax.swing.JDialog {
 			public void changedUpdate(DocumentEvent e) {
 				setGiaCoc();
 			}
+
 			@Override
 			public void insertUpdate(DocumentEvent e) {
 				setGiaCoc();
 			}
+
 			@Override
 			public void removeUpdate(DocumentEvent e) {
 				setGiaCoc();
@@ -509,8 +512,12 @@ public class DatPhong extends javax.swing.JDialog {
 			}
 		});
 
-
 		btnDatPhong.setText("Đặt phòng");
+		tableDV.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+			}
+		});
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING).addGroup(jPanel1Layout
@@ -613,7 +620,7 @@ public class DatPhong extends javax.swing.JDialog {
 			model.addRow(rowData);
 		}
 	}
-	
+
 	public double setGiaCoc() {
 		String[] dsPhongDat = layDanhSachPhongDat();
 		PhongDao phongDao = new PhongDao();
@@ -629,16 +636,15 @@ public class DatPhong extends javax.swing.JDialog {
 		String loaiPhong = "";
 		String maLoaiThue = "";
 		double soTienCoc = 0;
-		
+
 		// Tính tiền cọc
 		for (Phong phong : dsPhong) {
 			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
 			maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), loaiPhong);
 			if (ngayDat.equals(ngayNhan)) {
 				return soTienCoc = 0;
-				
-			}
-			else if (ngayDat.isBefore(ngayNhan)) {
+
+			} else if (ngayDat.isBefore(ngayNhan)) {
 				soTienCoc += loaiThueDao.timGiaCocTheoMaThue(maLoaiThue);
 			}
 		}
@@ -658,7 +664,6 @@ public class DatPhong extends javax.swing.JDialog {
 		ThongTinDatThuePhongDao thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
 		KhachHangDao khachHangDao = new KhachHangDao();
 		KhachHang khachHang = khachHangDao.timTheoCCCD(txtCCCD.getText());
-		LoaiThueDao loaiThueDao = new LoaiThueDao();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		LocalDate ngayDat = LocalDate.parse(txtCheckIn.getText(), formatter);
 		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), formatter);
@@ -673,18 +678,46 @@ public class DatPhong extends javax.swing.JDialog {
 		} else {
 			kieuThue = "N";
 		}
-		String kieuThue = cbKieuThue.getSelectedItem().toString();
-		
+
 		for (Phong phong : dsPhong) {
 			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
-			maLoaiThue = loaiThueDao.timLoaiThueTheoTenLoaiThueVaMaLoaiPhong(kieuThue, loaiPhong).getMaLoaiThue();
-			System.out.println(maLoaiThue);
+			if (loaiPhong.equalsIgnoreCase("Tiêu chuẩn"))
+				loaiPhong = "TC";
+			else if (loaiPhong.equalsIgnoreCase("Cao cấp"))
+				loaiPhong = "CC";
+			else if (loaiPhong.equalsIgnoreCase("Nâng cao"))
+				loaiPhong = "NC";
+			else
+				loaiPhong = "TG";
+			maLoaiThue = String.format("%s%s", kieuThue, loaiPhong);
 		}
-		double tienCoc = setGiaCoc();
 
-		if (thongTinDatThuePhongDao.datPhong(dsPhong, khachHang, ngayDat, ngayNhan, maLoaiThue, ngayTra, tienCoc)) {
+		// Lưu dịch vụ sử dụng trong bảng Dịch vụ xuống db
+		ArrayList<String> dv = new ArrayList<String>();
+		ArrayList<Integer> sl = new ArrayList<Integer>();
+		ArrayList<String> phong = new ArrayList<String>();
+		for (int i = 0; i < tableDV.getRowCount(); i++) {
+			for (int j = 0; j < tableDV.getColumnCount(); j++) {
+
+				if (j == 1) {
+					String chuoiCat = tableDV.getValueAt(i, j).toString().substring(0, 5);
+					dv.add(chuoiCat);
+				}
+				if (j == 2) {
+					sl.add(Integer.parseInt(tableDV.getValueAt(i, j).toString()));
+				}
+				if (j == 3) {
+					phong.add(tableDV.getValueAt(i, j).toString());
+				}
+
+			}
+		}
+		DichVuPhongDao dichVuPhong = new DichVuPhongDao();
+		System.out.println(dichVuPhong.themDanhSachDichVuPhong(phong, dv, sl));
+
+		if (thongTinDatThuePhongDao.datPhong(dsPhong, khachHang, ngayDat, ngayNhan, maLoaiThue, ngayTra)) {
 			JOptionPane.showMessageDialog(this, "Đặt phòng thành công");
-//			DatPhong.this.dispose();
+			DatPhong.this.dispose();
 		} else {
 			JOptionPane.showMessageDialog(this, "Đặt phòng thất bại");
 		}
@@ -701,40 +734,45 @@ public class DatPhong extends javax.swing.JDialog {
 		dateNgayDat.showPopup();
 	}// GEN-LAST:event_btnNgayDatActionPerformed
 
-	private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDichVuActionPerformed
-	    loadDanhSachDichVu();
-	    DichVuDao dvDao = new DichVuDao();
-	    int selectedPhong = tableDanhSachPhong.getSelectedRow();
-	    if (selectedPhong != -1) {
-	        String tenPhong = tableDanhSachPhong.getValueAt(selectedPhong, 1).toString();
-	        String maDichVu = comboBoxDichVu.getSelectedItem().toString().split(" ")[0];
-	        double giaDichVu = dvDao.timTheoMaDichVu(maDichVu).getGiaDV();
-	        DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
-	        // Kiểm tra và tăng giá trị cột số lượng nếu trùng tên phòng và mã dịch vụ
-	        boolean daThem = false;
-	        for (int i = 0; i < model.getRowCount(); i++) {
-	            String tenPhongTrongBang = model.getValueAt(i, 3).toString();
-	            String maDichVuTrongBang = model.getValueAt(i, 1).toString().split(" ")[0];
-	            if (tenPhong.equals(tenPhongTrongBang) && maDichVu.equals(maDichVuTrongBang)) {
-	                int soLuongHienTai = Integer.parseInt(model.getValueAt(i, 2).toString());
-	                int soLuongMoi = soLuongHienTai + 1;
-	                model.setValueAt(soLuongMoi, i, 2);
-	                
-	                // Cập nhật lại giá dịch vụ
-	                double giaMoi = giaDichVu * soLuongMoi;
-	                model.setValueAt(giaMoi, i, 4);
-	                
-	                daThem = true;
-	                break;
-	            }
-	        }
-	        if (!daThem) {
-	            Object[] rowData = { model.getRowCount() + 1, comboBoxDichVu.getSelectedItem().toString(), 1, tenPhong, giaDichVu};
-	            model.addRow(rowData);
-	        }
-	    } else {
-	        JOptionPane.showMessageDialog(this, "Vui lòng chọn phòng cần thêm dịch vụ");
-	    }
+	private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemDichVuActionPerformed
+		loadDanhSachDichVu();
+		PhongDao phongDao = new PhongDao();
+		DichVuDao dvDao = new DichVuDao();
+		DichVuPhongDao dvPhongDao = new DichVuPhongDao();
+		DichVuPhong dvPhong = new DichVuPhong();
+		int selectedPhong = tableDanhSachPhong.getSelectedRow();
+		if (selectedPhong != -1) {
+			String tenPhong = tableDanhSachPhong.getValueAt(selectedPhong, 1).toString();
+			String maDichVu = comboBoxDichVu.getSelectedItem().toString().split(" ")[0];
+			dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tenPhong));
+			dvPhong.setMaDichVu(maDichVu);
+			double giaDichVu = dvDao.timTheoMaDichVu(maDichVu).getGiaDV();
+			DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
+			// Kiểm tra và tăng giá trị cột số lượng nếu trùng tên phòng và mã dịch vụ
+			boolean daThem = false;
+			for (int i = 0; i < model.getRowCount(); i++) {
+				String tenPhongTrongBang = model.getValueAt(i, 3).toString();
+				String maDichVuTrongBang = model.getValueAt(i, 1).toString().split(" ")[0];
+				if (tenPhong.equals(tenPhongTrongBang) && maDichVu.equals(maDichVuTrongBang)) {
+					int soLuongHienTai = Integer.parseInt(model.getValueAt(i, 2).toString());
+					int soLuongMoi = soLuongHienTai + 1;
+					model.setValueAt(soLuongMoi, i, 2);
+					dvPhong.setSoLuong(soLuongMoi);
+					// Cập nhật lại giá dịch vụ
+					double giaMoi = giaDichVu * soLuongMoi;
+					model.setValueAt(giaMoi, i, 4);
+					daThem = true;
+					break;
+				}
+			}
+			if (!daThem) {
+				Object[] rowData = { model.getRowCount() + 1, comboBoxDichVu.getSelectedItem().toString(), 1, tenPhong,
+						giaDichVu };
+				model.addRow(rowData);
+			}
+		} else {
+			JOptionPane.showMessageDialog(this, "Vui lòng chọn phòng cần thêm dịch vụ");
+		}
 	}// GEN-LAST:event_btnThemDichVuActionPerformed
 
 	private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed
@@ -761,10 +799,8 @@ public class DatPhong extends javax.swing.JDialog {
 					"Xác nhận", JOptionPane.YES_NO_OPTION);
 			if (JOptionPane.YES_OPTION == 0) {
 				// Mở form thêm khách hàng
-
-				// Thêm khách hàng vào CSDL
-
-				// Sau khi thêm xong thì fill các textfield còn lại
+				JOptionPane.showMessageDialog(this,
+						"Vui lòng thoát đặt phòng và thêm khách hàng ở mục Quản lý khách hàng trong menu");
 			}
 		}
 

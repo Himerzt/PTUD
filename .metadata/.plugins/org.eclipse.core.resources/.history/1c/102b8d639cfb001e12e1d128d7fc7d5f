@@ -138,7 +138,7 @@ public class DichVuPhongDao {
 			Statement stmt = con.createStatement();
 			for (int i = 0; i < dsDichVu.size(); i++) {
 				String maDVSU = String.format("%s%s", maPhong.get(i), String.valueOf(dsSoLuong.get(i)));
-				String sql = "insert into DichVuPhong values('" + maDVSU + "','" + maPhong.get(i) + "','" + dsDichVu.get(i) + "',"
+				String sql = "insert into DichVuPhong values('" + maPhong.get(i) + "','" + maPhong.get(i) + "','" + dsDichVu.get(i) + "',"
 						+ dsSoLuong.get(i) + ")";
 				stmt.executeUpdate(sql);
 			}

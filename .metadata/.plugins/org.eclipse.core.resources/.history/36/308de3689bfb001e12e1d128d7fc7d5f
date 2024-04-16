@@ -137,16 +137,16 @@ public class DichVuPhongDao {
 			Connection con = ConnectDB.getConnection();
 			Statement stmt = con.createStatement();
 			for (int i = 0; i < dsDichVu.size(); i++) {
-				String maDVSU = String.format("%s%s", maPhong.get(i), String.valueOf(dsSoLuong.get(i)));
-				String sql = "insert into DichVuPhong values('" + maDVSU + "','" + maPhong.get(i) + "','" + dsDichVu.get(i) + "',"
+				String sql = "insert into DichVuPhong values('" + maPhong.get(i) + "','" + dsDichVu.get(i) + "',"
 						+ dsSoLuong.get(i) + ")";
 				stmt.executeUpdate(sql);
 			}
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
 		}
-		return false;
+
 	}
 
 	public List<DichVuPhong> timDichVuPhongTheoMaPhong(ArrayList<String> dsPhong) {
