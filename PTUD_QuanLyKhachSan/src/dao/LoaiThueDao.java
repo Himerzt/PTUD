@@ -43,6 +43,7 @@ public class LoaiThueDao {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 tienCoc = rs.getDouble("giaCocToiThieu");
+                return tienCoc;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,7 +53,7 @@ public class LoaiThueDao {
 	
 	public LoaiThue timLoaiThueTheoTenLoaiThueVaMaLoaiPhong(String tenLoaiThue, String maLoaiPhong) {
 		try (Connection con = ConnectDB.getInstance().getConnection()) {
-			String sql = "Select * from LoaiThue where kieuThue like '%" + tenLoaiThue + "%' and maLoaiPhong = '"
+			String sql = "Select * from LoaiThue where kieuThue = '" + tenLoaiThue + "' and maLoaiPhong = '"
 					+ maLoaiPhong + "'";
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
@@ -69,5 +70,23 @@ public class LoaiThueDao {
 			e.printStackTrace();
 		}
 		return loaiThue;
+	}
+	
+	public double timGiaThueTheoLoaiThue(String maLoaiThue) {
+        double giaThue = 0;
+        try {
+            Connection con = ConnectDB.getConnection();
+            PreparedStatement stmt = con.prepareStatement("select giaThue from LoaiThue where maLoaiThue = ?");
+            stmt.setString(1, maLoaiThue);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                giaThue = rs.getDouble("giaThue");
+                return giaThue;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return giaThue;
+		
 	}
 }

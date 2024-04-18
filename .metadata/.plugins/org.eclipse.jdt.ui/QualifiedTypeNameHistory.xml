@@ -30,4 +30,5 @@
     <fullyQualifiedTypeName name="dao.PhongDao"/>
     <fullyQualifiedTypeName name="entity.Phong"/>
     <fullyQualifiedTypeName name="dao.ThongTinDatThuePhongDao"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 </qualifiedTypeNameHistroy>

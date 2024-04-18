@@ -14,7 +14,7 @@ public class NhanVien {
 	private String email;
 	private String CCCD;
 	private String diaChi;
-	private ChucVu chucVu;
+	private String chucVu;
 	private LocalDate ngayVaoLam;
 
 	public String getMaNV() {
@@ -81,11 +81,11 @@ public class NhanVien {
 		this.diaChi = diaChi;
 	}
 
-	public ChucVu getChucVu() {
+	public String getChucVu() {
 		return chucVu;
 	}
 
-	public void setChucVu(ChucVu chucVu) {
+	public void setChucVu(String chucVu) {
 		this.chucVu = chucVu;
 	}
 
@@ -98,7 +98,7 @@ public class NhanVien {
 	}
 
 	public NhanVien(String maNV, String hoTenNV, LocalDate ngaySinh, String gioiTinh, String soDT, String email,
-			String cCCD, String diaChi, ChucVu chucVu, LocalDate ngayVaoLam) {
+			String cCCD, String diaChi, String chucVu, LocalDate ngayVaoLam) {
 		super();
 		this.maNV = maNV;
 		this.hoTenNV = hoTenNV;

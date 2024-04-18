@@ -26,6 +26,7 @@ public class HangThanhVienDao {
 				String tenHang = rs.getString(2);
 				double tiLeChietKhau = rs.getDouble(3);
 				hangThanhVien = new HangThanhVien(maHang1, tenHang, tiLeChietKhau);
+				return hangThanhVien;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
