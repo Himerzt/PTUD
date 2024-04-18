@@ -55,7 +55,7 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				ChucVu chucVu = new ChucVu(rs.getString(9));
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				nv = new NhanVien(maNV, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu, ngayVaoLam);
+				nv = new NhanVien(maNV, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu.getMaChucVu(), ngayVaoLam);
 				dsnv.add(nv);
 			}
 		} catch (SQLException e) {
@@ -78,7 +78,7 @@ public class NhanVienDao {
 			stmt.setString(5, nv.getSoDT());
 			stmt.setString(6, nv.getEmail());
 			stmt.setString(7, nv.getCCCD());
-			stmt.setString(8, nv.getChucVu().getMaChucVu());
+			stmt.setString(8, nv.getChucVu());
 			stmt.setDate(9, java.sql.Date.valueOf(nv.getNgayVaoLam()));
 			n = stmt.executeUpdate();
 		} catch (SQLException e) {
@@ -103,7 +103,7 @@ public class NhanVienDao {
 				stmt.setString(5, nv.getEmail());
 				stmt.setString(6, nv.getCCCD());
 				stmt.setString(7, nv.getDiaChi());
-				stmt.setString(8, nv.getChucVu().getMaChucVu());
+				stmt.setString(8, nv.getChucVu());
 				stmt.setDate(9, java.sql.Date.valueOf(nv.getNgayVaoLam()));
 				stmt.setString(11, nv.getMaNV());
 				n = stmt.executeUpdate();
@@ -151,7 +151,7 @@ public class NhanVienDao {
 				ChucVu chucVu = new ChucVu(rs.getString(9));
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
 
-				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu, ngayVaoLam);
+				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu.getMaChucVu(), ngayVaoLam);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -180,7 +180,7 @@ public class NhanVienDao {
 				ChucVu chucVu = new ChucVu(rs.getString(9));
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
 
-				nv = new NhanVien(maNV1, hoTenNV1, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu, ngayVaoLam);
+				nv = new NhanVien(maNV1, hoTenNV1, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu.getMaChucVu(), ngayVaoLam);
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -207,7 +207,7 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, new ChucVu(maChucVu),
+				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, maChucVu,
 						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
@@ -235,7 +235,7 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam1 = rs.getDate(10).toLocalDate();
-				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, new ChucVu(chucVu),
+				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu,
 						ngayVaoLam1);
 			}
 		} catch (SQLException ex) {
@@ -263,7 +263,7 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu1 = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, new ChucVu(chucVu1),
+				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu1,
 						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
@@ -291,7 +291,7 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh1, soDT, email, CCCD, diaChi, new ChucVu(chucVu),
+				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh1, soDT, email, CCCD, diaChi, chucVu,
 						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
@@ -319,7 +319,7 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT1, email, CCCD, diaChi, new ChucVu(chucVu),
+				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT1, email, CCCD, diaChi, chucVu,
 						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
@@ -347,7 +347,7 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email1, CCCD, diaChi, new ChucVu(chucVu),
+				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email1, CCCD, diaChi, chucVu,
 						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
@@ -375,7 +375,7 @@ public class NhanVienDao {
 				String diaChi = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD1, diaChi, new ChucVu(chucVu),
+				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD1, diaChi, chucVu,
 						ngayVaoLam);
 			}
 		} catch (SQLException ex) {
@@ -403,7 +403,7 @@ public class NhanVienDao {
 				String diaChi1 = rs.getString(8);
 				String chucVu = rs.getString(9);
 				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
-				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi1, new ChucVu(chucVu),
+				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi1, chucVu,
 						ngayVaoLam);
 			}
 		} catch (SQLException ex) {

@@ -10,6 +10,7 @@ public class ThongTinDatThuePhong {
 	private LocalDate ngayNhanPhong;
 	private LocalDate ngayTraPhong;
 	private String maLoaiThue;
+	private double tienDaCoc;
 
 	public String getMaDatPhong() {
 		return maDatPhong;
@@ -75,9 +76,17 @@ public class ThongTinDatThuePhong {
 	public void setMaLoaiThue(String maLoaiThue) {
 		this.maLoaiThue = maLoaiThue;
 	}
+	
+	public double getTienDaCoc() {
+		return tienDaCoc;
+	}
+	
+	public void setTienDaCoc(double tienDaCoc) {
+		this.tienDaCoc = tienDaCoc;
+	}
 
 	public ThongTinDatThuePhong(String maDatPhong, String maKhachHang, String maPhong, LocalDate ngayDatPhong,
-			LocalDate ngayNhanPhong, LocalDate ngayTraPhong, String maLoaiThue) {
+			LocalDate ngayNhanPhong, LocalDate ngayTraPhong, String maLoaiThue, double tienDaCoc) {
 		super();
 		this.maDatPhong = maDatPhong;
 		this.maKhachHang = maKhachHang;
@@ -86,15 +95,14 @@ public class ThongTinDatThuePhong {
 		this.ngayNhanPhong = ngayNhanPhong;
 		this.ngayTraPhong = ngayTraPhong;
 		this.maLoaiThue = maLoaiThue;
+		this.tienDaCoc = tienDaCoc;
 	}
-	
-	@Override
-	public String toString() {
-		return "ThongTinDatThuePhong [maDatPhong=" + maDatPhong + ", maKhachHang=" + maKhachHang + ", maPhong="
-				+ maPhong + ", ngayDatPhong=" + ngayDatPhong + ", ngayNhanPhong=" + ngayNhanPhong + ", ngayTraPhong="
-				+ ngayTraPhong + ", maLoaiThue=" + maLoaiThue + "]";
-	}
-	
-	
 
+    @Override
+	public String toString() {
+		return "ThongTinDatThuePhong{" + "maDatPhong='" + maDatPhong + '\'' + ", maKhachHang='" + maKhachHang + '\''
+				+ ", maPhong='" + maPhong + '\'' + ", ngayDatPhong=" + ngayDatPhong + ", ngayNhanPhong=" + ngayNhanPhong
+				+ ", ngayTraPhong=" + ngayTraPhong + ", maLoaiThue='" + maLoaiThue + '\'' + ", tienDaCoc=" + tienDaCoc
+				+ '}';
+	}
 }

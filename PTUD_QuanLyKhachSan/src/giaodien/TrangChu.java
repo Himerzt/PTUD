@@ -71,6 +71,7 @@ public class TrangChu extends javax.swing.JFrame {
 
 				if (index == 0) {
 					pnedUngDung.setSelectedIndex(0);
+					ganDuLieuPhongVaoTrangChu();
 				}
 
 				if (index == 1) {
@@ -178,8 +179,9 @@ public class TrangChu extends javax.swing.JFrame {
 
 		for (int i = 0; i < dsNhanVien.size(); i++) {
 			NhanVien nv = dsNhanVien.get(i);
+			String tenChucVu = new ChucVuDao().getChucVu(nv.getChucVu()).getTenChucVu();
 			Object[] rowData = { i + 1, nv.getMaNV(), nv.getHoTenNV(), nv.getNgaySinh(), nv.getGioiTinh(), nv.getSoDT(),
-					nv.getEmail(), nv.getCCCD(), nv.getDiaChi(), nv.getChucVu().getTenChucVu(), nv.getNgayVaoLam() };
+					nv.getEmail(), nv.getCCCD(), nv.getDiaChi(), tenChucVu, nv.getNgayVaoLam() };
 			model.addRow(rowData);
 		}
 	}
@@ -824,12 +826,17 @@ public class TrangChu extends javax.swing.JFrame {
 		jButton9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 		jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-log-out-32.png"))); // NOI18N
 		jButton9.setPreferredSize(new java.awt.Dimension(36, 36));
+		jButton9.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton9ActionPerformed(evt);
+			}
+		});
 
 		jPanel5.setBackground(new java.awt.Color(34, 124, 157));
 		jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
 		jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel10.setText("jLabel10");
+		jLabel10.setText("Admin");
 
 		javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
 		jPanel5Layout.setHorizontalGroup(
@@ -5835,6 +5842,11 @@ public class TrangChu extends javax.swing.JFrame {
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
 
+	protected void jButton9ActionPerformed(ActionEvent evt) {
+		// TODO Auto-generated method stub
+		this.hide();
+	}
+
 	private void txtHangThanhVienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtHangThanhVienActionPerformed
 		// TODO add your handling code here:
 	}// GEN-LAST:event_txtHangThanhVienActionPerformed
@@ -6214,7 +6226,7 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String maNhanVien = taoMaNhanVien(cbxChucVuNhanVien.getSelectedItem().toString(), ngayVaoLam);
 		NhanVien nv = new NhanVien(maNhanVien, tenNhanVien, ngaySinh, gioiTinh, soDienThoai, email, CCCD_Visa, diaChi,
-				chucVu, ngayVaoLam);
+				chucVu.getMaChucVu(), ngayVaoLam);
 		NhanVienDao nvdao = new NhanVienDao();
 		boolean themThanhCong = nvdao.themNhanVien(nv);
 		if (themThanhCong) {

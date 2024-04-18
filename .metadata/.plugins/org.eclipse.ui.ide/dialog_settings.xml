@@ -7,6 +7,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\document\Lesson\LTPTJava\Nhom5\PTUD_Nhom1"/>
+			<item value="D:\document\Lesson\LTPTJava\Nhom5"/>
 			<item value="D:\document\Lesson\PTUD\PTUD"/>
 			<item value="D:\document\Lesson\PTUD\Project\PTUD"/>
 			<item value="D:\document\Lesson\PTUD\PTUD\PTUD_QuanLyKhachSan"/>

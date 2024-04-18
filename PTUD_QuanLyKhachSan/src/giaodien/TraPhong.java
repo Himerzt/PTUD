@@ -425,6 +425,7 @@ public class TraPhong extends javax.swing.JDialog {
 			dsPhong.add(thongTin.getMaPhong());
 		}
 		// Lấy ngày đặt phòng và ngày trả phòng
+
 		txtCheckIn.setText(dsThongTin.get(1).getNgayDatPhong().toString());
 		txtCheckOut.setText(dsThongTin.get(1).getNgayTraPhong().toString());
 		
@@ -452,20 +453,23 @@ public class TraPhong extends javax.swing.JDialog {
 		modelDV.setRowCount(0);
 		DichVuPhongDao dvDao = new DichVuPhongDao();
 		danhSachDichVu = dvDao.timDichVuPhongTheoMaPhong(dsPhong);
-		i = 0;
+		int j = 0;
 		for (DichVuPhong dv : danhSachDichVu) {
+			System.out.println(dv.getMaDichVu());
 			String maDV = dv.getMaDichVu();
 			String tenDV = dvDao.timTheoMaDichVu(maDV).getTenDV();
 			int soLuong = dv.getSoLuong();
 			String maPhong = dv.getMaPhong();
 			double gia = dvDao.tinhTienTheoMaDichVu(maDV);
-			modelDV.addRow(new Object[] { i + 1, maDV, tenDV, soLuong, maPhong, gia });
-			i++;
+			modelDV.addRow(new Object[] { j + 1, maDV, tenDV, soLuong, maPhong, gia });
+			j++;
 		}
 		
 		// Tính tiền phòng
 		double tongTienPhong = thongTinDao.tinhTienTheoDanhSachPhong(dsPhongCD);
+		txtTraTruoc.setText(String.valueOf(dsThongTin.get(1).getTienDaCoc()));
 		txtTongHoaDon.setText(String.valueOf(tongTienPhong));
+		txtTienCanThu.setText(String.valueOf(tongTienPhong - Double.parseDouble(txtTraTruoc.getText())));
 	}
 
 	private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed

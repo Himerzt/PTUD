@@ -245,7 +245,7 @@ public class DatPhong extends javax.swing.JDialog {
 		});
 
 		cbKieuThue
-				.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theo ngày", "Theo giờ", "Qua đêm" }));
+				.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ngày", "Giờ", "Đêm" }));
 
 		jLabel33.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 		jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -272,7 +272,11 @@ public class DatPhong extends javax.swing.JDialog {
 		btnXemTienCoc.addActionListener(new ActionListener() {
 			//NÚT XEM TIỀN CỌC VIẾT Ở ĐÂY
 			public void actionPerformed(ActionEvent e) {
-			
+				//Lấy ngày đặt và ngày nhận từ textfield
+				LocalDate ngayDat = LocalDate.parse(txtCheckIn.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+				LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+				double tienCoc = tinhtienCoc(ngayDat, ngayNhan, cbKieuThue.getSelectedItem().toString());
+				txtGiaCoc.setText(String.valueOf(tienCoc));
 			}
 		});
 
@@ -488,42 +492,6 @@ public class DatPhong extends javax.swing.JDialog {
 			}
 		});
 
-		// Tính giá cọc mỗi khi chọn kiểu thuê
-		cbKieuThue.addActionListener(e -> setGiaCoc());
-		// Mỗi khi ngày đặt / ngày nhận thay đổi thì tính lại giá cọc
-		txtCheckIn.getDocument().addDocumentListener(new DocumentListener() {
-			@Override
-			public void changedUpdate(DocumentEvent e) {
-				setGiaCoc();
-			}
-
-			@Override
-			public void insertUpdate(DocumentEvent e) {
-				setGiaCoc();
-			}
-
-			@Override
-			public void removeUpdate(DocumentEvent e) {
-				setGiaCoc();
-			}
-		});
-		txtNgayNhan.getDocument().addDocumentListener(new DocumentListener() {
-			@Override
-			public void changedUpdate(DocumentEvent e) {
-				setGiaCoc();
-			}
-
-			@Override
-			public void insertUpdate(DocumentEvent e) {
-				setGiaCoc();
-			}
-
-			@Override
-			public void removeUpdate(DocumentEvent e) {
-				setGiaCoc();
-			}
-		});
-
 		btnDatPhong.setText("Đặt phòng");
 		tableDV.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
 			@Override
@@ -633,7 +601,7 @@ public class DatPhong extends javax.swing.JDialog {
 		}
 	}
 
-	public double setGiaCoc() {
+	public double tinhtienCoc(LocalDate ngayDat, LocalDate ngayNhan, String kieuThue) {
 		String[] dsPhongDat = layDanhSachPhongDat();
 		PhongDao phongDao = new PhongDao();
 		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
@@ -642,20 +610,14 @@ public class DatPhong extends javax.swing.JDialog {
 			dsPhong.add(phongDao.timPhongTheoSoPhong(Integer.parseInt(tenPhong)));
 		}
 		LoaiThueDao loaiThueDao = new LoaiThueDao();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		LocalDate ngayDat = LocalDate.parse(txtCheckIn.getText(), formatter);
-		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), formatter);
-		String loaiPhong = "";
 		String maLoaiThue = "";
 		double soTienCoc = 0;
 
 		// Tính tiền cọc
 		for (Phong phong : dsPhong) {
-			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
-			maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), loaiPhong);
+			maLoaiThue = loaiThueDao.timMaLoaiThue(kieuThue, phong.getMaLoaiPhong());
 			if (ngayDat.equals(ngayNhan)) {
-				return soTienCoc = 0;
-
+				soTienCoc += 0;
 			} else if (ngayDat.isBefore(ngayNhan)) {
 				soTienCoc += loaiThueDao.timGiaCocTheoMaThue(maLoaiThue);
 			}
@@ -683,9 +645,9 @@ public class DatPhong extends javax.swing.JDialog {
 		String maLoaiThue = "";
 		String loaiPhong = "";
 		String kieuThue = "";
-		if (cbKieuThue.getSelectedItem().toString().equals("Theo ngày")) {
+		if (cbKieuThue.getSelectedItem().toString().equals("Ngày")) {
 			kieuThue = "D";
-		} else if (cbKieuThue.getSelectedItem().toString().equals("Theo giờ")) {
+		} else if (cbKieuThue.getSelectedItem().toString().equals("Giờ")) {
 			kieuThue = "H";
 		} else {
 			kieuThue = "N";
@@ -725,10 +687,7 @@ public class DatPhong extends javax.swing.JDialog {
 			}
 		}
 		
-		DichVuPhongDao dichVuPhong = new DichVuPhongDao();
-		System.out.println(dichVuPhong.themDanhSachDichVuPhong(phong, dv, sl));
-
-		if (thongTinDatThuePhongDao.datPhong(dsPhong, khachHang, ngayDat, ngayNhan, maLoaiThue, ngayTra)) {
+		if (thongTinDatThuePhongDao.datPhong(dsPhong, khachHang, LocalDate.parse(txtCheckIn.getText(), formatter), LocalDate.parse(txtNgayNhan.getText(), formatter), maLoaiThue, LocalDate.parse(txtCheckOut.getText(), formatter), Double.parseDouble(txtGiaCoc.getText()))) {
 			JOptionPane.showMessageDialog(this, "Đặt phòng thành công");
 			DatPhong.this.dispose();
 		} else {
