@@ -52,13 +52,61 @@ import javax.swing.GroupLayout;
  * @author Huynguyen
  */
 public class TrangChuNew2 extends javax.swing.JFrame {
+	private ArrayList<javax.swing.JPanel> phongTrangChu;
+	private ArrayList<javax.swing.JLabel> loaiPhongTrangChu;
+	private ArrayList<javax.swing.JLabel> tenPhongTrangChu;
+	private ArrayList<javax.swing.JLabel> trangThaiPhongTrangChu;
     
     public TrangChuNew2() throws Exception {
-
+    	
         ConnectDB.getInstance().getConnection();
         setResizable(false);
         initComponents();
         
+        
+//        phongTrangChu6 = new giaodien.CustomClass.PanelRound();
+//        lblLoaiPhongTrangChu6 = new javax.swing.JLabel();
+//        lblTenPhongTrangChu6 = new javax.swing.JLabel();
+//        lblTrangThaiTrangChu6 = new javax.swing.JLabel();
+        phongTrangChu = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				phongTrangChu.add((JPanel) getClass().getDeclaredField("phongTrangChu" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		tenPhongTrangChu = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				tenPhongTrangChu.add((JLabel) getClass().getDeclaredField("lblTenPhongTrangChu" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		loaiPhongTrangChu = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				loaiPhongTrangChu.add((JLabel) getClass().getDeclaredField("lblLoaiPhongTrangChu" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		trangThaiPhongTrangChu = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				trangThaiPhongTrangChu.add((JLabel) getClass().getDeclaredField("lblTrangThaiTrangChu" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
         
         pnedUngDung.addTab("Quản lý phòng", new QuanLyPhongPannel());
         pnedUngDung.addTab("Quản lý nhân viên", new NhanVienPannel());
@@ -99,7 +147,8 @@ public class TrangChuNew2 extends javax.swing.JFrame {
             }
 
         });
-
+        
+        
     }
 
     ;
@@ -279,7 +328,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

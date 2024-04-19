@@ -6,6 +6,7 @@ public class LoaiPhong {
 	private double giaThue;
 	private double giaCocToiThieu;
 	private int soGiuong;
+	private int soNguoiToiDa;
 
 	public String getMaLoaiPhong() {
 		return maLoaiPhong;

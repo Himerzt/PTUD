@@ -5874,12 +5874,12 @@ public class TrangChu extends javax.swing.JFrame {
 		return matcher.matches();
 	}
 
-	public boolean regCCCD_Visa(String cccd_visa) {
+	public boolean regCCCD_Passport(String cccd_passport) {
 		// Regex cho mã số CCCD hoặc Visa
 		String regex = "^(\\d{12}|\\d{16})$";
 
 		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(cccd_visa);
+		Matcher matcher = pattern.matcher(cccd_passport);
 
 		return matcher.matches();
 	}
@@ -5913,7 +5913,7 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String CCCD_Visa = txtCanCuocKhachHang.getText();
 		// Kiểm tra CCCD / Visa
-		if (regCCCD_Visa(CCCD_Visa) == false) {
+		if (regCCCD_Passport(CCCD_Visa) == false) {
 			JOptionPane.showMessageDialog(null, "CCCD / Visa không hợp lệ");
 			return;
 		}
@@ -5951,7 +5951,7 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String CCCD_Visa = txtCanCuocKhachHang.getText();
 		// Kiểm tra CCCD / Visa
-		if (regCCCD_Visa(CCCD_Visa) == false) {
+		if (regCCCD_Passport(CCCD_Visa) == false) {
 			JOptionPane.showMessageDialog(null, "CCCD / Visa không hợp lệ");
 			return;
 		}
@@ -6201,7 +6201,7 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String CCCD_Visa = txtCanCuocCongDanNhanVien.getText();
 		// Kiểm tra CCCD
-		if (!regCCCD_Visa(CCCD_Visa)) {
+		if (!regCCCD_Passport(CCCD_Visa)) {
 			JOptionPane.showMessageDialog(this, "CCCD/Visa không hợp lệ");
 			return;
 		}
@@ -6860,8 +6860,7 @@ public class TrangChu extends javax.swing.JFrame {
         
         
 	private JFrame DatPhong(List<String> dsTenPhong) {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from
-																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		throw new UnsupportedOperationException("Not supported yet."); 
 	}
 	
 	public String layHangThanhVien(String maHang) {
