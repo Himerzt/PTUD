@@ -52,72 +52,75 @@ import javax.swing.GroupLayout;
  * @author Huynguyen
  */
 public class TrangChuNew2 extends javax.swing.JFrame {
+    
+    public TrangChuNew2() throws Exception {
 
-	public TrangChuNew2() throws Exception {
+        ConnectDB.getInstance().getConnection();
+        setResizable(false);
+        initComponents();
+        
+        
+        pnedUngDung.addTab("Quản lý phòng", new QuanLyPhongPannel());
+        pnedUngDung.addTab("Quản lý nhân viên", new NhanVienPannel());
+        pnedUngDung.addTab("Quản lý dịch vụ", new DichVuPannel());
+        pnedUngDung.addTab("Quản lý khuyến mãi", new KhuyenMaiPannel());
+        pnedUngDung.addTab("Quản lý khách hàng", new KhachHangPannel());
+        
+        Menu.setEvent(new MenuEvent() {
+            @Override
+            public void selected(int index, int subIndex) {
+                if (index == 6) {
+                    System.exit(0);
 
-		ConnectDB.getInstance().getConnection();
-		setResizable(false);
-		initComponents();
-		ganDuLieuPhongVaoTrangChu();
-		Menu.setEvent(new MenuEvent() {
-			@Override
-			public void selected(int index, int subIndex) {
-				if (index == 6) {
-					System.exit(0);
+                }
 
-				}
+                if (index == 0) {
+                    pnedUngDung.setSelectedIndex(0);
+                }
 
-				if (index == 0) {
-					pnedUngDung.setSelectedIndex(0);
-				}
+                if (index == 1) {
+                    pnedUngDung.setSelectedIndex(1);
+                }
 
-				if (index == 1) {
-					
-				}
+                if (index == 2) {
+                    pnedUngDung.setSelectedIndex(2);
+                }
+                if (index == 3) {
+                    pnedUngDung.setSelectedIndex(3);
+                }
 
-				if (index == 2) {
-					
-				}
-				if (index == 3) {
-					
-				}
+                if (index == 4) {
+                    pnedUngDung.setSelectedIndex(4);
+                }
+                if (index == 5) {
+                    pnedUngDung.setSelectedIndex(5);
+                }
 
-				if (index == 4) {
-					
-				}
-				if (index == 5) {
-					
-				}
+            }
 
-			}
+        });
 
-		});
+    }
 
-	};
-
-
-	
-
-	
-
-	
+    ;
 
 	@SuppressWarnings("unchecked")
 
-	// <editor-fold defaultstate="collapsed" desc="Generated
-	// <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         btnGROUPLoaiPhong = new javax.swing.ButtonGroup();
         btnGROUPTrangThai = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
+        scrollPaneWin112 = new ScollBar1.ScrollPaneWin11();
+        pnMenu = new javax.swing.JPanel();
+        Menu = new menu.Menu();
         pnHeader = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        pnMenu = new javax.swing.JPanel();
-        Menu = new menu.Menu();
         pnedUngDung = new javax.swing.JTabbedPane();
         pnTrangChu = new javax.swing.JPanel();
         pnLayoutSrool = new giaodien.CustomClass.PanelRound();
@@ -281,6 +284,27 @@ public class TrangChuNew2 extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        pnMenu.setPreferredSize(new java.awt.Dimension(240, 800));
+
+        javax.swing.GroupLayout pnMenuLayout = new javax.swing.GroupLayout(pnMenu);
+        pnMenu.setLayout(pnMenuLayout);
+        pnMenuLayout.setHorizontalGroup(
+            pnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnMenuLayout.createSequentialGroup()
+                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+        pnMenuLayout.setVerticalGroup(
+            pnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnMenuLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 809, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        scrollPaneWin112.setViewportView(pnMenu);
+
+        jPanel1.add(scrollPaneWin112, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 230, 780));
+
         pnHeader.setBackground(new java.awt.Color(34, 124, 157));
         pnHeader.setPreferredSize(new java.awt.Dimension(1553, 80));
 
@@ -318,9 +342,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
             .addGroup(pnHeaderLayout.createSequentialGroup()
                 .addGap(1062, 1062, 1062)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77))
+                .addGap(81, 81, 81))
         );
         pnHeaderLayout.setVerticalGroup(
             pnHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -333,23 +357,6 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         jPanel1.add(pnHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1520, -1));
-
-        pnMenu.setPreferredSize(new java.awt.Dimension(240, 800));
-
-        javax.swing.GroupLayout pnMenuLayout = new javax.swing.GroupLayout(pnMenu);
-        pnMenu.setLayout(pnMenuLayout);
-        pnMenuLayout.setHorizontalGroup(
-            pnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-        );
-        pnMenuLayout.setVerticalGroup(
-            pnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnMenuLayout.createSequentialGroup()
-                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 40, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(pnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
 
         pnedUngDung.setBackground(new java.awt.Color(255, 153, 102));
 
@@ -2148,21 +2155,17 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         pnLayoutSrool.setLayout(pnLayoutSroolLayout);
         pnLayoutSroolLayout.setHorizontalGroup(
             pnLayoutSroolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1215, Short.MAX_VALUE)
-            .addGroup(pnLayoutSroolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnLayoutSroolLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(scrollPaneWin111, javax.swing.GroupLayout.PREFERRED_SIZE, 1203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnLayoutSroolLayout.createSequentialGroup()
+                .addContainerGap(54, Short.MAX_VALUE)
+                .addComponent(scrollPaneWin111, javax.swing.GroupLayout.PREFERRED_SIZE, 1155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         pnLayoutSroolLayout.setVerticalGroup(
             pnLayoutSroolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 860, Short.MAX_VALUE)
-            .addGroup(pnLayoutSroolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnLayoutSroolLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(scrollPaneWin111, javax.swing.GroupLayout.PREFERRED_SIZE, 746, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(108, Short.MAX_VALUE)))
+            .addGroup(pnLayoutSroolLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(scrollPaneWin111, javax.swing.GroupLayout.PREFERRED_SIZE, 746, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnTrangChuLayout = new javax.swing.GroupLayout(pnTrangChu);
@@ -2172,7 +2175,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
             .addGroup(pnTrangChuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnLayoutSrool, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         pnTrangChuLayout.setVerticalGroup(
             pnTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2184,98 +2187,55 @@ public class TrangChuNew2 extends javax.swing.JFrame {
 
         pnedUngDung.addTab("tab1", pnTrangChu);
 
-        jPanel1.add(pnedUngDung, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 1240, 800));
+        jPanel1.add(pnedUngDung, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 1250, 800));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.LINE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public static void main(String args[]) {
 
-	public static void main(String args[]) {
-		/* Set the Nimbus look and feel */
-		// <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
-		// (optional) ">
-		/*
+        /* Set the Nimbus look and feel */
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
 		 * If Nimbus (introduced in Java SE 6) is not available, stay with the default
 		 * look and feel. For details see
 		 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-		 */
-		try {
-			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		}
-		// </editor-fold>
-		// </editor-fold>
-		// </editor-fold>
-		// </editor-fold>
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
 
-		/* Create and display the form */
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TrangChuNew2 trangChu = new TrangChuNew2();
-					trangChu.setExtendedState(JFrame.MAXIMIZED_BOTH);
-					trangChu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					trangChu.setVisible(true);
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
-			}
-		});
-	}
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    TrangChuNew2 trangChu = new TrangChuNew2();
+                    trangChu.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                    trangChu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    trangChu.setVisible(true);
+                } catch (Exception e) {
+                    // TODO: handle exception
+                }
+            }
+        });
+    }
 
-//    TTK
-	private void ganDuLieuPhongVaoTrangChu() {
-//		PhongDao phongDao = new PhongDao();
-//		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
-//		for (int i = 0; i < phongTrangChu.size(); i++) {
-//			Phong phong = dsPhong.get(i);
-//			JPanel phongPanel = phongTrangChu.get(i);
-//			JLabel loaiPhong = loaiPhongTrangChu.get(i);
-//			JLabel soPhong = tenPhongTrangChu.get(i);
-//			JLabel trangThai = trangThaiPhongTrangChu.get(i);
-//
-//			// Gán thông tin phòng lên label
-//			soPhong.setText(Integer.toString(phong.getSoPhong()));
-//			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
-//				loaiPhong.setText("Tiêu chuẩn");
-//			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
-//				loaiPhong.setText("Nâng cao");
-//			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
-//				loaiPhong.setText("Cao cấp");
-//			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
-//				loaiPhong.setText("Thương gia");
-//			}
-//			trangThai.setText(phong.getTrangThai());
-//
-//			if (trangThai.getText().equalsIgnoreCase("Trống")) {
-//				phongPanel.setBackground(Color.green);
-//			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
-//				phongPanel.setBackground(Color.red);
-//			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
-//				phongPanel.setBackground(Color.yellow);
-//			}
-//
-//			if (phongPanel.isVisible() == false) {
-//				phongPanel.show();
-//			}
-//		}
-	}
-
-	
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private menu.Menu Menu;
@@ -2445,29 +2405,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
     private javax.swing.JPanel pnTrangChu;
     private javax.swing.JTabbedPane pnedUngDung;
     private ScollBar1.ScrollPaneWin11 scrollPaneWin111;
+    private ScollBar1.ScrollPaneWin11 scrollPaneWin112;
     // End of variables declaration//GEN-END:variables
-    //HUY add variable declaration
-    
-    
-//    private static void taoDanhSach(){
-//        ArrayList<> phongsTrangChu = new  ArrayList<>();
-//        for (int i = 1; i <= 35; i++) {
-//			try {
-//				phonsgTrangChu.add((giaodien.CustomClass.PanelRound) getClass().getDeclaredField("phongTrangChu" + i).get(this));
-//			} catch (Exception e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-//    }
-            
-            
 
-	
-	
-	
-        
-    
-	
-	
 }
