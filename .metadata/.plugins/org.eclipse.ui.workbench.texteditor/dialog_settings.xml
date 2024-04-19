@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="jButton9"/>
+		<item key="selection" value="txtSDT"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="txtSDT"/>
+			<item value="btnIn"/>
+			<item value="btnHoanThanh"/>
+			<item value="txtSoLuong"/>
+			<item value="btnThem"/>
+			<item value="btnLapHD"/>
+			<item value="xoaTrangTatCa"/>
+			<item value="settext"/>
 			<item value="jButton9"/>
 			<item value="btndang"/>
 			<item value="btnlo"/>
@@ -15,14 +23,6 @@
 			<item value="logout"/>
 			<item value="jLabel10"/>
 			<item value="đã thuê"/>
-			<item value="system"/>
-			<item value="out"/>
-			<item value="Theo ngày"/>
-			<item value="theo ngày"/>
-			<item value="btnXemTienCoc"/>
-			<item value="tableDanhSachPhong"/>
-			<item value="btnXoa"/>
-			<item value="&gt;&gt;&gt;"/>
 		</list>
 		<list key="replacehistory">
 			<item value="maLoai"/>
@@ -32,8 +32,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="955"/>
-		<item key="DIALOG_Y_ORIGIN" value="429"/>
+		<item key="DIALOG_X_ORIGIN" value="895"/>
+		<item key="DIALOG_Y_ORIGIN" value="163"/>
 		<item key="DIALOG_WIDTH" value="414"/>
 		<item key="DIALOG_HEIGHT" value="442"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
