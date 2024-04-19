@@ -352,7 +352,7 @@
                 </Component>
                 <Component class="giaodien.CustomClass.TextFieldShadow" name="txtQuocTich">
                 </Component>
-                <Component class="combobox.Combobox" name="combobox1">
+                <Component class="giaodien.CustomClass.Combobox" name="combobox1">
                 </Component>
                 <Component class="giaodien.CustomClass.Button" name="btnThem">
                   <Properties>

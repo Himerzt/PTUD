@@ -40,7 +40,7 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Container class="ScollBar1.ScrollPaneWin11" name="scrollPaneWin112">
+        <Container class="giaodien.CustomClass.ScrollPaneWin11" name="scrollPaneWin112">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="0" y="80" width="230" height="780"/>
@@ -247,7 +247,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="ScollBar1.ScrollPaneWin11" name="scrollPaneWin111">
+                    <Container class="giaodien.CustomClass.ScrollPaneWin11" name="scrollPaneWin111">
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>

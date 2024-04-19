@@ -46,7 +46,7 @@ public class KhachHangPannel extends javax.swing.JPanel {
         txtSoDienThoai = new giaodien.CustomClass.TextFieldShadow();
         txtNgaySinh = new giaodien.CustomClass.TextFieldShadow();
         txtQuocTich = new giaodien.CustomClass.TextFieldShadow();
-        combobox1 = new combobox.Combobox();
+        combobox1 = new giaodien.CustomClass.Combobox();
         btnThem = new giaodien.CustomClass.Button();
         btnCapNhap = new giaodien.CustomClass.Button();
         btnXoaTrang = new giaodien.CustomClass.Button();
@@ -337,7 +337,7 @@ public class KhachHangPannel extends javax.swing.JPanel {
     private giaodien.CustomClass.Button btnNgaySinh;
     private giaodien.CustomClass.Button btnThem;
     private giaodien.CustomClass.Button btnXoaTrang;
-    private combobox.Combobox combobox1;
+    private giaodien.CustomClass.Combobox combobox1;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;

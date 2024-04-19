@@ -38,7 +38,7 @@ public class ThemDichVuVaoPhong extends javax.swing.JFrame {
         txtMaKhachHang = new giaodien.CustomClass.TextFieldShadow();
         txtTenKhachHang = new giaodien.CustomClass.TextFieldShadow();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new ScollBar1.ScrollPaneWin11();
+        jScrollPane1 = new giaodien.CustomClass.ScrollPaneWin11();
         tableDV = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         comboBoxDichVu = new javax.swing.JComboBox<>();

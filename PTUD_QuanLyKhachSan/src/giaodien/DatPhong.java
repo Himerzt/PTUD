@@ -75,10 +75,10 @@ public class DatPhong extends javax.swing.JDialog {
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
-		dateNgaySinh = new chooserDay.DateChooser();
-		dateNgayDat = new chooserDay.DateChooser();
-		dateNgayTra = new chooserDay.DateChooser();
-		dateNgayNhan = new chooserDay.DateChooser();
+		dateNgaySinh = new giaodien.CustomClass.DateChooser();
+		dateNgayDat = new giaodien.CustomClass.DateChooser();
+		dateNgayTra = new giaodien.CustomClass.DateChooser();
+		dateNgayNhan = new giaodien.CustomClass.DateChooser();
 		jPanel1 = new javax.swing.JPanel();
 		jLabel1 = new javax.swing.JLabel();
 		jPanel2 = new javax.swing.JPanel();
@@ -112,10 +112,10 @@ public class DatPhong extends javax.swing.JDialog {
 		txtNgayNhan = new javax.swing.JTextField();
 		btnNgayNhan = new giaodien.CustomClass.Button();
 		jLabel32 = new javax.swing.JLabel();
-		jScrollPane2 = new ScollBar1.ScrollPaneWin11();
+		jScrollPane2 = new giaodien.CustomClass.ScrollPaneWin11();
 		tableDanhSachPhong = new javax.swing.JTable();
 		jLabel2 = new javax.swing.JLabel();
-		jScrollPane1 = new ScollBar1.ScrollPaneWin11();
+		jScrollPane1 = new giaodien.CustomClass.ScrollPaneWin11();
 		tableDV = new javax.swing.JTable();
 		jPanel3 = new javax.swing.JPanel();
 		comboBoxDichVu = new javax.swing.JComboBox<>();
@@ -837,10 +837,10 @@ public class DatPhong extends javax.swing.JDialog {
 	private javax.swing.JComboBox<String> cbBoxGioiTinh;
 	private javax.swing.JComboBox<String> cbKieuThue;
 	private javax.swing.JComboBox<String> comboBoxDichVu;
-	private chooserDay.DateChooser dateNgayDat;
-	private chooserDay.DateChooser dateNgayNhan;
-	private chooserDay.DateChooser dateNgaySinh;
-	private chooserDay.DateChooser dateNgayTra;
+	private giaodien.CustomClass.DateChooser dateNgayDat;
+	private giaodien.CustomClass.DateChooser dateNgayNhan;
+	private giaodien.CustomClass.DateChooser dateNgaySinh;
+	private giaodien.CustomClass.DateChooser dateNgayTra;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JLabel jLabel17;
 	private javax.swing.JLabel jLabel18;

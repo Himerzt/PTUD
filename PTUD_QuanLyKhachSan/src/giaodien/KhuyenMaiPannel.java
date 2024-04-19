@@ -40,7 +40,7 @@ public class KhuyenMaiPannel extends javax.swing.JPanel {
         txtTenKM = new giaodien.CustomClass.TextFieldShadow();
         txtNgayKetThuc = new giaodien.CustomClass.TextFieldShadow();
         txtGiaTriKM = new giaodien.CustomClass.TextFieldShadow();
-        comboboxDieuKien = new combobox.Combobox();
+        comboboxDieuKien = new giaodien.CustomClass.Combobox();
         btnThem = new giaodien.CustomClass.Button();
         btnCapNhap = new giaodien.CustomClass.Button();
         btnKetThuc = new giaodien.CustomClass.Button();
@@ -308,7 +308,7 @@ public class KhuyenMaiPannel extends javax.swing.JPanel {
     private giaodien.CustomClass.Button btnNgayNhan2;
     private giaodien.CustomClass.Button btnThem;
     private giaodien.CustomClass.Button btnXoaTrang;
-    private combobox.Combobox comboboxDieuKien;
+    private giaodien.CustomClass.Combobox comboboxDieuKien;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;

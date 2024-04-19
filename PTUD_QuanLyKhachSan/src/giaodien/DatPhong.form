@@ -2,7 +2,7 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <NonVisualComponents>
-    <Component class="chooserDay.DateChooser" name="dateNgaySinh">
+    <Component class="giaodien.CustomClass.DateChooser" name="dateNgaySinh">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="77" green="cb" red="ff" type="rgb"/>
@@ -12,7 +12,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="chooserDay.DateChooser" name="dateNgayDat">
+    <Component class="giaodien.CustomClass.DateChooser" name="dateNgayDat">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="77" green="cb" red="ff" type="rgb"/>
@@ -22,7 +22,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="chooserDay.DateChooser" name="dateNgayTra">
+    <Component class="giaodien.CustomClass.DateChooser" name="dateNgayTra">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="77" green="cb" red="ff" type="rgb"/>
@@ -32,7 +32,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="chooserDay.DateChooser" name="dateNgayNhan">
+    <Component class="giaodien.CustomClass.DateChooser" name="dateNgayNhan">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="77" green="cb" red="ff" type="rgb"/>
@@ -638,7 +638,7 @@
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ScollBar1.ScrollPaneWin11()"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new giaodien.CustomClass.ScrollPaneWin11()"/>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
 
@@ -717,7 +717,7 @@
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ScollBar1.ScrollPaneWin11()"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new giaodien.CustomClass.ScrollPaneWin11()"/>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
 

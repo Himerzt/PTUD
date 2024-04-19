@@ -38,7 +38,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
-import chooserDay.DateChooser;
+import giaodien.CustomClass.DateChooser;
 import connectDB.ConnectDB;
 import dao.PhongDao;
 import dao.TaiKhoanDao;
@@ -114,7 +114,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         btnGROUPLoaiPhong = new javax.swing.ButtonGroup();
         btnGROUPTrangThai = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        scrollPaneWin112 = new ScollBar1.ScrollPaneWin11();
+        scrollPaneWin112 = new giaodien.CustomClass.ScrollPaneWin11();
         pnMenu = new javax.swing.JPanel();
         Menu = new menu.Menu();
         pnHeader = new javax.swing.JPanel();
@@ -124,7 +124,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         pnedUngDung = new javax.swing.JTabbedPane();
         pnTrangChu = new javax.swing.JPanel();
         pnLayoutSrool = new giaodien.CustomClass.PanelRound();
-        scrollPaneWin111 = new ScollBar1.ScrollPaneWin11();
+        scrollPaneWin111 = new giaodien.CustomClass.ScrollPaneWin11();
         pnLayOutTrangChu = new javax.swing.JPanel();
         pnBody1 = new javax.swing.JPanel();
         Tang1_TrangChu = new javax.swing.JPanel();
@@ -2404,8 +2404,8 @@ public class TrangChuNew2 extends javax.swing.JFrame {
     private javax.swing.JPanel pnMenu;
     private javax.swing.JPanel pnTrangChu;
     private javax.swing.JTabbedPane pnedUngDung;
-    private ScollBar1.ScrollPaneWin11 scrollPaneWin111;
-    private ScollBar1.ScrollPaneWin11 scrollPaneWin112;
+    private giaodien.CustomClass.ScrollPaneWin11 scrollPaneWin111;
+    private giaodien.CustomClass.ScrollPaneWin11 scrollPaneWin112;
     // End of variables declaration//GEN-END:variables
 
 }

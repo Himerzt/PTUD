@@ -328,7 +328,7 @@
                 </Component>
                 <Component class="giaodien.CustomClass.TextFieldShadow" name="txtGiaTriKM">
                 </Component>
-                <Component class="combobox.Combobox" name="comboboxDieuKien">
+                <Component class="giaodien.CustomClass.Combobox" name="comboboxDieuKien">
                 </Component>
                 <Component class="giaodien.CustomClass.Button" name="btnThem">
                   <Properties>

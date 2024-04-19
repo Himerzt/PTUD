@@ -392,7 +392,7 @@
                 </Component>
                 <Component class="giaodien.CustomClass.TextFieldShadow" name="txtEmail">
                 </Component>
-                <Component class="combobox.Combobox" name="comboboxChucVu">
+                <Component class="giaodien.CustomClass.Combobox" name="comboboxChucVu">
                 </Component>
                 <Component class="giaodien.CustomClass.Button" name="btnThem">
                   <Properties>

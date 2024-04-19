@@ -93,10 +93,10 @@ public class TraPhong extends javax.swing.JDialog {
         txtTienCanThu = new javax.swing.JTextField();
         txtTienCanThu.setEditable(false);
         jLabel32 = new javax.swing.JLabel();
-        jScrollPane2 = new ScollBar1.ScrollPaneWin11();
+        jScrollPane2 = new giaodien.CustomClass.ScrollPaneWin11();
         tableDanhSachPhong = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new ScollBar1.ScrollPaneWin11();
+        jScrollPane1 = new giaodien.CustomClass.ScrollPaneWin11();
         tableDV = new javax.swing.JTable();
         btnHuy = new javax.swing.JButton();
         btnTraPhong = new javax.swing.JButton();
