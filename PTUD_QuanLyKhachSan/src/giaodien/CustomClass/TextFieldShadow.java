@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicTextFieldUI;
-import swing.shadow.ShadowRenderer;
+import giaodien.custom2.ShadowRenderer;
 
 public class TextFieldShadow extends JTextField {
 

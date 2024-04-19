@@ -38,7 +38,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
-import chooserDay.DateChooser;
+import giaodien.CustomClass.DateChooser;
 import connectDB.ConnectDB;
 import dao.PhongDao;
 import dao.TaiKhoanDao;
@@ -235,14 +235,14 @@ public class TrangChu extends javax.swing.JFrame {
 
 		btnGROUPLoaiPhong = new javax.swing.ButtonGroup();
 		btnGROUPTrangThai = new javax.swing.ButtonGroup();
-		dateNgaySinhNhanVien = new chooserDay.DateChooser();
-		dateNgayVaoLam = new chooserDay.DateChooser();
-		dateNgayBatDauKM = new chooserDay.DateChooser();
-		dateNgayKetThucKM = new chooserDay.DateChooser();
-		dateNgaySinhKhachHang = new chooserDay.DateChooser();
+		dateNgaySinhNhanVien = new giaodien.CustomClass.DateChooser();
+		dateNgayVaoLam = new giaodien.CustomClass.DateChooser();
+		dateNgayBatDauKM = new giaodien.CustomClass.DateChooser();
+		dateNgayKetThucKM = new giaodien.CustomClass.DateChooser();
+		dateNgaySinhKhachHang = new giaodien.CustomClass.DateChooser();
 		jPanel1 = new javax.swing.JPanel();
 		pnHeader = new javax.swing.JPanel();
-		Header = new component.Header();
+		Header = new giaodien.CustomClass.Header();
 		jButton9 = new javax.swing.JButton();
 		jPanel5 = new javax.swing.JPanel();
 		jLabel10 = new javax.swing.JLabel();
@@ -6379,7 +6379,7 @@ public class TrangChu extends javax.swing.JFrame {
 	}
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
-	private component.Header Header;
+	private giaodien.CustomClass.Header Header;
 	private menu.Menu Menu;
 	private javax.swing.JScrollPane ScrollPaneQuanLyPhong;
 	private javax.swing.JTable TableDichVu;

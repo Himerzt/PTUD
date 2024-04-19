@@ -65,10 +65,10 @@ public class TraPhong2 extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jScrollPane2 = new ScollBar1.ScrollPaneWin11();
+        jScrollPane2 = new giaodien.CustomClass.ScrollPaneWin11();
         tableDanhSachPhong = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new ScollBar1.ScrollPaneWin11();
+        jScrollPane1 = new giaodien.CustomClass.ScrollPaneWin11();
         tableDV = new javax.swing.JTable();
         panelTraPhong = new giaodien.CustomClass.PanelRound();
         jLabel17 = new javax.swing.JLabel();

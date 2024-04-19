@@ -379,7 +379,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="ScollBar1.ScrollPaneWin11" name="scrollPaneWin112">
+                <Container class="giaodien.CustomClass.ScrollPaneWin11" name="scrollPaneWin112">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
@@ -574,7 +574,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL1">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL1">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -658,7 +658,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL2">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL2">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -742,7 +742,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL3">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL3">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -826,7 +826,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL4">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL4">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -910,7 +910,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL5">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL5">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -994,7 +994,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL6">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL6">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1133,7 +1133,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL7">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL7">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1217,7 +1217,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL8">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL8">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1301,7 +1301,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL9">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL9">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1385,7 +1385,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL10">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL10">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1535,7 +1535,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL11">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL11">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1619,7 +1619,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL12">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL12">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1703,7 +1703,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL13">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL13">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1787,7 +1787,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL14">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL14">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1871,7 +1871,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL15">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL15">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1955,7 +1955,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL16">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL16">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2087,7 +2087,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL17">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL17">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2171,7 +2171,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL18">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL18">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2255,7 +2255,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL19">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL19">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2339,7 +2339,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL20">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL20">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2489,7 +2489,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL21">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL21">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2573,7 +2573,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL22">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL22">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2657,7 +2657,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL23">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL23">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2741,7 +2741,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL24">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL24">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2825,7 +2825,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL25">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL25">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2909,7 +2909,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL26">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL26">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -3041,7 +3041,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL27">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL27">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -3125,7 +3125,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL28">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL28">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -3209,7 +3209,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL29">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL29">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -3293,7 +3293,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL30">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL30">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -3444,7 +3444,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL31">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL31">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -3528,7 +3528,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL32">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL32">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -3612,7 +3612,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL33">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL33">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -3696,7 +3696,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL34">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL34">
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -3780,7 +3780,7 @@
                                     <Property name="text" type="java.lang.String" value="&#x110;ang thu&#xea;"/>
                                   </Properties>
                                 </Component>
-                                <Component class="checkbox.JCheckBoxCustom" name="checkBoxPhongQL35">
+                                <Component class="giaodien.CustomClass.JCheckBoxCustom" name="checkBoxPhongQL35">
                                 </Component>
                               </SubComponents>
                             </Container>

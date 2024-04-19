@@ -75,17 +75,17 @@ public class DatPhong2 extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dateNgaySinh = new chooserDay.DateChooser();
-        dateNgayDat = new chooserDay.DateChooser();
-        dateNgayTra = new chooserDay.DateChooser();
-        dateNgayNhan = new chooserDay.DateChooser();
+        dateNgaySinh = new giaodien.CustomClass.DateChooser();
+        dateNgayDat = new giaodien.CustomClass.DateChooser();
+        dateNgayTra = new giaodien.CustomClass.DateChooser();
+        dateNgayNhan = new giaodien.CustomClass.DateChooser();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jScrollPane2 = new ScollBar1.ScrollPaneWin11();
+        jScrollPane2 = new giaodien.CustomClass.ScrollPaneWin11();
         tableDanhSachPhong = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new ScollBar1.ScrollPaneWin11();
+        jScrollPane1 = new giaodien.CustomClass.ScrollPaneWin11();
         tableDV = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         panelRound1 = new giaodien.CustomClass.PanelRound();
@@ -94,7 +94,7 @@ public class DatPhong2 extends javax.swing.JDialog {
         jLabel19 = new javax.swing.JLabel();
         txtTenKH = new giaodien.CustomClass.TextFieldShadow();
         txtNgaySinh = new giaodien.CustomClass.TextFieldShadow();
-        cbBoxGioiTinh = new combobox.Combobox();
+        cbBoxGioiTinh = new giaodien.CustomClass.Combobox();
         jLabel20 = new javax.swing.JLabel();
         txtQuocTich = new giaodien.CustomClass.TextFieldShadow();
         txtSoDienThoai = new giaodien.CustomClass.TextFieldShadow();
@@ -106,7 +106,7 @@ public class DatPhong2 extends javax.swing.JDialog {
         txtCCCD = new giaodien.CustomClass.TextFieldShadow();
         jLabel24 = new javax.swing.JLabel();
         button1 = new giaodien.CustomClass.Button();
-        cbKieuThue = new combobox.Combobox();
+        cbKieuThue = new giaodien.CustomClass.Combobox();
         jLabel25 = new javax.swing.JLabel();
         txtCheckIn = new giaodien.CustomClass.TextFieldShadow();
         jLabel27 = new javax.swing.JLabel();
@@ -121,7 +121,7 @@ public class DatPhong2 extends javax.swing.JDialog {
         txtGiaPhong = new giaodien.CustomClass.TextFieldShadow();
         jLabel33 = new javax.swing.JLabel();
         panelRound2 = new giaodien.CustomClass.PanelRound();
-        comboBoxDichVu = new combobox.Combobox();
+        comboBoxDichVu = new giaodien.CustomClass.Combobox();
         btnThemDichVu = new giaodien.CustomClass.Button();
         btnDatPhong = new giaodien.CustomClass.Button();
         btnHuy = new giaodien.CustomClass.Button();
@@ -941,13 +941,13 @@ public class DatPhong2 extends javax.swing.JDialog {
     private giaodien.CustomClass.Button btnNgayTra;
     private giaodien.CustomClass.Button btnThemDichVu;
     private giaodien.CustomClass.Button button1;
-    private combobox.Combobox cbBoxGioiTinh;
-    private combobox.Combobox cbKieuThue;
-    private combobox.Combobox comboBoxDichVu;
-    private chooserDay.DateChooser dateNgayDat;
-    private chooserDay.DateChooser dateNgayNhan;
-    private chooserDay.DateChooser dateNgaySinh;
-    private chooserDay.DateChooser dateNgayTra;
+    private giaodien.CustomClass.Combobox cbBoxGioiTinh;
+    private giaodien.CustomClass.Combobox cbKieuThue;
+    private giaodien.CustomClass.Combobox comboBoxDichVu;
+    private giaodien.CustomClass.DateChooser dateNgayDat;
+    private giaodien.CustomClass.DateChooser dateNgayNhan;
+    private giaodien.CustomClass.DateChooser dateNgaySinh;
+    private giaodien.CustomClass.DateChooser dateNgayTra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
