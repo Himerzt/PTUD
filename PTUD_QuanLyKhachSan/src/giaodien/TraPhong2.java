@@ -480,7 +480,7 @@ public class TraPhong2 extends javax.swing.JDialog {
     hoaDonThanhToan.setVisible(true);
 
     // Tăng số hóa đơn sau khi tạo xong
-    HoaDonThanhToan.setOrderNumber(HoaDonThanhToan.getOrderNumber() + 1);
+//    HoaDonThanhToan.setOrderNumber(HoaDonThanhToan.getOrderNumber() + 1);
     }//GEN-LAST:event_btnTraPhongActionPerformed
 
     private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
