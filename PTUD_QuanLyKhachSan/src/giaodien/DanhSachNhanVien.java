@@ -87,6 +87,8 @@ public class DanhSachNhanVien extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtHoTen1 = new giaodien.CustomClass.TextFieldShadow();
         btnTimKiem = new giaodien.CustomClass.Button();
+        btnCapNhat = new giaodien.CustomClass.Button();
+        btnThem = new giaodien.CustomClass.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -185,6 +187,11 @@ public class DanhSachNhanVien extends javax.swing.JFrame {
         }
 
         btnCapLaiMatKhau.setText("Cấp lại mật khẩu");
+        btnCapLaiMatKhau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCapLaiMatKhauActionPerformed(evt);
+            }
+        });
 
         txtHoTen.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
@@ -203,6 +210,20 @@ public class DanhSachNhanVien extends javax.swing.JFrame {
             }
         });
 
+        btnCapNhat.setText("Cập nhật");
+        btnCapNhat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCapNhatActionPerformed(evt);
+            }
+        });
+
+        btnThem.setText("Thêm");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -215,14 +236,18 @@ public class DanhSachNhanVien extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtHoTen, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(118, 118, 118)
+                        .addGap(35, 35, 35)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(txtHoTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(96, 96, 96)
+                        .addGap(44, 44, 44)
                         .addComponent(btnTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCapLaiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCapLaiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCapNhat, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -240,7 +265,9 @@ public class DanhSachNhanVien extends javax.swing.JFrame {
                             .addComponent(txtHoTen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
                             .addComponent(btnTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCapLaiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnCapLaiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCapNhat, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(43, 43, 43))
         );
 
@@ -254,6 +281,20 @@ public class DanhSachNhanVien extends javax.swing.JFrame {
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTimKiemActionPerformed
+
+    private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
+        ThemNhanVien themNhanVien = new ThemNhanVien();
+        themNhanVien.setVisible(true);
+    }//GEN-LAST:event_btnCapNhatActionPerformed
+
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        CapNhatNhanVien capNhatNhanVien = new CapNhatNhanVien();
+        capNhatNhanVien.setVisible(true);
+    }//GEN-LAST:event_btnThemActionPerformed
+
+    private void btnCapLaiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapLaiMatKhauActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCapLaiMatKhauActionPerformed
 
     public static void main(String args[]) {
 
@@ -302,6 +343,8 @@ public class DanhSachNhanVien extends javax.swing.JFrame {
     private javax.swing.JTable DanhSachNhanVien;
     private menu.Menu Menu;
     private giaodien.CustomClass.Button btnCapLaiMatKhau;
+    private giaodien.CustomClass.Button btnCapNhat;
+    private giaodien.CustomClass.Button btnThem;
     private giaodien.CustomClass.Button btnTimKiem;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
