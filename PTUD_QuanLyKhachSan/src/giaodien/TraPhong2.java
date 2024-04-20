@@ -470,8 +470,8 @@ public class TraPhong2 extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTraPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraPhongActionPerformed
-        // Tạo một đối tượng mới của HoaDonThanhToan
-    HoaDonThanhToan hoaDonThanhToan = new HoaDonThanhToan();
+    // Tạo một đối tượng mới của HoaDonThanhToan
+    HoaDonThanhToan2 hoaDonThanhToan = new HoaDonThanhToan2();
 
     // Đặt phương thức để đóng cửa sổ khi người dùng đóng cửa sổ mới
     hoaDonThanhToan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -480,7 +480,7 @@ public class TraPhong2 extends javax.swing.JDialog {
     hoaDonThanhToan.setVisible(true);
 
     // Tăng số hóa đơn sau khi tạo xong
-//    HoaDonThanhToan.setOrderNumber(HoaDonThanhToan.getOrderNumber() + 1);
+     HoaDonThanhToan2.setOrderNumber(HoaDonThanhToan2.getOrderNumber() + 1);
     }//GEN-LAST:event_btnTraPhongActionPerformed
 
     private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
