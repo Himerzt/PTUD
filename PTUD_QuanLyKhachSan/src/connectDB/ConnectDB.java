@@ -16,7 +16,7 @@ public class ConnectDB {
 	}
 	
 	public static Connection getConnection() {
-		String url = "jdbc:sqlserver://localhost:1433;databasename=QUANLYKHACHSAN";
+		String url = "jdbc:sqlserver://localhost:1433;databasename=QuanLyDatPhongKhachSan";
 		String user = "sa";
 		String password = "sapassword";
 		try {

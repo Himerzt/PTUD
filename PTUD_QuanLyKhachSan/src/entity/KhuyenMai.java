@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 public class KhuyenMai {
 	private String maKM;
 	private String tenKM;
-	private Double giaTriKM;
+	private double giaTriKM;
 	private LocalDate thoiGianBatDau;
 	private LocalDate thoiGianKetThuc;
 	private double dieuKienApDung;

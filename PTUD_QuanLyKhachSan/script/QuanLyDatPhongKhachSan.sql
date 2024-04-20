@@ -1,5 +1,7 @@
 ﻿CREATE DATABASE QuanLyDatPhongKhachSan
 
+USE QuanLyDatPhongKhachSan
+
 CREATE TABLE ChucVu (
     MaChucVu NVARCHAR(2) PRIMARY KEY,
     TenChucVu NVARCHAR(10),
@@ -72,6 +74,7 @@ CREATE TABLE DichVu (
     GiaDV FLOAT
 );
 
+--Điều kiện áp dụng khuyến mãi string
 CREATE TABLE KhuyenMai (
     MaKhuyenMai NVARCHAR(10) PRIMARY KEY,
     TenKhuyenMai NVARCHAR(255),
