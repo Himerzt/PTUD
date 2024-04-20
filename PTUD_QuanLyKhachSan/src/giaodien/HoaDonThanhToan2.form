@@ -404,8 +404,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="inHoaDon" pref="32" max="32767" attributes="0"/>
-                      <Component id="huyHoaDon" max="32767" attributes="0"/>
+                      <Component id="huyHoaDon" pref="32" max="32767" attributes="0"/>
+                      <Component id="inHoaDon" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
