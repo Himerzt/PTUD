@@ -1,83 +1,70 @@
 package entity;
 
-import java.time.LocalDateTime;
-import java.util.Map;
+import java.time.LocalDate;
 
 public class ChiTietHoaDon {
-	private ThongTinNhanPhong phong;
-	private HoaDon hoaDon;
-	private LocalDateTime ngayDi;
-	private KhuyenMai khuyenMai;
-	private final double thueVAT = 0.1;
-	private double chietKhau;
-	private Map<String, Integer> dichVuSuDung;
-	private Map<String, Integer> dichVu;
-
-	public ThongTinNhanPhong getPhong() {
-		return phong;
-	}
-
-	public void setPhong(ThongTinNhanPhong phong) {
-		this.phong = phong;
-	}
-
-	public HoaDon getHoaDon() {
-		return hoaDon;
-	}
-
-	public void setHoaDon(HoaDon hoaDon) {
-		this.hoaDon = hoaDon;
-	}
-
-	public LocalDateTime getNgayDi() {
-		return ngayDi;
-	}
-
-	public void setNgayDi(LocalDateTime ngayDi) {
-		this.ngayDi = ngayDi;
-	}
-
-	public KhuyenMai getKhuyenMai() {
-		return khuyenMai;
-	}
-
-	public void setKhuyenMai(KhuyenMai khuyenMai) {
-		this.khuyenMai = khuyenMai;
-	}
-
-	public double getThueVAT() {
-		return thueVAT;
-	}
-
-	public double getChietKhau() {
-		return chietKhau;
-	}
-
-	public Map<String, Integer> getDichVu() {
-		return dichVu;
-	}
-
-	public void setDichVu(Map<String, Integer> dichVu) {
-		this.dichVu = dichVu;
-	}
-
-	public ChiTietHoaDon(Map<String, Integer> dichVu) {
+	private String maHD;
+	private String maTTDTP;
+    private String maLSDP;
+    private String maDVPSD;
+    private String maKM;
+    
+	public ChiTietHoaDon(String maHD, String maTTDTP, String maLSDP, String maDVPSD, String maKM) {
 		super();
-		this.dichVu = dichVu;
+		this.maHD = maHD;
+		this.maTTDTP = maTTDTP;
+		this.maLSDP = maLSDP;
+		this.maDVPSD = maDVPSD;
+		this.maKM = maKM;
 	}
 
-	public ChiTietHoaDon(ThongTinNhanPhong phong, HoaDon hoaDon, LocalDateTime ngayDi, KhuyenMai khuyenMai,
-			Map<String, Integer> dichVu) {
+	public ChiTietHoaDon() {
 		super();
-		this.phong = phong;
-		this.hoaDon = hoaDon;
-		this.ngayDi = ngayDi;
-		this.khuyenMai = khuyenMai;
-		this.dichVuSuDung = dichVu;
-	}
-	
-	public static void main(String[] args) {
-		System.out.println("Hello");
 	}
 
+	public String getMaHD() {
+		return maHD;
+	}
+
+	public void setMaHD(String maHD) {
+		this.maHD = maHD;
+	}
+
+	public String getMaTTDTP() {
+		return maTTDTP;
+	}
+
+	public void setMaTTDTP(String maTTDTP) {
+		this.maTTDTP = maTTDTP;
+	}
+
+	public String getMaLSDP() {
+		return maLSDP;
+	}
+
+	public void setMaLSDP(String maLSDP) {
+		this.maLSDP = maLSDP;
+	}
+
+	public String getMaDVPSD() {
+		return maDVPSD;
+	}
+
+	public void setMaDVPSD(String maDVPSD) {
+		this.maDVPSD = maDVPSD;
+	}
+
+	public String getMaKM() {
+		return maKM;
+	}
+
+	public void setMaKM(String maKM) {
+		this.maKM = maKM;
+	}
+
+	@Override
+	public String toString() {
+		return "ChiTietHoaDonUpdated [maHD=" + maHD + ", maTTDTP=" + maTTDTP + ", maLSDP=" + maLSDP + ", maDVPSD="
+				+ maDVPSD + ", maKM=" + maKM + "]";
+	}
 }

@@ -62,6 +62,11 @@ public class DichVuDao {
 		}
 		return dv;
 	}
+	
+	public void loadDanhSachDichVuVaoBang() {
+		dsDichVu = timTatCaDichVu();
+		
+	}
 
 	// thêm dịch vụ
         public boolean themDichVu(DichVu dv) {

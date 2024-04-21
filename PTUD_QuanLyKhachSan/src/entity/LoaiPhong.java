@@ -48,13 +48,23 @@ public class LoaiPhong {
 		this.soGiuong = soGiuong;
 	}
 
-	public LoaiPhong(String maLoaiPhong, String tenLoaiPhong, double giaThue, double giaCocToiThieu, int soGiuong) {
+	public int getSoNguoiToiDa() {
+		return soNguoiToiDa;
+	}
+	
+	public void setSoNguoiToiDa(int soNguoiToiDa) {
+		this.soNguoiToiDa = soNguoiToiDa;
+	}
+	
+	public LoaiPhong(String maLoaiPhong, String tenLoaiPhong, double giaThue, double giaCocToiThieu, int soGiuong,
+			int soNguoiToiDa) {
 		super();
 		this.maLoaiPhong = maLoaiPhong;
 		this.tenLoaiPhong = tenLoaiPhong;
 		this.giaThue = giaThue;
 		this.giaCocToiThieu = giaCocToiThieu;
 		this.soGiuong = soGiuong;
+		this.soNguoiToiDa = soNguoiToiDa;
 	}
 
 	public LoaiPhong() {
@@ -64,6 +74,13 @@ public class LoaiPhong {
 	public LoaiPhong(String maLoaiPhong) {
 		super();
 		this.maLoaiPhong = maLoaiPhong;
+	}
+	
+	@Override
+	public String toString() {
+		return "LoaiPhong [maLoaiPhong=" + maLoaiPhong + ", tenLoaiPhong=" + tenLoaiPhong + ", giaThue=" + giaThue
+				+ ", giaCocToiThieu=" + giaCocToiThieu + ", soGiuong=" + soGiuong + ", soNguoiToiDa=" + soNguoiToiDa
+				+ "]";
 	}
 
 }

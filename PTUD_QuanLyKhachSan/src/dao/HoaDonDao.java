@@ -36,10 +36,7 @@ public class HoaDonDao {
 				LocalDate ngayLap = rs.getDate(3).toLocalDate();
 				String khachHang = rs.getString(4);
 
-				NhanVien nv = new NhanVien(nhanVien);
-				KhachHang kh = new KhachHang(khachHang);
-
-				hoaDon = new HoaDon(maHoaDon, nv, ngayLap, kh);
+				hoaDon = new HoaDon(maHoaDon, nhanVien, ngayLap, khachHang);
 				dsHoaDon.add(hoaDon);
 			}
 		} catch (SQLException e) {
@@ -59,8 +56,8 @@ public class HoaDonDao {
 			try {
 				stmt = con.createStatement();
 				String sql = "insert into HoaDon values('" + hoaDon.getMaHoaDon() + "','"
-						+ hoaDon.getNhanVien().getMaNV() + "','" + hoaDon.getNgayLap() + "','"
-						+ hoaDon.getKhachHang().getMaKH() + "')";
+						+ hoaDon.getMaNhanVien() + "','" + hoaDon.getNgayLap() + "','"
+						+ hoaDon.getMaKhachHang() + "')";
 				n = stmt.executeUpdate(sql);
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -79,8 +76,8 @@ public class HoaDonDao {
 		if (dsHoaDon.contains(hoaDon)) {
 			try {
 				stmt = con.createStatement();
-				String sql = "update HoaDon set nhanVien = '" + hoaDon.getNhanVien().getMaNV() + "', ngayLap = '"
-						+ hoaDon.getNgayLap() + "', khachHang = '" + hoaDon.getKhachHang().getMaKH()
+				String sql = "update HoaDon set nhanVien = '" + hoaDon.getMaNhanVien().getMaNV() + "', ngayLap = '"
+						+ hoaDon.getNgayLap() + "', khachHang = '" + hoaDon.getMaKhachHang().getMaKH()
 						+ "' where maHoaDon = '" + hoaDon.getMaHoaDon() + "'";
 				n = stmt.executeUpdate(sql);
 			} catch (SQLException e) {
