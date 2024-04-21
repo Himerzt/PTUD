@@ -46,24 +46,35 @@ public class KhuyenMaiDao {
 	
 	// thêm khuyến mãi
 	public boolean themKhuyenMai(KhuyenMai khuyenMai) {
-        ConnectDB.getInstance();
-        Connection con = ConnectDB.getConnection();
-        Statement stmt = null;
-        int n = 0;
-        if(dsKhuyenMai.contains(khuyenMai)) {
-            try {
-                stmt = con.createStatement();
-                String sql = "insert into KhuyenMai values('"+khuyenMai.getMaKM()+"','"+khuyenMai.getTenKM()+"',"+khuyenMai.getGiaTriKM()+",'"+khuyenMai.getThoiGianBatDau()+"','"+khuyenMai.getThoiGianKetThuc()+"',"+khuyenMai.getDieuKienApDung()+")";
-                n = stmt.executeUpdate(sql);
-            } catch (SQLException e) {
-            	e.printStackTrace();
-            }
-            
-            return n>0;
-            
-        }
-        return false;
-            }
+	    ConnectDB.getInstance();
+	    Connection con = ConnectDB.getConnection();
+	    Statement stmt = null;
+	    int n = 0;
+	    try {
+	        // kiểm tra khuyến mãi đã tồn tại chưa
+	        String sqlCheck = "SELECT COUNT(*) FROM KhuyenMai WHERE MaKhuyenMai = '" + khuyenMai.getMaKM() + "'";
+	        stmt = con.createStatement();
+	        ResultSet rs = stmt.executeQuery(sqlCheck);
+	        rs.next();
+	        int count = rs.getInt(1); // Get the value from the first column
+	        rs.close();
+	        stmt.close();
+	        
+	        // nếu chưa tồn tại thì thêm
+	        if (count == 0) {
+	            stmt = con.createStatement();
+	            String sql = "INSERT INTO KhuyenMai VALUES('" + khuyenMai.getMaKM() + "', N'" + khuyenMai.getTenKM()
+	                    + "', " + khuyenMai.getGiaTriKM() + ", '" + khuyenMai.getThoiGianBatDau() + "', '"
+	                    + khuyenMai.getThoiGianKetThuc() + "', " + khuyenMai.getDieuKienApDung() + ")";
+	            n = stmt.executeUpdate(sql);
+	        }
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return n > 0;
+	}
+
 	
 	// sửa khuyến mãi
 	public boolean suaKhuyenMai(KhuyenMai khuyenMai) {
@@ -249,5 +260,14 @@ public class KhuyenMaiDao {
 		}
 		return khuyenMai;
 	}
+	
+//	public static void main(String[] args) {
+////		//Test thêm khuyến mãi
+////		KhuyenMai khuyenMai = new KhuyenMai("KM02", "Khuyen mai 2", 0.1, LocalDate.of(2021, 3, 1), LocalDate.of(2021, 3, 10), 100000);
+////		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
+////		System.out.println(khuyenMaiDao.themKhuyenMai(khuyenMai));
+////		
+////	
+//	}
 	
 }

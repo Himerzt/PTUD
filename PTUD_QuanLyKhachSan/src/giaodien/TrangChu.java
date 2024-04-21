@@ -6110,41 +6110,15 @@ public class TrangChu extends javax.swing.JFrame {
 	}// GEN-LAST:event_btnXoaTrangDichVuActionPerformed
 
 	/**
-	 * Code nút cập nhập dịch vụ**
+	 * Code nút cập nhập dịch vụ** ĐÃ CHUYỂN ĐỔI XONG
 	 * *****************************************************************
 	 */
 	private void btnCapNhapDichVuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCapNhapDichVuActionPerformed
-		String maDichVu = txtMaDichVu.getText();
-		String tenDichVu = txtTenDichVu.getText();
-		double donGiaDichVu = Double.parseDouble(txtDonGiaDichVu.getText());
-		DichVu dv = new DichVu(maDichVu, tenDichVu, donGiaDichVu);
-		DichVuDao dvdao = new DichVuDao();
-
-		boolean capNhapThanhCong = dvdao.suaDichVu(dv);
-		if (capNhapThanhCong) {
-			JOptionPane.showMessageDialog(this, "Cập nhập dịch vụ thành công");
-		} else {
-			JOptionPane.showMessageDialog(this, "Cập nhập dịch vụ KHÔNG thành công");
-		}
-		loadTableDichVu();
-	}// GEN-LAST:event_btnCapNhapDichVuActionPerformed
-
+		
+	}
 	private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemDichVuActionPerformed
-		// TODO add your handling code here:
-		String maDichVu = txtMaDichVu.getText();
-		String tenDichVu = txtTenDichVu.getText();
-		double donGiaDichVu = Double.parseDouble(txtDonGiaDichVu.getText());
-		DichVu dv = new DichVu(maDichVu, tenDichVu, donGiaDichVu);
-		DichVuDao dvdao = new DichVuDao();
-		boolean themThanhCong = dvdao.themDichVu(dv);
-		if (themThanhCong) {
-			JOptionPane.showMessageDialog(this, "Đã thêm dịch vụ thành công");
-		} else {
-			JOptionPane.showMessageDialog(this, "Thêm dịch vụ không thành công");
-		}
-
-		loadTableDichVu();
-	}// GEN-LAST:event_btnThemDichVuActionPerformed
+		
+	}
 
 	private String taoMaNhanVien(String tenChucVu, LocalDate ngayVaoLam) {
 		NhanVienDao nvDao = new NhanVienDao();
