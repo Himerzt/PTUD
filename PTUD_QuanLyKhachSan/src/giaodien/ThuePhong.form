@@ -18,7 +18,7 @@
           <Color blue="77" green="cb" red="ff" type="rgb"/>
         </Property>
         <Property name="textRefernce" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="txtNgayNhan"/>
+          <ComponentRef name="txtCheckIn"/>
         </Property>
       </Properties>
     </Component>
@@ -296,7 +296,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtNgayNhan" min="-2" pref="163" max="-2" attributes="0"/>
+                              <Component id="txtCheckIn" min="-2" pref="163" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -389,7 +389,7 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtNgayNhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCheckIn" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel28" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -477,9 +477,9 @@
                 <Property name="text" type="java.lang.String" value="Ki&#x1ec3;u thu&#xea;"/>
               </Properties>
             </Component>
-            <Component class="giaodien.CustomClass.TextFieldShadow" name="txtNgayNhan">
+            <Component class="giaodien.CustomClass.TextFieldShadow" name="txtCheckIn">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNgayNhanActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCheckInActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel28">

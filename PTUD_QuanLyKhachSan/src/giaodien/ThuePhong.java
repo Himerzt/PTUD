@@ -98,7 +98,7 @@ public class ThuePhong extends javax.swing.JDialog {
         jLabel24 = new javax.swing.JLabel();
         button1 = new giaodien.CustomClass.Button();
         jLabel25 = new javax.swing.JLabel();
-        txtNgayNhan = new giaodien.CustomClass.TextFieldShadow();
+        txtCheckIn = new giaodien.CustomClass.TextFieldShadow();
         jLabel28 = new javax.swing.JLabel();
         txtCheckOut = new giaodien.CustomClass.TextFieldShadow();
         jLabel29 = new javax.swing.JLabel();
@@ -121,7 +121,7 @@ public class ThuePhong extends javax.swing.JDialog {
         dateNgayTra.setTextRefernce(txtCheckOut);
 
         dateNgayNhan.setForeground(new java.awt.Color(255, 203, 119));
-        dateNgayNhan.setTextRefernce(txtNgayNhan);
+        dateNgayNhan.setTextRefernce(txtCheckIn);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -232,9 +232,9 @@ public class ThuePhong extends javax.swing.JDialog {
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel25.setText("Kiểu thuê");
 
-        txtNgayNhan.addActionListener(new java.awt.event.ActionListener() {
+        txtCheckIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNgayNhanActionPerformed(evt);
+                txtCheckInActionPerformed(evt);
             }
         });
 
@@ -322,7 +322,7 @@ public class ThuePhong extends javax.swing.JDialog {
                     .addGroup(panelRound1Layout.createSequentialGroup()
                         .addComponent(jLabel28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNgayNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36))
                     .addGroup(panelRound1Layout.createSequentialGroup()
                         .addComponent(jLabel23)
@@ -393,7 +393,7 @@ public class ThuePhong extends javax.swing.JDialog {
                             .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNgayNhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panelRound1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
@@ -565,9 +565,9 @@ public class ThuePhong extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCCCDActionPerformed
 
-    private void txtNgayNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgayNhanActionPerformed
+    private void txtCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCheckInActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNgayNhanActionPerformed
+    }//GEN-LAST:event_txtCheckInActionPerformed
 
     private void txtCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCheckOutActionPerformed
         // TODO add your handling code here:
@@ -597,7 +597,7 @@ public class ThuePhong extends javax.swing.JDialog {
 		KhachHang khachHang = khachHangDao.timTheoCCCD(txtCCCD.getText());
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		LocalDate ngayDat = LocalDate.parse(txtCheckIn.getText(), formatter);
-		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), formatter);
+		LocalDate ngayNhan = LocalDate.parse(txtCheckIn.getText(), formatter);
 		LocalDate ngayTra = LocalDate.parse(txtCheckOut.getText(), formatter);
 		String maLoaiThue = "";
 		String loaiPhong = "";
@@ -679,7 +679,7 @@ public class ThuePhong extends javax.swing.JDialog {
 		LoaiThueDao loaiThueDao = new LoaiThueDao();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		LocalDate ngayDat = LocalDate.parse(txtCheckIn.getText(), formatter);
-		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), formatter);
+		LocalDate ngayNhan = LocalDate.parse(txtCheckIn.getText(), formatter);
 		String loaiPhong = "";
 		String maLoaiThue = "";
 		double soTienCoc = 0;
@@ -837,9 +837,9 @@ public class ThuePhong extends javax.swing.JDialog {
     private javax.swing.JTable tableDV;
     private javax.swing.JTable tableDanhSachPhong;
     private giaodien.CustomClass.TextFieldShadow txtCCCD;
+    private giaodien.CustomClass.TextFieldShadow txtCheckIn;
     private giaodien.CustomClass.TextFieldShadow txtCheckOut;
     private giaodien.CustomClass.TextFieldShadow txtGiaCoc;
-    private giaodien.CustomClass.TextFieldShadow txtNgayNhan;
     private giaodien.CustomClass.TextFieldShadow txtSoLuongNguoiLon;
     private giaodien.CustomClass.TextFieldShadow txtSoLuongTreEm;
     private giaodien.CustomClass.TextFieldShadow txtTenKH;
