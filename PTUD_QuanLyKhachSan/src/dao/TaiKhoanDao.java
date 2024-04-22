@@ -46,7 +46,7 @@ public class TaiKhoanDao {
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
 		int n = 0;
-		if (dsTaiKhoan.contains(tk)) {
+
 			try {
 				stmt = con.createStatement();
 				String sql = "insert into TaiKhoan values('" + tk.getMaNhanVien() + "','" + tk.getTenDangNhap() + "','" + tk.getMatKhau() + "')";
@@ -55,8 +55,7 @@ public class TaiKhoanDao {
 				e.printStackTrace();
 			}
 			return n > 0;
-		}
-		return false;
+		
 	}
 
 	// xóa tài khoản
