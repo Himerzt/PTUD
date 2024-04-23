@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.swing.JLabel"/>
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
     <fullyQualifiedTypeName name="dao.LoaiPhongDao"/>
     <fullyQualifiedTypeName name="giaodien.DatPhong"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="dao.impl.NhanVien_Impl"/>
     <fullyQualifiedTypeName name="dao.impl.TaiKhoan_Impl"/>
     <fullyQualifiedTypeName name="entity.ChiTietDonDat"/>
+    <fullyQualifiedTypeName name="giaodien.CustomClass.JCheckBoxCustom"/>
 </qualifiedTypeNameHistroy>

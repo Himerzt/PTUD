@@ -4,6 +4,22 @@
  */
 package giaodien;
 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+import dao.PhongDao;
+import entity.Phong;
+
 /**
  *
  * @author Huynguyen
@@ -16,7 +32,195 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
      */
     public QuanLyPhongPannel() {
         initComponents();
+        
+//		TTK - Thêm phongQuanLy i chạy từ 1 đến 35 vào list
+		phongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				phongQuanLy.add((giaodien.CustomClass.PanelRound) getClass().getDeclaredField("phongQuanLy" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		loaiPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				loaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblLoaiPhongQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		tenPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				tenPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTenPhongQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		trangThaiPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				trangThaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTrangThaiQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		checkBoxPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				checkBoxPhongQuanLy.add((giaodien.CustomClass.JCheckBoxCustom) getClass().getDeclaredField("checkBoxPhongQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		loadDanhSachPhong();
+		addCheckBoxListeners();
     }
+    
+    /**
+	 * Khởi tạo ngày hiện tại để in lên ngày **
+	 * *****************************************
+	 */
+	public void datetime() {
+		Date d = new Date();
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MMM-dd");
+		String df = format.format(d);
+
+		lblcurrentdate.setText(df);
+	}
+
+	/**
+	 * Khởi tạo giờ hiện tại để in lên giờ **
+	 * *****************************************
+	 */
+	public void times() {
+		Timer time;
+
+		time = new Timer(0, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				Date d = new Date();
+
+				SimpleDateFormat dformat;
+				dformat = new SimpleDateFormat("hh:mm:ss a");
+
+				String timeindate = dformat.format(d);
+				lblcurrentTime.setText(timeindate);
+
+			}
+		});
+
+		time.start();
+	}
+	
+	private void kiemTraClickCheckBoxPhong() {
+		int status1 = 0;
+		int status2 = 0;
+		int status3 = 0;
+		int status4 = 0;
+		for (int i = 0; i < checkBoxPhongQuanLy.size(); i++) {
+			JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+			if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Trống")) {
+				btnDatPhong.setEnabled(true);
+				btnThuePhong.setEnabled(true);
+				btnDoiPhong.setEnabled(false);
+				btnTraPhong.setEnabled(false);
+				btnHuyDatPhong.setEnabled(false);
+				status2++;
+				status3++;
+				status4++;
+			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đã đặt")) {
+				btnDatPhong.setEnabled(true);
+				btnThuePhong.setEnabled(true);
+				btnDoiPhong.setEnabled(false);
+				btnTraPhong.setEnabled(false);
+				btnHuyDatPhong.setEnabled(true);
+				status1++;
+				status3++;
+				status4++;
+			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đang thuê")) {
+				btnDatPhong.setEnabled(true);
+				btnThuePhong.setEnabled(false);
+				btnDoiPhong.setEnabled(true);
+				btnHuyDatPhong.setEnabled(true);
+				btnTraPhong.setEnabled(true);
+				status1++;
+				status2++;
+				status4++;
+			} 
+		}
+		
+		
+		if (status1 != 0 && status2 != 0 && status3 != 0) {
+			btnDatPhong.setEnabled(false);
+			btnThuePhong.setEnabled(false);
+			btnDoiPhong.setEnabled(false);
+			btnTraPhong.setEnabled(false);
+			btnHuyDatPhong.setEnabled(false);
+		}
+		if (status4 == 0) {
+			btnDatPhong.setEnabled(true);
+			btnThuePhong.setEnabled(true);
+			btnDoiPhong.setEnabled(true);
+			btnTraPhong.setEnabled(true);
+			btnHuyDatPhong.setEnabled(true);
+		}
+	}
+	private void addCheckBoxListeners() {
+	    for (giaodien.CustomClass.JCheckBoxCustom checkBox : checkBoxPhongQuanLy) {
+	        checkBox.addItemListener(e -> kiemTraClickCheckBoxPhong());
+	    }
+	}
+	
+	private void loadDanhSachPhong() {
+		PhongDao phongDao = new PhongDao();
+		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			Phong phong = dsPhong.get(i);
+			JPanel phongPanel = phongQuanLy.get(i);
+			JLabel loaiPhong = loaiPhongQuanLy.get(i);
+			JLabel soPhong = tenPhongQuanLy.get(i);
+			JLabel trangThai = trangThaiPhongQuanLy.get(i);
+
+			// Gán thông tin phòng lên label
+			soPhong.setText(Integer.toString(phong.getSoPhong()));
+			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+				loaiPhong.setText("Tiêu chuẩn");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+				loaiPhong.setText("Nâng cao");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+				loaiPhong.setText("Cao cấp");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
+				loaiPhong.setText("Thương gia");
+			}
+			trangThai.setText(phong.getTrangThai());
+
+			if (trangThai.getText().equalsIgnoreCase("Trống")) {
+				phongPanel.setBackground(Color.green);
+			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
+				phongPanel.setBackground(Color.red);
+			} else if (trangThai.getText().equalsIgnoreCase("Đang thuê")) {
+				phongPanel.setBackground(Color.yellow);
+			}
+
+			if (phongPanel.isVisible() == false) {
+				phongPanel.setVisible(true);
+			}
+		}
+
+	}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,6 +231,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+    	btnGROUPLoaiPhong = new javax.swing.ButtonGroup();
+		btnGROUPTrangThai = new javax.swing.ButtonGroup();
         pnQuanLyPhong = new javax.swing.JPanel();
         pnLayoutQuanLyPhong = new giaodien.CustomClass.PanelRound();
         funtionPanel = new javax.swing.JPanel();
@@ -51,61 +257,61 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         btnThuePhong = new giaodien.CustomClass.Button();
         btnResetTrangThai = new giaodien.CustomClass.Button();
         pnLayoutQL = new giaodien.CustomClass.PanelRound();
-        scrollPaneWin112 = new ScollBar1.ScrollPaneWin11();
+        scrollPaneWin112 = new giaodien.CustomClass.ScrollPaneWin11();
         pnBody2 = new javax.swing.JPanel();
         panelRound1 = new giaodien.CustomClass.PanelRound();
         phongQuanLy1 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL1 = new javax.swing.JLabel();
         lblTenPhongQL1 = new javax.swing.JLabel();
         lblTrangThaiQL1 = new javax.swing.JLabel();
-        checkBoxPhongQL1 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL1 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy2 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL2 = new javax.swing.JLabel();
         lblTenPhongQL2 = new javax.swing.JLabel();
         lblTrangThaiQL2 = new javax.swing.JLabel();
-        checkBoxPhongQL2 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL2 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy3 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL3 = new javax.swing.JLabel();
         lblTenPhongQL3 = new javax.swing.JLabel();
         lblTrangThaiQL3 = new javax.swing.JLabel();
-        checkBoxPhongQL3 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL3 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy4 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL4 = new javax.swing.JLabel();
         lblTenPhongQL4 = new javax.swing.JLabel();
         lblTrangThaiQL4 = new javax.swing.JLabel();
-        checkBoxPhongQL4 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL4 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy5 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL5 = new javax.swing.JLabel();
         lblTenPhongQL5 = new javax.swing.JLabel();
         lblTrangThaiQL5 = new javax.swing.JLabel();
-        checkBoxPhongQL5 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL5 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy6 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL6 = new javax.swing.JLabel();
         lblTenPhongQL6 = new javax.swing.JLabel();
         lblTrangThaiQL6 = new javax.swing.JLabel();
-        checkBoxPhongQL6 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL6 = new giaodien.CustomClass.JCheckBoxCustom();
         jLabel11 = new javax.swing.JLabel();
         panelRound2 = new giaodien.CustomClass.PanelRound();
         phongQuanLy7 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL7 = new javax.swing.JLabel();
         lblTenPhongQL7 = new javax.swing.JLabel();
         lblTrangThaiQL7 = new javax.swing.JLabel();
-        checkBoxPhongQL7 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL7 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy8 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL8 = new javax.swing.JLabel();
         lblTenPhongQL8 = new javax.swing.JLabel();
         lblTrangThaiQL8 = new javax.swing.JLabel();
-        checkBoxPhongQL8 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL8 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy9 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL9 = new javax.swing.JLabel();
         lblTenPhongQL9 = new javax.swing.JLabel();
         lblTrangThaiQL9 = new javax.swing.JLabel();
-        checkBoxPhongQL9 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL9 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy10 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL10 = new javax.swing.JLabel();
         lblTenPhongQL10 = new javax.swing.JLabel();
         lblTrangThaiQL10 = new javax.swing.JLabel();
-        checkBoxPhongQL10 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL10 = new giaodien.CustomClass.JCheckBoxCustom();
         btnChonPhongTrongTang1 = new giaodien.CustomClass.Button();
         btnChonPhongThueTang1 = new giaodien.CustomClass.Button();
         jLabel17 = new javax.swing.JLabel();
@@ -114,53 +320,53 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         lblLoaiPhongQL11 = new javax.swing.JLabel();
         lblTenPhongQL11 = new javax.swing.JLabel();
         lblTrangThaiQL11 = new javax.swing.JLabel();
-        checkBoxPhongQL11 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL11 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy12 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL12 = new javax.swing.JLabel();
         lblTenPhongQL12 = new javax.swing.JLabel();
         lblTrangThaiQL12 = new javax.swing.JLabel();
-        checkBoxPhongQL12 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL12 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy13 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL13 = new javax.swing.JLabel();
         lblTenPhongQL13 = new javax.swing.JLabel();
         lblTrangThaiQL13 = new javax.swing.JLabel();
-        checkBoxPhongQL13 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL13 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy14 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL14 = new javax.swing.JLabel();
         lblTenPhongQL14 = new javax.swing.JLabel();
         lblTrangThaiQL14 = new javax.swing.JLabel();
-        checkBoxPhongQL14 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL14 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy15 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL15 = new javax.swing.JLabel();
         lblTenPhongQL15 = new javax.swing.JLabel();
         lblTrangThaiQL15 = new javax.swing.JLabel();
-        checkBoxPhongQL15 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL15 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy16 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL16 = new javax.swing.JLabel();
         lblTenPhongQL16 = new javax.swing.JLabel();
         lblTrangThaiQL16 = new javax.swing.JLabel();
-        checkBoxPhongQL16 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL16 = new giaodien.CustomClass.JCheckBoxCustom();
         panelRound4 = new giaodien.CustomClass.PanelRound();
         phongQuanLy17 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL17 = new javax.swing.JLabel();
         lblTenPhongQL17 = new javax.swing.JLabel();
         lblTrangThaiQL17 = new javax.swing.JLabel();
-        checkBoxPhongQL17 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL17 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy18 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL18 = new javax.swing.JLabel();
         lblTenPhongQL18 = new javax.swing.JLabel();
         lblTrangThaiQL18 = new javax.swing.JLabel();
-        checkBoxPhongQL18 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL18 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy19 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL19 = new javax.swing.JLabel();
         lblTenPhongQL19 = new javax.swing.JLabel();
         lblTrangThaiQL19 = new javax.swing.JLabel();
-        checkBoxPhongQL19 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL19 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy20 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL20 = new javax.swing.JLabel();
         lblTenPhongQL20 = new javax.swing.JLabel();
         lblTrangThaiQL20 = new javax.swing.JLabel();
-        checkBoxPhongQL20 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL20 = new giaodien.CustomClass.JCheckBoxCustom();
         btnChonPhongThueTang2 = new giaodien.CustomClass.Button();
         btnChonPhongTrongTang2 = new giaodien.CustomClass.Button();
         jLabel18 = new javax.swing.JLabel();
@@ -169,53 +375,53 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         lblLoaiPhongQL21 = new javax.swing.JLabel();
         lblTenPhongQL21 = new javax.swing.JLabel();
         lblTrangThaiQL21 = new javax.swing.JLabel();
-        checkBoxPhongQL21 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL21 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy22 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL22 = new javax.swing.JLabel();
         lblTenPhongQL22 = new javax.swing.JLabel();
         lblTrangThaiQL22 = new javax.swing.JLabel();
-        checkBoxPhongQL22 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL22 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy23 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL23 = new javax.swing.JLabel();
         lblTenPhongQL23 = new javax.swing.JLabel();
         lblTrangThaiQL23 = new javax.swing.JLabel();
-        checkBoxPhongQL23 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL23 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy24 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL24 = new javax.swing.JLabel();
         lblTenPhongQL24 = new javax.swing.JLabel();
         lblTrangThaiQL24 = new javax.swing.JLabel();
-        checkBoxPhongQL24 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL24 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy25 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL25 = new javax.swing.JLabel();
         lblTenPhongQL25 = new javax.swing.JLabel();
         lblTrangThaiQL25 = new javax.swing.JLabel();
-        checkBoxPhongQL25 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL25 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy26 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL26 = new javax.swing.JLabel();
         lblTenPhongQL26 = new javax.swing.JLabel();
         lblTrangThaiQL26 = new javax.swing.JLabel();
-        checkBoxPhongQL26 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL26 = new giaodien.CustomClass.JCheckBoxCustom();
         panelRound6 = new giaodien.CustomClass.PanelRound();
         phongQuanLy27 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL27 = new javax.swing.JLabel();
         lblTenPhongQL27 = new javax.swing.JLabel();
         lblTrangThaiQL27 = new javax.swing.JLabel();
-        checkBoxPhongQL27 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL27 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy28 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL28 = new javax.swing.JLabel();
         lblTenPhongQL28 = new javax.swing.JLabel();
         lblTrangThaiQL28 = new javax.swing.JLabel();
-        checkBoxPhongQL28 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL28 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy29 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL29 = new javax.swing.JLabel();
         lblTenPhongQL29 = new javax.swing.JLabel();
         lblTrangThaiQL29 = new javax.swing.JLabel();
-        checkBoxPhongQL29 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL29 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy30 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL30 = new javax.swing.JLabel();
         lblTenPhongQL30 = new javax.swing.JLabel();
         lblTrangThaiQL30 = new javax.swing.JLabel();
-        checkBoxPhongQL30 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL30 = new giaodien.CustomClass.JCheckBoxCustom();
         btnChonPhongTrongTang3 = new giaodien.CustomClass.Button();
         btnChonPhongThueTang3 = new giaodien.CustomClass.Button();
         panelRound7 = new giaodien.CustomClass.PanelRound();
@@ -223,27 +429,27 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         lblLoaiPhongQL31 = new javax.swing.JLabel();
         lblTenPhongQL31 = new javax.swing.JLabel();
         lblTrangThaiQL31 = new javax.swing.JLabel();
-        checkBoxPhongQL31 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL31 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy32 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL32 = new javax.swing.JLabel();
         lblTenPhongQL32 = new javax.swing.JLabel();
         lblTrangThaiQL32 = new javax.swing.JLabel();
-        checkBoxPhongQL32 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL32 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy33 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL33 = new javax.swing.JLabel();
         lblTenPhongQL33 = new javax.swing.JLabel();
         lblTrangThaiQL33 = new javax.swing.JLabel();
-        checkBoxPhongQL33 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL33 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy34 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL34 = new javax.swing.JLabel();
         lblTenPhongQL34 = new javax.swing.JLabel();
         lblTrangThaiQL34 = new javax.swing.JLabel();
-        checkBoxPhongQL34 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL34 = new giaodien.CustomClass.JCheckBoxCustom();
         phongQuanLy35 = new giaodien.CustomClass.PanelRound();
         lblLoaiPhongQL35 = new javax.swing.JLabel();
         lblTenPhongQL35 = new javax.swing.JLabel();
         lblTrangThaiQL35 = new javax.swing.JLabel();
-        checkBoxPhongQL35 = new checkbox.JCheckBoxCustom();
+        checkBoxPhongQL35 = new giaodien.CustomClass.JCheckBoxCustom();
         btnChonPhongThueTang4 = new giaodien.CustomClass.Button();
         btnChonPhongTrongTang4 = new giaodien.CustomClass.Button();
         jLabel21 = new javax.swing.JLabel();
@@ -262,25 +468,32 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
 
         lblcurrentTime.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblcurrentTime.setText("currentTime");
-
+        
+        btnGROUPLoaiPhong.add(radPhongTieuChuan);
         radPhongTieuChuan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongTieuChuan.setText("Phòng tiêu chuẩn");
 
+        btnGROUPLoaiPhong.add(radPhongNangCao);
         radPhongNangCao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongNangCao.setText("Phòng nâng cao");
 
+        btnGROUPLoaiPhong.add(radPhongCaoCap);
         radPhongCaoCap.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongCaoCap.setText("Phòng cao cấp");
 
+        btnGROUPLoaiPhong.add(radPhongThuongGia);
         radPhongThuongGia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongThuongGia.setText("Phòng thương gia");
 
+        btnGROUPTrangThai.add(radPhongTrong);
         radPhongTrong.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongTrong.setText("Phòng trống");
 
+        btnGROUPTrangThai.add(radPhongDaDat);
         radPhongDaDat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongDaDat.setText("Phòng đã đặt");
 
+        btnGROUPTrangThai.add(radPhongDangThue);
         radPhongDangThue.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongDangThue.setText("Phòng đang thuê");
 
@@ -2575,13 +2788,97 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTimTheoDieuKienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimTheoDieuKienActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTimTheoDieuKienActionPerformed
+    private void btnTimTheoDieuKienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnFindbyPhoneActionPerformed
+		loadDanhSachPhong();
+    	if (radPhongTieuChuan.isSelected()) {
+			for (int i = 0; i < loaiPhongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel loaiP = loaiPhongQuanLy.get(i);
+				if (!loaiP.getText().equalsIgnoreCase("Tiêu chuẩn")) {
+					p.setVisible(false);
+				}
+			}
+		}  if (radPhongNangCao.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel loaiP = loaiPhongQuanLy.get(i);
+				if (!loaiP.getText().equalsIgnoreCase("Nâng cao")) {
+					p.setVisible(false);
+				}
+			}
+		} else if (radPhongCaoCap.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel loaiP = loaiPhongQuanLy.get(i);
 
-    private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatPhongActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDatPhongActionPerformed
+				if (!loaiP.getText().equalsIgnoreCase("Cao cấp")) {
+					p.setVisible(false);
+				}
+			}
+		} else if (radPhongThuongGia.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel loaiP = loaiPhongQuanLy.get(i);
+
+				if (!loaiP.getText().equalsIgnoreCase("Thương gia")) {
+					p.setVisible(false);
+				}
+			}
+		}
+
+		if (radPhongTrong.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+
+				if (!trangThaiP.getText().equalsIgnoreCase("Trống")) {
+					p.setVisible(false);
+				}
+			}
+		} else if (radPhongDaDat.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+
+				if (!trangThaiP.getText().equalsIgnoreCase("Đã đặt")) {
+					p.setVisible(false);
+				}
+			}
+		} else if (radPhongDangThue.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+
+				if (!trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
+					p.setVisible(false);
+				}
+			}
+		}
+	}// GEN-LAST:event_btnFindbyPhoneActionPerformed
+
+    private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
+		List<String> dsTenPhong = new ArrayList<>();
+		JCheckBox cks;
+		JLabel tenPhong;
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			cks = checkBoxPhongQuanLy.get(i);
+			tenPhong = tenPhongQuanLy.get(i);
+			if (cks.isSelected()) {
+				dsTenPhong.add(tenPhong.getText());
+			}
+		}
+
+		DatPhong2 datPhongFrame = new DatPhong2(dsTenPhong);
+		datPhongFrame.setVisible(true);
+		// reset checkbox
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			cks = checkBoxPhongQuanLy.get(i);
+			if (cks.isSelected()) {
+				cks.setSelected(false);
+			}
+		}
+
+	}
 
     private void btnHuyDatPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyDatPhongActionPerformed
         // TODO add your handling code here:
@@ -2652,41 +2949,43 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
     private giaodien.CustomClass.Button btnThuePhong;
     private giaodien.CustomClass.Button btnTimTheoDieuKien;
     private giaodien.CustomClass.Button btnTraPhong;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL1;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL10;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL11;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL12;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL13;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL14;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL15;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL16;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL17;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL18;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL19;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL2;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL20;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL21;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL22;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL23;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL24;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL25;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL26;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL27;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL28;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL29;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL3;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL30;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL31;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL32;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL33;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL34;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL35;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL4;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL5;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL6;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL7;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL8;
-    private checkbox.JCheckBoxCustom checkBoxPhongQL9;
+	private javax.swing.ButtonGroup btnGROUPLoaiPhong;
+	private javax.swing.ButtonGroup btnGROUPTrangThai;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL1;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL10;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL11;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL12;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL13;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL14;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL15;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL16;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL17;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL18;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL19;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL2;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL20;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL21;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL22;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL23;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL24;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL25;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL26;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL27;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL28;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL29;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL3;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL30;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL31;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL32;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL33;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL34;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL35;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL4;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL5;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL6;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL7;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL8;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL9;
     private javax.swing.JPanel funtionPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -2856,6 +3155,11 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
     private javax.swing.JRadioButton radPhongThuongGia;
     private javax.swing.JRadioButton radPhongTieuChuan;
     private javax.swing.JRadioButton radPhongTrong;
-    private ScollBar1.ScrollPaneWin11 scrollPaneWin112;
+    private giaodien.CustomClass.ScrollPaneWin11 scrollPaneWin112;
+	private ArrayList<javax.swing.JPanel> phongQuanLy;
+	private ArrayList<javax.swing.JLabel> loaiPhongQuanLy;
+	private ArrayList<javax.swing.JLabel> tenPhongQuanLy;
+	private ArrayList<javax.swing.JLabel> trangThaiPhongQuanLy;
+	private ArrayList<giaodien.CustomClass.JCheckBoxCustom> checkBoxPhongQuanLy;
     // End of variables declaration//GEN-END:variables
 }

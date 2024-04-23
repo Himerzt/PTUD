@@ -54,7 +54,7 @@ import javax.swing.GroupLayout;
  * @author Huynguyen
  */
 public class TrangChuNew2 extends javax.swing.JFrame {
-	private ArrayList<javax.swing.JPanel> phongTrangChu;
+	private ArrayList<giaodien.CustomClass.PanelRound> phongTrangChu;
 	private ArrayList<javax.swing.JLabel> loaiPhongTrangChu;
 	private ArrayList<javax.swing.JLabel> tenPhongTrangChu;
 	private ArrayList<javax.swing.JLabel> trangThaiPhongTrangChu;
@@ -64,16 +64,10 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         ConnectDB.getInstance().getConnection();
         setResizable(false);
         initComponents();
-        
-        
-//        phongTrangChu6 = new giaodien.CustomClass.PanelRound();
-//        lblLoaiPhongTrangChu6 = new javax.swing.JLabel();
-//        lblTenPhongTrangChu6 = new javax.swing.JLabel();
-//        lblTrangThaiTrangChu6 = new javax.swing.JLabel();
         phongTrangChu = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
-				phongTrangChu.add((JPanel) getClass().getDeclaredField("phongTrangChu" + i).get(this));
+				phongTrangChu.add((giaodien.CustomClass.PanelRound) getClass().getDeclaredField("phongTrangChu" + i).get(this));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -110,6 +104,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
 			}
 		}
         
+		loadDanhSachPhong();
         pnedUngDung.addTab("Quản lý phòng", new QuanLyPhongPannel());
         pnedUngDung.addTab("Quản lý nhân viên", new NhanVienPannel());
         pnedUngDung.addTab("Quản lý dịch vụ", new DichVuPannel());
@@ -148,12 +143,45 @@ public class TrangChuNew2 extends javax.swing.JFrame {
 
             }
 
-        });
-        
-        
-    }
+        });     
+    };
+    
+    private void loadDanhSachPhong() {
+		PhongDao phongDao = new PhongDao();
+		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
+		for (int i = 0; i < phongTrangChu.size(); i++) {
+			Phong phong = dsPhong.get(i);
+			JPanel phongPanel = phongTrangChu.get(i);
+			JLabel loaiPhong = loaiPhongTrangChu.get(i);
+			JLabel soPhong = tenPhongTrangChu.get(i);
+			JLabel trangThai = trangThaiPhongTrangChu.get(i);
 
-    ;
+			// Gán thông tin phòng lên label
+			soPhong.setText(Integer.toString(phong.getSoPhong()));
+			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+				loaiPhong.setText("Tiêu chuẩn");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+				loaiPhong.setText("Nâng cao");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+				loaiPhong.setText("Cao cấp");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
+				loaiPhong.setText("Thương gia");
+			}
+			trangThai.setText(phong.getTrangThai());
+
+			if (trangThai.getText().equalsIgnoreCase("Trống")) {
+				phongPanel.setBackground(Color.green);
+			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
+				phongPanel.setBackground(Color.red);
+			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
+				phongPanel.setBackground(Color.yellow);
+			}
+
+			if (phongPanel.isVisible() == false) {
+				phongPanel.show();
+			}
+		}
+	}
 
 	@SuppressWarnings("unchecked")
 
@@ -2297,6 +2325,41 @@ public class TrangChuNew2 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup btnGROUPLoaiPhong;
     private javax.swing.ButtonGroup btnGROUPTrangThai;
     private javax.swing.JButton jButton9;
+    private javax.swing.JCheckBox checkBoxPhongQL1;
+	private javax.swing.JCheckBox checkBoxPhongQL10;
+	private javax.swing.JCheckBox checkBoxPhongQL11;
+	private javax.swing.JCheckBox checkBoxPhongQL12;
+	private javax.swing.JCheckBox checkBoxPhongQL13;
+	private javax.swing.JCheckBox checkBoxPhongQL14;
+	private javax.swing.JCheckBox checkBoxPhongQL15;
+	private javax.swing.JCheckBox checkBoxPhongQL16;
+	private javax.swing.JCheckBox checkBoxPhongQL17;
+	private javax.swing.JCheckBox checkBoxPhongQL18;
+	private javax.swing.JCheckBox checkBoxPhongQL19;
+	private javax.swing.JCheckBox checkBoxPhongQL2;
+	private javax.swing.JCheckBox checkBoxPhongQL20;
+	private javax.swing.JCheckBox checkBoxPhongQL21;
+	private javax.swing.JCheckBox checkBoxPhongQL22;
+	private javax.swing.JCheckBox checkBoxPhongQL23;
+	private javax.swing.JCheckBox checkBoxPhongQL24;
+	private javax.swing.JCheckBox checkBoxPhongQL25;
+	private javax.swing.JCheckBox checkBoxPhongQL26;
+	private javax.swing.JCheckBox checkBoxPhongQL27;
+	private javax.swing.JCheckBox checkBoxPhongQL28;
+	private javax.swing.JCheckBox checkBoxPhongQL29;
+	private javax.swing.JCheckBox checkBoxPhongQL3;
+	private javax.swing.JCheckBox checkBoxPhongQL30;
+	private javax.swing.JCheckBox checkBoxPhongQL31;
+	private javax.swing.JCheckBox checkBoxPhongQL32;
+	private javax.swing.JCheckBox checkBoxPhongQL33;
+	private javax.swing.JCheckBox checkBoxPhongQL34;
+	private javax.swing.JCheckBox checkBoxPhongQL35;
+	private javax.swing.JCheckBox checkBoxPhongQL4;
+	private javax.swing.JCheckBox checkBoxPhongQL5;
+	private javax.swing.JCheckBox checkBoxPhongQL6;
+	private javax.swing.JCheckBox checkBoxPhongQL7;
+	private javax.swing.JCheckBox checkBoxPhongQL8;
+	private javax.swing.JCheckBox checkBoxPhongQL9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

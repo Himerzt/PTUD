@@ -29,6 +29,8 @@ public class DichVuPannel extends javax.swing.JPanel {
         loadTableDichVu();
         eventClickOnTableDichVu();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

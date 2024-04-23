@@ -742,11 +742,11 @@ public class ThuePhong extends javax.swing.JDialog {
 	private void btnThemKhachHangActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemKhachHangActionPerformed
 		KhachHang kh = new KhachHang();
 		KhachHangDao khDAO = new KhachHangDao();
-		kh.setCCCD_Visa(txtCCCD.getText());
+		kh.setCccd_passport(txtCCCD.getText());
 		// Tìm khách hàng bằng CCCD. Nếu tìm thấy thì tự fill các textfield còn lại, nếu
 		// không thì thông báo hỏi có thêm khách hàng vào CSDL hay không
-		if (khDAO.timTheoCCCD(kh.getCCCD_Visa()) != null) {
-			kh = khDAO.timTheoCCCD(kh.getCCCD_Visa());
+		if (khDAO.timTheoCCCD(kh.getCccd_passport()) != null) {
+			kh = khDAO.timTheoCCCD(kh.getCccd_passport());
 			txtTenKH.setText(kh.getHoTenKH());
 		} else {
 			// Thông báo bằng JOptionpane hỏi có muốn thêm khách hàng vào CSDL không

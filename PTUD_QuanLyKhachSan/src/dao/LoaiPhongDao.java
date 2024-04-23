@@ -29,7 +29,8 @@ public class LoaiPhongDao {
                 double giaCocToiThieu = rs.getDouble(3);
                 double giaThue = rs.getDouble(4);
                 int soGiuong = rs.getInt(5);
-                loaiPhong = new LoaiPhong(maLoaiPhong1, tenLoaiPhong, giaCocToiThieu, giaThue, soGiuong);
+                int soNguoiToiDa = rs.getInt(6);
+                loaiPhong = new LoaiPhong(maLoaiPhong1, tenLoaiPhong, giaCocToiThieu, giaThue, soGiuong, soNguoiToiDa);
             }
         } catch (Exception e) {
             e.printStackTrace();
