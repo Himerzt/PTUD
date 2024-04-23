@@ -1,0 +1,88 @@
+package dao.impl;
+
+<<<<<<< HEAD
+import java.rmi.server.UnicastRemoteObject;
+
+import dao.ChiTietDonDat_Dao;
+import entity.ChiTietDonDat;
+=======
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
+
+import dao.ChiTietDonDat_Dao;
+import entity.ChiTietDonDat;
+import entity.DonDat;
+>>>>>>> c6cc1d2fff7df1b51f26ebfa44faadf8a7c700d4
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+
+public class ChiTietDonDat_Impl extends UnicastRemoteObject implements ChiTietDonDat_Dao {
+
+<<<<<<< HEAD
+	private static final long serialVersionUID = 968547856325812548L;
+	private static final String PERSISTENCE_UNIT_NAME = "QuanLyThuoc MSSQL";
+	private EntityManager em;
+	
+	public ChiTietDonDat_Impl() throws Exception {
+		em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
+	}
+	
+	@Override
+	public boolean addChiTietDonDat(ChiTietDonDat chiTietDonDat) {
+		EntityTransaction tr = em.getTransaction();
+		try {
+			tr.begin();
+			em.persist(chiTietDonDat);
+			tr.commit();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			tr.rollback();
+			return false;
+		}
+=======
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8582181906822373544L;
+	private static final String PERSISTENCE_UNIT_NAME = "QuanLyThuoc MSSQL";
+	private EntityManager em;
+	
+	public ChiTietDonDat_Impl() throws RemoteException {
+		em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
+	}
+
+	@Override
+	public List<ChiTietDonDat> findByID(String maHoaDon) {
+		return em.createNamedQuery("ChiTietDonDat.findByID", ChiTietDonDat.class)
+				.setParameter("maHoaDon", maHoaDon)
+				.getResultList();
+	}
+
+	@Override
+	public void addChiTietDonDat(DonDat donDat) {
+		EntityTransaction tx =em.getTransaction();
+		try {
+			tx.begin();
+			for (ChiTietDonDat chiTietDonDat : donDat.getListChiTiet()) {
+				em.persist(chiTietDonDat);
+			}
+			tx.commit();
+		} catch (Exception e) {
+			tx.rollback();
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public boolean deleteOne(ChiTietDonDat chiTietDonDat) {
+		int checkUpdate = em.createNamedQuery("ChiTietDonDat.deleteOne", ChiTietDonDat.class)
+				.setParameter("maThuoc", chiTietDonDat.getMaThuoc().getMaThuoc())
+				.executeUpdate();
+		return checkUpdate > 0;
+>>>>>>> c6cc1d2fff7df1b51f26ebfa44faadf8a7c700d4
+	}
+}

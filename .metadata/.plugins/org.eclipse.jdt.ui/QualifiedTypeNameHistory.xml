@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="entity.DichVu"/>
     <fullyQualifiedTypeName name="javax.swing.JLabel"/>
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
     <fullyQualifiedTypeName name="dao.LoaiPhongDao"/>
@@ -16,7 +15,6 @@
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="dao.DichVuDao"/>
     <fullyQualifiedTypeName name="dao.KhachHangDao"/>
-    <fullyQualifiedTypeName name="entity.KhachHang"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="entity.ThongTinDatThuePhong"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -29,19 +27,37 @@
     <fullyQualifiedTypeName name="dao.PhongDao"/>
     <fullyQualifiedTypeName name="entity.Phong"/>
     <fullyQualifiedTypeName name="dao.ThongTinDatThuePhongDao"/>
-    <fullyQualifiedTypeName name="entity.ChiTietDonDat"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="com.itextpdf.text.List"/>
+    <fullyQualifiedTypeName name="dao.ChiTietHoaDon_Dao"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="dao.ChiTietDonDat_Dao"/>
+    <fullyQualifiedTypeName name="entity.DonDat"/>
+    <fullyQualifiedTypeName name="entity.ChiTietHoaDon"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.rmi.Remote"/>
-    <fullyQualifiedTypeName name="dao.HoaDon_Dao"/>
+    <fullyQualifiedTypeName name="entity.KhachHang"/>
     <fullyQualifiedTypeName name="java.rmi.server.UnicastRemoteObject"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="jakarta.persistence.EntityManager"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Persistence"/>
-    <fullyQualifiedTypeName name="java.rmi.RemoteException"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.NamedQueries"/>
-    <fullyQualifiedTypeName name="dao.DonDat_Dao"/>
-    <fullyQualifiedTypeName name="entity.DonDat"/>
     <fullyQualifiedTypeName name="jakarta.persistence.EntityTransaction"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.NamedQueries"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.NamedQuery"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="entity.HoaDon"/>
+    <fullyQualifiedTypeName name="java.rmi.RemoteException"/>
+    <fullyQualifiedTypeName name="dao.KhachHang_Dao"/>
+    <fullyQualifiedTypeName name="dao.HoaDon_Dao"/>
+    <fullyQualifiedTypeName name="dao.DonDat_Dao"/>
+    <fullyQualifiedTypeName name="dao.impl.ChiTietHoaDon_Impl"/>
+    <fullyQualifiedTypeName name="dao.impl.HoaDon_Ipml"/>
+    <fullyQualifiedTypeName name="dao.impl.Thuoc_Impl"/>
+    <fullyQualifiedTypeName name="dao.impl.KhachHang_Impl"/>
+    <fullyQualifiedTypeName name="dao.impl.DonDat_Impl"/>
+    <fullyQualifiedTypeName name="dao.impl.ChiTietDonDat_Impl"/>
+    <fullyQualifiedTypeName name="dao.impl.HoaDon_Impl"/>
+    <fullyQualifiedTypeName name="dao.impl.NhanVien_Impl"/>
+    <fullyQualifiedTypeName name="dao.impl.TaiKhoan_Impl"/>
+    <fullyQualifiedTypeName name="entity.ChiTietDonDat"/>
 </qualifiedTypeNameHistroy>

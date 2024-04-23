@@ -1,30 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="&lt;&lt;&lt;"/>
+		<item key="selection" value="deleteByID"/>
 		<item key="wrap" value="true"/>
-		<item key="casesensitive" value="false"/>
+		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="deleteByID"/>
+			<item value="deleteById"/>
+			<item value="getHoTen"/>
+			<item value="getMaKH"/>
+			<item value="getMaNV"/>
+			<item value="_Iplm"/>
+			<item value="_Impl"/>
+			<item value="_Dao()"/>
+			<item value="//"/>
 			<item value="&lt;&lt;&lt;"/>
 			<item value="btnTraPhongActionPerformed"/>
 			<item value="regCCCD_Passport"/>
 			<item value="btnThemKhachHang"/>
 			<item value="setGiaCoc"/>
 			<item value="button"/>
-			<item value="button1"/>
-			<item value="jButton1"/>
-			<item value="DatPhong"/>
-			<item value="txtSDT"/>
-			<item value="btnIn"/>
-			<item value="btnHoanThanh"/>
-			<item value="txtSoLuong"/>
-			<item value="btnThem"/>
-			<item value="btnLapHD"/>
 		</list>
 		<list key="replacehistory">
+			<item value="getTenKhachHang"/>
+			<item value="getMaKhachHang"/>
+			<item value="getMaNhanVien"/>
+			<item value="_Ipml"/>
+			<item value="_Iplm"/>
+			<item value="_Impl()"/>
+			<item value="_Impl"/>
 			<item value="tinhTienCoc"/>
 			<item value="maLoai"/>
 			<item value="ganDuLieuPhongVaoQuanLyPhong"/>

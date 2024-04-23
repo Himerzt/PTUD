@@ -1,0 +1,9 @@
+package dao;
+
+import java.rmi.Remote;
+
+import entity.KhachHang;
+
+public interface KhachHang_Dao extends Remote {
+	public KhachHang findKhachHangByID(String maKhachHang);
+}

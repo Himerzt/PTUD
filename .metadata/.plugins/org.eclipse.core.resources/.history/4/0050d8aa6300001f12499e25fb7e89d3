@@ -1,0 +1,18 @@
+package dao.impl;
+
+import java.rmi.server.UnicastRemoteObject;
+
+import dao.KhachHang_Dao;
+import entity.KhachHang;
+
+public class KhachHang_Impl extends UnicastRemoteObject implements KhachHang_Dao {
+	
+	private static final long serialVersionUID = 96854785625879658L;
+
+	@Override
+	public KhachHang findKhachHangByID(String maKhachHang) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
