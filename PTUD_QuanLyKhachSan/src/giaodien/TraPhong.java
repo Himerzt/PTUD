@@ -480,7 +480,7 @@ public class TraPhong extends javax.swing.JDialog {
 	private void btnTraPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
 		// TODO add your handling code here:
 //         Tạo một đối tượng mới của HoaDonThanhToan
-		HoaDonThanhToan hoaDonThanhToan = new HoaDonThanhToan();
+		HoaDonThanhToan2 hoaDonThanhToan = new HoaDonThanhToan2();
 
 		// Đặt phương thức để đóng cửa sổ khi người dùng đóng cửa sổ mới
 		hoaDonThanhToan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

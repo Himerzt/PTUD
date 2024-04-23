@@ -59,7 +59,7 @@ public class PasswordField extends JPasswordField {
     private final Image eye;
     private final Image eye_hide;
     private boolean hide = true;
-    private boolean showAndHide;
+    private boolean showAndHide = true;
 
     public PasswordField() {
         setBorder(new EmptyBorder(20, 3, 10, 30));
@@ -130,13 +130,12 @@ public class PasswordField extends JPasswordField {
             }
 
         };
-        eye = new ImageIcon(getClass().getResource("/imgLogin/eye.png")).getImage();
-        eye_hide = new ImageIcon(getClass().getResource("/imgLogin/eye_hide.png")).getImage();
+        eye = new ImageIcon(getClass().getResource("/giaodien/CustomClass/eye.png")).getImage();
+        eye_hide = new ImageIcon(getClass().getResource("/giaodien/CustomClass/eye_hide.png")).getImage();
         animator = new Animator(300, target);
         animator.setResolution(0);
         animator.setAcceleration(0.5f);
         animator.setDeceleration(0.5f);
-        showAndHide = true;
     }
 
     private void showing(boolean action) {
