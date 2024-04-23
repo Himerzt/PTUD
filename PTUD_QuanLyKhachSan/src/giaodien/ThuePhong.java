@@ -596,7 +596,7 @@ public class ThuePhong extends javax.swing.JDialog {
 		KhachHangDao khachHangDao = new KhachHangDao();
 		KhachHang khachHang = khachHangDao.timTheoCCCD(txtCCCD.getText());
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		LocalDate ngayDat = LocalDate.parse(txtCheckIn.getText(), formatter);
+//		LocalDate ngayDat = LocalDate.parse(txtCheckIn.getText(), formatter);
 		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), formatter);
 		LocalDate ngayTra = LocalDate.parse(txtCheckOut.getText(), formatter);
 		String maLoaiThue = "";
@@ -668,36 +668,36 @@ public class ThuePhong extends javax.swing.JDialog {
 		}
 	}
 	
-	public double setGiaCoc() {
-		String[] dsPhongDat = layDanhSachPhongDat();
-		PhongDao phongDao = new PhongDao();
-		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
-		// Lấy tên trong dsPhongDat, so sánh và lấy thông tin phòng từ CSDL
-		for (String tenPhong : dsPhongDat) {
-			dsPhong.add(phongDao.timPhongTheoSoPhong(Integer.parseInt(tenPhong)));
-		}
-		LoaiThueDao loaiThueDao = new LoaiThueDao();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		LocalDate ngayDat = LocalDate.parse(txtCheckIn.getText(), formatter);
-		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), formatter);
-		String loaiPhong = "";
-		String maLoaiThue = "";
-		double soTienCoc = 0;
-		
-		// Tính tiền cọc
-		for (Phong phong : dsPhong) {
-			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
-			maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), loaiPhong);
-			if (ngayDat.equals(ngayNhan)) {
-				return soTienCoc = 0;
-				
-			}
-			else if (ngayDat.isBefore(ngayNhan)) {
-				soTienCoc += loaiThueDao.timGiaCocTheoMaThue(maLoaiThue);
-			}
-		}
-		return soTienCoc;
-	}
+//	public double setGiaCoc() {
+//		String[] dsPhongDat = layDanhSachPhongDat();
+//		PhongDao phongDao = new PhongDao();
+//		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
+//		// Lấy tên trong dsPhongDat, so sánh và lấy thông tin phòng từ CSDL
+//		for (String tenPhong : dsPhongDat) {
+//			dsPhong.add(phongDao.timPhongTheoSoPhong(Integer.parseInt(tenPhong)));
+//		}
+//		LoaiThueDao loaiThueDao = new LoaiThueDao();
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+////		LocalDate ngayDat = LocalDate.parse(txtCheckIn.getText(), formatter);
+//		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), formatter);
+//		String loaiPhong = "";
+//		String maLoaiThue = "";
+//		double soTienCoc = 0;
+//		
+////		// Tính tiền cọc
+////		for (Phong phong : dsPhong) {
+////			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
+////			maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), loaiPhong);
+////			if (ngayDat.equals(ngayNhan)) {
+////				return soTienCoc = 0;
+////				
+////			}
+////			else if (ngayDat.isBefore(ngayNhan)) {
+////				soTienCoc += loaiThueDao.timGiaCocTheoMaThue(maLoaiThue);
+////			}
+////		}
+////		return soTienCoc;
+//	}
 
 	private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {                                              
 	    loadDanhSachDichVu();

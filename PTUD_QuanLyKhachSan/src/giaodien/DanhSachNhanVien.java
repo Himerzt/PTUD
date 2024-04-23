@@ -42,6 +42,7 @@ import giaodien.CustomClass.DateChooser;
 import connectDB.ConnectDB;
 import dao.PhongDao;
 import dao.TaiKhoanDao;
+import entity.TaiKhoan;
 
 import javax.swing.JFrame;
 import menu.MenuEvent;
@@ -298,15 +299,16 @@ public class DanhSachNhanVien extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtHoTen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1)
-                        .addComponent(btnTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnCapLaiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnCapNhat, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2)
-                        .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnReset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtHoTen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(btnTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCapLaiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCapNhat, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)))
                     .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -364,11 +366,10 @@ public class DanhSachNhanVien extends javax.swing.JFrame {
     }
 
     }//GEN-LAST:event_btnTimKiemActionPerformed
-
+    
     private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
         // Lấy chỉ số hàng được chọn
         int selectedRow = DanhSachNhanVien.getSelectedRow();
-
         // Kiểm tra xem có hàng nào được chọn không
         if (selectedRow != -1) {
             // Lấy dữ liệu từ hàng được chọn
@@ -405,7 +406,41 @@ public class DanhSachNhanVien extends javax.swing.JFrame {
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnCapLaiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapLaiMatKhauActionPerformed
-       
+       // Lấy hàng được chọn từ bảng DanhSachNhanVien
+    int selectedRow = DanhSachNhanVien.getSelectedRow();
+
+    // Kiểm tra xem có hàng nào được chọn không
+    if (selectedRow != -1) {
+        // Lấy mã nhân viên từ cột 2 (index 1) của hàng được chọn
+        String maNhanVien = DanhSachNhanVien.getValueAt(selectedRow, 1).toString();
+
+        // Lấy tên nhân viên từ cột 3 (index 2) của hàng được chọn
+        String tenNhanVien = DanhSachNhanVien.getValueAt(selectedRow, 2).toString();
+
+        // Hiển thị hộp thoại xác nhận với thông tin nhân viên đã chọn
+        int option = JOptionPane.showConfirmDialog(null, "Bạn muốn cấp lại mật khẩu cho nhân viên có mã " + maNhanVien + " - " + tenNhanVien + " ?", "Xác nhận", JOptionPane.OK_CANCEL_OPTION);
+        if (option == JOptionPane.OK_OPTION) {
+
+            // Tạo đối tượng TaiKhoanDao để sử dụng hàm suaTaiKhoan
+            TaiKhoanDao taiKhoanDao = new TaiKhoanDao();
+
+            // Tạo đối tượng TaiKhoan mới với mật khẩu mặc định
+            TaiKhoan taiKhoan = new  TaiKhoan();
+            taiKhoan.setTenDangNhap(maNhanVien);
+            taiKhoan.setMatKhau("123456789"); // Mật khẩu mặc định
+
+            // Gọi hàm suaTaiKhoan để cập nhật mật khẩu mới
+            boolean capLaiThanhCong = taiKhoanDao.suaTaiKhoan(taiKhoan);
+
+            if (capLaiThanhCong) {
+                JOptionPane.showMessageDialog(null, "Đã cấp lại mật khẩu cho nhân viên có mã " + maNhanVien);
+            } else {
+                JOptionPane.showMessageDialog(null, "Có lỗi xảy ra. Không thể cấp lại mật khẩu cho nhân viên có mã " + maNhanVien);
+            }
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Vui lòng chọn nhân viên từ bảng để cấp lại mật khẩu.");
+            }
     }//GEN-LAST:event_btnCapLaiMatKhauActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed

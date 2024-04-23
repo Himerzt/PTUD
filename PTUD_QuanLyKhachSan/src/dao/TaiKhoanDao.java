@@ -83,7 +83,6 @@ public class TaiKhoanDao {
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
 		int n = 0;
-		if (dsTaiKhoan.contains(tk)) {
 			try {
 				stmt = con.createStatement();
 				String sql = "update TaiKhoan set matKhau = '" + tk.getMatKhau() + "' where tenDangNhap = '" + tk.getTenDangNhap() + "'";
@@ -92,8 +91,6 @@ public class TaiKhoanDao {
 				e.printStackTrace();
 			}
 			return n > 0;
-		}
-		return false;
 	}
 
 	// tìm tài khoản theo tên đăng nhập
@@ -113,4 +110,34 @@ public class TaiKhoanDao {
 
 		return tk;
 	}
+        public boolean xacThucDangNhap(String tenDangNhap, String matKhau) {
+    try {
+        Connection con = ConnectDB.getInstance().getConnection();
+
+        // Tạo câu truy vấn SQL
+        String sql = "SELECT * FROM TaiKhoan WHERE tenDangNhap = '" + tenDangNhap + "'";
+
+        // Tạo một câu lệnh truy vấn
+        Statement stmt = con.createStatement();
+
+        // Thực thi truy vấn và lấy kết quả
+        ResultSet rs = stmt.executeQuery(sql);
+
+        // Kiểm tra xem có bản ghi nào được trả về không
+        if (rs.next()) {
+            // Lấy mật khẩu từ cơ sở dữ liệu
+            String matKhauDB = rs.getString("matKhau");
+
+            // Kiểm tra xem mật khẩu có khớp không
+            if (matKhauDB.equals(matKhau)) {
+                return true; // Mật khẩu khớp, đăng nhập thành công
+            }
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return false; // Mật khẩu không khớp hoặc tài khoản không tồn tại
+}
+
+
 }

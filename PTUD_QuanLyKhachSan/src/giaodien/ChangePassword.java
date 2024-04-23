@@ -1,4 +1,4 @@
-package giaodien.CustomClass;
+package giaodien;
 import giaodien.Login;
 import java.awt.Color;
 import java.sql.SQLException;
@@ -32,14 +32,14 @@ public class ChangePassword extends javax.swing.JFrame {
         Right = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Left = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtTenDangNhap = new giaodien.CustomClass.TextField();
         btnDoiMatKhau = new giaodien.CustomClass.Button();
-        txtMatKhauMoi1 = new giaodien.CustomClass.PasswordField();
-        txtMatKhauCu = new giaodien.CustomClass.PasswordField();
-        txtMatKhauMoi2 = new giaodien.CustomClass.PasswordField();
         button2 = new giaodien.CustomClass.Button();
+        jLabel2 = new javax.swing.JLabel();
+        txtMatKhauCu = new giaodien.CustomClass.PasswordField();
+        txtMatKhauMoi1 = new giaodien.CustomClass.PasswordField();
+        txtMatKhauMoi2 = new giaodien.CustomClass.PasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ChangePassword");
@@ -75,17 +75,14 @@ public class ChangePassword extends javax.swing.JFrame {
 
         Left.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(23, 195, 178));
-        jLabel2.setText("ĐỔI MẬT KHẨU");
-
         jLabel6.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
         jLabel6.setText("StaRail Hotel  Management");
 
         txtTenDangNhap.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         txtTenDangNhap.setLabelText("Tên đăng nhập");
         txtTenDangNhap.setLineColor(new java.awt.Color(23, 195, 178));
-        txtTenDangNhap.setPreferredSize(new java.awt.Dimension(64, 50));
+        txtTenDangNhap.setPreferredSize(new java.awt.Dimension(240, 55));
+        txtTenDangNhap.setSelectionColor(new java.awt.Color(23, 195, 178));
 
         btnDoiMatKhau.setBackground(new java.awt.Color(23, 195, 178));
         btnDoiMatKhau.setBorder(null);
@@ -106,23 +103,6 @@ public class ChangePassword extends javax.swing.JFrame {
             }
         });
 
-        txtMatKhauMoi1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        txtMatKhauMoi1.setLabelText("Mật khẩu mới");
-        txtMatKhauMoi1.setLineColor(new java.awt.Color(23, 195, 178));
-        txtMatKhauMoi1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMatKhauMoi1ActionPerformed(evt);
-            }
-        });
-
-        txtMatKhauCu.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        txtMatKhauCu.setLabelText("Mật khẩu cũ");
-        txtMatKhauCu.setLineColor(new java.awt.Color(23, 195, 178));
-
-        txtMatKhauMoi2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        txtMatKhauMoi2.setLabelText("Mật khẩu mới");
-        txtMatKhauMoi2.setLineColor(new java.awt.Color(23, 195, 178));
-
         button2.setBorder(null);
         button2.setText("Quay lại");
         button2.setBorderColor(java.awt.Color.white);
@@ -134,51 +114,67 @@ public class ChangePassword extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setBackground(new java.awt.Color(23, 195, 178));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(23, 195, 178));
+        jLabel2.setText("ĐỔI MẬT KHẨU");
+
+        txtMatKhauCu.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtMatKhauCu.setLabelText("Mật khẩu cũ");
+        txtMatKhauCu.setLineColor(new java.awt.Color(23, 195, 178));
+
+        txtMatKhauMoi1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtMatKhauMoi1.setLabelText("Mật khẩu mới");
+        txtMatKhauMoi1.setLineColor(new java.awt.Color(23, 195, 178));
+
+        txtMatKhauMoi2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtMatKhauMoi2.setLabelText("Mật khẩu mới");
+        txtMatKhauMoi2.setLineColor(new java.awt.Color(23, 195, 178));
+
         javax.swing.GroupLayout LeftLayout = new javax.swing.GroupLayout(Left);
         Left.setLayout(LeftLayout);
         LeftLayout.setHorizontalGroup(
             LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LeftLayout.createSequentialGroup()
-                .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(LeftLayout.createSequentialGroup()
-                            .addGap(85, 85, 85)
-                            .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtMatKhauMoi1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtMatKhauCu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtMatKhauMoi2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)))
-                        .addGroup(LeftLayout.createSequentialGroup()
-                            .addGap(34, 34, 34)
-                            .addComponent(jLabel6))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LeftLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel6))
+                    .addGroup(LeftLayout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtTenDangNhap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtMatKhauCu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtMatKhauMoi1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtMatKhauMoi2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(LeftLayout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(jLabel2)))
+                .addContainerGap(27, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeftLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(95, 95, 95))
+                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         LeftLayout.setVerticalGroup(
             LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LeftLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel6)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(txtMatKhauCu, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(txtMatKhauMoi1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(txtMatKhauMoi2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(txtMatKhauCu, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtMatKhauMoi1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtMatKhauMoi2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(38, 38, 38))
         );
 
         jPanel1.add(Left);
@@ -189,9 +185,7 @@ public class ChangePassword extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,6 +195,7 @@ public class ChangePassword extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDoiMatKhauMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDoiMatKhauMouseExited
@@ -233,39 +228,56 @@ public class ChangePassword extends javax.swing.JFrame {
 	}
 
     private void btnDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiMatKhauActionPerformed
+        try {
+        // Lấy thông tin từ các trường nhập liệu
         String tenDangNhap = txtTenDangNhap.getText();
-        char[] matKhauCu = txtMatKhauCu.getPassword();
-        char[] matKhauMoi1 = txtMatKhauMoi1.getPassword();
-        char[] matKhauMoi2 = txtMatKhauMoi2.getPassword();
-        String mkCu = String.valueOf(matKhauCu);
-        String mkMoi1 = String.valueOf(matKhauMoi1);
-        String mkMoi2 = String.valueOf(matKhauMoi2);
-        TaiKhoanDao tkDao = new TaiKhoanDao();
-        TaiKhoan taiKhoan = tkDao.timTaiKhoanTheoTenDangNhap(tenDangNhap);
-		if (tenDangNhap.equals("") || mkCu.equals("") || mkMoi1.equals("") || mkMoi2.equals("")) {
-			JOptionPane.showMessageDialog(null, "Vui lòng nhập đầy đủ thông tin");
-		} else {
-			if (taiKhoan == null) {
-				JOptionPane.showMessageDialog(null, "Tên đăng nhập không tồn tại");
-			} else {
-				if (!taiKhoan.getMatKhau().equals(mkCu)) {
-					JOptionPane.showMessageDialog(null, "Mật khẩu cũ không đúng");
-				} if (mkCu.equals(mkMoi1)) {
-					JOptionPane.showMessageDialog(null, "Mật khẩu bị trùng với cái cũ, đổi lại đi");
-				}else {
-					if (!mkMoi1.equals(mkMoi2)) {
-						JOptionPane.showMessageDialog(null, "Mật khẩu mới không trùng khớp");
-					} if (regMatKhau(mkMoi1) == false) {
-						JOptionPane.showMessageDialog(null, "Mật khẩu mới phải có ít nhất 8 ký tự, bao gồm 1 chữ hoa và 1 số");
-					}
-					else {
-						taiKhoan.setMatKhau(mkMoi1);
-						tkDao.suaTaiKhoan(taiKhoan);
-						JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công");
-					}
-				}
-			}
-		}
+        String matKhauCu = new String(txtMatKhauCu.getPassword());
+        String matKhauMoi1;
+        String matKhauMoi2;
+
+        // Kiểm tra xác thực đăng nhập
+        TaiKhoanDao taiKhoanDao = new TaiKhoanDao();
+        boolean dangNhapThanhCong = taiKhoanDao.xacThucDangNhap(tenDangNhap, matKhauCu);
+
+        if (dangNhapThanhCong) {
+            // Lặp lại quá trình nhập mật khẩu mới cho đến khi nó khác mật khẩu cũ
+            boolean matKhauMoiKhacCu = false;
+            do {
+                matKhauMoi1 = new String(txtMatKhauMoi1.getPassword());
+                matKhauMoi2 = new String(txtMatKhauMoi2.getPassword());
+
+                if (!matKhauMoi1.equals(matKhauMoi2)) {
+                    int option = JOptionPane.showOptionDialog(null, "Mật khẩu mới không trùng khớp", "Thông báo", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, new Object[]{"OK"}, "OK");
+                    if (option == JOptionPane.OK_OPTION) {
+                        return; // Thoát khỏi phương thức khi người dùng nhấn OK
+                    }
+                } else if (matKhauMoi1.equals(matKhauCu)) {
+                    int option = JOptionPane.showOptionDialog(null, "Mật khẩu mới phải khác mật khẩu cũ", "Thông báo", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, new Object[]{"OK"}, "OK");
+                    if (option == JOptionPane.OK_OPTION) {
+                        return; // Thoát khỏi phương thức khi người dùng nhấn OK
+                    }
+                } else {
+                    matKhauMoiKhacCu = true; // Mật khẩu mới khác mật khẩu cũ
+                }
+            } while (!matKhauMoi1.equals(matKhauMoi2) || !matKhauMoiKhacCu);
+
+            // Cập nhật mật khẩu mới vào cơ sở dữ liệu
+            TaiKhoan taiKhoan = new TaiKhoan();
+            taiKhoan.setTenDangNhap(tenDangNhap);
+            taiKhoan.setMatKhau(matKhauMoi1);
+            boolean doiMatKhauThanhCong = taiKhoanDao.suaTaiKhoan(taiKhoan);
+            if (doiMatKhauThanhCong) {
+                JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Đổi mật khẩu thất bại", "Thông báo", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            // Đăng nhập thất bại
+            JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu.", "Thông báo", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }
     }//GEN-LAST:event_btnDoiMatKhauActionPerformed
 
 

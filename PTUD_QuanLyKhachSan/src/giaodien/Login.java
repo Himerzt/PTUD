@@ -1,6 +1,5 @@
 
 package giaodien;
-import giaodien.CustomClass.ChangePassword;
 import java.awt.Color;
 import java.io.Serializable;
 import java.sql.Connection;
@@ -11,6 +10,9 @@ import javax.swing.JOptionPane;
 
 import connectDB.ConnectDB;
 import dao.TaiKhoanDao;
+import entity.TaiKhoan;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class Login extends javax.swing.JFrame implements Serializable{
 
     public Login() throws SQLException {
@@ -29,10 +31,10 @@ public class Login extends javax.swing.JFrame implements Serializable{
         Left = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtTenDangNhap = new giaodien.CustomClass.TextField();
-        txtMatKhau = new giaodien.CustomClass.PasswordField();
         btnDangNhap = new giaodien.CustomClass.Button();
         btnDoiMatKhau = new giaodien.CustomClass.Button();
+        txtMatKhau = new giaodien.CustomClass.PasswordField();
+        txtTenDangNhap = new giaodien.CustomClass.TextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN");
@@ -79,15 +81,6 @@ public class Login extends javax.swing.JFrame implements Serializable{
         jLabel6.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
         jLabel6.setText("StaRail Hotel  Management");
 
-        txtTenDangNhap.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        txtTenDangNhap.setLabelText("Tên đăng nhập");
-        txtTenDangNhap.setLineColor(new java.awt.Color(23, 195, 178));
-        txtTenDangNhap.setPreferredSize(new java.awt.Dimension(64, 50));
-
-        txtMatKhau.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        txtMatKhau.setLabelText("Mật khẩu");
-        txtMatKhau.setLineColor(new java.awt.Color(23, 195, 178));
-
         btnDangNhap.setBackground(new java.awt.Color(23, 195, 178));
         btnDangNhap.setBorder(null);
         btnDangNhap.setText("ĐĂNG NHẬP");
@@ -102,12 +95,7 @@ public class Login extends javax.swing.JFrame implements Serializable{
         });
         btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                try {
-					btnDangNhapActionPerformed(evt);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+                btnDangNhapActionPerformed(evt);
             }
         });
 
@@ -129,6 +117,14 @@ public class Login extends javax.swing.JFrame implements Serializable{
             }
         });
 
+        txtMatKhau.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtMatKhau.setLabelText("Mật khẩu");
+        txtMatKhau.setLineColor(new java.awt.Color(23, 195, 178));
+
+        txtTenDangNhap.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtTenDangNhap.setLabelText("Tên đăng nhập");
+        txtTenDangNhap.setLineColor(new java.awt.Color(23, 195, 178));
+
         javax.swing.GroupLayout LeftLayout = new javax.swing.GroupLayout(Left);
         Left.setLayout(LeftLayout);
         LeftLayout.setHorizontalGroup(
@@ -140,29 +136,29 @@ public class Login extends javax.swing.JFrame implements Serializable{
             .addGroup(LeftLayout.createSequentialGroup()
                 .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LeftLayout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(jLabel1))
+                    .addGroup(LeftLayout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                            .addComponent(txtMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(LeftLayout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(jLabel1)))
+                            .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                            .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LeftLayout.setVerticalGroup(
             LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LeftLayout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addGap(37, 37, 37)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(txtTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
                 .addComponent(btnDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -190,6 +186,7 @@ public class Login extends javax.swing.JFrame implements Serializable{
         jPanel1.getAccessibleContext().setAccessibleName("");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDangNhapMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDangNhapMouseExited
@@ -215,37 +212,41 @@ public class Login extends javax.swing.JFrame implements Serializable{
         
     }//GEN-LAST:event_btnDoiMatKhauActionPerformed
 
-    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_btnDangNhapActionPerformed
-        TaiKhoanDao taiKhoanDao = new TaiKhoanDao();
+    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
+        
+ try {
+        // Lấy thông tin từ các trường nhập liệu
         String tenDangNhap = txtTenDangNhap.getText();
-        char[] matKhau = txtMatKhau.getPassword();
-        String matKhauString = new String(matKhau);
-		if (!tenDangNhap.equals("")) {
-			JOptionPane.showMessageDialog(null, "Tài khoản không tồn tại");
-		} 
-		else if (!taiKhoanDao.timTaiKhoanTheoTenDangNhap(tenDangNhap).getMatKhau().equals(matKhauString)) {
-			JOptionPane.showMessageDialog(null, "Sai mật khẩu");
-		} else {
-			JOptionPane.showMessageDialog(null, "Đăng nhập thành công");
-//			Ma nhan vien: SRNV04022024001
-//			Neu la "NV" thi se vao giao dien nhan vien, neu la "QL" thi se vao giao dien quan ly
-			if (taiKhoanDao.timTaiKhoanTheoTenDangNhap(tenDangNhap).getMaNhanVien().substring(0, 2).equals("NV")) {
-				try {
-					TrangChu trangChu = new TrangChu();
-					trangChu.setVisible(true);
-				} catch (Exception e) {
-					// TODO: handle exception
-					e.printStackTrace();
-				}
-			} if (taiKhoanDao.timTaiKhoanTheoTenDangNhap(tenDangNhap).getMaNhanVien().substring(0, 2).equals("QL")) {
-				try {
-					new TrangChu().setVisible(true);
-				} catch (SQLException e) {
-					e.printStackTrace();
-					// TODO: handle exception
-				}
-			}
-		}
+        String matKhau = new String(txtMatKhau.getPassword());
+
+        // Kiểm tra xác thực đăng nhập
+        if (tenDangNhap.isEmpty() || matKhau.isEmpty()) {
+            // Hiển thị thông báo nếu các trường đăng nhập trống
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập tên đăng nhập và mật khẩu.");
+        } else {
+            // Tạo đối tượng TaiKhoanDao để xác thực đăng nhập
+            TaiKhoanDao taiKhoanDao = new TaiKhoanDao();
+            boolean dangNhapThanhCong = taiKhoanDao.xacThucDangNhap(tenDangNhap, matKhau);
+
+            if (dangNhapThanhCong) {
+                // Đăng nhập thành công
+                JOptionPane.showMessageDialog(null, "Đăng nhập thành công");
+
+                // Thực hiện các hành động sau khi đăng nhập thành công, ví dụ chuyển sang màn hình mới
+                // Ở đây tôi sẽ chỉ đóng cửa sổ đăng nhập, bạn có thể thay đổi theo nhu cầu của mình
+                dispose(); // Đóng cửa sổ hiện tại
+
+                // Mở màn hình mới hoặc thực hiện các hành động khác ở đây
+                TrangChuNew2 trangChuNew2 = new TrangChuNew2();
+                trangChuNew2.setVisible(true); // Hiển thị cửa sổ mới
+            } else {
+                // Đăng nhập thất bại
+                JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu.");
+            }
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     /**
