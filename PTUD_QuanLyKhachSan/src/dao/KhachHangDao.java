@@ -108,7 +108,7 @@ public class KhachHangDao {
 			pst.setString(3, kh.getGioiTinh());
 			pst.setDate(4, Date.valueOf(kh.getNgaySinh()));
 			pst.setString(5, kh.getSoDT());
-			pst.setString(6, kh.getCCCD_Visa());
+			pst.setString(6, kh.getCccd_passport());
 			pst.setDouble(7, kh.getChiTieu());
 			pst.setString(8, kh.getMaHangThanhVien());
 			pst.setString(9, kh.getQuocTich());
@@ -127,7 +127,7 @@ public class KhachHangDao {
 			Connection con = ConnectDB.getInstance().getConnection();
 			String sql = "Update KhachHang set TenKhachHang = N'" + kh.getHoTenKH() + "', gioiTinh = N'" + kh.getGioiTinh()
 					+ "', ngaySinhKH = '" + kh.getNgaySinh() + "', soDienThoai = '" + kh.getSoDT() + "', CCCD_Visa = '"
-					+ kh.getCCCD_Visa() + "', chiTieu = " + kh.getChiTieu() + ", maHang = '"
+					+ kh.getCccd_passport() + "', chiTieu = " + kh.getChiTieu() + ", maHang = '"
 					+ kh.getMaHangThanhVien() + "', quocTich = N'" + kh.getQuocTich() + "' where maKH = '"
 					+ kh.getMaKH() + "'";
 			Statement statement = con.createStatement();
@@ -186,7 +186,7 @@ public class KhachHangDao {
 		KhachHang kh = null;
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from KhachHang where CCCD_Visa = '" + CCCD + "'";
+			String sql = "Select * from KhachHang where CCCD_Passport = '" + CCCD + "'";
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 			if (rs.next()) {

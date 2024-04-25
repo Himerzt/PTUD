@@ -20,7 +20,6 @@ public class DichVuDao {
 	public DichVuDao() {
 		dsDichVu = new ArrayList<DichVu>();
 		dv = new DichVu();
-//		dvDao = new DichVuDao();
 	}
 
 	public ArrayList<DichVu> timTatCaDichVu() {
@@ -244,5 +243,4 @@ public class DichVuDao {
 		}
 		return dsDV;
 	}
-
 }

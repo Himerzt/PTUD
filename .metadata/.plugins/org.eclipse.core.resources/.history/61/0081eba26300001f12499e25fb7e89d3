@@ -1,0 +1,16 @@
+package dao.impl;
+
+import java.rmi.server.UnicastRemoteObject;
+
+import dao.KhachHang_Dao;
+import entity.KhachHang;
+
+public class KhachHang_Impl extends UnicastRemoteObject implements KhachHang_Dao {
+
+	@Override
+	public KhachHang findKhachHangByID(String maKhachHang) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

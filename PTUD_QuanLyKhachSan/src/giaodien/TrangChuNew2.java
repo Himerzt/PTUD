@@ -54,7 +54,7 @@ import javax.swing.GroupLayout;
  * @author Huynguyen
  */
 public class TrangChuNew2 extends javax.swing.JFrame {
-	private ArrayList<javax.swing.JPanel> phongTrangChu;
+	private ArrayList<giaodien.CustomClass.PanelRound> phongTrangChu;
 	private ArrayList<javax.swing.JLabel> loaiPhongTrangChu;
 	private ArrayList<javax.swing.JLabel> tenPhongTrangChu;
 	private ArrayList<javax.swing.JLabel> trangThaiPhongTrangChu;
@@ -64,16 +64,10 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         ConnectDB.getInstance().getConnection();
         setResizable(false);
         initComponents();
-        
-        
-//        phongTrangChu6 = new giaodien.CustomClass.PanelRound();
-//        lblLoaiPhongTrangChu6 = new javax.swing.JLabel();
-//        lblTenPhongTrangChu6 = new javax.swing.JLabel();
-//        lblTrangThaiTrangChu6 = new javax.swing.JLabel();
         phongTrangChu = new ArrayList<>();
 		for (int i = 1; i <= 35; i++) {
 			try {
-				phongTrangChu.add((JPanel) getClass().getDeclaredField("phongTrangChu" + i).get(this));
+				phongTrangChu.add((giaodien.CustomClass.PanelRound) getClass().getDeclaredField("phongTrangChu" + i).get(this));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -110,6 +104,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
 			}
 		}
         
+		loadDanhSachPhong();
         pnedUngDung.addTab("Quản lý phòng", new QuanLyPhongPannel());
         pnedUngDung.addTab("Quản lý nhân viên", new NhanVienPannel());
         pnedUngDung.addTab("Quản lý dịch vụ", new DichVuPannel());
@@ -148,12 +143,45 @@ public class TrangChuNew2 extends javax.swing.JFrame {
 
             }
 
-        });
-        
-        
-    }
+        });     
+    };
+    
+    private void loadDanhSachPhong() {
+		PhongDao phongDao = new PhongDao();
+		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
+		for (int i = 0; i < phongTrangChu.size(); i++) {
+			Phong phong = dsPhong.get(i);
+			JPanel phongPanel = phongTrangChu.get(i);
+			JLabel loaiPhong = loaiPhongTrangChu.get(i);
+			JLabel soPhong = tenPhongTrangChu.get(i);
+			JLabel trangThai = trangThaiPhongTrangChu.get(i);
 
-    ;
+			// Gán thông tin phòng lên label
+			soPhong.setText(Integer.toString(phong.getSoPhong()));
+			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+				loaiPhong.setText("Tiêu chuẩn");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+				loaiPhong.setText("Nâng cao");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+				loaiPhong.setText("Cao cấp");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
+				loaiPhong.setText("Thương gia");
+			}
+			trangThai.setText(phong.getTrangThai());
+
+			if (trangThai.getText().equalsIgnoreCase("Trống")) {
+				phongPanel.setBackground(Color.green);
+			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
+				phongPanel.setBackground(Color.red);
+			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
+				phongPanel.setBackground(Color.yellow);
+			}
+
+			if (phongPanel.isVisible() == false) {
+				phongPanel.show();
+			}
+		}
+	}
 
 	@SuppressWarnings("unchecked")
 
@@ -330,7 +358,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -418,6 +446,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         phongTrangChu1.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu1.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu1.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu1.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu1.setRoundBottomLeft(20);
         phongTrangChu1.setRoundBottomRight(20);
         phongTrangChu1.setRoundTopLeft(20);
@@ -442,7 +473,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu1Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu1)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -460,6 +491,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu2.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu2.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu2.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu2.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu2.setRoundBottomLeft(20);
         phongTrangChu2.setRoundBottomRight(20);
         phongTrangChu2.setRoundTopLeft(20);
@@ -484,7 +518,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu2Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu2)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -502,6 +536,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu3.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu3.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu3.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu3.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu3.setRoundBottomLeft(20);
         phongTrangChu3.setRoundBottomRight(20);
         phongTrangChu3.setRoundTopLeft(20);
@@ -526,7 +563,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu3Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu3)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -544,6 +581,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu4.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu4.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu4.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu4.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu4.setRoundBottomLeft(20);
         phongTrangChu4.setRoundBottomRight(20);
         phongTrangChu4.setRoundTopLeft(20);
@@ -568,7 +608,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu4Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu4)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -586,6 +626,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu5.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu5.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu5.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu5.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu5.setRoundBottomLeft(20);
         phongTrangChu5.setRoundBottomRight(20);
         phongTrangChu5.setRoundTopLeft(20);
@@ -610,7 +653,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu5Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu5)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -628,6 +671,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu6.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu6.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu6.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu6.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu6.setRoundBottomLeft(20);
         phongTrangChu6.setRoundBottomRight(20);
         phongTrangChu6.setRoundTopLeft(20);
@@ -652,7 +698,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu6Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu6)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -670,6 +716,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu7.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu7.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu7.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu7.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu7.setRoundBottomLeft(20);
         phongTrangChu7.setRoundBottomRight(20);
         phongTrangChu7.setRoundTopLeft(20);
@@ -694,7 +743,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu7Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu7)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -712,6 +761,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu8.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu8.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu8.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu8.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu8.setRoundBottomLeft(20);
         phongTrangChu8.setRoundBottomRight(20);
         phongTrangChu8.setRoundTopLeft(20);
@@ -736,7 +788,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu8Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu8)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -754,6 +806,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu9.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu9.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu9.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu9.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu9.setRoundBottomLeft(20);
         phongTrangChu9.setRoundBottomRight(20);
         phongTrangChu9.setRoundTopLeft(20);
@@ -778,7 +833,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu9Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu9)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -796,6 +851,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu10.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu10.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu10.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu10.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu10.setRoundBottomLeft(20);
         phongTrangChu10.setRoundBottomRight(20);
         phongTrangChu10.setRoundTopLeft(20);
@@ -820,7 +878,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu10Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu10)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -904,6 +962,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         phongTrangChu11.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu11.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu11.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu11.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu11.setRoundBottomLeft(20);
         phongTrangChu11.setRoundBottomRight(20);
         phongTrangChu11.setRoundTopLeft(20);
@@ -928,7 +989,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu11Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu11)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -946,6 +1007,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu12.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu12.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu12.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu12.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu12.setRoundBottomLeft(20);
         phongTrangChu12.setRoundBottomRight(20);
         phongTrangChu12.setRoundTopLeft(20);
@@ -970,7 +1034,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu12Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu12)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -988,6 +1052,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu13.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu13.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu13.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu13.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu13.setRoundBottomLeft(20);
         phongTrangChu13.setRoundBottomRight(20);
         phongTrangChu13.setRoundTopLeft(20);
@@ -1012,7 +1079,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu13Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu13)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1030,6 +1097,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu14.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu14.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu14.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu14.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu14.setRoundBottomLeft(20);
         phongTrangChu14.setRoundBottomRight(20);
         phongTrangChu14.setRoundTopLeft(20);
@@ -1054,7 +1124,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu14Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu14)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1072,6 +1142,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu15.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu15.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu15.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu15.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu15.setRoundBottomLeft(20);
         phongTrangChu15.setRoundBottomRight(20);
         phongTrangChu15.setRoundTopLeft(20);
@@ -1096,7 +1169,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu15Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu15)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1114,6 +1187,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu16.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu16.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu16.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu16.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu16.setRoundBottomLeft(20);
         phongTrangChu16.setRoundBottomRight(20);
         phongTrangChu16.setRoundTopLeft(20);
@@ -1138,7 +1214,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu16Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu16)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1156,6 +1232,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu17.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu17.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu17.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu17.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu17.setRoundBottomLeft(20);
         phongTrangChu17.setRoundBottomRight(20);
         phongTrangChu17.setRoundTopLeft(20);
@@ -1180,7 +1259,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu17Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu17)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1198,6 +1277,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu18.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu18.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu18.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu18.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu18.setRoundBottomLeft(20);
         phongTrangChu18.setRoundBottomRight(20);
         phongTrangChu18.setRoundTopLeft(20);
@@ -1222,7 +1304,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu18Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu18)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1240,6 +1322,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu19.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu19.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu19.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu19.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu19.setRoundBottomLeft(20);
         phongTrangChu19.setRoundBottomRight(20);
         phongTrangChu19.setRoundTopLeft(20);
@@ -1264,7 +1349,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu19Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu19)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1282,6 +1367,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu20.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu20.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu20.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu20.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu20.setRoundBottomLeft(20);
         phongTrangChu20.setRoundBottomRight(20);
         phongTrangChu20.setRoundTopLeft(20);
@@ -1306,7 +1394,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu20Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu20)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1390,6 +1478,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         phongTrangChu21.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu21.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu21.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu21.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu21.setRoundBottomLeft(20);
         phongTrangChu21.setRoundBottomRight(20);
         phongTrangChu21.setRoundTopLeft(20);
@@ -1414,7 +1505,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu21Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu21)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1432,6 +1523,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu22.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu22.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu22.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu22.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu22.setRoundBottomLeft(20);
         phongTrangChu22.setRoundBottomRight(20);
         phongTrangChu22.setRoundTopLeft(20);
@@ -1456,7 +1550,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu22Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu22)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1474,6 +1568,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu23.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu23.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu23.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu23.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu23.setRoundBottomLeft(20);
         phongTrangChu23.setRoundBottomRight(20);
         phongTrangChu23.setRoundTopLeft(20);
@@ -1498,7 +1595,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu23Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu23)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1516,6 +1613,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu24.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu24.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu24.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu24.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu24.setRoundBottomLeft(20);
         phongTrangChu24.setRoundBottomRight(20);
         phongTrangChu24.setRoundTopLeft(20);
@@ -1540,7 +1640,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu24Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu24)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1558,6 +1658,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu25.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu25.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu25.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu25.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu25.setRoundBottomLeft(20);
         phongTrangChu25.setRoundBottomRight(20);
         phongTrangChu25.setRoundTopLeft(20);
@@ -1582,7 +1685,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu25Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu25)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1600,6 +1703,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu26.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu26.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu26.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu26.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu26.setRoundBottomLeft(20);
         phongTrangChu26.setRoundBottomRight(20);
         phongTrangChu26.setRoundTopLeft(20);
@@ -1624,7 +1730,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu26Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu26)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1642,6 +1748,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu27.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu27.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu27.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu27.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu27.setRoundBottomLeft(20);
         phongTrangChu27.setRoundBottomRight(20);
         phongTrangChu27.setRoundTopLeft(20);
@@ -1666,7 +1775,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu27Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu27)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1684,6 +1793,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu28.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu28.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu28.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu28.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu28.setRoundBottomLeft(20);
         phongTrangChu28.setRoundBottomRight(20);
         phongTrangChu28.setRoundTopLeft(20);
@@ -1708,7 +1820,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu28Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu28)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu28, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1726,6 +1838,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu29.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu29.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu29.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu29.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu29.setRoundBottomLeft(20);
         phongTrangChu29.setRoundBottomRight(20);
         phongTrangChu29.setRoundTopLeft(20);
@@ -1750,7 +1865,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu29Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu29)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu29, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1768,6 +1883,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu30.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu30.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu30.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu30.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu30.setRoundBottomLeft(20);
         phongTrangChu30.setRoundBottomRight(20);
         phongTrangChu30.setRoundTopLeft(20);
@@ -1792,7 +1910,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu30Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu30)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu30, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1876,6 +1994,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
         phongTrangChu31.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu31.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu31.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu31.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu31.setRoundBottomLeft(20);
         phongTrangChu31.setRoundBottomRight(20);
         phongTrangChu31.setRoundTopLeft(20);
@@ -1900,7 +2021,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu31Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu31)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu31, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1918,6 +2039,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu32.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu32.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu32.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu32.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu32.setRoundBottomLeft(20);
         phongTrangChu32.setRoundBottomRight(20);
         phongTrangChu32.setRoundTopLeft(20);
@@ -1942,7 +2066,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu32Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu32)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu32, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1960,6 +2084,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu33.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu33.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu33.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu33.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu33.setRoundBottomLeft(20);
         phongTrangChu33.setRoundBottomRight(20);
         phongTrangChu33.setRoundTopLeft(20);
@@ -1984,7 +2111,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu33Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu33)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -2002,6 +2129,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu34.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu34.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu34.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu34.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu34.setRoundBottomLeft(20);
         phongTrangChu34.setRoundBottomRight(20);
         phongTrangChu34.setRoundTopLeft(20);
@@ -2026,7 +2156,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu34Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu34)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -2044,6 +2174,9 @@ public class TrangChuNew2 extends javax.swing.JFrame {
         );
 
         phongTrangChu35.setBackground(new java.awt.Color(204, 204, 255));
+        phongTrangChu35.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu35.setMinimumSize(new java.awt.Dimension(146, 93));
+        phongTrangChu35.setPreferredSize(new java.awt.Dimension(146, 93));
         phongTrangChu35.setRoundBottomLeft(20);
         phongTrangChu35.setRoundBottomRight(20);
         phongTrangChu35.setRoundTopLeft(20);
@@ -2068,7 +2201,7 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 .addGroup(phongTrangChu35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongTrangChu35Layout.createSequentialGroup()
                         .addComponent(lblLoaiPhongTrangChu35)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(lblTenPhongTrangChu35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTrangThaiTrangChu35, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())

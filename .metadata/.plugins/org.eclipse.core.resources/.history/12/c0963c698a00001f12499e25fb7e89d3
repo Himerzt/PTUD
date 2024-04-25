@@ -1,0 +1,35 @@
+package server;
+
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import dao.CourseDao;
+import dao.DepartmentDao;
+import dao.StudentDao;
+import dao.impl.CourseImpl;
+import dao.impl.DepartmentImpl;
+import dao.impl.StudentImpl;
+
+public class Server {
+	private static final String URL = "rmi://H92M17:7878/";
+
+	public static void main(String[] args) throws NamingException, RemoteException {
+		Context context = new InitialContext();
+		
+		CourseDao courseDao = new CourseImpl();  //Java Remote Object
+		StudentDao studentDao = new StudentImpl();  //Java Remote Object
+		DepartmentDao departmentDao = new DepartmentImpl();//Java Remote Object
+		
+		LocateRegistry.createRegistry(7878);
+		
+		context.bind(URL +"courseDao", courseDao);
+		context.bind(URL +"studentDao", studentDao);
+		context.bind(URL +"departmentDao", departmentDao);
+		
+		System.out.println("Server is running...");
+	}
+}

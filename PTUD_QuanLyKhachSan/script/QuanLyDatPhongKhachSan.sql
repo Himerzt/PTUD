@@ -115,9 +115,8 @@ CREATE TABLE DichVuSuDung (
 CREATE TABLE ChiTietHoaDon (
 	MaCTHD NVARCHAR(30) PRIMARY KEY,
     MaHD NVARCHAR(30),
-    MaTTDTP NVARCHAR(10),
+    MaTTDTP NVARCHAR(30),
 	MaLSDP NVARCHAR(30),
-    MaDVPSD NVARCHAR(10),
     MaKM NVARCHAR(10)
 ); --check
 
@@ -195,11 +194,6 @@ ALTER TABLE HoaDon
 ADD CONSTRAINT FK_HoaDon_KhachHang
 FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH);
 
--- Thêm khóa ngoại từ bảng ChiTietHoaDon đến bảng DichVuSuDung
-ALTER TABLE ChiTietHoaDon
-ADD CONSTRAINT FK_ChiTietHoaDon_DichVuSuDung
-FOREIGN KEY (MaDVPSD) REFERENCES DichVuSuDung(MaDichVuSuDung);
-
 -- Thêm khóa ngoại từ bảng LichSuDoiPhong đến bảng ThongTinDatThuePhong
 ALTER TABLE LichSuDoiPhong
 ADD CONSTRAINT FK_LichSuDoiPhong_ThongTinDatThuePhong
@@ -214,6 +208,11 @@ FOREIGN KEY (MaPhongMoi) REFERENCES Phong(MaPhong);
 ALTER TABLE ChiTietHoaDon
 ADD CONSTRAINT FK_ChiTietHoaDon_LichSuDoiPhong
 FOREIGN KEY (MaLSDP) REFERENCES LichSuDoiPhong(MaLSDP);
+
+-- Thêm khóa ngoại từ bảng ChiTietHoaDon đến bảng ThongTinDatThuePhong
+ALTER TABLE ChiTietHoaDon
+ADD CONSTRAINT FK_ChiTietHoaDon_ThongTinDatThuePhong
+FOREIGN KEY (MaTTDTP) REFERENCES ThongTinDatThuePhong(MaTTDTP);
 
 -- Dữ liệu Loại thuê
 INSERT INTO LoaiThue (MaLoaiThue, KieuThue, GiaThue, MaLoaiPhong)

@@ -70,7 +70,7 @@ public class NhanVienDao {
 		PreparedStatement stmt = null;
 		int n = 0;
 		try {
-			stmt = con.prepareStatement("insert into NhanVien values(?,?,?,?,?,?,?,?,?)");
+			stmt = con.prepareStatement("insert into NhanVien values(?,?,?,?,?,?,?,?,?,?)");
 			stmt.setString(1, nv.getMaNV());
 			stmt.setString(2, nv.getHoTenNV());
 			stmt.setDate(3, java.sql.Date.valueOf(nv.getNgaySinh()));
@@ -78,8 +78,9 @@ public class NhanVienDao {
 			stmt.setString(5, nv.getSoDT());
 			stmt.setString(6, nv.getEmail());
 			stmt.setString(7, nv.getCCCD());
-			stmt.setString(8, nv.getChucVu());
-			stmt.setDate(9, java.sql.Date.valueOf(nv.getNgayVaoLam()));
+                        stmt.setString(8, nv.getDiaChi());
+			stmt.setString(9, nv.getChucVu());
+			stmt.setDate(10, java.sql.Date.valueOf(nv.getNgayVaoLam()));
 			n = stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -92,10 +93,9 @@ public class NhanVienDao {
 		Connection con = ConnectDB.getInstance().getConnection();
 		PreparedStatement stmt = null;
 		int n = 0;
-		if (dsnv.contains(nv)) {
 			try {
 				stmt = con.prepareStatement(
-						"update NhanVien set hoTenNV = ?, ngaySinh = ?, gioiTinh = ?, soDT = ?, email = ?, CCCD = ?, diaChi = ?, maChucVu = ?, ngayVaoLam = ? where maNV = ?");
+						"update NhanVien set hoTenNV = ?, ngaySinhNV = ?, gioiTinh = ?, soDienThoai = ?, email = ?, CCCD_Visa = ?, diaChi = ?, maChucVu = ?, ngayVaoLam = ? where maNV = ?");
 				stmt.setString(1, nv.getHoTenNV());
 				stmt.setDate(2, java.sql.Date.valueOf(nv.getNgaySinh()));
 				stmt.setString(3, nv.getGioiTinh());
@@ -103,17 +103,15 @@ public class NhanVienDao {
 				stmt.setString(5, nv.getEmail());
 				stmt.setString(6, nv.getCCCD());
 				stmt.setString(7, nv.getDiaChi());
-				stmt.setString(8, nv.getChucVu());
+			 	stmt.setString(8, nv.getChucVu());
 				stmt.setDate(9, java.sql.Date.valueOf(nv.getNgayVaoLam()));
-				stmt.setString(11, nv.getMaNV());
+				stmt.setString(10, nv.getMaNV());
 				n = stmt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 			return n > 0;
 
-		}
-		return false;
 	}
 
 	// xóa nhân viên
@@ -412,5 +410,5 @@ public class NhanVienDao {
 		}
 		return nv;
 	}
-
+        
 }

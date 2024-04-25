@@ -1,0 +1,7 @@
+package dao;
+
+import java.rmi.Remote;
+
+public interface ChiTietHoaDon_Dao extends Remote{
+	public boolean themChiTietHoaDon(String maHoaDon, String maThuoc, int soLuong);
+}

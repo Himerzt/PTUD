@@ -422,7 +422,7 @@ public class TraPhong extends javax.swing.JDialog {
 		PhongDao phongDao = new PhongDao();;
 		dsPhongCD = phongDao.chuyenDoi(dsPhong);
 		for (ThongTinDatThuePhong thongTin : dsThongTin) {
-			dsPhong.add(thongTin.getMaPhong());
+			dsPhong.add(thongTin.getMaDatPhong());
 		}
 		// Lấy ngày đặt phòng và ngày trả phòng
 

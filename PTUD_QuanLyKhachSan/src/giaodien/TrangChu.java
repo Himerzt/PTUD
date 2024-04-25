@@ -58,9 +58,9 @@ public class TrangChu extends javax.swing.JFrame {
 		ConnectDB.getInstance().getConnection();
 		setResizable(false);
 		initComponents();
-		datetime();
-		times();
-		ganDuLieuPhongVaoTrangChu();
+//		datetime();
+//		times();
+//		ganDuLieuPhongVaoTrangChu();
 		Menu.setEvent(new MenuEvent() {
 			@Override
 			public void selected(int index, int subIndex) {
@@ -71,12 +71,12 @@ public class TrangChu extends javax.swing.JFrame {
 
 				if (index == 0) {
 					pnedUngDung.setSelectedIndex(0);
-					ganDuLieuPhongVaoTrangChu();
+//					ganDuLieuPhongVaoTrangChu();
 				}
 
 				if (index == 1) {
 					pnedUngDung.setSelectedIndex(1);
-					ganDuLieuPhongVaoQuanLyPhong();
+//					ganDuLieuPhongVaoQuanLyPhong();
 					addCheckBoxListeners();
 				}
 
@@ -106,42 +106,7 @@ public class TrangChu extends javax.swing.JFrame {
 
 	}
 
-	/**
-	 * Khởi tạo ngày hiện tại để in lên ngày **
-	 * *****************************************
-	 */
-	public void datetime() {
-		Date d = new Date();
-
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MMM-dd");
-		String df = format.format(d);
-
-		lblcurrentdate.setText(df);
-	}
-
-	/**
-	 * Khởi tạo giờ hiện tại để in lên giờ **
-	 * *****************************************
-	 */
-	public void times() {
-		Timer time;
-
-		time = new Timer(0, new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent ae) {
-				Date d = new Date();
-
-				SimpleDateFormat dformat;
-				dformat = new SimpleDateFormat("hh:mm:ss a");
-
-				String timeindate = dformat.format(d);
-				lblcurrentTime.setText(timeindate);
-
-			}
-		});
-
-		time.start();
-	}
+	
 
 	/**
 	 * Load thông tin dịch vụ lên bảng dịch vụ hiện có trong pnDichVu**
@@ -233,8 +198,7 @@ public class TrangChu extends javax.swing.JFrame {
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
-		btnGROUPLoaiPhong = new javax.swing.ButtonGroup();
-		btnGROUPTrangThai = new javax.swing.ButtonGroup();
+		
 		dateNgaySinhNhanVien = new giaodien.CustomClass.DateChooser();
 		dateNgayVaoLam = new giaodien.CustomClass.DateChooser();
 		dateNgayBatDauKM = new giaodien.CustomClass.DateChooser();
@@ -4627,7 +4591,7 @@ public class TrangChu extends javax.swing.JFrame {
 		lblcurrentTime.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 		lblcurrentTime.setText("currentTime");
 
-		btnGROUPLoaiPhong.add(radPhongTieuChuan);
+		
 		radPhongTieuChuan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 		radPhongTieuChuan.setText("Phòng tiêu chuẩn");
 		radPhongTieuChuan.addActionListener(new java.awt.event.ActionListener() {
@@ -4636,19 +4600,19 @@ public class TrangChu extends javax.swing.JFrame {
 			}
 		});
 
-		btnGROUPLoaiPhong.add(radPhongNangCao);
+		
 		radPhongNangCao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 		radPhongNangCao.setText("Phòng nâng cao");
 
-		btnGROUPLoaiPhong.add(radPhongCaoCap);
+		
 		radPhongCaoCap.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 		radPhongCaoCap.setText("Phòng cao cấp");
 
-		btnGROUPLoaiPhong.add(radPhongThuongGia);
+		
 		radPhongThuongGia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 		radPhongThuongGia.setText("Phòng thương gia");
 
-		btnGROUPTrangThai.add(radPhongTrong);
+		
 		radPhongTrong.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 		radPhongTrong.setText("Phòng trống");
 		radPhongTrong.addActionListener(new java.awt.event.ActionListener() {
@@ -4657,11 +4621,11 @@ public class TrangChu extends javax.swing.JFrame {
 			}
 		});
 
-		btnGROUPTrangThai.add(radPhongDaDat);
+		
 		radPhongDaDat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 		radPhongDaDat.setText("Phòng đã đặt");
 
-		btnGROUPTrangThai.add(radPhongDangThue);
+		
 		radPhongDangThue.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 		radPhongDangThue.setText("Phòng đang thuê");
 
@@ -4692,11 +4656,7 @@ public class TrangChu extends javax.swing.JFrame {
 		btnHuyDatPhong.setText("Hủy đặt phòng");
 
 		btnDatPhong.setText("Đặt phòng");
-		btnDatPhong.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnDatPhongActionPerformed(evt);
-			}
-		});
+		
 
 		javax.swing.GroupLayout funtionPanelLayout = new javax.swing.GroupLayout(funtionPanel);
 		funtionPanel.setLayout(funtionPanelLayout);
@@ -5963,22 +5923,7 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 	}// GEN-LAST:event_btnCapNhapKhachHangActionPerformed
 
-	private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
-		List<String> dsTenPhong = new ArrayList<>();
-		JCheckBox cks;
-		JLabel tenPhong;
-		for (int i = 0; i < phongQuanLy.size(); i++) {
-			cks = checkBoxPhongQuanLy.get(i);
-			tenPhong = tenPhongQuanLy.get(i);
-			if (cks.isSelected()) {
-				dsTenPhong.add(tenPhong.getText());
-			}
-		}
-
-		DatPhong datPhongFrame = new DatPhong(dsTenPhong);
-		datPhongFrame.setVisible(true);
-
-	}// GEN-LAST:event_btnDatPhongActionPerformed
+	// GEN-LAST:event_btnDatPhongActionPerformed
 
 	private void radPhongTieuChuanActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_radPhongTieuChuanActionPerformed
 		// TODO add your handling code here:
@@ -5989,7 +5934,6 @@ public class TrangChu extends javax.swing.JFrame {
 	}// GEN-LAST:event_radPhongTrongActionPerformed
 
 	private void btnTimTheoDieuKienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnFindbyPhoneActionPerformed
-		ganDuLieuPhongVaoQuanLyPhong();
 		if (radPhongTieuChuan.isSelected()) {
 			for (int i = 0; i < loaiPhongQuanLy.size(); i++) {
 				JPanel p = phongQuanLy.get(i);
@@ -6269,80 +6213,9 @@ public class TrangChu extends javax.swing.JFrame {
 	}
 
 //    TTK
-	private void ganDuLieuPhongVaoTrangChu() {
-		PhongDao phongDao = new PhongDao();
-		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
-		for (int i = 0; i < phongTrangChu.size(); i++) {
-			Phong phong = dsPhong.get(i);
-			JPanel phongPanel = phongTrangChu.get(i);
-			JLabel loaiPhong = loaiPhongTrangChu.get(i);
-			JLabel soPhong = tenPhongTrangChu.get(i);
-			JLabel trangThai = trangThaiPhongTrangChu.get(i);
+	
 
-			// Gán thông tin phòng lên label
-			soPhong.setText(Integer.toString(phong.getSoPhong()));
-			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
-				loaiPhong.setText("Tiêu chuẩn");
-			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
-				loaiPhong.setText("Nâng cao");
-			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
-				loaiPhong.setText("Cao cấp");
-			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
-				loaiPhong.setText("Thương gia");
-			}
-			trangThai.setText(phong.getTrangThai());
-
-			if (trangThai.getText().equalsIgnoreCase("Trống")) {
-				phongPanel.setBackground(Color.green);
-			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
-				phongPanel.setBackground(Color.red);
-			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
-				phongPanel.setBackground(Color.yellow);
-			}
-
-			if (phongPanel.isVisible() == false) {
-				phongPanel.show();
-			}
-		}
-	}
-
-	private void ganDuLieuPhongVaoQuanLyPhong() {
-		PhongDao phongDao = new PhongDao();
-		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
-		for (int i = 0; i < phongQuanLy.size(); i++) {
-			Phong phong = dsPhong.get(i);
-			JPanel phongPanel = phongQuanLy.get(i);
-			JLabel loaiPhong = loaiPhongQuanLy.get(i);
-			JLabel soPhong = tenPhongQuanLy.get(i);
-			JLabel trangThai = trangThaiPhongQuanLy.get(i);
-
-			// Gán thông tin phòng lên label
-			soPhong.setText(Integer.toString(phong.getSoPhong()));
-			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
-				loaiPhong.setText("Tiêu chuẩn");
-			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
-				loaiPhong.setText("Nâng cao");
-			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
-				loaiPhong.setText("Cao cấp");
-			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
-				loaiPhong.setText("Thương gia");
-			}
-			trangThai.setText(phong.getTrangThai());
-
-			if (trangThai.getText().equalsIgnoreCase("Trống")) {
-				phongPanel.setBackground(Color.green);
-			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
-				phongPanel.setBackground(Color.red);
-			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
-				phongPanel.setBackground(Color.yellow);
-			}
-
-			if (phongPanel.isVisible() == false) {
-				phongPanel.show();
-			}
-		}
-
-	}
+	
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
 	private giaodien.CustomClass.Header Header;
@@ -6366,8 +6239,7 @@ public class TrangChu extends javax.swing.JFrame {
 	private javax.swing.JButton btnCapNhapNhanVien;
 	private javax.swing.JButton btnDatPhong;
 	private javax.swing.JButton btnDoiPhong;
-	private javax.swing.ButtonGroup btnGROUPLoaiPhong;
-	private javax.swing.ButtonGroup btnGROUPTrangThai;
+
 	private javax.swing.JButton btnHuyDatPhong;
 	private giaodien.CustomClass.Button btnNgaySinhNhanVien;
 	private giaodien.CustomClass.Button btnNgaySinhNhanVien3;
@@ -6390,41 +6262,7 @@ public class TrangChu extends javax.swing.JFrame {
 	private javax.swing.JComboBox<String> cbxDieuKienApDungKhuyenMai;
 	private javax.swing.JComboBox<String> cbxGioiTinh;
 	private javax.swing.JComboBox<String> cbxGioiTinhKhachHang;
-	private javax.swing.JCheckBox checkBoxPhongQL1;
-	private javax.swing.JCheckBox checkBoxPhongQL10;
-	private javax.swing.JCheckBox checkBoxPhongQL11;
-	private javax.swing.JCheckBox checkBoxPhongQL12;
-	private javax.swing.JCheckBox checkBoxPhongQL13;
-	private javax.swing.JCheckBox checkBoxPhongQL14;
-	private javax.swing.JCheckBox checkBoxPhongQL15;
-	private javax.swing.JCheckBox checkBoxPhongQL16;
-	private javax.swing.JCheckBox checkBoxPhongQL17;
-	private javax.swing.JCheckBox checkBoxPhongQL18;
-	private javax.swing.JCheckBox checkBoxPhongQL19;
-	private javax.swing.JCheckBox checkBoxPhongQL2;
-	private javax.swing.JCheckBox checkBoxPhongQL20;
-	private javax.swing.JCheckBox checkBoxPhongQL21;
-	private javax.swing.JCheckBox checkBoxPhongQL22;
-	private javax.swing.JCheckBox checkBoxPhongQL23;
-	private javax.swing.JCheckBox checkBoxPhongQL24;
-	private javax.swing.JCheckBox checkBoxPhongQL25;
-	private javax.swing.JCheckBox checkBoxPhongQL26;
-	private javax.swing.JCheckBox checkBoxPhongQL27;
-	private javax.swing.JCheckBox checkBoxPhongQL28;
-	private javax.swing.JCheckBox checkBoxPhongQL29;
-	private javax.swing.JCheckBox checkBoxPhongQL3;
-	private javax.swing.JCheckBox checkBoxPhongQL30;
-	private javax.swing.JCheckBox checkBoxPhongQL31;
-	private javax.swing.JCheckBox checkBoxPhongQL32;
-	private javax.swing.JCheckBox checkBoxPhongQL33;
-	private javax.swing.JCheckBox checkBoxPhongQL34;
-	private javax.swing.JCheckBox checkBoxPhongQL35;
-	private javax.swing.JCheckBox checkBoxPhongQL4;
-	private javax.swing.JCheckBox checkBoxPhongQL5;
-	private javax.swing.JCheckBox checkBoxPhongQL6;
-	private javax.swing.JCheckBox checkBoxPhongQL7;
-	private javax.swing.JCheckBox checkBoxPhongQL8;
-	private javax.swing.JCheckBox checkBoxPhongQL9;
+	
 	private javax.swing.JPanel funtionPanel;
 	private javax.swing.JButton jButton9;
 	private javax.swing.JLabel jLabel1;
@@ -6805,15 +6643,9 @@ public class TrangChu extends javax.swing.JFrame {
 	private javax.swing.JTextField txtTenDichVu;
 	private javax.swing.JTextField txtTenKhachHang;
 	private javax.swing.JTextField txtTenKhuyenMai;
-	private ArrayList<javax.swing.JPanel> phongTrangChu;
-	private ArrayList<javax.swing.JLabel> loaiPhongTrangChu;
-	private ArrayList<javax.swing.JLabel> tenPhongTrangChu;
-	private ArrayList<javax.swing.JLabel> trangThaiPhongTrangChu;
-	private ArrayList<javax.swing.JPanel> phongQuanLy;
-	private ArrayList<javax.swing.JLabel> loaiPhongQuanLy;
-	private ArrayList<javax.swing.JLabel> tenPhongQuanLy;
-	private ArrayList<javax.swing.JLabel> trangThaiPhongQuanLy;
-	private ArrayList<JCheckBox> checkBoxPhongQuanLy;
+
+
+
 	private String[] chuoiDSTPDat;
 	private DateChooser dateNgaySinhNhanVien;
 	private DateChooser dateNgayVaoLam;

@@ -4,6 +4,23 @@
  */
 package giaodien;
 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+import dao.PhongDao;
+import entity.Phong;
+
 /**
  *
  * @author Huynguyen
@@ -15,7 +32,195 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
      */
     public QuanLyPhongPannel() {
         initComponents();
+        
+//		TTK - Thêm phongQuanLy i chạy từ 1 đến 35 vào list
+		phongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				phongQuanLy.add((giaodien.CustomClass.PanelRound) getClass().getDeclaredField("phongQuanLy" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		loaiPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				loaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblLoaiPhongQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		tenPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				tenPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTenPhongQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		trangThaiPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				trangThaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTrangThaiQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		checkBoxPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				checkBoxPhongQuanLy.add((giaodien.CustomClass.JCheckBoxCustom) getClass().getDeclaredField("checkBoxPhongQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		loadDanhSachPhong();
+		addCheckBoxListeners();
     }
+    
+    /**
+	 * Khởi tạo ngày hiện tại để in lên ngày **
+	 * *****************************************
+	 */
+	public void datetime() {
+		Date d = new Date();
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MMM-dd");
+		String df = format.format(d);
+
+		lblcurrentdate.setText(df);
+	}
+
+	/**
+	 * Khởi tạo giờ hiện tại để in lên giờ **
+	 * *****************************************
+	 */
+	public void times() {
+		Timer time;
+
+		time = new Timer(0, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				Date d = new Date();
+
+				SimpleDateFormat dformat;
+				dformat = new SimpleDateFormat("hh:mm:ss a");
+
+				String timeindate = dformat.format(d);
+				lblcurrentTime.setText(timeindate);
+
+			}
+		});
+
+		time.start();
+	}
+	
+	private void kiemTraClickCheckBoxPhong() {
+		int status1 = 0;
+		int status2 = 0;
+		int status3 = 0;
+		int status4 = 0;
+		for (int i = 0; i < checkBoxPhongQuanLy.size(); i++) {
+			JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+			if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Trống")) {
+				btnDatPhong.setEnabled(true);
+				btnThuePhong.setEnabled(true);
+				btnDoiPhong.setEnabled(false);
+				btnTraPhong.setEnabled(false);
+				btnHuyDatPhong.setEnabled(false);
+				status2++;
+				status3++;
+				status4++;
+			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đã đặt")) {
+				btnDatPhong.setEnabled(true);
+				btnThuePhong.setEnabled(true);
+				btnDoiPhong.setEnabled(false);
+				btnTraPhong.setEnabled(false);
+				btnHuyDatPhong.setEnabled(true);
+				status1++;
+				status3++;
+				status4++;
+			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đang thuê")) {
+				btnDatPhong.setEnabled(true);
+				btnThuePhong.setEnabled(false);
+				btnDoiPhong.setEnabled(true);
+				btnHuyDatPhong.setEnabled(true);
+				btnTraPhong.setEnabled(true);
+				status1++;
+				status2++;
+				status4++;
+			} 
+		}
+		
+		
+		if (status1 != 0 && status2 != 0 && status3 != 0) {
+			btnDatPhong.setEnabled(false);
+			btnThuePhong.setEnabled(false);
+			btnDoiPhong.setEnabled(false);
+			btnTraPhong.setEnabled(false);
+			btnHuyDatPhong.setEnabled(false);
+		}
+		if (status4 == 0) {
+			btnDatPhong.setEnabled(true);
+			btnThuePhong.setEnabled(true);
+			btnDoiPhong.setEnabled(true);
+			btnTraPhong.setEnabled(true);
+			btnHuyDatPhong.setEnabled(true);
+		}
+	}
+	private void addCheckBoxListeners() {
+	    for (giaodien.CustomClass.JCheckBoxCustom checkBox : checkBoxPhongQuanLy) {
+	        checkBox.addItemListener(e -> kiemTraClickCheckBoxPhong());
+	    }
+	}
+	
+	public void loadDanhSachPhong() {
+		PhongDao phongDao = new PhongDao();
+		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			Phong phong = dsPhong.get(i);
+			JPanel phongPanel = phongQuanLy.get(i);
+			JLabel loaiPhong = loaiPhongQuanLy.get(i);
+			JLabel soPhong = tenPhongQuanLy.get(i);
+			JLabel trangThai = trangThaiPhongQuanLy.get(i);
+
+			// Gán thông tin phòng lên label
+			soPhong.setText(Integer.toString(phong.getSoPhong()));
+			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+				loaiPhong.setText("Tiêu chuẩn");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+				loaiPhong.setText("Nâng cao");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+				loaiPhong.setText("Cao cấp");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
+				loaiPhong.setText("Thương gia");
+			}
+			trangThai.setText(phong.getTrangThai());
+
+			if (trangThai.getText().equalsIgnoreCase("Trống")) {
+				phongPanel.setBackground(Color.green);
+			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
+				phongPanel.setBackground(Color.red);
+			} else if (trangThai.getText().equalsIgnoreCase("Đang thuê")) {
+				phongPanel.setBackground(Color.yellow);
+			}
+
+			if (phongPanel.isVisible() == false) {
+				phongPanel.setVisible(true);
+			}
+		}
+
+	}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -416,7 +621,12 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         pnBody2.setBackground(new java.awt.Color(255, 255, 255));
         pnBody2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        panelRound1.setMaximumSize(new java.awt.Dimension(918, 105));
+        panelRound1.setMinimumSize(new java.awt.Dimension(918, 105));
+
         phongQuanLy1.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy1.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy1.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy1.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy1.setRoundBottomLeft(20);
         phongQuanLy1.setRoundBottomRight(20);
@@ -444,7 +654,7 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(phongQuanLy1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongQuanLy1Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL1, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                        .addComponent(lblLoaiPhongQL1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(27, 27, 27)
                         .addComponent(checkBoxPhongQL1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblTenPhongQL1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -466,6 +676,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy2.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy2.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy2.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy2.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy2.setRoundBottomLeft(20);
         phongQuanLy2.setRoundBottomRight(20);
@@ -515,6 +727,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy3.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy3.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy3.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy3.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy3.setRoundBottomLeft(20);
         phongQuanLy3.setRoundBottomRight(20);
@@ -564,6 +778,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy4.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy4.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy4.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy4.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy4.setRoundBottomLeft(20);
         phongQuanLy4.setRoundBottomRight(20);
@@ -591,7 +807,7 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(phongQuanLy4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongQuanLy4Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL4, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                        .addComponent(lblLoaiPhongQL4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(27, 27, 27)
                         .addComponent(checkBoxPhongQL4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblTenPhongQL4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -613,6 +829,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy5.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy5.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy5.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy5.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy5.setRoundBottomLeft(20);
         phongQuanLy5.setRoundBottomRight(20);
@@ -662,6 +880,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy6.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy6.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy6.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy6.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy6.setRoundBottomLeft(20);
         phongQuanLy6.setRoundBottomRight(20);
@@ -746,7 +966,13 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setText("Tầng 2");
 
+        panelRound2.setMaximumSize(new java.awt.Dimension(918, 105));
+        panelRound2.setMinimumSize(new java.awt.Dimension(918, 105));
+        panelRound2.setPreferredSize(new java.awt.Dimension(918, 105));
+
         phongQuanLy7.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy7.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy7.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy7.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy7.setRoundBottomLeft(20);
         phongQuanLy7.setRoundBottomRight(20);
@@ -796,6 +1022,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy8.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy8.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy8.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy8.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy8.setRoundBottomLeft(20);
         phongQuanLy8.setRoundBottomRight(20);
@@ -845,6 +1073,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy9.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy9.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy9.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy9.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy9.setRoundBottomLeft(20);
         phongQuanLy9.setRoundBottomRight(20);
@@ -894,6 +1124,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy10.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy10.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy10.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy10.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy10.setRoundBottomLeft(20);
         phongQuanLy10.setRoundBottomRight(20);
@@ -984,8 +1216,7 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
                     .addComponent(phongQuanLy9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(phongQuanLy8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(phongQuanLy7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelRound2Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
                         .addComponent(btnChonPhongTrongTang1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnChonPhongThueTang1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -995,7 +1226,12 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel17.setText("Tầng 1");
 
+        panelRound3.setMaximumSize(new java.awt.Dimension(918, 105));
+        panelRound3.setMinimumSize(new java.awt.Dimension(918, 105));
+
         phongQuanLy11.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy11.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy11.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy11.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy11.setRoundBottomLeft(20);
         phongQuanLy11.setRoundBottomRight(20);
@@ -1045,6 +1281,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy12.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy12.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy12.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy12.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy12.setRoundBottomLeft(20);
         phongQuanLy12.setRoundBottomRight(20);
@@ -1094,6 +1332,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy13.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy13.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy13.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy13.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy13.setRoundBottomLeft(20);
         phongQuanLy13.setRoundBottomRight(20);
@@ -1143,6 +1383,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy14.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy14.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy14.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy14.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy14.setRoundBottomLeft(20);
         phongQuanLy14.setRoundBottomRight(20);
@@ -1192,6 +1434,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy15.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy15.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy15.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy15.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy15.setRoundBottomLeft(20);
         phongQuanLy15.setRoundBottomRight(20);
@@ -1241,6 +1485,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy16.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy16.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy16.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy16.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy16.setRoundBottomLeft(20);
         phongQuanLy16.setRoundBottomRight(20);
@@ -1295,18 +1541,18 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(phongQuanLy11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(phongQuanLy11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phongQuanLy12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phongQuanLy13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(phongQuanLy14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(phongQuanLy14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phongQuanLy15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phongQuanLy16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound3Layout.setVerticalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1322,7 +1568,13 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        panelRound4.setMaximumSize(new java.awt.Dimension(918, 105));
+        panelRound4.setMinimumSize(new java.awt.Dimension(918, 105));
+        panelRound4.setPreferredSize(new java.awt.Dimension(918, 105));
+
         phongQuanLy17.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy17.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy17.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy17.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy17.setRoundBottomLeft(20);
         phongQuanLy17.setRoundBottomRight(20);
@@ -1372,6 +1624,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy18.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy18.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy18.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy18.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy18.setRoundBottomLeft(20);
         phongQuanLy18.setRoundBottomRight(20);
@@ -1421,6 +1675,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy19.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy19.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy19.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy19.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy19.setRoundBottomLeft(20);
         phongQuanLy19.setRoundBottomRight(20);
@@ -1470,6 +1726,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy20.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy20.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy20.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy20.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy20.setRoundBottomLeft(20);
         phongQuanLy20.setRoundBottomRight(20);
@@ -1571,7 +1829,12 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel18.setText("Tầng 3");
 
+        panelRound5.setMaximumSize(new java.awt.Dimension(918, 105));
+        panelRound5.setMinimumSize(new java.awt.Dimension(918, 105));
+
         phongQuanLy21.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy21.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy21.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy21.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy21.setRoundBottomLeft(20);
         phongQuanLy21.setRoundBottomRight(20);
@@ -1599,7 +1862,7 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(phongQuanLy21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(phongQuanLy21Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL21, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                        .addComponent(lblLoaiPhongQL21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(27, 27, 27)
                         .addComponent(checkBoxPhongQL21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblTenPhongQL21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1621,6 +1884,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy22.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy22.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy22.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy22.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy22.setRoundBottomLeft(20);
         phongQuanLy22.setRoundBottomRight(20);
@@ -1670,6 +1935,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy23.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy23.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy23.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy23.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy23.setRoundBottomLeft(20);
         phongQuanLy23.setRoundBottomRight(20);
@@ -1719,6 +1986,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy24.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy24.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy24.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy24.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy24.setRoundBottomLeft(20);
         phongQuanLy24.setRoundBottomRight(20);
@@ -1745,13 +2014,15 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
             .addGroup(phongQuanLy24Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(phongQuanLy24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(phongQuanLy24Layout.createSequentialGroup()
-                        .addComponent(lblLoaiPhongQL24, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                        .addGap(27, 27, 27)
-                        .addComponent(checkBoxPhongQL24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblTenPhongQL24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTrangThaiQL24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(phongQuanLy24Layout.createSequentialGroup()
+                        .addGroup(phongQuanLy24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(phongQuanLy24Layout.createSequentialGroup()
+                                .addComponent(lblLoaiPhongQL24, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                .addGap(21, 21, 21)
+                                .addComponent(checkBoxPhongQL24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblTrangThaiQL24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         phongQuanLy24Layout.setVerticalGroup(
             phongQuanLy24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1762,12 +2033,14 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
                     .addComponent(checkBoxPhongQL24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addComponent(lblTenPhongQL24, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(lblTrangThaiQL24)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         phongQuanLy25.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy25.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy25.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy25.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy25.setRoundBottomLeft(20);
         phongQuanLy25.setRoundBottomRight(20);
@@ -1817,6 +2090,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy26.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy26.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy26.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy26.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy26.setRoundBottomLeft(20);
         phongQuanLy26.setRoundBottomRight(20);
@@ -1877,12 +2152,12 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phongQuanLy23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(phongQuanLy24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(phongQuanLy24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phongQuanLy25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phongQuanLy26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound5Layout.setVerticalGroup(
             panelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1898,7 +2173,13 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        panelRound6.setMaximumSize(new java.awt.Dimension(918, 105));
+        panelRound6.setMinimumSize(new java.awt.Dimension(918, 105));
+        panelRound6.setPreferredSize(new java.awt.Dimension(918, 105));
+
         phongQuanLy27.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy27.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy27.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy27.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy27.setRoundBottomLeft(20);
         phongQuanLy27.setRoundBottomRight(20);
@@ -1948,6 +2229,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy28.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy28.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy28.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy28.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy28.setRoundBottomLeft(20);
         phongQuanLy28.setRoundBottomRight(20);
@@ -1997,6 +2280,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy29.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy29.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy29.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy29.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy29.setRoundBottomLeft(20);
         phongQuanLy29.setRoundBottomRight(20);
@@ -2046,6 +2331,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy30.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy30.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy30.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy30.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy30.setRoundBottomLeft(20);
         phongQuanLy30.setRoundBottomRight(20);
@@ -2144,7 +2431,13 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        panelRound7.setMaximumSize(new java.awt.Dimension(918, 105));
+        panelRound7.setMinimumSize(new java.awt.Dimension(918, 105));
+        panelRound7.setPreferredSize(new java.awt.Dimension(918, 105));
+
         phongQuanLy31.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy31.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy31.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy31.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy31.setRoundBottomLeft(20);
         phongQuanLy31.setRoundBottomRight(20);
@@ -2194,6 +2487,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy32.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy32.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy32.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy32.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy32.setRoundBottomLeft(20);
         phongQuanLy32.setRoundBottomRight(20);
@@ -2243,6 +2538,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy33.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy33.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy33.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy33.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy33.setRoundBottomLeft(20);
         phongQuanLy33.setRoundBottomRight(20);
@@ -2292,6 +2589,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy34.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy34.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy34.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy34.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy34.setRoundBottomLeft(20);
         phongQuanLy34.setRoundBottomRight(20);
@@ -2341,6 +2640,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
 
         phongQuanLy35.setBackground(new java.awt.Color(255, 204, 255));
+        phongQuanLy35.setMaximumSize(new java.awt.Dimension(146, 93));
+        phongQuanLy35.setMinimumSize(new java.awt.Dimension(146, 93));
         phongQuanLy35.setPreferredSize(new java.awt.Dimension(146, 93));
         phongQuanLy35.setRoundBottomLeft(20);
         phongQuanLy35.setRoundBottomRight(20);
@@ -2451,21 +2752,18 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
             pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBody2Layout.createSequentialGroup()
                 .addGap(90, 90, 90)
-                .addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel11)
-                    .addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(panelRound4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelRound3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panelRound4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel18)
                     .addComponent(jLabel21)
                     .addComponent(jLabel17)
-                    .addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(panelRound2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelRound1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(panelRound7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelRound6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelRound5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(panelRound2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelRound7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelRound6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelRound5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelRound3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(210, Short.MAX_VALUE))
         );
         pnBody2Layout.setVerticalGroup(
@@ -2574,13 +2872,97 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTimTheoDieuKienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimTheoDieuKienActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTimTheoDieuKienActionPerformed
+    private void btnTimTheoDieuKienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnFindbyPhoneActionPerformed
+		loadDanhSachPhong();
+    	if (radPhongTieuChuan.isSelected()) {
+			for (int i = 0; i < loaiPhongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel loaiP = loaiPhongQuanLy.get(i);
+				if (!loaiP.getText().equalsIgnoreCase("Tiêu chuẩn")) {
+					p.setVisible(false);
+				}
+			}
+		}  if (radPhongNangCao.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel loaiP = loaiPhongQuanLy.get(i);
+				if (!loaiP.getText().equalsIgnoreCase("Nâng cao")) {
+					p.setVisible(false);
+				}
+			}
+		} else if (radPhongCaoCap.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel loaiP = loaiPhongQuanLy.get(i);
 
-    private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatPhongActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDatPhongActionPerformed
+				if (!loaiP.getText().equalsIgnoreCase("Cao cấp")) {
+					p.setVisible(false);
+				}
+			}
+		} else if (radPhongThuongGia.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel loaiP = loaiPhongQuanLy.get(i);
+
+				if (!loaiP.getText().equalsIgnoreCase("Thương gia")) {
+					p.setVisible(false);
+				}
+			}
+		}
+
+		if (radPhongTrong.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+
+				if (!trangThaiP.getText().equalsIgnoreCase("Trống")) {
+					p.setVisible(false);
+				}
+			}
+		} else if (radPhongDaDat.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+
+				if (!trangThaiP.getText().equalsIgnoreCase("Đã đặt")) {
+					p.setVisible(false);
+				}
+			}
+		} else if (radPhongDangThue.isSelected()) {
+			for (int i = 0; i < phongQuanLy.size(); i++) {
+				JPanel p = phongQuanLy.get(i);
+				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+
+				if (!trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
+					p.setVisible(false);
+				}
+			}
+		}
+	}// GEN-LAST:event_btnFindbyPhoneActionPerformed
+
+    private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
+		List<String> dsTenPhong = new ArrayList<>();
+		JCheckBox cks;
+		JLabel tenPhong;
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			cks = checkBoxPhongQuanLy.get(i);
+			tenPhong = tenPhongQuanLy.get(i);
+			if (cks.isSelected()) {
+				dsTenPhong.add(tenPhong.getText());
+			}
+		}
+
+		DatPhong2 datPhongFrame = new DatPhong2(dsTenPhong);
+		datPhongFrame.setVisible(true);
+		// reset checkbox
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			cks = checkBoxPhongQuanLy.get(i);
+			if (cks.isSelected()) {
+				cks.setSelected(false);
+			}
+		}
+
+	}
 
     private void btnHuyDatPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyDatPhongActionPerformed
         // TODO add your handling code here:
@@ -2591,7 +2973,16 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDoiPhongActionPerformed
 
     private void btnTraPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraPhongActionPerformed
-        // TODO add your handling code here:
+    	// Lưu thông tin phòng đã chọn
+    	List<String> dsTenPhong = new ArrayList<>();
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			JCheckBox cks = checkBoxPhongQuanLy.get(i);
+			JLabel tenPhong = tenPhongQuanLy.get(i);
+			if (cks.isSelected()) {
+				dsTenPhong.add(tenPhong.getText());
+			}
+		}
+    	JOptionPane.showMessageDialog(null, dsTenPhong, "Thông báo", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnTraPhongActionPerformed
 
     private void btnThuePhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThuePhongActionPerformed
@@ -2857,4 +3248,9 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
     private javax.swing.JRadioButton radPhongTrong;
     private giaodien.CustomClass.ScrollPaneWin11 scrollPaneWin112;
     // End of variables declaration//GEN-END:variables
+	private ArrayList<javax.swing.JPanel> phongQuanLy;
+	private ArrayList<javax.swing.JLabel> loaiPhongQuanLy;
+	private ArrayList<javax.swing.JLabel> tenPhongQuanLy;
+	private ArrayList<javax.swing.JLabel> trangThaiPhongQuanLy;
+	private ArrayList<giaodien.CustomClass.JCheckBoxCustom> checkBoxPhongQuanLy;
 }
