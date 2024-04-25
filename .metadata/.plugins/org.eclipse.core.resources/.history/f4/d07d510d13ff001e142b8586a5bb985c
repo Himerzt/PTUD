@@ -1,0 +1,9 @@
+package dao.impl;
+
+import java.rmi.server.UnicastRemoteObject;
+
+import dao.DonDat_Dao;
+
+public class DonDat_Impl extends UnicastRemoteObject implements DonDat_Dao {
+
+}

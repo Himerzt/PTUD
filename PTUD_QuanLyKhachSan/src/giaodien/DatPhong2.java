@@ -10,6 +10,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
@@ -56,7 +58,6 @@ public class DatPhong2 extends javax.swing.JDialog {
                 comboBoxDichVu.setBackground(new Color(0,0,0,0));
                 cbKieuThue.setBackground(new Color(0,0,0,0));
 	}
-
 	public DatPhong2(List<String> dsTenPhong) {
 		dsPhongDat = new String[dsTenPhong.size()];
 		int index = 0;
@@ -64,6 +65,7 @@ public class DatPhong2 extends javax.swing.JDialog {
 			dsPhongDat[index++] = tenPhong;
 		}
 		ConnectDB.getInstance().getConnection();
+		loadDanhSachDichVu();
 		initComponents();
 	}
 
@@ -97,7 +99,7 @@ public class DatPhong2 extends javax.swing.JDialog {
         jLabel22 = new javax.swing.JLabel();
         txtCCCD = new giaodien.CustomClass.TextFieldShadow();
         jLabel24 = new javax.swing.JLabel();
-        button1 = new giaodien.CustomClass.Button();
+        btnThemKhachHang = new giaodien.CustomClass.Button();
         jLabel25 = new javax.swing.JLabel();
         txtCheckIn = new giaodien.CustomClass.TextFieldShadow();
         jLabel27 = new javax.swing.JLabel();
@@ -233,7 +235,7 @@ public class DatPhong2 extends javax.swing.JDialog {
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel24.setText("CCCD/Passport");
 
-        button1.setText("+");
+        btnThemKhachHang.setText("+");
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -369,7 +371,7 @@ public class DatPhong2 extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtCCCD, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnThemKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelRound1Layout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addComponent(jLabel27)
@@ -415,7 +417,7 @@ public class DatPhong2 extends javax.swing.JDialog {
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCCCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnThemKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSoLuongNguoiLon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -473,6 +475,12 @@ public class DatPhong2 extends javax.swing.JDialog {
         comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ăn sáng", "Ăn trưa", "Ăn chiều", "Giặt quần áo", "Đưa đón khách", "Thêm giường", "Thêm gối", "Thêm chăn", "Nước ngọt", "Nước suối", "Gọi món tại phòng" }));
         comboBoxDichVu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         comboBoxDichVu.setLabeText("");
+        
+		btnThemKhachHang.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				btnThemKhachHangActionPerformed(evt);
+			}
+		});
 
         javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
         panelRound3.setLayout(panelRound3Layout);
@@ -690,7 +698,6 @@ public class DatPhong2 extends javax.swing.JDialog {
     private void txtSoLuongTreEmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSoLuongTreEmActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSoLuongTreEmActionPerformed
-
 	public String layTenLoaiPhong(String maLoai) {
 		if (maLoai.equalsIgnoreCase("tc"))
 			return "Tiêu chuẩn";
@@ -700,6 +707,26 @@ public class DatPhong2 extends javax.swing.JDialog {
 			return "Nâng cao";
 		else
 			return "Thương gia";
+	}
+	
+	// Check CCCD
+	public boolean regCCCD_Passport(String cccd_passport) {
+		if (cccd_passport.equals("")) {
+			JOptionPane.showMessageDialog(this, "Vui lòng nhập CCCD/Passport");
+			return false;
+		} else {
+			// Regex cho mã số CCCD hoặc Visa
+			String regex = "^(\\d{12}|\\d{16})$";
+
+			Pattern pattern = Pattern.compile(regex);
+			Matcher matcher = pattern.matcher(cccd_passport);
+
+			if (!matcher.matches()) {
+				JOptionPane.showMessageDialog(this, "CCCD/Passport không hợp lệ");
+				return false;
+			}
+			return true;
+		}
 	}
 
 	public void loadDanhSachPhongDat() {
@@ -719,7 +746,7 @@ public class DatPhong2 extends javax.swing.JDialog {
 		}
 	}
 	
-	public double setGiaCoc() {
+	public double tinhTienCoc() {
 		String[] dsPhongDat = layDanhSachPhongDat();
 		PhongDao phongDao = new PhongDao();
 		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
@@ -793,26 +820,30 @@ public class DatPhong2 extends javax.swing.JDialog {
 	private void btnThemKhachHangActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemKhachHangActionPerformed
 		KhachHang kh = new KhachHang();
 		KhachHangDao khDAO = new KhachHangDao();
-		kh.setCCCD_Visa(txtCCCD.getText());
-		// Tìm khách hàng bằng CCCD. Nếu tìm thấy thì tự fill các textfield còn lại, nếu
-		// không thì thông báo hỏi có thêm khách hàng vào CSDL hay không
-		if (khDAO.timTheoCCCD(kh.getCCCD_Visa()) != null) {
-			kh = khDAO.timTheoCCCD(kh.getCCCD_Visa());
+		if (regCCCD_Passport(txtCCCD.getText()) == false)
+			return;
+		kh.setCccd_passport(txtCCCD.getText());
+		// Tìm khách hàng bằng CCCD. Nếu tìm thấy thì tự fill các textfield còn lại, nếu không thì thông báo không tìm thấy
+		if (khDAO.timTheoCCCD(kh.getCccd_passport()) != null) {
+			kh = khDAO.timTheoCCCD(kh.getCccd_passport());
 			txtTenKH.setText(kh.getHoTenKH());
 		} else {
 			// Thông báo bằng JOptionpane hỏi có muốn thêm khách hàng vào CSDL không
-			JOptionPane.showConfirmDialog(this, "Khách hàng không tồn tại. Bạn có muốn thêm khách hàng vào CSDL không?",
-					"Xác nhận", JOptionPane.YES_NO_OPTION);
-			if (JOptionPane.YES_OPTION == 0) {
-				// Mở form thêm khách hàng
-
-				// Thêm khách hàng vào CSDL
-
-				// Sau khi thêm xong thì fill các textfield còn lại
-			}
+			JOptionPane.showMessageDialog(this, "Vui lòng thêm khách hàng trước khi đặt phòng");
 		}
-
 	}// GEN-LAST:event_btnThemKhachHangActionPerformed
+	
+
+	private static String[] loadDanhSachDichVu() {
+		DichVuDao dvDao = new DichVuDao();
+		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
+		String[] tenDV = new String[danhSachDV.size()];
+		for (int i = 0; i < danhSachDV.size(); i++) {
+			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
+		}
+		return tenDV;
+	}
+	
 	/**
 	 * @param args the command line arguments
 	 */
@@ -862,7 +893,7 @@ public class DatPhong2 extends javax.swing.JDialog {
     private giaodien.CustomClass.Button btnNgayNhan;
     private giaodien.CustomClass.Button btnNgayTra;
     private giaodien.CustomClass.Button btnThemDichVu;
-    private giaodien.CustomClass.Button button1;
+    private giaodien.CustomClass.Button btnThemKhachHang;
     private giaodien.CustomClass.Combobox cbKieuThue;
     private giaodien.CustomClass.Combobox comboBoxDichVu;
     private giaodien.CustomClass.DateChooser dateNgayDat;
@@ -899,14 +930,4 @@ public class DatPhong2 extends javax.swing.JDialog {
     private giaodien.CustomClass.TextFieldShadow txtSoLuongTreEm;
     private giaodien.CustomClass.TextFieldShadow txtTenKH;
     // End of variables declaration//GEN-END:variables
-
-	private static String[] loadDanhSachDichVu() {
-		DichVuDao dvDao = new DichVuDao();
-		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
-		String[] tenDV = new String[danhSachDV.size()];
-		for (int i = 0; i < danhSachDV.size(); i++) {
-			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
-		}
-		return tenDV;
-	}
 }

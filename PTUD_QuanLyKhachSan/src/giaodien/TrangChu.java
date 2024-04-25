@@ -197,7 +197,7 @@ public class TrangChu extends javax.swing.JFrame {
 		for (int i = 0; i < dsKhachHang.size(); i++) {
 			KhachHang kh = dsKhachHang.get(i);
 			Object[] rowData = { i + 1, kh.getMaKH(), kh.getHoTenKH(), kh.getGioiTinh(), kh.getNgaySinh(), kh.getSoDT(),
-					kh.getCCCD_Visa(), kh.getChiTieu(), kh.getMaHangThanhVien(), kh.getQuocTich() };
+					kh.getCccd_passport(), kh.getChiTieu(), kh.getMaHangThanhVien(), kh.getQuocTich() };
 			model.addRow(rowData);
 		}
 	};
@@ -5874,15 +5874,7 @@ public class TrangChu extends javax.swing.JFrame {
 		return matcher.matches();
 	}
 
-	public boolean regCCCD_Visa(String cccd_visa) {
-		// Regex cho mã số CCCD hoặc Visa
-		String regex = "^(\\d{12}|\\d{16})$";
 
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(cccd_visa);
-
-		return matcher.matches();
-	}
 
 	private boolean regEmail(String email) {
 		String regex = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
@@ -5913,10 +5905,10 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String CCCD_Visa = txtCanCuocKhachHang.getText();
 		// Kiểm tra CCCD / Visa
-		if (regCCCD_Visa(CCCD_Visa) == false) {
-			JOptionPane.showMessageDialog(null, "CCCD / Visa không hợp lệ");
-			return;
-		}
+//		if (regCCCD_Passport(CCCD_Visa) == false) {
+//			JOptionPane.showMessageDialog(null, "CCCD / Visa không hợp lệ");
+//			return;
+//		}
 		String quocTich = txtQuocTichKhachHang.getText();
 		String maKhachHang = taoMaKhachHang();
 		KhachHang kh = new KhachHang(maKhachHang, tenKhachHang, gioiTinh, ngaySinh, soDienThoai, CCCD_Visa, 0d, "HB",
@@ -5951,10 +5943,10 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String CCCD_Visa = txtCanCuocKhachHang.getText();
 		// Kiểm tra CCCD / Visa
-		if (regCCCD_Visa(CCCD_Visa) == false) {
-			JOptionPane.showMessageDialog(null, "CCCD / Visa không hợp lệ");
-			return;
-		}
+//		if (regCCCD_Passport(CCCD_Visa) == false) {
+//			JOptionPane.showMessageDialog(null, "CCCD / Visa không hợp lệ");
+//			return;
+//		}
 		String quocTich = txtQuocTichKhachHang.getText();
 		String maKhachHang = txtMaKhachHang.getText();
 		double chiTieu = Double.parseDouble(txtChiTieuKhachHang.getText());
@@ -6175,10 +6167,10 @@ public class TrangChu extends javax.swing.JFrame {
 		}
 		String CCCD_Visa = txtCanCuocCongDanNhanVien.getText();
 		// Kiểm tra CCCD
-		if (!regCCCD_Visa(CCCD_Visa)) {
-			JOptionPane.showMessageDialog(this, "CCCD/Visa không hợp lệ");
-			return;
-		}
+//		if (!regCCCD_Passport(CCCD_Visa)) {
+//			JOptionPane.showMessageDialog(this, "CCCD/Visa không hợp lệ");
+//			return;
+//		}
 		String diaChi = txtCanCuocCongDanNhanVien.getText();
 		String maChucVu = null;
 		ChucVu chucVu = null;
@@ -6834,8 +6826,7 @@ public class TrangChu extends javax.swing.JFrame {
         
         
 	private JFrame DatPhong(List<String> dsTenPhong) {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from
-																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		throw new UnsupportedOperationException("Not supported yet."); 
 	}
 	
 	public String layHangThanhVien(String maHang) {

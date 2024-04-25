@@ -1,11 +1,12 @@
 package entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class ThongTinDatThuePhong {
 	private String maDatPhong;
 	private String maKhachHang;
-	private String maPhong;
+	private List<Phong> dsPhong;
 	private LocalDate ngayDatPhong;
 	private LocalDate ngayNhanPhong;
 	private LocalDate ngayTraPhong;
@@ -61,12 +62,12 @@ public class ThongTinDatThuePhong {
 		this.maKhachHang = maKhachHang;
 	}
 
-	public String getMaPhong() {
-		return maPhong;
+	public List<Phong> getDsPhong() {
+		return dsPhong;
 	}
-
-	public void setMaPhong(String maPhong) {
-		this.maPhong = maPhong;
+	
+	public void setDsPhong(List<Phong> dsPhong) {
+		this.dsPhong = dsPhong;
 	}
 
 	public String getMaLoaiThue() {
@@ -85,12 +86,12 @@ public class ThongTinDatThuePhong {
 		this.tienDaCoc = tienDaCoc;
 	}
 
-	public ThongTinDatThuePhong(String maDatPhong, String maKhachHang, String maPhong, LocalDate ngayDatPhong,
+	public ThongTinDatThuePhong(String maDatPhong, String maKhachHang, List<Phong> dsPhong, LocalDate ngayDatPhong,
 			LocalDate ngayNhanPhong, LocalDate ngayTraPhong, String maLoaiThue, double tienDaCoc) {
 		super();
 		this.maDatPhong = maDatPhong;
 		this.maKhachHang = maKhachHang;
-		this.maPhong = maPhong;
+        this.dsPhong = dsPhong;
 		this.ngayDatPhong = ngayDatPhong;
 		this.ngayNhanPhong = ngayNhanPhong;
 		this.ngayTraPhong = ngayTraPhong;
@@ -98,11 +99,10 @@ public class ThongTinDatThuePhong {
 		this.tienDaCoc = tienDaCoc;
 	}
 
-    @Override
+	@Override
 	public String toString() {
-		return "ThongTinDatThuePhong{" + "maDatPhong='" + maDatPhong + '\'' + ", maKhachHang='" + maKhachHang + '\''
-				+ ", maPhong='" + maPhong + '\'' + ", ngayDatPhong=" + ngayDatPhong + ", ngayNhanPhong=" + ngayNhanPhong
-				+ ", ngayTraPhong=" + ngayTraPhong + ", maLoaiThue='" + maLoaiThue + '\'' + ", tienDaCoc=" + tienDaCoc
-				+ '}';
+		return "ThongTinDatThuePhong [maDatPhong=" + maDatPhong + ", maKhachHang=" + maKhachHang + ", dsPhong="
+				+ dsPhong + ", ngayDatPhong=" + ngayDatPhong + ", ngayNhanPhong=" + ngayNhanPhong + ", ngayTraPhong="
+				+ ngayTraPhong + ", maLoaiThue=" + maLoaiThue + ", tienDaCoc=" + tienDaCoc + "]";
 	}
 }

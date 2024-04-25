@@ -10,7 +10,7 @@ public class KhachHang {
 	private String gioiTinh;
 	private LocalDate ngaySinh;
 	private String soDT;
-	private String CCCD_Visa;
+	private String cccd_passport;
 	private double chiTieu;
 	private String maHangThanhVien;
 	private String quocTich;
@@ -41,7 +41,7 @@ public class KhachHang {
 	}
 
 
-	public KhachHang(String maKH, String hoTenKH, String gioiTinh, LocalDate ngaySinh, String soDT, String cCCD_Visa,
+	public KhachHang(String maKH, String hoTenKH, String gioiTinh, LocalDate ngaySinh, String soDT, String cccd_passport,
 			double chiTieu, String maHangThanhVien, String quocTich) {
 		super();
 		this.maKH = maKH;
@@ -49,7 +49,7 @@ public class KhachHang {
 		this.gioiTinh = gioiTinh;
 		this.ngaySinh = ngaySinh;
 		this.soDT = soDT;
-		CCCD_Visa = cCCD_Visa;
+		this.cccd_passport = cccd_passport;
 		this.chiTieu = chiTieu;
 		this.maHangThanhVien = maHangThanhVien;
 		this.quocTich = quocTich;
@@ -71,12 +71,12 @@ public class KhachHang {
 		this.soDT = soDT;
 	}
 
-	public String getCCCD_Visa() {
-		return CCCD_Visa;
+	public String getCccd_passport() {
+		return cccd_passport;
 	}
 
-	public void setCCCD_Visa(String cCCD_Visa) {
-		CCCD_Visa = cCCD_Visa;
+	public void setCccd_passport(String cccd_passport) {
+		cccd_passport = cccd_passport;
 	}
 
 	public double getChiTieu() {
@@ -114,7 +114,7 @@ public class KhachHang {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(CCCD_Visa);
+		return Objects.hash(cccd_passport);
 	}
 
 	@Override
@@ -126,7 +126,7 @@ public class KhachHang {
 		if (getClass() != obj.getClass())
 			return false;
 		KhachHang other = (KhachHang) obj;
-		if (!CCCD_Visa.equals(other.CCCD_Visa))
+		if (!cccd_passport.equals(other.cccd_passport))
 			return false;
 		return true;
 	}

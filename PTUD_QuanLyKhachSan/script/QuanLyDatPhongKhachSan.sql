@@ -7,13 +7,13 @@ CREATE TABLE ChucVu (
     TenChucVu NVARCHAR(10),
     LuongCoBan FLOAT,
     HeSoLuong FLOAT
-);
+); --check
 
 CREATE TABLE TaiKhoan (
 	MaNV NVARCHAR(30) PRIMARY KEY,
     TenDangNhap NVARCHAR(30) ,
     MatKhau NVARCHAR(255)
-);
+); --check
 
 CREATE TABLE NhanVien (
     MaNV NVARCHAR(30) PRIMARY KEY, --SRNV04022024001
@@ -22,17 +22,17 @@ CREATE TABLE NhanVien (
     GioiTinh NVARCHAR(5),
     SoDienThoai NVARCHAR(15),
 	Email NVARCHAR(255),
-    CCCD_Visa NVARCHAR(20),
+    CCCD NVARCHAR(20),
     DiaChi NVARCHAR(255),
     MaChucVu NVARCHAR(2),
 	NgayVaoLam DATE
-);
+); --check
 
 CREATE TABLE HangThanhVien (
     MaHang NVARCHAR(2) PRIMARY KEY,
     TenHang NVARCHAR(255),
     TiLeChietKhau FLOAT
-);
+); --check
 
 CREATE TABLE KhachHang (
     MaKH NVARCHAR(30) PRIMARY KEY,
@@ -40,18 +40,18 @@ CREATE TABLE KhachHang (
     GioiTinh NVARCHAR(5),
     NgaySinhKH DATE,
     SoDienThoai NVARCHAR(15),
-    CCCD_Visa NVARCHAR(30),
+    CCCD_Passport NVARCHAR(30),
     ChiTieu FLOAT,
     MaHang NVARCHAR(2),
     QuocTich NVARCHAR(255)
-);
+); --check
 
 CREATE TABLE LoaiPhong (
     MaLoaiPhong NVARCHAR(2) PRIMARY KEY,
     TenLoaiPhong NVARCHAR(255),
     SoGiuong INT,
 	SoNguoiToiDa INT
-);
+); --check
 
 CREATE TABLE LoaiThue (
     MaLoaiThue NVARCHAR(10) PRIMARY KEY,
@@ -59,20 +59,20 @@ CREATE TABLE LoaiThue (
     GiaThue FLOAT,
 	GiaCocToiThieu FLOAT,
     MaLoaiPhong NVARCHAR(2)
-);
+); --check
 
 CREATE TABLE Phong (
     MaPhong NVARCHAR(10) PRIMARY KEY,
     SoPhong INT,
     MaLoaiPhong NVARCHAR(2),
     TrangThaiPhong NVARCHAR(255)
-);
+); --check
 
 CREATE TABLE DichVu (
     MaDV NVARCHAR(10) PRIMARY KEY,
     TenDV NVARCHAR(255),
     GiaDV FLOAT
-);
+); --check
 
 --Điều kiện áp dụng khuyến mãi string
 CREATE TABLE KhuyenMai (
@@ -81,46 +81,45 @@ CREATE TABLE KhuyenMai (
     GiaTriKhuyenMai FLOAT,
     ThoiGianBatDau DATE,
     ThoiGianKetThuc DATE,
-    DieuKienApDung FLOAT
-);
+    DieuKienApDung INT,
+	MaHD NVARCHAR(30)
+); --check
 
 CREATE TABLE HoaDon (
     MaHD NVARCHAR(30) PRIMARY KEY,
     MaNV NVARCHAR(30),
     MaKH NVARCHAR(30),
-    NgayLapHD DATE
-);
+    NgayLapHD DATE,
+    ThueVAT FLOAT
+); --check
 
 CREATE TABLE ThongTinDatThuePhong (
     MaTTDTP NVARCHAR(30) PRIMARY KEY,
     MaKhachHang NVARCHAR(30),
+	SoLuongKhach INT,
     Phong NVARCHAR(255),
     NgayDatPhong DATE,
     NgayNhanPhong DATE,
     NgayTraPhong DATE,
     LoaiThue NVARCHAR(10),
 	TienDaCoc FLOAT
-);
+); --check
 
 CREATE TABLE DichVuSuDung (
 	MaDichVuSuDung NVARCHAR(10) PRIMARY KEY,
     MaPhong NVARCHAR(10),
     MaDichVu NVARCHAR(10),
     SoLuong INT
-);
+); --check
 
 CREATE TABLE ChiTietHoaDon (
 	MaCTHD NVARCHAR(30) PRIMARY KEY,
     MaHD NVARCHAR(30),
-    MaTTNP NVARCHAR(10),
+    MaTTDTP NVARCHAR(10),
 	MaLSDP NVARCHAR(30),
-    MaDichVuPhongSuDung NVARCHAR(10),
-    NgayDen DATE,
-    NgayDi DATE,
-    MaKM NVARCHAR(10),
-    ThueVAT FLOAT,
-    ChietKhau FLOAT
-);
+    MaDVPSD NVARCHAR(10),
+    MaKM NVARCHAR(10)
+); --check
 
 CREATE TABLE LichSuDoiPhong (
     MaLSDP NVARCHAR(30) PRIMARY KEY, 
@@ -129,7 +128,7 @@ CREATE TABLE LichSuDoiPhong (
 	MaPhongMoi NVARCHAR(10),
 	NgayDoiPhong DATE,
 	LyDoDoi NVARCHAR(255)
-);
+); --
 
 -- Thêm khóa
 ALTER TABLE TaiKhoan
@@ -196,10 +195,10 @@ ALTER TABLE HoaDon
 ADD CONSTRAINT FK_HoaDon_KhachHang
 FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH);
 
--- Thêm khóa ngoại từ bảng DichVuSuDung đến bảng ChiTietHoaDon
+-- Thêm khóa ngoại từ bảng ChiTietHoaDon đến bảng DichVuSuDung
 ALTER TABLE ChiTietHoaDon
 ADD CONSTRAINT FK_ChiTietHoaDon_DichVuSuDung
-FOREIGN KEY (MaDichVuPhongSuDung) REFERENCES DichVuSuDung(MaDichVuSuDung);
+FOREIGN KEY (MaDVPSD) REFERENCES DichVuSuDung(MaDichVuSuDung);
 
 -- Thêm khóa ngoại từ bảng LichSuDoiPhong đến bảng ThongTinDatThuePhong
 ALTER TABLE LichSuDoiPhong
@@ -210,6 +209,11 @@ FOREIGN KEY (MaTTDTP) REFERENCES ThongTinDatThuePhong(MaTTDTP);
 ALTER TABLE LichSuDoiPhong
 ADD CONSTRAINT FK_LichSuDoiPhong_Phong
 FOREIGN KEY (MaPhongMoi) REFERENCES Phong(MaPhong);
+
+-- Thêm khóa ngoại từ bảng ChiTietHoaDon đến bảng LichSuDoiPhong
+ALTER TABLE ChiTietHoaDon
+ADD CONSTRAINT FK_ChiTietHoaDon_LichSuDoiPhong
+FOREIGN KEY (MaLSDP) REFERENCES LichSuDoiPhong(MaLSDP);
 
 -- Dữ liệu Loại thuê
 INSERT INTO LoaiThue (MaLoaiThue, KieuThue, GiaThue, MaLoaiPhong)
@@ -277,19 +281,18 @@ VALUES
 ('CC307', 404, 'CC', N'Trống'),
 ('CC308', 405, 'CC', N'Trống');
 
-
 -- Dịch vụ
 INSERT INTO DichVu (MaDV, TenDV, GiaDV)
 VALUES
-('DV001', N'Quầy bar', 100000),
+('DV001', N'Quầy bar', 120000),
 ('DV002', N'Dịch vụ ăn tối tại phòng', 200000),
-('DV003', N'Dịch vụ giặt ủi quần áo', 150000),
-('DV004', N'Dịch vụ đưa đón tại sân bay', 300000),
-('DV005', N'Dịch vụ thuê xe máy tự lái', 400000),
-('DV006', N'Dịch vụ thuê xe ô tô tự lái', 400000),
-('DV007', N'Dịch vụ ăn sáng tại phòng', 200000),
-('DV008', N'Dịch vụ spa', 200000),
-('DV009', N'Dịch vụ phòng tập thể dục', 200000);
+('DV003', N'Dịch vụ giặt ủi quần áo', 130000),
+('DV004', N'Dịch vụ đưa đón tại sân bay', 320000),
+('DV005', N'Dịch vụ thuê xe máy tự lái', 350000),
+('DV006', N'Dịch vụ thuê xe ô tô tự lái', 500000),
+('DV007', N'Dịch vụ ăn sáng tại phòng', 180000),
+('DV008', N'Dịch vụ spa', 250000),
+('DV009', N'Dịch vụ phòng tập thể dục', 180000);
 
 -- Hạng thành viên
 DELETE FROM [dbo].[HangThanhVien]
@@ -308,7 +311,7 @@ VALUES
 ('QL', 'Quản lý', 10000000, 1.75);
 
 -- Tạo 10 khách hàng với chi tiêu tương ứng
-INSERT INTO [dbo].[KhachHang] (MaKH, TenKhachHang, GioiTinh, NgaySinhKH, SoDienThoai, CCCD_Visa, ChiTieu, MaHang, QuocTich)
+INSERT INTO [dbo].[KhachHang] (MaKH, TenKhachHang, GioiTinh, NgaySinhKH, SoDienThoai, CCCD_Passport, ChiTieu, MaHang, QuocTich)
 VALUES 
 ('KH001', N'Nguyễn Văn Anh', N'Nam', '1990-01-01', '0123456789', '123456789012', 5000000, 'HB', N'Việt Nam'),
 ('KH002', N'Nguyễn Thị Bích', N'Nữ', '1995-02-15', '0123456788', '123456789013', 10000000, 'HV', N'Việt Nam'),
@@ -321,11 +324,9 @@ VALUES
 ('KH009', N'Nguyễn Văn Khoa', N'Nam', '1989-09-30', '0123456781', '123456789020', 25000000, 'LB', N'Việt Nam'),
 ('KH010', N'Trần Thị Lan', N'Nữ', '1994-10-14', '0123456780', '123456789021', 35000000, 'KC', N'Việt Nam');
 
-
-
 DELETE FROM [dbo].[NhanVien]
 -- Tạo 10 nhân viên
-INSERT INTO [dbo].[NhanVien] (MaNV, HoTenNV, NgaySinhNV, GioiTinh, SoDienThoai, Email, CCCD_Visa, DiaChi, MaChucVu, NgayVaoLam)
+INSERT INTO [dbo].[NhanVien] (MaNV, HoTenNV, NgaySinhNV, GioiTinh, SoDienThoai, Email, CCCD, DiaChi, MaChucVu, NgayVaoLam)
 VALUES 
 ('NV001', N'Trần Văn A', '1990-01-01', N'Nam', '0123456790', 'tranvana@email.com', '123456789123', N'Hà Nội', 'NV', '2022-01-01'),
 ('NV002', N'Nguyễn Thị B', '1995-02-15', N'Nữ', '0123456789', 'nguyenthib@email.com', '123456789124', N'Hồ Chí Minh', 'NV', '2021-12-01'),

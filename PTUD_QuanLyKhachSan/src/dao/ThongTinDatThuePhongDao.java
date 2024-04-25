@@ -410,7 +410,7 @@ public class ThongTinDatThuePhongDao {
 		return null;
 	}
 
-	// đặt phòng
+	// Đặt phòng
 	public boolean datPhong(ArrayList<Phong> phong, KhachHang kh, LocalDate ngayDatPhong, LocalDate ngayNhanPhong,
 			String maLoaiThue, LocalDate ngayTraPhong, double tienDaCoc) {
 		ConnectDB.getInstance();
@@ -441,6 +441,8 @@ public class ThongTinDatThuePhongDao {
 		}
 		return true;
 	}
+	
+	
 
 	public ArrayList<String> layDanhSachPhongTheoMaKhachHang(String maKH) {
 		ArrayList<String> dsPhong = new ArrayList<String>();

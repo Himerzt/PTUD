@@ -2,12 +2,16 @@ package entity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
+
 
 public class HoaDon {
 	private String maHoaDon;
-	private NhanVien nhanVien;
+	private String maNhanVien;
+	private String maKhachHang;
 	private LocalDate ngayLap;
-	private KhachHang khachHang;
+	private List<ChiTietHoaDon> dsChiTietHoaDon;
+	private final double VAT = 0.1;
 
 	public String getMaHoaDon() {
 		return maHoaDon;
@@ -17,12 +21,20 @@ public class HoaDon {
 		this.maHoaDon = maHoaDon;
 	}
 
-	public NhanVien getNhanVien() {
-		return nhanVien;
+	public String getMaNhanVien() {
+		return maNhanVien;
 	}
 
-	public void setNhanVien(NhanVien nhanVien) {
-		this.nhanVien = nhanVien;
+	public void setMaNhanVien(String maNhanVien) {
+		this.maNhanVien = maNhanVien;
+	}
+
+	public String getMaKhachHang() {
+		return maKhachHang;
+	}
+
+	public void setMaKhachHang(String maKhachHang) {
+		this.maKhachHang = maKhachHang;
 	}
 
 	public LocalDate getNgayLap() {
@@ -33,31 +45,36 @@ public class HoaDon {
 		this.ngayLap = ngayLap;
 	}
 
-
-
-	public KhachHang getKhachHang() {
-		return khachHang;
+	public java.util.List<ChiTietHoaDon> getDsChiTietHoaDon() {
+		return dsChiTietHoaDon;
 	}
 
-	public void setKhachHang(KhachHang khachHang) {
-		this.khachHang = khachHang;
+	public void setDsChiTietHoaDon(java.util.List<ChiTietHoaDon> dsChiTietHoaDon) {
+		this.dsChiTietHoaDon = dsChiTietHoaDon;
 	}
 
-	public HoaDon(String maHoaDon, NhanVien nhanVien, LocalDate ngayLap, KhachHang khachHang) {
+	public double getVAT() {
+		return VAT;
+	}
+
+	public HoaDon(String maHoaDon, String maNhanVien, String maKhachHang, LocalDate ngayLap,
+			java.util.List<ChiTietHoaDon> dsChiTietHoaDon) {
 		super();
 		this.maHoaDon = maHoaDon;
-		this.nhanVien = nhanVien;
+		this.maNhanVien = maNhanVien;
+		this.maKhachHang = maKhachHang;
 		this.ngayLap = ngayLap;
-		this.khachHang = khachHang;
+		this.dsChiTietHoaDon = dsChiTietHoaDon;
 	}
 
 	public HoaDon() {
 		super();
 	}
 
-	public HoaDon(String maHoaDon) {
-		super();
-		this.maHoaDon = maHoaDon;
+	@Override
+	public String toString() {
+		return "HoaDon [maHoaDon=" + maHoaDon + ", maNhanVien=" + maNhanVien + ", maKhachHang=" + maKhachHang
+				+ ", ngayLap=" + ngayLap + ", dsChiTietHoaDon=" + dsChiTietHoaDon + ", VAT=" + VAT + "]";
 	}
 
 }

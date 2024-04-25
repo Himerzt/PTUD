@@ -72,8 +72,8 @@ public class DichVuPhongDao {
 			ConnectDB.getInstance();
 			Connection con = ConnectDB.getConnection();
 			Statement stmt = con.createStatement();
-			String var10000 = dvp.getMaPhong();
-			String sql = "insert into DichVuPhong values('" + var10000 + "','" + dvp.getMaDichVu() + "',"
+			int maDVSD = timTatCacDichVuPhong().size() + 1;
+			String sql = "insert into DichVuPhong values('" + maDVSD + "','" + dvp.getMaDichVu() + "',"
 					+ dvp.getSoLuong() + ")";
 			stmt.executeUpdate(sql);
 			return true;

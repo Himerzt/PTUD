@@ -19,7 +19,7 @@ public class KhachHangDao {
 
 	public KhachHangDao() {
 		dsKH = new ArrayList<KhachHang>();
-      khachHang = new KhachHang();
+                khachHang = new KhachHang();
 	}
 	
 	public int demTongSoKhachHang() {
