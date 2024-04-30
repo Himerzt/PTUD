@@ -60,178 +60,185 @@ public class TraPhong2 extends javax.swing.JDialog {
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
-	// Code">//GEN-BEGIN:initComponents
-	private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-		jPanel1 = new javax.swing.JPanel();
-		jLabel1 = new javax.swing.JLabel();
-		jLabel32 = new javax.swing.JLabel();
-		jScrollPane2 = new giaodien.CustomClass.ScrollPaneWin11();
-		tableDanhSachPhong = new javax.swing.JTable();
-		jLabel2 = new javax.swing.JLabel();
-		jScrollPane1 = new giaodien.CustomClass.ScrollPaneWin11();
-		tableDV = new javax.swing.JTable();
-		panelTraPhong = new giaodien.CustomClass.PanelRound();
-		jLabel17 = new javax.swing.JLabel();
-		txtTenKH = new giaodien.CustomClass.TextFieldShadow();
-		txtHangThanhVienKH = new giaodien.CustomClass.TextFieldShadow();
-		jLabel18 = new javax.swing.JLabel();
-		jLabel19 = new javax.swing.JLabel();
-		txtSodienthoaiKH = new giaodien.CustomClass.TextFieldShadow();
-		jLabel20 = new javax.swing.JLabel();
-		txtTenPhong = new giaodien.CustomClass.TextFieldShadow();
-		jLabel21 = new javax.swing.JLabel();
-		txtCheckIn = new giaodien.CustomClass.TextFieldShadow();
-		txtNgaySinh = new giaodien.CustomClass.TextFieldShadow();
-		jLabel22 = new javax.swing.JLabel();
-		txtChietKhau = new giaodien.CustomClass.TextFieldShadow();
-		jLabel23 = new javax.swing.JLabel();
-		jLabel24 = new javax.swing.JLabel();
-		txtThue = new giaodien.CustomClass.TextFieldShadow();
-		jLabel25 = new javax.swing.JLabel();
-		txtNhanVien = new giaodien.CustomClass.TextFieldShadow();
-		txtCheckOut = new giaodien.CustomClass.TextFieldShadow();
-		jLabel26 = new javax.swing.JLabel();
-		txtTongHoaDon = new giaodien.CustomClass.TextFieldShadow();
-		jLabel27 = new javax.swing.JLabel();
-		txtTraTruoc = new giaodien.CustomClass.TextFieldShadow();
-		jLabel28 = new javax.swing.JLabel();
-		jLabel29 = new javax.swing.JLabel();
-		txtTienCanThu = new giaodien.CustomClass.TextFieldShadow();
-		txtMaKhachHang = new giaodien.CustomClass.TextFieldShadow();
-		jLabel30 = new javax.swing.JLabel();
-		txtNgayDat = new giaodien.CustomClass.TextFieldShadow();
-		jLabel31 = new javax.swing.JLabel();
-		btnTraPhong = new giaodien.CustomClass.Button();
-		btnHuy = new giaodien.CustomClass.Button();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jScrollPane2 = new giaodien.CustomClass.ScrollPaneWin11();
+        tableDanhSachPhong = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new giaodien.CustomClass.ScrollPaneWin11();
+        tableDV = new javax.swing.JTable();
+        panelTraPhong = new giaodien.CustomClass.PanelRound();
+        jLabel17 = new javax.swing.JLabel();
+        txtTenKH = new giaodien.CustomClass.TextFieldShadow();
+        txtHangThanhVienKH = new giaodien.CustomClass.TextFieldShadow();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        txtSodienthoaiKH = new giaodien.CustomClass.TextFieldShadow();
+        jLabel20 = new javax.swing.JLabel();
+        txtTenPhong = new giaodien.CustomClass.TextFieldShadow();
+        jLabel21 = new javax.swing.JLabel();
+        txtCheckIn = new giaodien.CustomClass.TextFieldShadow();
+        txtNgaySinh = new giaodien.CustomClass.TextFieldShadow();
+        jLabel22 = new javax.swing.JLabel();
+        txtChietKhau = new giaodien.CustomClass.TextFieldShadow();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        txtThue = new giaodien.CustomClass.TextFieldShadow();
+        jLabel25 = new javax.swing.JLabel();
+        txtNhanVien = new giaodien.CustomClass.TextFieldShadow();
+        txtCheckOut = new giaodien.CustomClass.TextFieldShadow();
+        jLabel26 = new javax.swing.JLabel();
+        txtTongHoaDon = new giaodien.CustomClass.TextFieldShadow();
+        jLabel27 = new javax.swing.JLabel();
+        txtTraTruoc = new giaodien.CustomClass.TextFieldShadow();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        txtTienCanThu = new giaodien.CustomClass.TextFieldShadow();
+        txtMaKhachHang = new giaodien.CustomClass.TextFieldShadow();
+        jLabel30 = new javax.swing.JLabel();
+        txtNgayDat = new giaodien.CustomClass.TextFieldShadow();
+        jLabel31 = new javax.swing.JLabel();
+        btnTraPhong = new giaodien.CustomClass.Button();
+        btnHuy = new giaodien.CustomClass.Button();
 
-		jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-		jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-		jLabel1.setText("Trả phòng");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel1.setText("Trả phòng");
 
-		jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel32.setText("Danh sách phòng");
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel32.setText("Danh sách phòng");
 
-		tableDanhSachPhong.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
+        tableDanhSachPhong.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-		}, new String[] { "STT", "Mã phòng", "Tên phòng", "Loại phòng", "Kiểu thuê", "Ngày đặt", "Ngày nhận",
-				"Ngày trả" }) {
-			Class[] types = new Class[] { java.lang.Integer.class, java.lang.Object.class, java.lang.String.class,
-					java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class,
-					java.lang.Object.class };
-			boolean[] canEdit = new boolean[] { false, false, false, false, false, false, false, false };
+            },
+            new String [] {
+                "STT", "Mã phòng", "Tên phòng", "Loại phòng", "Kiểu thuê", "Ngày đặt", "Ngày nhận", "Ngày trả"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
 
-			public Class getColumnClass(int columnIndex) {
-				return types[columnIndex];
-			}
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-			public boolean isCellEditable(int rowIndex, int columnIndex) {
-				return canEdit[columnIndex];
-			}
-		});
-		tableDanhSachPhong.setRowHeight(40);
-		tableDanhSachPhong.setSelectionBackground(new java.awt.Color(254, 109, 115));
-		jScrollPane2.setViewportView(tableDanhSachPhong);
-		if (tableDanhSachPhong.getColumnModel().getColumnCount() > 0) {
-			tableDanhSachPhong.getColumnModel().getColumn(0).setMaxWidth(60);
-		}
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableDanhSachPhong.setRowHeight(40);
+        tableDanhSachPhong.setSelectionBackground(new java.awt.Color(254, 109, 115));
+        jScrollPane2.setViewportView(tableDanhSachPhong);
+        if (tableDanhSachPhong.getColumnModel().getColumnCount() > 0) {
+            tableDanhSachPhong.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
 
-		jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-		jLabel2.setText("Danh sách dịch vụ");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Danh sách dịch vụ");
 
-		tableDV.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
+        tableDV.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-		}, new String[] { "STT", "Mã dịch vụ", "Tên dịch vụ", "Số lượng", "Phòng", "Giá" }) {
-			Class[] types = new Class[] { java.lang.Integer.class, java.lang.Object.class, java.lang.String.class,
-					java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class };
-			boolean[] canEdit = new boolean[] { false, false, false, false, false, false };
+            },
+            new String [] {
+                "STT", "Mã dịch vụ", "Tên dịch vụ", "Số lượng", "Phòng", "Giá"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
 
-			public Class getColumnClass(int columnIndex) {
-				return types[columnIndex];
-			}
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-			public boolean isCellEditable(int rowIndex, int columnIndex) {
-				return canEdit[columnIndex];
-			}
-		});
-		tableDV.setRowHeight(40);
-		jScrollPane1.setViewportView(tableDV);
-		if (tableDV.getColumnModel().getColumnCount() > 0) {
-			tableDV.getColumnModel().getColumn(0).setMaxWidth(60);
-		}
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableDV.setRowHeight(40);
+        jScrollPane1.setViewportView(tableDV);
+        if (tableDV.getColumnModel().getColumnCount() > 0) {
+            tableDV.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
 
-		panelTraPhong.setRoundBottomLeft(20);
-		panelTraPhong.setRoundBottomRight(20);
-		panelTraPhong.setRoundTopLeft(20);
-		panelTraPhong.setRoundTopRight(20);
+        panelTraPhong.setRoundBottomLeft(20);
+        panelTraPhong.setRoundBottomRight(20);
+        panelTraPhong.setRoundTopLeft(20);
+        panelTraPhong.setRoundTopRight(20);
 
-		jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel17.setText("Tên khách hàng");
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel17.setText("Tên khách hàng");
 
-		jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel18.setText("Hạng thành viên");
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel18.setText("Hạng thành viên");
 
-		jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel19.setText("Số điện thoại");
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel19.setText("Số điện thoại");
 
-		jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel20.setText("Tên phòng");
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel20.setText("Tên phòng");
 
-		jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel21.setText("Ngày nhận");
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel21.setText("Ngày nhận");
 
-		jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel22.setText("Ngày sinh");
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel22.setText("Ngày sinh");
 
-		txtChietKhau.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				txtChietKhauActionPerformed(evt);
-			}
-		});
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel23.setText("Chiết khấu");
 
-		jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel23.setText("Chiết khấu");
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel24.setText("Thuế VAT");
 
-		jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel24.setText("Thuế VAT");
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel25.setText("Nhân viên");
 
-		jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel25.setText("Nhân viên");
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel26.setText("Ngày trả");
 
-		jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel26.setText("Ngày trả");
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel27.setText("Tổng tiền");
 
-		jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel27.setText("Tổng tiền");
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel28.setText("Đã trả trước");
 
-		jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel28.setText("Đã trả trước");
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel29.setText("Tiền cần thu");
 
-		jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel29.setText("Tiền cần thu");
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel30.setText("Mã khách hàng");
 
-		jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel30.setText("Mã khách hàng");
-
-		jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel31.setText("Ngày đặt");
-
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel31.setText("Ngày đặt");
 
         javax.swing.GroupLayout panelTraPhongLayout = new javax.swing.GroupLayout(panelTraPhong);
         panelTraPhong.setLayout(panelTraPhongLayout);
@@ -378,19 +385,20 @@ public class TraPhong2 extends javax.swing.JDialog {
                             .addComponent(txtTienCanThu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
-		btnTraPhong.setText("Trả phòng");
-		btnTraPhong.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnTraPhongActionPerformed(evt);
-			}
-		});
 
-		btnHuy.setText("Hủy");
-		btnHuy.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnHuyActionPerformed(evt);
-			}
-		});
+        btnTraPhong.setText("Trả phòng");
+        btnTraPhong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTraPhongActionPerformed(evt);
+            }
+        });
+
+        btnHuy.setText("Hủy");
+        btnHuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHuyActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -436,11 +444,11 @@ public class TraPhong2 extends javax.swing.JDialog {
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
-		getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
-		pack();
-		setLocationRelativeTo(null);
-	}// </editor-fold>//GEN-END:initComponents
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
 
     private void btnTraPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraPhongActionPerformed
     // Tạo một đối tượng mới của HoaDonThanhToan
@@ -457,12 +465,17 @@ public class TraPhong2 extends javax.swing.JDialog {
     }//GEN-LAST:event_btnTraPhongActionPerformed
 
 	private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed
-		this.setVisible(false);// update
+		this.setVisible(false);
 	}// GEN-LAST:event_btnHuyActionPerformed
 
-	private void txtChietKhauActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtChietKhauActionPerformed
-		// TODO add your handling code here:
-	}// GEN-LAST:event_txtChietKhauActionPerformed
+	
+	// Load thông tin vào textfield
+	protected void loadThongTinTraPhong() {
+		// Load thông tin khách hàng từ database
+		KhachHangDao khDao = new KhachHangDao();
+		
+		
+	}
 
 	protected void btnCCCDActionPerformed(ActionEvent evt) {
 		// Lỗi nên t comment lại nha
@@ -586,49 +599,49 @@ public class TraPhong2 extends javax.swing.JDialog {
 		});
 	}
 
-	// Variables declaration - do not modify//GEN-BEGIN:variables
-	private giaodien.CustomClass.Button btnHuy;
-	private giaodien.CustomClass.Button btnTraPhong;
-	private javax.swing.JLabel jLabel1;
-	private javax.swing.JLabel jLabel17;
-	private javax.swing.JLabel jLabel18;
-	private javax.swing.JLabel jLabel19;
-	private javax.swing.JLabel jLabel2;
-	private javax.swing.JLabel jLabel20;
-	private javax.swing.JLabel jLabel21;
-	private javax.swing.JLabel jLabel22;
-	private javax.swing.JLabel jLabel23;
-	private javax.swing.JLabel jLabel24;
-	private javax.swing.JLabel jLabel25;
-	private javax.swing.JLabel jLabel26;
-	private javax.swing.JLabel jLabel27;
-	private javax.swing.JLabel jLabel28;
-	private javax.swing.JLabel jLabel29;
-	private javax.swing.JLabel jLabel30;
-	private javax.swing.JLabel jLabel31;
-	private javax.swing.JLabel jLabel32;
-	private javax.swing.JPanel jPanel1;
-	private javax.swing.JScrollPane jScrollPane1;
-	private javax.swing.JScrollPane jScrollPane2;
-	private giaodien.CustomClass.PanelRound panelTraPhong;
-	private javax.swing.JTable tableDV;
-	private javax.swing.JTable tableDanhSachPhong;
-	private giaodien.CustomClass.TextFieldShadow txtCheckIn;
-	private giaodien.CustomClass.TextFieldShadow txtCheckOut;
-	private giaodien.CustomClass.TextFieldShadow txtChietKhau;
-	private giaodien.CustomClass.TextFieldShadow txtHangThanhVienKH;
-	private giaodien.CustomClass.TextFieldShadow txtMaKhachHang;
-	private giaodien.CustomClass.TextFieldShadow txtNgayDat;
-	private giaodien.CustomClass.TextFieldShadow txtNgaySinh;
-	private giaodien.CustomClass.TextFieldShadow txtNhanVien;
-	private giaodien.CustomClass.TextFieldShadow txtSodienthoaiKH;
-	private giaodien.CustomClass.TextFieldShadow txtTenKH;
-	private giaodien.CustomClass.TextFieldShadow txtTenPhong;
-	private giaodien.CustomClass.TextFieldShadow txtThue;
-	private giaodien.CustomClass.TextFieldShadow txtTienCanThu;
-	private giaodien.CustomClass.TextFieldShadow txtTongHoaDon;
-	private giaodien.CustomClass.TextFieldShadow txtTraTruoc;
-	// End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private giaodien.CustomClass.Button btnHuy;
+    private giaodien.CustomClass.Button btnTraPhong;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private giaodien.CustomClass.PanelRound panelTraPhong;
+    private javax.swing.JTable tableDV;
+    private javax.swing.JTable tableDanhSachPhong;
+    private giaodien.CustomClass.TextFieldShadow txtCheckIn;
+    private giaodien.CustomClass.TextFieldShadow txtCheckOut;
+    private giaodien.CustomClass.TextFieldShadow txtChietKhau;
+    private giaodien.CustomClass.TextFieldShadow txtHangThanhVienKH;
+    private giaodien.CustomClass.TextFieldShadow txtMaKhachHang;
+    private giaodien.CustomClass.TextFieldShadow txtNgayDat;
+    private giaodien.CustomClass.TextFieldShadow txtNgaySinh;
+    private giaodien.CustomClass.TextFieldShadow txtNhanVien;
+    private giaodien.CustomClass.TextFieldShadow txtSodienthoaiKH;
+    private giaodien.CustomClass.TextFieldShadow txtTenKH;
+    private giaodien.CustomClass.TextFieldShadow txtTenPhong;
+    private giaodien.CustomClass.TextFieldShadow txtThue;
+    private giaodien.CustomClass.TextFieldShadow txtTienCanThu;
+    private giaodien.CustomClass.TextFieldShadow txtTongHoaDon;
+    private giaodien.CustomClass.TextFieldShadow txtTraTruoc;
+    // End of variables declaration//GEN-END:variables
 
 	private static String[] loadDanhSachDichVu() {
 		DichVuDao dvDao = new DichVuDao();
