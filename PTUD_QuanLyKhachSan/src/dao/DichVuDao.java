@@ -202,7 +202,7 @@ public class DichVuDao {
                 String maPhong1 = rs.getString(2);
                 double gia = dvDao.timTheoMaDichVu(maDV).getGiaDV();
                 int soLuong = rs.getInt(3);
-                dvp = new DichVuPhong(maDV, maPhong1, soLuong);
+//                dvp = new DichVuPhong(maDV, maPhong1, soLuong);
                 arGia.add(gia * (double)soLuong);
             }
         } catch (Exception var11) {

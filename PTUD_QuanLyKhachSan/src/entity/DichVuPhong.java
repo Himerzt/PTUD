@@ -1,50 +1,70 @@
 package entity;
 
 public class DichVuPhong {
-	public String maPhong;
-	public String maDichVu;
-	public int soLuong;
+	private String maDichVuSuDung;
 
-	public String getMaPhong() {
-		return this.maPhong;
-	}
-
-	public void setMaPhong(String maPhong) {
-		this.maPhong = maPhong;
-	}
-
-	public String getMaDichVu() {
-		return this.maDichVu;
-	}
-
-	public void setMaDichVu(String maDichVu) {
-		this.maDichVu = maDichVu;
-	}
-
-	public int getSoLuong() {
-		return this.soLuong;
-	}
-
-	public void setSoLuong(int soLuong) {
-		this.soLuong = soLuong;
-	}
-
-	public DichVuPhong(String maPhong, String maDichVu, int soLuong) {
-		this.maPhong = maPhong;
-		this.maDichVu = maDichVu;
-		this.soLuong = soLuong;
-	}
-
-	public DichVuPhong(String maPhong) {
-		this.maPhong = maPhong;
+	public DichVuPhong(String maDichVuSuDung) {
+		super();
+		this.maDichVuSuDung = maDichVuSuDung;
 	}
 
 	public DichVuPhong() {
+		super();
 	}
 
-	@Override
-	public String toString() {
-        return "DichVuPhong [maPhong=" + this.maPhong + ", maDichVu=" + this.maDichVu + ", soLuong=" + this.soLuong
-                + "]";
-    }
+	public DichVuPhong(String maDichVuSuDung, String maphong, String madichvu , int soluong) {
+		super();
+		this.maDichVuSuDung = maDichVuSuDung;
+		this.maphong = maphong;
+		this.madichvu = madichvu;
+		
+		
+		this.soluong = soluong;
+	}
+	private String maphong;
+	private String madichvu;
+
+	private String maDichVu;
+	private int soluong;
+
+	public String getMadichvu() {
+		return madichvu;
+	}
+
+	public void setMadichvu(String madichvu) {
+		this.madichvu = madichvu;
+	}
+
+	public String getMaphong() {
+		return maphong;
+	}
+
+	public void setMaphong(String maphong) {
+		this.maphong = maphong;
+	}
+
+	public String getMaDichVU() {
+		return maDichVu;
+	}
+
+	public void setMaDichVu(String maDichVU) {
+		this.maDichVu = maDichVU;
+	}
+
+	public int getSoluong() {
+		return soluong;
+	}
+
+	public void setSoluong(int soluong) {
+		this.soluong = soluong;
+	}
+
+	public String getMaDichVuSuDung() {
+		return maDichVuSuDung;
+	}
+
+	public void setMaDichVuSuDung(String maDichVuSuDung) {
+		this.maDichVuSuDung = maDichVuSuDung;
+	}
+
 }

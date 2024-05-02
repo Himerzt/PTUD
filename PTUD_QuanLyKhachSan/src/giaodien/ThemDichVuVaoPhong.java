@@ -4,13 +4,25 @@
  */
 package giaodien;
 
+import java.util.ArrayList;
+
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+import dao.DichVuDao;
+import dao.DichVuPhongDao;
+import entity.DichVuPhong;
+
 /**
  *
  * @author Huynguyen
  */
 public class ThemDichVuVaoPhong extends javax.swing.JFrame {
 
-    /**
+    private DichVuPhongDao dsDVPhong;
+	private DichVuDao dsDV;
+	private TableModel tableModel;
+	/**
      * Creates new form ThemDichVuVaoPhong
      */
     public ThemDichVuVaoPhong() {
@@ -264,6 +276,59 @@ public class ThemDichVuVaoPhong extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDichVuActionPerformed
+    	  // TODO add your handling code here:
+    	String tenDV = comboBoxDichVu.getSelectedItem().toString();
+    	String madv = "";
+		if (tenDV.equals("Ăn sáng")) {
+			// Thêm dịch vụ ăn sáng vào phòng
+			madv = "DV002";
+			} else if (tenDV.equals("Ăn trưa")) {
+				madv = "DV002";
+		}
+		else if (tenDV.equals("Ăn chiều")) {
+			madv = "DV002";
+		}
+		else if (tenDV.equals("Giặt quần áo")) {
+				madv = "DV003";
+		}
+		else if (tenDV.equals("Đưa đón khách")) {
+			madv = "DV013";
+		}
+		
+		else if (tenDV.equals("Thêm giường")) {
+    	            madv = "DV010";
+        }
+        else if (tenDV.equals("Thêm gối")) {
+            madv = "DV012";
+        }
+        else if (tenDV.equals("Thêm chăn")) {
+            madv = "DV011";
+        }
+        else if(tenDV.equals("Phòng tập thể dục")) {
+            madv = "DV009";
+        }
+        String maPhong = txtTenPhongHienTai.getText();
+        
+		int soluong = Integer.parseInt(txtSoLuong.getText());
+		
+		
+		int soluongDV = dsDVPhong.demSoLuongDichVuSuDungTheoMaPhong(maPhong);
+		
+		// chuyển sang string soluongDV
+String soluongDVString = String.valueOf(soluongDV + 1); 
+		// Thêm dịch vụ vào phòng
+		DichVuPhong dvp = new DichVuPhong(maPhong + soluongDVString ,maPhong, madv, soluong);
+		 dsDVPhong.themDichVuPhong(dvp);
+		// Kiểm tra xem dịch vụ đã tồn tại trong bảng chưa
+		DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
+		double gia = 0;
+		
+		gia = dsDV.timTheoMaDichVu(madv).getGiaDV() * soluong;
+		
+		tableDV.setModel(tableModel);
+		
+    	((DefaultTableModel) tableModel).addRow(new Object[] {model.getRowCount() + 1, tenDV, soluong, gia});
+   
         // TODO add your handling code here:
     }//GEN-LAST:event_btnThemDichVuActionPerformed
 
