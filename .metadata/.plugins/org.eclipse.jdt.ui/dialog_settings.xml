@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.jdt.ui.lastextjar" value="D:\document\Lesson\PTUD\PTUD\PTUD_QuanLyKhachSan\lib"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="D:\PTUD_Final\PTUD\PTUD_QuanLyKhachSan\lib"/>
 	<section name="completion_proposal_size">
 	</section>
 	<section name="quick_assist_proposal_size">
@@ -8,7 +8,7 @@
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item key="pageIndex" value="2"/>
+		<item key="pageIndex" value="1"/>
 	</section>
 	<section name="RefactoringWizard.preview">
 		<item key="width" value="630"/>

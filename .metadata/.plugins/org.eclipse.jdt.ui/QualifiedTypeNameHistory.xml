@@ -12,17 +12,13 @@
     <fullyQualifiedTypeName name="giaodien.TrangChu"/>
     <fullyQualifiedTypeName name="dao.TaiKhoanDao"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
-    <fullyQualifiedTypeName name="dao.DichVuDao"/>
     <fullyQualifiedTypeName name="dao.KhachHangDao"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="entity.ThongTinDatThuePhong"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="connectDB.ConnectDB"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="entity.DichVuPhong"/>
-    <fullyQualifiedTypeName name="dao.DichVuPhongDao"/>
     <fullyQualifiedTypeName name="dao.PhongDao"/>
     <fullyQualifiedTypeName name="entity.Phong"/>
     <fullyQualifiedTypeName name="dao.ThongTinDatThuePhongDao"/>
@@ -60,4 +56,8 @@
     <fullyQualifiedTypeName name="dao.impl.TaiKhoan_Impl"/>
     <fullyQualifiedTypeName name="entity.ChiTietDonDat"/>
     <fullyQualifiedTypeName name="giaodien.CustomClass.JCheckBoxCustom"/>
+    <fullyQualifiedTypeName name="dao.DichVuPhongDao"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="entity.DichVuPhong"/>
+    <fullyQualifiedTypeName name="dao.DichVuDao"/>
 </qualifiedTypeNameHistroy>
