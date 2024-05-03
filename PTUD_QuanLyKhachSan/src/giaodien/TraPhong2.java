@@ -4,12 +4,6 @@
  */
 package giaodien;
 
-import entity.DichVu;
-import entity.DichVuPhong;
-import entity.KhachHang;
-import entity.Phong;
-import entity.ThongTinDatThuePhong;
-
 import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -24,6 +18,11 @@ import dao.DichVuPhongDao;
 import dao.KhachHangDao;
 import dao.PhongDao;
 import dao.ThongTinDatThuePhongDao;
+import entity.DichVu;
+import entity.DichVuPhong;
+import entity.KhachHang;
+import entity.Phong;
+import entity.ThongTinDatThuePhong;
 
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;

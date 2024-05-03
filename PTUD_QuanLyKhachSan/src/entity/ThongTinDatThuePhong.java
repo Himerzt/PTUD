@@ -6,18 +6,18 @@ import java.util.List;
 public class ThongTinDatThuePhong {
 	private String maTTDTP;
 	private String maKhachHang;
-	private String phong;
+	private String maPhong;
 	private LocalDate ngayDatPhong;
 	private LocalDate ngayNhanPhong;
 	private LocalDate ngayTraPhong;
 	private String maLoaiThue;
 	private double tienDaCoc;
-	public ThongTinDatThuePhong(String maTTDTP, String maKhachHang, String phong, LocalDate ngayDatPhong,
+	public ThongTinDatThuePhong(String maTTDTP, String maKhachHang, String maPhong, LocalDate ngayDatPhong,
 			LocalDate ngayNhanPhong, LocalDate ngayTraPhong, String maLoaiThue, double tienDaCoc) {
 		super();
 		this.maTTDTP = maTTDTP;
 		this.maKhachHang = maKhachHang;
-		this.phong = phong;
+		this.maPhong = maPhong;
 		this.ngayDatPhong = ngayDatPhong;
 		this.ngayNhanPhong = ngayNhanPhong;
 		this.ngayTraPhong = ngayTraPhong;
@@ -43,11 +43,11 @@ public class ThongTinDatThuePhong {
 	public void setMaKhachHang(String maKhachHang) {
 		this.maKhachHang = maKhachHang;
 	}
-	public String getPhong() {
-		return phong;
+	public String getMaPhong() {
+		return maPhong;
 	}
-	public void setPhong(String phong) {
-		this.phong = phong;
+	public void setMaPhong(String maPhong) {
+		this.maPhong = maPhong;
 	}
 	public LocalDate getNgayDatPhong() {
 		return ngayDatPhong;

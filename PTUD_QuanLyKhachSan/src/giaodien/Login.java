@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import connectDB.ConnectDB;
 import dao.TaiKhoanDao;
 import entity.TaiKhoan;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -229,8 +230,8 @@ public class Login extends javax.swing.JFrame implements Serializable {
 					dispose(); // Đóng cửa sổ hiện tại
 
 					// Mở màn hình mới hoặc thực hiện các hành động khác ở đây
-					TrangChuNew2 trangChuNew2 = new TrangChuNew2();
-					trangChuNew2.setVisible(true); // Hiển thị cửa sổ mới
+					TrangChu_Updated trangChu_Updated = new TrangChu_Updated();
+					trangChu_Updated.setVisible(true); // Hiển thị cửa sổ mới
 				} else {
 					// Đăng nhập thất bại
 					JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu.");

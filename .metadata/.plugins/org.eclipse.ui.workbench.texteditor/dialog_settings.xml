@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="btnGROUPLoaiPhong"/>
+		<item key="selection" value="maPhong"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
-		<item key="wholeword" value="true"/>
+		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="phong"/>
+			<item value="aphong"/>
+			<item value="oluong"/>
+			<item value="Madichvu"/>
+			<item value="madichvu"/>
+			<item value="maphong"/>
+			<item value="maPhong"/>
 			<item value="btnGROUPLoaiPhong"/>
 			<item value="btnTimTheoDieuKien"/>
 			<item value="addCheckBoxListeners"/>
@@ -16,15 +23,13 @@
 			<item value="load"/>
 			<item value="comboBoxDichVu"/>
 			<item value="btnDatPhong"/>
-			<item value="checkbox.JCheckBoxCustom"/>
-			<item value="checkbox."/>
-			<item value="deleteByID"/>
-			<item value="deleteById"/>
-			<item value="getHoTen"/>
-			<item value="getMaKH"/>
-			<item value="getMaNV"/>
 		</list>
 		<list key="replacehistory">
+			<item value="maPhong"/>
+			<item value="aPhong"/>
+			<item value="oLuong"/>
+			<item value="MaDichVu"/>
+			<item value="maDichVu"/>
 			<item value="giaodien.CustomClass.JCheckBoxCustom"/>
 			<item value="giaodien.CustomClass.checkbox."/>
 			<item value="giaodien.CustomClass.checkbox"/>
@@ -35,11 +40,6 @@
 			<item value="_Iplm"/>
 			<item value="_Impl()"/>
 			<item value="_Impl"/>
-			<item value="tinhTienCoc"/>
-			<item value="maLoai"/>
-			<item value="ganDuLieuPhongVaoQuanLyPhong"/>
-			<item value="ganDuLieuPhongVaoGiaoDien"/>
-			<item value="y.get(i)"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

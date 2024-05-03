@@ -5,12 +5,6 @@ import dao.DichVuDao;
 import dao.HangThanhVienDao;
 import dao.KhachHangDao;
 import dao.NhanVienDao;
-import entity.ChucVu;
-import entity.DichVu;
-import entity.HangThanhVien;
-import entity.KhachHang;
-import entity.NhanVien;
-import entity.Phong;
 
 import static java.awt.Color.red;
 
@@ -42,6 +36,12 @@ import giaodien.CustomClass.DateChooser;
 import connectDB.ConnectDB;
 import dao.PhongDao;
 import dao.TaiKhoanDao;
+import entity.ChucVu;
+import entity.DichVu;
+import entity.HangThanhVien;
+import entity.KhachHang;
+import entity.NhanVien;
+import entity.Phong;
 import entity.TaiKhoan;
 
 import javax.swing.JFrame;

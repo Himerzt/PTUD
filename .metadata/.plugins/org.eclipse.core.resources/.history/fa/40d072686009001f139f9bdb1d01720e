@@ -1,0 +1,70 @@
+package entity;
+
+public class DichVuPhong {
+	private String maDichVuSuDung;
+
+	public DichVuPhong(String maDichVuSuDung) {
+		super();
+		this.maDichVuSuDung = maDichVuSuDung;
+	}
+
+	public DichVuPhong() {
+		super();
+	}
+
+	public DichVuPhong(String maDichVuSuDung, String maPhong, String madichvu , int soluong) {
+		super();
+		this.maDichVuSuDung = maDichVuSuDung;
+		this.maPhong = maPhong;
+		this.madichvu = madichvu;
+		
+		
+		this.soluong = soluong;
+	}
+	private String maPhong;
+	private String madichvu;
+
+	private String maDichVu;
+	private int soluong;
+
+	public String getMadichvu() {
+		return madichvu;
+	}
+
+	public void setMadichvu(String madichvu) {
+		this.madichvu = madichvu;
+	}
+
+	public String getMaphong() {
+		return maPhong;
+	}
+
+	public void setMaphong(String maPhong) {
+		this.maPhong = maPhong;
+	}
+
+	public String getMaDichVU() {
+		return maDichVu;
+	}
+
+	public void setMaDichVu(String maDichVU) {
+		this.maDichVu = maDichVU;
+	}
+
+	public int getSoluong() {
+		return soluong;
+	}
+
+	public void setSoluong(int soluong) {
+		this.soluong = soluong;
+	}
+
+	public String getMaDichVuSuDung() {
+		return maDichVuSuDung;
+	}
+
+	public void setMaDichVuSuDung(String maDichVuSuDung) {
+		this.maDichVuSuDung = maDichVuSuDung;
+	}
+
+}

@@ -15,9 +15,8 @@ import javax.swing.table.DefaultTableModel;
 import connectDB.ConnectDB;
 import dao.NhanVienDao;
 import dao.TaiKhoanDao;
-
-import entity.TaiKhoan;
 import entity.NhanVien;
+import entity.TaiKhoan;
 
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;

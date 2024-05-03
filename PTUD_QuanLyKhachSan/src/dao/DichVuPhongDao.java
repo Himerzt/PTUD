@@ -75,8 +75,8 @@ public class DichVuPhongDao {
 			Connection con = ConnectDB.getConnection();
 			Statement stmt = con.createStatement();
 			int maDVSD = timTatCacDichVuSuDung().size() + 1;
-			String sql = "insert into DichVuSuDung values('" + maDVSD + "','" + dvp.getMadichvu() + "',"
-					+ dvp.getSoluong() + ")";
+			String sql = "insert into DichVuSuDung values('" + maDVSD + "','" + dvp.getMaDichVu() + "',"
+					+ dvp.getSoLuong() + ")";
 			stmt.executeUpdate(sql);
 			return true;
 		} catch (Exception var5) {
@@ -90,9 +90,9 @@ public class DichVuPhongDao {
 			ConnectDB.getInstance();
 			Connection con = ConnectDB.getConnection();
 			Statement stmt = con.createStatement();
-			int var10000 = dvp.getSoluong();
-			String sql = "update DichVuSuDung set soLuong = " + var10000 + " where maPhong = '" + dvp.getMaphong()
-					+ "' and maDV = '" + dvp.getMadichvu() + "'";
+			int var10000 = dvp.getSoLuong();
+			String sql = "update DichVuSuDung set soLuong = " + var10000 + " where maPhong = '" + dvp.getMaPhong()
+					+ "' and maDV = '" + dvp.getMaDichVu() + "'";
 			stmt.executeUpdate(sql);
 			return true;
 		} catch (Exception var5) {
@@ -229,8 +229,8 @@ public class DichVuPhongDao {
 			Connection con = ConnectDB.getConnection();
 			Statement stmt = con.createStatement();
 			int maDVSD = timTatCacDichVuSuDung().size() + 1;
-			String sql = "insert into DichVuSuDung values('" + maDVSD + "','" + dvp.getMaphong() + "','"
-					+ dvp.getMadichvu() + "'," + dvp.getSoluong() + ")";
+			String sql = "insert into DichVuSuDung values('" + maDVSD + "','" + dvp.getMaPhong() + "','"
+					+ dvp.getMaDichVu() + "'," + dvp.getSoLuong() + ")";
 			stmt.executeUpdate(sql);
 			return true;
 		} catch (Exception e) {
@@ -245,9 +245,9 @@ public class DichVuPhongDao {
 			ConnectDB.getInstance();
 			Connection con = ConnectDB.getConnection();
 			Statement stmt = con.createStatement();
-			int soLuong = dvp.getSoluong();
-			String sql = "update DichVuSuDung set soLuong = " + soLuong + " where maPhong = '" + dvp.getMaphong()
-					+ "' and maDV = '" + dvp.getMadichvu() + "'";
+			int soLuong = dvp.getSoLuong();
+			String sql = "update DichVuSuDung set soLuong = " + soLuong + " where maPhong = '" + dvp.getMaPhong()
+					+ "' and maDV = '" + dvp.getMaDichVu() + "'";
 			stmt.executeUpdate(sql);
 			return true;
 		} catch (Exception e) {

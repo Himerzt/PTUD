@@ -12,51 +12,41 @@ public class DichVuPhong {
 		super();
 	}
 
-	public DichVuPhong(String maDichVuSuDung, String maphong, String madichvu , int soluong) {
+	public DichVuPhong(String maDichVuSuDung, String maPhong, String maDichVu , int soLuong) {
 		super();
 		this.maDichVuSuDung = maDichVuSuDung;
-		this.maphong = maphong;
-		this.madichvu = madichvu;
+		this.maPhong = maPhong;
+		this.maDichVu = maDichVu;
 		
 		
-		this.soluong = soluong;
+		this.soLuong = soLuong;
 	}
-	private String maphong;
-	private String madichvu;
-
+	private String maPhong;
 	private String maDichVu;
-	private int soluong;
+	private int soLuong;
 
-	public String getMadichvu() {
-		return madichvu;
-	}
-
-	public void setMadichvu(String madichvu) {
-		this.madichvu = madichvu;
-	}
-
-	public String getMaphong() {
-		return maphong;
-	}
-
-	public void setMaphong(String maphong) {
-		this.maphong = maphong;
-	}
-
-	public String getMaDichVU() {
+	public String getMaDichVu() {
 		return maDichVu;
 	}
 
-	public void setMaDichVu(String maDichVU) {
-		this.maDichVu = maDichVU;
+	public void setMaDichVu(String maDichVu) {
+		this.maDichVu = maDichVu;
 	}
 
-	public int getSoluong() {
-		return soluong;
+	public String getMaPhong() {
+		return maPhong;
 	}
 
-	public void setSoluong(int soluong) {
-		this.soluong = soluong;
+	public void setMaPhong(String maPhong) {
+		this.maPhong = maPhong;
+	}
+
+	public int getSoLuong() {
+		return soLuong;
+	}
+
+	public void setSoLuong(int soLuong) {
+		this.soLuong = soLuong;
 	}
 
 	public String getMaDichVuSuDung() {
