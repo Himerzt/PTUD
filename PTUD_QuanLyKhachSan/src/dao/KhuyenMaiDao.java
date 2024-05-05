@@ -261,13 +261,12 @@ public class KhuyenMaiDao {
 		return khuyenMai;
 	}
 	
-//	public static void main(String[] args) {
-////		//Test thêm khuyến mãi
-////		KhuyenMai khuyenMai = new KhuyenMai("KM02", "Khuyen mai 2", 0.1, LocalDate.of(2021, 3, 1), LocalDate.of(2021, 3, 10), 100000);
-////		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
-////		System.out.println(khuyenMaiDao.themKhuyenMai(khuyenMai));
-////		
-////	
-//	}
+	public static void main(String[] args) {
+		//Test thêm khuyến mãi
+		KhuyenMai khuyenMai = new KhuyenMai("KM02", "Khuyen mai 2", 0.1, LocalDate.of(2021, 3, 1), LocalDate.of(2021, 3, 10), 100000);
+		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
+		System.out.println(khuyenMaiDao.themKhuyenMai(khuyenMai));
+		
+	}
 	
 }

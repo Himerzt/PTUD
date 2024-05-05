@@ -37,6 +37,8 @@ public class KhuyenMaiPannel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dateBatDau = new giaodien.CustomClass.DateChooser();
+        dateKetThuc = new giaodien.CustomClass.DateChooser();
         pnKhuyenMai = new javax.swing.JPanel();
         pnLayOutKhuyenMai = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -61,22 +63,26 @@ public class KhuyenMaiPannel extends javax.swing.JPanel {
         btnNgayBatDauKhuyenMai = new giaodien.CustomClass.Button();
         btnNgayKetThucKhuyenMai = new giaodien.CustomClass.Button();
 
+        dateBatDau.setTextRefernce(txtNgayBatDau);
+
+        dateKetThuc.setTextRefernce(txtNgayKetThuc);
+
         pnLayOutKhuyenMai.setBackground(new java.awt.Color(255, 255, 255));
         pnLayOutKhuyenMai.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quản lý Khuyến Mãi", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 24))); // NOI18N
 
         TableKhuyenMai.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã khuyến mãi", "Tên khuyến mãi", "Giá trị khuyến mãi", "Thời gian bắt đầu", "Thời gian kết thúc", "Điều kiện áp dụng", "Nhân viên tạo khuyến mãi"
+                "STT", "Mã khuyến mãi", "Tên khuyến mãi", "Giá trị khuyến mãi", "Thời gian bắt đầu", "Thời gian kết thúc", "Điều kiện áp dụng", "Nhân viên tạo khuyến mãi"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -146,6 +152,11 @@ public class KhuyenMaiPannel extends javax.swing.JPanel {
         });
 
         btnXoaTrang.setText("Xóa trắng");
+        btnXoaTrang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaTrangActionPerformed(evt);
+            }
+        });
 
         btnNgayBatDauKhuyenMai.setBorder(null);
         btnNgayBatDauKhuyenMai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgLogin/calendar.png"))); // NOI18N
@@ -317,43 +328,117 @@ public class KhuyenMaiPannel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNgayBatDauKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNgayBatDauKhuyenMaiActionPerformed
-        
+        dateBatDau.showPopup();
     }//GEN-LAST:event_btnNgayBatDauKhuyenMaiActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         //Thêm khuyến mãi vào cơ sở dữ liệu
+    	//Lấy dữ liệu
     	String maKM = txtMaKM.getText();
     	String tenKM = txtTenKM.getText();
-    	double giaTriKM = Double.parseDouble(txtGiaTriKM.getText());
-    	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-    	LocalDate ngayBatDauDate = LocalDate.parse(txtNgayBatDau.getText(), formatter);
-    	LocalDate ngayBatDau = LocalDate.of(ngayBatDauDate.getYear(), ngayBatDauDate.getMonth(), ngayBatDauDate.getDayOfMonth());
-    	LocalDate ngayKetThucDate = LocalDate.parse(txtNgayKetThuc.getText(), formatter);
-    	LocalDate ngayKetThuc = LocalDate.of(ngayKetThucDate.getYear(), ngayKetThucDate.getMonth(), ngayKetThucDate.getDayOfMonth());
-    	double dieuKienApDung = Double.parseDouble(comboboxDieuKien.getSelectedItem().toString());
-    	entity.KhuyenMai khuyenMai = new entity.KhuyenMai(maKM, tenKM, giaTriKM, ngayBatDau, ngayKetThuc, dieuKienApDung);
-    	khuyenMaiDao = new KhuyenMaiDao();
-    	boolean result = khuyenMaiDao.themKhuyenMai(khuyenMai);
-    	if(result) {
-    		JOptionPane.showMessageDialog(this, "Thêm khuyến mãi thành công");
-    	}else {
-    		JOptionPane.showMessageDialog(this, "Thêm khuyến mãi thất bại");
-    	}
-    	loadTableKhuyeMai();
-    	
+    	String giaTriKM = txtGiaTriKM.getText();
+    	String ngayBatDau = txtNgayBatDau.getText().trim();
+    	String ngayKetThuc = txtNgayKetThuc.getText().trim();
+    	String dieuKien = comboboxDieuKien.getSelectedItem().toString();
+    	//Kiểm tra dữ liệu
+		if (maKM.isEmpty() || tenKM.isEmpty() || giaTriKM.isEmpty() || ngayBatDau.isEmpty() || ngayKetThuc.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Vui lòng nhập đầy đủ thông tin");
+			return;
+		}
+		//Chuyển đổi dữ liệu
+		double giaTri = Double.parseDouble(giaTriKM);
+		double dieuKienApDung = Double.parseDouble(dieuKien);
+		LocalDate batDau = LocalDate.parse(ngayBatDau, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		LocalDate ketThuc = LocalDate.parse(ngayKetThuc, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        //Kiểm tra ngày bắt đầu và ngày kết thúc
+		if (batDau.isAfter(ketThuc)) {
+			JOptionPane.showMessageDialog(null, "Ngày bắt đầu không thể sau ngày kết thúc");
+			return;
+		}
+		//Thêm vào cơ sở dữ liệu
+		KhuyenMai km = new KhuyenMai(maKM, tenKM, giaTri, batDau, ketThuc, dieuKienApDung);
+		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
+		khuyenMaiDao.themKhuyenMai(km);
+		loadTableKhuyeMai();
+		JOptionPane.showMessageDialog(null, "Thêm khuyến mãi thành công");
+
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnNgayKetThucKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNgayKetThucKhuyenMaiActionPerformed
-        // TODO add your handling code here:
+        dateKetThuc.showPopup();
     }//GEN-LAST:event_btnNgayKetThucKhuyenMaiActionPerformed
 
     private void btnCapNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhapActionPerformed
-        // TODO add your handling code here:
+        String maKM = txtMaKM.getText();
+        String tenKM = txtTenKM.getText();
+        String giaTriKM = txtGiaTriKM.getText();
+        String ngayBatDau = txtNgayBatDau.getText().trim();
+        String ngayKetThuc = txtNgayKetThuc.getText().trim();
+        String dieuKien = comboboxDieuKien.getSelectedItem().toString();
+        //Kiểm tra dữ liệu
+		if (maKM.isEmpty() || tenKM.isEmpty() || giaTriKM.isEmpty() || ngayBatDau.isEmpty() || ngayKetThuc.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Vui lòng nhập đầy đủ thông tin");
+			return;
+		}
+		//Chuyển đổi dữ liệu
+		double giaTri = Double.parseDouble(giaTriKM);
+		double dieuKienApDung = Double.parseDouble(dieuKien);
+		LocalDate batDau = LocalDate.parse(ngayBatDau, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		LocalDate ketThuc = LocalDate.parse(ngayKetThuc, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		// Kiểm tra ngày bắt đầu và ngày kết thúc
+		if (batDau.isAfter(ketThuc)) {
+			JOptionPane.showMessageDialog(null, "Ngày bắt đầu không thể sau ngày kết thúc");
+			return;
+		}
+		// Cập nhập vào cơ sở dữ liệu
+		KhuyenMai km = new KhuyenMai(maKM, tenKM, giaTri, batDau, ketThuc, dieuKienApDung);
+		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
+		khuyenMaiDao.suaKhuyenMai(km);
+		loadTableKhuyeMai();
+		JOptionPane.showMessageDialog(null, "Cập nhập khuyến mãi thành công");
+		
     }//GEN-LAST:event_btnCapNhapActionPerformed
 
     private void btnKetThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKetThucActionPerformed
-        // TODO add your handling code here:
+    	String maKM = txtMaKM.getText();
+        String tenKM = txtTenKM.getText();
+        String giaTriKM = txtGiaTriKM.getText();
+        String ngayBatDau = txtNgayBatDau.getText().trim();
+        String dieuKien = comboboxDieuKien.getSelectedItem().toString();
+        //Kiểm tra dữ liệu
+		if (maKM.isEmpty() || tenKM.isEmpty() || giaTriKM.isEmpty() || ngayBatDau.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Vui lòng nhập đầy đủ thông tin");
+			return;
+		}
+		//Chuyển đổi dữ liệu
+		double giaTri = Double.parseDouble(giaTriKM);
+		double dieuKienApDung = Double.parseDouble(dieuKien);
+		LocalDate batDau = LocalDate.parse(ngayBatDau, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		//Ngày kêt thúc là ngày hiện tại
+		LocalDate ketThuc = LocalDate.parse(LocalDate.now().toString());
+		// Kiểm tra ngày bắt đầu và ngày kết thúc
+		KhuyenMai km = new KhuyenMai(maKM, tenKM, giaTri, batDau, ketThuc, dieuKienApDung);
+		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
+		if (batDau.isAfter(ketThuc)) {
+			khuyenMaiDao.xoaKhuyenMai(km);
+			JOptionPane.showMessageDialog(null, "Khuyến mãi chưa bắt đầu ! Đã xóa khuyến mãi !");
+			return;
+		}
+		// Kết thúc sớm khuyến mãi
+		khuyenMaiDao.suaKhuyenMai(km);
+		loadTableKhuyeMai();
+		JOptionPane.showMessageDialog(null, "Kết thúc sớm khuyến mãi thành công");
+        
     }//GEN-LAST:event_btnKetThucActionPerformed
+
+    private void btnXoaTrangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaTrangActionPerformed
+		txtMaKM.setText("");
+		txtTenKM.setText("");
+		txtGiaTriKM.setText("");
+		txtNgayBatDau.setText("");
+		txtNgayKetThuc.setText("");
+		comboboxDieuKien.setSelectedIndex(0);
+    }//GEN-LAST:event_btnXoaTrangActionPerformed
     
 
     
@@ -369,9 +454,7 @@ public class KhuyenMaiPannel extends javax.swing.JPanel {
 			model.addRow(rowData);
 		}
 
-    }
-    
-   
+    }  
     
     //enventclickontale
 	private void eventClickOnTableKhuyenMai() {
@@ -384,8 +467,13 @@ public class KhuyenMaiPannel extends javax.swing.JPanel {
 						txtMaKM.setText(TableKhuyenMai.getValueAt(row, 1).toString());
 						txtTenKM.setText(TableKhuyenMai.getValueAt(row, 2).toString());
 						txtGiaTriKM.setText(TableKhuyenMai.getValueAt(row, 3).toString());
-						txtNgayBatDau.setText(TableKhuyenMai.getValueAt(row, 4).toString());
-						txtNgayKetThuc.setText(TableKhuyenMai.getValueAt(row, 5).toString());
+						String dateBatDauStr = TableKhuyenMai.getValueAt(row, 4).toString();
+						String dateKetThucStr = TableKhuyenMai.getValueAt(row, 5).toString();
+						LocalDate dateBatDau = LocalDate.parse(dateBatDauStr, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+						LocalDate dateKetThuc = LocalDate.parse(dateKetThucStr, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+						txtNgayBatDau.setText(dateBatDau.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+						txtNgayKetThuc.setText(dateKetThuc.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+						
 						comboboxDieuKien.setSelectedItem(TableKhuyenMai.getValueAt(row, 6).toString());
 					}
 				}
@@ -406,6 +494,8 @@ public class KhuyenMaiPannel extends javax.swing.JPanel {
     private giaodien.CustomClass.Button btnThem;
     private giaodien.CustomClass.Button btnXoaTrang;
     private giaodien.CustomClass.Combobox comboboxDieuKien;
+    private giaodien.CustomClass.DateChooser dateBatDau;
+    private giaodien.CustomClass.DateChooser dateKetThuc;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;

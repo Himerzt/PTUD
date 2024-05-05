@@ -126,7 +126,7 @@ public class KhachHangDao {
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
 			String sql = "Update KhachHang set TenKhachHang = N'" + kh.getHoTenKH() + "', gioiTinh = N'" + kh.getGioiTinh()
-					+ "', ngaySinhKH = '" + kh.getNgaySinh() + "', soDienThoai = '" + kh.getSoDT() + "', CCCD_Visa = '"
+					+ "', ngaySinhKH = '" + kh.getNgaySinh() + "', soDienThoai = '" + kh.getSoDT() + "', CCCD_Passport = '"
 					+ kh.getCccd_passport() + "', chiTieu = " + kh.getChiTieu() + ", maHang = '"
 					+ kh.getMaHangThanhVien() + "', quocTich = N'" + kh.getQuocTich() + "' where maKH = '"
 					+ kh.getMaKH() + "'";

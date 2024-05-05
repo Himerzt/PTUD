@@ -81,8 +81,7 @@ CREATE TABLE KhuyenMai (
     GiaTriKhuyenMai FLOAT,
     ThoiGianBatDau DATE,
     ThoiGianKetThuc DATE,
-    DieuKienApDung INT,
-	MaHD NVARCHAR(30)
+    DieuKienApDung INT
 ); --check
 
 CREATE TABLE HoaDon (
