@@ -5,8 +5,12 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.JOptionPane;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
@@ -182,9 +186,23 @@ public class ThuePhong extends javax.swing.JDialog {
 			}
 		});
 
-		txtSoLuongNguoiLon.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				txtSoLuongNguoiLonActionPerformed();
+		txtSoLuongNguoiLon.getDocument().addDocumentListener(new DocumentListener() {
+			@Override
+			public void removeUpdate(DocumentEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void insertUpdate(DocumentEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void changedUpdate(DocumentEvent e) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 
@@ -258,9 +276,23 @@ public class ThuePhong extends javax.swing.JDialog {
 
 		btnGiaCoc.setText("+");
 
-		txtSoLuongTreEm.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				txtSoLuongTreEmActionPerformed();
+		txtSoLuongTreEm.getDocument().addDocumentListener(new DocumentListener() {
+			@Override
+			public void removeUpdate(DocumentEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void insertUpdate(DocumentEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void changedUpdate(DocumentEvent e) {
+				// TODO Auto-generated method stub
+
 			}
 		});
 
@@ -629,7 +661,7 @@ public class ThuePhong extends javax.swing.JDialog {
 		// TODO add your handling code here:
 	}// GEN-LAST:event_txtGiaCocActionPerformed
 	
-	private int tinhSoPhongTrongCua1LoaiPhong(String maLoaiPhong) {
+	private int tinhSoPhongTrongTheoLoaiPhong(String maLoaiPhong) {
 		int soPhong = 0;
 		ArrayList<Phong> dsPhong = phongDao.timPhongTheoLoaiPhong(maLoaiPhong);
 		for (Phong phong : dsPhong) {
@@ -762,15 +794,37 @@ public class ThuePhong extends javax.swing.JDialog {
 			JOptionPane.showMessageDialog(this, "Vui lòng chọn phòng cần thêm dịch vụ");
 		}
 	}// GEN-LAST:event_btnThemDichVuActionPerformed
+	
+	// Check CCCD
+		public boolean regCCCD_Passport(String cccd_passport) {
+			if (cccd_passport.equals("")) {
+				JOptionPane.showMessageDialog(this, "Vui lòng nhập CCCD/Passport");
+				return false;
+			} else {
+				// Regex cho mã số CCCD hoặc Visa
+				String regex = "^(\\d{12}|\\d{16})$";
+
+				Pattern pattern = Pattern.compile(regex);
+				Matcher matcher = pattern.matcher(cccd_passport);
+
+				if (!matcher.matches()) {
+					JOptionPane.showMessageDialog(this, "CCCD/Passport không hợp lệ");
+					return false;
+				}
+				return true;
+			}
+		}
 
 	private void btnThemKhachHangActionPerformed() {// GEN-FIRST:event_btnThemKhachHangActionPerformed
 		KhachHang kh = new KhachHang();
-		kh.setCccd_passport(txtCCCD.getText());
-		if (khachHangDao.timTheoCCCD(kh.getCccd_passport()) != null) {
-			kh = khachHangDao.timTheoCCCD(kh.getCccd_passport());
+		if (regCCCD_Passport(txtCCCD.getText()) == false)
+			return;
+		// Tìm khách hàng bằng CCCD. Nếu tìm thấy thì tự fill các textfield còn lại, nếu không thì thông báo không tìm thấy
+		if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) != null) {
+			kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
 			txtTenKH.setText(kh.getHoTenKH());
 		} else {
-			JOptionPane.showMessageDialog(this, "Vui lòng thêm khách hàng trước khi đặt phòng");
+			JOptionPane.showMessageDialog(this, "Khách hàng hiện chưa được thêm!");
 			return;
 		}
 	}// GEN-LAST:event_btnThemKhachHangActionPerformed

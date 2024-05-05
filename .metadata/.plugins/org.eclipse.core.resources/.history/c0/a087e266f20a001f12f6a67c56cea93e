@@ -719,10 +719,8 @@ public class DatPhong2 extends javax.swing.JDialog {
 				JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");
 				return false;
 			}
-			else if (ngayNhan.isAfter(ngayNhanCoSan) && ngayTra.isBefore(ngayTraCoSan)) {
-                JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");				
+			else if (ngayNhan.isAfter(ngayNhanCoSan) && ngayTra.isBefore(ngayTraCoSan)) 
 				return false;
-			}
 		}
 		return true;
 	}

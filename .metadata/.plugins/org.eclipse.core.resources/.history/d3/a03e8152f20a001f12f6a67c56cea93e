@@ -715,14 +715,10 @@ public class DatPhong2 extends javax.swing.JDialog {
 			LocalDate ngayNhanCoSan = thongTinDatThuePhong.getNgayNhanPhong();
 			LocalDate ngayTraCoSan = thongTinDatThuePhong.getNgayTraPhong();
 			// Kiểm tra khoảng thời gian từ ngày nhận đến ngày trả có chứa khoảng thời gian khác có sẵn không
-			if (ngayNhan.isBefore(ngayNhanCoSan) && ngayTra.isAfter(ngayTraCoSan)) {
-				JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");
+			if (ngayNhan.isBefore(ngayNhanCoSan) && ngayTra.isAfter(ngayTraCoSan))
 				return false;
-			}
-			else if (ngayNhan.isAfter(ngayNhanCoSan) && ngayTra.isBefore(ngayTraCoSan)) {
-                JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");				
+			else if (ngayNhan.isAfter(ngayNhanCoSan) && ngayTra.isBefore(ngayTraCoSan)) 
 				return false;
-			}
 		}
 		return true;
 	}

@@ -9,8 +9,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.swing.JOptionPane;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
@@ -220,19 +218,9 @@ public class DatPhong2 extends javax.swing.JDialog {
 		jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 		jLabel27.setText("Ngày đặt");
 
-		txtNgayNhan.getDocument().addDocumentListener(new DocumentListener() {
-			@Override
-			public void insertUpdate(DocumentEvent e) {
-				LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-				kiemTraTrungNgayNhan(ngayNhan);
-			}
-
-			@Override
-			public void removeUpdate(DocumentEvent e) {
-			}
-
-			@Override
-			public void changedUpdate(DocumentEvent e) {
+		txtNgayNhan.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				txtNgayNhanActionPerformed();
 			}
 		});
 
@@ -251,19 +239,9 @@ public class DatPhong2 extends javax.swing.JDialog {
 			}
 		});
 
-		txtCheckOut.getDocument().addDocumentListener(new DocumentListener() {
-			@Override
-			public void insertUpdate(DocumentEvent e) {
-				LocalDate ngayTra = LocalDate.parse(txtCheckOut.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-				kiemTraTrungNgayTra(ngayTra);
-			}
-
-			@Override
-			public void removeUpdate(DocumentEvent e) {
-			}
-
-			@Override
-			public void changedUpdate(DocumentEvent e) {
+		txtCheckOut.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				txtCheckOutActionPerformed();
 			}
 		});
 
@@ -678,17 +656,24 @@ public class DatPhong2 extends javax.swing.JDialog {
 		List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timTatCaThongTinDatThuePhong();
 		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
 			if (ngayNhan.isBefore(thongTinDatThuePhong.getNgayTraPhong())
-					&& ngayNhan.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
-				JOptionPane.showMessageDialog(null, "Ngày nhận phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!");
+					&& ngayNhan.isAfter(thongTinDatThuePhong.getNgayNhanPhong()))
 				return false;
-			}
-			else if (ngayNhan.equals(thongTinDatThuePhong.getNgayNhanPhong())) {
-                JOptionPane.showMessageDialog(null, "Ngày nhận phòng trùng với ngày nhận phòng đã có trước đó!");				
-				return false;
-			}
+			else if (ngayNhan.equals(thongTinDatThuePhong.getNgayNhanPhong()))
+					return false;
 		}
 		return true;
 	}
+
+	private void txtNgayNhanActionPerformed() {// GEN-FIRST:event_txtNgayNhanActionPerformed
+		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		if (!kiemTraTrungNgayNhan(ngayNhan)) {
+			JOptionPane.showMessageDialog(this, "Ngày nhận phòng bị trùng với lịch đặt phòng khác");
+			return;
+		} else if (ngayNhan.isBefore(LocalDate.now())) {
+			JOptionPane.showMessageDialog(this, "Ngày nhận phòng không hợp lệ");
+			return;
+		}
+	}// GEN-LAST:event_txtNgayNhanActionPerformed
 
 	private void btnNgayNhanActionPerformed() {// GEN-FIRST:event_btnNgayNhanActionPerformed
 		dateNgayNhan.showPopup();
@@ -699,10 +684,8 @@ public class DatPhong2 extends javax.swing.JDialog {
 		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
 			if (ngayTra.isBefore(thongTinDatThuePhong.getNgayTraPhong())
 					&& ngayTra.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
-				JOptionPane.showMessageDialog(null, "Ngày trả phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!");
 				return false;
 			} else if (ngayTra.equals(thongTinDatThuePhong.getNgayTraPhong())) {
-				JOptionPane.showMessageDialog(null, "Ngày trả phòng trùng với ngày trả phòng đã có trước đó!");
 				return false;
 			}
 		}
@@ -715,19 +698,23 @@ public class DatPhong2 extends javax.swing.JDialog {
 			LocalDate ngayNhanCoSan = thongTinDatThuePhong.getNgayNhanPhong();
 			LocalDate ngayTraCoSan = thongTinDatThuePhong.getNgayTraPhong();
 			// Kiểm tra khoảng thời gian từ ngày nhận đến ngày trả có chứa khoảng thời gian khác có sẵn không
-			if (ngayNhan.isBefore(ngayNhanCoSan) && ngayTra.isAfter(ngayTraCoSan)) {
-				JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");
+			if (ngayNhan.isBefore(ngayNhanCoSan) && ngayTra.isAfter(ngayTraCoSan))
 				return false;
-			}
-			else if (ngayNhan.isAfter(ngayNhanCoSan) && ngayTra.isBefore(ngayTraCoSan)) {
-                JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");				
+			else if (ngayNhan.isAfter(ngayNhanCoSan) && ngayTra.isBefore(ngayTraCoSan)) 
 				return false;
-			}
 		}
 		return true;
 	}
 	private void txtCheckOutActionPerformed() {// GEN-FIRST:event_txtCheckOutActionPerformed
-		
+		LocalDate ngayTra = LocalDate.parse(txtCheckOut.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		if (!kiemTraTrungNgayTra(ngayTra))
+			JOptionPane.showMessageDialog(this, "Ngày trả phòng bị trùng với lịch đặt phòng khác");
+		else if (!kiemTraTrungThoiGianThue(ngayNhan, ngayTra))
+			JOptionPane.showMessageDialog(this, "Thời gian thuê phòng bị trùng với lịch đặt phòng khác");
+		else if (ngayTra.isBefore(ngayNhan)) {
+			JOptionPane.showMessageDialog(this, "Ngày trả phòng không hợp lệ");
+		}
 	}// GEN-LAST:event_txtCheckOutActionPerformed
 
 	private void btnNgayTraActionPerformed() {// GEN-FIRST:event_btnNgayTraActionPerformed

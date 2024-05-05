@@ -223,8 +223,15 @@ public class DatPhong2 extends javax.swing.JDialog {
 		txtNgayNhan.getDocument().addDocumentListener(new DocumentListener() {
 			@Override
 			public void insertUpdate(DocumentEvent e) {
-				LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-				kiemTraTrungNgayNhan(ngayNhan);
+				if (txtNgayNhan.getText().length() == 10) {
+					String ngayNhan = txtNgayNhan.getText();
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+					LocalDate ngayNhanLocal = LocalDate.parse(ngayNhan, formatter);
+					if (!kiemTraTrungNgayNhan(ngayNhanLocal)) {
+						JOptionPane.showMessageDialog(null, "Ngày nhận đã bị trùng");
+						txtNgayNhan.requestFocus();
+					}
+				}
 			}
 
 			@Override
@@ -251,19 +258,9 @@ public class DatPhong2 extends javax.swing.JDialog {
 			}
 		});
 
-		txtCheckOut.getDocument().addDocumentListener(new DocumentListener() {
-			@Override
-			public void insertUpdate(DocumentEvent e) {
-				LocalDate ngayTra = LocalDate.parse(txtCheckOut.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-				kiemTraTrungNgayTra(ngayTra);
-			}
-
-			@Override
-			public void removeUpdate(DocumentEvent e) {
-			}
-
-			@Override
-			public void changedUpdate(DocumentEvent e) {
+		txtCheckOut.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				txtCheckOutActionPerformed();
 			}
 		});
 
@@ -678,17 +675,17 @@ public class DatPhong2 extends javax.swing.JDialog {
 		List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timTatCaThongTinDatThuePhong();
 		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
 			if (ngayNhan.isBefore(thongTinDatThuePhong.getNgayTraPhong())
-					&& ngayNhan.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
-				JOptionPane.showMessageDialog(null, "Ngày nhận phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!");
+					&& ngayNhan.isAfter(thongTinDatThuePhong.getNgayNhanPhong()))
 				return false;
-			}
-			else if (ngayNhan.equals(thongTinDatThuePhong.getNgayNhanPhong())) {
-                JOptionPane.showMessageDialog(null, "Ngày nhận phòng trùng với ngày nhận phòng đã có trước đó!");				
-				return false;
-			}
+			else if (ngayNhan.equals(thongTinDatThuePhong.getNgayNhanPhong()))
+					return false;
 		}
 		return true;
 	}
+
+	private void txtNgayNhanActionPerformed() {// GEN-FIRST:event_txtNgayNhanActionPerformed
+
+	}// GEN-LAST:event_txtNgayNhanActionPerformed
 
 	private void btnNgayNhanActionPerformed() {// GEN-FIRST:event_btnNgayNhanActionPerformed
 		dateNgayNhan.showPopup();
@@ -699,10 +696,8 @@ public class DatPhong2 extends javax.swing.JDialog {
 		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
 			if (ngayTra.isBefore(thongTinDatThuePhong.getNgayTraPhong())
 					&& ngayTra.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
-				JOptionPane.showMessageDialog(null, "Ngày trả phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!");
 				return false;
 			} else if (ngayTra.equals(thongTinDatThuePhong.getNgayTraPhong())) {
-				JOptionPane.showMessageDialog(null, "Ngày trả phòng trùng với ngày trả phòng đã có trước đó!");
 				return false;
 			}
 		}
@@ -715,14 +710,10 @@ public class DatPhong2 extends javax.swing.JDialog {
 			LocalDate ngayNhanCoSan = thongTinDatThuePhong.getNgayNhanPhong();
 			LocalDate ngayTraCoSan = thongTinDatThuePhong.getNgayTraPhong();
 			// Kiểm tra khoảng thời gian từ ngày nhận đến ngày trả có chứa khoảng thời gian khác có sẵn không
-			if (ngayNhan.isBefore(ngayNhanCoSan) && ngayTra.isAfter(ngayTraCoSan)) {
-				JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");
+			if (ngayNhan.isBefore(ngayNhanCoSan) && ngayTra.isAfter(ngayTraCoSan))
 				return false;
-			}
-			else if (ngayNhan.isAfter(ngayNhanCoSan) && ngayTra.isBefore(ngayTraCoSan)) {
-                JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");				
+			else if (ngayNhan.isAfter(ngayNhanCoSan) && ngayTra.isBefore(ngayTraCoSan)) 
 				return false;
-			}
 		}
 		return true;
 	}
