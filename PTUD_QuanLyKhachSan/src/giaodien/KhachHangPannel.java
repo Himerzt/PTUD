@@ -4,6 +4,16 @@
  */
 package giaodien;
 
+import entity.KhachHang;
+import dao.KhachHangDao;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Huynguyen
@@ -15,6 +25,8 @@ public class KhachHangPannel extends javax.swing.JPanel {
      */
     public KhachHangPannel() {
         initComponents();
+        loadTableKhachHang();
+        eventClickOnTableKhachHang();
     }
 
     /**
@@ -26,6 +38,7 @@ public class KhachHangPannel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dateNgaySinh = new giaodien.CustomClass.DateChooser();
         pnKhachHang = new javax.swing.JPanel();
         pnLayOutKhachKhachHang = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
@@ -53,6 +66,8 @@ public class KhachHangPannel extends javax.swing.JPanel {
         btnNgaySinh = new giaodien.CustomClass.Button();
         jScrollPane6 = new javax.swing.JScrollPane();
         TableKhachHang = new javax.swing.JTable();
+
+        dateNgaySinh.setTextRefernce(txtNgaySinh);
 
         pnLayOutKhachKhachHang.setBackground(new java.awt.Color(255, 255, 255));
         pnLayOutKhachKhachHang.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quản lý khách hàng", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 24))); // NOI18N
@@ -112,6 +127,8 @@ public class KhachHangPannel extends javax.swing.JPanel {
         jLabel35.setText("Quốc tịch");
         jLabel35.setToolTipText("");
         jLabel35.setPreferredSize(new java.awt.Dimension(120, 21));
+
+        combobox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nam", "Nữ", "Khác" }));
 
         btnThem.setText("Thêm ");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
@@ -266,8 +283,8 @@ public class KhachHangPannel extends javax.swing.JPanel {
             .addGroup(pnLayOutKhachKhachHangLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnLayOutKhachKhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane6))
+                    .addComponent(jScrollPane6)
+                    .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnLayOutKhachKhachHangLayout.setVerticalGroup(
@@ -315,21 +332,161 @@ public class KhachHangPannel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        // TODO add your handling code here:
+        //Thêm khách hàng
+        // Tạo mã khách hàng	
+        KhachHangDao khachHangDao = new KhachHangDao();
+        String sttKhachHang = String.format("%03d", khachHangDao.demTongSoKhachHang() + 1);
+        String maKH = "KH" + LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy")) + sttKhachHang;
+        String tenKH = txtTenKhachHang.getText();
+        String gioiTinh = combobox1.getSelectedItem().toString();
+        String ngaySinh = txtNgaySinh.getText();
+        String soDT = txtSoDienThoai.getText();
+        String cccd = txtCCCD.getText();
+        String chiTieu = txtChiTieu.getText();
+        String hangThanhVien = txtHangThanhVien.getText();
+        String quocTich = txtQuocTich.getText();
+        //Kiểm tra dữ liệu
+        if (maKH.equals("") || tenKH.equals("") || ngaySinh.equals("") || soDT.equals("") || cccd.equals("")
+                || chiTieu.equals("") || hangThanhVien.equals("") || quocTich.equals("")) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin");
+            return;
+        }
+        //Chuyển đổi kiểu
+        double chiTieuDouble = Double.parseDouble(chiTieu);
+        //Chuyển đổi localdate
+        LocalDate ngaySinhDate = LocalDate.parse(ngaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        // Kiểm tra ngày sinh khách hàng trên 18 tuổi
+        if (ngaySinhDate.plusYears(18).isAfter(LocalDate.now())) {
+            JOptionPane.showMessageDialog(this, "Khách hàng phải trên 18 tuổi");
+            return;
+        }
+        //Kiểm tra mã khách hàng đã tồn tại chưa
+        if (khachHangDao.timTheoCCCD(cccd) != null) {
+            JOptionPane.showMessageDialog(this, "Khách hàng đã tồn tại");
+            return;
+        }
+        //  Kiểm tra căn cước 12 hoặc 16 ký tự số
+        if (cccd.length() != 12 || cccd.length() != 16 && !cccd.matches("[0-9]+")) {
+            JOptionPane.showMessageDialog(this, "CCCD phải là 10 ký tự số");
+            return;
+        }
+        // Kiểm tra số điện thoại 10 ký tự số
+        if (soDT.length() != 10 && !soDT.matches("[0-9]+")) {
+            JOptionPane.showMessageDialog(this, "Số điện thoại phải là 10 ký tự số");
+            return;
+        }
+        //Thêm khách hàng
+        KhachHang kh = new KhachHang(maKH, tenKH, gioiTinh, ngaySinhDate, soDT, cccd, 0, "HB", quocTich);
+        khachHangDao.themKhachHang(kh);
+        loadTableKhachHang();
+        JOptionPane.showMessageDialog(this, "Thêm khách hàng thành công");
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnCapNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhapActionPerformed
-        // TODO add your handling code here:
+    	String maKH = txtMaKhachHang.getText();
+        String tenKH = txtTenKhachHang.getText();
+        String gioiTinh = combobox1.getSelectedItem().toString();
+        String ngaySinh = txtNgaySinh.getText();
+        String soDT = txtSoDienThoai.getText();
+        String cccd = txtCCCD.getText();
+        String chiTieu = txtChiTieu.getText();
+        String hangThanhVien = txtHangThanhVien.getText();
+        String quocTich = txtQuocTich.getText();
+        //Kiểm tra dữ liệu
+        if (maKH.equals("") || tenKH.equals("") || ngaySinh.equals("") || soDT.equals("") || cccd.equals("")
+                || chiTieu.equals("") || hangThanhVien.equals("") || quocTich.equals("")) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin");
+            return;
+        }
+        // Kiểm tra khách hàng tồn tại
+        KhachHangDao khachHangDao = new KhachHangDao();
+        if (khachHangDao.timTheoCCCD(cccd) == null) {
+            JOptionPane.showMessageDialog(this, "Khách hàng không tồn tại");
+            return;
+        }
+        //Chuyển đổi kiểu
+        double chiTieuDouble = Double.parseDouble(chiTieu);
+        //Chuyển đổi localdate
+        LocalDate ngaySinhDate = LocalDate.parse(ngaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        // Kiểm tra ngày sinh khách hàng trên 18 tuổi
+        if (ngaySinhDate.plusYears(18).isAfter(LocalDate.now())) {
+            JOptionPane.showMessageDialog(this, "Khách hàng phải trên 18 tuổi");
+            return;
+        }
+        //Kiểm tra cccd
+        if (cccd.length() != 12 || cccd.length() != 16 && !cccd.matches("[0-9]+")) {
+            JOptionPane.showMessageDialog(this, "CCCD phải là 10 ký tự số");
+            return;
+        }
+        // Kiểm tra số điện thoại 10 ký tự số
+        if (soDT.length() != 10 && !soDT.matches("[0-9]+")) {
+            JOptionPane.showMessageDialog(this, "Số điện thoại phải là 10 ký tự số");
+            return;
+        }
+        //Cập nhập khách hàng
+        KhachHang kh = new KhachHang(maKH, tenKH, gioiTinh, ngaySinhDate, soDT, cccd, chiTieuDouble, hangThanhVien, quocTich);
+        khachHangDao.suaThongTinKhachHang(kh);
+        
+        loadTableKhachHang();
+        JOptionPane.showMessageDialog(this, "Cập nhập khách hàng thành công");
     }//GEN-LAST:event_btnCapNhapActionPerformed
 
     private void btnXoaTrangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaTrangActionPerformed
-        // TODO add your handling code here:
+		txtMaKhachHang.setText("");
+		txtTenKhachHang.setText("");
+		txtSoDienThoai.setText("");
+		txtCCCD.setText("");
+		txtChiTieu.setText("");
+		txtHangThanhVien.setText("");
+		txtQuocTich.setText("");
+		combobox1.setSelectedIndex(0);
+		txtNgaySinh.setText("");
     }//GEN-LAST:event_btnXoaTrangActionPerformed
 
     private void btnNgaySinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNgaySinhActionPerformed
-        // TODO add your handling code here:
+        dateNgaySinh.showPopup();
     }//GEN-LAST:event_btnNgaySinhActionPerformed
 
+    private void loadTableKhachHang() {
+        KhachHangDao khachHangDao = new KhachHangDao();
+        ArrayList<entity.KhachHang> dsKhachHang = khachHangDao.timTatCaKhachHang();
+        DefaultTableModel model = (DefaultTableModel) TableKhachHang.getModel();
+        model.setRowCount(0);
+        for (int i = 0; i < dsKhachHang.size(); i++) {
+            entity.KhachHang kh = dsKhachHang.get(i);
+            Object[] rowData = {i + 1, kh.getMaKH(), kh.getHoTenKH(), kh.getGioiTinh(), kh.getNgaySinh(), kh.getSoDT(),
+                kh.getCccd_passport(), kh.getChiTieu(), kh.getMaHangThanhVien(), kh.getQuocTich()};
+            model.addRow(rowData);
+        }
+
+    }
+
+    private void eventClickOnTableKhachHang() {
+        TableKhachHang.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    int row = TableKhachHang.getSelectedRow();
+                    if (row != -1) {
+                        txtMaKhachHang.setText(TableKhachHang.getValueAt(row, 1).toString());
+                        txtTenKhachHang.setText(TableKhachHang.getValueAt(row, 2).toString());
+                        txtSoDienThoai.setText(TableKhachHang.getValueAt(row, 5).toString());
+                        txtCCCD.setText(TableKhachHang.getValueAt(row, 6).toString());
+                        txtChiTieu.setText(TableKhachHang.getValueAt(row, 7).toString());
+                        txtHangThanhVien.setText(TableKhachHang.getValueAt(row, 8).toString());
+                        txtQuocTich.setText(TableKhachHang.getValueAt(row, 9).toString());
+                        combobox1.setSelectedItem(TableKhachHang.getValueAt(row, 3).toString());
+                        String dateStr = TableKhachHang.getValueAt(row, 4).toString();
+                        //Chuyển đổi đinh dạng ngày
+                        LocalDate date = LocalDate.parse(dateStr, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                        txtNgaySinh.setText(date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+                    }
+                }
+
+            }
+
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TableKhachHang;
@@ -338,6 +495,7 @@ public class KhachHangPannel extends javax.swing.JPanel {
     private giaodien.CustomClass.Button btnThem;
     private giaodien.CustomClass.Button btnXoaTrang;
     private giaodien.CustomClass.Combobox combobox1;
+    private giaodien.CustomClass.DateChooser dateNgaySinh;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
