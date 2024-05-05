@@ -14,13 +14,13 @@ import menu.MenuEvent;
 /**
  * @author Huynguyen
  */
-public class TrangChuNew2 extends javax.swing.JFrame {
+public class TrangChuUpdated extends javax.swing.JFrame {
 	private ArrayList<giaodien.CustomClass.PanelRound> phongTrangChu;
 	private ArrayList<javax.swing.JLabel> loaiPhongTrangChu;
 	private ArrayList<javax.swing.JLabel> tenPhongTrangChu;
 	private ArrayList<javax.swing.JLabel> trangThaiPhongTrangChu;
     
-    public TrangChuNew2() throws Exception {
+    public TrangChuUpdated() throws Exception {
     	
         ConnectDB.getInstance().getConnection();
         setResizable(false);
@@ -2357,20 +2357,20 @@ public class TrangChuNew2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TrangChuUpdated.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TrangChuUpdated.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TrangChuUpdated.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TrangChuNew2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TrangChuUpdated.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    TrangChuNew2 trangChu = new TrangChuNew2();
+                    TrangChuUpdated trangChu = new TrangChuUpdated();
                     trangChu.setExtendedState(JFrame.MAXIMIZED_BOTH);
                     trangChu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     trangChu.setVisible(true);

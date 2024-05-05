@@ -230,7 +230,7 @@ public class Login extends javax.swing.JFrame implements Serializable {
 					dispose(); // Đóng cửa sổ hiện tại
 
 					// Mở màn hình mới hoặc thực hiện các hành động khác ở đây
-					TrangChuNew2 trangChuNew2 = new TrangChuNew2();
+					TrangChuUpdated trangChuNew2 = new TrangChuUpdated();
 					trangChuNew2.setVisible(true); // Hiển thị cửa sổ mới
 				} else {
 					// Đăng nhập thất bại
