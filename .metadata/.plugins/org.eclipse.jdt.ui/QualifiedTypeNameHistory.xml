@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
     <fullyQualifiedTypeName name="dao.LoaiPhongDao"/>
     <fullyQualifiedTypeName name="giaodien.DatPhong"/>
     <fullyQualifiedTypeName name="entity.LoaiThue"/>
@@ -22,7 +21,6 @@
     <fullyQualifiedTypeName name="dao.PhongDao"/>
     <fullyQualifiedTypeName name="entity.Phong"/>
     <fullyQualifiedTypeName name="dao.ThongTinDatThuePhongDao"/>
-    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="com.itextpdf.text.List"/>
     <fullyQualifiedTypeName name="dao.ChiTietHoaDon_Dao"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
@@ -39,7 +37,6 @@
     <fullyQualifiedTypeName name="jakarta.persistence.EntityTransaction"/>
     <fullyQualifiedTypeName name="jakarta.persistence.NamedQueries"/>
     <fullyQualifiedTypeName name="jakarta.persistence.NamedQuery"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="entity.HoaDon"/>
     <fullyQualifiedTypeName name="java.rmi.RemoteException"/>
     <fullyQualifiedTypeName name="dao.KhachHang_Dao"/>
@@ -60,4 +57,7 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="entity.DichVuPhong"/>
     <fullyQualifiedTypeName name="dao.DichVuDao"/>
+    <fullyQualifiedTypeName name="javax.swing.event.DocumentListener"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

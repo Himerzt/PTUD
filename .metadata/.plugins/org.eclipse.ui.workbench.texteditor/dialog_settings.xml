@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="maPhong"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
-		<item key="wholeword" value="false"/>
+		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="phong"/>
-			<item value="aphong"/>
-			<item value="oluong"/>
-			<item value="Madichvu"/>
-			<item value="madichvu"/>
-			<item value="maphong"/>
-			<item value="maPhong"/>
-			<item value="btnGROUPLoaiPhong"/>
-			<item value="btnTimTheoDieuKien"/>
-			<item value="addCheckBoxListeners"/>
-			<item value="thuê"/>
-			<item value="phongTrangChu"/>
-			<item value="load"/>
-			<item value="comboBoxDichVu"/>
-			<item value="btnDatPhong"/>
+			<item value="Label"/>
+			<item value="btnThemDichVu"/>
+			<item value="cbxKieuThue"/>
+			<item value="cbKieuThue"/>
+			<item value="btnCCCD"/>
+			<item value="btnKTSLPhongActionPerformed"/>
+			<item value="jLabel24"/>
+			<item value="phongDao"/>
+			<item value="btnThemDichVuActionPerformed"/>
+			<item value="btnCCCDActionPerformed"/>
+			<item value="btnThemKhachHangActionPerformed"/>
+			<item value="btnThuePhongActionPerformed"/>
+			<item value="btnThuePhong"/>
+			<item value="btnNgayTraActionPerformed"/>
+			<item value="btnNgayTra"/>
 		</list>
 		<list key="replacehistory">
+			<item value="btnCCCDActionPerformed"/>
 			<item value="maPhong"/>
 			<item value="aPhong"/>
 			<item value="oLuong"/>
@@ -39,7 +40,6 @@
 			<item value="_Ipml"/>
 			<item value="_Iplm"/>
 			<item value="_Impl()"/>
-			<item value="_Impl"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

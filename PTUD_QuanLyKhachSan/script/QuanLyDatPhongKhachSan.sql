@@ -95,8 +95,7 @@ CREATE TABLE HoaDon (
 CREATE TABLE ThongTinDatThuePhong (
     MaTTDTP NVARCHAR(30) PRIMARY KEY,
     MaKhachHang NVARCHAR(30),
-	SoLuongKhach INT,
-    Phong NVARCHAR(255),
+    MaPhong NVARCHAR(10),
     NgayDatPhong DATE,
     NgayNhanPhong DATE,
     NgayTraPhong DATE,
@@ -147,6 +146,11 @@ FOREIGN KEY (MaLoaiPhong) REFERENCES LoaiPhong(MaLoaiPhong);
 ALTER TABLE Phong
 ADD CONSTRAINT FK_Phong_LoaiPhong
 FOREIGN KEY (MaLoaiPhong) REFERENCES LoaiPhong(MaLoaiPhong);
+
+-- Thêm khóa ngoại từ bảng Phong đến bảng ThongTinDatThuePhong
+ALTER TABLE ThongTinDatThuePhong
+ADD CONSTRAINT FK_ThongTinDatThuePhong_Phong
+FOREIGN KEY (MaPhong) REFERENCES Phong(MaPhong);
 
 -- Thêm khóa ngoại từ bảng ThongTinDatThuePhong đến bảng KhachHang
 ALTER TABLE ThongTinDatThuePhong
@@ -213,6 +217,14 @@ ALTER TABLE ChiTietHoaDon
 ADD CONSTRAINT FK_ChiTietHoaDon_ThongTinDatThuePhong
 FOREIGN KEY (MaTTDTP) REFERENCES ThongTinDatThuePhong(MaTTDTP);
 
+-- Dữ liệu Loại Phòng
+INSERT INTO LoaiPhong (MaLoaiPhong, TenLoaiPhong, SoGiuong, SoNguoiToiDa)
+VALUES
+('TC', N'Tiêu chuẩn', 1, 1),
+('NC', N'Nâng cao', 1, 2),
+('CC', N'Cao cấp', 2, 3),
+('TG', N'Thương gia', 2, 4);
+
 -- Dữ liệu Loại thuê
 INSERT INTO LoaiThue (MaLoaiThue, KieuThue, GiaThue, MaLoaiPhong)
 VALUES
@@ -231,14 +243,6 @@ VALUES
 
 UPDATE LoaiThue
 SET giaCocToiThieu = 0.3 * GiaThue;
-
--- Dữ liệu Loại Phòng
-INSERT INTO LoaiPhong (MaLoaiPhong, TenLoaiPhong, SoGiuong, SoNguoiToiDa)
-VALUES
-('TC', N'Tiêu chuẩn', 1, 1),
-('NC', N'Nâng cao', 1, 2),
-('CC', N'Cao cấp', 2, 3),
-('TG', N'Thương gia', 2, 4);
 
 -- Dữ liệu Phòng
 INSERT INTO Phong (MaPhong, SoPhong, MaLoaiPhong, TrangThaiPhong)

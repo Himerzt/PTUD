@@ -26,11 +26,9 @@ public class LoaiPhongDao {
             while (rs.next()) {
                 String maLoaiPhong1 = rs.getString(1);
                 String tenLoaiPhong = rs.getString(2);
-                double giaCocToiThieu = rs.getDouble(3);
-                double giaThue = rs.getDouble(4);
-                int soGiuong = rs.getInt(5);
-                int soNguoiToiDa = rs.getInt(6);
-                loaiPhong = new LoaiPhong(maLoaiPhong1, tenLoaiPhong, giaCocToiThieu, giaThue, soGiuong, soNguoiToiDa);
+                int soGiuong = rs.getInt(3);
+                int soNguoiToiDa = rs.getInt(4);
+                loaiPhong = new LoaiPhong(maLoaiPhong1, tenLoaiPhong, soGiuong, soNguoiToiDa);
             }
         } catch (Exception e) {
             e.printStackTrace();

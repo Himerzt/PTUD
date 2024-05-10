@@ -3,8 +3,6 @@ package entity;
 public class LoaiPhong {
 	private String maLoaiPhong;
 	private String tenLoaiPhong;
-	private double giaThue;
-	private double giaCocToiThieu;
 	private int soGiuong;
 	private int soNguoiToiDa;
 
@@ -24,22 +22,6 @@ public class LoaiPhong {
 		this.tenLoaiPhong = tenLoaiPhong;
 	}
 
-	public double getGiaThue() {
-		return giaThue;
-	}
-
-	public void setGiaThue(double giaThue) {
-		this.giaThue = giaThue;
-	}
-
-	public double getGiaCocToiThieu() {
-		return giaCocToiThieu;
-	}
-
-	public void setGiaCocToiThieu(double giaCocToiThieu) {
-		this.giaCocToiThieu = giaCocToiThieu;
-	}
-
 	public int getSoGiuong() {
 		return soGiuong;
 	}
@@ -51,18 +33,15 @@ public class LoaiPhong {
 	public int getSoNguoiToiDa() {
 		return soNguoiToiDa;
 	}
-	
+
 	public void setSoNguoiToiDa(int soNguoiToiDa) {
 		this.soNguoiToiDa = soNguoiToiDa;
 	}
-	
-	public LoaiPhong(String maLoaiPhong, String tenLoaiPhong, double giaThue, double giaCocToiThieu, int soGiuong,
-			int soNguoiToiDa) {
+
+	public LoaiPhong(String maLoaiPhong, String tenLoaiPhong, int soGiuong, int soNguoiToiDa) {
 		super();
 		this.maLoaiPhong = maLoaiPhong;
 		this.tenLoaiPhong = tenLoaiPhong;
-		this.giaThue = giaThue;
-		this.giaCocToiThieu = giaCocToiThieu;
 		this.soGiuong = soGiuong;
 		this.soNguoiToiDa = soNguoiToiDa;
 	}
@@ -75,12 +54,11 @@ public class LoaiPhong {
 		super();
 		this.maLoaiPhong = maLoaiPhong;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "LoaiPhong [maLoaiPhong=" + maLoaiPhong + ", tenLoaiPhong=" + tenLoaiPhong + ", giaThue=" + giaThue
-				+ ", giaCocToiThieu=" + giaCocToiThieu + ", soGiuong=" + soGiuong + ", soNguoiToiDa=" + soNguoiToiDa
-				+ "]";
+		return "LoaiPhong [maLoaiPhong=" + maLoaiPhong + ", tenLoaiPhong=" + tenLoaiPhong + ", soGiuong=" + soGiuong
+				+ ", soNguoiToiDa=" + soNguoiToiDa + "]";
 	}
 
 }
