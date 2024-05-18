@@ -42,7 +42,12 @@ public class ThuePhong extends javax.swing.JDialog {
      */
     public ThuePhong(List<String> dsTenPhong) {
         initComponents();
-        PhongDao phongDao = new PhongDao();
+        phongDao = new PhongDao();
+		dvDao = new DichVuDao();
+		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
+		loaiPhongDao = new LoaiPhongDao();
+		khachHangDao = new KhachHangDao();
+        phongDao = new PhongDao();
         ConnectDB.getInstance().getConnection();
         dsPhongThue = new ArrayList<>();
         for (String tenPhong : dsTenPhong) {
@@ -463,7 +468,6 @@ public class ThuePhong extends javax.swing.JDialog {
                 btnHuyActionPerformed(evt);
             }
         });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -556,7 +560,6 @@ public class ThuePhong extends javax.swing.JDialog {
             }
         }
     }// GEN-LAST:event_btnKTSLPhongActionPerformed
-
     private int tinhSucChuaDanhSachPhong(List<Phong> dsPhong) {
         int suChuaToiDa = 0;
         for (Phong phong : dsPhong) {

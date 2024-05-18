@@ -156,7 +156,7 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
 				status1++;
 				status3++;
 				status4++;
-			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đang thuê")) {
+			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
 				btnDatPhong.setEnabled(true);
 				btnThuePhong.setEnabled(false);
 				btnDoiPhong.setEnabled(true);
@@ -169,7 +169,7 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
 		}
 
 		if (status1 != 0 && status2 != 0 && status3 != 0) {
-			btnDatPhong.setEnabled(false);
+			btnDatPhong.setEnabled(true);
 			btnThuePhong.setEnabled(false);
 			btnDoiPhong.setEnabled(false);
 			btnTraPhong.setEnabled(false);
@@ -217,7 +217,7 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
 				phongPanel.setBackground(Color.green);
 			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
 				phongPanel.setBackground(Color.red);
-			} else if (trangThai.getText().equalsIgnoreCase("Đang thuê")) {
+			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
 				phongPanel.setBackground(Color.yellow);
 			}
 
@@ -3187,12 +3187,6 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
 			}
 		}
 	}// GEN-LAST:event_btnFindbyPhoneActionPerformed
-	
-	// Khi ấn chọn vào panel thì check box cũng sẽ được chọn
-	private void phongQuanLy1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_phongQuanLy1MouseClicked
-		checkBoxPhongQL1.setSelected(!checkBoxPhongQL1.isSelected());
-	}// GEN-LAST:event_phongQuanLy1MouseClicked
-
 	private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
 		List<String> dsTenPhong = new ArrayList<>();
 		JCheckBox cks;
@@ -3258,8 +3252,8 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
 		if (dsTenPhong.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Vui lòng chọn phòng", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
 			return;
-		}
-
+		} 
+		
 		ThuePhong thuePhongFrame = new ThuePhong(dsTenPhong);
 		thuePhongFrame.setVisible(true);
 		// reset checkbox
