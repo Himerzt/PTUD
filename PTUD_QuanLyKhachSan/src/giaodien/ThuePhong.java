@@ -42,7 +42,11 @@ public class ThuePhong extends javax.swing.JDialog {
      */
     public ThuePhong(List<String> dsTenPhong) {
         initComponents();
-        PhongDao phongDao = new PhongDao();
+        phongDao = new PhongDao();
+        loaiPhongDao = new LoaiPhongDao();
+        khachHangDao = new KhachHangDao();
+        thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
+        dvDao = new DichVuDao();
         ConnectDB.getInstance().getConnection();
         dsPhongThue = new ArrayList<>();
         for (String tenPhong : dsTenPhong) {
@@ -262,6 +266,11 @@ public class ThuePhong extends javax.swing.JDialog {
         });
 
         btnCCCD.setText("Thêm khách hàng");
+        btnCCCD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCCCDActionPerformed(evt);
+            }
+        });
 
         panelRound5.setBackground(new java.awt.Color(255, 255, 255));
         panelRound5.setRoundBottomLeft(10);
@@ -533,6 +542,26 @@ public class ThuePhong extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCCCDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCCCDActionPerformed
+    	KhachHang kh = new KhachHang();
+        if (regCCCD_Passport(txtCCCD.getText()) == false) {
+            return;
+        }
+        // Nếu khách hàng đang đặt/thuê phòng thì không thể thuê phòng
+        if (thongTinDatThuePhongDao.timThongTinTheoMaKhachHang(khachHangDao.timTheoCCCD(txtCCCD.getText()).getMaKH())
+                .size() != 0) {
+            JOptionPane.showMessageDialog(this, "Khách hàng đã đặt phòng!");
+            return;
+        }
+        if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) != null) {
+            kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
+            txtTenKH.setText(kh.getHoTenKH());
+        } else {
+            JOptionPane.showMessageDialog(this, "Khách hàng hiện chưa được thêm!");
+            return;
+        }
+    }//GEN-LAST:event_btnCCCDActionPerformed
+
     private void btnNgayTraActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgayTraActionPerformed
         dateNgayTra.showPopup();
     }// GEN-LAST:event_btnNgayTraActionPerformed
@@ -690,25 +719,6 @@ public class ThuePhong extends javax.swing.JDialog {
         }
     }
 
-    private void btnCCCDActionPerformed(ActionEvent evt) {// GEN-FIRST:event_btnCCCDActionPerformed
-        KhachHang kh = new KhachHang();
-        if (regCCCD_Passport(txtCCCD.getText()) == false) {
-            return;
-        }
-        // Nếu khách hàng đang đặt/thuê phòng thì không thể thuê phòng
-        if (thongTinDatThuePhongDao.timThongTinTheoMaKhachHang(khachHangDao.timTheoCCCD(txtCCCD.getText()).getMaKH())
-                .size() != 0) {
-            JOptionPane.showMessageDialog(this, "Khách hàng đã đặt phòng!");
-            return;
-        }
-        if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) != null) {
-            kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
-            txtTenKH.setText(kh.getHoTenKH());
-        } else {
-            JOptionPane.showMessageDialog(this, "Khách hàng hiện chưa được thêm!");
-            return;
-        }
-    }// GEN-LAST:event_btnCCCDActionPerformed
 
     /**
      * @param args the command line arguments

@@ -589,6 +589,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCCCDActionPerformed"/>
+              </Events>
             </Component>
             <Container class="giaodien.CustomClass.PanelRound" name="panelRound5">
               <Properties>
