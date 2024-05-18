@@ -177,9 +177,27 @@ public class DatPhong2 extends javax.swing.JDialog {
 		jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 		jLabel17.setText("Tên khách hàng");
 
+		txtTenKH.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				txtTenKHActionPerformed();
+			}
+		});
+
+		txtSoLuongNguoiLon.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				txtSoLuongNguoiLonActionPerformed();
+			}
+		});
+
 		jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 		jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 		jLabel22.setText("Người lớn");
+
+		txtCCCD.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				txtCCCDActionPerformed();
+			}
+		});
 
 		jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 		jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -192,6 +210,12 @@ public class DatPhong2 extends javax.swing.JDialog {
 		jLabel25.setText("Kiểu thuê");
 
 		txtCheckIn.setEnabled(false);
+		txtCheckIn.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				txtCheckInActionPerformed();
+			}
+		});
+
 		jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 		jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 		jLabel27.setText("Ngày đặt");

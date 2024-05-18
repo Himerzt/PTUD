@@ -41,11 +41,6 @@ public class ThuePhong extends javax.swing.JDialog {
 	 */
 	public ThuePhong(List<String> dsTenPhong) {
 		initComponents();
-		phongDao = new PhongDao();
-		dvDao = new DichVuDao();
-		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
-		loaiPhongDao = new LoaiPhongDao();
-		khachHangDao = new KhachHangDao();
 		ConnectDB.getInstance().getConnection();
 		dsPhongThue = new ArrayList<>();
 		for (String tenPhong : dsTenPhong) {
@@ -577,6 +572,11 @@ public class ThuePhong extends javax.swing.JDialog {
 						.addGap(30, 30, 30)));
 
 		getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+		phongDao = new PhongDao();
+		dvDao = new DichVuDao();
+		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
+		loaiPhongDao = new LoaiPhongDao();
+		khachHangDao = new KhachHangDao();
 		pack();
 		setLocationRelativeTo(null);
 	}// </editor-fold>//GEN-END:initComponents
@@ -650,6 +650,7 @@ public class ThuePhong extends javax.swing.JDialog {
 
 		if (thongTinDatThuePhongDao.thuePhong(dsPhongThue, kh, ngayNhan, ngayNhan, maLoaiThue, ngayTra, 0)) {
 			JOptionPane.showMessageDialog(this, "Thuê phòng thành công");
+			new QuanLyPhongPannel().loadDanhSachPhong();
 			this.setVisible(false);
 		} else
 			JOptionPane.showMessageDialog(this, "Thuê phòng thất bại");

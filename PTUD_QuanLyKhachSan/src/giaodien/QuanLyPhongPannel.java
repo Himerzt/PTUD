@@ -217,7 +217,7 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
 				phongPanel.setBackground(Color.green);
 			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
 				phongPanel.setBackground(Color.red);
-			} else if (trangThai.getText().equalsIgnoreCase("Đang thuê")) {
+			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
 				phongPanel.setBackground(Color.yellow);
 			}
 

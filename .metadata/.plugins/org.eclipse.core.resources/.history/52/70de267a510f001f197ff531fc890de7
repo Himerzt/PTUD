@@ -41,11 +41,6 @@ public class ThuePhong extends javax.swing.JDialog {
 	 */
 	public ThuePhong(List<String> dsTenPhong) {
 		initComponents();
-		phongDao = new PhongDao();
-		dvDao = new DichVuDao();
-		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
-		loaiPhongDao = new LoaiPhongDao();
-		khachHangDao = new KhachHangDao();
 		ConnectDB.getInstance().getConnection();
 		dsPhongThue = new ArrayList<>();
 		for (String tenPhong : dsTenPhong) {
@@ -577,6 +572,11 @@ public class ThuePhong extends javax.swing.JDialog {
 						.addGap(30, 30, 30)));
 
 		getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+		phongDao = new PhongDao();
+		dvDao = new DichVuDao();
+		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
+		loaiPhongDao = new LoaiPhongDao();
+		khachHangDao = new KhachHangDao();
 		pack();
 		setLocationRelativeTo(null);
 	}// </editor-fold>//GEN-END:initComponents
@@ -596,10 +596,6 @@ public class ThuePhong extends javax.swing.JDialog {
 			int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongThue);
 			if (soNguoiLon + soTreEm / 2 > sucChuaToiDa) {
 				JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return;
-			} else if (soNguoiLon < sucChuaToiDa) {
-				JOptionPane.showMessageDialog(this, "Mỗi phòng cần có ít nhất 1 người lớn", "Lỗi",
 						JOptionPane.ERROR_MESSAGE);
 				return;
 			} else
@@ -650,8 +646,10 @@ public class ThuePhong extends javax.swing.JDialog {
 
 		if (thongTinDatThuePhongDao.thuePhong(dsPhongThue, kh, ngayNhan, ngayNhan, maLoaiThue, ngayTra, 0)) {
 			JOptionPane.showMessageDialog(this, "Thuê phòng thành công");
-			this.setVisible(false);
-		} else
+            this.setVisible(false);
+            new QuanLyPhongPannel().loadDanhSachPhong();;
+		}
+		else
 			JOptionPane.showMessageDialog(this, "Thuê phòng thất bại");
 
 	}// GEN-LAST:event_btnThuePhongActionPerformed
