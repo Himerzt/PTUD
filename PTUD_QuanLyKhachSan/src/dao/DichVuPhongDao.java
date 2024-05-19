@@ -11,16 +11,16 @@ import entity.DichVu;
 import entity.DichVuPhong;
 
 public class DichVuPhongDao {
-	ArrayList<DichVuPhong> dsDichVu = new ArrayList();
+	ArrayList<DichVuPhong> dsDichVu;
 	DichVuPhong dvp;
 	DichVuDao dvDao = new DichVuDao();
 	PhongDao phongDao = new PhongDao();
 	LoaiPhongDao loaiPhongDao = new LoaiPhongDao();
-	ArrayList<Double> arGia = new ArrayList();
+	ArrayList<Double> arGia = new ArrayList<>();
 
 	public DichVuPhongDao() {
-		this.dsDichVu = new ArrayList();
-		this.dvp = new DichVuPhong ();
+		this.dsDichVu = new ArrayList<>();
+		this.dvp = new DichVuPhong();
 	}
 
 	public ArrayList<DichVuPhong> timTatCacDichVuSuDung() {
@@ -75,8 +75,8 @@ public class DichVuPhongDao {
 			Connection con = ConnectDB.getConnection();
 			Statement stmt = con.createStatement();
 			int maDVSD = timTatCacDichVuSuDung().size() + 1;
-			String sql = "insert into DichVuSuDung values('" + maDVSD + "','" + dvp.getMaDichVu() + "',"
-					+ dvp.getSoLuong() + ")";
+			String sql = "insert into DichVuSuDung values('" + maDVSD + "','" + dvp.getMaPhong() + "','"
+					+ dvp.getMaDichVu() + "'," + dvp.getSoLuong() + ")";
 			stmt.executeUpdate(sql);
 			return true;
 		} catch (Exception var5) {
@@ -90,8 +90,8 @@ public class DichVuPhongDao {
 			ConnectDB.getInstance();
 			Connection con = ConnectDB.getConnection();
 			Statement stmt = con.createStatement();
-			int var10000 = dvp.getSoLuong();
-			String sql = "update DichVuSuDung set soLuong = " + var10000 + " where maPhong = '" + dvp.getMaPhong()
+			int soLuong = dvp.getSoLuong();
+			String sql = "update DichVuSuDung set soLuong = " + soLuong + " where maPhong = '" + dvp.getMaPhong()
 					+ "' and maDV = '" + dvp.getMaDichVu() + "'";
 			stmt.executeUpdate(sql);
 			return true;
@@ -133,22 +133,20 @@ public class DichVuPhongDao {
 	// thêm danh sach dih vu phong
 
 
-	public List<DichVuPhong> timDichVuSuDungTheoMaPhong(ArrayList<String> dsPhong) {
+	public List<DichVuPhong> timDichVuSuDungTheoMaPhong(String maPhong) {
 		ArrayList<DichVuPhong> dsDV = new ArrayList<DichVuPhong>();
 		try {
 			Connection con = ConnectDB.getConnection();
-			for (String maPhong : dsPhong) {
-				String sql = "Select * from DichVuSuDung where maPhong = '" + maPhong + "'";
-				Statement statement = con.createStatement();
-				ResultSet rs = statement.executeQuery(sql);
-				while (rs.next()) {
-					String maDichVuSuDung = rs.getString(1);
-					String maPhong1 = rs.getString(2);
-					String maDichVu = rs.getString(3);
-					int soLuong = rs.getInt(4);
-					dvp = new DichVuPhong(maDichVuSuDung, maPhong1, maDichVu, soLuong);
-					dsDV.add(dvp);
-				}
+			String sql = "Select * from DichVuSuDung where maPhong = '" + maPhong + "'";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				String maDichVuSuDung = rs.getString(1);
+				String maPhong1 = rs.getString(2);
+				String maDichVu = rs.getString(3);
+				int soLuong = rs.getInt(4);
+				dvp = new DichVuPhong(maDichVuSuDung, maPhong1, maDichVu, soLuong);
+				dsDV.add(dvp);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -222,7 +220,7 @@ public class DichVuPhongDao {
 	}
 	
 	
-// thêm dịch vụ phòng
+	// thêm dịch vụ phòng
 	public boolean themDichVuPhong(DichVuPhong dvp) {
 		try {
 			ConnectDB.getInstance();

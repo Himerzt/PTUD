@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
 import dao.DichVuDao;
+import dao.DichVuPhongDao;
 import dao.KhachHangDao;
 import dao.LoaiPhongDao;
 import dao.PhongDao;
@@ -36,6 +37,7 @@ public class ThuePhong extends javax.swing.JDialog {
     private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
     private LoaiPhongDao loaiPhongDao;
     private KhachHangDao khachHangDao;
+    private DichVuPhongDao dichVuPhongDao;
 
     /**
      * Creates new form ThuePhong
@@ -48,6 +50,7 @@ public class ThuePhong extends javax.swing.JDialog {
 		loaiPhongDao = new LoaiPhongDao();
 		khachHangDao = new KhachHangDao();
         phongDao = new PhongDao();
+        dichVuPhongDao = new DichVuPhongDao();
         ConnectDB.getInstance().getConnection();
         dsPhongThue = new ArrayList<>();
         for (String tenPhong : dsTenPhong) {
@@ -104,7 +107,7 @@ public class ThuePhong extends javax.swing.JDialog {
         jLabel26 = new javax.swing.JLabel();
         txtTenKH = new giaodien.CustomClass.TextFieldShadow();
         btnKTSLPhong = new javax.swing.JButton();
-        btnCCCD = new javax.swing.JButton();
+        btnThemKhachHang = new javax.swing.JButton();
         panelRound5 = new giaodien.CustomClass.PanelRound();
         cbxKieuThue = new giaodien.CustomClass.Combobox();
         panelRound2 = new giaodien.CustomClass.PanelRound();
@@ -160,7 +163,6 @@ public class ThuePhong extends javax.swing.JDialog {
 
         tableDV.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
             },
             new String [] {
                 "STT", "Tên dịch vụ", "Số lượng", "Phòng", "Đơn giá", "Tổng"
@@ -266,7 +268,12 @@ public class ThuePhong extends javax.swing.JDialog {
             }
         });
 
-        btnCCCD.setText("Thêm khách hàng");
+        btnThemKhachHang.setText("Thêm khách hàng");
+		btnThemKhachHang.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				btnThemKhachHangActionPerformed(evt);
+			}
+		});
 
         panelRound5.setBackground(new java.awt.Color(255, 255, 255));
         panelRound5.setRoundBottomLeft(10);
@@ -325,7 +332,7 @@ public class ThuePhong extends javax.swing.JDialog {
                         .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelRound1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnCCCD))
+                                .addComponent(btnThemKhachHang))
                             .addGroup(panelRound1Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -357,7 +364,7 @@ public class ThuePhong extends javax.swing.JDialog {
                     .addComponent(jLabel24)
                     .addComponent(txtCCCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTenKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCCCD))
+                    .addComponent(btnThemKhachHang))
                 .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRound1Layout.createSequentialGroup()
                         .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,6 +413,11 @@ public class ThuePhong extends javax.swing.JDialog {
         panelRound2.setRoundTopRight(20);
 
         btnThemDichVu.setText("Thêm dịch vụ");
+		btnThemDichVu.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				btnThemDichVuActionPerformed();
+			}
+		});
 
         panelRound3.setBackground(new java.awt.Color(255, 255, 255));
         panelRound3.setRoundBottomLeft(15);
@@ -413,7 +425,7 @@ public class ThuePhong extends javax.swing.JDialog {
         panelRound3.setRoundTopLeft(15);
         panelRound3.setRoundTopRight(15);
 
-        comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ăn sáng", "Ăn trưa", "Ăn chiều", "Giặt quần áo", "Đưa đón khách", "Thêm giường", "Thêm gối", "Thêm chăn", "Nước ngọt", "Nước suối", "Gọi món tại phòng" }));
+        comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel(loadDanhSachDichVu()));
         comboBoxDichVu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         comboBoxDichVu.setLabeText("");
 
@@ -549,8 +561,8 @@ public class ThuePhong extends javax.swing.JDialog {
                     JOptionPane.ERROR_MESSAGE);
             return;
         } else {
-            int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongThue);
-            if (soNguoiLon + soTreEm / 2 > sucChuaToiDa) {
+        	int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongThue);
+            if (soNguoiLon > sucChuaToiDa || (soNguoiLon == sucChuaToiDa && soTreEm > soNguoiLon)) {
                 JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
                         JOptionPane.ERROR_MESSAGE);
                 return;
@@ -599,7 +611,20 @@ public class ThuePhong extends javax.swing.JDialog {
             }
             maLoaiThue = String.format("%s%s", kieuThue, loaiPhong);
         }
+        
+        // Thêm thông tin dịch vụ
+        DichVuPhong dvPhong = new DichVuPhong();
+        // Duyệt từng dòng trong bảng dịch vụ
+		for (int i = 0; i < tableDV.getRowCount(); i++) {
+			dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tableDV.getValueAt(i, 3).toString()));
+			dvPhong.setMaDichVu(tableDV.getValueAt(i, 1).toString().split(" ")[0]);
+			dvPhong.setSoLuong(Integer.parseInt(tableDV.getValueAt(i, 2).toString()));
+			System.out.println(dvPhong.getMaPhong() + " " + dvPhong.getMaDichVu() + " " + dvPhong.getSoLuong());
+			// Thêm dịch vụ vào cơ sở dữ liệu
+			dichVuPhongDao.themDichVuPhong(dvPhong);
+		}
 
+        // Thêm thông tin thuê phòng
         if (thongTinDatThuePhongDao.thuePhong(dsPhongThue, kh, ngayNhan, ngayNhan, maLoaiThue, ngayTra, 0)) {
             JOptionPane.showMessageDialog(this, "Thuê phòng thành công");
             this.setVisible(false);
@@ -686,22 +711,21 @@ public class ThuePhong extends javax.swing.JDialog {
             Matcher matcher = pattern.matcher(cccd_passport);
 
             if (!matcher.matches()) {
-                JOptionPane.showMessageDialog(this, "CCCD/Passport không hợp lệ");
                 return false;
             }
             return true;
         }
     }
 
-    private void btnCCCDActionPerformed(ActionEvent evt) {// GEN-FIRST:event_btnCCCDActionPerformed
+    private void btnThemKhachHangActionPerformed(ActionEvent evt) {// GEN-FIRST:event_btnThemKhachHangActionPerformed
         KhachHang kh = new KhachHang();
         if (regCCCD_Passport(txtCCCD.getText()) == false) {
             return;
         }
         // Nếu khách hàng đang đặt/thuê phòng thì không thể thuê phòng
         if (thongTinDatThuePhongDao.timThongTinTheoMaKhachHang(khachHangDao.timTheoCCCD(txtCCCD.getText()).getMaKH())
-                .size() != 0) {
-            JOptionPane.showMessageDialog(this, "Khách hàng đã đặt phòng!");
+                .size() > 0) {
+            JOptionPane.showMessageDialog(this, "Khách hàng đã đặt/thuê phòng!");
             return;
         }
         if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) != null) {
@@ -711,14 +735,14 @@ public class ThuePhong extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Khách hàng hiện chưa được thêm!");
             return;
         }
-    }// GEN-LAST:event_btnCCCDActionPerformed
+    }// GEN-LAST:event_btnThemKhachHangActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCCCD;
+    private javax.swing.JButton btnThemKhachHang;
     private giaodien.CustomClass.Button btnHuy;
     private javax.swing.JButton btnKTSLPhong;
     private giaodien.CustomClass.Button btnNgayTra;

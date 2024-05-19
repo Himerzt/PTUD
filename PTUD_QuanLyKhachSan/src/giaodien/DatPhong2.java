@@ -1,5 +1,6 @@
 package giaodien;
 
+import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -648,7 +649,7 @@ public class DatPhong2 extends javax.swing.JDialog {
             return;
         } else {
             int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongDat);
-            if (soNguoiLon + soTreEm / 2 > sucChuaToiDa) {
+            if (soNguoiLon > sucChuaToiDa || (soNguoiLon == sucChuaToiDa && soTreEm > soNguoiLon)) {
                 JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
                         JOptionPane.ERROR_MESSAGE);
                 return;
@@ -666,21 +667,25 @@ public class DatPhong2 extends javax.swing.JDialog {
         return suChuaToiDa;
     }
 
-	private void btnThemKhachHangActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemKhachHangActionPerformed
-		KhachHang kh = new KhachHang();
-		if (regCCCD_Passport(txtCCCD.getText()) == false) {
-			return;
-		}
-		// Tìm khách hàng bằng CCCD. Nếu tìm thấy thì tự fill các textfield còn lại, nếu
-		// không thì thông báo không tìm thấy
-		if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) != null) {
-			kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
-			txtTenKH.setText(kh.getHoTenKH());
-		} else {
-			JOptionPane.showMessageDialog(this, "Khách hàng hiện chưa được thêm!");
-			return;
-		}
-	}// GEN-LAST:event_btnThemKhachHangActionPerformed
+    private void btnThemKhachHangActionPerformed(ActionEvent evt) {// GEN-FIRST:event_btnThemKhachHangActionPerformed
+        KhachHang kh = new KhachHang();
+        if (regCCCD_Passport(txtCCCD.getText()) == false) {
+            return;
+        }
+        // Nếu khách hàng đang đặt/thuê phòng thì không thể thuê phòng
+        if (thongTinDatThuePhongDao.timThongTinTheoMaKhachHang(khachHangDao.timTheoCCCD(txtCCCD.getText()).getMaKH())
+                .size() != 0) {
+            JOptionPane.showMessageDialog(this, "Khách hàng đã đặt phòng!");
+            return;
+        }
+        if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) != null) {
+            kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
+            txtTenKH.setText(kh.getHoTenKH());
+        } else {
+            JOptionPane.showMessageDialog(this, "Khách hàng hiện chưa được thêm!");
+            return;
+        }
+    }// GEN-LAST:event_btnThemKhachHangActionPerformed
 
 	private void btnGiaCocActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnGiaCocActionPerformed
 		txtGiaCoc.setText(Double.toString(tinhTienCoc()));
@@ -700,13 +705,10 @@ public class DatPhong2 extends javax.swing.JDialog {
 
 	private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
 		ArrayList<Phong>  dsPhongDat = getDsPhongDat();
-		khachHangDao.timTheoCCCD(txtCCCD.getText());
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		LocalDate.parse(txtCheckIn.getText(), formatter);
-		LocalDate.parse(txtNgayNhan.getText(), formatter);
-		LocalDate.parse(txtCheckOut.getText(), formatter);
 		String loaiPhong = "";
 		String kieuThue = "";
+		String maLoaiThue = "";
 		if (cbKieuThue.getSelectedItem().toString().equals("Theo ngày")) {
 			kieuThue = "D";
 		} else if (cbKieuThue.getSelectedItem().toString().equals("Theo giờ")) {
@@ -726,15 +728,16 @@ public class DatPhong2 extends javax.swing.JDialog {
 			} else {
 				loaiPhong = "TG";
 			}
-			String.format("%s%s", kieuThue, loaiPhong);
+			maLoaiThue = String.format("%s%s", kieuThue, loaiPhong);
 		}
 
-//		if (thongTinDatThuePhongDao.datPhong(dsPhong, khachHang, ngayDat, ngayNhan, maLoaiThue, ngayTra)) {
-//			JOptionPane.showMessageDialog(this, "Đặt phòng thành công");
-//			DatPhong2.this.dispose();
-//		} else {
-//			JOptionPane.showMessageDialog(this, "Đặt phòng thất bại");
-//		}
+		if (thongTinDatThuePhongDao.datPhong(dsPhongDat, khachHangDao.timTheoCCCD(txtCCCD.getText()), LocalDate.parse(txtCheckIn.getText(), formatter),
+				LocalDate.parse(txtNgayNhan.getText(), formatter), LocalDate.parse(txtCheckOut.getText(), formatter), maLoaiThue, tinhTienCoc())) {
+			JOptionPane.showMessageDialog(this, "Đặt phòng thành công");
+			DatPhong2.this.dispose();
+		} else {
+			JOptionPane.showMessageDialog(this, "Đặt phòng thất bại");
+		}
 	}// GEN-LAST:event_btnDatPhongActionPerformed
 
 	private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemDichVuActionPerformed
@@ -870,15 +873,16 @@ public class DatPhong2 extends javax.swing.JDialog {
 	}
 
 	public double tinhTienCoc() {
-		ArrayList<Phong> dsPhong = getDsPhongDat();
 		String loaiPhong = "";
 		String maLoaiThue = "";
 		double soTienCoc = 0;
 
 		// Tính tiền cọc
-		for (Phong phong : dsPhong) {
+		for (Phong phong : dsPhongDat) {
 			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
+			System.out.println(loaiPhong);
 			maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), loaiPhong);
+			System.out.println(maLoaiThue);
 			soTienCoc += loaiThueDao.timGiaCocTheoMaThue(maLoaiThue);
 		}
 		return soTienCoc;
@@ -892,37 +896,6 @@ public class DatPhong2 extends javax.swing.JDialog {
 			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
 		}
 		return tenDV;
-	}
-
-	/**
-	 * @param args the command line arguments
-	 */
-	public static void main(String args[]) {
-		/* Set the Nimbus look and feel */
-		// <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
-		// (optional) ">
-		/*
-		 * If Nimbus (introduced in Java SE 6) is not available, stay with the default
-		 * look and feel. For details see
-		 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-		 */
-		try {
-			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(DatPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(DatPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(DatPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(DatPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		}
-
 	}
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
