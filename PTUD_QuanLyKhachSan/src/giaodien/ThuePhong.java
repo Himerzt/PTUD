@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -43,10 +44,11 @@ public class ThuePhong extends javax.swing.JDialog {
     public ThuePhong(List<String> dsTenPhong) {
         initComponents();
         phongDao = new PhongDao();
-        loaiPhongDao = new LoaiPhongDao();
-        khachHangDao = new KhachHangDao();
-        thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
-        dvDao = new DichVuDao();
+		dvDao = new DichVuDao();
+		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
+		loaiPhongDao = new LoaiPhongDao();
+		khachHangDao = new KhachHangDao();
+        phongDao = new PhongDao();
         ConnectDB.getInstance().getConnection();
         dsPhongThue = new ArrayList<>();
         for (String tenPhong : dsTenPhong) {
@@ -55,14 +57,14 @@ public class ThuePhong extends javax.swing.JDialog {
         loadDanhSachPhongThue();
     }
 
-    private static String[] loadDanhSachDichVu() {
+    private static ComboBoxModel loadDanhSachDichVu() {
         DichVuDao dvDao = new DichVuDao();
         ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
         String[] tenDV = new String[danhSachDV.size()];
         for (int i = 0; i < danhSachDV.size(); i++) {
             tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
         }
-        return tenDV;
+        return new javax.swing.DefaultComboBoxModel<>(tenDV);
     }
 
     @SuppressWarnings("unchecked")
@@ -300,7 +302,7 @@ public class ThuePhong extends javax.swing.JDialog {
         panelRound1Layout.setHorizontalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(57, 57, 57)
                 .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                     .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -350,7 +352,7 @@ public class ThuePhong extends javax.swing.JDialog {
                     .addGroup(panelRound1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnKTSLPhong)
-                        .addContainerGap(10, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         panelRound1Layout.setVerticalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,6 +412,11 @@ public class ThuePhong extends javax.swing.JDialog {
         panelRound2.setRoundTopRight(20);
 
         btnThemDichVu.setText("Thêm dịch vụ");
+        btnThemDichVu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemDichVuActionPerformed(evt);
+            }
+        });
 
         panelRound3.setBackground(new java.awt.Color(255, 255, 255));
         panelRound3.setRoundBottomLeft(15);
@@ -417,7 +424,7 @@ public class ThuePhong extends javax.swing.JDialog {
         panelRound3.setRoundTopLeft(15);
         panelRound3.setRoundTopRight(15);
 
-        comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ăn sáng", "Ăn trưa", "Ăn chiều", "Giặt quần áo", "Đưa đón khách", "Thêm giường", "Thêm gối", "Thêm chăn", "Nước ngọt", "Nước suối", "Gọi món tại phòng" }));
+        comboBoxDichVu.setModel(loadDanhSachDichVu());
         comboBoxDichVu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         comboBoxDichVu.setLabeText("");
 
@@ -426,9 +433,9 @@ public class ThuePhong extends javax.swing.JDialog {
         panelRound3Layout.setHorizontalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound3Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(comboBoxDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(comboBoxDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         panelRound3Layout.setVerticalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -443,11 +450,11 @@ public class ThuePhong extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
-                        .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
                         .addComponent(btnThemDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))))
+                        .addGap(99, 99, 99))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
+                        .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11))))
         );
         panelRound2Layout.setVerticalGroup(
             panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,21 +484,18 @@ public class ThuePhong extends javax.swing.JDialog {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel32)
-                        .addGap(203, 203, 203)
-                        .addComponent(jLabel2))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(34, Short.MAX_VALUE)
-                        .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panelRound1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1171, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addGap(203, 203, 203)
+                                .addComponent(jLabel2))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -508,7 +512,7 @@ public class ThuePhong extends javax.swing.JDialog {
                                         .addComponent(btnThuePhong, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(btnHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(panelRound2, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE))))))
+                                    .addComponent(panelRound2, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))))))
                 .addGap(12, 12, 12))
         );
         jPanel1Layout.setVerticalGroup(
@@ -562,6 +566,44 @@ public class ThuePhong extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnCCCDActionPerformed
 
+    private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDichVuActionPerformed
+        loadDanhSachDichVu();
+        DichVuPhong dvPhong = new DichVuPhong();
+        int selectedPhong = tableDanhSachPhong.getSelectedRow();
+        if (selectedPhong != -1) {
+            String tenPhong = tableDanhSachPhong.getValueAt(selectedPhong, 1).toString();
+            String maDichVu = comboBoxDichVu.getSelectedItem().toString().split(" ")[0];
+            dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tenPhong));
+            dvPhong.setMaDichVu(maDichVu);
+            double giaDichVu = dvDao.timTheoMaDichVu(maDichVu).getGiaDV();
+            DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
+            // Kiểm tra và tăng giá trị cột số lượng nếu trùng tên phòng và mã dịch vụ
+            boolean daThem = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String tenPhongTrongBang = model.getValueAt(i, 3).toString();
+                String maDichVuTrongBang = model.getValueAt(i, 1).toString().split(" ")[0];
+                if (tenPhong.equals(tenPhongTrongBang) && maDichVu.equals(maDichVuTrongBang)) {
+                    int soLuongHienTai = Integer.parseInt(model.getValueAt(i, 2).toString());
+                    int soLuongMoi = soLuongHienTai + 1;
+                    model.setValueAt(soLuongMoi, i, 2);
+                    dvPhong.setSoLuong(soLuongMoi);
+                    // Cập nhật lại giá dịch vụ
+                    double giaMoi = giaDichVu * soLuongMoi;
+                    model.setValueAt(giaMoi, i, 5);
+                    daThem = true;
+                    break;
+                }
+            }
+            if (!daThem) {
+                Object[] rowData = {model.getRowCount() + 1, comboBoxDichVu.getSelectedItem().toString(), 1, tenPhong,
+                    dvDao.timTheoMaDichVu(maDichVu).getGiaDV(), giaDichVu};
+                model.addRow(rowData);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn phòng cần thêm dịch vụ");
+        }
+    }//GEN-LAST:event_btnThemDichVuActionPerformed
+
     private void btnNgayTraActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgayTraActionPerformed
         dateNgayTra.showPopup();
     }// GEN-LAST:event_btnNgayTraActionPerformed
@@ -585,7 +627,6 @@ public class ThuePhong extends javax.swing.JDialog {
             }
         }
     }// GEN-LAST:event_btnKTSLPhongActionPerformed
-
     private int tinhSucChuaDanhSachPhong(List<Phong> dsPhong) {
         int suChuaToiDa = 0;
         for (Phong phong : dsPhong) {
@@ -625,8 +666,9 @@ public class ThuePhong extends javax.swing.JDialog {
             }
             maLoaiThue = String.format("%s%s", kieuThue, loaiPhong);
         }
-
-        if (thongTinDatThuePhongDao.thuePhong(dsPhongThue, kh, ngayNhan, ngayNhan, maLoaiThue, ngayTra, 0)) {
+        
+        
+        if (thongTinDatThuePhongDao.thuePhong(dsPhongThue, kh, ngayNhan, ngayNhan, maLoaiThue, ngayTra, 0)) {        	
             JOptionPane.showMessageDialog(this, "Thuê phòng thành công");
             this.setVisible(false);
         } else {
@@ -661,43 +703,6 @@ public class ThuePhong extends javax.swing.JDialog {
         }
     }
 
-    private void btnThemDichVuActionPerformed() {
-        loadDanhSachDichVu();
-        DichVuPhong dvPhong = new DichVuPhong();
-        int selectedPhong = tableDanhSachPhong.getSelectedRow();
-        if (selectedPhong != -1) {
-            String tenPhong = tableDanhSachPhong.getValueAt(selectedPhong, 1).toString();
-            String maDichVu = comboBoxDichVu.getSelectedItem().toString().split(" ")[0];
-            dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tenPhong));
-            dvPhong.setMaDichVu(maDichVu);
-            double giaDichVu = dvDao.timTheoMaDichVu(maDichVu).getGiaDV();
-            DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
-            // Kiểm tra và tăng giá trị cột số lượng nếu trùng tên phòng và mã dịch vụ
-            boolean daThem = false;
-            for (int i = 0; i < model.getRowCount(); i++) {
-                String tenPhongTrongBang = model.getValueAt(i, 3).toString();
-                String maDichVuTrongBang = model.getValueAt(i, 1).toString().split(" ")[0];
-                if (tenPhong.equals(tenPhongTrongBang) && maDichVu.equals(maDichVuTrongBang)) {
-                    int soLuongHienTai = Integer.parseInt(model.getValueAt(i, 2).toString());
-                    int soLuongMoi = soLuongHienTai + 1;
-                    model.setValueAt(soLuongMoi, i, 2);
-                    dvPhong.setSoLuong(soLuongMoi);
-                    // Cập nhật lại giá dịch vụ
-                    double giaMoi = giaDichVu * soLuongMoi;
-                    model.setValueAt(giaMoi, i, 5);
-                    daThem = true;
-                    break;
-                }
-            }
-            if (!daThem) {
-                Object[] rowData = {model.getRowCount() + 1, comboBoxDichVu.getSelectedItem().toString(), 1, tenPhong,
-                    dvDao.timTheoMaDichVu(maDichVu).getGiaDV(), giaDichVu};
-                model.addRow(rowData);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Vui lòng chọn phòng cần thêm dịch vụ");
-        }
-    }// GEN-LAST:event_btnThemDichVuActionPerformed
 
     // Check CCCD
     public boolean regCCCD_Passport(String cccd_passport) {

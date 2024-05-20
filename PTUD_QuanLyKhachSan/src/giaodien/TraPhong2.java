@@ -5,11 +5,13 @@
 package giaodien;
 
 import java.awt.event.ActionEvent;
+import java.awt.font.FontRenderContext;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
@@ -36,7 +38,10 @@ import javax.swing.JButton;
 public class TraPhong2 extends javax.swing.JDialog {
 	private List<DichVuPhong> danhSachDichVu;
 	private String[] dsPhongDat;
-	List<String> dsTenPhong;
+	private List<String> dsTenPhong;
+	private ThongTinDatThuePhongDao thongTinDao;
+	private KhachHangDao khachHangDao;
+	private DichVuDao dichVuDao;
 
 	/**
 	 * Creates new form DatPhong
@@ -53,6 +58,8 @@ public class TraPhong2 extends javax.swing.JDialog {
 		}
 		ConnectDB.getInstance().getConnection();
 		initComponents();
+		loadThongTinTraPhong();
+		loadDanhSachPhong();
 		loadDanhSachDichVu();
 	}
 
@@ -77,10 +84,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         txtSodienthoaiKH = new giaodien.CustomClass.TextFieldShadow();
-        jLabel20 = new javax.swing.JLabel();
-        txtTenPhong = new giaodien.CustomClass.TextFieldShadow();
-        jLabel21 = new javax.swing.JLabel();
-        txtCheckIn = new giaodien.CustomClass.TextFieldShadow();
         txtNgaySinh = new giaodien.CustomClass.TextFieldShadow();
         jLabel22 = new javax.swing.JLabel();
         txtChietKhau = new giaodien.CustomClass.TextFieldShadow();
@@ -89,8 +92,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         txtThue = new giaodien.CustomClass.TextFieldShadow();
         jLabel25 = new javax.swing.JLabel();
         txtNhanVien = new giaodien.CustomClass.TextFieldShadow();
-        txtCheckOut = new giaodien.CustomClass.TextFieldShadow();
-        jLabel26 = new javax.swing.JLabel();
         txtTongHoaDon = new giaodien.CustomClass.TextFieldShadow();
         jLabel27 = new javax.swing.JLabel();
         txtTraTruoc = new giaodien.CustomClass.TextFieldShadow();
@@ -99,8 +100,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         txtTienCanThu = new giaodien.CustomClass.TextFieldShadow();
         txtMaKhachHang = new giaodien.CustomClass.TextFieldShadow();
         jLabel30 = new javax.swing.JLabel();
-        txtNgayDat = new giaodien.CustomClass.TextFieldShadow();
-        jLabel31 = new javax.swing.JLabel();
         btnTraPhong = new giaodien.CustomClass.Button();
         btnHuy = new giaodien.CustomClass.Button();
 
@@ -191,14 +190,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel19.setText("Số điện thoại");
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel20.setText("Tên phòng");
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel21.setText("Ngày nhận");
-
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel22.setText("Ngày sinh");
@@ -215,10 +206,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel25.setText("Nhân viên");
 
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel26.setText("Ngày trả");
-
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel27.setText("Tổng tiền");
@@ -234,10 +221,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel30.setText("Mã khách hàng");
-
-        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel31.setText("Ngày đặt");
 
         javax.swing.GroupLayout panelTraPhongLayout = new javax.swing.GroupLayout(panelTraPhong);
         panelTraPhong.setLayout(panelTraPhongLayout);
@@ -257,16 +240,7 @@ public class TraPhong2 extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTraPhongLayout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addGap(18, 18, 18)
-                        .addComponent(txtHangThanhVienKH, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTraPhongLayout.createSequentialGroup()
-                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtTenPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTraPhongLayout.createSequentialGroup()
-                            .addComponent(jLabel21)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(txtHangThanhVienKH, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelTraPhongLayout.createSequentialGroup()
@@ -280,17 +254,7 @@ public class TraPhong2 extends javax.swing.JDialog {
                     .addGroup(panelTraPhongLayout.createSequentialGroup()
                         .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTraPhongLayout.createSequentialGroup()
-                        .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(panelTraPhongLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel31))
-                            .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCheckOut, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
-                            .addComponent(txtNgayDat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(txtNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelTraPhongLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
@@ -334,17 +298,8 @@ public class TraPhong2 extends javax.swing.JDialog {
                             .addComponent(txtHangThanhVienKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(63, 63, 63)
                         .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTenPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel31)
-                            .addComponent(txtNgayDat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTraTruoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11)
-                        .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtTraTruoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panelTraPhongLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -378,11 +333,9 @@ public class TraPhong2 extends javax.swing.JDialog {
                             .addComponent(txtMaKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(164, 164, 164)
                         .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTienCanThu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         btnTraPhong.setText("Trả phòng");
@@ -470,11 +423,109 @@ public class TraPhong2 extends javax.swing.JDialog {
 	
 	// Load thông tin vào textfield
 	protected void loadThongTinTraPhong() {
-		// Load thông tin khách hàng từ database
-		KhachHangDao khDao = new KhachHangDao();
+		// Tìm thông tin đặt phòng thuê theo mã phòng
+		thongTinDao = new ThongTinDatThuePhongDao();
+		Phong phongThue = new Phong();
+		PhongDao phongDao = new PhongDao();
+		for (String phong : dsPhongDat) {
+			phongThue = phongDao.timPhongTheoSoPhong(Integer.parseInt(phong));
+		}
+		ThongTinDatThuePhong thongTinphong = new ThongTinDatThuePhong();
+		for (String phong : dsPhongDat) {
+			thongTinphong = thongTinDao.timThongTinDatThuePhongTheoMaPhong(phongThue.getMaPhong());
+			JOptionPane.showMessageDialog(null, thongTinphong.getMaKhachHang());
+		}
+		// Tìm thông tin khách hàng
+		khachHangDao = new KhachHangDao();
+		KhachHang khachHang = khachHangDao.timTheoMaKhachHang(thongTinphong.getMaKhachHang());
+		txtTenKH.setText(khachHang.getHoTenKH());
+		txtHangThanhVienKH.setText(khachHang.getMaHangThanhVien());
+		txtSodienthoaiKH.setText(khachHang.getSoDT());
+		txtNgaySinh.setText(khachHang.getNgaySinh().toString());
+		txtMaKhachHang.setText(khachHang.getMaKH());
+		txtNhanVien.setText("21121331_Nguyễn Quốc Huy");
+		txtThue.setText("10%");
+		// Lấy hạng thành viên khách hàng
+		String hangTV = "";
+		hangTV = khachHang.getMaHangThanhVien();
+		if (hangTV.equalsIgnoreCase("hb")) {
+			txtChietKhau.setText("3.75%");
+		} else if (hangTV.equalsIgnoreCase("hv")) {
+			txtChietKhau.setText("7.5%");
+		} else if (hangTV.equalsIgnoreCase("kc")) {
+			txtChietKhau.setText("18.75%");
+		} else if (hangTV.equalsIgnoreCase("lb")) {
+			txtChietKhau.setText("15%");
+		} else {
+			txtChietKhau.setText("11.25%");
+		}
+		// Tính tổng tiền cọc
+		double tongTienCoc = 0;
+		for (String phong : dsPhongDat) {
+			thongTinphong = thongTinDao.timThongTinDatThuePhongTheoMaPhong(phongThue.getMaPhong());
+			tongTienCoc += thongTinphong.getTienDaCoc();			
+		}
+		txtTraTruoc.setText(String.valueOf(tongTienCoc));
+		
+		double tongTien = 0;
+		Phong phong = new Phong();
+		// Lấy thông tin phòng
+		for (String phongDat : dsPhongDat) {
+			phong = phongDao.timPhongTheoSoPhong(Integer.parseInt(phongDat));
+			if (phong.getMaLoaiPhong().equalsIgnoreCase("TC")) {
+				tongTien += 500000;
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("NC")) {
+				tongTien += 700000;
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("CC")) {
+				tongTien += 900000;
+			} else {
+				tongTien += 1200000;
+			}
+		}
+		// tính chiết khấu
+		double chietKhau = 0;
+		if (khachHang.getMaHangThanhVien().equalsIgnoreCase("hb")) {
+			chietKhau = 0.0375;
+		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("hv")) {
+			chietKhau = 0.075;
+		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("kc")) {
+			chietKhau = 0.1875;
+		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("lb")) {
+			chietKhau = 0.15;
+		} else {
+			chietKhau = 0.1125;
+		}
+		double tienChietKhau = tongTien * chietKhau;
+		tongTien -= tienChietKhau;
+		txtTongHoaDon.setText(String.valueOf(tongTien));
+		double tienCanThu = 0;
+		tienCanThu = tongTien - Double.parseDouble(txtTraTruoc.getText());
+		txtTienCanThu.setText(String.valueOf(tienCanThu));
 		
 		
 	}
+	
+	
+	//load danh sách phòng vào table
+	protected void loadDanhSachPhong() {
+		DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
+		model.setRowCount(0);
+		PhongDao phongDao = new PhongDao();
+		Phong phong = new Phong();
+		int i=0;
+		for (String phongDat : dsPhongDat) {
+			phong = phongDao.timPhongTheoSoPhong(Integer.parseInt(phongDat));
+			//datta row STT mã phòng tên phòng loại phòng kiểu thuê ngày đặt ngày nhận ngày trả
+			i++;
+			Object[] row = new Object[] {i, phong.getMaPhong(), phong.getSoPhong(), phong.getMaLoaiPhong(), "Thuê theo ngày",
+					LocalDate.now(), LocalDate.now(), LocalDate.now()};
+			model.addRow(row);
+		}
+		    
+	};
+	
+
+	
 
 	protected void btnCCCDActionPerformed(ActionEvent evt) {
 		// Lỗi nên t comment lại nha
@@ -606,18 +657,14 @@ public class TraPhong2 extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -625,17 +672,13 @@ public class TraPhong2 extends javax.swing.JDialog {
     private giaodien.CustomClass.PanelRound panelTraPhong;
     private javax.swing.JTable tableDV;
     private javax.swing.JTable tableDanhSachPhong;
-    private giaodien.CustomClass.TextFieldShadow txtCheckIn;
-    private giaodien.CustomClass.TextFieldShadow txtCheckOut;
     private giaodien.CustomClass.TextFieldShadow txtChietKhau;
     private giaodien.CustomClass.TextFieldShadow txtHangThanhVienKH;
     private giaodien.CustomClass.TextFieldShadow txtMaKhachHang;
-    private giaodien.CustomClass.TextFieldShadow txtNgayDat;
     private giaodien.CustomClass.TextFieldShadow txtNgaySinh;
     private giaodien.CustomClass.TextFieldShadow txtNhanVien;
     private giaodien.CustomClass.TextFieldShadow txtSodienthoaiKH;
     private giaodien.CustomClass.TextFieldShadow txtTenKH;
-    private giaodien.CustomClass.TextFieldShadow txtTenPhong;
     private giaodien.CustomClass.TextFieldShadow txtThue;
     private giaodien.CustomClass.TextFieldShadow txtTienCanThu;
     private giaodien.CustomClass.TextFieldShadow txtTongHoaDon;

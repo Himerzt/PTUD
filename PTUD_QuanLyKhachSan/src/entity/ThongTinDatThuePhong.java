@@ -79,6 +79,13 @@ public class ThongTinDatThuePhong {
 	public void setTienDaCoc(double tienDaCoc) {
 		this.tienDaCoc = tienDaCoc;
 	}
+	@Override
+	public String toString() {
+		return "ThongTinDatThuePhong [maTTDTP=" + maTTDTP + ", maKhachHang=" + maKhachHang + ", maPhong=" + maPhong
+				+ ", ngayDatPhong=" + ngayDatPhong + ", ngayNhanPhong=" + ngayNhanPhong + ", ngayTraPhong="
+				+ ngayTraPhong + ", maLoaiThue=" + maLoaiThue + ", tienDaCoc=" + tienDaCoc + "]";
+	}
+	
 
 
 }
