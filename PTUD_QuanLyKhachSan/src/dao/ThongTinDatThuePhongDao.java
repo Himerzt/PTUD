@@ -156,8 +156,8 @@ public class ThongTinDatThuePhongDao {
 	}
 
 	// Đặt phòng
-	public boolean datPhong(ArrayList<Phong> phong, KhachHang kh, LocalDate ngayDatPhong, LocalDate ngayNhanPhong,
-			String maLoaiThue, LocalDate ngayTraPhong, double tienDaCoc) {
+	public boolean datPhong(ArrayList<Phong> phong, KhachHang kh, LocalDate ngayDatPhong, LocalDate ngayNhanPhong, LocalDate ngayTraPhong,
+			String maLoaiThue, double tienDaCoc) {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
@@ -192,14 +192,15 @@ public class ThongTinDatThuePhongDao {
 			try {
 				String maDP = String.format("%s%s", kh.getMaKH(), i);
 				stmt = con.createStatement();
+				// Thêm thông tin thuê phòng
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
 						+ phong2.getMaPhong() + "', '" + ngayDatPhong + "', '" + ngayNhanPhong + "', '" + ngayTraPhong
 						+ "','" + maLoaiThue + "','" + tienDaCoc + "')";
 				stmt.executeUpdate(sql);
+				// Cập nhật trạng thái phòng
 				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã thuê' WHERE maPhong = '" + phong2.getMaPhong()
 						+ "'";
 				stmt.executeUpdate(sql1);
-				i++;
 				return true;
 			} catch (Exception e) {
 				e.printStackTrace();

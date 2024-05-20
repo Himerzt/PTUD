@@ -18,11 +18,13 @@ import connectDB.ConnectDB;
 import dao.DichVuDao;
 import dao.DichVuPhongDao;
 import dao.KhachHangDao;
+import dao.KhuyenMaiDao;
 import dao.PhongDao;
 import dao.ThongTinDatThuePhongDao;
 import entity.DichVu;
 import entity.DichVuPhong;
 import entity.KhachHang;
+import entity.KhuyenMai;
 import entity.Phong;
 import entity.ThongTinDatThuePhong;
 
@@ -37,12 +39,12 @@ import javax.swing.JButton;
  */
 public class TraPhong2 extends javax.swing.JDialog {
 	private List<DichVuPhong> danhSachDichVu;
-	private String[] dsPhongDat;
-	private List<String> dsTenPhong;
+	private static String[] dsPhongDat;
+	private static List<String> dsTenPhong;
 	private ThongTinDatThuePhongDao thongTinDao;
 	private KhachHangDao khachHangDao;
 	private DichVuDao dichVuDao;
-
+	private double tongGiaDichVu = 0;
 	/**
 	 * Creates new form DatPhong
 	 */
@@ -60,7 +62,6 @@ public class TraPhong2 extends javax.swing.JDialog {
 		initComponents();
 		loadThongTinTraPhong();
 		loadDanhSachPhong();
-		loadDanhSachDichVu();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -331,7 +332,7 @@ public class TraPhong2 extends javax.swing.JDialog {
                         .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtMaKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(164, 164, 164)
+                        .addGap(167, 167, 167)
                         .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTienCanThu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -423,86 +424,135 @@ public class TraPhong2 extends javax.swing.JDialog {
 	
 	// Load thông tin vào textfield
 	protected void loadThongTinTraPhong() {
-		// Tìm thông tin đặt phòng thuê theo mã phòng
+		// Từ dsPhongDat đặt lấy danh sách mã phòng
 		thongTinDao = new ThongTinDatThuePhongDao();
-		Phong phongThue = new Phong();
-		PhongDao phongDao = new PhongDao();
-		for (String phong : dsPhongDat) {
-			phongThue = phongDao.timPhongTheoSoPhong(Integer.parseInt(phong));
-		}
-		ThongTinDatThuePhong thongTinphong = new ThongTinDatThuePhong();
-		for (String phong : dsPhongDat) {
-			thongTinphong = thongTinDao.timThongTinDatThuePhongTheoMaPhong(phongThue.getMaPhong());
-			JOptionPane.showMessageDialog(null, thongTinphong.getMaKhachHang());
-		}
-		// Tìm thông tin khách hàng
 		khachHangDao = new KhachHangDao();
-		KhachHang khachHang = khachHangDao.timTheoMaKhachHang(thongTinphong.getMaKhachHang());
-		txtTenKH.setText(khachHang.getHoTenKH());
-		txtHangThanhVienKH.setText(khachHang.getMaHangThanhVien());
-		txtSodienthoaiKH.setText(khachHang.getSoDT());
-		txtNgaySinh.setText(khachHang.getNgaySinh().toString());
-		txtMaKhachHang.setText(khachHang.getMaKH());
-		txtNhanVien.setText("21121331_Nguyễn Quốc Huy");
-		txtThue.setText("10%");
-		// Lấy hạng thành viên khách hàng
-		String hangTV = "";
-		hangTV = khachHang.getMaHangThanhVien();
-		if (hangTV.equalsIgnoreCase("hb")) {
-			txtChietKhau.setText("3.75%");
-		} else if (hangTV.equalsIgnoreCase("hv")) {
-			txtChietKhau.setText("7.5%");
-		} else if (hangTV.equalsIgnoreCase("kc")) {
-			txtChietKhau.setText("18.75%");
-		} else if (hangTV.equalsIgnoreCase("lb")) {
-			txtChietKhau.setText("15%");
-		} else {
-			txtChietKhau.setText("11.25%");
-		}
-		// Tính tổng tiền cọc
-		double tongTienCoc = 0;
-		for (String phong : dsPhongDat) {
-			thongTinphong = thongTinDao.timThongTinDatThuePhongTheoMaPhong(phongThue.getMaPhong());
-			tongTienCoc += thongTinphong.getTienDaCoc();			
-		}
-		txtTraTruoc.setText(String.valueOf(tongTienCoc));
-		
-		double tongTien = 0;
-		Phong phong = new Phong();
-		// Lấy thông tin phòng
+		dichVuDao = new DichVuDao();
+		PhongDao phong = new PhongDao();
+	    // Lấy mã phòng từ dsPhongDat
+		ArrayList<String> dsMaPhong = new ArrayList<>();
 		for (String phongDat : dsPhongDat) {
-			phong = phongDao.timPhongTheoSoPhong(Integer.parseInt(phongDat));
-			if (phong.getMaLoaiPhong().equalsIgnoreCase("TC")) {
-				tongTien += 500000;
-			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("NC")) {
-				tongTien += 700000;
-			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("CC")) {
-				tongTien += 900000;
-			} else {
-				tongTien += 1200000;
-			}
+			dsMaPhong.add(phong.timPhongTheoSoPhong(Integer.parseInt(phongDat)).getMaPhong());
 		}
-		// tính chiết khấu
-		double chietKhau = 0;
+		// Lấy thông tin khách hàng từ mã phòng
+	    String maKhachHang = thongTinDao.timThongTinDatThuePhongTheoMaPhong(dsMaPhong.get(0)).getMaKhachHang();
+	    // Xử lý thông tin khách hàng
+	    KhachHang khachHang = khachHangDao.timTheoMaKhachHang(maKhachHang);
+	    // Tính tỉ lệ chiết khấu
+	    String hangTV = "";
+	    double chietKhau = 0;
 		if (khachHang.getMaHangThanhVien().equalsIgnoreCase("hb")) {
+			hangTV = "Hạng Bạc - 3.75%";
 			chietKhau = 0.0375;
 		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("hv")) {
+			hangTV = "Hạng Vàng - 7.5%";
 			chietKhau = 0.075;
 		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("kc")) {
+			hangTV = "Hạng Kim Cương - 18.75%";
 			chietKhau = 0.1875;
 		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("lb")) {
+			hangTV = "Hạng Lục Bảo - 15%";
 			chietKhau = 0.15;
 		} else {
+			hangTV = "Hạng Bạch Kim - 11.25%";
 			chietKhau = 0.1125;
 		}
-		double tienChietKhau = tongTien * chietKhau;
-		tongTien -= tienChietKhau;
+		// Tính tiền phòng
+		double tongTienPhong = 0;
+		Phong phongThue = new Phong();
+		for (String maPhong : dsMaPhong) {
+			phongThue = phong.timPhongTheoMaPhong(maPhong);
+			if (phongThue.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+				tongTienPhong += 450000;
+			} else if (phongThue.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+				tongTienPhong += 700000;
+			} else if (phongThue.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+				tongTienPhong += 1000000;
+			} else {
+				tongTienPhong += 1500000;
+			}
+		}
+		// Tính tiền dịch vụ
+		double tongTienDichVu = 0;
+		DichVuPhongDao dichVuPhongDao = new DichVuPhongDao();
+        ArrayList<DichVuPhong> dsDichVu = new ArrayList<>();
+        for (String maPhong : dsMaPhong) {
+			dsDichVu.addAll(dichVuPhongDao.timDichVuSuDungTheoMaPhong(maPhong));
+		}
+        DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
+		model.setRowCount(0);
+		int i = 0;	
+		for (DichVuPhong dv : dsDichVu) {
+			// Tạo model cho tableDV STT mã dịch vụ tên dịch vụ số lượng phòng giá
+			i++;
+			String maDV = dv.getMaDichVu();
+			String tenDV = new DichVuDao().timTheoMaDichVu(maDV).getTenDV();
+			int soLuong = dv.getSoLuong();
+			String maPhong = dv.getMaPhong();	
+			// Tính giá dịch vụ bằng tìm kiếm theo mã dịch vụ lấy giá thông qua entity dichvuz
+			double gia = new DichVuDao().timTheoMaDichVu(maDV).getGiaDV() * soLuong;
+			model.addRow(new Object[] { i, maDV, tenDV, soLuong, maPhong, gia });
+			tongTienDichVu += gia;
+		}	
+		// Tính tiền trả phòng trễ hơn 12h quá 1-3 tiếng 30% 3-6 tiếng 50% hơn 6 tiếng 100% tính vào tiền phòng
+		double tienTraPhongTre = 0;
+		// Lấy giờ hiện tại để trả phòng
+		int gioTraPhong = LocalDate.now().getDayOfMonth();
+		if (gioTraPhong > 12) {
+			if (gioTraPhong <= 13) {
+				tienTraPhongTre += 0;
+			} else if (gioTraPhong <= 15) {
+				tienTraPhongTre = tongTienPhong * 0.3;
+			} else if (gioTraPhong <= 18) {
+				tienTraPhongTre = tongTienPhong * 0.5;
+			} else {
+				tienTraPhongTre = tongTienPhong;
+			}
+		}
+		// Tính tiền đổi phòng nếu có --- CHƯA CÓ DỮ LIỆU
+		double tienDoiPhong = 0;
+		// Tính tổng tiền
+		double tongTien = tongTienPhong + tongTienDichVu + tienTraPhongTre + tienDoiPhong;
+		// Tính chiết khấu
+		tongTien -= tongTien * chietKhau;
+		// Thêm khuyến mãi
+		KhuyenMai khuyenMai = new KhuyenMai();
+		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
+		//  ngày hiện còn trong khuyến mãi và đủ điều kiện thì áp dụng khuyến mãi tìm tất cả khuyến mãi và kiểm tra lấy giá trị khuyến mãi lớn nhât
+		ArrayList<KhuyenMai> dsKhuyenMai = khuyenMaiDao.timTatCaKhuyenMai();
+		for (KhuyenMai km : dsKhuyenMai) {
+			if (LocalDate.now().isAfter(km.getThoiGianBatDau()) && LocalDate.now().isBefore(km.getThoiGianKetThuc())) {
+				if (tongTien >= km.getDieuKienApDung()) {
+					if (km.getGiaTriKM() > khuyenMai.getGiaTriKM()) {
+						khuyenMai = km;
+					}
+				}
+			}
+		}
+		// Áp dụng khuyến mãi
+		tongTien -= khuyenMai.getGiaTriKM();
+		// Tính tiền trả trước thông qua thông tin đặt phòng
+		double tienTraTruoc = 0;
+		for (String maPhong : dsMaPhong) {
+			tienTraTruoc += thongTinDao.timThongTinDatThuePhongTheoMaPhong(maPhong).getTienDaCoc();
+		}
+		tongTien -= tienTraTruoc;
+		// Tính tiền thuế
+		double thue = tongTien * 0.1;
+		tongTien += thue;
+		// Hiển thị thông tin khách hàng
+		txtTenKH.setText(khachHang.getHoTenKH());
+		txtHangThanhVienKH.setText(hangTV);
+		txtSodienthoaiKH.setText(khachHang.getSoDT());
+		txtNgaySinh.setText(khachHang.getNgaySinh().toString());
+		txtChietKhau.setText(String.valueOf(chietKhau * 100) + "%");
+		txtThue.setText("10% - " + String.valueOf(thue));
+		txtNhanVien.setText("NV01");
 		txtTongHoaDon.setText(String.valueOf(tongTien));
-		double tienCanThu = 0;
-		tienCanThu = tongTien - Double.parseDouble(txtTraTruoc.getText());
-		txtTienCanThu.setText(String.valueOf(tienCanThu));
-		
-		
+		txtTraTruoc.setText("0");
+		txtTienCanThu.setText(String.valueOf(tongTien));
+		txtMaKhachHang.setText(khachHang.getMaKH());
+	
 	}
 	
 	
@@ -685,14 +735,6 @@ public class TraPhong2 extends javax.swing.JDialog {
     private giaodien.CustomClass.TextFieldShadow txtTraTruoc;
     // End of variables declaration//GEN-END:variables
 
-	private static String[] loadDanhSachDichVu() {
-		DichVuDao dvDao = new DichVuDao();
-		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
-		String[] tenDV = new String[danhSachDV.size()];
-		for (int i = 0; i < danhSachDV.size(); i++) {
-			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
-		}
-		return tenDV;
-	}
+
 
 }

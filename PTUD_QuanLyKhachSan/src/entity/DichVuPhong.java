@@ -2,6 +2,9 @@ package entity;
 
 public class DichVuPhong {
 	private String maDichVuSuDung;
+	private String maPhong;
+	private String maDichVu;
+	private int soLuong;
 
 	public DichVuPhong(String maDichVuSuDung) {
 		super();
@@ -17,14 +20,9 @@ public class DichVuPhong {
 		this.maDichVuSuDung = maDichVuSuDung;
 		this.maPhong = maPhong;
 		this.maDichVu = maDichVu;
-		
-		
 		this.soLuong = soLuong;
 	}
-	private String maPhong;
-	private String maDichVu;
-	private int soLuong;
-
+	
 	public String getMaDichVu() {
 		return maDichVu;
 	}

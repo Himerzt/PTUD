@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
 import dao.DichVuDao;
+import dao.DichVuPhongDao;
 import dao.KhachHangDao;
 import dao.LoaiPhongDao;
 import dao.PhongDao;
@@ -37,6 +38,7 @@ public class ThuePhong extends javax.swing.JDialog {
     private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
     private LoaiPhongDao loaiPhongDao;
     private KhachHangDao khachHangDao;
+    private DichVuPhongDao dichVuPhongDao;
 
     /**
      * Creates new form ThuePhong
@@ -49,6 +51,7 @@ public class ThuePhong extends javax.swing.JDialog {
 		loaiPhongDao = new LoaiPhongDao();
 		khachHangDao = new KhachHangDao();
         phongDao = new PhongDao();
+        dichVuPhongDao = new DichVuPhongDao();
         ConnectDB.getInstance().getConnection();
         dsPhongThue = new ArrayList<>();
         for (String tenPhong : dsTenPhong) {
@@ -447,23 +450,22 @@ public class ThuePhong extends javax.swing.JDialog {
         panelRound2Layout.setHorizontalGroup(
             panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
-                        .addComponent(btnThemDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
-                        .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11))))
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11))
+            .addGroup(panelRound2Layout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(btnThemDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound2Layout.setVerticalGroup(
             panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound2Layout.createSequentialGroup()
                 .addContainerGap(53, Short.MAX_VALUE)
                 .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnThemDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addGap(25, 25, 25))
         );
 
         btnThuePhong.setText("Thuê phòng");
@@ -602,6 +604,7 @@ public class ThuePhong extends javax.swing.JDialog {
         } else {
             JOptionPane.showMessageDialog(this, "Vui lòng chọn phòng cần thêm dịch vụ");
         }
+        loadDanhSachDichVu();
     }//GEN-LAST:event_btnThemDichVuActionPerformed
 
     private void btnNgayTraActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgayTraActionPerformed
@@ -616,8 +619,8 @@ public class ThuePhong extends javax.swing.JDialog {
                     JOptionPane.ERROR_MESSAGE);
             return;
         } else {
-            int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongThue);
-            if (soNguoiLon + soTreEm / 2 > sucChuaToiDa) {
+        	int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongThue);
+            if (soNguoiLon > sucChuaToiDa || (soNguoiLon == sucChuaToiDa && soTreEm > soNguoiLon)) {
                 JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
                         JOptionPane.ERROR_MESSAGE);
                 return;
@@ -667,8 +670,21 @@ public class ThuePhong extends javax.swing.JDialog {
             maLoaiThue = String.format("%s%s", kieuThue, loaiPhong);
         }
         
-        
-        if (thongTinDatThuePhongDao.thuePhong(dsPhongThue, kh, ngayNhan, ngayNhan, maLoaiThue, ngayTra, 0)) {        	
+
+        // Thêm thông tin dịch vụ
+        DichVuPhong dvPhong = new DichVuPhong();
+        // Duyệt từng dòng trong bảng dịch vụ
+		for (int i = 0; i < tableDV.getRowCount(); i++) {
+			dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tableDV.getValueAt(i, 3).toString()));
+			dvPhong.setMaDichVu(tableDV.getValueAt(i, 1).toString().split(" ")[0]);
+			dvPhong.setSoLuong(Integer.parseInt(tableDV.getValueAt(i, 2).toString()));
+			System.out.println(dvPhong.getMaPhong() + " " + dvPhong.getMaDichVu() + " " + dvPhong.getSoLuong());
+			// Thêm dịch vụ vào cơ sở dữ liệu
+			dichVuPhongDao.themDichVuPhong(dvPhong);
+		}
+
+        // Thêm thông tin thuê phòng
+        if (thongTinDatThuePhongDao.thuePhong(dsPhongThue, kh, ngayNhan, ngayNhan, maLoaiThue, ngayTra, 0)) {
             JOptionPane.showMessageDialog(this, "Thuê phòng thành công");
             this.setVisible(false);
         } else {
@@ -717,13 +733,31 @@ public class ThuePhong extends javax.swing.JDialog {
             Matcher matcher = pattern.matcher(cccd_passport);
 
             if (!matcher.matches()) {
-                JOptionPane.showMessageDialog(this, "CCCD/Passport không hợp lệ");
                 return false;
             }
             return true;
         }
     }
 
+    private void btnThemKhachHangActionPerformed(ActionEvent evt) {// GEN-FIRST:event_btnThemKhachHangActionPerformed
+        KhachHang kh = new KhachHang();
+        if (regCCCD_Passport(txtCCCD.getText()) == false) {
+            return;
+        }
+        // Nếu khách hàng đang đặt/thuê phòng thì không thể thuê phòng
+        if (thongTinDatThuePhongDao.timThongTinTheoMaKhachHang(khachHangDao.timTheoCCCD(txtCCCD.getText()).getMaKH())
+                .size() > 0) {
+            JOptionPane.showMessageDialog(this, "Khách hàng đã đặt/thuê phòng!");
+            return;
+        }
+        if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) != null) {
+            kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
+            txtTenKH.setText(kh.getHoTenKH());
+        } else {
+            JOptionPane.showMessageDialog(this, "Khách hàng hiện chưa được thêm!");
+            return;
+        }
+    }// GEN-LAST:event_btnThemKhachHangActionPerformed
 
     /**
      * @param args the command line arguments

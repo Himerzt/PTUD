@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Ăn sáng"/>
+		<item key="selection" value="Ăn"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
-		<item key="wholeword" value="false"/>
+		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="ăn sáng"/>
-			<item value="txtSoNguoiLon"/>
-			<item value="btnNgayTra"/>
-			<item value="txtSoLuongTreEm"/>
-			<item value="txtSoLuongNguoiLon"/>
-			<item value="Kiểm tra"/>
+			<item value="Ăn"/>
+			<item value="an"/>
+			<item value="loadDanh"/>
+			<item value="load"/>
+			<item value="kiemTraTrungThoiGianThue"/>
+			<item value="red"/>
+			<item value="btnThemKhachHang"/>
+			<item value="btnCCCD"/>
 			<item value="btnT"/>
-			<item value="t"/>
-			<item value="tính"/>
-			<item value="theo giờ"/>
-			<item value="======="/>
-			<item value="&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD"/>
-			<item value="pink"/>
-			<item value="Label"/>
-			<item value="btnThemDichVu"/>
+			<item value="btnThem"/>
+			<item value="datPhong"/>
+			<item value="dat"/>
+			<item value="btnKTSL"/>
+			<item value="main"/>
+			<item value="ăn sáng"/>
 		</list>
 		<list key="replacehistory">
+			<item value="btnThemKhachHang"/>
 			<item value="txtSoTreEm"/>
 			<item value="txtSoNguoiLon"/>
 			<item value="btnCCCDActionPerformed"/>
@@ -39,12 +40,11 @@
 			<item value="getTenKhachHang"/>
 			<item value="getMaKhachHang"/>
 			<item value="getMaNhanVien"/>
-			<item value="_Ipml"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1095"/>
-		<item key="DIALOG_Y_ORIGIN" value="200"/>
+		<item key="DIALOG_X_ORIGIN" value="1267"/>
+		<item key="DIALOG_Y_ORIGIN" value="574"/>
 		<item key="DIALOG_WIDTH" value="414"/>
 		<item key="DIALOG_HEIGHT" value="442"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
