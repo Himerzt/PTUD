@@ -311,7 +311,7 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel24" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
@@ -322,26 +322,27 @@
                                   <Component id="txtSoNguoiLon" pref="205" max="32767" attributes="0"/>
                                   <Component id="txtCCCD" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="btnCCCD" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="jLabel22" min="-2" pref="69" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtSoTreEm" min="-2" pref="159" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Component id="jLabel29" min="-2" pref="123" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtCheckOut" min="-2" pref="173" max="-2" attributes="0"/>
+                              <Component id="txtCheckOut" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="jLabel22" min="-2" pref="69" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnNgayTra" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtSoTreEm" min="-2" pref="159" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btnKiemTraTrung" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnCCCD" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -353,7 +354,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Component id="btnKTSLPhong" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="88" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -405,20 +406,13 @@
                                               <Component id="jLabel23" min="-2" pref="19" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="txtCheckIn" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel28" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
-                                                  <Component id="jLabel29" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
-                                                  <Component id="txtCheckOut" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                              <Component id="btnNgayTra" min="-2" pref="24" max="-2" attributes="0"/>
-                                          </Group>
+                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="txtCheckIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel28" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                                          <Component id="jLabel29" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                                          <Component id="txtCheckOut" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnKiemTraTrung" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="panelRound5" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -465,6 +459,9 @@
               </Properties>
             </Component>
             <Component class="giaodien.CustomClass.TextFieldShadow" name="txtCheckIn">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel28">
               <Properties>
@@ -485,26 +482,6 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Ng&#xe0;y tr&#x1ea3;"/>
               </Properties>
-            </Component>
-            <Component class="giaodien.CustomClass.Button" name="btnNgayTra">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="null"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imgLogin/calendar.png"/>
-                </Property>
-                <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="colorOver" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
-                <Property name="radius" type="int" value="20"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNgayTraActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel23">
               <Properties>
@@ -631,6 +608,14 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="btnKiemTraTrung">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ki&#x1ec3;m tra tr&#xf9;ng"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKiemTraTrungActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="giaodien.CustomClass.PanelRound" name="panelRound2">
