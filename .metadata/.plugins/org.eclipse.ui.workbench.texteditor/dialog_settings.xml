@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Ăn"/>
+		<item key="selection" value="kiemTraTrungNgayNhan"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="kiemTraTrungNgayNhan"/>
+			<item value="txtCheckIn"/>
+			<item value="dateNgayNhan"/>
+			<item value="txtCheckIN"/>
+			<item value="dateNgayNham"/>
+			<item value="yellowred"/>
+			<item value="yellow"/>
 			<item value="Ăn"/>
 			<item value="an"/>
 			<item value="loadDanh"/>
@@ -16,13 +23,6 @@
 			<item value="red"/>
 			<item value="btnThemKhachHang"/>
 			<item value="btnCCCD"/>
-			<item value="btnT"/>
-			<item value="btnThem"/>
-			<item value="datPhong"/>
-			<item value="dat"/>
-			<item value="btnKTSL"/>
-			<item value="main"/>
-			<item value="ăn sáng"/>
 		</list>
 		<list key="replacehistory">
 			<item value="btnThemKhachHang"/>

@@ -88,7 +88,7 @@ CREATE TABLE HoaDon (
     MaHD NVARCHAR(30) PRIMARY KEY,
     MaNV NVARCHAR(30),
     MaKH NVARCHAR(30),
-    NgayLapHD DATE,
+    NgayLapHD DATETIME,
     ThueVAT FLOAT
 ); --check
 
@@ -96,9 +96,9 @@ CREATE TABLE ThongTinDatThuePhong (
     MaTTDTP NVARCHAR(30) PRIMARY KEY,
     MaKhachHang NVARCHAR(30),
     MaPhong NVARCHAR(10),
-    NgayDatPhong DATE,
-    NgayNhanPhong DATE,
-    NgayTraPhong DATE,
+    NgayDatPhong DATETIME,
+    NgayNhanPhong DATETIME,
+    NgayTraPhong DATETIME,
     LoaiThue NVARCHAR(10),
 	TienDaCoc FLOAT
 ); --check
@@ -115,7 +115,7 @@ CREATE TABLE ChiTietHoaDon (
     MaHD NVARCHAR(30),
     MaTTDTP NVARCHAR(30),
 	MaLSDP NVARCHAR(30),
-    MaKM NVARCHAR(10)
+    MaKM NVARCHAR(10),
 ); --check
 
 CREATE TABLE LichSuDoiPhong (
@@ -123,7 +123,7 @@ CREATE TABLE LichSuDoiPhong (
     MaTTDTP NVARCHAR(30),
     MaPhongCu NVARCHAR(10),
 	MaPhongMoi NVARCHAR(10),
-	NgayDoiPhong DATE,
+	NgayDoiPhong DATETIME,
 	LyDoDoi NVARCHAR(255)
 ); --
 

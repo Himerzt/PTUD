@@ -133,9 +133,9 @@ public class TrangChuUpdated extends javax.swing.JFrame {
 			if (trangThai.getText().equalsIgnoreCase("Trống")) {
 				phongPanel.setBackground(Color.green);
 			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
-				phongPanel.setBackground(Color.red);
-			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
 				phongPanel.setBackground(Color.yellow);
+			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
+				phongPanel.setBackground(Color.red);
 			}
 
 			if (phongPanel.isVisible() == false) {
