@@ -404,17 +404,28 @@ public class TraPhong2 extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTraPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraPhongActionPerformed
-    // Tạo một đối tượng mới của HoaDonThanhToan
-    HoaDonThanhToan2 hoaDonThanhToan = new HoaDonThanhToan2();
-
-		// Đặt phương thức để đóng cửa sổ khi người dùng đóng cửa sổ mới
-		hoaDonThanhToan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-		// Hiển thị cửa sổ mới
-		hoaDonThanhToan.setVisible(true);
-
-    // Tăng số hóa đơn sau khi tạo xong
-     HoaDonThanhToan2.setOrderNumber(HoaDonThanhToan2.getOrderNumber() + 1);
+    
+    	// Hỏi nhắc có muốn thực hiện trả phòng và xuất hóa đơn hay không
+    	int input = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn trả phòng và xuất hóa đơn không?", "Xác nhận trả phòng",
+    			                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+    	if (input == 0) {
+    		// Lấy thông tin để tạo hóa đơn thanh toán
+    		// Tạo mã hóa đơn theo theo đạng HD + Ngày + Tháng + Năm + Số hóa đơn tự động tạo tăng dần + Viết tắt nhân viên
+    		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyy");
+    		LocalDate now = LocalDate.now();
+    		String ngay = dtf.format(now);
+    	    // Số hóa đơn 3 chữ số 
+    		int orderNumber = 1;
+    		// Kiểm tra mã hóa đơn trong database
+    		// Nếu có thì tăng số hóa đơn lên 1
+    		// Nếu không thì tạo hóa đơn mới
+    		
+    		
+    		String formattedOrderNumber = String.format("%03d", orderNumber);
+    		
+    		
+    	}
+    	
     }//GEN-LAST:event_btnTraPhongActionPerformed
 
 	private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed

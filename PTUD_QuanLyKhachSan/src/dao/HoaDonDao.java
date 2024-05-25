@@ -33,10 +33,11 @@ public class HoaDonDao {
 			while (rs.next()) {
 				String maHoaDon = rs.getString(1);
 				String nhanVien = rs.getString(2);
-				LocalDate ngayLap = rs.getDate(3).toLocalDate();
-				String khachHang = rs.getString(4);
-
-				hoaDon = new HoaDon(maHoaDon, nhanVien, ngayLap, khachHang);
+				String khachHang = rs.getString(3);
+				LocalDate ngayLap = rs.getDate(4).toLocalDate();
+				
+				hoaDon = new HoaDon(maHoaDon, nhanVien, khachHang, ngayLap);
+				
 				dsHoaDon.add(hoaDon);
 			}
 		} catch (SQLException e) {
@@ -76,8 +77,8 @@ public class HoaDonDao {
 		if (dsHoaDon.contains(hoaDon)) {
 			try {
 				stmt = con.createStatement();
-				String sql = "update HoaDon set nhanVien = '" + hoaDon.getMaNhanVien().getMaNV() + "', ngayLap = '"
-						+ hoaDon.getNgayLap() + "', khachHang = '" + hoaDon.getMaKhachHang().getMaKH()
+				String sql = "update HoaDon set nhanVien = '" + hoaDon.getMaNhanVien() + "', ngayLap = '"
+						+ hoaDon.getNgayLap() + "', khachHang = '" + hoaDon.getMaKhachHang()
 						+ "' where maHoaDon = '" + hoaDon.getMaHoaDon() + "'";
 				n = stmt.executeUpdate(sql);
 			} catch (SQLException e) {
@@ -124,7 +125,7 @@ public class HoaDonDao {
 				NhanVien nv = new NhanVien(nhanVien);
 				KhachHang kh = new KhachHang(khachHang);
 
-				hd = new HoaDon(maHD, nv, ngayLap, kh);
+				hd = new HoaDon(maHoaDon, nhanVien, khachHang, ngayLap);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -145,11 +146,9 @@ public class HoaDonDao {
 				String nhanVien = rs.getString(2);
 				LocalDate ngayLap = rs.getDate(3).toLocalDate();
 				String khachHang = rs.getString(4);
-
-				NhanVien nv = new NhanVien(nhanVien);
-				KhachHang kh = new KhachHang(khachHang);
-
-				HoaDon hd = new HoaDon(maHD, nv, ngayLap, kh);
+				
+				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
+				
 				dsHoaDon.add(hd);
 			}
 		} catch (SQLException e) {
@@ -170,11 +169,9 @@ public class HoaDonDao {
 				String nhanVien = rs.getString(2);
 				LocalDate ngayLap = rs.getDate(3).toLocalDate();
 				String khachHang = rs.getString(4);
-
-				NhanVien nv = new NhanVien(nhanVien);
-				KhachHang kh = new KhachHang(khachHang);
-
-				HoaDon hd = new HoaDon(maHD, nv, ngayLap, kh);
+				
+				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
+				
 				dsHoaDon.add(hd);
 			}
 		} catch (SQLException e) {
@@ -197,10 +194,8 @@ public class HoaDonDao {
 				LocalDate ngayLap1 = rs.getDate(3).toLocalDate();
 				String khachHang = rs.getString(4);
 
-				NhanVien nv = new NhanVien(nhanVien);
-				KhachHang kh = new KhachHang(khachHang);
-
-				HoaDon hd = new HoaDon(maHD, nv, ngayLap1, kh);
+				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap1);
+				
 				dsHoaDon.add(hd);
 			}
 		} catch (SQLException e) {
@@ -208,5 +203,15 @@ public class HoaDonDao {
 		}
 
 		return dsHoaDon;
+	}
+	
+	
+	public static void main(String[] args) {
+		// test tìm tất cả hóa đơn
+		HoaDonDao hoaDonDao = new HoaDonDao();
+		ArrayList<HoaDon> dsHoaDon = hoaDonDao.timTatCaHoaDon();
+		for (HoaDon hd : dsHoaDon) {
+			System.out.println(hd);
+		}
 	}
 }
