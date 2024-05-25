@@ -176,6 +176,7 @@ public class ThongTinDatThuePhongDao {
 				i++;
 			} catch (Exception e) {
 				e.printStackTrace();
+				return false;
 			}
 		}
 		return true;
@@ -201,13 +202,12 @@ public class ThongTinDatThuePhongDao {
 				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã thuê' WHERE maPhong = '" + phong2.getMaPhong()
 						+ "'";
 				stmt.executeUpdate(sql1);
-				return true;
 			} catch (Exception e) {
 				e.printStackTrace();
 				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 
 	public ArrayList<String> layDanhSachPhongTheoMaKhachHang(String maKH) {
@@ -329,7 +329,7 @@ public class ThongTinDatThuePhongDao {
 		ThongTinDatThuePhong tt = new ThongTinDatThuePhong();
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from ThongTinDatThuePhong where phong = '" + maPhong + "'";
+			String sql = "Select * from ThongTinDatThuePhong where MaPhong = '" + maPhong + "'";
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 			while (rs.next()) {
@@ -489,4 +489,17 @@ public class ThongTinDatThuePhongDao {
 		}
 		return n > 0;
 	}
+	
+	public static void main(String[] args) {
+		// test tìm mã phòng
+		ThongTinDatThuePhongDao dao = new ThongTinDatThuePhongDao();
+		ThongTinDatThuePhong tt = dao.timThongTinDatThuePhongTheoMaPhong("TC104");
+		System.out.println(tt);
+	}
+	
+	
+	
+	
+	
+	
 }

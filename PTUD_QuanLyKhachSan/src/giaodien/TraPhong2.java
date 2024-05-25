@@ -5,22 +5,26 @@
 package giaodien;
 
 import java.awt.event.ActionEvent;
+import java.awt.font.FontRenderContext;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
 import dao.DichVuDao;
 import dao.DichVuPhongDao;
 import dao.KhachHangDao;
+import dao.KhuyenMaiDao;
 import dao.PhongDao;
 import dao.ThongTinDatThuePhongDao;
 import entity.DichVu;
 import entity.DichVuPhong;
 import entity.KhachHang;
+import entity.KhuyenMai;
 import entity.Phong;
 import entity.ThongTinDatThuePhong;
 
@@ -35,9 +39,12 @@ import javax.swing.JButton;
  */
 public class TraPhong2 extends javax.swing.JDialog {
 	private List<DichVuPhong> danhSachDichVu;
-	private String[] dsPhongDat;
-	List<String> dsTenPhong;
-
+	private static String[] dsPhongDat;
+	private static List<String> dsTenPhong;
+	private ThongTinDatThuePhongDao thongTinDao;
+	private KhachHangDao khachHangDao;
+	private DichVuDao dichVuDao;
+	private double tongGiaDichVu = 0;
 	/**
 	 * Creates new form DatPhong
 	 */
@@ -53,7 +60,8 @@ public class TraPhong2 extends javax.swing.JDialog {
 		}
 		ConnectDB.getInstance().getConnection();
 		initComponents();
-		loadDanhSachDichVu();
+		loadThongTinTraPhong();
+		loadDanhSachPhong();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -77,10 +85,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         txtSodienthoaiKH = new giaodien.CustomClass.TextFieldShadow();
-        jLabel20 = new javax.swing.JLabel();
-        txtTenPhong = new giaodien.CustomClass.TextFieldShadow();
-        jLabel21 = new javax.swing.JLabel();
-        txtCheckIn = new giaodien.CustomClass.TextFieldShadow();
         txtNgaySinh = new giaodien.CustomClass.TextFieldShadow();
         jLabel22 = new javax.swing.JLabel();
         txtChietKhau = new giaodien.CustomClass.TextFieldShadow();
@@ -89,8 +93,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         txtThue = new giaodien.CustomClass.TextFieldShadow();
         jLabel25 = new javax.swing.JLabel();
         txtNhanVien = new giaodien.CustomClass.TextFieldShadow();
-        txtCheckOut = new giaodien.CustomClass.TextFieldShadow();
-        jLabel26 = new javax.swing.JLabel();
         txtTongHoaDon = new giaodien.CustomClass.TextFieldShadow();
         jLabel27 = new javax.swing.JLabel();
         txtTraTruoc = new giaodien.CustomClass.TextFieldShadow();
@@ -99,8 +101,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         txtTienCanThu = new giaodien.CustomClass.TextFieldShadow();
         txtMaKhachHang = new giaodien.CustomClass.TextFieldShadow();
         jLabel30 = new javax.swing.JLabel();
-        txtNgayDat = new giaodien.CustomClass.TextFieldShadow();
-        jLabel31 = new javax.swing.JLabel();
         btnTraPhong = new giaodien.CustomClass.Button();
         btnHuy = new giaodien.CustomClass.Button();
 
@@ -191,14 +191,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel19.setText("Số điện thoại");
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel20.setText("Tên phòng");
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel21.setText("Ngày nhận");
-
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel22.setText("Ngày sinh");
@@ -215,10 +207,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel25.setText("Nhân viên");
 
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel26.setText("Ngày trả");
-
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel27.setText("Tổng tiền");
@@ -234,10 +222,6 @@ public class TraPhong2 extends javax.swing.JDialog {
         jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel30.setText("Mã khách hàng");
-
-        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel31.setText("Ngày đặt");
 
         javax.swing.GroupLayout panelTraPhongLayout = new javax.swing.GroupLayout(panelTraPhong);
         panelTraPhong.setLayout(panelTraPhongLayout);
@@ -257,16 +241,7 @@ public class TraPhong2 extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTraPhongLayout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addGap(18, 18, 18)
-                        .addComponent(txtHangThanhVienKH, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTraPhongLayout.createSequentialGroup()
-                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtTenPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTraPhongLayout.createSequentialGroup()
-                            .addComponent(jLabel21)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(txtHangThanhVienKH, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelTraPhongLayout.createSequentialGroup()
@@ -280,17 +255,7 @@ public class TraPhong2 extends javax.swing.JDialog {
                     .addGroup(panelTraPhongLayout.createSequentialGroup()
                         .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTraPhongLayout.createSequentialGroup()
-                        .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(panelTraPhongLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel31))
-                            .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCheckOut, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
-                            .addComponent(txtNgayDat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(txtNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelTraPhongLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
@@ -334,17 +299,8 @@ public class TraPhong2 extends javax.swing.JDialog {
                             .addComponent(txtHangThanhVienKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(63, 63, 63)
                         .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTenPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel31)
-                            .addComponent(txtNgayDat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTraTruoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11)
-                        .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtTraTruoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panelTraPhongLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -376,13 +332,11 @@ public class TraPhong2 extends javax.swing.JDialog {
                         .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtMaKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(164, 164, 164)
+                        .addGap(167, 167, 167)
                         .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelTraPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTienCanThu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         btnTraPhong.setText("Trả phòng");
@@ -470,11 +424,158 @@ public class TraPhong2 extends javax.swing.JDialog {
 	
 	// Load thông tin vào textfield
 	protected void loadThongTinTraPhong() {
-		// Load thông tin khách hàng từ database
-		KhachHangDao khDao = new KhachHangDao();
-		
-		
+		// Từ dsPhongDat đặt lấy danh sách mã phòng
+		thongTinDao = new ThongTinDatThuePhongDao();
+		khachHangDao = new KhachHangDao();
+		dichVuDao = new DichVuDao();
+		PhongDao phong = new PhongDao();
+	    // Lấy mã phòng từ dsPhongDat
+		ArrayList<String> dsMaPhong = new ArrayList<>();
+		for (String phongDat : dsPhongDat) {
+			dsMaPhong.add(phong.timPhongTheoSoPhong(Integer.parseInt(phongDat)).getMaPhong());
+		}
+		// Lấy thông tin khách hàng từ mã phòng
+	    String maKhachHang = thongTinDao.timThongTinDatThuePhongTheoMaPhong(dsMaPhong.get(0)).getMaKhachHang();
+	    // Xử lý thông tin khách hàng
+	    KhachHang khachHang = khachHangDao.timTheoMaKhachHang(maKhachHang);
+	    // Tính tỉ lệ chiết khấu
+	    String hangTV = "";
+	    double chietKhau = 0;
+		if (khachHang.getMaHangThanhVien().equalsIgnoreCase("hb")) {
+			hangTV = "Hạng Bạc - 3.75%";
+			chietKhau = 0.0375;
+		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("hv")) {
+			hangTV = "Hạng Vàng - 7.5%";
+			chietKhau = 0.075;
+		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("kc")) {
+			hangTV = "Hạng Kim Cương - 18.75%";
+			chietKhau = 0.1875;
+		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("lb")) {
+			hangTV = "Hạng Lục Bảo - 15%";
+			chietKhau = 0.15;
+		} else {
+			hangTV = "Hạng Bạch Kim - 11.25%";
+			chietKhau = 0.1125;
+		}
+		// Tính tiền phòng
+		double tongTienPhong = 0;
+		Phong phongThue = new Phong();
+		for (String maPhong : dsMaPhong) {
+			phongThue = phong.timPhongTheoMaPhong(maPhong);
+			if (phongThue.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+				tongTienPhong += 450000;
+			} else if (phongThue.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+				tongTienPhong += 700000;
+			} else if (phongThue.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+				tongTienPhong += 1000000;
+			} else {
+				tongTienPhong += 1500000;
+			}
+		}
+		// Tính tiền dịch vụ
+		double tongTienDichVu = 0;
+		DichVuPhongDao dichVuPhongDao = new DichVuPhongDao();
+        ArrayList<DichVuPhong> dsDichVu = new ArrayList<>();
+        for (String maPhong : dsMaPhong) {
+			dsDichVu.addAll(dichVuPhongDao.timDichVuSuDungTheoMaPhong(maPhong));
+		}
+        DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
+		model.setRowCount(0);
+		int i = 0;	
+		for (DichVuPhong dv : dsDichVu) {
+			// Tạo model cho tableDV STT mã dịch vụ tên dịch vụ số lượng phòng giá
+			i++;
+			String maDV = dv.getMaDichVu();
+			String tenDV = new DichVuDao().timTheoMaDichVu(maDV).getTenDV();
+			int soLuong = dv.getSoLuong();
+			String maPhong = dv.getMaPhong();	
+			// Tính giá dịch vụ bằng tìm kiếm theo mã dịch vụ lấy giá thông qua entity dichvuz
+			double gia = new DichVuDao().timTheoMaDichVu(maDV).getGiaDV() * soLuong;
+			model.addRow(new Object[] { i, maDV, tenDV, soLuong, maPhong, gia });
+			tongTienDichVu += gia;
+		}	
+		// Tính tiền trả phòng trễ hơn 12h quá 1-3 tiếng 30% 3-6 tiếng 50% hơn 6 tiếng 100% tính vào tiền phòng
+		double tienTraPhongTre = 0;
+		// Lấy giờ hiện tại để trả phòng
+		int gioTraPhong = LocalDate.now().getDayOfMonth();
+		if (gioTraPhong > 12) {
+			if (gioTraPhong <= 13) {
+				tienTraPhongTre += 0;
+			} else if (gioTraPhong <= 15) {
+				tienTraPhongTre = tongTienPhong * 0.3;
+			} else if (gioTraPhong <= 18) {
+				tienTraPhongTre = tongTienPhong * 0.5;
+			} else {
+				tienTraPhongTre = tongTienPhong;
+			}
+		}
+		// Tính tiền đổi phòng nếu có --- CHƯA CÓ DỮ LIỆU
+		double tienDoiPhong = 0;
+		// Tính tổng tiền
+		double tongTien = tongTienPhong + tongTienDichVu + tienTraPhongTre + tienDoiPhong;
+		// Tính chiết khấu
+		tongTien -= tongTien * chietKhau;
+		// Thêm khuyến mãi
+		KhuyenMai khuyenMai = new KhuyenMai();
+		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
+		//  ngày hiện còn trong khuyến mãi và đủ điều kiện thì áp dụng khuyến mãi tìm tất cả khuyến mãi và kiểm tra lấy giá trị khuyến mãi lớn nhât
+		ArrayList<KhuyenMai> dsKhuyenMai = khuyenMaiDao.timTatCaKhuyenMai();
+		for (KhuyenMai km : dsKhuyenMai) {
+			if (LocalDate.now().isAfter(km.getThoiGianBatDau()) && LocalDate.now().isBefore(km.getThoiGianKetThuc())) {
+				if (tongTien >= km.getDieuKienApDung()) {
+					if (km.getGiaTriKM() > khuyenMai.getGiaTriKM()) {
+						khuyenMai = km;
+					}
+				}
+			}
+		}
+		// Áp dụng khuyến mãi
+		tongTien -= khuyenMai.getGiaTriKM();
+		// Tính tiền trả trước thông qua thông tin đặt phòng
+		double tienTraTruoc = 0;
+		for (String maPhong : dsMaPhong) {
+			tienTraTruoc += thongTinDao.timThongTinDatThuePhongTheoMaPhong(maPhong).getTienDaCoc();
+		}
+		tongTien -= tienTraTruoc;
+		// Tính tiền thuế
+		double thue = tongTien * 0.1;
+		tongTien += thue;
+		// Hiển thị thông tin khách hàng
+		txtTenKH.setText(khachHang.getHoTenKH());
+		txtHangThanhVienKH.setText(hangTV);
+		txtSodienthoaiKH.setText(khachHang.getSoDT());
+		txtNgaySinh.setText(khachHang.getNgaySinh().toString());
+		txtChietKhau.setText(String.valueOf(chietKhau * 100) + "%");
+		txtThue.setText("10% - " + String.valueOf(thue));
+		txtNhanVien.setText("NV01");
+		txtTongHoaDon.setText(String.valueOf(tongTien));
+		txtTraTruoc.setText("0");
+		txtTienCanThu.setText(String.valueOf(tongTien));
+		txtMaKhachHang.setText(khachHang.getMaKH());
+	
 	}
+	
+	
+	//load danh sách phòng vào table
+	protected void loadDanhSachPhong() {
+		DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
+		model.setRowCount(0);
+		PhongDao phongDao = new PhongDao();
+		Phong phong = new Phong();
+		int i=0;
+		for (String phongDat : dsPhongDat) {
+			phong = phongDao.timPhongTheoSoPhong(Integer.parseInt(phongDat));
+			//datta row STT mã phòng tên phòng loại phòng kiểu thuê ngày đặt ngày nhận ngày trả
+			i++;
+			Object[] row = new Object[] {i, phong.getMaPhong(), phong.getSoPhong(), phong.getMaLoaiPhong(), "Thuê theo ngày",
+					LocalDate.now(), LocalDate.now(), LocalDate.now()};
+			model.addRow(row);
+		}
+		    
+	};
+	
+
+	
 
 	protected void btnCCCDActionPerformed(ActionEvent evt) {
 		// Lỗi nên t comment lại nha
@@ -606,18 +707,14 @@ public class TraPhong2 extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -625,31 +722,19 @@ public class TraPhong2 extends javax.swing.JDialog {
     private giaodien.CustomClass.PanelRound panelTraPhong;
     private javax.swing.JTable tableDV;
     private javax.swing.JTable tableDanhSachPhong;
-    private giaodien.CustomClass.TextFieldShadow txtCheckIn;
-    private giaodien.CustomClass.TextFieldShadow txtCheckOut;
     private giaodien.CustomClass.TextFieldShadow txtChietKhau;
     private giaodien.CustomClass.TextFieldShadow txtHangThanhVienKH;
     private giaodien.CustomClass.TextFieldShadow txtMaKhachHang;
-    private giaodien.CustomClass.TextFieldShadow txtNgayDat;
     private giaodien.CustomClass.TextFieldShadow txtNgaySinh;
     private giaodien.CustomClass.TextFieldShadow txtNhanVien;
     private giaodien.CustomClass.TextFieldShadow txtSodienthoaiKH;
     private giaodien.CustomClass.TextFieldShadow txtTenKH;
-    private giaodien.CustomClass.TextFieldShadow txtTenPhong;
     private giaodien.CustomClass.TextFieldShadow txtThue;
     private giaodien.CustomClass.TextFieldShadow txtTienCanThu;
     private giaodien.CustomClass.TextFieldShadow txtTongHoaDon;
     private giaodien.CustomClass.TextFieldShadow txtTraTruoc;
     // End of variables declaration//GEN-END:variables
 
-	private static String[] loadDanhSachDichVu() {
-		DichVuDao dvDao = new DichVuDao();
-		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
-		String[] tenDV = new String[danhSachDV.size()];
-		for (int i = 0; i < danhSachDV.size(); i++) {
-			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
-		}
-		return tenDV;
-	}
+
 
 }

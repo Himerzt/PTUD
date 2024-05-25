@@ -228,10 +228,6 @@ VALUES
 -- Dữ liệu Loại thuê
 INSERT INTO LoaiThue (MaLoaiThue, KieuThue, GiaThue, MaLoaiPhong)
 VALUES
-    ('HTC', N'Giờ', 60000, 'TC'),
-    ('HNC', N'Giờ', 100000, 'NC'),
-    ('HCC', N'Giờ', 150000, 'CC'),
-    ('HTG', N'Giờ', 225000, 'TG'),
     ('NTC', N'Đêm', 360000, 'TC'),
     ('NNC', N'Đêm', 560000, 'NC'),
     ('NCC', N'Đêm', 800000, 'CC'),

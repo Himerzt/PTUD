@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -24,6 +25,8 @@ import entity.DichVu;
 import entity.DichVuPhong;
 import entity.KhachHang;
 import entity.Phong;
+import entity.ThongTinDatThuePhong;
+
 import java.awt.event.ActionEvent;
 
 /**
@@ -60,14 +63,14 @@ public class ThuePhong extends javax.swing.JDialog {
 		loadDanhSachPhongThue();
 	}
 
-	private static String[] loadDanhSachDichVu() {
+	private static ComboBoxModel loadDanhSachDichVu() {
 		DichVuDao dvDao = new DichVuDao();
 		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
 		String[] tenDV = new String[danhSachDV.size()];
 		for (int i = 0; i < danhSachDV.size(); i++) {
 			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
 		}
-		return tenDV;
+		return new javax.swing.DefaultComboBoxModel<>(tenDV);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -80,8 +83,8 @@ public class ThuePhong extends javax.swing.JDialog {
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
-		dateNgayNhan = new giaodien.CustomClass.DateChooser();
 		dateNgayTra = new giaodien.CustomClass.DateChooser();
+		dateNgayNhan = new giaodien.CustomClass.DateChooser();
 		jPanel1 = new javax.swing.JPanel();
 		jLabel1 = new javax.swing.JLabel();
 		jLabel32 = new javax.swing.JLabel();
@@ -99,11 +102,9 @@ public class ThuePhong extends javax.swing.JDialog {
 		txtCCCD = new giaodien.CustomClass.TextFieldShadow();
 		jLabel24 = new javax.swing.JLabel();
 		txtCheckIn = new giaodien.CustomClass.TextFieldShadow();
-		txtCheckIn.setEnabled(false);
 		jLabel28 = new javax.swing.JLabel();
 		txtCheckOut = new giaodien.CustomClass.TextFieldShadow();
 		jLabel29 = new javax.swing.JLabel();
-		btnNgayTra = new giaodien.CustomClass.Button();
 		jLabel23 = new javax.swing.JLabel();
 		panelRound4 = new giaodien.custom2.PanelRound();
 		cbKieuThue = new giaodien.CustomClass.Combobox();
@@ -112,14 +113,15 @@ public class ThuePhong extends javax.swing.JDialog {
 		btnKTSLPhong = new javax.swing.JButton();
 		btnThemKhachHang = new javax.swing.JButton();
 		panelRound5 = new giaodien.CustomClass.PanelRound();
-		cbxKieuThue = new giaodien.CustomClass.Combobox();
+		btnKiemTraTrung = new javax.swing.JButton();
 		panelRound2 = new giaodien.CustomClass.PanelRound();
 		btnThemDichVu = new giaodien.CustomClass.Button();
 		panelRound3 = new giaodien.custom2.PanelRound();
 		comboBoxDichVu = new giaodien.CustomClass.Combobox();
 		btnThuePhong = new giaodien.CustomClass.Button();
 		btnHuy = new giaodien.CustomClass.Button();
-		
+
+		dateNgayNhan.setForeground(new java.awt.Color(255, 203, 119));
 		dateNgayNhan.setTextRefernce(txtCheckIn);
 
 		dateNgayTra.setForeground(new java.awt.Color(255, 203, 119));
@@ -154,16 +156,44 @@ public class ThuePhong extends javax.swing.JDialog {
 		jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 		jLabel2.setText("Danh sách dịch vụ");
 
+//		tableDV.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {},
+//				new String[] { "STT", "Tên dịch vụ", "Số lượng", "Phòng", "Đơn giá", "Tổng" }) {
+//			Class[] types = new Class[] { java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class,
+//					java.lang.Object.class, java.lang.Object.class, java.lang.Object.class };
+//			boolean[] canEdit = new boolean[] { false, false, false, false, false, true };
+//
+//        tableDV.setModel(new javax.swing.table.DefaultTableModel(
+//            new Object [][] {
+//
+//            },
+//            new String [] {
+//                "STT", "Tên dịch vụ", "Số lượng", "Phòng", "Đơn giá", "Tổng"
+//            }
+//        ) {
+//            Class[] types = new Class [] {
+//                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+//            };
+//            boolean[] canEdit = new boolean [] {
+//                false, false, false, false, false, true
+//            };
+//
+//			public boolean isCellEditable(int rowIndex, int columnIndex) {
+//				return canEdit[columnIndex];
+//			}
+//		});
+
 		tableDV.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {},
 				new String[] { "STT", "Tên dịch vụ", "Số lượng", "Phòng", "Đơn giá", "Tổng" }) {
 			Class[] types = new Class[] { java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class,
 					java.lang.Object.class, java.lang.Object.class, java.lang.Object.class };
 			boolean[] canEdit = new boolean[] { false, false, false, false, false, true };
 
-			public Class getColumnClass(int columnIndex) {
+			@Override
+			public Class<?> getColumnClass(int columnIndex) {
 				return types[columnIndex];
 			}
 
+			@Override
 			public boolean isCellEditable(int rowIndex, int columnIndex) {
 				return canEdit[columnIndex];
 			}
@@ -196,32 +226,17 @@ public class ThuePhong extends javax.swing.JDialog {
 		jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 		jLabel28.setText("Ngày nhận");
 
-		jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-		jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-		jLabel29.setText("Ngày trả");
+		txtCheckIn.setEnabled(false);
 
-		btnNgayTra.setBorder(null);
-		btnNgayTra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgLogin/calendar.png"))); // NOI18N
-		btnNgayTra.setBorderColor(new java.awt.Color(255, 255, 255));
-		btnNgayTra.setColorOver(new java.awt.Color(204, 204, 204));
-		btnNgayTra.setRadius(20);
-		btnNgayTra.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnNgayTraActionPerformed(evt);
-			}
-		});
+		jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+		jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+		jLabel28.setText("Ngày nhận");
 
 		jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 		jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 		jLabel23.setText("Kiểu thuê");
 
-		panelRound4.setBackground(new java.awt.Color(255, 255, 255));
-		panelRound4.setRoundBottomLeft(15);
-		panelRound4.setRoundBottomRight(15);
-		panelRound4.setRoundTopLeft(15);
-		panelRound4.setRoundTopRight(15);
-
-		cbKieuThue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Theo ngày", "Theo giờ", "Qua đêm" }));
+		cbKieuThue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Theo ngày", "Qua đêm" }));
 		cbKieuThue.setSelectedIndex(-1);
 		cbKieuThue.setLabeText("");
 
@@ -263,27 +278,30 @@ public class ThuePhong extends javax.swing.JDialog {
 		panelRound5.setRoundTopLeft(10);
 		panelRound5.setRoundTopRight(10);
 
-		cbxKieuThue
-				.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Theo ngày", "Theo giờ ", "Qua đêm" }));
-		cbxKieuThue.setLabeText("");
-
 		javax.swing.GroupLayout panelRound5Layout = new javax.swing.GroupLayout(panelRound5);
 		panelRound5.setLayout(panelRound5Layout);
 		panelRound5Layout.setHorizontalGroup(
 				panelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
 						javax.swing.GroupLayout.Alignment.TRAILING,
 						panelRound5Layout.createSequentialGroup().addContainerGap()
-								.addComponent(cbxKieuThue, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+								.addComponent(cbKieuThue, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
 								.addContainerGap()));
 		panelRound5Layout.setVerticalGroup(panelRound5Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(cbxKieuThue,
+				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(cbKieuThue,
 						javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE));
+
+		btnKiemTraTrung.setText("Kiểm tra trùng");
+		btnKiemTraTrung.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				btnKiemTraTrungActionPerformed(evt);
+			}
+		});
 
 		javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
 		panelRound1.setLayout(panelRound1Layout);
 		panelRound1Layout.setHorizontalGroup(panelRound1Layout
 				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(panelRound1Layout.createSequentialGroup().addGap(33, 33, 33).addGroup(panelRound1Layout
+				.addGroup(panelRound1Layout.createSequentialGroup().addGap(57, 57, 57).addGroup(panelRound1Layout
 						.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
 						.addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
 						.addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING).addComponent(jLabel23,
@@ -304,45 +322,43 @@ public class ThuePhong extends javax.swing.JDialog {
 												javax.swing.GroupLayout.DEFAULT_SIZE,
 												javax.swing.GroupLayout.PREFERRED_SIZE)))
 						.addGap(27, 27, 27)
+						.addGroup(
+								panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+										.addGroup(panelRound1Layout.createSequentialGroup().addGroup(panelRound1Layout
+												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING,
+														javax.swing.GroupLayout.PREFERRED_SIZE, 123,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING,
+														javax.swing.GroupLayout.PREFERRED_SIZE, 129,
+														javax.swing.GroupLayout.PREFERRED_SIZE))
+												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+												.addGroup(panelRound1Layout
+														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
+																false)
+														.addComponent(txtSoNguoiLon,
+																javax.swing.GroupLayout.DEFAULT_SIZE, 205,
+																Short.MAX_VALUE)
+														.addComponent(txtCCCD, javax.swing.GroupLayout.DEFAULT_SIZE,
+																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+										.addGroup(panelRound1Layout.createSequentialGroup().addGap(6, 6, 6)
+												.addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 123,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+												.addComponent(txtCheckOut, javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
 						.addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(panelRound1Layout.createSequentialGroup().addGroup(panelRound1Layout
-										.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 123,
+								.addGroup(panelRound1Layout.createSequentialGroup().addGap(20, 20, 20)
+										.addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 69,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 129,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addGroup(panelRound1Layout
-												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-												.addComponent(txtSoNguoiLon, javax.swing.GroupLayout.DEFAULT_SIZE, 205,
-														Short.MAX_VALUE)
-												.addComponent(txtCCCD, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+										.addComponent(txtSoTreEm, javax.swing.GroupLayout.PREFERRED_SIZE, 159,
+												javax.swing.GroupLayout.PREFERRED_SIZE))
+								.addGroup(panelRound1Layout.createSequentialGroup()
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
 										.addGroup(panelRound1Layout
 												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addGroup(panelRound1Layout.createSequentialGroup()
-														.addPreferredGap(
-																javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-														.addComponent(btnThemKhachHang))
-												.addGroup(panelRound1Layout.createSequentialGroup().addGap(20, 20, 20)
-														.addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE,
-																69, javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(
-																javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(txtSoTreEm,
-																javax.swing.GroupLayout.PREFERRED_SIZE, 159,
-																javax.swing.GroupLayout.PREFERRED_SIZE))))
-								.addGroup(panelRound1Layout.createSequentialGroup().addGap(6, 6, 6)
-										.addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 123,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(txtCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 173,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(btnNgayTra, javax.swing.GroupLayout.PREFERRED_SIZE, 24,
-												javax.swing.GroupLayout.PREFERRED_SIZE)))
+												.addComponent(btnKiemTraTrung).addComponent(btnThemKhachHang))))
 						.addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 								.addGroup(panelRound1Layout.createSequentialGroup()
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
@@ -351,7 +367,7 @@ public class ThuePhong extends javax.swing.JDialog {
 												javax.swing.GroupLayout.PREFERRED_SIZE)
 										.addGap(44, 44, 44))
 								.addGroup(panelRound1Layout.createSequentialGroup().addGap(6, 6, 6)
-										.addComponent(btnKTSLPhong).addContainerGap(10, Short.MAX_VALUE)))));
+										.addComponent(btnKTSLPhong).addContainerGap(88, Short.MAX_VALUE)))));
 		panelRound1Layout.setVerticalGroup(panelRound1Layout
 				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGroup(panelRound1Layout.createSequentialGroup().addGap(18, 18, 18).addGroup(panelRound1Layout
@@ -404,34 +420,25 @@ public class ThuePhong extends javax.swing.JDialog {
 																				javax.swing.GroupLayout.PREFERRED_SIZE,
 																				19,
 																				javax.swing.GroupLayout.PREFERRED_SIZE)))
+														.addGap(21, 21, 21)
 														.addGroup(panelRound1Layout
 																.createParallelGroup(
-																		javax.swing.GroupLayout.Alignment.LEADING)
-																.addGroup(panelRound1Layout.createSequentialGroup()
-																		.addGap(21, 21, 21)
-																		.addGroup(panelRound1Layout.createParallelGroup(
-																				javax.swing.GroupLayout.Alignment.BASELINE)
-																				.addComponent(txtCheckIn,
-																						javax.swing.GroupLayout.PREFERRED_SIZE,
-																						javax.swing.GroupLayout.DEFAULT_SIZE,
-																						javax.swing.GroupLayout.PREFERRED_SIZE)
-																				.addComponent(jLabel28,
-																						javax.swing.GroupLayout.PREFERRED_SIZE,
-																						19,
-																						javax.swing.GroupLayout.PREFERRED_SIZE)
-																				.addComponent(jLabel29,
-																						javax.swing.GroupLayout.PREFERRED_SIZE,
-																						19,
-																						javax.swing.GroupLayout.PREFERRED_SIZE)
-																				.addComponent(txtCheckOut,
-																						javax.swing.GroupLayout.PREFERRED_SIZE,
-																						javax.swing.GroupLayout.DEFAULT_SIZE,
-																						javax.swing.GroupLayout.PREFERRED_SIZE)))
-																.addGroup(panelRound1Layout.createSequentialGroup()
-																		.addGap(26, 26, 26).addComponent(btnNgayTra,
-																				javax.swing.GroupLayout.PREFERRED_SIZE,
-																				24,
-																				javax.swing.GroupLayout.PREFERRED_SIZE))))
+																		javax.swing.GroupLayout.Alignment.BASELINE)
+																.addComponent(txtCheckIn,
+																		javax.swing.GroupLayout.PREFERRED_SIZE,
+																		javax.swing.GroupLayout.DEFAULT_SIZE,
+																		javax.swing.GroupLayout.PREFERRED_SIZE)
+																.addComponent(jLabel28,
+																		javax.swing.GroupLayout.PREFERRED_SIZE, 19,
+																		javax.swing.GroupLayout.PREFERRED_SIZE)
+																.addComponent(jLabel29,
+																		javax.swing.GroupLayout.PREFERRED_SIZE, 19,
+																		javax.swing.GroupLayout.PREFERRED_SIZE)
+																.addComponent(txtCheckOut,
+																		javax.swing.GroupLayout.PREFERRED_SIZE,
+																		javax.swing.GroupLayout.DEFAULT_SIZE,
+																		javax.swing.GroupLayout.PREFERRED_SIZE)
+																.addComponent(btnKiemTraTrung)))
 												.addComponent(panelRound5, javax.swing.GroupLayout.PREFERRED_SIZE,
 														javax.swing.GroupLayout.DEFAULT_SIZE,
 														javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -456,50 +463,44 @@ public class ThuePhong extends javax.swing.JDialog {
 		panelRound3.setRoundTopLeft(15);
 		panelRound3.setRoundTopRight(15);
 
-		comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel(loadDanhSachDichVu()));
+		comboBoxDichVu.setModel(loadDanhSachDichVu());
 		comboBoxDichVu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 		comboBoxDichVu.setLabeText("");
 
 		javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
 		panelRound3.setLayout(panelRound3Layout);
 		panelRound3Layout
-				.setHorizontalGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(panelRound3Layout.createSequentialGroup().addGap(16, 16, 16)
-								.addComponent(comboBoxDichVu, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(20, Short.MAX_VALUE)));
+				.setHorizontalGroup(
+						panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(panelRound3Layout.createSequentialGroup().addGap(27, 27, 27)
+										.addComponent(comboBoxDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 274,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addContainerGap(42, Short.MAX_VALUE)));
 		panelRound3Layout
 				.setVerticalGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 						.addComponent(comboBoxDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE));
 
 		javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
 		panelRound2.setLayout(panelRound2Layout);
-		panelRound2Layout.setHorizontalGroup(panelRound2Layout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(panelRound2Layout.createSequentialGroup()
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										panelRound2Layout.createSequentialGroup()
-												.addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addGap(20, 20, 20))
-								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-										panelRound2Layout.createSequentialGroup()
-												.addComponent(btnThemDichVu, javax.swing.GroupLayout.PREFERRED_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addGap(99, 99, 99)))));
+		panelRound2Layout
+				.setHorizontalGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(panelRound2Layout.createSequentialGroup().addContainerGap(15, Short.MAX_VALUE)
+								.addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addGap(11, 11, 11))
+						.addGroup(panelRound2Layout.createSequentialGroup().addGap(125, 125, 125)
+								.addComponent(btnThemDichVu, javax.swing.GroupLayout.PREFERRED_SIZE,
+										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 		panelRound2Layout
 				.setVerticalGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 						.addGroup(panelRound2Layout.createSequentialGroup().addContainerGap(53, Short.MAX_VALUE)
 								.addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE,
 										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+								.addGap(18, 18, 18)
 								.addComponent(btnThemDichVu, javax.swing.GroupLayout.PREFERRED_SIZE,
 										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGap(31, 31, 31)));
+								.addGap(25, 25, 25)));
 
 		btnThuePhong.setText("Thuê phòng");
 		btnThuePhong.addActionListener(new java.awt.event.ActionListener() {
@@ -514,23 +515,22 @@ public class ThuePhong extends javax.swing.JDialog {
 				btnHuyActionPerformed(evt);
 			}
 		});
+
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 		jPanel1.setLayout(jPanel1Layout);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addGap(16, 16, 16)
-						.addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(jPanel1Layout.createSequentialGroup().addComponent(jLabel32)
-										.addGap(203, 203, 203).addComponent(jLabel2))
-								.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 218,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
 						.addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-								.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap(34, Short.MAX_VALUE)
-										.addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 1069,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout
-										.createSequentialGroup().addGap(12, 12, 12)
+								.addGroup(jPanel1Layout.createSequentialGroup().addGap(16, 16, 16)
+										.addGroup(jPanel1Layout
+												.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(panelRound1, javax.swing.GroupLayout.Alignment.TRAILING,
+														javax.swing.GroupLayout.DEFAULT_SIZE, 1171, Short.MAX_VALUE)
+												.addGroup(jPanel1Layout.createSequentialGroup().addComponent(jLabel32)
+														.addGap(203, 203, 203).addComponent(jLabel2))
+												.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 218,
+														javax.swing.GroupLayout.PREFERRED_SIZE)))
+								.addGroup(jPanel1Layout.createSequentialGroup().addGap(12, 12, 12)
 										.addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 292,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
 										.addGroup(jPanel1Layout
@@ -562,7 +562,7 @@ public class ThuePhong extends javax.swing.JDialog {
 																				120,
 																				javax.swing.GroupLayout.PREFERRED_SIZE))
 																.addComponent(panelRound2,
-																		javax.swing.GroupLayout.DEFAULT_SIZE, 285,
+																		javax.swing.GroupLayout.DEFAULT_SIZE, 369,
 																		Short.MAX_VALUE))))))
 						.addGap(12, 12, 12)));
 		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -596,26 +596,110 @@ public class ThuePhong extends javax.swing.JDialog {
 		setLocationRelativeTo(null);
 	}// </editor-fold>//GEN-END:initComponents
 
-	private void btnNgayTraActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNgayTraActionPerformed
-		dateNgayTra.showPopup();
-	}// GEN-LAST:event_btnNgayTraActionPerformed
+	public boolean kiemTraTrungNgayNhan(LocalDate ngayNhan) {
+		List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timTatCaThongTinDatThuePhong();
+		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
+			if (ngayNhan.isBefore(thongTinDatThuePhong.getNgayTraPhong())
+					&& ngayNhan.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
+				JOptionPane.showMessageDialog(null,
+						"Ngày nhận phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!");
+				return false;
+			} else if (ngayNhan.equals(thongTinDatThuePhong.getNgayNhanPhong())) {
+				JOptionPane.showMessageDialog(null, "Ngày nhận phòng trùng với ngày nhận phòng đã có trước đó!");
+				return false;
+			}
+		}
+		return true;
+	}
 
-	private void btnKTSLPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnKTSLPhongActionPerformed
+	public boolean kiemTraTrungNgayTra(LocalDate ngayTra) {
+		List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timTatCaThongTinDatThuePhong();
+		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
+			if (ngayTra.isBefore(thongTinDatThuePhong.getNgayTraPhong())
+					&& ngayTra.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
+				JOptionPane.showMessageDialog(null,
+						"Ngày trả phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!");
+				return false;
+			} else if (ngayTra.equals(thongTinDatThuePhong.getNgayTraPhong())) {
+				JOptionPane.showMessageDialog(null, "Ngày trả phòng trùng với ngày trả phòng đã có trước đó!");
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public boolean kiemTraTrungThoiGianThue(LocalDate ngayNhan, LocalDate ngayTra) {
+		List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timTatCaThongTinDatThuePhong();
+		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
+			LocalDate ngayNhanCoSan = thongTinDatThuePhong.getNgayNhanPhong();
+			LocalDate ngayTraCoSan = thongTinDatThuePhong.getNgayTraPhong();
+			// Kiểm tra khoảng thời gian từ ngày nhận đến ngày trả có chứa khoảng thời gian
+			// khác có sẵn không
+			if (ngayNhan.isBefore(ngayNhanCoSan) && ngayTra.isAfter(ngayTraCoSan)) {
+				JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");
+				return false;
+			} else if (ngayNhan.isAfter(ngayNhanCoSan) && ngayTra.isBefore(ngayTraCoSan)) {
+				JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private boolean btnKiemTraTrungActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnKiemTraTrungActionPerformed
+		LocalDate ngayNhan = LocalDate.parse(txtCheckIn.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		LocalDate ngayTra = LocalDate.parse(txtCheckOut.getText(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		// Kiểm tra trùng ngày trả
+		if (!kiemTraTrungNgayTra(ngayTra)) {
+			JOptionPane.showMessageDialog(null, "Ngày trả phòng trùng với ngày trả phòng đã có trước đó!", "Lỗi",
+					JOptionPane.ERROR_MESSAGE);
+			return false;
+		} else if (ngayTra.isBefore(ngayNhan)) {
+			JOptionPane.showMessageDialog(null, "Ngày trả phòng phải sau ngày đặt phòng và ngày nhận phòng!", "Lỗi",
+					JOptionPane.ERROR_MESSAGE);
+			return false;
+		}
+		// Kiểm tra trùng thời gian thuê
+		if (!kiemTraTrungThoiGianThue(ngayNhan, ngayTra)) {
+			JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!", "Lỗi",
+					JOptionPane.ERROR_MESSAGE);
+			return false;
+		}
+		// Nếu kiểu thuê là thuê qua đêm thì thời gian thuê phải là 1 ngày
+		if (cbKieuThue.getSelectedItem().toString().equals("Qua đêm")) {
+			if (ngayTra.minusDays(1).isAfter(ngayNhan)) {
+				JOptionPane.showMessageDialog(null, "Thời gian thuê phòng qua đêm chỉ được 1 ngày!", "Lỗi",
+						JOptionPane.ERROR_MESSAGE);
+				return false;
+			}
+		}
+		// Nếu không trùng thì thông báo thành công
+		JOptionPane.showMessageDialog(null, "Thời gian thuê không trùng, có thể tiến hành thuê phòng!", "Thông báo",
+				JOptionPane.INFORMATION_MESSAGE);
+		return true;
+	}// GEN-LAST:event_btnKiemTraTrungActionPerformed
+
+	private boolean btnKTSLPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnKTSLPhongActionPerformed
 		int soNguoiLon = txtSoNguoiLon.getText().isEmpty() ? 0 : Integer.parseInt(txtSoNguoiLon.getText());
 		int soTreEm = txtSoTreEm.getText().isEmpty() ? 0 : Integer.parseInt(txtSoTreEm.getText());
 		if (soNguoiLon <= 0 && soTreEm <= 0) {
 			JOptionPane.showMessageDialog(this, "Vui lòng nhập số lượng người lớn hoặc trẻ em", "Lỗi",
 					JOptionPane.ERROR_MESSAGE);
-			return;
+			return false;
 		} else {
 			int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongThue);
 			if (soNguoiLon > sucChuaToiDa || (soNguoiLon == sucChuaToiDa && soTreEm > soNguoiLon)) {
 				JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
 						JOptionPane.ERROR_MESSAGE);
-				return;
+				return false;
+			} else if (soNguoiLon < sucChuaToiDa) {
+				JOptionPane.showMessageDialog(this, "Số lượng người không đủ sức chứa của phòng", "Lỗi",
+						JOptionPane.ERROR_MESSAGE);
+				return false;
 			} else {
 				JOptionPane.showMessageDialog(this, "Số lượng người hợp lệ", "Thông báo",
 						JOptionPane.INFORMATION_MESSAGE);
+				return true;
 			}
 		}
 	}// GEN-LAST:event_btnKTSLPhongActionPerformed
@@ -632,20 +716,16 @@ public class ThuePhong extends javax.swing.JDialog {
 		// GEN-FIRST:event_btnThuePhongActionPerformed
 		KhachHang kh = khachHangDao.timTheoCCCD(txtCCCD.getText());
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
 		LocalDate ngayNhan = LocalDate.parse(txtCheckIn.getText(), formatter);
 		LocalDate ngayTra = LocalDate.parse(txtCheckOut.getText(), formatter);
 		String loaiPhong = "";
 		String kieuThue = "";
 		String maLoaiThue = "";
-		if (cbxKieuThue.getSelectedItem().toString().equals("Theo ngày")) {
+		if (cbKieuThue.getSelectedItem().toString().equals("Theo ngày")) {
 			kieuThue = "D";
-		} else if (cbxKieuThue.getSelectedItem().toString().equals("Theo giờ")) {
-			kieuThue = "H";
 		} else {
 			kieuThue = "N";
 		}
-
 		for (Phong phong : dsPhongThue) {
 			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
 			if (loaiPhong.equalsIgnoreCase("Tiêu chuẩn")) {
@@ -671,8 +751,24 @@ public class ThuePhong extends javax.swing.JDialog {
 			// Thêm dịch vụ vào cơ sở dữ liệu
 			dichVuPhongDao.themDichVuPhong(dvPhong);
 		}
+		// Kiểm tra lại toàn bộ thông tin trước khi đặt phòng
+		// Khách hàng
+		if (txtTenKH.getText().isEmpty() || txtCCCD.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(this, "Chưa có thông tin khách hàng", "Lỗi", JOptionPane.ERROR_MESSAGE);
+			return;
+		}
+		// Số người lớn và trẻ em
+		if (btnKTSLPhongActionPerformed(evt) == false) {
+			JOptionPane.showMessageDialog(this, "Số lượng người không hợp lệ", "Lỗi", JOptionPane.ERROR_MESSAGE);
+			return;
+		}
+		// Ngày đăt, nhận và trả phòng
+		if (btnKiemTraTrungActionPerformed(evt) == false) {
+			JOptionPane.showMessageDialog(this, "Thời gian đặt phòng không hợp lệ", "Lỗi", JOptionPane.ERROR_MESSAGE);
+			return;
+		}
 
-		// Thêm thông tin thuê phòng
+		// Tiến hành thuê phòng
 		if (thongTinDatThuePhongDao.thuePhong(dsPhongThue, kh, ngayNhan, ngayNhan, maLoaiThue, ngayTra, 0)) {
 			JOptionPane.showMessageDialog(this, "Thuê phòng thành công");
 			this.setVisible(false);
@@ -793,11 +889,10 @@ public class ThuePhong extends javax.swing.JDialog {
 	private javax.swing.JButton btnThemKhachHang;
 	private giaodien.CustomClass.Button btnHuy;
 	private javax.swing.JButton btnKTSLPhong;
-	private giaodien.CustomClass.Button btnNgayTra;
+	private javax.swing.JButton btnKiemTraTrung;
 	private giaodien.CustomClass.Button btnThemDichVu;
 	private giaodien.CustomClass.Button btnThuePhong;
 	private giaodien.CustomClass.Combobox cbKieuThue;
-	private giaodien.CustomClass.Combobox cbxKieuThue;
 	private giaodien.CustomClass.Combobox comboBoxDichVu;
 	private giaodien.CustomClass.DateChooser dateNgayNhan;
 	private giaodien.CustomClass.DateChooser dateNgayTra;
