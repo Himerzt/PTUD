@@ -3,7 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -126,7 +126,7 @@ public class ThongTinDatThuePhongDao {
 		}
 		return n > 0;
 	}
-	
+
 	// Tìm thông tin đặt thuê phòng theo mã khách hàng
 	public List<ThongTinDatThuePhong> timThongTinTheoMaKhachHang(String maKhachHang) {
 		ConnectDB.getInstance();
@@ -140,9 +140,9 @@ public class ThongTinDatThuePhongDao {
 				String maDatPhong = rs.getString(1);
 				String maKhachHang1 = rs.getString(2);
 				String maPhong = rs.getString(3);
-				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
-				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
-				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
+				LocalDateTime ngayDatPhong = rs.getTimestamp(4).toLocalDateTime();
+				LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
+				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maDatPhong, maKhachHang1, maPhong, ngayDatPhong,
@@ -156,15 +156,15 @@ public class ThongTinDatThuePhongDao {
 	}
 
 	// Đặt phòng
-	public boolean datPhong(ArrayList<Phong> phong, KhachHang kh, LocalDate ngayDatPhong, LocalDate ngayNhanPhong, LocalDate ngayTraPhong,
-			String maLoaiThue, double tienDaCoc) {
+	public boolean datPhong(ArrayList<Phong> phong, KhachHang kh, LocalDateTime ngayDatPhong,
+			LocalDateTime ngayNhanPhong, LocalDateTime ngayTraPhong, String maLoaiThue, double tienDaCoc) {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
 		int i = 1;
 		for (Phong phong2 : phong) {
 			try {
-				String maDP = String.format("%s%s", kh.getMaKH(), i);
+				String maDP = String.format("%s%3s", "TTDTP", i);
 				stmt = con.createStatement();
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
 						+ phong2.getMaPhong() + "', '" + ngayDatPhong + "', '" + ngayNhanPhong + "', '" + ngayTraPhong
@@ -183,15 +183,15 @@ public class ThongTinDatThuePhongDao {
 	}
 
 	// Thuê phòng
-	public boolean thuePhong(ArrayList<Phong> phong, KhachHang kh, LocalDate ngayDatPhong, LocalDate ngayNhanPhong,
-			String maLoaiThue, LocalDate ngayTraPhong, double tienDaCoc) {
+	public boolean thuePhong(ArrayList<Phong> phong, KhachHang kh, LocalDateTime ngayDatPhong,
+			LocalDateTime ngayNhanPhong, String maLoaiThue, LocalDateTime ngayTraPhong, double tienDaCoc) {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
 		int i = 1;
 		for (Phong phong2 : phong) {
 			try {
-				String maDP = String.format("%s%s", kh.getMaKH(), i);
+				String maDP = String.format("%s%3s", "TTDTP", i);
 				stmt = con.createStatement();
 				// Thêm thông tin thuê phòng
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
@@ -240,9 +240,9 @@ public class ThongTinDatThuePhongDao {
 				String maTTDTP = rs.getString(1);
 				String maKhachHang = rs.getString(2);
 				String phong = rs.getString(3);
-				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
-				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
-				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
+				LocalDateTime ngayDatPhong = rs.getTimestamp(4).toLocalDateTime();
+				LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
+				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
@@ -284,9 +284,9 @@ public class ThongTinDatThuePhongDao {
 			while (rs.next()) {
 				String maKhachHang = rs.getString(2);
 				String phong = rs.getString(3);
-				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
-				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
-				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
+				LocalDateTime ngayDatPhong = rs.getTimestamp(4).toLocalDateTime();
+				LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
+				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
 				tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
@@ -309,9 +309,9 @@ public class ThongTinDatThuePhongDao {
 			while (rs.next()) {
 				String maTTDTP = rs.getString(1);
 				String phong = rs.getString(3);
-				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
-				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
-				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
+				LocalDateTime ngayDatPhong = rs.getTimestamp(4).toLocalDateTime();
+				LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
+				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
@@ -322,6 +322,25 @@ public class ThongTinDatThuePhongDao {
 			e.printStackTrace();
 		}
 		return dsThongTin;
+	}
+	
+	// Tìm thông tin phòng theo mã khách hàng
+	public ArrayList<Phong> timPhongTheoMaKhachHang(String maKhachHang) {
+		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
+		try {
+			Connection con = ConnectDB.getInstance().getConnection();
+			String sql = "Select * from ThongTinDatThuePhong where maKhachHang = '" + maKhachHang + "'";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				String maPhong = rs.getString(3);
+				Phong phong = phongDao.timPhongTheoMaPhong(maPhong);
+				dsPhong.add(phong);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dsPhong;
 	}
 
 	// tìm thông tin đặt thuê phòng theo mã phòng
@@ -335,9 +354,9 @@ public class ThongTinDatThuePhongDao {
 			while (rs.next()) {
 				String maTTDTP = rs.getString(1);
 				String maKhachHang = rs.getString(2);
-				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
-				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
-				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
+				LocalDateTime ngayDatPhong = rs.getTimestamp(4).toLocalDateTime();
+				LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
+				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
 				tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
@@ -350,7 +369,7 @@ public class ThongTinDatThuePhongDao {
 	}
 
 	// tìm thông tin đặt thuê phòng theo ngày nhận phòng
-	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoNgayNhanPhong(LocalDate ngayNhanPhong) {
+	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoNgayNhanPhong(LocalDateTime ngayNhanPhong) {
 		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
@@ -361,8 +380,8 @@ public class ThongTinDatThuePhongDao {
 				String maTTDTP = rs.getString(1);
 				String maKhachHang = rs.getString(2);
 				String phong = rs.getString(3);
-				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
-				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
+				LocalDateTime ngayDatPhong = rs.getTimestamp(4).toLocalDateTime();
+				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
@@ -376,7 +395,7 @@ public class ThongTinDatThuePhongDao {
 	}
 
 	// tìm thông tin đặt thuê phòng theo ngày trả phòng
-	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoNgayTraPhong(LocalDate ngayTraPhong) {
+	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoNgayTraPhong(LocalDateTime ngayTraPhong) {
 		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
@@ -387,8 +406,8 @@ public class ThongTinDatThuePhongDao {
 				String maTTDTP = rs.getString(1);
 				String maKhachHang = rs.getString(2);
 				String phong = rs.getString(3);
-				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
-				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
+				LocalDateTime ngayDatPhong = rs.getTimestamp(4).toLocalDateTime();
+				LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
@@ -413,9 +432,9 @@ public class ThongTinDatThuePhongDao {
 				String maTTDTP = rs.getString(1);
 				String maKhachHang = rs.getString(2);
 				String phong = rs.getString(3);
-				LocalDate ngayDatPhong = rs.getDate(4).toLocalDate();
-				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
-				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
+				LocalDateTime ngayDatPhong = rs.getTimestamp(4).toLocalDateTime();
+				LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
+				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				double tienDaCoc = rs.getDouble(8);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
 						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
@@ -428,7 +447,7 @@ public class ThongTinDatThuePhongDao {
 	}
 
 	// tìm thông tin đặt thuê phòng theo ngày đặt phòng
-	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoNgayDatPhong(LocalDate ngayDatPhong) {
+	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoNgayDatPhong(LocalDateTime ngayDatPhong) {
 		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
@@ -439,8 +458,8 @@ public class ThongTinDatThuePhongDao {
 				String maTTDTP = rs.getString(1);
 				String maKhachHang = rs.getString(2);
 				String phong = rs.getString(3);
-				LocalDate ngayNhanPhong = rs.getDate(5).toLocalDate();
-				LocalDate ngayTraPhong = rs.getDate(6).toLocalDate();
+				LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
+				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
@@ -489,17 +508,4 @@ public class ThongTinDatThuePhongDao {
 		}
 		return n > 0;
 	}
-	
-	public static void main(String[] args) {
-		// test tìm mã phòng
-		ThongTinDatThuePhongDao dao = new ThongTinDatThuePhongDao();
-		ThongTinDatThuePhong tt = dao.timThongTinDatThuePhongTheoMaPhong("TC104");
-		System.out.println(tt);
-	}
-	
-	
-	
-	
-	
-	
 }

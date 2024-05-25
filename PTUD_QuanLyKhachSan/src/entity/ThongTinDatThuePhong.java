@@ -1,19 +1,19 @@
 package entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ThongTinDatThuePhong {
 	private String maTTDTP;
 	private String maKhachHang;
 	private String maPhong;
-	private LocalDate ngayDatPhong;
-	private LocalDate ngayNhanPhong;
-	private LocalDate ngayTraPhong;
+	private LocalDateTime ngayDatPhong;
+	private LocalDateTime ngayNhanPhong;
+	private LocalDateTime ngayTraPhong;
 	private String maLoaiThue;
 	private double tienDaCoc;
-	public ThongTinDatThuePhong(String maTTDTP, String maKhachHang, String maPhong, LocalDate ngayDatPhong,
-			LocalDate ngayNhanPhong, LocalDate ngayTraPhong, String maLoaiThue, double tienDaCoc) {
+	public ThongTinDatThuePhong(String maTTDTP, String maKhachHang, String maPhong, LocalDateTime ngayDatPhong,
+			LocalDateTime ngayNhanPhong, LocalDateTime ngayTraPhong, String maLoaiThue, double tienDaCoc) {
 		super();
 		this.maTTDTP = maTTDTP;
 		this.maKhachHang = maKhachHang;
@@ -49,22 +49,22 @@ public class ThongTinDatThuePhong {
 	public void setMaPhong(String maPhong) {
 		this.maPhong = maPhong;
 	}
-	public LocalDate getNgayDatPhong() {
+	public LocalDateTime getNgayDatPhong() {
 		return ngayDatPhong;
 	}
-	public void setNgayDatPhong(LocalDate ngayDatPhong) {
+	public void setNgayDatPhong(LocalDateTime ngayDatPhong) {
 		this.ngayDatPhong = ngayDatPhong;
 	}
-	public LocalDate getNgayNhanPhong() {
+	public LocalDateTime getNgayNhanPhong() {
 		return ngayNhanPhong;
 	}
-	public void setNgayNhanPhong(LocalDate ngayNhanPhong) {
+	public void setNgayNhanPhong(LocalDateTime ngayNhanPhong) {
 		this.ngayNhanPhong = ngayNhanPhong;
 	}
-	public LocalDate getNgayTraPhong() {
+	public LocalDateTime getNgayTraPhong() {
 		return ngayTraPhong;
 	}
-	public void setNgayTraPhong(LocalDate ngayTraPhong) {
+	public void setNgayTraPhong(LocalDateTime ngayTraPhong) {
 		this.ngayTraPhong = ngayTraPhong;
 	}
 	public String getMaLoaiThue() {
