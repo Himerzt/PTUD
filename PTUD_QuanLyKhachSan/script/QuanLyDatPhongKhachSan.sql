@@ -228,14 +228,14 @@ VALUES
 -- Dữ liệu Loại thuê
 INSERT INTO LoaiThue (MaLoaiThue, KieuThue, GiaThue, MaLoaiPhong)
 VALUES
-    ('NTC', N'Đêm', 360000, 'TC'),
-    ('NNC', N'Đêm', 560000, 'NC'),
-    ('NCC', N'Đêm', 800000, 'CC'),
-    ('NTG', N'Đêm', 1200000, 'TG'),
-    ('DTC', N'Ngày', 450000, 'TC'),
-    ('DNC', N'Ngày', 700000, 'NC'),
-    ('DCC', N'Ngày', 1000000, 'CC'),
-    ('DTG', N'Ngày', 1500000, 'TG');
+    ('NTC', N'Qua đêm', 360000, 'TC'),
+    ('NNC', N'Qua đêm', 560000, 'NC'),
+    ('NCC', N'Qua đêm', 800000, 'CC'),
+    ('NTG', N'Qua đêm', 1200000, 'TG'),
+    ('DTC', N'Theo ngày', 450000, 'TC'),
+    ('DNC', N'Theo ngày', 700000, 'NC'),
+    ('DCC', N'Theo ngày', 1000000, 'CC'),
+    ('DTG', N'Theo ngày', 1500000, 'TG');
 
 UPDATE LoaiThue
 SET giaCocToiThieu = 0.3 * GiaThue;

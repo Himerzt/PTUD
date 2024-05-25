@@ -3091,7 +3091,7 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
 	}
 
 	private void btnHuyDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyDatPhongActionPerformed
-		// TODO add your handling code here:
+		new HuyDatPhong().setVisible(true);
 	}// GEN-LAST:event_btnHuyDatPhongActionPerformed
 
 	private void btnDoiPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDoiPhongActionPerformed

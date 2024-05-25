@@ -30,7 +30,6 @@ import entity.ThongTinDatThuePhong;
  */
 public class HuyDatPhong extends javax.swing.JDialog {
 
-    private String[] dsPhongDat;
     private DichVuDao dichVuDao;
     private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
     private KhachHangDao khachHangDao;
@@ -40,19 +39,14 @@ public class HuyDatPhong extends javax.swing.JDialog {
     /**
      * Creates new form DatPhong
      */
-    public HuyDatPhong(List<String> dsTenPhong) {
-        dsPhongDat = new String[dsTenPhong.size()];
-        int index = 0;
-        for (String tenPhong : dsTenPhong) {
-            dsPhongDat[index++] = tenPhong;
-        }
+    public HuyDatPhong() {
         ConnectDB.getInstance().getConnection();
+        khachHangDao = new KhachHangDao();
+        thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
+        dichVuDao = new DichVuDao();
+        loaiThueDao = new LoaiThueDao();
         initComponents();
         loadDanhSachPhongDat();
-    }
-
-    public String[] layDanhSachPhongDat() {
-        return dsPhongDat;
     }
 
     @SuppressWarnings("unchecked")
@@ -440,60 +434,15 @@ public class HuyDatPhong extends javax.swing.JDialog {
 
     public void loadDanhSachPhongDat() {
         // Hiện danh sách phòng vào bảng
-        String[] dsPhongDat = layDanhSachPhongDat();
-        ArrayList<Phong> dsPhong = new ArrayList<Phong>();
-        for (String tenPhong : dsPhongDat) {
-            dsPhong.add(phongDao.timPhongTheoSoPhong(Integer.parseInt(tenPhong)));
-        }
+    	KhachHang kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
+        ArrayList<Phong> dsPhongDat = thongTinDatThuePhongDao.timPhongTheoMaKhachHang(kh.getMaKH());
+        // Load danh sách phòng đặt vào table
         DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
-        String loaiPhong = "";
-        for (Phong phong : dsPhong) {
-            loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
-            Object[] rowData = {model.getRowCount() + 1, phong.getSoPhong(), loaiPhong};
-            model.addRow(rowData);
-        }
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
-        // (optional) ">
-        /*
-		 * If Nimbus (introduced in Java SE 6) is not available, stay with the default
-		 * look and feel. For details see
-		 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HuyDatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HuyDatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HuyDatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HuyDatPhong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-//				List<String> args = new ArrayList<String>();
-//				args.add("101");
-//				args.add("102");
-//				args.add("103");
-//				DatPhong2 guiDatPhong = new DatPhong2(args);
-//				guiDatPhong.setVisible(true);
-//				guiDatPhong.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-            }
-        });
-
+        model.setRowCount(0);
+		for (int i = 0; i < dsPhongDat.size(); i++) {
+			Phong p = dsPhongDat.get(i);
+			model.addRow(new Object[] { i + 1, p.getSoPhong(), layTenLoaiPhong(p.getMaLoaiPhong()) });
+		}
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
