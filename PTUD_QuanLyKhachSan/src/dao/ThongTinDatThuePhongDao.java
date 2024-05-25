@@ -176,6 +176,7 @@ public class ThongTinDatThuePhongDao {
 				i++;
 			} catch (Exception e) {
 				e.printStackTrace();
+				return false;
 			}
 		}
 		return true;
@@ -201,13 +202,12 @@ public class ThongTinDatThuePhongDao {
 				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã thuê' WHERE maPhong = '" + phong2.getMaPhong()
 						+ "'";
 				stmt.executeUpdate(sql1);
-				return true;
 			} catch (Exception e) {
 				e.printStackTrace();
 				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 
 	public ArrayList<String> layDanhSachPhongTheoMaKhachHang(String maKH) {
