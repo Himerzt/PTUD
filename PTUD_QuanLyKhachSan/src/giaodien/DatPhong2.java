@@ -263,8 +263,7 @@ public class DatPhong2 extends javax.swing.JDialog {
         panelRound4.setRoundTopLeft(15);
         panelRound4.setRoundTopRight(15);
 
-        cbKieuThue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Theo ngày", "Theo giờ", "Qua đêm" }));
-        cbKieuThue.setSelectedIndex(-1);
+        cbKieuThue.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Theo ngày", "Qua đêm" }));
         cbKieuThue.setLabeText("");
 
         javax.swing.GroupLayout panelRound4Layout = new javax.swing.GroupLayout(panelRound4);
@@ -536,7 +535,7 @@ public class DatPhong2 extends javax.swing.JDialog {
                 .addGap(30, 30, 30))
         );
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
         pack();
         setLocationRelativeTo(null);

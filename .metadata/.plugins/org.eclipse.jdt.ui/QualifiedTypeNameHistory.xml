@@ -55,9 +55,9 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="dao.DichVuDao"/>
     <fullyQualifiedTypeName name="javax.swing.event.DocumentListener"/>
-    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="giaodien.QuanLyPhongPannel"/>
     <fullyQualifiedTypeName name="dao.DichVuPhongDao"/>
     <fullyQualifiedTypeName name="entity.DichVuPhong"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 </qualifiedTypeNameHistroy>

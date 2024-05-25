@@ -33,10 +33,11 @@ public class HoaDonDao {
 			while (rs.next()) {
 				String maHoaDon = rs.getString(1);
 				String nhanVien = rs.getString(2);
-				LocalDate ngayLap = rs.getDate(3).toLocalDate();
-				String khachHang = rs.getString(4);
-
-				hoaDon = new HoaDon(maHoaDon, nhanVien, ngayLap, khachHang);
+				String khachHang = rs.getString(3);
+				LocalDate ngayLap = rs.getDate(4).toLocalDate();
+				
+				hoaDon = new HoaDon(maHoaDon, nhanVien, khachHang, ngayLap);
+				
 				dsHoaDon.add(hoaDon);
 			}
 		} catch (SQLException e) {
@@ -123,8 +124,6 @@ public class HoaDonDao {
 
 				NhanVien nv = new NhanVien(nhanVien);
 				KhachHang kh = new KhachHang(khachHang);
-
-//				hd = new HoaDon(maHD, nv, ngayLap, kh);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -146,11 +145,6 @@ public class HoaDonDao {
 				LocalDate ngayLap = rs.getDate(3).toLocalDate();
 				String khachHang = rs.getString(4);
 
-				NhanVien nv = new NhanVien(nhanVien);
-				KhachHang kh = new KhachHang(khachHang);
-
-//				HoaDon hd = new HoaDon(maHD, nv, ngayLap, kh);
-//				dsHoaDon.add(hd);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -171,11 +165,6 @@ public class HoaDonDao {
 				LocalDate ngayLap = rs.getDate(3).toLocalDate();
 				String khachHang = rs.getString(4);
 
-				NhanVien nv = new NhanVien(nhanVien);
-				KhachHang kh = new KhachHang(khachHang);
-
-//				HoaDon hd = new HoaDon(maHD, nv, ngayLap, kh);
-//				dsHoaDon.add(hd);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -197,16 +186,22 @@ public class HoaDonDao {
 				LocalDate ngayLap1 = rs.getDate(3).toLocalDate();
 				String khachHang = rs.getString(4);
 
-				NhanVien nv = new NhanVien(nhanVien);
-				KhachHang kh = new KhachHang(khachHang);
 
-//				HoaDon hd = new HoaDon(maHD, nv, ngayLap1, kh);
-//				dsHoaDon.add(hd);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
 		return dsHoaDon;
+	}
+	
+	
+	public static void main(String[] args) {
+		// test tìm tất cả hóa đơn
+		HoaDonDao hoaDonDao = new HoaDonDao();
+		ArrayList<HoaDon> dsHoaDon = hoaDonDao.timTatCaHoaDon();
+		for (HoaDon hd : dsHoaDon) {
+			System.out.println(hd);
+		}
 	}
 }
