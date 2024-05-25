@@ -421,7 +421,7 @@ public class TraPhong extends javax.swing.JDialog {
 		PhongDao phongDao = new PhongDao();;
 		dsPhongCD = phongDao.chuyenDoi(dsPhong);
 		for (ThongTinDatThuePhong thongTin : dsThongTin) {
-			dsPhong.add(thongTin.getMaDatPhong());
+//			dsPhong.add(thongTin.getMaDatPhong());
 		}
 		// Lấy ngày đặt phòng và ngày trả phòng
 
@@ -451,7 +451,7 @@ public class TraPhong extends javax.swing.JDialog {
 		DefaultTableModel modelDV = (DefaultTableModel) tableDV.getModel();
 		modelDV.setRowCount(0);
 		DichVuPhongDao dvDao = new DichVuPhongDao();
-		danhSachDichVu = dvDao.timDichVuPhongTheoMaPhong(dsPhong);
+//		danhSachDichVu = dvDao.timDichVuPhongTheoMaPhong(dsPhong);
 		int j = 0;
 		for (DichVuPhong dv : danhSachDichVu) {
 			System.out.println(dv.getMaDichVu());

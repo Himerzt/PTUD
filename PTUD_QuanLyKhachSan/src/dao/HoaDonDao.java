@@ -76,8 +76,8 @@ public class HoaDonDao {
 		if (dsHoaDon.contains(hoaDon)) {
 			try {
 				stmt = con.createStatement();
-				String sql = "update HoaDon set nhanVien = '" + hoaDon.getMaNhanVien().getMaNV() + "', ngayLap = '"
-						+ hoaDon.getNgayLap() + "', khachHang = '" + hoaDon.getMaKhachHang().getMaKH()
+				String sql = "update HoaDon set nhanVien = '" + hoaDon.getMaNhanVien() + "', ngayLap = '"
+						+ hoaDon.getNgayLap() + "', khachHang = '" + hoaDon.getMaKhachHang()
 						+ "' where maHoaDon = '" + hoaDon.getMaHoaDon() + "'";
 				n = stmt.executeUpdate(sql);
 			} catch (SQLException e) {
@@ -124,7 +124,7 @@ public class HoaDonDao {
 				NhanVien nv = new NhanVien(nhanVien);
 				KhachHang kh = new KhachHang(khachHang);
 
-				hd = new HoaDon(maHD, nv, ngayLap, kh);
+//				hd = new HoaDon(maHD, nv, ngayLap, kh);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -149,8 +149,8 @@ public class HoaDonDao {
 				NhanVien nv = new NhanVien(nhanVien);
 				KhachHang kh = new KhachHang(khachHang);
 
-				HoaDon hd = new HoaDon(maHD, nv, ngayLap, kh);
-				dsHoaDon.add(hd);
+//				HoaDon hd = new HoaDon(maHD, nv, ngayLap, kh);
+//				dsHoaDon.add(hd);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -174,8 +174,8 @@ public class HoaDonDao {
 				NhanVien nv = new NhanVien(nhanVien);
 				KhachHang kh = new KhachHang(khachHang);
 
-				HoaDon hd = new HoaDon(maHD, nv, ngayLap, kh);
-				dsHoaDon.add(hd);
+//				HoaDon hd = new HoaDon(maHD, nv, ngayLap, kh);
+//				dsHoaDon.add(hd);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -200,8 +200,8 @@ public class HoaDonDao {
 				NhanVien nv = new NhanVien(nhanVien);
 				KhachHang kh = new KhachHang(khachHang);
 
-				HoaDon hd = new HoaDon(maHD, nv, ngayLap1, kh);
-				dsHoaDon.add(hd);
+//				HoaDon hd = new HoaDon(maHD, nv, ngayLap1, kh);
+//				dsHoaDon.add(hd);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
