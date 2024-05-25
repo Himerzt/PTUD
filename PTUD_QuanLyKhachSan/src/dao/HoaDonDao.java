@@ -124,8 +124,6 @@ public class HoaDonDao {
 
 				NhanVien nv = new NhanVien(nhanVien);
 				KhachHang kh = new KhachHang(khachHang);
-
-				hd = new HoaDon(maHoaDon, nhanVien, khachHang, ngayLap);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -146,10 +144,7 @@ public class HoaDonDao {
 				String nhanVien = rs.getString(2);
 				LocalDate ngayLap = rs.getDate(3).toLocalDate();
 				String khachHang = rs.getString(4);
-				
-				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
-				
-				dsHoaDon.add(hd);
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -169,10 +164,7 @@ public class HoaDonDao {
 				String nhanVien = rs.getString(2);
 				LocalDate ngayLap = rs.getDate(3).toLocalDate();
 				String khachHang = rs.getString(4);
-				
-				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
-				
-				dsHoaDon.add(hd);
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -194,9 +186,7 @@ public class HoaDonDao {
 				LocalDate ngayLap1 = rs.getDate(3).toLocalDate();
 				String khachHang = rs.getString(4);
 
-				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap1);
-				
-				dsHoaDon.add(hd);
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -57,8 +57,7 @@ public class HoaDon {
 		return VAT;
 	}
 
-	public HoaDon(String maHoaDon, String maNhanVien, String maKhachHang, LocalDate ngayLap,
-			java.util.List<ChiTietHoaDon> dsChiTietHoaDon) {
+	public HoaDon(String maHoaDon, String maNhanVien, LocalDate ngayLap, String maKhachHang) {
 		super();
 		this.maHoaDon = maHoaDon;
 		this.maNhanVien = maNhanVien;
