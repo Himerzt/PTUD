@@ -21,10 +21,11 @@ public class ThongTinDatThuePhongDao {
 	DichVuPhongDao dichVuPhongDao = new DichVuPhongDao();
 	PhongDao phongDao = new PhongDao();
 	LoaiThueDao loaiThueDao = new LoaiThueDao();
+
 	double tongTien = 0;
 
 	public ThongTinDatThuePhongDao() {
-		dsThongTin = timTatCaThongTinDatThuePhong();
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		tt = new ThongTinDatThuePhong();
 	}
 
@@ -46,10 +47,6 @@ public class ThongTinDatThuePhongDao {
 			tongTien += tinhTienTungPhong(tt.getMaPhong(), tt.getMaLoaiThue());
 		}
 		return tongTien;
-	}
-	
-	public int demSoThongTinDatThuePhong() {
-		return dsThongTin.size();
 	}
 
 // cập nhật nhận phòng
@@ -164,9 +161,10 @@ public class ThongTinDatThuePhongDao {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
+		int i = 1;
 		for (Phong phong2 : phong) {
 			try {
-				String maDP = String.format("%s%3s", "TTDTP", (demSoThongTinDatThuePhong() + 1));
+				String maDP = String.format("%s%3s", "TTDTP", i);
 				stmt = con.createStatement();
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
 						+ phong2.getMaPhong() + "', '" + ngayDatPhong + "', '" + ngayNhanPhong + "', '" + ngayTraPhong
@@ -175,6 +173,7 @@ public class ThongTinDatThuePhongDao {
 				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã đặt' WHERE maPhong = '" + phong2.getMaPhong()
 						+ "'";
 				stmt.executeUpdate(sql1);
+				i++;
 			} catch (Exception e) {
 				e.printStackTrace();
 				return false;
@@ -189,10 +188,10 @@ public class ThongTinDatThuePhongDao {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
+		int i = 1;
 		for (Phong phong2 : phong) {
 			try {
-				// Mã đặt phòng là TTDTP + số thứ tự của mã đặt phòng trong danh sách
-				String maDP = String.format("%s%s", "TTDTP", (demSoThongTinDatThuePhong() + 1));
+				String maDP = String.format("%s%3s", "TTDTP", i);
 				stmt = con.createStatement();
 				// Thêm thông tin thuê phòng
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
@@ -324,7 +323,7 @@ public class ThongTinDatThuePhongDao {
 		}
 		return dsThongTin;
 	}
-
+	
 	// Tìm thông tin phòng theo mã khách hàng
 	public ArrayList<Phong> timPhongTheoMaKhachHang(String maKhachHang) {
 		ArrayList<Phong> dsPhong = new ArrayList<Phong>();

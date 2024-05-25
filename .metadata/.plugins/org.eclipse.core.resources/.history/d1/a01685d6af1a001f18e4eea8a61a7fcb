@@ -21,10 +21,11 @@ public class ThongTinDatThuePhongDao {
 	DichVuPhongDao dichVuPhongDao = new DichVuPhongDao();
 	PhongDao phongDao = new PhongDao();
 	LoaiThueDao loaiThueDao = new LoaiThueDao();
+
 	double tongTien = 0;
 
 	public ThongTinDatThuePhongDao() {
-		dsThongTin = timTatCaThongTinDatThuePhong();
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		tt = new ThongTinDatThuePhong();
 	}
 
@@ -175,6 +176,7 @@ public class ThongTinDatThuePhongDao {
 				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã đặt' WHERE maPhong = '" + phong2.getMaPhong()
 						+ "'";
 				stmt.executeUpdate(sql1);
+				i++;
 			} catch (Exception e) {
 				e.printStackTrace();
 				return false;
@@ -192,7 +194,7 @@ public class ThongTinDatThuePhongDao {
 		for (Phong phong2 : phong) {
 			try {
 				// Mã đặt phòng là TTDTP + số thứ tự của mã đặt phòng trong danh sách
-				String maDP = String.format("%s%s", "TTDTP", (demSoThongTinDatThuePhong() + 1));
+				String maDP = String.format("%s%s", "TTDTP", 
 				stmt = con.createStatement();
 				// Thêm thông tin thuê phòng
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"

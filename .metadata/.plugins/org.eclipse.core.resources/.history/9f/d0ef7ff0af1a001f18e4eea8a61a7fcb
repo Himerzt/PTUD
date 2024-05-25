@@ -21,10 +21,11 @@ public class ThongTinDatThuePhongDao {
 	DichVuPhongDao dichVuPhongDao = new DichVuPhongDao();
 	PhongDao phongDao = new PhongDao();
 	LoaiThueDao loaiThueDao = new LoaiThueDao();
+
 	double tongTien = 0;
 
 	public ThongTinDatThuePhongDao() {
-		dsThongTin = timTatCaThongTinDatThuePhong();
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		tt = new ThongTinDatThuePhong();
 	}
 

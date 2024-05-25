@@ -21,10 +21,11 @@ public class ThongTinDatThuePhongDao {
 	DichVuPhongDao dichVuPhongDao = new DichVuPhongDao();
 	PhongDao phongDao = new PhongDao();
 	LoaiThueDao loaiThueDao = new LoaiThueDao();
+
 	double tongTien = 0;
 
 	public ThongTinDatThuePhongDao() {
-		dsThongTin = timTatCaThongTinDatThuePhong();
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		tt = new ThongTinDatThuePhong();
 	}
 
@@ -175,6 +176,7 @@ public class ThongTinDatThuePhongDao {
 				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã đặt' WHERE maPhong = '" + phong2.getMaPhong()
 						+ "'";
 				stmt.executeUpdate(sql1);
+				i++;
 			} catch (Exception e) {
 				e.printStackTrace();
 				return false;

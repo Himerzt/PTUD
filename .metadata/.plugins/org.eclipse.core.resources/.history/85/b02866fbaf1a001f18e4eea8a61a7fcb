@@ -24,7 +24,7 @@ public class ThongTinDatThuePhongDao {
 	double tongTien = 0;
 
 	public ThongTinDatThuePhongDao() {
-		dsThongTin = timTatCaThongTinDatThuePhong();
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		tt = new ThongTinDatThuePhong();
 	}
 
