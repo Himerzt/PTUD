@@ -6,6 +6,9 @@ package giaodien;
 
 import entity.KhachHang;
 import dao.KhachHangDao;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -129,6 +132,7 @@ public class KhachHangPannel extends javax.swing.JPanel {
         jLabel35.setPreferredSize(new java.awt.Dimension(120, 21));
 
         combobox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nam", "Nữ", "Khác" }));
+        combobox1.setLabeText("");
 
         btnThem.setText("Thêm ");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
@@ -275,6 +279,11 @@ public class KhachHangPannel extends javax.swing.JPanel {
             }
         });
         jScrollPane6.setViewportView(TableKhachHang);
+        if (TableKhachHang.getColumnModel().getColumnCount() > 0) {
+            TableKhachHang.getColumnModel().getColumn(0).setMaxWidth(50);
+            TableKhachHang.getColumnModel().getColumn(3).setMaxWidth(100);
+            TableKhachHang.getColumnModel().getColumn(7).setMinWidth(160);
+        }
 
         javax.swing.GroupLayout pnLayOutKhachKhachHangLayout = new javax.swing.GroupLayout(pnLayOutKhachKhachHang);
         pnLayOutKhachKhachHang.setLayout(pnLayOutKhachKhachHangLayout);
@@ -454,8 +463,12 @@ public class KhachHangPannel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (int i = 0; i < dsKhachHang.size(); i++) {
             entity.KhachHang kh = dsKhachHang.get(i);
+            // xử lý hiển thị chi tiêu
+            double chiTieu = kh.getChiTieu();
+            BigDecimal bd = new BigDecimal(chiTieu).setScale(2, RoundingMode.HALF_UP);
+            
             Object[] rowData = {i + 1, kh.getMaKH(), kh.getHoTenKH(), kh.getGioiTinh(), kh.getNgaySinh(), kh.getSoDT(),
-                kh.getCccd_passport(), kh.getChiTieu(), kh.getMaHangThanhVien(), kh.getQuocTich()};
+                kh.getCccd_passport(), bd, kh.getMaHangThanhVien(), kh.getQuocTich()};
             model.addRow(rowData);
         }
 
@@ -472,7 +485,10 @@ public class KhachHangPannel extends javax.swing.JPanel {
                         txtTenKhachHang.setText(TableKhachHang.getValueAt(row, 2).toString());
                         txtSoDienThoai.setText(TableKhachHang.getValueAt(row, 5).toString());
                         txtCCCD.setText(TableKhachHang.getValueAt(row, 6).toString());
-                        txtChiTieu.setText(TableKhachHang.getValueAt(row, 7).toString());
+                        // format chi tiêu hiển thị đủ số
+                        double chiTieu = Double.parseDouble(TableKhachHang.getValueAt(row, 7).toString());
+                        BigDecimal bd = new BigDecimal(chiTieu).setScale(2, RoundingMode.HALF_UP);
+                        txtChiTieu.setText(bd.toString());
                         txtHangThanhVien.setText(TableKhachHang.getValueAt(row, 8).toString());
                         txtQuocTich.setText(TableKhachHang.getValueAt(row, 9).toString());
                         combobox1.setSelectedItem(TableKhachHang.getValueAt(row, 3).toString());

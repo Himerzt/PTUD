@@ -77,4 +77,14 @@ public class HoaDon {
 				+ ", ngayLap=" + ngayLap + ", dsChiTietHoaDon=" + dsChiTietHoaDon + ", VAT=" + VAT + "]";
 	}
 
+	public HoaDon(String maHoaDon, String maNhanVien, String maKhachHang, LocalDate ngayLap) {
+		super();
+		this.maHoaDon = maHoaDon;
+		this.maNhanVien = maNhanVien;
+		this.maKhachHang = maKhachHang;
+		this.ngayLap = ngayLap;
+	}
+
+	
+	
 }

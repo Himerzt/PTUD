@@ -330,33 +330,19 @@
                               <Component id="txtCheckOut" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="jLabel22" min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="jLabel22" min="-2" pref="77" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtSoTreEm" min="-2" pref="159" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnKiemTraTrung" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnCCCD" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="btnKiemTraTrung" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnThemKhachHang" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="panelRound4" min="-2" pref="0" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              <Component id="btnKTSLPhong" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="88" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Component id="btnKTSLPhong" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="88" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -369,23 +355,15 @@
                           <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtCCCD" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtTenKH" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnCCCD" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnThemKhachHang" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="panelRound4" min="-2" pref="0" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel22" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
-                                          <Component id="txtSoTreEm" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnKTSLPhong" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel22" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="txtSoTreEm" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnKTSLPhong" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="49" max="32767" attributes="0"/>
                           </Group>
@@ -492,53 +470,6 @@
                 <Property name="text" type="java.lang.String" value="Ki&#x1ec3;u thu&#xea;"/>
               </Properties>
             </Component>
-            <Container class="giaodien.custom2.PanelRound" name="panelRound4">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="roundBottomLeft" type="int" value="15"/>
-                <Property name="roundBottomRight" type="int" value="15"/>
-                <Property name="roundTopLeft" type="int" value="15"/>
-                <Property name="roundTopRight" type="int" value="15"/>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="cbKieuThue" min="-2" pref="160" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="cbKieuThue" min="-2" pref="40" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="giaodien.CustomClass.Combobox" name="cbKieuThue">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
-                        <StringItem index="0" value="Theo ng&#xe0;y"/>
-                        <StringItem index="1" value="Theo gi&#x1edd;"/>
-                        <StringItem index="2" value="Qua &#x111;&#xea;m"/>
-                      </StringArray>
-                    </Property>
-                    <Property name="selectedIndex" type="int" value="-1"/>
-                    <Property name="labeText" type="java.lang.String" value=""/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JLabel" name="jLabel26">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -558,12 +489,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKTSLPhongActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCCCD">
+            <Component class="javax.swing.JButton" name="btnThemKhachHang">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCCCDActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemKhachHangActionPerformed"/>
               </Events>
             </Component>
             <Container class="giaodien.CustomClass.PanelRound" name="panelRound5">
@@ -582,25 +513,24 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cbxKieuThue" pref="188" max="32767" attributes="0"/>
+                          <Component id="cbKieuThue" pref="188" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cbxKieuThue" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="cbKieuThue" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="giaodien.CustomClass.Combobox" name="cbxKieuThue">
+                <Component class="giaodien.CustomClass.Combobox" name="cbKieuThue">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
+                      <StringArray count="2">
                         <StringItem index="0" value="Theo ng&#xe0;y"/>
-                        <StringItem index="1" value="Theo gi&#x1edd; "/>
-                        <StringItem index="2" value="Qua &#x111;&#xea;m"/>
+                        <StringItem index="1" value="Qua &#x111;&#xea;m"/>
                       </StringArray>
                     </Property>
                     <Property name="labeText" type="java.lang.String" value=""/>
