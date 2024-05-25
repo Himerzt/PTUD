@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import connectDB.ConnectDB;
+import entity.DichVu;
 import entity.HoaDon;
 import entity.KhachHang;
 import entity.NhanVien;
@@ -53,20 +54,60 @@ public class HoaDonDao {
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
 		int n = 0;
-		if (dsHoaDon.contains(hoaDon)) {
-			try {
+		try {
+			// Kiểm tra xem hóa đơn có tồn tại trong CSDL không
+			String sqlCheck = "SELECT COUNT(*) FROM HoaDon WHERE MaHD = '" + hoaDon.getMaHoaDon() + "'";
+			stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sqlCheck);
+			rs.next();
+			int count = rs.getInt(1);
+			rs.close();
+			stmt.close();
+
+			// Nếu hóa đơn không tồn tại, thực hiện thêm mới
+			if (count == 0) {
 				stmt = con.createStatement();
-				String sql = "insert into HoaDon values('" + hoaDon.getMaHoaDon() + "','"
-						+ hoaDon.getMaNhanVien() + "','" + hoaDon.getNgayLap() + "','"
-						+ hoaDon.getMaKhachHang() + "')";
-				n = stmt.executeUpdate(sql);
-			} catch (SQLException e) {
-				e.printStackTrace();
+				// Thêm hóa đơn vào CSDL với VAT = 0.1
+				String sqlInsert = "INSERT INTO HoaDon VALUES ('" + hoaDon.getMaHoaDon() + "', '"
+						+ hoaDon.getMaNhanVien() + "', '" + hoaDon.getMaKhachHang() + "', '" + hoaDon.getNgayLap()
+						+ "' , '" + hoaDon.getVAT() + "' )";
+				n = stmt.executeUpdate(sqlInsert);				
+				stmt.close();
+				return n > 0;
 			}
-			return n > 0;
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return false;
 	}
+	
+//	 public boolean themDichVu(DichVu dv) {
+//         ConnectDB.getInstance();
+//         Connection con = ConnectDB.getConnection();
+//         Statement stmt = null;
+//         int n = 0;
+//         try {
+//             // Kiểm tra xem dịch vụ có tồn tại trong CSDL không
+//             String sqlCheck = "SELECT COUNT(*) FROM DichVu WHERE maDV = '" + dv.getMaDV() + "'";
+//             stmt = con.createStatement();
+//             ResultSet rs = stmt.executeQuery(sqlCheck);
+//             rs.next();
+//             int count = rs.getInt(1);
+//             rs.close();
+//             stmt.close();
+//
+//             // Nếu dịch vụ không tồn tại, thực hiện thêm mới
+//             if (count == 0) {
+//                 stmt = con.createStatement();
+//                 String sqlInsert = "INSERT INTO DichVu VALUES ('" + dv.getMaDV() + "', N'" + dv.getTenDV() + "', " + dv.getGiaDV() + ")";
+//                 n = stmt.executeUpdate(sqlInsert);
+//                 stmt.close();
+//             }
+//         } catch (SQLException e) {
+//             e.printStackTrace();
+//         }
+//         return n > 0;
+//     }
 
 	// sửa hóa đơn
 	public boolean suaHoaDon(HoaDon hoaDon) {
@@ -209,9 +250,19 @@ public class HoaDonDao {
 	public static void main(String[] args) {
 		// test tìm tất cả hóa đơn
 		HoaDonDao hoaDonDao = new HoaDonDao();
+		
+		// test thêm hóa đơn
+		HoaDon hd = new HoaDon("HD029", "NV001", "KH004", LocalDate.now());
+		boolean kq = hoaDonDao.themHoaDon(hd);
+		if (kq) {
+			System.out.println("Thêm thành công");
+		} else {
+			System.out.println("Thêm thất bại");
+		}
+		
 		ArrayList<HoaDon> dsHoaDon = hoaDonDao.timTatCaHoaDon();
-		for (HoaDon hd : dsHoaDon) {
-			System.out.println(hd);
+		for (HoaDon hdz : dsHoaDon) {
+			System.out.println(hdz);
 		}
 	}
 }
