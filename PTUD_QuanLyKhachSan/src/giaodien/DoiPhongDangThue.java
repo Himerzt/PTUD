@@ -14,6 +14,7 @@ import connectDB.ConnectDB;
 import dao.DichVuDao;
 import dao.DichVuPhongDao;
 import dao.KhachHangDao;
+import dao.LichSuDoiPhongDao;
 import dao.LoaiPhongDao;
 import dao.LoaiThueDao;
 import dao.PhongDao;
@@ -21,6 +22,7 @@ import dao.ThongTinDatThuePhongDao;
 import entity.DichVu;
 import entity.DichVuPhong;
 import entity.KhachHang;
+import entity.LichSuDoiPhong;
 import entity.Phong;
 
 import javax.swing.GroupLayout.Alignment;
@@ -45,6 +47,9 @@ public class DoiPhongDangThue extends javax.swing.JDialog {
 	private List<DichVuPhong> danhSachDichVu;
 	private String[] dsPhongDat;
 	List<String> dsTenPhong;
+	private LichSuDoiPhong lichSuDoiPhong;
+
+	private LichSuDoiPhongDao listLSDP;
 
 	/**
 	 * Creates new form DatPhong
@@ -2527,7 +2532,121 @@ public class DoiPhongDangThue extends javax.swing.JDialog {
 	
 	
 
-	
+	// actionperformed btndoiphong
+	public void btnDoiPhongActionPerformed(java.awt.event.ActionEvent evt) {
+		
+		
+        String maPhongHienTai = txtTenPhongHienTai.getText();
+        String maPhongDoi = "";
+        String maKhachHang = txtMaKhachHang.getText();
+        String tenKhachHang = txtTenKhachHang.getText();
+        String soDienThoai = txtSoDienThoaiKhachHang.getText();
+       
+        if (checkBoxPhongQL1.isSelected()) {
+            maPhongDoi = "101";
+        } else if (checkBoxPhongQL2.isSelected()) {
+            maPhongDoi = "102";
+        } else if (checkBoxPhongQL3.isSelected()) {
+            maPhongDoi = "103";
+        } else if (checkBoxPhongQL4.isSelected()) {
+            maPhongDoi = "104";
+        } else if (checkBoxPhongQL5.isSelected()) {
+            maPhongDoi = "105";
+        } else if (checkBoxPhongQL6.isSelected()) {
+            maPhongDoi = "106";
+        } else if (checkBoxPhongQL7.isSelected()) {
+            maPhongDoi = "107";
+        } else if (checkBoxPhongQL8.isSelected()) {
+            maPhongDoi = "108";
+        } else if (checkBoxPhongQL9.isSelected()) {
+            maPhongDoi = "109";
+        } else if (checkBoxPhongQL10.isSelected()) {
+            maPhongDoi = "110";
+        } else if (checkBoxPhongQL11.isSelected()) {
+            maPhongDoi = "111";
+        } else if (checkBoxPhongQL12.isSelected()) {
+            maPhongDoi = "112";
+        } else if (checkBoxPhongQL13.isSelected()) {
+            maPhongDoi = "113";
+        } else if (checkBoxPhongQL14.isSelected()) {
+            maPhongDoi = "114";
+        } else if (checkBoxPhongQL15.isSelected()){
+			maPhongDoi = "115";
+		} else if (checkBoxPhongQL16.isSelected()) {
+			maPhongDoi = "116";
+		} else if (checkBoxPhongQL17.isSelected()) {
+			maPhongDoi = "117";
+		} else if (checkBoxPhongQL18.isSelected()) {
+			maPhongDoi = "118";
+		} else if (checkBoxPhongQL19.isSelected()) {
+			maPhongDoi = "119";
+		} else if (checkBoxPhongQL20.isSelected()) {
+			maPhongDoi = "120";
+		} else if (checkBoxPhongQL21.isSelected()) {
+			maPhongDoi = "121";
+		} else if (checkBoxPhongQL22.isSelected()) {
+			maPhongDoi = "122";
+		} else if (checkBoxPhongQL23.isSelected()) {
+			maPhongDoi = "123";
+		} else if (checkBoxPhongQL24.isSelected()) {
+			maPhongDoi = "124";
+		} else if (checkBoxPhongQL25.isSelected()) {
+			maPhongDoi = "125";
+		} else if (checkBoxPhongQL26.isSelected()) {
+			maPhongDoi = "126";
+		} else if (checkBoxPhongQL27.isSelected()) {
+			maPhongDoi = "127";
+		} else if (checkBoxPhongQL28.isSelected()) {
+			maPhongDoi = "128";
+		} else if (checkBoxPhongQL29.isSelected()) {
+			maPhongDoi = "129";
+		} else if (checkBoxPhongQL30.isSelected()) {
+			maPhongDoi = "130";
+		} else if (checkBoxPhongQL31.isSelected()) {
+			maPhongDoi = "131";
+		} else if (checkBoxPhongQL32.isSelected()) {
+			maPhongDoi = "132";
+		} else if (checkBoxPhongQL33.isSelected()) {
+			maPhongDoi = "133";
+		} else if (checkBoxPhongQL34.isSelected()) {
+			maPhongDoi = "134";
+		} else if (checkBoxPhongQL35.isSelected()) {
+			maPhongDoi = "135";
+        }
+        
+		
+        txtMaKhachHang1.setText(maKhachHang);
+        txtTenKhachHang1.setText(tenKhachHang);
+        txtSoDienThoaiKhachHang1.setText(soDienThoai);
+        txtTenPhongHienTai1.setText(maPhongDoi);
+       lichSuDoiPhong = new LichSuDoiPhong();
+        listLSDP = new LichSuDoiPhongDao();
+        
+        if (listLSDP.demLichSuDoiPhongTheoMaPhongCu(maPhongHienTai) == 1) {
+			JOptionPane.showMessageDialog(null, "Phòng này đã được đổi rồi nên không được đổi nữa");
+		} else {
+			lichSuDoiPhong = new LichSuDoiPhong(maKhachHang, tenKhachHang, maPhongHienTai, maPhongDoi, LocalDate.now(),
+					soDienThoai);
+			listLSDP.themLichSuDoiPhong(lichSuDoiPhong);
+			
+			// Cập nhật trạng thái phòng
+			PhongDao phongDao = new PhongDao();
+			phongDao.capNhatTrangThaiPhong(maPhongHienTai, "Trống");
+			phongDao.capNhatTrangThaiPhong(maPhongDoi, "Đang thuê");
+			// chuyển dịch vụ từ phòng hiện tại sang phòng mới
+			 dichVuDao = new DichVuPhongDao();
+			ArrayList<DichVuPhong> a =  dichVuDao.timTatCaDichVuPhongTheoMaPhong(maPhongHienTai);
+			for (DichVuPhong dv : a) {
+				dichVuDao.capNhatMaPhong(maPhongHienTai, maPhongDoi);
+			}
+			
+		
+			
+			JOptionPane.showMessageDialog(null, "Đổi phòng thành công");
+			this.dispose();
+		}
+        		
+	}
 	
 	/**
 	 * @param args the command line arguments
@@ -2789,6 +2908,7 @@ public class DoiPhongDangThue extends javax.swing.JDialog {
     private giaodien.CustomClass.TextFieldShadow txtTenKhachHang1;
     private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai;
     private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai1;
+    private DichVuPhongDao dichVuDao;
     // End of variables declaration//GEN-END:variables
 
 	private static String[] loadDanhSachDichVu() {

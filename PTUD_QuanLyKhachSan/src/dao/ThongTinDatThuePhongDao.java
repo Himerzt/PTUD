@@ -490,6 +490,24 @@ public class ThongTinDatThuePhongDao {
 		return n > 0;
 	}
 	
+
+	// cập nhật ngày trả phòng thông tin truyền vào là mã ttdtp và ngày trả phòng
+	public boolean capNhatNgayTraPhong(String maTTDTP, LocalDate ngayTraPhong) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		Statement stmt = null;
+		int n = 0;
+		try {
+			stmt = con.createStatement();
+			String sql = "update ThongTinDatThuePhong set ngayTraPhong = '" + ngayTraPhong + "' where maTTDTP = '"
+					+ maTTDTP + "'";
+			n = stmt.executeUpdate(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return n > 0;
+	}
+	
 	public static void main(String[] args) {
 		// test tìm mã phòng
 		ThongTinDatThuePhongDao dao = new ThongTinDatThuePhongDao();
@@ -499,7 +517,21 @@ public class ThongTinDatThuePhongDao {
 	
 	
 	
-	
+	// cập nhật thông tin đặt thuê phòng với mã phòng thay đổi
+	public boolean capNhatThongTinDatThuePhong(String maTTDTP, String maPhong) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		Statement stmt = null;
+		int n = 0;
+		try {
+			stmt = con.createStatement();
+			String sql = "update ThongTinDatThuePhong set phong = '" + maPhong + "' where maTTDTP = '" + maTTDTP + "'";
+			n = stmt.executeUpdate(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return n > 0;
+	}
 	
 	
 }

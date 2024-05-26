@@ -277,4 +277,19 @@ public class PhongDao {
 		}
 		return dsPhong;
 	}
+	
+	//cập nhật trạng thái phòng
+	public boolean capNhatTrangThaiPhong(String maPhong, String trangThai) {
+		try {
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = ? where maPhong = ?");
+			stmt.setString(1, trangThai);
+			stmt.setString(2, maPhong);
+			int n = stmt.executeUpdate();
+			return n > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 }

@@ -243,4 +243,68 @@ public class DichVuDao {
 		}
 		return dsDV;
 	}
+	
+	// tim kiem dich vu theo ma dich vu
+	public DichVu timDichVuTheoMaDV(String maDV) {
+		try {
+			Connection con = ConnectDB.getConnection();
+			String sql = "Select * from DichVu where maDV = '" + maDV + "'";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				String maDV1 = rs.getString(1);
+				String tenDV = rs.getString(2);
+				double giaDV = rs.getDouble(3);
+				dv = new DichVu(maDV1, tenDV, giaDV);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dv;
+	}
+	
+	
+	// tìm kiếm dịch vụ theo tên
+	public ArrayList<DichVu> timDichVuTheoTenDV(String tenDV) {
+		try {
+			Connection con = ConnectDB.getConnection();
+			String sql = "Select * from DichVu where tenDV like '%" + tenDV + "%'";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				String maDV = rs.getString(1);
+				String tenDV1 = rs.getString(2);
+				double giaDV = rs.getDouble(3);
+				dv = new DichVu(maDV, tenDV1, giaDV);
+				dsDichVu.add(dv);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dsDichVu;
+	}
+	
+	// tìm dịch vụ theo tên dịch vụ
+	public DichVu timDichVuTheoTen1(String tenDV) {
+		try {
+			Connection con = ConnectDB.getConnection();
+			String sql = "Select * from DichVu where tenDV = '" + tenDV + "'";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				String maDV = rs.getString(1);
+				String tenDV1 = rs.getString(2);
+				double giaDV = rs.getDouble(3);
+				dv = new DichVu(maDV, tenDV1, giaDV);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dv;
+	}
+	
+	
 }

@@ -54,5 +54,11 @@ public class DichVuPhong {
 	public void setMaDichVuSuDung(String maDichVuSuDung) {
 		this.maDichVuSuDung = maDichVuSuDung;
 	}
+	
+	@Override
+	public String toString() {
+		return "DichVuPhong [maDichVuSuDung=" + maDichVuSuDung + ", maPhong=" + maPhong + ", maDichVu=" + maDichVu
+				+ ", soLuong=" + soLuong + "]";
+	}
 
 }
