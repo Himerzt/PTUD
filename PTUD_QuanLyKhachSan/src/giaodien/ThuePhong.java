@@ -745,7 +745,7 @@ public class ThuePhong extends javax.swing.JDialog {
 			dvPhong.setSoLuong(Integer.parseInt(tableDV.getValueAt(i, 2).toString()));
 			dsDVP.add(dvPhong);
 		}
-		dichVuPhongDao.themDichVuPhong(dsDVP);
+		dichVuPhongDao.themDichVuPhongTTK(dsDVP);
 		// Kiểm tra lại toàn bộ thông tin trước khi đặt phòng
 		// Khách hàng
 		if (!btnThemKhachHangActionPerformed(evt)) {

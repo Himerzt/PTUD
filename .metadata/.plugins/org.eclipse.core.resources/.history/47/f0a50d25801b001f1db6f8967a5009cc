@@ -25,7 +25,6 @@ public class TrangChuUpdated extends javax.swing.JFrame {
 	private ArrayList<javax.swing.JLabel> trangThaiPhongTrangChu;
 
 	public TrangChuUpdated(String tenDangNhap) throws Exception {
-		nhanVienDao = new NhanVienDao();
 		nhanVien = nhanVienDao.timTheoTenDangNhap(tenDangNhap);
 		ConnectDB.getInstance().getConnection();
 		setResizable(false);
@@ -73,7 +72,7 @@ public class TrangChuUpdated extends javax.swing.JFrame {
 
 		loadDanhSachPhong();
 		pnedUngDung.addTab("Quản lý phòng", new QuanLyPhongPannel());
-		pnedUngDung.addTab("Quản lý nhân viên", new DanhSachNhanVien());
+		pnedUngDung.addTab("Quản lý nhân viên", new NhanVienPannel());
 		pnedUngDung.addTab("Quản lý dịch vụ", new DichVuPannel());
 		pnedUngDung.addTab("Quản lý khuyến mãi", new KhuyenMaiPannel());
 		pnedUngDung.addTab("Quản lý khách hàng", new KhachHangPannel());

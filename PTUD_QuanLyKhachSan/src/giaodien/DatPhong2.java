@@ -683,7 +683,7 @@ public class DatPhong2 extends javax.swing.JDialog {
 			dvPhong.setSoLuong(Integer.parseInt(tableDV.getValueAt(i, 2).toString()));
 			dsDVP.add(dvPhong);
 		}
-		dichVuPhongDao.themDichVuPhong(dsDVP);
+		dichVuPhongDao.themDichVuPhongTTK(dsDVP);
 		for (Phong phong : dsPhongDat) {
 			// Kiểm tra trùng ngày nhận
 			if (!kiemTraTrungNgayNhan(phong.getMaPhong(), ngayNhan)) {

@@ -25,8 +25,7 @@ public class TrangChuUpdated extends javax.swing.JFrame {
 	private ArrayList<javax.swing.JLabel> trangThaiPhongTrangChu;
 
 	public TrangChuUpdated(String tenDangNhap) throws Exception {
-		nhanVienDao = new NhanVienDao();
-		nhanVien = nhanVienDao.timTheoTenDangNhap(tenDangNhap);
+		nhanVien = nhanVien;
 		ConnectDB.getInstance().getConnection();
 		setResizable(false);
 		initComponents();
@@ -73,7 +72,7 @@ public class TrangChuUpdated extends javax.swing.JFrame {
 
 		loadDanhSachPhong();
 		pnedUngDung.addTab("Quản lý phòng", new QuanLyPhongPannel());
-		pnedUngDung.addTab("Quản lý nhân viên", new DanhSachNhanVien());
+		pnedUngDung.addTab("Quản lý nhân viên", new NhanVienPannel());
 		pnedUngDung.addTab("Quản lý dịch vụ", new DichVuPannel());
 		pnedUngDung.addTab("Quản lý khuyến mãi", new KhuyenMaiPannel());
 		pnedUngDung.addTab("Quản lý khách hàng", new KhachHangPannel());
@@ -2484,7 +2483,8 @@ public class TrangChuUpdated extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    TrangChuUpdated trangChu = new TrangChuUpdated(new String("admin"));
+                	                    NhanVien nhanVien = NhanVienDao.;
+                    TrangChuUpdated trangChu = new TrangChuUpdated(nhanVien);
                     trangChu.setExtendedState(JFrame.MAXIMIZED_BOTH);
                     trangChu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     trangChu.setVisible(true);

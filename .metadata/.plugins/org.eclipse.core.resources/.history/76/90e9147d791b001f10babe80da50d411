@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Login extends javax.swing.JFrame implements Serializable {
+	private NhanVienDao nhanVienDao;
 	
 	public Login() throws SQLException {
 		initComponents();
@@ -223,7 +224,8 @@ public class Login extends javax.swing.JFrame implements Serializable {
 
 				if (dangNhapThanhCong) {
 					dispose(); // Đóng cửa sổ hiện tại
-					TrangChuUpdated trangChuNew2 = new TrangChuUpdated(tenDangNhap); // Tạo cửa sổ mới);
+					
+					TrangChuUpdated trangChuNew2 = new TrangChuUpdated();
 					trangChuNew2.setVisible(true); // Hiển thị cửa sổ mới
 				} else {
 					// Đăng nhập thất bại
@@ -252,13 +254,13 @@ public class Login extends javax.swing.JFrame implements Serializable {
 	private giaodien.CustomClass.TextField txtTenDangNhap;
 	// End of variables declaration//GEN-END:variables
 
-//	public static void main(String[] args) {
-//		java.awt.EventQueue.invokeLater(() -> {
-//			try {
-//				new Login().setVisible(true);
-//			} catch (SQLException ex) {
-//				ex.printStackTrace();
-//			}
-//		});
-//	}
+	public static void main(String[] args) {
+		java.awt.EventQueue.invokeLater(() -> {
+			try {
+				new Login().setVisible(true);
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
+		});
+	}
 }

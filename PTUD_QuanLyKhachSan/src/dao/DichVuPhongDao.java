@@ -220,7 +220,7 @@ public class DichVuPhongDao {
 	}
 
 	// thêm dịch vụ phòng
-	public boolean themDichVuPhong(List<DichVuPhong> dsDVP) {
+	public boolean themDichVuPhongTTK(List<DichVuPhong> dsDVP) {
 		try {
 			ConnectDB.getInstance();
 			Connection con = ConnectDB.getConnection();
@@ -231,6 +231,23 @@ public class DichVuPhongDao {
 						+ "','" + dvp.getMaDichVu() + "'," + dvp.getSoLuong() + ")";
 				stmt.executeUpdate(sql);
 			}
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	// thêm dịch vụ phòng
+	public boolean themDichVuPhong(DichVuPhong dvp) {
+		try {
+			ConnectDB.getInstance();
+			Connection con = ConnectDB.getConnection();
+			Statement stmt = con.createStatement();
+			String sql = "insert into DichVuSuDung values('"
+					+ String.format("%s%s", "DVSD", timTatCacDichVuSuDung().size()) + "','" + dvp.getMaPhong() + "','"
+					+ dvp.getMaDichVu() + "'," + dvp.getSoLuong() + ")";
+			stmt.executeUpdate(sql);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
