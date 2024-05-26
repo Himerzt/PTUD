@@ -798,7 +798,7 @@ public class DatPhong2 extends javax.swing.JDialog {
 				String.format("%s %s", txtNgayNhan.getText(), "14:00:00"),
 				formatter);
 		LocalDateTime ngayTra = LocalDateTime.parse(
-				String.format("%s %s", txtCheckOut.getText(), "09:00:00"),
+				String.format("%s %s", txtCheckOut.getText(), LocalTime.now().truncatedTo(ChronoUnit.SECONDS)),
 				formatter);
 		String loaiPhong = "";
 		String kieuThue = "";

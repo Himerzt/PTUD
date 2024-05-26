@@ -59,20 +59,34 @@ public class ThongTinDatThuePhongDao {
 		return n > 0;
 	}
 
-	// xóa thông tin đặt thuê
-	public boolean xoaThongTinDatThuePhong(ThongTinDatThuePhong tt) {
+	// xóa thông tin đặt thuê theo mã khách hàng
+	public boolean xoaThongTinDatThueTheoMaKhachHang(String maKhachHang) {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
 		int n = 0;
-		if (dsThongTin.contains(tt)) {
-			try {
-				stmt = con.createStatement();
-				String sql = "delete from ThongTinDatThuePhong where maDatPhong = '" + tt.getMaTTDTP() + "'";
-				n = stmt.executeUpdate(sql);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		try {
+			stmt = con.createStatement();
+			String sql = "delete from ThongTinDatThuePhong where maKhachHang = '" + maKhachHang + "'";
+			n = stmt.executeUpdate(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return n > 0;
+	}
+
+	// xóa thông tin đặt thuê theo mã đặt phòng
+	public boolean xoaThongTinDatThueTheoMa(String maTTDT) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		Statement stmt = null;
+		int n = 0;
+		try {
+			stmt = con.createStatement();
+			String sql = "delete from ThongTinDatThuePhong where maTTDTP = '" + maTTDT + "'";
+			n = stmt.executeUpdate(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return n > 0;
 	}
@@ -120,43 +134,42 @@ public class ThongTinDatThuePhongDao {
 
 	// Tìm thông tin đặt thuê phòng theo mã khách hàng
 	public List<ThongTinDatThuePhong> timThongTinTheoMaKhachHang(String maKhachHang) {
-	    ConnectDB.getInstance();
-	    Connection con = ConnectDB.getConnection();
-	    Statement stmt = null;
-	    dsThongTin = new ArrayList<ThongTinDatThuePhong>();
-	    try {
-	        stmt = con.createStatement();
-	        String sql = "SELECT * FROM ThongTinDatThuePhong WHERE maKhachHang = '" + maKhachHang + "'";
-	        System.out.println("SQL Query: " + sql); // In ra truy vấn SQL để kiểm tra
-	        ResultSet rs = stmt.executeQuery(sql);
-	        while (rs.next()) {
-	            String maDatPhong = rs.getString(1);
-	            String maKhachHang1 = rs.getString(2);
-	            String maPhong = rs.getString(3);
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		Statement stmt = null;
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
+		try {
+			stmt = con.createStatement();
+			String sql = "SELECT * FROM ThongTinDatThuePhong WHERE maKhachHang = '" + maKhachHang + "'";
+			System.out.println("SQL Query: " + sql); // In ra truy vấn SQL để kiểm tra
+			ResultSet rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				String maDatPhong = rs.getString(1);
+				String maKhachHang1 = rs.getString(2);
+				String maPhong = rs.getString(3);
 
-	            Timestamp ngayDatPhongTs = rs.getTimestamp(4);
-	            LocalDateTime ngayDatPhong = (ngayDatPhongTs != null) ? ngayDatPhongTs.toLocalDateTime() : null;
+				Timestamp ngayDatPhongTs = rs.getTimestamp(4);
+				LocalDateTime ngayDatPhong = (ngayDatPhongTs != null) ? ngayDatPhongTs.toLocalDateTime() : null;
 
-	            Timestamp ngayNhanPhongTs = rs.getTimestamp(5);
-	            LocalDateTime ngayNhanPhong = (ngayNhanPhongTs != null) ? ngayNhanPhongTs.toLocalDateTime() : null;
+				Timestamp ngayNhanPhongTs = rs.getTimestamp(5);
+				LocalDateTime ngayNhanPhong = (ngayNhanPhongTs != null) ? ngayNhanPhongTs.toLocalDateTime() : null;
 
-	            Timestamp ngayTraPhongTs = rs.getTimestamp(6);
-	            LocalDateTime ngayTraPhong = (ngayTraPhongTs != null) ? ngayTraPhongTs.toLocalDateTime() : null;
+				Timestamp ngayTraPhongTs = rs.getTimestamp(6);
+				LocalDateTime ngayTraPhong = (ngayTraPhongTs != null) ? ngayTraPhongTs.toLocalDateTime() : null;
 
-	            String maLoaiThue = rs.getString(7);
-	            double tienDaCoc = rs.getDouble(8);
+				String maLoaiThue = rs.getString(7);
+				double tienDaCoc = rs.getDouble(8);
 
-	            ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maDatPhong, maKhachHang1, maPhong, ngayDatPhong,
-	                    ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
-	            dsThongTin.add(tt);
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	    System.out.println("Số lượng thông tin đặt thuê phòng tìm được: " + dsThongTin.size());
-	    return dsThongTin;
+				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maDatPhong, maKhachHang1, maPhong, ngayDatPhong,
+						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
+				dsThongTin.add(tt);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Số lượng thông tin đặt thuê phòng tìm được: " + dsThongTin.size());
+		return dsThongTin;
 	}
-
 
 	// Đặt phòng
 	public boolean datPhong(ArrayList<Phong> phong, KhachHang kh, LocalDateTime ngayDatPhong,

@@ -309,11 +309,11 @@ public class HuyDatPhong extends javax.swing.JDialog {
 			int soTienHoanLai = 0;
 
 			if (diffInDays > 14) {
-				soTienHoanLai = (int) (ttdtp.getTienDaCoc() * 70 / 100);
+				soTienHoanLai = ttdtp.getTienDaCoc() * 70 / 100;
 			} else if (diffInDays > 7) {
-				soTienHoanLai = (int) (ttdtp.getTienDaCoc() * 50 / 100);
+				soTienHoanLai = ttdtp.getTienDaCoc() * 50 / 100;
 			} else if (diffInDays > 1) {
-				soTienHoanLai = (int) (ttdtp.getTienDaCoc() * 50 / 100);
+				soTienHoanLai = ttdtp.getTienDaCoc() * 50 / 100;
 			} else {
 				soTienHoanLai = 0;
 			}

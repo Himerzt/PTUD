@@ -707,11 +707,9 @@ public class ThuePhong extends javax.swing.JDialog {
 		// GEN-FIRST:event_btnThuePhongActionPerformed
 		KhachHang kh = khachHangDao.timTheoCCCD(txtCCCD.getText());
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-		LocalDateTime ngayNhan = LocalDateTime.parse(
-				String.format("%s %s", txtCheckIn.getText(), LocalTime.now().truncatedTo(ChronoUnit.SECONDS)),
+		LocalDateTime ngayNhan = LocalDateTime.parse(String.format("%s %s", txtCheckIn.getText(), LocalTime.now().truncatedTo(ChronoUnit.SECONDS).toString()),
 				formatter);
-		LocalDateTime ngayTra = LocalDateTime.parse(
-				String.format("%s %s", txtCheckOut.getText(), LocalTime.now().truncatedTo(ChronoUnit.SECONDS)),
+		LocalDateTime ngayTra = LocalDateTime.parse(String.format("%s %s", txtCheckOut.getText(), "09:00:00"),
 				formatter);
 		String loaiPhong = "";
 		String kieuThue = "";
@@ -819,23 +817,22 @@ public class ThuePhong extends javax.swing.JDialog {
 			return true;
 		}
 	}
-	
+
 	// KIểm tra khách hàng có đang thuê phòng không
 	public boolean kiemTraKhachHangDaThuePhong(String maKH) {
 		System.out.println("Mã khách hàng: " + maKH);
-	    List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timThongTinTheoMaKhachHang(maKH);
-	    System.out.println("Danh sách thông tin đặt thuê phòng của khách hàng: " + dsTTDTP);
-	    if (dsTTDTP.isEmpty()) {
-	        return true;
-	    }
-	    for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
-	        if (thongTinDatThuePhong.getNgayTraPhong().isAfter(LocalDateTime.now())) {
-	            return false;
-	        }
-	    }
-	    return true;
+		List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timThongTinTheoMaKhachHang(maKH);
+		System.out.println("Danh sách thông tin đặt thuê phòng của khách hàng: " + dsTTDTP);
+		if (dsTTDTP.isEmpty()) {
+			return true;
+		}
+		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
+			if (thongTinDatThuePhong.getNgayTraPhong().isAfter(LocalDateTime.now())) {
+				return false;
+			}
+		}
+		return true;
 	}
-
 
 	private boolean btnThemKhachHangActionPerformed(ActionEvent evt) {// GEN-FIRST:event_btnThemKhachHangActionPerformed
 		if (!regCCCD_Passport(txtCCCD.getText())) {
