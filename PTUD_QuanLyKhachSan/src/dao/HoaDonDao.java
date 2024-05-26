@@ -1,11 +1,15 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 import connectDB.ConnectDB;
 import entity.DichVu;
@@ -23,7 +27,7 @@ public class HoaDonDao {
 
 	}
 
-// tìm tất cả hóa đơn
+	// tìm tất cả hóa đơn
 	public ArrayList<HoaDon> timTatCaHoaDon() {
 		try {
 			// code here
@@ -35,7 +39,7 @@ public class HoaDonDao {
 				String maHoaDon = rs.getString(1);
 				String nhanVien = rs.getString(2);
 				String khachHang = rs.getString(3);
-				LocalDate ngayLap = rs.getDate(4).toLocalDate();
+				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
 				
 				hoaDon = new HoaDon(maHoaDon, nhanVien, khachHang, ngayLap);
 				
@@ -47,38 +51,85 @@ public class HoaDonDao {
 
 		return dsHoaDon;
 	}
+	
+	// Tìm tất cả hóa đơn có trong ngày
+	public List<HoaDon> timHoaDonTrongNgay(LocalDate ngay) {
+        List<HoaDon> danhSachHoaDon = new ArrayList<>();
+        ConnectDB.getInstance();
+        Connection con = ConnectDB.getConnection();
+        PreparedStatement pstmt = null;
+
+        try {
+            // Câu lệnh SQL để tìm hóa đơn trong ngày
+            String sql = "SELECT * FROM HoaDon WHERE NgayLapHD >= ? AND NgayLapHD < ?";
+            pstmt = con.prepareStatement(sql);
+
+            // Thiết lập giá trị cho các tham số
+            LocalDateTime ngayBatDau = ngay.atStartOfDay();
+            LocalDateTime ngayKetThuc = ngay.plusDays(1).atStartOfDay();
+
+            pstmt.setTimestamp(1, Timestamp.valueOf(ngayBatDau));
+            pstmt.setTimestamp(2, Timestamp.valueOf(ngayKetThuc));
+
+            // Thực thi câu lệnh và xử lý kết quả
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                HoaDon hoaDon = new HoaDon();
+                hoaDon.setMaHoaDon(rs.getString("MaHD"));
+                hoaDon.setMaNhanVien(rs.getString("MaNV"));
+                hoaDon.setMaKhachHang(rs.getString("MaKH"));
+                hoaDon.setNgayLap(rs.getTimestamp("NgayLapHD").toLocalDateTime());
+                danhSachHoaDon.add(hoaDon);
+            }
+
+            rs.close();
+            pstmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return danhSachHoaDon;
+    }
+
 
 	// thêm hóa đơn
 	public boolean themHoaDon(HoaDon hoaDon) {
-		ConnectDB.getInstance();
-		Connection con = ConnectDB.getConnection();
-		Statement stmt = null;
-		int n = 0;
-		try {
-			// Kiểm tra xem hóa đơn có tồn tại trong CSDL không
-			String sqlCheck = "SELECT COUNT(*) FROM HoaDon WHERE MaHD = '" + hoaDon.getMaHoaDon() + "'";
-			stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery(sqlCheck);
-			rs.next();
-			int count = rs.getInt(1);
-			rs.close();
-			stmt.close();
+	    ConnectDB.getInstance();
+	    Connection con = ConnectDB.getConnection();
+	    PreparedStatement pstmt = null;
+	    int n = 0;
+	    try {
+	        // Kiểm tra xem hóa đơn có tồn tại trong CSDL không
+	        String sqlCheck = "SELECT COUNT(*) FROM HoaDon WHERE MaHD = ?";
+	        pstmt = con.prepareStatement(sqlCheck);
+	        pstmt.setString(1, hoaDon.getMaHoaDon());
+	        ResultSet rs = pstmt.executeQuery();
+	        rs.next();
+	        int count = rs.getInt(1);
+	        rs.close();
+	        pstmt.close();
 
-			// Nếu hóa đơn không tồn tại, thực hiện thêm mới
-			if (count == 0) {
-				stmt = con.createStatement();
-				// Thêm hóa đơn vào CSDL với VAT = 0.1
-				String sqlInsert = "INSERT INTO HoaDon VALUES ('" + hoaDon.getMaHoaDon() + "', '"
-						+ hoaDon.getMaNhanVien() + "', '" + hoaDon.getMaKhachHang() + "', '" + hoaDon.getNgayLap()
-						+ "' , '" + hoaDon.getVAT() + "' )";
-				n = stmt.executeUpdate(sqlInsert);				
-				stmt.close();
-				return n > 0;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return false;
+	        // Nếu hóa đơn không tồn tại, thực hiện thêm mới
+	        if (count == 0) {
+	            // Xử lý ngày lập
+	            Timestamp ngayLapHD = Timestamp.valueOf(hoaDon.getNgayLap());
+	            // Thêm hóa đơn vào CSDL
+	            String sqlInsert = "INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, ThueVAT) VALUES (?, ?, ?, ?, ?)";
+	            pstmt = con.prepareStatement(sqlInsert);
+	            pstmt.setString(1, hoaDon.getMaHoaDon());
+	            pstmt.setString(2, hoaDon.getMaNhanVien());
+	            pstmt.setString(3, hoaDon.getMaKhachHang());
+	            pstmt.setTimestamp(4, ngayLapHD);
+	            pstmt.setDouble(5, hoaDon.getVAT());
+
+	            n = pstmt.executeUpdate();
+	            pstmt.close();
+	            return n > 0;
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    return false;
 	}
 	
 //	 public boolean themDichVu(DichVu dv) {
@@ -160,13 +211,11 @@ public class HoaDonDao {
 			while (rs.next()) {
 				String maHD = rs.getString(1);
 				String nhanVien = rs.getString(2);
-				LocalDate ngayLap = rs.getDate(3).toLocalDate();
-				String khachHang = rs.getString(4);
-
+				String khachHang = rs.getString(3);
+				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
 				NhanVien nv = new NhanVien(nhanVien);
 				KhachHang kh = new KhachHang(khachHang);
-
-				hd = new HoaDon(maHoaDon, nhanVien, khachHang, ngayLap);
+                hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -185,8 +234,8 @@ public class HoaDonDao {
 			while (rs.next()) {
 				String maHD = rs.getString(1);
 				String nhanVien = rs.getString(2);
-				LocalDate ngayLap = rs.getDate(3).toLocalDate();
-				String khachHang = rs.getString(4);
+				String khachHang = rs.getString(3);
+				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
 				
 				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
 				
@@ -208,8 +257,8 @@ public class HoaDonDao {
 			while (rs.next()) {
 				String maHD = rs.getString(1);
 				String nhanVien = rs.getString(2);
-				LocalDate ngayLap = rs.getDate(3).toLocalDate();
-				String khachHang = rs.getString(4);
+				String khachHang = rs.getString(3);
+				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
 				
 				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
 				
@@ -232,9 +281,9 @@ public class HoaDonDao {
 			while (rs.next()) {
 				String maHD = rs.getString(1);
 				String nhanVien = rs.getString(2);
-				LocalDate ngayLap1 = rs.getDate(3).toLocalDate();
-				String khachHang = rs.getString(4);
-
+				String khachHang = rs.getString(3);
+				LocalDateTime ngayLap1 = rs.getTimestamp(4).toLocalDateTime();
+				
 				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap1);
 				
 				dsHoaDon.add(hd);
@@ -246,13 +295,48 @@ public class HoaDonDao {
 		return dsHoaDon;
 	}
 	
+	// Đếm số hóa đơn trong ngày
+	public int demSoHoaDonTrongNgay(LocalDate ngay) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		PreparedStatement pstmt = null;
+		int soLuong = 0;
+
+		try {
+			// Câu lệnh SQL để đếm số hóa đơn trong ngày
+			String sql = "SELECT COUNT(*) FROM HoaDon WHERE NgayLapHD >= ? AND NgayLapHD < ?";
+			pstmt = con.prepareStatement(sql);
+
+			// Thiết lập giá trị cho các tham số
+			LocalDateTime ngayBatDau = ngay.atStartOfDay();
+			LocalDateTime ngayKetThuc = ngay.plusDays(1).atStartOfDay();
+
+			pstmt.setTimestamp(1, Timestamp.valueOf(ngayBatDau));
+			pstmt.setTimestamp(2, Timestamp.valueOf(ngayKetThuc));
+
+			// Thực thi câu lệnh và xử lý kết quả
+			ResultSet rs = pstmt.executeQuery();
+			rs.next();
+			soLuong = rs.getInt(1);
+
+			rs.close();
+			pstmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return soLuong;
+	}
+	
 	
 	public static void main(String[] args) {
 		// test tìm tất cả hóa đơn
 		HoaDonDao hoaDonDao = new HoaDonDao();
 		
-		// test thêm hóa đơn
-		HoaDon hd = new HoaDon("HD029", "NV001", "KH004", LocalDate.now());
+//		// test thêm hóa đơn
+
+		
+		HoaDon hd = new HoaDon("HD123", "NV001", "KH004", LocalDateTime.now());
 		boolean kq = hoaDonDao.themHoaDon(hd);
 		if (kq) {
 			System.out.println("Thêm thành công");
@@ -260,9 +344,14 @@ public class HoaDonDao {
 			System.out.println("Thêm thất bại");
 		}
 		
-		ArrayList<HoaDon> dsHoaDon = hoaDonDao.timTatCaHoaDon();
-		for (HoaDon hdz : dsHoaDon) {
-			System.out.println(hdz);
+		// test tìm hóa đơn trong ngày
+		List<HoaDon> dsHoaDon = hoaDonDao.timHoaDonTrongNgay(LocalDate.now());
+		for (HoaDon hoaDon : dsHoaDon) {
+			System.out.println(hoaDon);
 		}
+		
+		// test đếm số hóa đơn trong ngày
+		int soLuong = hoaDonDao.demSoHoaDonTrongNgay(LocalDate.now());
+		System.out.println("Số lượng hóa đơn trong ngày: " + soLuong);
 	}
 }

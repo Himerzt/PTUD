@@ -3,18 +3,19 @@ package entity;
 import java.time.LocalDate;
 
 public class ChiTietHoaDon {
+
+    private String maCTHD;
 	private String maHD;
 	private String maTTDTP;
     private String maLSDP;
-    private String maDVPSD;
     private String maKM;
     
-	public ChiTietHoaDon(String maHD, String maTTDTP, String maLSDP, String maDVPSD, String maKM) {
+	public ChiTietHoaDon(String maHD, String maTTDTP, String maLSDP, String maCTHD, String maKM) {
 		super();
 		this.maHD = maHD;
 		this.maTTDTP = maTTDTP;
 		this.maLSDP = maLSDP;
-		this.maDVPSD = maDVPSD;
+		this.maCTHD = maCTHD;
 		this.maKM = maKM;
 	}
 
@@ -46,12 +47,12 @@ public class ChiTietHoaDon {
 		this.maLSDP = maLSDP;
 	}
 
-	public String getMaDVPSD() {
-		return maDVPSD;
+	public String getMaCTHD() {
+		return maCTHD;
 	}
 
-	public void setMaDVPSD(String maDVPSD) {
-		this.maDVPSD = maDVPSD;
+	public void setMaCTHD(String maCTHD) {
+		this.maCTHD = maCTHD;
 	}
 
 	public String getMaKM() {
@@ -64,7 +65,7 @@ public class ChiTietHoaDon {
 
 	@Override
 	public String toString() {
-		return "ChiTietHoaDonUpdated [maHD=" + maHD + ", maTTDTP=" + maTTDTP + ", maLSDP=" + maLSDP + ", maDVPSD="
-				+ maDVPSD + ", maKM=" + maKM + "]";
+		return "ChiTietHoaDonUpdated [maHD=" + maHD + ", maTTDTP=" + maTTDTP + ", maLSDP=" + maLSDP + ", maCTHD="
+				+ maCTHD + ", maKM=" + maKM + "]";
 	}
 }
