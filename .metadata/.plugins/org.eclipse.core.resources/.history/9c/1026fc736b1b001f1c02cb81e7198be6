@@ -284,51 +284,7 @@ public class HuyDatPhong extends javax.swing.JDialog {
 	}// GEN-LAST:event_btnHuyTatCaActionPerformed
 
 	private void btnHuyPhongChonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyPhongChonActionPerformed
-		int selectedRow = tableDanhSachPhong.getSelectedRow();
-		if (selectedRow == -1) {
-			JOptionPane.showMessageDialog(this, "Vui lòng chọn phòng để hủy!", "Thông báo",
-					JOptionPane.INFORMATION_MESSAGE);
-			return;
-		}
 
-		// Hiển thị thông báo xác nhận
-		int response = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn xóa thông tin đặt phòng này không?",
-				"Xác nhận", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-		if (response == JOptionPane.YES_OPTION) {
-			// Lấy thông tin khách hàng và thông tin đặt phòng
-			KhachHang kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
-			ArrayList<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao
-					.timThongTinDatThuePhongTheoMaKhachHang(kh.getMaKH());
-
-			ThongTinDatThuePhong ttdtp = dsTTDTP.get(selectedRow);
-			long currentTime = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
-			long ngayNhanPhongMillis = ttdtp.getNgayNhanPhong().toEpochSecond(ZoneOffset.UTC);
-			long diffInSeconds = ngayNhanPhongMillis - currentTime;
-			long diffInDays = diffInSeconds / (24 * 60 * 60);
-
-			int soTienHoanLai = 0;
-
-			if (diffInDays > 14) {
-				soTienHoanLai = (int) (ttdtp.getTienDaCoc() * 70 / 100);
-			} else if (diffInDays > 7) {
-				soTienHoanLai = (int) (ttdtp.getTienDaCoc() * 50 / 100);
-			} else if (diffInDays > 1) {
-				soTienHoanLai = (int) (ttdtp.getTienDaCoc() * 50 / 100);
-			} else {
-				soTienHoanLai = 0;
-			}
-
-			// Gọi hàm xóa thông tin đặt thuê theo mã thông tin đặt thuê
-			boolean xoaThanhCong = thongTinDatThuePhongDao.xoaThongTinDatThueTheoMa(ttdtp.getMaTTDTP());
-
-			if (xoaThanhCong) {
-				JOptionPane.showMessageDialog(this, "Số tiền cọc phải hoàn lại là: " + soTienHoanLai + " VND");
-				loadDanhSachPhongDat(); // Cập nhật lại bảng sau khi xóa
-			} else {
-				JOptionPane.showMessageDialog(this, "Không thể xóa thông tin đặt phòng!", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-			}
-		}
 	}// GEN-LAST:event_btnHuyPhongChonActionPerformed
 
 	private void btnThemKhachHangActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemKhachHangActionPerformed
