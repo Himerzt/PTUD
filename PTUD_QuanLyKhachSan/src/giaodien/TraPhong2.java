@@ -501,9 +501,19 @@ public class TraPhong2 extends javax.swing.JDialog {
 		for (String phongDat : dsPhongDat) {
 			dsMaPhong.add(phong.timPhongTheoSoPhong(Integer.parseInt(phongDat)).getMaPhong());
 		}
+		// Lấy thông tin đặt thuê phòng và mã khách hàng
 		
-		// Lấy thông tin khách hàng từ mã phòng
-	    String maKhachHang = thongTinDao.timThongTinDatThuePhongTheoMaPhong(dsMaPhong.get(0)).getMaKhachHang();
+		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<>();
+		for (String maPhong : dsMaPhong) {
+			dsThongTin.addAll(thongTinDao.timThongTinDatThuePhongTheoMaPhong(maPhong));
+		}
+		
+		// Lấy mã khách hàng từ thông tin đặt phòng
+		String maKhachHang = dsThongTin.get(0).getMaKhachHang();		
+		
+		
+	
+	    
 	    // Xử lý thông tin khách hàng
 	    KhachHang khachHang = khachHangDao.timTheoMaKhachHang(maKhachHang);
 	    // Tính tỉ lệ chiết khấu
@@ -603,8 +613,8 @@ public class TraPhong2 extends javax.swing.JDialog {
 		tongTien -= khuyenMai.getGiaTriKM();
 		// Tính tiền trả trước thông qua thông tin đặt phòng
 		double tienTraTruoc = 0;
-		for (String maPhong : dsMaPhong) {
-			tienTraTruoc += thongTinDao.timThongTinDatThuePhongTheoMaPhong(maPhong).getTienDaCoc();
+		for (ThongTinDatThuePhong thongTin : dsThongTin) {
+			tienTraTruoc += thongTin.getTienDaCoc();
 		}
 		tongTien -= tienTraTruoc;
 		// Tính tiền thuế
