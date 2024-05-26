@@ -9,8 +9,7 @@ public class HoaDon {
 	private String maHoaDon;
 	private String maNhanVien;
 	private String maKhachHang;
-	private LocalDate ngayLap;
-	private List<ChiTietHoaDon> dsChiTietHoaDon;
+	private LocalDateTime ngayLap;
 	private final double VAT = 0.1;
 
 	public String getMaHoaDon() {
@@ -37,33 +36,16 @@ public class HoaDon {
 		this.maKhachHang = maKhachHang;
 	}
 
-	public LocalDate getNgayLap() {
+	public LocalDateTime getNgayLap() {
 		return ngayLap;
 	}
 
-	public void setNgayLap(LocalDate ngayLap) {
+	public void setNgayLap(LocalDateTime ngayLap) {
 		this.ngayLap = ngayLap;
-	}
-
-	public java.util.List<ChiTietHoaDon> getDsChiTietHoaDon() {
-		return dsChiTietHoaDon;
-	}
-
-	public void setDsChiTietHoaDon(java.util.List<ChiTietHoaDon> dsChiTietHoaDon) {
-		this.dsChiTietHoaDon = dsChiTietHoaDon;
 	}
 
 	public double getVAT() {
 		return VAT;
-	}
-
-	public HoaDon(String maHoaDon, String maNhanVien, LocalDate ngayLap, String maKhachHang) {
-		super();
-		this.maHoaDon = maHoaDon;
-		this.maNhanVien = maNhanVien;
-		this.maKhachHang = maKhachHang;
-		this.ngayLap = ngayLap;
-		this.dsChiTietHoaDon = dsChiTietHoaDon;
 	}
 
 	public HoaDon() {
@@ -73,10 +55,10 @@ public class HoaDon {
 	@Override
 	public String toString() {
 		return "HoaDon [maHoaDon=" + maHoaDon + ", maNhanVien=" + maNhanVien + ", maKhachHang=" + maKhachHang
-				+ ", ngayLap=" + ngayLap + ", dsChiTietHoaDon=" + dsChiTietHoaDon + ", VAT=" + VAT + "]";
+				+ ", ngayLap=" + ngayLap +  ", VAT=" + VAT + "]";
 	}
 
-	public HoaDon(String maHoaDon, String maNhanVien, String maKhachHang, LocalDate ngayLap) {
+	public HoaDon(String maHoaDon, String maNhanVien, String maKhachHang, LocalDateTime ngayLap) {
 		super();
 		this.maHoaDon = maHoaDon;
 		this.maNhanVien = maNhanVien;

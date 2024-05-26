@@ -7,6 +7,7 @@ package giaodien;
 import java.awt.event.ActionEvent;
 import java.awt.font.FontRenderContext;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +18,14 @@ import javax.swing.table.DefaultTableModel;
 import connectDB.ConnectDB;
 import dao.DichVuDao;
 import dao.DichVuPhongDao;
+import dao.HoaDonDao;
 import dao.KhachHangDao;
 import dao.KhuyenMaiDao;
 import dao.PhongDao;
 import dao.ThongTinDatThuePhongDao;
 import entity.DichVu;
 import entity.DichVuPhong;
+import entity.HoaDon;
 import entity.KhachHang;
 import entity.KhuyenMai;
 import entity.Phong;
@@ -408,6 +411,7 @@ public class TraPhong2 extends javax.swing.JDialog {
     	// Hỏi nhắc có muốn thực hiện trả phòng và xuất hóa đơn hay không
     	int input = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn trả phòng và xuất hóa đơn không?", "Xác nhận trả phòng",
     			                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+    		
     	if (input == 0) {
     		// Lấy thông tin để tạo hóa đơn thanh toán
     		// Tạo mã hóa đơn theo theo đạng HD + Ngày + Tháng + Năm + Số hóa đơn tự động tạo tăng dần + Viết tắt nhân viên
@@ -424,10 +428,61 @@ public class TraPhong2 extends javax.swing.JDialog {
     		String formattedOrderNumber = String.format("%03d", orderNumber);
     		
     		
+    		HoaDonThanhToan2 hoaDonThanhToan = new HoaDonThanhToan2();
+    		hoaDonThanhToan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    		hoaDonThanhToan.setVisible(true);
+        		
+    		
+    		
     	}
     	
     }//GEN-LAST:event_btnTraPhongActionPerformed
 
+    
+    protected boolean taoHoaDonDatabase() {
+    	// Tạo mã hóa đơn HD + ngày + tháng + năm + số hóa đơn tự tăng trong ngày tìm trong database
+    	LocalDate now = LocalDate.now();
+    	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyy");
+    	String ngay = dtf.format(now);
+    	
+    	// Định dạng số hóa đơn trong ngày 3 chữ số
+    	// Kiểm tra mã hóa đơn trong database
+    	// Nếu có thì tăng số hóa đơn lên so với số hóa đơn cuối cùng trong ngày
+    	// Nếu không thì tạo hóa đơn mới
+    	HoaDonDao hd = new HoaDonDao();
+    	int orderNumber = hd.demSoHoaDonTrongNgay(now);
+		if (orderNumber == 0) {
+			orderNumber = 1;
+		} else {
+			orderNumber++;
+		}
+    	String formattedOrderNumber = String.format("%03d", orderNumber);
+    	String maHoaDon = "HD" + ngay + formattedOrderNumber;
+    	// Lấy mã nhân viên từ txtNhanVien
+    	String maNhanVien = txtNhanVien.getText();
+    	// Lấy mã khách hàng từ txtMaKhachHang
+    	String maKhachHang = txtMaKhachHang.getText();
+    	// Lấy ngày lập hóa đơn từ ngày giờ hiện tại
+    	LocalDateTime ngayLap = LocalDateTime.now();
+    	// Tạo hóa đơn
+    	HoaDon hoaDon = new HoaDon(maHoaDon, maNhanVien, maKhachHang, ngayLap);
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	return true;
+    }
+    
+   protected boolean taoChiTietHoaDonDatabase() {
+    	
+	   
+	   return true;
+    }
+    
 	private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed
 		this.setVisible(false);
 	}// GEN-LAST:event_btnHuyActionPerformed
@@ -440,11 +495,13 @@ public class TraPhong2 extends javax.swing.JDialog {
 		khachHangDao = new KhachHangDao();
 		dichVuDao = new DichVuDao();
 		PhongDao phong = new PhongDao();
+		
 	    // Lấy mã phòng từ dsPhongDat
 		ArrayList<String> dsMaPhong = new ArrayList<>();
 		for (String phongDat : dsPhongDat) {
 			dsMaPhong.add(phong.timPhongTheoSoPhong(Integer.parseInt(phongDat)).getMaPhong());
 		}
+		
 		// Lấy thông tin khách hàng từ mã phòng
 	    String maKhachHang = thongTinDao.timThongTinDatThuePhongTheoMaPhong(dsMaPhong.get(0)).getMaKhachHang();
 	    // Xử lý thông tin khách hàng
@@ -468,6 +525,7 @@ public class TraPhong2 extends javax.swing.JDialog {
 			hangTV = "Hạng Bạch Kim - 11.25%";
 			chietKhau = 0.1125;
 		}
+		
 		// Tính tiền phòng
 		double tongTienPhong = 0;
 		Phong phongThue = new Phong();
@@ -490,6 +548,7 @@ public class TraPhong2 extends javax.swing.JDialog {
         for (String maPhong : dsMaPhong) {
 			dsDichVu.addAll(dichVuPhongDao.timDichVuSuDungTheoMaPhong(maPhong));
 		}
+        
         DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
 		model.setRowCount(0);
 		int i = 0;	
@@ -550,7 +609,8 @@ public class TraPhong2 extends javax.swing.JDialog {
 		tongTien -= tienTraTruoc;
 		// Tính tiền thuế
 		double thue = tongTien * 0.1;
-		tongTien += thue;
+
+
 		// Hiển thị thông tin khách hàng
 		txtTenKH.setText(khachHang.getHoTenKH());
 		txtHangThanhVienKH.setText(hangTV);
