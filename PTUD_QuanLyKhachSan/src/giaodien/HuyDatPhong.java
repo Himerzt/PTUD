@@ -46,7 +46,6 @@ public class HuyDatPhong extends javax.swing.JDialog {
         dichVuDao = new DichVuDao();
         loaiThueDao = new LoaiThueDao();
         initComponents();
-        loadDanhSachPhongDat();
     }
 
     @SuppressWarnings("unchecked")
@@ -259,6 +258,7 @@ public class HuyDatPhong extends javax.swing.JDialog {
         if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) != null) {
             kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
             txtTenKH.setText(kh.getHoTenKH());
+            loadDanhSachPhongDat();
         } else {
             JOptionPane.showMessageDialog(this, "Khách hàng hiện chưa được thêm!");
             return;

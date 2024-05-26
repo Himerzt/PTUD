@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +22,10 @@ public class ThongTinDatThuePhongDao {
 	DichVuPhongDao dichVuPhongDao = new DichVuPhongDao();
 	PhongDao phongDao = new PhongDao();
 	LoaiThueDao loaiThueDao = new LoaiThueDao();
-
 	double tongTien = 0;
 
 	public ThongTinDatThuePhongDao() {
-		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
+		dsThongTin = timTatCaThongTinDatThuePhong();
 		tt = new ThongTinDatThuePhong();
 	}
 
@@ -39,14 +39,9 @@ public class ThongTinDatThuePhongDao {
 				.getTiLeChietKhau();
 		return (giaDV + giaPhong) * (1 - chietkhau);
 	}
-
-	public double tinhTienTheoDanhSachPhong(ArrayList<Phong> dsPhong) {
-		ThongTinDatThuePhong tt;
-		for (Phong phong2 : dsPhong) {
-			tt = timThongTinDatThuePhongTheoMaPhong(phong2.getMaPhong());
-			tongTien += tinhTienTungPhong(tt.getMaPhong(), tt.getMaLoaiThue());
-		}
-		return tongTien;
+	
+	public int demSoThongTinDatThuePhong() {
+		return dsThongTin.size();
 	}
 
 // cập nhật nhận phòng
@@ -129,31 +124,43 @@ public class ThongTinDatThuePhongDao {
 
 	// Tìm thông tin đặt thuê phòng theo mã khách hàng
 	public List<ThongTinDatThuePhong> timThongTinTheoMaKhachHang(String maKhachHang) {
-		ConnectDB.getInstance();
-		Connection con = ConnectDB.getConnection();
-		Statement stmt = null;
-		try {
-			stmt = con.createStatement();
-			String sql = "select * from ThongTinDatThuePhong where maKhachHang = '" + maKhachHang + "'";
-			ResultSet rs = stmt.executeQuery(sql);
-			while (rs.next()) {
-				String maDatPhong = rs.getString(1);
-				String maKhachHang1 = rs.getString(2);
-				String maPhong = rs.getString(3);
-				LocalDateTime ngayDatPhong = rs.getTimestamp(4).toLocalDateTime();
-				LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
-				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
-				String maLoaiThue = rs.getString(7);
-				double tienDaCoc = rs.getDouble(8);
-				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maDatPhong, maKhachHang1, maPhong, ngayDatPhong,
-						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
-				dsThongTin.add(tt);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return dsThongTin;
+	    ConnectDB.getInstance();
+	    Connection con = ConnectDB.getConnection();
+	    Statement stmt = null;
+	    dsThongTin = new ArrayList<ThongTinDatThuePhong>();
+	    try {
+	        stmt = con.createStatement();
+	        String sql = "SELECT * FROM ThongTinDatThuePhong WHERE maKhachHang = '" + maKhachHang + "'";
+	        System.out.println("SQL Query: " + sql); // In ra truy vấn SQL để kiểm tra
+	        ResultSet rs = stmt.executeQuery(sql);
+	        while (rs.next()) {
+	            String maDatPhong = rs.getString(1);
+	            String maKhachHang1 = rs.getString(2);
+	            String maPhong = rs.getString(3);
+
+	            Timestamp ngayDatPhongTs = rs.getTimestamp(4);
+	            LocalDateTime ngayDatPhong = (ngayDatPhongTs != null) ? ngayDatPhongTs.toLocalDateTime() : null;
+
+	            Timestamp ngayNhanPhongTs = rs.getTimestamp(5);
+	            LocalDateTime ngayNhanPhong = (ngayNhanPhongTs != null) ? ngayNhanPhongTs.toLocalDateTime() : null;
+
+	            Timestamp ngayTraPhongTs = rs.getTimestamp(6);
+	            LocalDateTime ngayTraPhong = (ngayTraPhongTs != null) ? ngayTraPhongTs.toLocalDateTime() : null;
+
+	            String maLoaiThue = rs.getString(7);
+	            double tienDaCoc = rs.getDouble(8);
+
+	            ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maDatPhong, maKhachHang1, maPhong, ngayDatPhong,
+	                    ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
+	            dsThongTin.add(tt);
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    System.out.println("Số lượng thông tin đặt thuê phòng tìm được: " + dsThongTin.size());
+	    return dsThongTin;
 	}
+
 
 	// Đặt phòng
 	public boolean datPhong(ArrayList<Phong> phong, KhachHang kh, LocalDateTime ngayDatPhong,
@@ -161,10 +168,9 @@ public class ThongTinDatThuePhongDao {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
-		int i = 1;
 		for (Phong phong2 : phong) {
 			try {
-				String maDP = String.format("%s%3s", "TTDTP", i);
+				String maDP = String.format("%s%3s", "TTDTP", (demSoThongTinDatThuePhong() + 1));
 				stmt = con.createStatement();
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
 						+ phong2.getMaPhong() + "', '" + ngayDatPhong + "', '" + ngayNhanPhong + "', '" + ngayTraPhong
@@ -173,7 +179,6 @@ public class ThongTinDatThuePhongDao {
 				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã đặt' WHERE maPhong = '" + phong2.getMaPhong()
 						+ "'";
 				stmt.executeUpdate(sql1);
-				i++;
 			} catch (Exception e) {
 				e.printStackTrace();
 				return false;
@@ -188,10 +193,10 @@ public class ThongTinDatThuePhongDao {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
-		int i = 1;
 		for (Phong phong2 : phong) {
 			try {
-				String maDP = String.format("%s%3s", "TTDTP", i);
+				// Mã đặt phòng là TTDTP + số thứ tự của mã đặt phòng trong danh sách
+				String maDP = String.format("%s%s", "TTDTP", (demSoThongTinDatThuePhong() + 1));
 				stmt = con.createStatement();
 				// Thêm thông tin thuê phòng
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
@@ -230,7 +235,7 @@ public class ThongTinDatThuePhongDao {
 
 	// tìm tất cả thông tin đặt thuê phòng
 	public ArrayList<ThongTinDatThuePhong> timTatCaThongTinDatThuePhong() {
-		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<ThongTinDatThuePhong>();
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
 			String sql = "Select * from ThongTinDatThuePhong";
@@ -300,7 +305,7 @@ public class ThongTinDatThuePhongDao {
 
 	// tìm thông tin đặt thuê phòng theo mã khách hàng
 	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoMaKhachHang(String maKhachHang) {
-		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<ThongTinDatThuePhong>();
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
 			String sql = "Select * from ThongTinDatThuePhong where maKhachHang = '" + maKhachHang + "'";
@@ -323,7 +328,7 @@ public class ThongTinDatThuePhongDao {
 		}
 		return dsThongTin;
 	}
-	
+
 	// Tìm thông tin phòng theo mã khách hàng
 	public ArrayList<Phong> timPhongTheoMaKhachHang(String maKhachHang) {
 		ArrayList<Phong> dsPhong = new ArrayList<Phong>();
@@ -344,8 +349,8 @@ public class ThongTinDatThuePhongDao {
 	}
 
 	// tìm thông tin đặt thuê phòng theo mã phòng
-	public ThongTinDatThuePhong timThongTinDatThuePhongTheoMaPhong(String maPhong) {
-		ThongTinDatThuePhong tt = new ThongTinDatThuePhong();
+	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoMaPhong(String maPhong) {
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
 			String sql = "Select * from ThongTinDatThuePhong where MaPhong = '" + maPhong + "'";
@@ -359,18 +364,18 @@ public class ThongTinDatThuePhongDao {
 				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
-				tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
-						maLoaiThue, tienDaCoc);
+				dsThongTin.add(new ThongTinDatThuePhong(maTTDTP, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong,
+						ngayTraPhong, maLoaiThue, tienDaCoc));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return tt;
+		return dsThongTin;
 	}
 
 	// tìm thông tin đặt thuê phòng theo ngày nhận phòng
 	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoNgayNhanPhong(LocalDateTime ngayNhanPhong) {
-		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<ThongTinDatThuePhong>();
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
 			String sql = "Select * from ThongTinDatThuePhong where ngayNhanPhong = '" + ngayNhanPhong + "'";
@@ -396,7 +401,7 @@ public class ThongTinDatThuePhongDao {
 
 	// tìm thông tin đặt thuê phòng theo ngày trả phòng
 	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoNgayTraPhong(LocalDateTime ngayTraPhong) {
-		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<ThongTinDatThuePhong>();
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
 			String sql = "Select * from ThongTinDatThuePhong where ngayTraPhong = '" + ngayTraPhong + "'";
@@ -422,7 +427,7 @@ public class ThongTinDatThuePhongDao {
 
 	// tìm thông tin đặt thuê phòng theo loại thuê
 	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoLoaiThue(String maLoaiThue) {
-		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<ThongTinDatThuePhong>();
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
 			String sql = "Select * from ThongTinDatThuePhong where maLoaiThue = '" + maLoaiThue + "'";
@@ -448,7 +453,7 @@ public class ThongTinDatThuePhongDao {
 
 	// tìm thông tin đặt thuê phòng theo ngày đặt phòng
 	public ArrayList<ThongTinDatThuePhong> timThongTinDatThuePhongTheoNgayDatPhong(LocalDateTime ngayDatPhong) {
-		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<ThongTinDatThuePhong>();
+		dsThongTin = new ArrayList<ThongTinDatThuePhong>();
 		try {
 			Connection con = ConnectDB.getInstance().getConnection();
 			String sql = "Select * from ThongTinDatThuePhong where ngayDatPhong = '" + ngayDatPhong + "'";

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="main"/>
+		<item key="selection" value="btnThemKhachHang"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="btnThemKhachHang"/>
+			<item value="Khách hàng đã đặt/thuê phòng"/>
+			<item value="KJhách hàng đã đặt/thuê phòng"/>
+			<item value="khách hàng đã đặt/thuê phòng"/>
+			<item value="btnThem"/>
 			<item value="main"/>
 			<item value="Tiencoc"/>
 			<item value="btnTien"/>
 			<item value="btnTinh"/>
-			<item value="btnThemKhachHang"/>
 			<item value="btnCCCD"/>
 			<item value="ăn sáng"/>
 			<item value="LocalTime.now()"/>
 			<item value="btnKTSLPhong1"/>
 			<item value="LocalDate"/>
 			<item value="getTimeStamp"/>
-			<item value="getDate"/>
-			<item value="System"/>
-			<item value="out"/>
-			<item value="cbKieuThue"/>
 		</list>
 		<list key="replacehistory">
 			<item value="LocalTime.now().truncatedTo(ChronoUnit.SECONDS)"/>

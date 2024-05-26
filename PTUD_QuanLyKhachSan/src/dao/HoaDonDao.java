@@ -215,6 +215,7 @@ public class HoaDonDao {
 				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
 				NhanVien nv = new NhanVien(nhanVien);
 				KhachHang kh = new KhachHang(khachHang);
+				
                 hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
 			}
 		} catch (SQLException e) {
