@@ -194,7 +194,7 @@ public class Login extends javax.swing.JFrame implements Serializable {
 	private void btnDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDoiMatKhauActionPerformed
 		// TODO add your handling code here:
 		try {
-			ChangePassword changePasswordFrame = new ChangePassword();
+			DoiMatKhau changePasswordFrame = new DoiMatKhau();
 			changePasswordFrame.setVisible(true);
 			changePasswordFrame.pack();
 			changePasswordFrame.setLocationRelativeTo(null);
@@ -223,7 +223,7 @@ public class Login extends javax.swing.JFrame implements Serializable {
 
 				if (dangNhapThanhCong) {
 					dispose(); // Đóng cửa sổ hiện tại
-					TrangChuUpdated trangChuNew2 = new TrangChuUpdated(tenDangNhap); // Tạo cửa sổ mới);
+					TrangChu trangChuNew2 = new TrangChu(tenDangNhap); // Tạo cửa sổ mới);
 					trangChuNew2.setVisible(true); // Hiển thị cửa sổ mới
 				} else {
 					// Đăng nhập thất bại

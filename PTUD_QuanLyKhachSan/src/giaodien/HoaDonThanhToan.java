@@ -36,11 +36,11 @@ import java.awt.Dimension;
  *
  * @author Admin
  */
-public class HoaDonThanhToan2 extends javax.swing.JFrame {
+public class HoaDonThanhToan extends javax.swing.JFrame {
 
     private PdfWriter writer;
     private  static int orderNumber = 1; // Ví dụ: số thứ tự là 1
-    public HoaDonThanhToan2() {
+    public HoaDonThanhToan() {
         initComponents();
         drawBill();
     }
@@ -482,20 +482,21 @@ public class HoaDonThanhToan2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HoaDonThanhToan2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HoaDonThanhToan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HoaDonThanhToan2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HoaDonThanhToan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HoaDonThanhToan2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HoaDonThanhToan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HoaDonThanhToan2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HoaDonThanhToan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HoaDonThanhToan2().setVisible(true);
+                new HoaDonThanhToan().setVisible(true);
             }
         });
     }
