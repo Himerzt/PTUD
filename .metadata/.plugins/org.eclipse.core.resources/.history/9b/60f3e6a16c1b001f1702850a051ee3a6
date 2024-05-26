@@ -305,14 +305,16 @@ public class HuyDatPhong extends javax.swing.JDialog {
 			long ngayNhanPhongMillis = ttdtp.getNgayNhanPhong().toEpochSecond(ZoneOffset.UTC);
 			long diffInSeconds = ngayNhanPhongMillis - currentTime;
 			long diffInDays = diffInSeconds / (24 * 60 * 60);
-			double soTienHoanLai = loaiThueDao.timGiaCocTheoMaThue(ttdtp.getMaLoaiThue());
+			String maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), phong.getMaLoaiPhong());
+			double soTienCoc = loaiThueDao.timGiaCocTheoMaThue(maLoaiThue);
+			int soTienHoanLai = 0;
 
 			if (diffInDays > 14) {
-				soTienHoanLai =  (ttdtp.getTienDaCoc() * 70 / 100);
+				soTienHoanLai = (int) (ttdtp.getTienDaCoc() * 70 / 100);
 			} else if (diffInDays > 7) {
-				soTienHoanLai = (ttdtp.getTienDaCoc() * 50 / 100);
+				soTienHoanLai = (int) (ttdtp.getTienDaCoc() * 50 / 100);
 			} else if (diffInDays > 1) {
-				soTienHoanLai = (ttdtp.getTienDaCoc() * 50 / 100);
+				soTienHoanLai = (int) (ttdtp.getTienDaCoc() * 50 / 100);
 			} else {
 				soTienHoanLai = 0;
 			}
