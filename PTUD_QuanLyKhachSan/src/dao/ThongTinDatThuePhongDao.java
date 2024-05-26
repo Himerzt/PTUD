@@ -39,10 +39,6 @@ public class ThongTinDatThuePhongDao {
 				.getTiLeChietKhau();
 		return (giaDV + giaPhong) * (1 - chietkhau);
 	}
-	
-	public int demSoThongTinDatThuePhong() {
-		return dsThongTin.size();
-	}
 
 // cập nhật nhận phòng
 	public boolean capNhatNgayNhanPhong(ThongTinDatThuePhong tt) {
@@ -168,9 +164,10 @@ public class ThongTinDatThuePhongDao {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
+		int i = timTatCaThongTinDatThuePhong().size();
 		for (Phong phong2 : phong) {
 			try {
-				String maDP = String.format("%s%3s", "TTDTP", (demSoThongTinDatThuePhong() + 1));
+				String maDP = String.format("%s%s", "TTDTP", (i++));
 				stmt = con.createStatement();
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
 						+ phong2.getMaPhong() + "', '" + ngayDatPhong + "', '" + ngayNhanPhong + "', '" + ngayTraPhong
@@ -179,6 +176,7 @@ public class ThongTinDatThuePhongDao {
 				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã đặt' WHERE maPhong = '" + phong2.getMaPhong()
 						+ "'";
 				stmt.executeUpdate(sql1);
+//				i++;
 			} catch (Exception e) {
 				e.printStackTrace();
 				return false;
@@ -193,10 +191,11 @@ public class ThongTinDatThuePhongDao {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
+		int i = timTatCaThongTinDatThuePhong().size();
 		for (Phong phong2 : phong) {
 			try {
 				// Mã đặt phòng là TTDTP + số thứ tự của mã đặt phòng trong danh sách
-				String maDP = String.format("%s%s", "TTDTP", (demSoThongTinDatThuePhong() + 1));
+				String maDP = String.format("%s%s", "TTDTP", (i++));
 				stmt = con.createStatement();
 				// Thêm thông tin thuê phòng
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
@@ -207,6 +206,7 @@ public class ThongTinDatThuePhongDao {
 				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã thuê' WHERE maPhong = '" + phong2.getMaPhong()
 						+ "'";
 				stmt.executeUpdate(sql1);
+//				i++;
 			} catch (Exception e) {
 				e.printStackTrace();
 				return false;

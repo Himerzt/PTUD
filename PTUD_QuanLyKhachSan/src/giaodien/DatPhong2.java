@@ -659,7 +659,7 @@ public class DatPhong2 extends javax.swing.JDialog {
 
 	private boolean btnKiemTraTrungActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnKiemTraTrungActionPerformed
 		String ngayDatString = String.format("%s %s", txtCheckIn.getText(),
-				LocalTime.now().truncatedTo(ChronoUnit.SECONDS).truncatedTo(ChronoUnit.SECONDS).toString());
+				LocalTime.now().truncatedTo(ChronoUnit.SECONDS).toString());
 		String ngayNhanString = String.format("%s %s", txtNgayNhan.getText(),
 				LocalTime.now().truncatedTo(ChronoUnit.SECONDS).toString());
 		String ngayTraString = String.format("%s %s", txtCheckOut.getText(),
@@ -707,7 +707,7 @@ public class DatPhong2 extends javax.swing.JDialog {
 			}
 		}
 		// Nếu không trùng thì thông báo thành công
-		JOptionPane.showMessageDialog(null, "Thời gian thuê không trùng, có thể tiến hành thuê phòng!", "Thông báo",
+		JOptionPane.showMessageDialog(null, "Thời gian thuê không trùng, có thể tiến hành đặt phòng!", "Thông báo",
 				JOptionPane.INFORMATION_MESSAGE);
 		return true;
 	}// GEN-LAST:event_btnKiemTraTrungActionPerformed
@@ -780,11 +780,7 @@ public class DatPhong2 extends javax.swing.JDialog {
 	}// GEN-LAST:event_btnThemKhachHangActionPerformed
 
 	private boolean btnGiaCocActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnGiaCocActionPerformed
-		// Nếu giá cọc bằng 0 thì không thể đặt phòng
-		if (tinhTienCoc() == 0) {
-			JOptionPane.showMessageDialog(this, "Vui lòng nhập số tiền cọc", "Lỗi", JOptionPane.ERROR_MESSAGE);
-			return false;
-		}
+		txtGiaCoc.setText(String.valueOf(tinhTienCoc()));
 		return true;
 	}// GEN-LAST:event_btnGiaCocActionPerformed
 
@@ -795,6 +791,15 @@ public class DatPhong2 extends javax.swing.JDialog {
 	private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
 		ArrayList<Phong> dsPhongDat = getDsPhongDat();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		LocalDateTime ngayDat = LocalDateTime.parse(
+				String.format("%s %s", txtCheckIn.getText(), LocalTime.now().truncatedTo(ChronoUnit.SECONDS)),
+				formatter);
+		LocalDateTime ngayNhan = LocalDateTime.parse(
+				String.format("%s %s", txtNgayNhan.getText(), LocalTime.now().truncatedTo(ChronoUnit.SECONDS)),
+				formatter);
+		LocalDateTime ngayTra = LocalDateTime.parse(
+				String.format("%s %s", txtCheckOut.getText(), LocalTime.now().truncatedTo(ChronoUnit.SECONDS)),
+				formatter);
 		String loaiPhong = "";
 		String kieuThue = "";
 		String maLoaiThue = "";
@@ -842,10 +847,8 @@ public class DatPhong2 extends javax.swing.JDialog {
 			return;
 		}
 
-		if (thongTinDatThuePhongDao.datPhong(dsPhongDat, khachHangDao.timTheoCCCD(txtCCCD.getText()),
-				LocalDateTime.parse(txtCheckIn.getText(), formatter),
-				LocalDateTime.parse(txtNgayNhan.getText(), formatter),
-				LocalDateTime.parse(txtCheckOut.getText(), formatter), maLoaiThue, tinhTienCoc())) {
+		if (thongTinDatThuePhongDao.datPhong(dsPhongDat, khachHangDao.timTheoCCCD(txtCCCD.getText()), ngayDat, ngayNhan,
+				ngayTra, maLoaiThue, tinhTienCoc())) {
 			JOptionPane.showMessageDialog(this, "Đặt phòng thành công");
 			DatPhong2.this.dispose();
 		} else {
@@ -938,11 +941,11 @@ public class DatPhong2 extends javax.swing.JDialog {
 	public double tinhTienCoc() {
 		String maLoaiThue = "";
 		double soTienCoc = 0;
-
 		// Tính tiền cọc
 		for (Phong phong : dsPhongDat) {
 			maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), phong.getMaLoaiPhong());
 			soTienCoc += loaiThueDao.timGiaCocTheoMaThue(maLoaiThue);
+			System.out.println(soTienCoc);
 		}
 		return soTienCoc;
 	}

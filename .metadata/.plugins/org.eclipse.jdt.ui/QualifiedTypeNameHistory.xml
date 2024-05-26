@@ -14,7 +14,6 @@
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="dao.PhongDao"/>
     <fullyQualifiedTypeName name="entity.Phong"/>
-    <fullyQualifiedTypeName name="dao.ThongTinDatThuePhongDao"/>
     <fullyQualifiedTypeName name="com.itextpdf.text.List"/>
     <fullyQualifiedTypeName name="dao.ChiTietHoaDon_Dao"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
@@ -47,7 +46,6 @@
     <fullyQualifiedTypeName name="dao.impl.TaiKhoan_Impl"/>
     <fullyQualifiedTypeName name="entity.ChiTietDonDat"/>
     <fullyQualifiedTypeName name="giaodien.CustomClass.JCheckBoxCustom"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="dao.DichVuDao"/>
     <fullyQualifiedTypeName name="javax.swing.event.DocumentListener"/>
     <fullyQualifiedTypeName name="java.util.List"/>
@@ -59,5 +57,7 @@
     <fullyQualifiedTypeName name="java.time.LocalTime"/>
     <fullyQualifiedTypeName name="java.time.temporal.ChronoUnit"/>
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="dao.ThongTinDatThuePhongDao"/>
     <fullyQualifiedTypeName name="entity.ThongTinDatThuePhong"/>
 </qualifiedTypeNameHistroy>
