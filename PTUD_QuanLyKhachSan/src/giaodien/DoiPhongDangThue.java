@@ -45,6 +45,7 @@ public class DoiPhongDangThue extends javax.swing.JDialog {
 	private List<DichVuPhong> danhSachDichVu;
 	private String[] dsPhongDat;
 	List<String> dsTenPhong;
+        String maPhongDoi;
 
 	/**
 	 * Creates new form DatPhong
@@ -60,6 +61,12 @@ public class DoiPhongDangThue extends javax.swing.JDialog {
 		for (String tenPhong : dsTenPhong) {
 			dsPhongDat[index++] = tenPhong;
 		}
+		ConnectDB.getInstance().getConnection();
+		initComponents();
+	}
+        
+        public DoiPhongDangThue(String maPhongDoi) {
+		this.maPhongDoi = maPhongDoi;
 		ConnectDB.getInstance().getConnection();
 		initComponents();
 	}
@@ -2322,7 +2329,7 @@ public class DoiPhongDangThue extends javax.swing.JDialog {
         pnBody2Layout.setHorizontalGroup(
             pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBody2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(27, 27, 27)
                 .addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -2338,7 +2345,7 @@ public class DoiPhongDangThue extends javax.swing.JDialog {
                         .addComponent(panelRound8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(panelRound7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(panelRound6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         pnBody2Layout.setVerticalGroup(
             pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2406,7 +2413,7 @@ public class DoiPhongDangThue extends javax.swing.JDialog {
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel26.setText("Tên khách hàng");
+        jLabel26.setText("Ghi chú");
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -2502,7 +2509,7 @@ public class DoiPhongDangThue extends javax.swing.JDialog {
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);

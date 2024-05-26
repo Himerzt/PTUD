@@ -89,6 +89,9 @@ CREATE TABLE HoaDon (
     MaNV NVARCHAR(30),
     MaKH NVARCHAR(30),
     NgayLapHD DATETIME,
+	MaLSDP NVARCHAR(30),
+    MaKM NVARCHAR(10),
+	TongTien FLOAT,
     ThueVAT FLOAT
 ); --check
 
@@ -114,8 +117,6 @@ CREATE TABLE ChiTietHoaDon (
 	MaCTHD NVARCHAR(30) PRIMARY KEY,
     MaHD NVARCHAR(30),
     MaTTDTP NVARCHAR(30),
-	MaLSDP NVARCHAR(30),
-    MaKM NVARCHAR(10),
 ); --check
 
 CREATE TABLE LichSuDoiPhong (
@@ -172,9 +173,9 @@ ALTER TABLE DichVuSuDung
 ADD CONSTRAINT FK_DichVuSuDung_DichVu
 FOREIGN KEY (MaDichVu) REFERENCES DichVu(MaDV);
 
--- Thêm khóa ngoại từ bảng ChiTietHoaDon đến bảng KhuyenMai
-ALTER TABLE ChiTietHoaDon
-ADD CONSTRAINT FK_ChiTietHoaDon_KhuyenMai
+-- Thêm khóa ngoại từ bảng HoaDon đến bảng KhuyenMai
+ALTER TABLE HoaDon
+ADD CONSTRAINT FK_HoaDon_KhuyenMai
 FOREIGN KEY (MaKM) REFERENCES KhuyenMai(MaKhuyenMai);
 
 -- Thêm khóa ngoại từ bảng KhachHang đến bảng HangThanhVien
@@ -207,9 +208,9 @@ ALTER TABLE LichSuDoiPhong
 ADD CONSTRAINT FK_LichSuDoiPhong_Phong
 FOREIGN KEY (MaPhongMoi) REFERENCES Phong(MaPhong);
 
--- Thêm khóa ngoại từ bảng ChiTietHoaDon đến bảng LichSuDoiPhong
-ALTER TABLE ChiTietHoaDon
-ADD CONSTRAINT FK_ChiTietHoaDon_LichSuDoiPhong
+-- Thêm khóa ngoại từ bảng HoaDon đến bảng LichSuDoiPhong
+ALTER TABLE HoaDon
+ADD CONSTRAINT FK_HoaDon_LichSuDoiPhong
 FOREIGN KEY (MaLSDP) REFERENCES LichSuDoiPhong(MaLSDP);
 
 -- Thêm khóa ngoại từ bảng ChiTietHoaDon đến bảng ThongTinDatThuePhong
