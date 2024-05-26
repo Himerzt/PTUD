@@ -241,31 +241,33 @@ public class HoaDonDao {
 		return soLuong;
 	}
 	
+	// Lấy tên khách hàng từ mã khách hàng trong hóa đơn SELECT k.TenKhachHang FROM HoaDon hd JOIN KhachHang k  
+//	ON hd.MaKH = k.MaKH WHERE hd.MaHD = 'HD26052024005'
+	public String layTenKhachHangTuMaHoaDon(String maHoaDon) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		PreparedStatement pstmt = null;
+		String tenKhachHang = null;
+		try {
+			String sql = "SELECT k.TenKhachHang FROM HoaDon hd JOIN KhachHang k ON hd.MaKH = k.MaKH WHERE hd.MaKH = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, maHoaDon);
+			ResultSet rs = pstmt.executeQuery();
+			rs.next();
+			tenKhachHang = rs.getString(1);
+			rs.close();
+			pstmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return tenKhachHang;
+	}
+	
 	
 	public static void main(String[] args) {
-		// test tìm tất cả hóa đơn
+		// ttesst tìm tên khách hàng với mã hóa đon HD26052024005
 		HoaDonDao hoaDonDao = new HoaDonDao();
-		
-//		// test thêm hóa đơn
-
-		HoaDon hd = new HoaDon("HD023", "NV001", "KH004", LocalDateTime.now(), null , "KM001", 1000000);
-		
-		boolean kq = hoaDonDao.themHoaDon(hd);
-		
-		if (kq) {
-			System.out.println("Thêm thành công");
-		} else {
-			System.out.println("Thêm thất bại");
-		}
-		
-		// test tìm hóa đơn trong ngày
-		List<HoaDon> dsHoaDon = hoaDonDao.timHoaDonTrongNgay(LocalDate.now());
-		for (HoaDon hoaDon : dsHoaDon) {
-			System.out.println(hoaDon);
-		}
-		
-		// test đếm số hóa đơn trong ngày
-		int soLuong = hoaDonDao.demSoHoaDonTrongNgay(LocalDate.now());
-		System.out.println("Số lượng hóa đơn trong ngày: " + soLuong);
+		String tenKhachHang = hoaDonDao.layTenKhachHangTuMaHoaDon("HD26052024005");
+		System.out.println(tenKhachHang);
 	}
 }

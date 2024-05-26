@@ -30,6 +30,9 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfWriter;
+
+import entity.HoaDon;
+
 import java.awt.Rectangle;
 import java.awt.Dimension;
 /**
@@ -40,6 +43,16 @@ public class HoaDonThanhToan2 extends javax.swing.JFrame {
 
     private PdfWriter writer;
     private  static int orderNumber = 1; // Ví dụ: số thứ tự là 1
+    private HoaDon hoadonLuuTru;
+    
+    
+    public HoaDonThanhToan2(HoaDon hoadon) {
+    	this.hoadonLuuTru = hoadon;
+        initComponents();
+        drawBill();
+    }
+    
+    
     public HoaDonThanhToan2() {
         initComponents();
         drawBill();
@@ -51,16 +64,7 @@ public class HoaDonThanhToan2 extends javax.swing.JFrame {
         return orderNumber;
     }
     public void drawBill(){
-        // Lấy ngày hiện tại
-        LocalDate currentDate = LocalDate.now();
-        // Định dạng ngày thành chuỗi "YYYYMMDD"
-        String formattedDate = currentDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
-
-        // Số thứ tự phát sinh hóa đơn (ví dụ: bạn có thể lấy từ cơ sở dữ liệu hoặc tính toán)
-
-        // Định dạng số thứ tự thành chuỗi "xxx" (có thể sử dụng DecimalFormat để thêm số 0 phía trước nếu cần)
-        String formattedOrderNumber = String.format("%03d", orderNumber);
-        maHoaDon.setText("HD" + formattedDate + formattedOrderNumber);
+    	maHoaDon.setText(hoadonLuuTru.getMaHoaDon());        
         gach.setText("--------------------------------------------------------------------------------------------------------------------------------------------------");
         TraPhong traPhong = new TraPhong(); // Tạo một đối tượng TraPhong
 //        tenKhachHang.setText(traPhong.getTxtTenKH());
@@ -91,61 +95,7 @@ public class HoaDonThanhToan2 extends javax.swing.JFrame {
 
         // Đặt đường viền cho tiêu đề cột
         tableHoaDon.getTableHeader().setBorder(BorderFactory.createLineBorder(Color.GRAY));
-        
-        // thêm dữ liệu
-//        JTable tableDanhSachPhong = traPhong.getTableDanhSachPhong();
-//        JTable tableDV = traPhong.getTableDV();
-//        DefaultTableModel model = (DefaultTableModel) tableHoaDon.getModel();
-
-//        // Duyệt qua các hàng của bảng tableDanhSachPhong
-//        for (int i = 0; i < tableDanhSachPhong.getRowCount(); i++) {
-//            Object[] rowData = new Object[5]; // Mảng lưu trữ dữ liệu cho mỗi hàng
-//
-//            // Cột 1: Số thứ tự tự phát sinh
-//            rowData[0] = i + 1;
-//
-//            // Cột 2: Lấy dữ liệu từ cột thứ ba của tableDanhSachPhong
-//            rowData[1] = tableDanhSachPhong.getValueAt(i, 2);
-//
-//            // Cột 3: Ghi là 1
-//            rowData[2] = 1;
-//
-//            // Cột 4: Lấy dữ liệu từ cột thứ năm của bảng tableDanhSachPhong
-//            rowData[3] = tableDanhSachPhong.getValueAt(i, 4);
-//
-//            // Cột 5: Lấy dữ liệu từ cột thứ năm của bảng tableDanhSachPhong
-//            rowData[4] = tableDanhSachPhong.getValueAt(i, 4);
-//
-//            // Thêm hàng vào bảng
-//            model.addRow(rowData);
-//        }
-//        // Duyệt qua các hàng của bảng tableDV
-//        for (int i = 0; i < tableDV.getRowCount(); i++) {
-//            Object[] rowData = new Object[5]; // Mảng lưu trữ dữ liệu cho mỗi hàng
-//
-//            // Cột 1: Số thứ tự tự phát sinh
-//            rowData[0] = i + 1 + tableDanhSachPhong.getRowCount(); // Cộng thêm số lượng hàng đã thêm từ bảng tableDanhSachPhong
-//
-//            // Cột 2: Lấy dữ liệu từ cột thứ ba của tableDV
-//            rowData[1] = tableDV.getValueAt(i, 2);
-//
-//            // Cột 3: Lấy dữ liệu từ cột thứ tư của tableDV
-//            rowData[2] = tableDV.getValueAt(i, 3);
-//
-//            // Cột 4: Lấy dữ liệu từ cột thứ sáu của bảng tableDV
-//            rowData[3] = tableDV.getValueAt(i, 5);
-//
-//            // Cột 5: Lấy dữ liệu từ cột thứ bảy của bảng tableDV
-//            rowData[4] = tableDV.getValueAt(i, 6);
-//
-//            // Thêm hàng vào bảng
-//            model.addRow(rowData);
-//        }
-
-//        tongTien.setText(traPhong.getTongTien());
-//        tienCoc.setText(traPhong.getTienCoc());
-//        tienConLai.setText(traPhong.getTienConLai());
-
+    
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
