@@ -178,21 +178,19 @@ public class ThongTinDatThuePhongDao {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
+		int i = timTatCaThongTinDatThuePhong().size();
 		for (Phong phong2 : phong) {
 			try {
-				String maDP = String.format("%s%s", "TTDTP", (timTatCaThongTinDatThuePhong().size() + 1));
-				System.out.println("Mã đặt phòng: " + maDP);
+				String maDP = String.format("%s%s", "TTDTP", (i++));
 				stmt = con.createStatement();
-				Timestamp ngayDatPhongTs = Timestamp.valueOf(ngayDatPhong);
-				Timestamp ngayNhanPhongTs = Timestamp.valueOf(ngayNhanPhong);
-				Timestamp ngayTraPhongTs = Timestamp.valueOf(ngayTraPhong);
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
-						+ phong2.getMaPhong() + "', '" + ngayDatPhongTs + "', '" + ngayNhanPhongTs + "', '" + ngayTraPhongTs
+						+ phong2.getMaPhong() + "', '" + ngayDatPhong + "', '" + ngayNhanPhong + "', '" + ngayTraPhong
 						+ "','" + maLoaiThue + "','" + tienDaCoc + "')";
 				stmt.executeUpdate(sql);
 				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã đặt' WHERE maPhong = '" + phong2.getMaPhong()
 						+ "'";
 				stmt.executeUpdate(sql1);
+//				i++;
 			} catch (Exception e) {
 				e.printStackTrace();
 				return false;
@@ -202,38 +200,41 @@ public class ThongTinDatThuePhongDao {
 	}
 
 	// Thuê phòng
+	import java.sql.Timestamp;
+
 	public boolean thuePhong(ArrayList<Phong> phong, KhachHang kh, LocalDateTime ngayDatPhong,
-			LocalDateTime ngayNhanPhong, String maLoaiThue, LocalDateTime ngayTraPhong, double tienDaCoc) {
-		ConnectDB.getInstance();
-		Connection con = ConnectDB.getConnection();
-		Statement stmt = null;
-		for (Phong phong2 : phong) {
-			try {
-				String maDP = String.format("%s%s", "TTDTP", (timTatCaThongTinDatThuePhong().size() + 1));
-				System.out.println("Mã đặt phòng: " + maDP);
-				stmt = con.createStatement();
-				// Chuyển đổi LocalDateTime sang Timestamp
-				Timestamp ngayDatPhongTs = Timestamp.valueOf(ngayDatPhong);
-				Timestamp ngayNhanPhongTs = Timestamp.valueOf(ngayNhanPhong);
-				Timestamp ngayTraPhongTs = Timestamp.valueOf(ngayTraPhong);
+	                         LocalDateTime ngayNhanPhong, String maLoaiThue, LocalDateTime ngayTraPhong, double tienDaCoc) {
+	    ConnectDB.getInstance();
+	    Connection con = ConnectDB.getConnection();
+	    Statement stmt = null;
+	    int i = timTatCaThongTinDatThuePhong().size();
+	    for (Phong phong2 : phong) {
+	        try {
+	            // Mã đặt phòng là TTDTP + số thứ tự của mã đặt phòng trong danh sách
+	            String maDP = String.format("%s%s", "TTDTP", (i++));
+	            stmt = con.createStatement();
+	            // Chuyển đổi LocalDateTime sang Timestamp
+	            Timestamp ngayDatPhongTs = Timestamp.valueOf(ngayDatPhong);
+	            Timestamp ngayNhanPhongTs = Timestamp.valueOf(ngayNhanPhong);
+	            Timestamp ngayTraPhongTs = Timestamp.valueOf(ngayTraPhong);
 
-				// Thêm thông tin thuê phòng
-				String sql = "insert into ThongTinDatThuePhong values('" + maDP + "', '" + kh.getMaKH() + "', '"
-						+ phong2.getMaPhong() + "', '" + ngayDatPhongTs + "', '" + ngayNhanPhongTs + "', '"
-						+ ngayTraPhongTs + "','" + maLoaiThue + "','" + tienDaCoc + "')";
-				stmt.executeUpdate(sql);
+	            // Thêm thông tin thuê phòng
+	            String sql = "insert into ThongTinDatThuePhong values('" + maDP + "', '" + kh.getMaKH() + "', '"
+	                    + phong2.getMaPhong() + "', '" + ngayDatPhongTs + "', '" + ngayNhanPhongTs + "', '" + ngayTraPhongTs
+	                    + "','" + maLoaiThue + "','" + tienDaCoc + "')";
+	            stmt.executeUpdate(sql);
 
-				// Cập nhật trạng thái phòng
-				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã thuê' WHERE maPhong = '" + phong2.getMaPhong()
-						+ "'";
-				stmt.executeUpdate(sql1);
-			} catch (Exception e) {
-				e.printStackTrace();
-				return false;
-			}
-		}
-		return true;
+	            // Cập nhật trạng thái phòng
+	            String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã thuê' WHERE maPhong = '" + phong2.getMaPhong() + "'";
+	            stmt.executeUpdate(sql1);
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            return false;
+	        }
+	    }
+	    return true;
 	}
+
 
 	public ArrayList<String> layDanhSachPhongTheoMaKhachHang(String maKH) {
 		ArrayList<String> dsPhong = new ArrayList<String>();

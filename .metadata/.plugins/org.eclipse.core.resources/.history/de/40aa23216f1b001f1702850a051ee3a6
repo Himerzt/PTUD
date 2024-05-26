@@ -611,11 +611,10 @@ public class DatPhong2 extends javax.swing.JDialog {
 			if (ngayNhan.isBefore(thongTinDatThuePhong.getNgayTraPhong())
 					&& ngayNhan.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
 				JOptionPane.showMessageDialog(null,
-						"Ngày nhận phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+						"Ngày nhận phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!");
 				return false;
 			} else if (ngayNhan.equals(thongTinDatThuePhong.getNgayNhanPhong())) {
-				JOptionPane.showMessageDialog(null, "Ngày nhận phòng trùng với ngày nhận phòng đã có trước đó!", "Lỗi",
-                        JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Ngày nhận phòng trùng với ngày nhận phòng đã có trước đó!");
 				return false;
 			}
 		}

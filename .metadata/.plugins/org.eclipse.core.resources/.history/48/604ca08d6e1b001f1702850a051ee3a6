@@ -178,10 +178,11 @@ public class ThongTinDatThuePhongDao {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
+		int i = timTatCaThongTinDatThuePhong().size();
+		System.out.println("i: " + i);
 		for (Phong phong2 : phong) {
 			try {
-				String maDP = String.format("%s%s", "TTDTP", (timTatCaThongTinDatThuePhong().size() + 1));
-				System.out.println("Mã đặt phòng: " + maDP);
+				String maDP = String.format("%s%s", "TTDTP", (i++));
 				stmt = con.createStatement();
 				Timestamp ngayDatPhongTs = Timestamp.valueOf(ngayDatPhong);
 				Timestamp ngayNhanPhongTs = Timestamp.valueOf(ngayNhanPhong);
@@ -207,10 +208,12 @@ public class ThongTinDatThuePhongDao {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
+		int i = timTatCaThongTinDatThuePhong().size();
+		System.out.println("i: " + i);
 		for (Phong phong2 : phong) {
 			try {
-				String maDP = String.format("%s%s", "TTDTP", (timTatCaThongTinDatThuePhong().size() + 1));
-				System.out.println("Mã đặt phòng: " + maDP);
+				// Mã đặt phòng là TTDTP + số thứ tự của mã đặt phòng trong danh sách
+				String maDP = String.format("%s%s", "TTDTP", (i++));
 				stmt = con.createStatement();
 				// Chuyển đổi LocalDateTime sang Timestamp
 				Timestamp ngayDatPhongTs = Timestamp.valueOf(ngayDatPhong);
