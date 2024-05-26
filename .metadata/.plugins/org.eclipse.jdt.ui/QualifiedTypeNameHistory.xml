@@ -47,9 +47,7 @@
     <fullyQualifiedTypeName name="giaodien.CustomClass.JCheckBoxCustom"/>
     <fullyQualifiedTypeName name="dao.DichVuDao"/>
     <fullyQualifiedTypeName name="javax.swing.event.DocumentListener"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="giaodien.QuanLyPhongPannel"/>
-    <fullyQualifiedTypeName name="dao.DichVuPhongDao"/>
     <fullyQualifiedTypeName name="entity.DichVuPhong"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="dao.ThongTinDatThuePhongDao"/>
     <fullyQualifiedTypeName name="entity.ThongTinDatThuePhong"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="dao.DichVuPhongDao"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

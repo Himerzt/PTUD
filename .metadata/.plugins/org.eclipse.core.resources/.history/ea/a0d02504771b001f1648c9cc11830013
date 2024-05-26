@@ -736,16 +736,15 @@ public class ThuePhong extends javax.swing.JDialog {
 		}
 
 		// Thêm thông tin dịch vụ
-		List<DichVuPhong> dsDVP = new ArrayList<>();
+		DichVuPhong dvPhong = new DichVuPhong();
 		// Duyệt từng dòng trong bảng dịch vụ
 		for (int i = 0; i < tableDV.getRowCount(); i++) {
-			DichVuPhong dvPhong = new DichVuPhong();
 			dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tableDV.getValueAt(i, 3).toString()));
 			dvPhong.setMaDichVu(tableDV.getValueAt(i, 1).toString().split(" ")[0]);
 			dvPhong.setSoLuong(Integer.parseInt(tableDV.getValueAt(i, 2).toString()));
-			dsDVP.add(dvPhong);
+			// Thêm dịch vụ vào cơ sở dữ liệu
+			dichVuPhongDao.themDichVuPhong(dvPhong);
 		}
-		dichVuPhongDao.themDichVuPhong(dsDVP);
 		// Kiểm tra lại toàn bộ thông tin trước khi đặt phòng
 		// Khách hàng
 		if (!btnThemKhachHangActionPerformed(evt)) {

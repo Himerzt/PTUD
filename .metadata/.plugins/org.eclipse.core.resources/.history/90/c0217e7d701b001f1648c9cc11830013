@@ -321,7 +321,6 @@ public class HuyDatPhong extends javax.swing.JDialog {
 			boolean xoaThanhCong = thongTinDatThuePhongDao.xoaThongTinDatThueTheoMa(ttdtp.getMaTTDTP());
 
 			if (xoaThanhCong) {
-				// Hiển thi số ngày chênh lệch giữa ngày nhận phòng và ngày hiện tại và số tiền cọc
 				JOptionPane.showMessageDialog(this, "Số tiền cọc phải hoàn lại là: " + soTienHoanLai + " VND");
 				loadDanhSachPhongDat(); // Cập nhật lại bảng sau khi xóa
 			} else {

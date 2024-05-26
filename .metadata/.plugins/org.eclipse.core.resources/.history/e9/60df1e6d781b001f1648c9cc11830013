@@ -740,10 +740,6 @@ public class DatPhong2 extends javax.swing.JDialog {
 				JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
 						JOptionPane.ERROR_MESSAGE);
 				return false;
-			} else if (soNguoiLon < dsPhongDat.size()) {
-				JOptionPane.showMessageDialog(this, "Số lượng người không đủ sức chứa của phòng", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
 			} else {
 				JOptionPane.showMessageDialog(this, "Số lượng người hợp lệ", "Thông báo",
 						JOptionPane.INFORMATION_MESSAGE);

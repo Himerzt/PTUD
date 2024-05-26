@@ -735,12 +735,12 @@ public class DatPhong2 extends javax.swing.JDialog {
 					JOptionPane.ERROR_MESSAGE);
 			return false;
 		} else {
-			int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongDat);
+			int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongThue);
 			if (soNguoiLon > sucChuaToiDa || (soNguoiLon == sucChuaToiDa && soTreEm > soNguoiLon)) {
 				JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
 						JOptionPane.ERROR_MESSAGE);
 				return false;
-			} else if (soNguoiLon < dsPhongDat.size()) {
+			} else if (soNguoiLon < dsPhongThue.size()) {
 				JOptionPane.showMessageDialog(this, "Số lượng người không đủ sức chứa của phòng", "Lỗi",
 						JOptionPane.ERROR_MESSAGE);
 				return false;

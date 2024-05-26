@@ -24,7 +24,6 @@ public class DichVuPhongDao {
 	}
 
 	public ArrayList<DichVuPhong> timTatCacDichVuSuDung() {
-		dsDichVu = new ArrayList<>();
 		try {
 			ConnectDB.getInstance();
 			Connection con = ConnectDB.getConnection();
@@ -48,7 +47,6 @@ public class DichVuPhongDao {
 	}
 
 	public ArrayList<DichVuPhong> timTheoMaDichVuSuDung(String maDV) {
-		dsDichVu = new ArrayList<>();
 		try {
 			ConnectDB.getInstance();
 			Connection con = ConnectDB.getConnection();
@@ -61,7 +59,7 @@ public class DichVuPhongDao {
 				String maPhong1 = rs.getString(2);
 				String maDichVu = rs.getString(3);
 				int soLuong = rs.getInt(4);
-				dvp = new DichVuPhong(maDichVuSuDung, maPhong1, maDichVu, soLuong);
+				dvp = new DichVuPhong(maDichVuSuDung,maPhong1  , maDichVu, soLuong);
 				dsDichVu.add(dvp);
 			}
 		} catch (Exception var9) {
@@ -134,8 +132,9 @@ public class DichVuPhongDao {
 
 	// thêm danh sach dih vu phong
 
+
 	public List<DichVuPhong> timDichVuSuDungTheoMaPhong(String maPhong) {
-		dsDichVu = new ArrayList<DichVuPhong>();
+		ArrayList<DichVuPhong> dsDV = new ArrayList<DichVuPhong>();
 		try {
 			Connection con = ConnectDB.getConnection();
 			String sql = "Select * from DichVuSuDung where maPhong = '" + maPhong + "'";
@@ -147,31 +146,31 @@ public class DichVuPhongDao {
 				String maDichVu = rs.getString(3);
 				int soLuong = rs.getInt(4);
 				dvp = new DichVuPhong(maDichVuSuDung, maPhong1, maDichVu, soLuong);
-				dsDichVu.add(dvp);
+				dsDV.add(dvp);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return dsDichVu;
+		return dsDV;
 	}
 
 	public DichVu timTheoMaDichVu(String maDV) {
 		try {
-			Connection con = ConnectDB.getConnection();
-			String sql = "Select * from DichVu where maDV = '" + maDV + "'";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
-			if (rs.next()) {
-				String maDV1 = rs.getString(1);
-				String tenDV = rs.getString(2);
-				double giaDV = rs.getDouble(3);
-				DichVu dv = new DichVu(maDV1, tenDV, giaDV);
-				return dv;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
+            Connection con = ConnectDB.getConnection();
+            String sql = "Select * from DichVu where maDV = '" + maDV + "'";
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            if (rs.next()) {
+                String maDV1 = rs.getString(1);
+                String tenDV = rs.getString(2);
+                double giaDV = rs.getDouble(3);
+                DichVu dv = new DichVu(maDV1, tenDV, giaDV);
+                return dv;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
 	}
 
 	public double tinhTienTheoMaDichVu(String maDV) {
@@ -200,7 +199,8 @@ public class DichVuPhongDao {
 
 		return giaTong;
 	}
-
+	
+	
 	// đếm số lượng dịch vụ phòng theo mã phòng
 	public int demSoLuongDichVuSuDungTheoMaPhong(String maPhong) {
 		int count = 0;
@@ -218,19 +218,18 @@ public class DichVuPhongDao {
 		}
 		return count;
 	}
-
+	
+	
 	// thêm dịch vụ phòng
-	public boolean themDichVuPhong(List<DichVuPhong> dsDVP) {
+	public boolean themDichVuPhong(DichVuPhong dvp) {
 		try {
 			ConnectDB.getInstance();
 			Connection con = ConnectDB.getConnection();
 			Statement stmt = con.createStatement();
-			for (DichVuPhong dvp : dsDVP) {
-				String sql = "insert into DichVuSuDung values('"
-						+ String.format("%s%s", "DVSD", timTatCacDichVuSuDung().size()) + "','" + dvp.getMaPhong()
-						+ "','" + dvp.getMaDichVu() + "'," + dvp.getSoLuong() + ")";
-				stmt.executeUpdate(sql);
-			}
+			int maDVSD = timTatCacDichVuSuDung().size() + 1;
+			String sql = "insert into DichVuSuDung values('" + maDVSD + "','" + dvp.getMaPhong() + "','"
+					+ dvp.getMaDichVu() + "'," + dvp.getSoLuong() + ")";
+			stmt.executeUpdate(sql);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -257,17 +256,19 @@ public class DichVuPhongDao {
 
 	// xóa dịch vụ phòng
 	public boolean xoaDichVuPhong(String maPhong, String maDV) {
-		try {
-			ConnectDB.getInstance();
-			Connection con = ConnectDB.getConnection();
-			Statement stmt = con.createStatement();
-			String sql = "delete from DichVuSuDung where maPhong = '" + maPhong + "' and maDV = '" + maDV + "'";
-			stmt.executeUpdate(sql);
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
+        try {
+            ConnectDB.getInstance();
+            Connection con = ConnectDB.getConnection();
+            Statement stmt = con.createStatement();
+            String sql = "delete from DichVuSuDung where maPhong = '" + maPhong + "' and maDV = '" + maDV + "'";
+            stmt.executeUpdate(sql);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
+	
+	
 }

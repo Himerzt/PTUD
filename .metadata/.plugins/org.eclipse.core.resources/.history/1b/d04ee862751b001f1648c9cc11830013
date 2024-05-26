@@ -18,7 +18,6 @@ import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
 import dao.DichVuDao;
-import dao.DichVuPhongDao;
 import dao.KhachHangDao;
 import dao.LoaiPhongDao;
 import dao.LoaiThueDao;
@@ -37,7 +36,6 @@ import entity.ThongTinDatThuePhong;
 public class DatPhong2 extends javax.swing.JDialog {
 	private ArrayList<Phong> dsPhongDat;
 	private DichVuDao dichVuDao;
-	private DichVuPhongDao dichVuPhongDao;
 	private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
 	private KhachHangDao khachHangDao;
 	private LoaiThueDao loaiThueDao;
@@ -55,7 +53,6 @@ public class DatPhong2 extends javax.swing.JDialog {
 		loaiThueDao = new LoaiThueDao();
 		loaiPhongDao = new LoaiPhongDao();
 		phongDao = new PhongDao();
-		dichVuPhongDao = new DichVuPhongDao();
 		ConnectDB.getInstance().getConnection();
 		dsPhongDat = new ArrayList<Phong>();
 		for (String tenPhong : dsTenPhong) {
@@ -673,17 +670,16 @@ public class DatPhong2 extends javax.swing.JDialog {
 		LocalDateTime ngayNhan = LocalDateTime.parse(ngayNhanString, formatter);
 		LocalDateTime ngayTra = LocalDateTime.parse(ngayTraString, formatter);
 		// Thêm thông tin dịch vụ
-		// Thêm thông tin dịch vụ
-		List<DichVuPhong> dsDVP = new ArrayList<>();
+		DichVuPhong dvPhong = new DichVuPhong();
 		// Duyệt từng dòng trong bảng dịch vụ
 		for (int i = 0; i < tableDV.getRowCount(); i++) {
-			DichVuPhong dvPhong = new DichVuPhong();
 			dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tableDV.getValueAt(i, 3).toString()));
 			dvPhong.setMaDichVu(tableDV.getValueAt(i, 1).toString().split(" ")[0]);
 			dvPhong.setSoLuong(Integer.parseInt(tableDV.getValueAt(i, 2).toString()));
-			dsDVP.add(dvPhong);
+			System.out.println(dvPhong.getMaPhong() + " " + dvPhong.getMaDichVu() + " " + dvPhong.getSoLuong());
+			// Thêm dịch vụ vào cơ sở dữ liệu
+			dichVuPhongDao.themDichVuPhong(dvPhong);
 		}
-		dichVuPhongDao.themDichVuPhong(dsDVP);
 		for (Phong phong : dsPhongDat) {
 			// Kiểm tra trùng ngày nhận
 			if (!kiemTraTrungNgayNhan(phong.getMaPhong(), ngayNhan)) {
@@ -738,10 +734,6 @@ public class DatPhong2 extends javax.swing.JDialog {
 			int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongDat);
 			if (soNguoiLon > sucChuaToiDa || (soNguoiLon == sucChuaToiDa && soTreEm > soNguoiLon)) {
 				JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			} else if (soNguoiLon < dsPhongDat.size()) {
-				JOptionPane.showMessageDialog(this, "Số lượng người không đủ sức chứa của phòng", "Lỗi",
 						JOptionPane.ERROR_MESSAGE);
 				return false;
 			} else {
