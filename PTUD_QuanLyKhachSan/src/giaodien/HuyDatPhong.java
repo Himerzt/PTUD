@@ -1,15 +1,10 @@
 package giaodien;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.swing.JOptionPane;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
@@ -18,8 +13,6 @@ import dao.KhachHangDao;
 import dao.LoaiThueDao;
 import dao.PhongDao;
 import dao.ThongTinDatThuePhongDao;
-import entity.DichVu;
-import entity.DichVuPhong;
 import entity.KhachHang;
 import entity.Phong;
 import entity.ThongTinDatThuePhong;
@@ -242,11 +235,11 @@ public class HuyDatPhong extends javax.swing.JDialog {
     }//GEN-LAST:event_btnHuyActionPerformed
 
     private void btnHuyTatCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyTatCaActionPerformed
-
+    	
     }//GEN-LAST:event_btnHuyTatCaActionPerformed
 
     private void btnHuyPhongChonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyPhongChonActionPerformed
-        // TODO add your handling code here:
+    	
     }//GEN-LAST:event_btnHuyPhongChonActionPerformed
 
     private void btnThemKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemKhachHangActionPerformed
@@ -254,13 +247,12 @@ public class HuyDatPhong extends javax.swing.JDialog {
         if (regCCCD_Passport(txtCCCD.getText()) == false) {
             return;
         }
-        // Tìm khách hàng bằng CCCD. Nếu tìm thấy thì tự fill các textfield còn lại, nếu không thì thông báo không tìm thấy
         if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) != null) {
             kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
             txtTenKH.setText(kh.getHoTenKH());
             loadDanhSachPhongDat();
         } else {
-            JOptionPane.showMessageDialog(this, "Khách hàng hiện chưa được thêm!");
+            JOptionPane.showMessageDialog(this, "Không tìm thấy thông tin khách hàng!");
             return;
         }
     }//GEN-LAST:event_btnThemKhachHangActionPerformed
@@ -301,12 +293,16 @@ public class HuyDatPhong extends javax.swing.JDialog {
         // Hiện danh sách phòng vào bảng
     	KhachHang kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
         ArrayList<Phong> dsPhongDat = thongTinDatThuePhongDao.timPhongTheoMaKhachHang(kh.getMaKH());
+        ArrayList<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaKhachHang(kh.getMaKH()); 
         // Load danh sách phòng đặt vào table
         DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
+        String kieuThue = "";
         model.setRowCount(0);
 		for (int i = 0; i < dsPhongDat.size(); i++) {
 			Phong p = dsPhongDat.get(i);
-			model.addRow(new Object[] { i + 1, p.getSoPhong(), layTenLoaiPhong(p.getMaLoaiPhong()) });
+			kieuThue = loaiThueDao.timKieuThueTheoMaLoaiThue(dsTTDTP.get(i).getMaLoaiThue());
+			model.addRow(new Object[] { i + 1, p.getSoPhong(), layTenLoaiPhong(p.getMaLoaiPhong()), p.getKieuThue(),
+					p.getNgayDat(), p.getNgayNhan(), p.getNgayTra(), p.getTienCoc() });
 		}
     }
 
