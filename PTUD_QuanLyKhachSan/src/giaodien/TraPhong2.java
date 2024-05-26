@@ -48,6 +48,8 @@ public class TraPhong2 extends javax.swing.JDialog {
 	private KhachHangDao khachHangDao;
 	private DichVuDao dichVuDao;
 	private double tongGiaDichVu = 0;
+	private double tongGiaPhong = 0;
+	private double tongGia = 0;
 	/**
 	 * Creates new form DatPhong
 	 */
