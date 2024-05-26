@@ -91,6 +91,24 @@ public class ThongTinDatThuePhongDao {
 		}
 		return n > 0;
 	}
+	
+	// Cập nhật là số tiền cọc theo mã khách hàng
+	public boolean capNhatTienCocTheoMaKhachHang(String maKhachHang, double tienDaCoc) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		Statement stmt = null;
+		int n = 0;
+		try {
+			stmt = con.createStatement();
+			String sql = "update ThongTinDatThuePhong set tienDaCoc = '" + tienDaCoc + "' where maKhachHang = '"
+					+ maKhachHang + "'";
+			n = stmt.executeUpdate(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return n > 0;
+	}
+	
 
 // tính tổng tiền dịch vụ
 	public double tinhTongTienDichVu(String maDatPhong) {

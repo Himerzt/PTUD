@@ -18,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
 import dao.DichVuDao;
+import dao.DichVuPhongDao;
 import dao.KhachHangDao;
 import dao.LoaiPhongDao;
 import dao.LoaiThueDao;
@@ -36,6 +37,7 @@ import entity.ThongTinDatThuePhong;
 public class DatPhong2 extends javax.swing.JDialog {
 	private ArrayList<Phong> dsPhongDat;
 	private DichVuDao dichVuDao;
+	private DichVuPhongDao dichVuPhongDao;
 	private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
 	private KhachHangDao khachHangDao;
 	private LoaiThueDao loaiThueDao;
@@ -53,6 +55,7 @@ public class DatPhong2 extends javax.swing.JDialog {
 		loaiThueDao = new LoaiThueDao();
 		loaiPhongDao = new LoaiPhongDao();
 		phongDao = new PhongDao();
+		dichVuPhongDao = new DichVuPhongDao();
 		ConnectDB.getInstance().getConnection();
 		dsPhongDat = new ArrayList<Phong>();
 		for (String tenPhong : dsTenPhong) {
@@ -611,11 +614,12 @@ public class DatPhong2 extends javax.swing.JDialog {
 			if (ngayNhan.isBefore(thongTinDatThuePhong.getNgayTraPhong())
 					&& ngayNhan.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
 				JOptionPane.showMessageDialog(null,
-						"Ngày nhận phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+						"Ngày nhận phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!", "Lỗi",
+						JOptionPane.ERROR_MESSAGE);
 				return false;
 			} else if (ngayNhan.equals(thongTinDatThuePhong.getNgayNhanPhong())) {
 				JOptionPane.showMessageDialog(null, "Ngày nhận phòng trùng với ngày nhận phòng đã có trước đó!", "Lỗi",
-                        JOptionPane.ERROR_MESSAGE);
+						JOptionPane.ERROR_MESSAGE);
 				return false;
 			}
 		}
@@ -661,15 +665,25 @@ public class DatPhong2 extends javax.swing.JDialog {
 	private boolean btnKiemTraTrungActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnKiemTraTrungActionPerformed
 		String ngayDatString = String.format("%s %s", txtCheckIn.getText(),
 				LocalTime.now().truncatedTo(ChronoUnit.SECONDS).toString());
-		String ngayNhanString = String.format("%s %s", txtNgayNhan.getText(),
-				LocalTime.now().truncatedTo(ChronoUnit.SECONDS).toString());
-		String ngayTraString = String.format("%s %s", txtCheckOut.getText(),
-				LocalTime.now().truncatedTo(ChronoUnit.SECONDS).toString());
+		String ngayNhanString = String.format("%s %s", txtNgayNhan.getText(), "14:00:00".toString());
+		String ngayTraString = String.format("%s %s", txtCheckOut.getText(), "09:00:00".toString());
 		// Chuyển đổi ngày nhận và ngày trả từ String sang LocalDateTime
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 		LocalDateTime ngayDat = LocalDateTime.parse(ngayDatString, formatter);
 		LocalDateTime ngayNhan = LocalDateTime.parse(ngayNhanString, formatter);
 		LocalDateTime ngayTra = LocalDateTime.parse(ngayTraString, formatter);
+		// Thêm thông tin dịch vụ
+		// Thêm thông tin dịch vụ
+		List<DichVuPhong> dsDVP = new ArrayList<>();
+		// Duyệt từng dòng trong bảng dịch vụ
+		for (int i = 0; i < tableDV.getRowCount(); i++) {
+			DichVuPhong dvPhong = new DichVuPhong();
+			dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tableDV.getValueAt(i, 3).toString()));
+			dvPhong.setMaDichVu(tableDV.getValueAt(i, 1).toString().split(" ")[0]);
+			dvPhong.setSoLuong(Integer.parseInt(tableDV.getValueAt(i, 2).toString()));
+			dsDVP.add(dvPhong);
+		}
+		dichVuPhongDao.themDichVuPhongTTK(dsDVP);
 		for (Phong phong : dsPhongDat) {
 			// Kiểm tra trùng ngày nhận
 			if (!kiemTraTrungNgayNhan(phong.getMaPhong(), ngayNhan)) {
@@ -724,6 +738,10 @@ public class DatPhong2 extends javax.swing.JDialog {
 			int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongDat);
 			if (soNguoiLon > sucChuaToiDa || (soNguoiLon == sucChuaToiDa && soTreEm > soNguoiLon)) {
 				JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
+						JOptionPane.ERROR_MESSAGE);
+				return false;
+			} else if (soNguoiLon < dsPhongDat.size()) {
+				JOptionPane.showMessageDialog(this, "Số lượng người không đủ sức chứa của phòng", "Lỗi",
 						JOptionPane.ERROR_MESSAGE);
 				return false;
 			} else {
@@ -795,11 +813,9 @@ public class DatPhong2 extends javax.swing.JDialog {
 		LocalDateTime ngayDat = LocalDateTime.parse(
 				String.format("%s %s", txtCheckIn.getText(), LocalTime.now().truncatedTo(ChronoUnit.SECONDS)),
 				formatter);
-		LocalDateTime ngayNhan = LocalDateTime.parse(
-				String.format("%s %s", txtNgayNhan.getText(), "14:00:00"),
+		LocalDateTime ngayNhan = LocalDateTime.parse(String.format("%s %s", txtNgayNhan.getText(), "14:00:00"),
 				formatter);
-		LocalDateTime ngayTra = LocalDateTime.parse(
-				String.format("%s %s", txtCheckOut.getText(), "09:00:00"),
+		LocalDateTime ngayTra = LocalDateTime.parse(String.format("%s %s", txtCheckOut.getText(), "09:00:00"),
 				formatter);
 		String loaiPhong = "";
 		String kieuThue = "";

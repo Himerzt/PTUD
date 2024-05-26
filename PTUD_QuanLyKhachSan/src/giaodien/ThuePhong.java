@@ -685,7 +685,7 @@ public class ThuePhong extends javax.swing.JDialog {
 				JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
 						JOptionPane.ERROR_MESSAGE);
 				return false;
-			} else if (soNguoiLon < sucChuaToiDa) {
+			} else if (soNguoiLon < dsPhongThue.size()) {
 				JOptionPane.showMessageDialog(this, "Số lượng người không đủ sức chứa của phòng", "Lỗi",
 						JOptionPane.ERROR_MESSAGE);
 				return false;
@@ -736,16 +736,16 @@ public class ThuePhong extends javax.swing.JDialog {
 		}
 
 		// Thêm thông tin dịch vụ
-		DichVuPhong dvPhong = new DichVuPhong();
+		List<DichVuPhong> dsDVP = new ArrayList<>();
 		// Duyệt từng dòng trong bảng dịch vụ
 		for (int i = 0; i < tableDV.getRowCount(); i++) {
+			DichVuPhong dvPhong = new DichVuPhong();
 			dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tableDV.getValueAt(i, 3).toString()));
 			dvPhong.setMaDichVu(tableDV.getValueAt(i, 1).toString().split(" ")[0]);
 			dvPhong.setSoLuong(Integer.parseInt(tableDV.getValueAt(i, 2).toString()));
-			System.out.println(dvPhong.getMaPhong() + " " + dvPhong.getMaDichVu() + " " + dvPhong.getSoLuong());
-			// Thêm dịch vụ vào cơ sở dữ liệu
-			dichVuPhongDao.themDichVuPhong(dvPhong);
+			dsDVP.add(dvPhong);
 		}
+		dichVuPhongDao.themDichVuPhongTTK(dsDVP);
 		// Kiểm tra lại toàn bộ thông tin trước khi đặt phòng
 		// Khách hàng
 		if (!btnThemKhachHangActionPerformed(evt)) {
@@ -769,7 +769,7 @@ public class ThuePhong extends javax.swing.JDialog {
 			this.setVisible(false);
 			return true;
 		} else {
-			JOptionPane.showMessageDialog(this, "Thuê phòng thất bại");
+			JOptionPane.showMessageDialog(this, "Thuê phòng thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
 

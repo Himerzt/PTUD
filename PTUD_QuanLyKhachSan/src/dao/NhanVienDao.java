@@ -410,5 +410,31 @@ public class NhanVienDao {
 		}
 		return nv;
 	}
+
+	public NhanVien timTheoTenDangNhap(String tenDangNhap) {
+		try {
+			Connection con = ConnectDB.getInstance().getConnection();
+			String sql = "Select * from NhanVien where maNV = '" + tenDangNhap + "'";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				String maNV1 = rs.getString(1);
+				String hoTenNV = rs.getString(2);
+				LocalDate ngaySinh = rs.getDate(3).toLocalDate();
+				String gioiTinh = rs.getString(4);
+				String soDT = rs.getString(5);
+				String email = rs.getString(6);
+				String CCCD = rs.getString(7);
+				String diaChi = rs.getString(8);
+				String chucVu = rs.getString(9);
+				LocalDate ngayVaoLam = rs.getDate(10).toLocalDate();
+				nv = new NhanVien(maNV1, hoTenNV, ngaySinh, gioiTinh, soDT, email, CCCD, diaChi, chucVu, ngayVaoLam);
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+			// Đóng kết nối
+		}
+		return nv;
+	}
         
 }

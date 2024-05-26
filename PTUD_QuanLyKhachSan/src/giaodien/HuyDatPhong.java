@@ -301,27 +301,14 @@ public class HuyDatPhong extends javax.swing.JDialog {
 					.timThongTinDatThuePhongTheoMaKhachHang(kh.getMaKH());
 
 			ThongTinDatThuePhong ttdtp = dsTTDTP.get(selectedRow);
-			long currentTime = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
-			long ngayNhanPhongMillis = ttdtp.getNgayNhanPhong().toEpochSecond(ZoneOffset.UTC);
-			long diffInSeconds = ngayNhanPhongMillis - currentTime;
-			long diffInDays = diffInSeconds / (24 * 60 * 60);
 			double soTienHoanLai = loaiThueDao.timGiaCocTheoMaThue(ttdtp.getMaLoaiThue());
-
-			if (diffInDays > 14) {
-				soTienHoanLai =  (ttdtp.getTienDaCoc() * 70 / 100);
-			} else if (diffInDays > 7) {
-				soTienHoanLai = (ttdtp.getTienDaCoc() * 50 / 100);
-			} else if (diffInDays > 1) {
-				soTienHoanLai = (ttdtp.getTienDaCoc() * 50 / 100);
-			} else {
-				soTienHoanLai = 0;
-			}
 
 			// Gọi hàm xóa thông tin đặt thuê theo mã thông tin đặt thuê
 			boolean xoaThanhCong = thongTinDatThuePhongDao.xoaThongTinDatThueTheoMa(ttdtp.getMaTTDTP());
 
 			if (xoaThanhCong) {
-				JOptionPane.showMessageDialog(this, "Số tiền cọc phải hoàn lại là: " + soTienHoanLai + " VND");
+				// Hiển thi số ngày chênh lệch giữa ngày nhận phòng và ngày hiện tại và số tiền cọc
+				JOptionPane.showMessageDialog(this, "Hủy đặt phòng đã chọn thành công");
 				loadDanhSachPhongDat(); // Cập nhật lại bảng sau khi xóa
 			} else {
 				JOptionPane.showMessageDialog(this, "Không thể xóa thông tin đặt phòng!", "Lỗi",
