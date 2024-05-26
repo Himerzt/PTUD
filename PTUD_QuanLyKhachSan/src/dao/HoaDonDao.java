@@ -36,13 +36,14 @@ public class HoaDonDao {
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 			while (rs.next()) {
-				String maHoaDon = rs.getString(1);
+				String maHD = rs.getString(1);
 				String nhanVien = rs.getString(2);
 				String khachHang = rs.getString(3);
 				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
-				
-				hoaDon = new HoaDon(maHoaDon, nhanVien, khachHang, ngayLap);
-				
+				String maLSDP = rs.getString(5);
+				String maKM = rs.getString(6);
+				double tongTien = rs.getDouble(7);
+				HoaDon hoaDon = new HoaDon(maHD, nhanVien, khachHang, ngayLap, maLSDP, maKM, tongTien);
 				dsHoaDon.add(hoaDon);
 			}
 		} catch (SQLException e) {
@@ -79,6 +80,9 @@ public class HoaDonDao {
                 hoaDon.setMaNhanVien(rs.getString("MaNV"));
                 hoaDon.setMaKhachHang(rs.getString("MaKH"));
                 hoaDon.setNgayLap(rs.getTimestamp("NgayLapHD").toLocalDateTime());
+                hoaDon.setMaLSDP(rs.getString("MaLSDP"));
+                hoaDon.setMaKM(rs.getString("MaKM"));
+                hoaDon.setTongTien(rs.getDouble("TongTien"));        
                 danhSachHoaDon.add(hoaDon);
             }
 
@@ -114,13 +118,16 @@ public class HoaDonDao {
 	            // Xử lý ngày lập
 	            Timestamp ngayLapHD = Timestamp.valueOf(hoaDon.getNgayLap());
 	            // Thêm hóa đơn vào CSDL
-	            String sqlInsert = "INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, ThueVAT) VALUES (?, ?, ?, ?, ?)";
+	            String sqlInsert = "INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM , TongTien, ThueVAT) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 	            pstmt = con.prepareStatement(sqlInsert);
 	            pstmt.setString(1, hoaDon.getMaHoaDon());
 	            pstmt.setString(2, hoaDon.getMaNhanVien());
 	            pstmt.setString(3, hoaDon.getMaKhachHang());
 	            pstmt.setTimestamp(4, ngayLapHD);
-	            pstmt.setDouble(5, hoaDon.getVAT());
+	            pstmt.setString(5, hoaDon.getMaLSDP());
+	            pstmt.setString(6, hoaDon.getMaKM());
+	            pstmt.setDouble(7, hoaDon.getTongTien());
+	            pstmt.setDouble(8, hoaDon.getVAT());
 
 	            n = pstmt.executeUpdate();
 	            pstmt.close();
@@ -200,101 +207,6 @@ public class HoaDonDao {
 		return false;
 	}
 
-	// tìm hóa đơn theo mã
-	public HoaDon timHoaDonTheoMa(String maHoaDon) {
-		HoaDon hd = null;
-		try {
-			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from HoaDon where maHoaDon = '" + maHoaDon + "'";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
-			while (rs.next()) {
-				String maHD = rs.getString(1);
-				String nhanVien = rs.getString(2);
-				String khachHang = rs.getString(3);
-				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
-				NhanVien nv = new NhanVien(nhanVien);
-				KhachHang kh = new KhachHang(khachHang);
-				
-                hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return hd;
-	}
-
-	// tìm hóa đơn theo mã nhân viên
-	public ArrayList<HoaDon> timHoaDonTheoMaNhanVien(String maNhanVien) {
-		ArrayList<HoaDon> dsHoaDon = new ArrayList<HoaDon>();
-		try {
-			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from HoaDon where nhanVien = '" + maNhanVien + "'";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
-			while (rs.next()) {
-				String maHD = rs.getString(1);
-				String nhanVien = rs.getString(2);
-				String khachHang = rs.getString(3);
-				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
-				
-				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
-				
-				dsHoaDon.add(hd);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-	    return dsHoaDon;}
-	// tìm hóa đơn theo mã khách hàng
-	public ArrayList<HoaDon> timHoaDonTheoMaKhachHang(String maKhachHang) {
-		ArrayList<HoaDon> dsHoaDon = new ArrayList<HoaDon>();
-		try {
-			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from HoaDon where khachHang = '" + maKhachHang + "'";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
-			while (rs.next()) {
-				String maHD = rs.getString(1);
-				String nhanVien = rs.getString(2);
-				String khachHang = rs.getString(3);
-				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
-				
-				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
-				
-				dsHoaDon.add(hd);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return dsHoaDon;
-	}
-	// tìm hóa đơn theo ngày lập
-	public ArrayList<HoaDon> timHoaDonTheoNgayLap(LocalDate ngayLap) {
-		ArrayList<HoaDon> dsHoaDon = new ArrayList<HoaDon>();
-		try {
-			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from HoaDon where ngayLap = '" + ngayLap + "'";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
-			while (rs.next()) {
-				String maHD = rs.getString(1);
-				String nhanVien = rs.getString(2);
-				String khachHang = rs.getString(3);
-				LocalDateTime ngayLap1 = rs.getTimestamp(4).toLocalDateTime();
-				
-				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap1);
-				
-				dsHoaDon.add(hd);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return dsHoaDon;
-	}
 	
 	// Đếm số hóa đơn trong ngày
 	public int demSoHoaDonTrongNgay(LocalDate ngay) {
@@ -336,9 +248,10 @@ public class HoaDonDao {
 		
 //		// test thêm hóa đơn
 
+		HoaDon hd = new HoaDon("HD023", "NV001", "KH004", LocalDateTime.now(), null , "KM001", 1000000);
 		
-		HoaDon hd = new HoaDon("HD123", "NV001", "KH004", LocalDateTime.now());
 		boolean kq = hoaDonDao.themHoaDon(hd);
+		
 		if (kq) {
 			System.out.println("Thêm thành công");
 		} else {

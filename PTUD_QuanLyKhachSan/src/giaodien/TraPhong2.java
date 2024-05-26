@@ -50,6 +50,12 @@ public class TraPhong2 extends javax.swing.JDialog {
 	private double tongGiaDichVu = 0;
 	private double tongGiaPhong = 0;
 	private double tongGia = 0;
+	private double chietKhau = 0;
+	private double thue = 0;
+	private double tienCanThu = 0;
+	private double tienTraTruoc = 0;
+	private double tongHoaDon = 0;
+	private HoaDon hoaDonluuTru;
 	/**
 	 * Creates new form DatPhong
 	 */
@@ -468,19 +474,28 @@ public class TraPhong2 extends javax.swing.JDialog {
     	LocalDateTime ngayLap = LocalDateTime.now();
     	// Tạo hóa đơn
     	HoaDon hoaDon = new HoaDon(maHoaDon, maNhanVien, maKhachHang, ngayLap);
-    	
-    	
-    	
-    	
-    	
-    	
-    	
+    	this.hoaDonluuTru = hoaDon;    	
     	
     	return true;
     }
     
    protected boolean taoChiTietHoaDonDatabase() {
-    	
+	   // Tạo chi tiết hóa đơn
+   		thongTinDao = new ThongTinDatThuePhongDao();
+		khachHangDao = new KhachHangDao();
+		dichVuDao = new DichVuDao();
+		PhongDao phong = new PhongDao();
+		 // Lấy mã phòng từ dsPhongDat
+		ArrayList<String> dsMaPhong = new ArrayList<>();
+		for (String phongDat : dsPhongDat) {
+			dsMaPhong.add(phong.timPhongTheoSoPhong(Integer.parseInt(phongDat)).getMaPhong());
+		}
+		// Lấy thông tin đặt thuê phòng và mã khách hàng
+		
+		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<>();
+		for (String maPhong : dsMaPhong) {
+			dsThongTin.addAll(thongTinDao.timThongTinDatThuePhongTheoMaPhong(maPhong));
+		}
 	   
 	   return true;
     }
@@ -630,7 +645,7 @@ public class TraPhong2 extends javax.swing.JDialog {
 		txtNgaySinh.setText(khachHang.getNgaySinh().toString());
 		txtChietKhau.setText(String.valueOf(chietKhau * 100) + "%");
 		txtThue.setText("10% - " + String.valueOf(thue));
-		txtNhanVien.setText("NV01");
+		txtNhanVien.setText("NV001");
 		txtTongHoaDon.setText(String.valueOf(tongTien));
 		txtTraTruoc.setText("0");
 		txtTienCanThu.setText(String.valueOf(tongTien));
