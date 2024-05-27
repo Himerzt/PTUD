@@ -38,6 +38,7 @@ public class Menu extends  JComponent{
     {"Khách hàng"},
 	{ "Hóa đơn" }, 
 	{ "Thống kê" },
+        {"Phòng đang thuê"},
     {"Thoát"}
 };
     public  Menu(){

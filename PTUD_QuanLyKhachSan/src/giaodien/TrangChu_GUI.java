@@ -84,12 +84,14 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 		pnedUngDung.addTab("Quản lý dịch vụ", new DichVu_GUI());
 		pnedUngDung.addTab("Quản lý khuyến mãi", new KhuyenMai_GUI());
 		pnedUngDung.addTab("Quản lý khách hàng", new KhachHang_GUI());
+		pnedUngDung.addTab("Quản lý hóa đơn", new DanhSachHoaDon_Gui1());
+		pnedUngDung.addTab("Quản lý thống kê", new ThongKe_GUI1());
 		pnedUngDung.addTab("Quản lý phòng thuê", new QuanLyPhongThue_GUI());
 
 		Menu.setEvent(new MenuEvent() {
 			@Override
 			public void selected(int index, int subIndex) {
-				if (index == 8) {
+				if (index == 9) {
 					System.exit(0);
 
 				}
@@ -116,6 +118,12 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 					pnedUngDung.setSelectedIndex(5);
 				}
 				if (index == 6) {
+					pnedUngDung.setSelectedIndex(6);
+				}
+				if (index == 7) {
+					pnedUngDung.setSelectedIndex(7);
+				} 
+				if (index == 8) {
 					pnedUngDung.setSelectedIndex(6);
 				}
 
