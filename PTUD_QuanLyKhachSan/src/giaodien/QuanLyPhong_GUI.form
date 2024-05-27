@@ -16,7 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="1174" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="1201" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -72,13 +72,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="funtionPanel" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="pnLayoutQL" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="pnLayoutQL" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="panelRound8" alignment="0" max="32767" attributes="0"/>
+                          <Component id="funtionPanel" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -117,87 +115,137 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblcurrentdate" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                              <Component id="lblcurrentTime" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                              <Component id="lbltime" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                              <Component id="lbldate" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="radPhongTieuChuan" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="radPhongNangCao" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                              <Component id="radPhongThuongGia" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="radPhongCaoCap" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                              <Component id="jLabel2" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="radPhongDangThue" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="radPhongTrong" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
-                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="radPhongDaDat" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblcurrentdate" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                      <Component id="lblcurrentTime" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnTimTheoDieuKien" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnResetTrangThai" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lbldate" min="-2" pref="130" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lbltime" min="-2" pref="124" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Component id="btnDoiPhong" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Component id="btnTraPhong" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnHuyDatPhong" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnDoiPhong" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnTraPhong" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="radPhongTieuChuan" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="radPhongNangCao" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                                              <Component id="radPhongThuongGia" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel2" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="radPhongDangThue" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="radPhongTrong" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="radPhongDaDat" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="btnTimTheoDieuKien" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="btnResetTrangThai" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="radPhongCaoCap" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                                  <Component id="btnHuyDatPhong" min="-2" pref="130" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                                  <Component id="btnThemDichVu" min="-2" pref="127" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                                          <Component id="btnDatPhong" min="-2" pref="108" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btnNhanPhong" min="-2" pref="108" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                  <Component id="btnThuePhong" min="-2" pref="108" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnThuePhong" pref="108" max="32767" attributes="0"/>
-                              <Component id="btnDatPhong" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lbldate" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbldate" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="lblcurrentdate" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="lbltime" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="lblcurrentTime" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="radPhongTieuChuan" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="radPhongTrong" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="radPhongNangCao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radPhongDangThue" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="radPhongCaoCap" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radPhongDaDat" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="radPhongThuongGia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnTimTheoDieuKien" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnResetTrangThai" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblcurrentdate" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radPhongTieuChuan" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="radPhongTrong" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDatPhong" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnHuyDatPhong" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="btnDoiPhong" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnTraPhong" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnNhanPhong" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnThuePhong" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="btnThemDichVu" max="32767" attributes="0"/>
+                              <Component id="btnDatPhong" max="32767" attributes="0"/>
+                              <Component id="btnHuyDatPhong" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lbltime" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radPhongNangCao" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radPhongDangThue" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDoiPhong" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnThuePhong" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="radPhongCaoCap" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radPhongDaDat" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblcurrentTime" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnTraPhong" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="radPhongThuongGia" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnTimTheoDieuKien" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnResetTrangThai" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -375,6 +423,25 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResetTrangThaiActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="giaodien.CustomClass.Button" name="btnNhanPhong">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Nh&#x1ead;n ph&#xf2;ng"/>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[110, 23]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNhanPhongActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="giaodien.CustomClass.Button" name="btnThemDichVu">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Th&#xea;m d&#x1ecb;ch v&#x1ee5;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemDichVuActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="giaodien.CustomClass.PanelRound" name="pnLayoutQL">
@@ -383,7 +450,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="33" max="32767" attributes="0"/>
                           <Component id="scrollPaneWin112" min="-2" pref="1138" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
