@@ -79,8 +79,8 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 		repaint();
 
 		loadDanhSachPhong();
-		pnedUngDung.addTab("Quản lý phòng", new QuanLyPhong_GUI());
-//		pnedUngDung.addTab("Quản lý nhân viên", new DanhSachNhanVien_GUI());
+		pnedUngDung.addTab("Quản lý phòng", new QuanLyPhong_GUI(nhanVien));
+		pnedUngDung.addTab("Quản lý nhân viên", new DanhSachNhanVien_GUI());
 		pnedUngDung.addTab("Quản lý dịch vụ", new DichVu_GUI());
 		pnedUngDung.addTab("Quản lý khuyến mãi", new KhuyenMai_GUI());
 		pnedUngDung.addTab("Quản lý khách hàng", new KhachHang_GUI());

@@ -157,9 +157,9 @@ public class HoaDonThanhToan_GUI extends javax.swing.JFrame {
 		}	
     	
 		tongTien.setText(hoadonLuuTru.getTongTien() + " VND");
-//		tienCoc.setText(hoadonLuuTru.getTienCoc() + " VND");
-//		tienConLai.setText(hoadonLuuTru.getTienConLai() + " VND");
-		
+		lblTenNhanVien.setText(hdDao.layTenNhanVienTuMaHoaDon(hoadonLuuTru.getMaHoaDon()));
+		tienCoc.setText(hdDao.layTienCoc(hoadonLuuTru.getMaHoaDon()) + " VND");
+		tienConLai.setText(hoadonLuuTru.getTongTien() -  hdDao.layTienCoc(hoadonLuuTru.getMaHoaDon()) + " VND");
 		
 	}
 

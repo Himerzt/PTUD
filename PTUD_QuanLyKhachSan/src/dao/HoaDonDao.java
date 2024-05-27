@@ -399,23 +399,95 @@ public class HoaDonDao {
 
 		return soLuong;
 	}
+	
+	//Tìm tên nhân viên từ mã hóa đơn
+//	SELECT nv.HoTenNV FROM HoaDon hd JOIN NhanVien nv 
+//	ON hd.MaNV = nv.MaNV
+//	WHERE MaHD = 'HD27052024001'
+	public String layTenNhanVienTuMaHoaDon(String maHoaDon) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		PreparedStatement pstmt = null;
+		String tenNV = "";
+		ResultSet rs = null;
+		try {
+			String sql = "SELECT nv.HoTenNV FROM HoaDon hd JOIN NhanVien nv ON hd.MaNV = nv.MaNV WHERE hd.MaHD = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, maHoaDon);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				tenNV = rs.getString(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return tenNV;
+	}
+	
+	// Lấy tiền cọc 
+//	SELECT tt.TienDaCoc  FROM HoaDon hd JOIN ChiTietHoaDon chd
+//	ON hd.MaHD = chd.MaHD JOIN ThongTinDatThuePhong tt
+//	ON tt.MaTTDTP = chd.MaTTDTP 
+//	WHERE hd.MaHD = 'HD27052024001'
+	public double layTienCoc(String maHoaDon) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		PreparedStatement pstmt = null;
+		double tienCoc = 0;
+		ResultSet rs = null;
+		try {
+			String sql = "SELECT tt.TienDaCoc FROM HoaDon hd JOIN ChiTietHoaDon chd ON hd.MaHD = chd.MaHD JOIN ThongTinDatThuePhong tt ON tt.MaTTDTP = chd.MaTTDTP WHERE hd.MaHD = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, maHoaDon);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				tienCoc = rs.getDouble(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return tienCoc;
+	}
 
 	public static void main(String[] args) {
 		// ttesst tìm tên khách hàng với mã hóa đon HD26052024005
 		HoaDonDao hoaDonDao = new HoaDonDao();
-		String tenKhachHang = hoaDonDao.layTenKhachHangTuMaHoaDon("HD27052024001");
-		ArrayList<String> dsNgayDaatNhanTra = hoaDonDao.layNgayDatNhanTratuMaHoaDon("HD27052024001");
-		System.out.println(dsNgayDaatNhanTra);
+		String tenKhachHang = hoaDonDao.layTenNhanVienTuMaHoaDon("HD27052024001");
 		System.out.println(tenKhachHang);
-		// test tìm dịch vụ
-		ArrayList<DichVuPhong> dsDichVuPhong = hoaDonDao.layDichPhongSuDung("HD27052024001");
-		for (DichVuPhong dichVuPhong : dsDichVuPhong) {
-			System.out.println(dichVuPhong.getMaDichVu() + " " + dichVuPhong.getMaDichVuSuDung() + " "
-					+ dichVuPhong.getMaPhong() + " " + dichVuPhong.getSoLuong());
-		}
-		// Tesst tìm mã phòng đã đặt
-		ArrayList<String> dsMaPhong = hoaDonDao.layMaPhongDaDat("HD27052024001");
-		System.out.println(dsMaPhong);
+//		ArrayList<String> dsNgayDaatNhanTra = hoaDonDao.layNgayDatNhanTratuMaHoaDon("HD27052024001");
+//		System.out.println(dsNgayDaatNhanTra);
+//		System.out.println(tenKhachHang);
+//		// test tìm dịch vụ
+//		ArrayList<DichVuPhong> dsDichVuPhong = hoaDonDao.layDichPhongSuDung("HD27052024001");
+//		for (DichVuPhong dichVuPhong : dsDichVuPhong) {
+//			System.out.println(dichVuPhong.getMaDichVu() + " " + dichVuPhong.getMaDichVuSuDung() + " "
+//					+ dichVuPhong.getMaPhong() + " " + dichVuPhong.getSoLuong());
+//		}
+//		// Tesst tìm mã phòng đã đặt
+//		ArrayList<String> dsMaPhong = hoaDonDao.layMaPhongDaDat("HD27052024001");
+//		System.out.println(dsMaPhong);
 
 	}
 

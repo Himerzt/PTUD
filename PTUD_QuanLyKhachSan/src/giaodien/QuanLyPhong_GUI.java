@@ -20,6 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import dao.PhongDao;
+import entity.NhanVien;
 import entity.Phong;
 import java.awt.Dimension;
 
@@ -28,12 +29,13 @@ import java.awt.Dimension;
  * @author Huynguyen
  */
 public class QuanLyPhong_GUI extends javax.swing.JPanel {
-
+	private NhanVien nv;
     /**
      * Creates new form QuanLyPhong2
      */
-    public QuanLyPhong_GUI() {
+    public QuanLyPhong_GUI(NhanVien n) {
         initComponents();
+        this.nv = n;
 //		Gán thời gian cho Jlabel
         datetime();
         times();
@@ -3191,8 +3193,9 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Vui lòng chọn phòng", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
-
-        TraPhong_GUI traPhongFrame = new TraPhong_GUI(dsTenPhong);
+        
+        TraPhong_GUI traPhongFrame = new TraPhong_GUI(dsTenPhong, nv);
+        
         traPhongFrame.setVisible(true);
         // reset checkbox
         for (int i = 0; i < phongQuanLy.size(); i++) {

@@ -19,6 +19,7 @@ import dao.DichVuPhongDao;
 import dao.HoaDonDao;
 import dao.KhachHangDao;
 import dao.KhuyenMaiDao;
+import dao.NhanVienDao;
 import dao.PhongDao;
 import dao.ThongTinDatThuePhongDao;
 import entity.ChiTietHoaDon;
@@ -27,6 +28,7 @@ import entity.DichVuPhong;
 import entity.HoaDon;
 import entity.KhachHang;
 import entity.KhuyenMai;
+import entity.NhanVien;
 import entity.Phong;
 import entity.ThongTinDatThuePhong;
 
@@ -40,6 +42,8 @@ import javax.swing.JButton;
  * @author Huynguyen
  */
 public class TraPhong_GUI extends javax.swing.JDialog {
+	private NhanVien nhanvien;
+	private NhanVienDao nvdao;
 	private List<DichVuPhong> danhSachDichVu;
 	private static String[] dsPhongDat;
 	private static List<String> dsTenPhong;
@@ -57,6 +61,7 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 	private HoaDon hoaDonluuTru;
 	private String maLSDP;
 	private String maKhuyenMai;
+	private String maNhanVien;
 	/**
 	 * Creates new form DatPhong
 	 */
@@ -64,7 +69,8 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 		initComponents();
 	}
 
-	public TraPhong_GUI(List<String> dsTenPhong) {
+	public TraPhong_GUI(List<String> dsTenPhong , NhanVien nv) {
+		this.nhanvien = nv;
 		dsPhongDat = new String[dsTenPhong.size()];
 		int index = 0;
 		for (String tenPhong : dsTenPhong) {
@@ -426,6 +432,12 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 			if (taoHoaDonvaCTHDDatabase()) {
 				JOptionPane.showMessageDialog(null, "Trả phòng thành công", "Thành công",
 				JOptionPane.INFORMATION_MESSAGE);
+				// Thay đổi dữ liệu phòng thuê
+				PhongDao phong = new PhongDao();
+				for (String phongDat : dsPhongDat) {
+					phong.capNhatTrangThaiPhong(phongDat, "trống");
+				}
+				
 				// gọi hóa đơn
 				HoaDonThanhToan_GUI hoaDonThanhToan = new HoaDonThanhToan_GUI(hoaDonluuTru); 
 	    		hoaDonThanhToan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -459,7 +471,7 @@ public class TraPhong_GUI extends javax.swing.JDialog {
     	String formattedOrderNumber = String.format("%03d", orderNumber);
     	String maHoaDon = "HD" + ngay + formattedOrderNumber;
     	// Lấy mã nhân viên từ txtNhanVien
-    	String maNhanVien = txtNhanVien.getText();
+    	String maNhanVien = nhanvien.getMaNV();
     	// Lấy mã khách hàng từ txtMaKhachHang
     	String maKhachHang = txtMaKhachHang.getText();
     	// Lấy ngày lập hóa đơn từ ngày giờ hiện tại
@@ -487,8 +499,7 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 		if (!hd.themHoaDon(hoaDonluuTru)) {			
 			JOptionPane.showMessageDialog(null, "Tạo hóa đơn thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
 			return false;
-		}    	
-		
+		} 
 		// Tạo chi tiết hóa đơn tương ứng CTHD - mã hóa đơn -- nhiều chi tiết tương ứng + stt trong db
 		// với thông tin đặt thuê phòng
 		ChiTietHoaDonDao chiTietHoaDonDao = new ChiTietHoaDonDao();
@@ -676,7 +687,7 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 		txtNgaySinh.setText(khachHang.getNgaySinh().toString());
 		txtChietKhau.setText(String.valueOf(chietKhau * 100) + "%");
 		txtThue.setText("10% - " + String.valueOf(thue));
-		txtNhanVien.setText("NV001");
+		txtNhanVien.setText(nhanvien.getHoTenNV());
 		txtTongHoaDon.setText(String.valueOf(tongTien));
 		txtTraTruoc.setText("0");
 		txtTienCanThu.setText(String.valueOf(tongTien));

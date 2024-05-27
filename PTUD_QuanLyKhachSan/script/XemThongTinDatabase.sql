@@ -56,3 +56,14 @@ ON hd.MaHD = chd.MaHD JOIN ThongTinDatThuePhong tt
 ON chd.MaTTDTP = tt.MaTTDTP JOIN DichVuSuDung dvsd
 ON tt.MaPhong = dvsd.MaPhong
 
+-- Lấy tên nhân viên từ hóa đơn 
+SELECT nv.HoTenNV FROM HoaDon hd JOIN NhanVien nv 
+ON hd.MaNV = nv.MaNV
+WHERE MaHD = 'HD27052024001'
+
+
+-- Lấy tiền cọc
+SELECT tt.TienDaCoc  FROM HoaDon hd JOIN ChiTietHoaDon chd
+ON hd.MaHD = chd.MaHD JOIN ThongTinDatThuePhong tt
+ON tt.MaTTDTP = chd.MaTTDTP 
+WHERE hd.MaHD = 'HD27052024001'
