@@ -13,5 +13,6 @@
 	<classpathentry kind="lib" path="lib/sqljdbc42.jar"/>
 	<classpathentry kind="lib" path="lib/swing-layout-1.0.2.jar"/>
 	<classpathentry kind="lib" path="lib/TimingFramework-0.55.jar"/>
+	<classpathentry kind="lib" path="C:/aaSTUDY/year3/HOCKY2/PhatTrienUngDung/PTUD_QuanLyKhachSan_GUI/PTUD/PTUD_QuanLyKhachSan/lib/jfreechart-1.5.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

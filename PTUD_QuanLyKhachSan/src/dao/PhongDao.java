@@ -74,7 +74,7 @@ public class PhongDao {
 	public boolean capNhatTrangThaiPhong(String maPhong, String trangThai) {
 		try {
 			Connection con = ConnectDB.getConnection();
-			PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = ? where maPhong = ?");
+			PreparedStatement stmt = con.prepareStatement("update Phong set TrangThaiPhong = ? where maPhong = ?");
 			stmt.setString(1, trangThai);
 			stmt.setString(2, maPhong);
 			int n = stmt.executeUpdate();
@@ -315,4 +315,10 @@ public class PhongDao {
 		return dsPhongDangThue;
 	}
 	
+	public static void main(String[] args) {
+		// test cập nhập trạng thái phòng
+		PhongDao phongDao = new PhongDao();
+		System.out.println(phongDao.capNhatTrangThaiPhong("CC301", "Trống"));
+	}
+
 }

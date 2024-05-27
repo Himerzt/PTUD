@@ -26,7 +26,7 @@ public class DangNhap_GUI extends javax.swing.JFrame implements Serializable {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponentsNCNC
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
