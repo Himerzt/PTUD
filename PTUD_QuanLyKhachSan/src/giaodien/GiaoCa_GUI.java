@@ -6,13 +6,15 @@ import entity.NhanVien;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class GiaoCa_GUI extends javax.swing.JPanel {
 
     
 
-    public GiaoCa_GUI(String maNhanVien) throws SQLException {
+    public GiaoCa_GUI() throws SQLException {
      
     }
 
@@ -109,20 +111,25 @@ public class GiaoCa_GUI extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGiaoCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiaoCaActionPerformed
-         String doanhThuHeThong = txtDoanhThuHeThong.getText();
+        String doanhThuHeThong = txtDoanhThuHeThong.getText();
         String doanhThuThucTe = txtDoanhThuThucTe.getText();
 
         if (doanhThuHeThong.equals(doanhThuThucTe)) {
-            // Chuyển đến trang đăng nhập
-            JOptionPane.showMessageDialog(this, "Giao ca thành công, trở lại trang đăng nhập.");
-            // Logic để chuyển đến trang đăng nhập
-            // Ví dụ:
-            // JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-            // topFrame.dispose();
-            // new Login().setVisible(true);
+            try {
+                // Chuyển đến trang đăng nhập
+                JOptionPane.showMessageDialog(this, "Giao ca thành công, trở lại trang đăng nhập.");
+                DangNhap_GUI dangNhap_GUI = new DangNhap_GUI();
+                dangNhap_GUI.setVisible(true);
+                dangNhap_GUI.pack();
+                dangNhap_GUI.setLocationRelativeTo(null);
+                this.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(GiaoCa_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Giao ca không thành công, vui lòng kiểm tra lại.", "Lỗi", JOptionPane.ERROR_MESSAGE);
         }
+        
     }//GEN-LAST:event_btnGiaoCaActionPerformed
 
 
@@ -135,4 +142,9 @@ public class GiaoCa_GUI extends javax.swing.JPanel {
     private giaodien.CustomClass.TextFieldShadow txtDoanhThuHeThong;
     private giaodien.CustomClass.TextFieldShadow txtDoanhThuThucTe;
     // End of variables declaration//GEN-END:variables
+
+    private void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
 }
