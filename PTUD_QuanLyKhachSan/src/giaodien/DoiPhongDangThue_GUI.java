@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
@@ -32,6 +34,8 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -43,37 +47,108 @@ import java.awt.event.ActionEvent;
 public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
 
 	private List<DichVuPhong> danhSachDichVu;
-	private String[] dsPhongDat;
-	List<String> dsTenPhong;
-        String maPhongDoi;
-
-	/**
-	 * Creates new form DatPhong
-	 */
-	public DoiPhongDangThue_GUI() {
-		ConnectDB.getInstance().getConnection();
-		initComponents();
-	}
-
-	public DoiPhongDangThue_GUI(List<String> dsTenPhong) {
-		dsPhongDat = new String[dsTenPhong.size()];
-		int index = 0;
-		for (String tenPhong : dsTenPhong) {
-			dsPhongDat[index++] = tenPhong;
-		}
-		ConnectDB.getInstance().getConnection();
-		initComponents();
-	}
+    private String maPhongDoi;
         
         public DoiPhongDangThue_GUI(String maPhongDoi) {
 		this.maPhongDoi = maPhongDoi;
 		ConnectDB.getInstance().getConnection();
 		initComponents();
+		phongQuanLy = new ArrayList<>();
+        for (int i = 1; i <= 35; i++) {
+            try {
+                phongQuanLy.add(
+                        (giaodien.CustomClass.PanelRound) getClass().getDeclaredField("phongQuanLy" + i).get(this));
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+        loaiPhongQuanLy = new ArrayList<>();
+        for (int i = 1; i <= 35; i++) {
+            try {
+                loaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblLoaiPhongQL" + i).get(this));
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+        tenPhongQuanLy = new ArrayList<>();
+        for (int i = 1; i <= 35; i++) {
+            try {
+                tenPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTenPhongQL" + i).get(this));
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+        trangThaiPhongQuanLy = new ArrayList<>();
+        for (int i = 1; i <= 35; i++) {
+            try {
+                trangThaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTrangThaiQL" + i).get(this));
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+        checkBoxPhongQuanLy = new ArrayList<>();
+        for (int i = 1; i <= 35; i++) {
+            try {
+                checkBoxPhongQuanLy.add((giaodien.CustomClass.JCheckBoxCustom) getClass()
+                        .getDeclaredField("checkBoxPhongQL" + i).get(this));
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+        loadDanhSachPhong();
 	}
 
 	public String[] layDanhSachPhongDat() {
 		return dsPhongDat;
 	}
+	
+	public void loadDanhSachPhong() {
+        PhongDao phongDao = new PhongDao();
+        ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
+        for (int i = 0; i < phongQuanLy.size(); i++) {
+            Phong phong = dsPhong.get(i);
+            JPanel phongPanel = phongQuanLy.get(i);
+            JLabel loaiPhong = loaiPhongQuanLy.get(i);
+            JLabel soPhong = tenPhongQuanLy.get(i);
+            JLabel trangThai = trangThaiPhongQuanLy.get(i);
+
+            // Gán thông tin phòng lên label
+            soPhong.setText(Integer.toString(phong.getSoPhong()));
+            if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+                loaiPhong.setText("Tiêu chuẩn");
+            } else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+                loaiPhong.setText("Nâng cao");
+            } else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+                loaiPhong.setText("Cao cấp");
+            } else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
+                loaiPhong.setText("Thương gia");
+            }
+            trangThai.setText(phong.getTrangThai());
+
+            if (trangThai.getText().equalsIgnoreCase("Trống")) {
+                phongPanel.setBackground(Color.green);
+            } else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
+                phongPanel.setBackground(Color.yellow);
+            } else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
+                phongPanel.setBackground(Color.red);
+            }
+
+            if (phongPanel.isVisible() == false) {
+                phongPanel.setVisible(true);
+            }
+        }
+
+    }
 
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
@@ -2566,11 +2641,8 @@ public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
 		}
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				List<String> args = new ArrayList<String>();
-				args.add("101");
-				args.add("102");
-				args.add("103");
-				DoiPhongDangThue_GUI guiDatPhong = new DoiPhongDangThue_GUI(args);
+				String agr = "TC101";
+				DoiPhongDangThue_GUI guiDatPhong = new DoiPhongDangThue_GUI(agr);
 				guiDatPhong.setVisible(true);
 				guiDatPhong.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 			}
@@ -2796,15 +2868,10 @@ public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
     private giaodien.CustomClass.TextFieldShadow txtTenKhachHang1;
     private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai;
     private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai1;
+    private ArrayList<javax.swing.JPanel> phongQuanLy;
+    private ArrayList<javax.swing.JLabel> loaiPhongQuanLy;
+    private ArrayList<javax.swing.JLabel> tenPhongQuanLy;
+    private ArrayList<javax.swing.JLabel> trangThaiPhongQuanLy;
+    private ArrayList<giaodien.CustomClass.JCheckBoxCustom> checkBoxPhongQuanLy;
     // End of variables declaration//GEN-END:variables
-
-	private static String[] loadDanhSachDichVu() {
-		DichVuDao dvDao = new DichVuDao();
-		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
-		String[] tenDV = new String[danhSachDV.size()];
-		for (int i = 0; i < danhSachDV.size(); i++) {
-			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
-		}
-		return tenDV;
-	}
 }
