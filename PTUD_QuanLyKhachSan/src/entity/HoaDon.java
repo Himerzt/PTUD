@@ -68,7 +68,7 @@ public class HoaDon {
                 + ", ngayLapHD=" + ngayLapHD + ", tongTien=" + tongTien + ", thueVAT=" + thueVAT + "]";
     }
 
-    public HoaDon(String maHD, String maNV, String maKH, LocalDateTime ngayLapHD, double tongTien, double thueVAT) {
+    public HoaDon(String maHD, String maNV, String maKH, LocalDateTime ngayLapHD) {
         super();
         this.maHD = maHD;
         this.maNV = maNV;

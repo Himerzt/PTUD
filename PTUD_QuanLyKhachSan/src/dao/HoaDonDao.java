@@ -38,7 +38,7 @@ public class HoaDonDao {
                 double tongTien = rs.getDouble("TongTien");
                 double thueVAT = rs.getDouble("ThueVAT");
 
-                HoaDon hd = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, thueVAT);
+                HoaDon hd = new HoaDon(maHD, maNV, maKH, ngayLap);
                 dsHoaDon.add(hd);
             }
         } catch (SQLException e) {
@@ -104,7 +104,7 @@ public List<Object[]> timDanhSachHoaDon() {
                 double tongTien = rs.getDouble("TongTien");
                 double thueVAT = rs.getDouble("ThueVAT");
 
-                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, thueVAT);
+                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLap);
                 danhSachHoaDon.add(hoaDon);
             }
 
@@ -215,7 +215,7 @@ public List<Object[]> timDanhSachHoaDon() {
                 double tongTien = rs.getDouble("TongTien");
                 double thueVAT = rs.getDouble("ThueVAT");
 
-                hd = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, thueVAT);
+                hd = new HoaDon(maHD, maNV, maKH, ngayLap);
             }
             rs.close();
             pstmt.close();
@@ -242,7 +242,7 @@ public List<Object[]> timDanhSachHoaDon() {
                 double tongTien = rs.getDouble("TongTien");
                 double thueVAT = rs.getDouble("ThueVAT");
 
-                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, thueVAT);
+                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLap);
                 dsHoaDon.add(hoaDon);
             }
             rs.close();
@@ -270,7 +270,7 @@ public List<Object[]> timDanhSachHoaDon() {
                 double tongTien = rs.getDouble("TongTien");
                 double thueVAT = rs.getDouble("ThueVAT");
 
-                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, thueVAT);
+                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLap);
                 dsHoaDon.add(hoaDon);
             }
             rs.close();
@@ -298,7 +298,7 @@ public List<Object[]> timDanhSachHoaDon() {
                 double tongTien = rs.getDouble("TongTien");
                 double thueVAT = rs.getDouble("ThueVAT");
 
-                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLapHD, tongTien, thueVAT);
+                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLapHD);
                 dsHoaDon.add(hoaDon);
             }
             rs.close();
