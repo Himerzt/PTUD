@@ -718,6 +718,10 @@ public class DatPhong_GUI extends javax.swing.JDialog {
         if (regCCCD_Passport(txtCCCD.getText()) == false) {
             return false;
         }
+		if (khachHangDao.timTheoCCCD(txtCCCD.getText()) == null) {
+			JOptionPane.showMessageDialog(this, "Khách hàng chưa được thêm!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+			return false;
+		}
         // Nếu khách hàng đang đặt/thuê phòng thì không thể thuê phòng
         if (thongTinDatThuePhongDao.timThongTinTheoMaKhachHang(khachHangDao.timTheoCCCD(txtCCCD.getText()).getMaKH())
                 .size() != 0) {

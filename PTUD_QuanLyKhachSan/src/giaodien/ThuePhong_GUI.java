@@ -808,8 +808,11 @@ public class ThuePhong_GUI extends javax.swing.JDialog {
 		if (!regCCCD_Passport(txtCCCD.getText())) {
 			return false;
 		}
+		if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) == null) {
+			JOptionPane.showMessageDialog(this, "Khách hàng chưa được thêm!");
+			return false;
+		}
 		KhachHang kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
-		System.out.println(kh.getMaKH());
 		if (!kiemTraKhachHangDaThuePhong(kh.getMaKH())) {
 			JOptionPane.showMessageDialog(this, "Khách hàng hiện đang thuê phòng tại khách sạn!");
 			return false;
