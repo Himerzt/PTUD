@@ -39,21 +39,21 @@ import java.awt.Dimension;
  *
  * @author Admin
  */
-public class HoaDonThanhToan2 extends javax.swing.JFrame {
+public class HoaDonThanhToan extends javax.swing.JFrame {
 
     private PdfWriter writer;
-    private  static int orderNumber = 1; // Ví dụ: số thứ tự là 1
+    private  static int orderNumber = 1;
     private HoaDon hoadonLuuTru;
     
     
-    public HoaDonThanhToan2(HoaDon hoadon) {
+    public HoaDonThanhToan(HoaDon hoadon) {
     	this.hoadonLuuTru = hoadon;
         initComponents();
         drawBill();
     }
     
     
-    public HoaDonThanhToan2() {
+    public HoaDonThanhToan() {
         initComponents();
         drawBill();
     }
@@ -66,38 +66,56 @@ public class HoaDonThanhToan2 extends javax.swing.JFrame {
     public void drawBill(){
     	maHoaDon.setText(hoadonLuuTru.getMaHoaDon());        
         gach.setText("--------------------------------------------------------------------------------------------------------------------------------------------------");
-        TraPhong traPhong = new TraPhong(); // Tạo một đối tượng TraPhong
-//        tenKhachHang.setText(traPhong.getTxtTenKH());
+        TraPhong traPhong = new TraPhong();
+//      tenKhachHang.setText(traPhong.getTxtTenKH());
         gach1.setText("--------------------------------------------------------------------------------------------------------------------------------------------------");
-        ngayDenDi.setText("Ngày đến: " + "" +  "   -    Ngày đi:  "+"");
-        // Lấy thời gian hiện tại
-        LocalDateTime thoiGianHienTai = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        String gioHienTaiFormatted = thoiGianHienTai.format(formatter);
-        // Hiển thị giờ hiện tại trong JTextPane
-        thoiGianDi.setText("Thời gian đi: " + gioHienTaiFormatted);
+        
+        String ngayDennnStr = "";
+        String ngayDiiiiStr = "";
+        ngayDenDi.setText("Ngày đến: " + ngayDennnStr + "  ---    Ngày đi: " + ngayDiiiiStr);
+        // Thời gian đi là thời gian tạo hóa đơn
+        LocalDateTime ngayLap = hoadonLuuTru.getNgayLap();
+        thoiGianDi.setText("Thời gian đi: " + ngayLap);
         // Tạo một renderer mới
         DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
-
         // Thiết lập màu nền của renderer là màu trong suốt
         headerRenderer.setBackground(null);
-
         // Đặt renderer cho tất cả các cột trong hàng tiêu đề
         for (int i = 0; i < tableHoaDon.getColumnCount(); i++) {
             tableHoaDon.getTableHeader().getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
-    }
+        }
         tableHoaDon.setBackground(Color.WHITE); 
         // Hiển thị đường kẻ giữa các ô và cột
         tableHoaDon.setShowGrid(true);
-
         // Đặt màu của đường kẻ
         tableHoaDon.setGridColor(Color.GRAY);
-
         // Đặt đường viền cho tiêu đề cột
         tableHoaDon.getTableHeader().setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        
+        // Tính thông tin của hóa đơn từ danh sách các dịch vụ và phòng
+        loadDataToTable();
     
     }
-    @SuppressWarnings("unchecked")
+    private void loadDataToTable() {
+		// Thêm thông tin phòng vào bảng
+    	DefaultTableModel model = (DefaultTableModel) tableHoaDon.getModel();
+    	// Thêm thông tin phòng vào bảng
+    	model.addRow(new Object[] {1, "Phòng 101", 1, 100000, 100000});
+    	model.addRow(new Object[] {2, "Phòng 102", 2, 200000, 400000});
+    	model.addRow(new Object[] {3, "Phòng 103", 1, 150000, 150000});
+    	
+    	
+    	// Thêm thông tin dịch vụ vào bảng
+    	model.addRow(new Object[] {4, "Dịch vụ 1", 2, 50000, 100000});
+    	model.addRow(new Object[] {5, "Dịch vụ 2", 3, 70000, 210000});
+    	model.addRow(new Object[] {6, "Dịch vụ 3", 1, 100000, 100000});
+    	
+    	
+		
+	}
+
+
+	@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -432,20 +450,21 @@ public class HoaDonThanhToan2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HoaDonThanhToan2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HoaDonThanhToan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HoaDonThanhToan2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HoaDonThanhToan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HoaDonThanhToan2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HoaDonThanhToan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HoaDonThanhToan2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HoaDonThanhToan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HoaDonThanhToan2().setVisible(true);
+                new HoaDonThanhToan().setVisible(true);
             }
         });
     }

@@ -430,7 +430,7 @@ public class TraPhong2 extends javax.swing.JDialog {
 				JOptionPane.showMessageDialog(null, "Trả phòng thành công", "Thành công",
 				JOptionPane.INFORMATION_MESSAGE);
 				// gọi hóa đơn
-				HoaDonThanhToan2 hoaDonThanhToan = new HoaDonThanhToan2(hoaDonluuTru); 
+				HoaDonThanhToan hoaDonThanhToan = new HoaDonThanhToan(hoaDonluuTru); 
 	    		hoaDonThanhToan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	    		hoaDonThanhToan.setVisible(true);
 				this.setVisible(false);

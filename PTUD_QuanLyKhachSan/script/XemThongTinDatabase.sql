@@ -2,6 +2,7 @@
 
 USE QuanLyDatPhongKhachSan
 
+SELECT * FROM Phong
 
 SELECT * FROM ThongTinDatThuePhong
 
@@ -26,5 +27,5 @@ WHERE NgayLapHD
 
 
 -- Lấy tên khách hàng từ mã khách hàng trong hóa đơn
-SELECT * FROM HoaDon hd JOIN KhachHang k  
-ON hd.MaHD = k.MaKH
+SELECT k.TenKhachHang FROM HoaDon hd JOIN KhachHang k  
+ON hd.MaKH = k.MaKH WHERE hd.MaHD = 'HD26052024005'

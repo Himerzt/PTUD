@@ -3078,7 +3078,7 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
 			return;
 		}
 
-		DatPhong2 datPhongFrame = new DatPhong2(dsTenPhong);
+		DatPhong datPhongFrame = new DatPhong(dsTenPhong);
 		datPhongFrame.setVisible(true);
 		// reset checkbox
 		for (int i = 0; i < phongQuanLy.size(); i++) {
@@ -3113,7 +3113,7 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
 			return;
 		}
 		
-		TraPhong2 traPhongFrame = new TraPhong2(dsTenPhong);
+		TraPhong traPhongFrame = new TraPhong(dsTenPhong);
 		traPhongFrame.setVisible(true);
 		// reset checkbox
 		for (int i = 0; i < phongQuanLy.size(); i++) {

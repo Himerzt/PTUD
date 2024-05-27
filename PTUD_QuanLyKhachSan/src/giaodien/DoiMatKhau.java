@@ -11,10 +11,10 @@ import connectDB.ConnectDB;
 import dao.TaiKhoanDao;
 import entity.TaiKhoan;
 
-public class ChangePassword extends javax.swing.JFrame {
+public class DoiMatKhau extends javax.swing.JFrame {
 
 
-    public ChangePassword() throws SQLException{
+    public DoiMatKhau() throws SQLException{
         initComponents();
         ConnectDB.getInstance().getConnection();
     }
@@ -300,7 +300,7 @@ public class ChangePassword extends javax.swing.JFrame {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					new ChangePassword().setVisible(true);
+					new DoiMatKhau().setVisible(true);
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
