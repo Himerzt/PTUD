@@ -91,17 +91,23 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 		Menu.setEvent(new MenuEvent() {
 			@Override
 			public void selected(int index, int subIndex) {
-				if (index == 9) {
+				if (index == 8) {
 					System.exit(0);
 
 				}
+				
 
 				if (index == 0) {
 					pnedUngDung.setSelectedIndex(0);
 				}
 
 				if (index == 1) {
-					pnedUngDung.setSelectedIndex(1);
+					if (subIndex == 1) {
+						pnedUngDung.setSelectedIndex(1);
+					}
+					if (subIndex == 2) {
+						pnedUngDung.setSelectedIndex(8);
+					}
 				}
 
 				if (index == 2) {
@@ -123,9 +129,6 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 				if (index == 7) {
 					pnedUngDung.setSelectedIndex(7);
 				} 
-				if (index == 8) {
-					pnedUngDung.setSelectedIndex(6);
-				}
 
 			}
 

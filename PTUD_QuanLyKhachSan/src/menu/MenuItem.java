@@ -103,7 +103,7 @@ public class MenuItem extends JButton{
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             if(lenght!=0){
                 g2.setColor(new Color(230, 230, 230));
-                if(subMenuIndex==1){
+                if(subMenuIndex==0){
                     // firt index
                 g2.drawImage(shadow, -shadowSize, -20,null);
                 g2.drawLine(18, 0, 18, getHeight());
