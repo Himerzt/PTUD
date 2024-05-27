@@ -3084,7 +3084,7 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
 			}
 		}		
 		
-		ThemDichVuPhongDialog_GUI thuePhongFrame = new ThemDichVuPhongDialog_GUI(tenphongDoi);
+		ThemDichVuPhong_GUI thuePhongFrame = new ThemDichVuPhong_GUI(tenphongDoi);
 		thuePhongFrame.setVisible(true);
 		// reset checkbox
 		for (int i = 0; i < phongQuanLy.size(); i++) {
@@ -3167,7 +3167,6 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
 
 	private void btnDoiPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDoiPhongActionPerformed
 		// TODO add your handling code here:
-		
 		JCheckBox cks;
 		JLabel tenPhong;
         String tenphongDoi = "";
@@ -3187,8 +3186,7 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
 			cks = checkBoxPhongQuanLy.get(i);
 			if (cks.isSelected()) {
 				cks.setSelected(false);
-			}
-
+			}}
 
 		}
 	// GEN-LAST:event_btnDoiPhongActionPerformed
@@ -3196,7 +3194,7 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
               
         
             
-        }
+        
     // GEN-LAST:event_btnFindbyPhoneActionPerformed
 
     private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed

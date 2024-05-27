@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 import connectDB.ConnectDB;
@@ -35,7 +37,11 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -45,31 +51,123 @@ import java.awt.event.ActionEvent;
  */
 
 public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
-	private String soPhongHienTai;
+	
 	private List<DichVuPhong> danhSachDichVu;
+
 	private String[] dsPhongDat;
 	List<String> dsTenPhong;
 	private LichSuDoiPhong lichSuDoiPhong;
 
 	private LichSuDoiPhongDao listLSDP;
 
-	/**
-	 * Creates new form DatPhong
-	 */
-	public DoiPhongDangThue_GUI() {
+	private String maPhongDoi;
+
+	private Phong phong;
+
+	private PhongDao phongDao;
+
+	public DoiPhongDangThue_GUI(String maPhongDoi) {
+		
+		this.maPhongDoi = maPhongDoi;
+		
+
 		ConnectDB.getInstance().getConnection();
 		initComponents();
-	}
+		phongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				phongQuanLy.add(
+						(giaodien.CustomClass.PanelRound) getClass().getDeclaredField("phongQuanLy" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 
-	public DoiPhongDangThue_GUI(String soPhongHienTai) {
-		this.soPhongHienTai = soPhongHienTai;
+		loaiPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				loaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblLoaiPhongQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 
-		ConnectDB.getInstance().getConnection();
-		initComponents();
+		tenPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				tenPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTenPhongQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		trangThaiPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				trangThaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTrangThaiQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		checkBoxPhongQuanLy = new ArrayList<>();
+		for (int i = 1; i <= 35; i++) {
+			try {
+				checkBoxPhongQuanLy.add((giaodien.CustomClass.JCheckBoxCustom) getClass()
+						.getDeclaredField("checkBoxPhongQL" + i).get(this));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		loadDanhSachPhong();
 	}
 
 	public String[] layDanhSachPhongDat() {
 		return dsPhongDat;
+	}
+
+	public void loadDanhSachPhong() {
+		PhongDao phongDao = new PhongDao();
+		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			Phong phong = dsPhong.get(i);
+			JPanel phongPanel = phongQuanLy.get(i);
+			JLabel loaiPhong = loaiPhongQuanLy.get(i);
+			JLabel soPhong = tenPhongQuanLy.get(i);
+			JLabel trangThai = trangThaiPhongQuanLy.get(i);
+
+			// Gán thông tin phòng lên label
+			soPhong.setText(Integer.toString(phong.getSoPhong()));
+			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+				loaiPhong.setText("Tiêu chuẩn");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+				loaiPhong.setText("Nâng cao");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+				loaiPhong.setText("Cao cấp");
+			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
+				loaiPhong.setText("Thương gia");
+			}
+			trangThai.setText(phong.getTrangThai());
+
+			if (trangThai.getText().equalsIgnoreCase("Trống")) {
+				phongPanel.setBackground(Color.green);
+			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
+				phongPanel.setBackground(Color.yellow);
+			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
+				phongPanel.setBackground(Color.red);
+			}
+
+			if (phongPanel.isVisible() == false) {
+				phongPanel.setVisible(true);
+			}
+		}
+
 	}
 
 	@SuppressWarnings("unchecked")
@@ -2729,6 +2827,8 @@ public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
 		setLocationRelativeTo(null);
 
 		addALL();
+	
+		
 
 	}// </editor-fold>//GEN-END:initComponents
 
@@ -2742,111 +2842,128 @@ public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
 		else
 			return "Thương gia";
 	}
+	
+	// hiển thị checkbox
+
 
 	// actionperformed btndoiphong
 	public void btnDoiPhongActionPerformed(java.awt.event.ActionEvent evt) {
-//
-//		String maPhongHienTai = txtTenPhongHienTai.getText();
-//		String maPhongDoi = "";
-//		String maKhachHang = txtMaKhachHang.getText();
-//		String tenKhachHang = txtTenKhachHang.getText();
-//		String soDienThoai = txtSoDienThoaiKhachHang.getText();
-//
-//		if (checkBoxPhongQL1.isSelected()) {
-//			maPhongDoi = "101";
-//		} else if (checkBoxPhongQL2.isSelected()) {
-//			maPhongDoi = "102";
-//		} else if (checkBoxPhongQL3.isSelected()) {
-//			maPhongDoi = "103";
-//		} else if (checkBoxPhongQL4.isSelected()) {
-//			maPhongDoi = "104";
-//		} else if (checkBoxPhongQL5.isSelected()) {
-//			maPhongDoi = "105";
-//		} else if (checkBoxPhongQL6.isSelected()) {
-//			maPhongDoi = "106";
-//		} else if (checkBoxPhongQL7.isSelected()) {
-//			maPhongDoi = "107";
-//		} else if (checkBoxPhongQL8.isSelected()) {
-//			maPhongDoi = "108";
-//		} else if (checkBoxPhongQL9.isSelected()) {
-//			maPhongDoi = "109";
-//		} else if (checkBoxPhongQL10.isSelected()) {
-//			maPhongDoi = "110";
-//		} else if (checkBoxPhongQL11.isSelected()) {
-//			maPhongDoi = "111";
-//		} else if (checkBoxPhongQL12.isSelected()) {
-//			maPhongDoi = "112";
-//		} else if (checkBoxPhongQL13.isSelected()) {
-//			maPhongDoi = "113";
-//		} else if (checkBoxPhongQL14.isSelected()) {
-//			maPhongDoi = "114";
-//		} else if (checkBoxPhongQL15.isSelected()) {
-//			maPhongDoi = "115";
-//		} else if (checkBoxPhongQL16.isSelected()) {
-//			maPhongDoi = "116";
-//		} else if (checkBoxPhongQL17.isSelected()) {
-//			maPhongDoi = "117";
-//		} else if (checkBoxPhongQL18.isSelected()) {
-//			maPhongDoi = "118";
-//		} else if (checkBoxPhongQL19.isSelected()) {
-//			maPhongDoi = "119";
-//		} else if (checkBoxPhongQL20.isSelected()) {
-//			maPhongDoi = "120";
-//		} else if (checkBoxPhongQL21.isSelected()) {
-//			maPhongDoi = "121";
-//		} else if (checkBoxPhongQL22.isSelected()) {
-//			maPhongDoi = "122";
-//		} else if (checkBoxPhongQL23.isSelected()) {
-//			maPhongDoi = "123";
-//		} else if (checkBoxPhongQL24.isSelected()) {
-//			maPhongDoi = "124";
-//		} else if (checkBoxPhongQL25.isSelected()) {
-//			maPhongDoi = "125";
-//		} else if (checkBoxPhongQL26.isSelected()) {
-//			maPhongDoi = "126";
-//		} else if (checkBoxPhongQL27.isSelected()) {
-//			maPhongDoi = "127";
-//		} else if (checkBoxPhongQL28.isSelected()) {
-//			maPhongDoi = "128";
-//		} else if (checkBoxPhongQL29.isSelected()) {
-//			maPhongDoi = "129";
-//		} else if (checkBoxPhongQL30.isSelected()) {
-//			maPhongDoi = "130";
-//		} else if (checkBoxPhongQL31.isSelected()) {
-//			maPhongDoi = "131";
-//		} else if (checkBoxPhongQL32.isSelected()) {
-//			maPhongDoi = "132";
-//		} else if (checkBoxPhongQL33.isSelected()) {
-//			maPhongDoi = "133";
-//		} else if (checkBoxPhongQL34.isSelected()) {
-//			maPhongDoi = "134";
-//		} else if (checkBoxPhongQL35.isSelected()) {
-//			maPhongDoi = "135";
-//		}
-//
-//		lichSuDoiPhong = new LichSuDoiPhong();
-//		listLSDP = new LichSuDoiPhongDao();
-//
-//		if (listLSDP.demLichSuDoiPhongTheoMaPhongCu(maPhongHienTai) == 1) {
-//			JOptionPane.showMessageDialog(null, "Phòng này đã được đổi rồi nên không được đổi nữa");
-//		} else {
-//			lichSuDoiPhong = new LichSuDoiPhong(maKhachHang, tenKhachHang, maPhongHienTai, maPhongDoi, LocalDate.now(),
-//					txtTenKhachHang1.getText());
-//			listLSDP.themLichSuDoiPhong(lichSuDoiPhong);
-//
-//			// Cập nhật trạng thái phòng
-//			PhongDao phongDao = new PhongDao();
-//			phongDao.capNhatTrangThaiPhong(maPhongHienTai, "Trống");
-//			phongDao.capNhatTrangThaiPhong(maPhongDoi, "Đang thuê");
-//			// chuyển dịch vụ từ phòng hiện tại sang phòng mới
-//			dichVuDao = new DichVuPhongDao();
-//			ArrayList<DichVuPhong> a = dichVuDao.timTatCaDichVuPhongTheoMaPhong(maPhongHienTai);
-//			for (DichVuPhong dv : a) {
-//				dichVuDao.capNhatMaPhong(maPhongHienTai, maPhongDoi);
-//			}
-//
-//			JOptionPane.showMessageDialog(null, "Đổi phòng thành công");
-//			this.dispose();
+
+		String maPhongHienTai = txtTenPhongHienTai.getText();
+		String maPhongDoi = "";
+		String maKhachHang = txtMaKhachHang.getText();
+		String tenKhachHang = txtTenKhachHang.getText();
+		String soDienThoai = txtSoDienThoaiKhachHang.getText();
+
+String maPhongMuonDoi = "";
+if(checkBoxPhongQL1.isSelected()) {
+	maPhongMuonDoi = "101";
+}
+else if(checkBoxPhongQL2.isSelected()) {
+	maPhongMuonDoi = "102";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+	maPhongMuonDoi = "103";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+	maPhongMuonDoi = "104";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "105";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "106";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "107";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "108";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "109";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "110";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "111";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "112";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "113";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "114";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "115";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "116";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "117";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "118";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "119";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "120";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "121";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "122";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "123";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "124";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "125";
+}
+else if(checkBoxPhongQL3.isSelected()) {
+    maPhongMuonDoi = "326";}
+phong = new Phong();
+phongDao = new PhongDao();
+
+phong = phongDao.timPhongTheoMaPhong(maPhongMuonDoi);
+
+txtTenPhongHienTai1.setText(phong.getMaPhong());
+		lichSuDoiPhong = new LichSuDoiPhong();
+		listLSDP = new LichSuDoiPhongDao();
+
+		if (listLSDP.demLichSuDoiPhongTheoMaPhongCu(maPhongHienTai) == 1) {
+			JOptionPane.showMessageDialog(null, "Phòng này đã được đổi rồi nên không được đổi nữa");
+		} else {
+			lichSuDoiPhong = new LichSuDoiPhong(maKhachHang, tenKhachHang, maPhongHienTai, phong.getMaPhong(), LocalDate.now(),
+					txtTenKhachHang1.getText());
+			listLSDP.themLichSuDoiPhong(lichSuDoiPhong);
+
+			// Cập nhật trạng thái phòng
+			PhongDao phongDao = new PhongDao();
+			phongDao.capNhatTrangThaiPhong(maPhongHienTai, "Trống");
+			phongDao.capNhatTrangThaiPhong(phong.getMaPhong(), "Đang thuê");
+			// chuyển dịch vụ từ phòng hiện tại sang phòng mới
+			dichVuDao = new DichVuPhongDao();
+			ArrayList<DichVuPhong> a = dichVuDao.timTatCaDichVuPhongTheoMaPhong(maPhongHienTai);
+			for (DichVuPhong dv : a) {
+				dichVuDao.capNhatMaPhong(maPhongHienTai, phong.getMaPhong());
+			}
+
+			JOptionPane.showMessageDialog(null, "Đổi phòng thành công");
+			this.dispose();
+
+		}
 
 	}
 
@@ -2884,19 +3001,109 @@ public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
 		}
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				List<String> args = new ArrayList<String>();
-				args.add("101");
-				args.add("102");
-				args.add("103");
 
-				DoiPhongDangThue_GUI guiDatPhong = new DoiPhongDangThue_GUI();
+				String agr = "TC101";
+				DoiPhongDangThue_GUI guiDatPhong = new DoiPhongDangThue_GUI(agr);
+
 				guiDatPhong.setVisible(true);
 				guiDatPhong.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 			}
 		});
+		
+		
 
 	}
 
+
+
+
+	private DichVuPhongDao dichVuDao;
+	private KhachHangDao khachHangDao;
+	private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
+	private KhachHang kh;
+	// End of variables declaration//GEN-END:variables
+
+	private static String[] loadDanhSachDichVu() {
+		DichVuDao dvDao = new DichVuDao();
+		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
+		String[] tenDV = new String[danhSachDV.size()];
+		for (int i = 0; i < danhSachDV.size(); i++) {
+			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
+		}
+		return tenDV;
+	}
+//
+	
+
+	//viết hàm loadcheckbox khi checkbox vào một checkbox bất kỳ thì sẽ hiện thông tin phòng đó ở txtTenPhongHienTai1
+	
+	public void chonPhongDoi() {
+		phongQuanLy = new ArrayList<>();
+		JCheckBox cks;
+		JLabel tenPhong;
+		String tenphongDoi = "";
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			cks = checkBoxPhongQuanLy.get(i);
+			tenPhong = tenPhongQuanLy.get(i);
+			if (cks.isSelected()) {
+				tenphongDoi = tenPhong.getText();
+				txtTenPhongHienTai1.setText(tenphongDoi);
+
+			}
+
+		}
+
+	}
+    
+	public void addALL() {
+		
+		// chuyển string thành int
+		int number = Integer.parseInt(maPhongDoi);
+		ThongTinDatThuePhongDao ttdtpDao = new ThongTinDatThuePhongDao();
+		ThongTinDatThuePhong ttdtp = new ThongTinDatThuePhong();
+		Phong phong = new Phong();
+		PhongDao phongDao = new PhongDao();
+		KhachHang khachHang = new KhachHang();
+		KhachHangDao khachHangDao = new KhachHangDao();
+
+		phong = phongDao.timPhongTheoSoPhong(number);
+		ttdtp = ttdtpDao.timThongTinDatThuePhongTheoMaPhong1(phong.getMaPhong());
+		khachHang = khachHangDao.timKhachHangTheoMa(ttdtp.getMaKhachHang());
+
+		txtTenKhachHang.setText(khachHang.getHoTenKH());
+		txtMaKhachHang.setText(khachHang.getMaKH());
+		txtSoDienThoaiKhachHang.setText(khachHang.getSoDT());
+		txtMaKhachHang1.setText(khachHang.getMaKH());
+		txtSoDienThoaiKhachHang1.setText(khachHang.getSoDT());
+		txtTenKhachHang1.setText(khachHang.getHoTenKH());
+		txtTenPhongHienTai.setText(phong.getMaPhong());
+		
+		
+
+	}
+	
+
+//	public void setALL() {
+//		khachHangDao = new KhachHangDao();
+//		kh = new KhachHang();
+//		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
+//		;
+//		ThongTinDatThuePhong ttdtp = thongTinDatThuePhongDao
+//				.timThongTinDatThuePhongTheoMaPhong(txtTenPhongHienTai.getText());
+//		String ma = ttdtp.getMaKhachHang();
+//		String ten = khachHangDao.timKhachHangTheoMa(ma).getHoTenKH();
+//		String sdt = khachHangDao.timKhachHangTheoMa(ma).getSoDT();
+//
+//		txtTenKhachHang.setText(ten);
+//		txtSoDienThoaiKhachHang.setText(sdt);
+//		txtMaKhachHang.setText(ma);
+//
+//		txtSoDienThoaiKhachHang1.setText(sdt);
+//		txtMaKhachHang1.setText(ma);
+//
+//	}
+
+//=======
 	// Variables declaration - do not modify//GEN-BEGIN:variables
 	private giaodien.CustomClass.Button button1;
 	private giaodien.CustomClass.Button button2;
@@ -2939,6 +3146,7 @@ public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
 	private giaodien.CustomClass.DateChooser dateNgayNhan;
 	private giaodien.CustomClass.DateChooser dateNgaySinh;
 	private giaodien.CustomClass.DateChooser dateNgayTra;
+	
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JLabel jLabel11;
 	private javax.swing.JLabel jLabel17;
@@ -3115,63 +3323,14 @@ public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
 	private giaodien.CustomClass.TextFieldShadow txtTenKhachHang1;
 	private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai;
 	private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai1;
-	private DichVuPhongDao dichVuDao;
-	private KhachHangDao khachHangDao;
-	private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
-	private KhachHang kh;
+	private ArrayList<javax.swing.JPanel> phongQuanLy;
+	private ArrayList<javax.swing.JLabel> loaiPhongQuanLy;
+	private ArrayList<javax.swing.JLabel> tenPhongQuanLy;
+	private ArrayList<javax.swing.JLabel> trangThaiPhongQuanLy;
+	private ArrayList<giaodien.CustomClass.JCheckBoxCustom> checkBoxPhongQuanLy;
 	// End of variables declaration//GEN-END:variables
+	
 
-	private static String[] loadDanhSachDichVu() {
-		DichVuDao dvDao = new DichVuDao();
-		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
-		String[] tenDV = new String[danhSachDV.size()];
-		for (int i = 0; i < danhSachDV.size(); i++) {
-			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
-		}
-		return tenDV;
-	}
 
-	public void addALL() {
-		txtTenPhongHienTai.setText(soPhongHienTai);
-		// chuyển string thành int
-		int number = Integer.parseInt(soPhongHienTai);
-		ThongTinDatThuePhongDao ttdtpDao = new ThongTinDatThuePhongDao();
-		ThongTinDatThuePhong ttdtp = new ThongTinDatThuePhong();
-		Phong phong = new Phong();
-		PhongDao phongDao = new PhongDao();
-		KhachHang khachHang = new KhachHang();
-		KhachHangDao khachHangDao = new KhachHangDao();
-
-		phong = phongDao.timPhongTheoSoPhong(number);
-		ttdtp = ttdtpDao.timThongTinDatThuePhongTheoMaPhong1(phong.getMaPhong());
-		khachHang = khachHangDao.timKhachHangTheoMa(ttdtp.getMaKhachHang());
-
-		txtTenKhachHang.setText(khachHang.getHoTenKH());
-		txtMaKhachHang.setText(khachHang.getMaKH());
-		txtSoDienThoaiKhachHang.setText(khachHang.getSoDT());
-		txtMaKhachHang1.setText(khachHang.getMaKH());
-		txtSoDienThoaiKhachHang1.setText(khachHang.getSoDT());
-
-	}
-
-//	public void setALL() {
-//		khachHangDao = new KhachHangDao();
-//		kh = new KhachHang();
-//		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
-//		;
-//		ThongTinDatThuePhong ttdtp = thongTinDatThuePhongDao
-//				.timThongTinDatThuePhongTheoMaPhong(txtTenPhongHienTai.getText());
-//		String ma = ttdtp.getMaKhachHang();
-//		String ten = khachHangDao.timKhachHangTheoMa(ma).getHoTenKH();
-//		String sdt = khachHangDao.timKhachHangTheoMa(ma).getSoDT();
-//
-//		txtTenKhachHang.setText(ten);
-//		txtSoDienThoaiKhachHang.setText(sdt);
-//		txtMaKhachHang.setText(ma);
-//
-//		txtSoDienThoaiKhachHang1.setText(sdt);
-//		txtMaKhachHang1.setText(ma);
-//
-//	}
 
 }

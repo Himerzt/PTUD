@@ -50,6 +50,7 @@ public class GiaHanPhongThue_GUI extends javax.swing.JDialog {
 	private ThongTinDatThuePhongDao ttdtpDao;
 	private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
 	private KhachHangDao khachHangDao;
+	private KhachHang kh;
 
 	/**
 	 * Creates new form DatPhong
@@ -511,8 +512,10 @@ public class GiaHanPhongThue_GUI extends javax.swing.JDialog {
 		
 		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
 		;  
+		kh  = new KhachHang();
+		khachHangDao = new KhachHangDao();
 		ThongTinDatThuePhong ttdtp = (ThongTinDatThuePhong) thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong1(txtMaPhong.getText());
-		KhachHang kh = khachHangDao.timKhachHangTheoMa(ttdtp.getMaKhachHang());
+		 kh = khachHangDao.timKhachHangTheoMa(ttdtp.getMaKhachHang());
 		
 		txtTenKH.setText(kh.getHoTenKH());
 		txtCCCD.setText(kh.getCccd_passport());

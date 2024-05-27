@@ -6,6 +6,7 @@ package giaodien;
 
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -23,7 +24,7 @@ public class ThemDichVuVaoPhong_GUI extends javax.swing.JFrame {
 	private DichVuPhongDao dsDVPhong;
 	private DichVuDao dsDV;
 	private TableModel tableModel;
-private String soPhongHienTai;
+private static String soPhongHienTai;
 	/**
 	 * Creates new form ThemDichVuVaoPhong
 	 * @return 
@@ -34,7 +35,7 @@ private String soPhongHienTai;
 			initComponents();
 		}
 	 
-	public ThemDichVuVaoPhong_GUI() {
+	public ThemDichVuVaoPhong_GUI(JFrame jFrame, boolean b) {
 		initComponents();
 	}
 
@@ -291,7 +292,34 @@ private String soPhongHienTai;
 		// TODO add your handling code here:
 		String tenDV = comboBoxDichVu.getSelectedItem().toString();
 		String madv = "";
-
+//		if (tenDV.equals("Ăn sáng")) {
+//			// Thêm dịch vụ ăn sáng vào phòng
+//			madv = "DV002";
+//			} else if (tenDV.equals("Ăn trưa")) {
+//				madv = "DV002";
+//		}
+//		else if (tenDV.equals("Ăn chiều")) {
+//			madv = "DV002";
+//		}
+//		else if (tenDV.equals("Giặt quần áo")) {
+//				madv = "DV003";
+//		}
+//		else if (tenDV.equals("Đưa đón khách")) {
+//			madv = "DV013";
+//		}
+//		
+//		else if (tenDV.equals("Thêm giường")) {
+//    	            madv = "DV010";
+//        }
+//        else if (tenDV.equals("Thêm gối")) {
+//            madv = "DV012";
+//        }
+//        else if (tenDV.equals("Thêm chăn")) {
+//            madv = "DV011";
+//        }
+//        else if(tenDV.equals("Phòng tập thể dục")) {
+//            madv = "DV009";
+//        }
 		String maPhong = txtTenPhongHienTai.getText();
 
 		int soluong = Integer.parseInt(txtSoLuong.getText());
@@ -358,7 +386,7 @@ private String soPhongHienTai;
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				new ThemDichVuVaoPhong_GUI().setVisible(true);
+				new ThemDichVuVaoPhong_GUI(soPhongHienTai).setVisible(true);
 			}
 		});
 	}
@@ -388,7 +416,4 @@ private String soPhongHienTai;
 	// End of variables declaration//GEN-END:variables
 	
 	
-	public void  setALL()
-{
-		txtTenPhongHienTai.setText(soPhongHienTai);
-}}
+}
