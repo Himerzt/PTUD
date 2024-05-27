@@ -489,30 +489,37 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
         lblcurrentTime.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblcurrentTime.setText("currentTime");
 
+        radPhongTieuChuan.setBackground(new java.awt.Color(254, 249, 239));
         btnGroupLoaiPhong.add(radPhongTieuChuan);
         radPhongTieuChuan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongTieuChuan.setText("Phòng tiêu chuẩn");
 
+        radPhongNangCao.setBackground(new java.awt.Color(254, 249, 239));
         btnGroupLoaiPhong.add(radPhongNangCao);
         radPhongNangCao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongNangCao.setText("Phòng nâng cao");
 
+        radPhongCaoCap.setBackground(new java.awt.Color(254, 249, 239));
         btnGroupLoaiPhong.add(radPhongCaoCap);
         radPhongCaoCap.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongCaoCap.setText("Phòng cao cấp");
 
+        radPhongThuongGia.setBackground(new java.awt.Color(254, 249, 239));
         btnGroupLoaiPhong.add(radPhongThuongGia);
         radPhongThuongGia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongThuongGia.setText("Phòng thương gia");
 
+        radPhongTrong.setBackground(new java.awt.Color(254, 249, 239));
         btnGroupTrangThai.add(radPhongTrong);
         radPhongTrong.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongTrong.setText("Phòng trống");
 
+        radPhongDaDat.setBackground(new java.awt.Color(254, 249, 239));
         btnGroupTrangThai.add(radPhongDaDat);
         radPhongDaDat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongDaDat.setText("Phòng đã đặt");
 
+        radPhongDangThue.setBackground(new java.awt.Color(254, 249, 239));
         btnGroupTrangThai.add(radPhongDangThue);
         radPhongDangThue.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongDangThue.setText("Phòng đang thuê");
