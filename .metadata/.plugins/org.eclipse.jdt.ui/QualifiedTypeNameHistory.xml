@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="dao.KhachHangDao"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="connectDB.ConnectDB"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="entity.NhanVien"/>
     <fullyQualifiedTypeName name="dao.NhanVienDao"/>
     <fullyQualifiedTypeName name="giaodien.DanhSachNhanVien"/>
+    <fullyQualifiedTypeName name="entity.KhuyenMai"/>
 </qualifiedTypeNameHistroy>

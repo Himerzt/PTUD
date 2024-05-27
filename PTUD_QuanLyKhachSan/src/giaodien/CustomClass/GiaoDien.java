@@ -4,7 +4,7 @@
  */
 package giaodien.CustomClass;
 
-import giaodien.Login;
+import giaodien.DangNhap_GUI;
 import java.awt.Color;
 import javax.swing.UIManager;
 
@@ -16,7 +16,7 @@ public class GiaoDien {
     public static void main(String[] args) {
         UIManager.put("Button.select", new Color(0, 0, 0,0));
         try {
-        	Login LoginFrame = new Login();
+        	DangNhap_GUI LoginFrame = new DangNhap_GUI();
             LoginFrame.setVisible(true);
             LoginFrame.pack();
             LoginFrame.setLocationRelativeTo(null); // center

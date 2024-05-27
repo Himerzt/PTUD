@@ -13,6 +13,7 @@ import java.util.List;
 
 import connectDB.ConnectDB;
 import entity.DichVu;
+import entity.DichVuPhong;
 import entity.HoaDon;
 import entity.KhachHang;
 import entity.NhanVien;
@@ -244,30 +245,123 @@ public class HoaDonDao {
 	// Lấy tên khách hàng từ mã khách hàng trong hóa đơn SELECT k.TenKhachHang FROM HoaDon hd JOIN KhachHang k  
 //	ON hd.MaKH = k.MaKH WHERE hd.MaHD = 'HD26052024005'
 	public String layTenKhachHangTuMaHoaDon(String maHoaDon) {
-		ConnectDB.getInstance();
-		Connection con = ConnectDB.getConnection();
-		PreparedStatement pstmt = null;
-		String tenKhachHang = null;
-		try {
-			String sql = "SELECT k.TenKhachHang FROM HoaDon hd JOIN KhachHang k ON hd.MaKH = k.MaKH WHERE hd.MaKH = ?";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, maHoaDon);
-			ResultSet rs = pstmt.executeQuery();
-			rs.next();
-			tenKhachHang = rs.getString(1);
-			rs.close();
-			pstmt.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return tenKhachHang;
+	    ConnectDB.getInstance();
+	    Connection con = ConnectDB.getConnection();
+	    PreparedStatement pstmt = null;
+	    String tenKhachHang = "";
+	    ResultSet rs = null;
+	    try {
+	        String sql = "SELECT k.TenKhachHang FROM HoaDon hd JOIN KhachHang k ON hd.MaKH = k.MaKH WHERE hd.MaHD = ?";
+	        pstmt = con.prepareStatement(sql);
+	        pstmt.setString(1, maHoaDon);
+	        rs = pstmt.executeQuery();
+	        if (rs.next()) {
+	            tenKhachHang = rs.getString(1);
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        try {
+	            if (rs != null) rs.close();
+	            if (pstmt != null) pstmt.close();
+	            if (con != null) con.close();
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    return tenKhachHang;
 	}
 	
+	// Xử lý ngày đặt ngày nhân và ngày trả phòng
+	public ArrayList<String> layNgayDatNhanTratuMaHoaDon(String maHoaDon) {
+		ArrayList<String> dsngayDatNhanTra = new ArrayList<String>();
+		Connection con = ConnectDB.getInstance().getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			String sql = "SELECT tt.NgayDatPhong, tt.NgayNhanPhong , tt.NgayTraPhong FROM HoaDon hd JOIN ChiTietHoaDon cthd ON hd.MaHD = cthd.MaHD JOIN ThongTinDatThuePhong tt ON cthd.MaTTDTP = tt.MaTTDTP WHERE hd.MaHD = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, maHoaDon);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				dsngayDatNhanTra.add(rs.getString(1));
+				dsngayDatNhanTra.add(rs.getString(2));
+				dsngayDatNhanTra.add(rs.getString(3));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return dsngayDatNhanTra;
+	}
+
+	public ArrayList<DichVuPhong> layDichPhongSuDung(String maHoaDon){
+		ArrayList<DichVuPhong> dsDichVuPhong = new ArrayList<DichVuPhong>();
+		Connection con = ConnectDB.getInstance().getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			String sql = "SELECT dvsd.MaDichVu , dvsd.MaDichVuSuDung , dvsd.MaPhong , dvsd.SoLuong FROM HoaDon hd JOIN ChiTietHoaDon chd ON hd.MaHD = chd.MaHD JOIN ThongTinDatThuePhong tt ON chd.MaTTDTP = tt.MaTTDTP JOIN DichVuSuDung dvsd ON tt.MaPhong = dvsd.MaPhong WHERE hd.MaHD = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, maHoaDon);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				DichVuPhong dv = new DichVuPhong();
+				dv.setMaDichVu(rs.getString(1));
+				dv.setMaDichVuSuDung(rs.getString(2));
+				dv.setMaPhong(rs.getString(3));
+				dv.setSoLuong(rs.getInt(4));
+				dsDichVuPhong.add(dv);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dsDichVuPhong;
+		
+	}
+	
+	
+	// Xử lý lấy danh sách mã phòng đã đặt ArrayList<String> dsMaPhong = hoaDonDao.layMaPhongDaDat("HD27052024001");
+//	SELECT tt.MaPhong FROM HoaDon hd JOIN ChiTietHoaDon chd 
+//	ON hd.MaHD = chd.MaHD
+//	JOIN ThongTinDatThuePhong tt
+//	ON chd.MaTTDTP = tt.MaTTDTP
+//	WHERE hd.MaHD = 'HD27052024001'
+	public ArrayList<String> layMaPhongDaDat(String maHoaDon) {
+		ArrayList<String> dsMaPhong = new ArrayList<String>();
+		Connection con = ConnectDB.getInstance().getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			String sql = "SELECT tt.MaPhong FROM HoaDon hd JOIN ChiTietHoaDon chd ON hd.MaHD = chd.MaHD JOIN ThongTinDatThuePhong tt ON chd.MaTTDTP = tt.MaTTDTP WHERE hd.MaHD = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, maHoaDon);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				dsMaPhong.add(rs.getString(1));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dsMaPhong;
+	}
+ 	
 	
 	public static void main(String[] args) {
 		// ttesst tìm tên khách hàng với mã hóa đon HD26052024005
 		HoaDonDao hoaDonDao = new HoaDonDao();
-		String tenKhachHang = hoaDonDao.layTenKhachHangTuMaHoaDon("HD26052024005");
+		String tenKhachHang = hoaDonDao.layTenKhachHangTuMaHoaDon("HD27052024001");
+		ArrayList<String> dsNgayDaatNhanTra = hoaDonDao.layNgayDatNhanTratuMaHoaDon("HD27052024001");
+		System.out.println(dsNgayDaatNhanTra);
 		System.out.println(tenKhachHang);
+		// test tìm dịch vụ 
+		ArrayList<DichVuPhong> dsDichVuPhong = hoaDonDao.layDichPhongSuDung("HD27052024001");
+		for (DichVuPhong dichVuPhong : dsDichVuPhong) {
+			System.out.println(dichVuPhong.getMaDichVu() + " " + dichVuPhong.getMaDichVuSuDung() + " " + dichVuPhong.getMaPhong() + " " + dichVuPhong.getSoLuong());
+		}
+		// Tesst tìm mã phòng đã đặt
+		ArrayList<String> dsMaPhong = hoaDonDao.layMaPhongDaDat("HD27052024001");
+		System.out.println(dsMaPhong);
+		
 	}
 }
