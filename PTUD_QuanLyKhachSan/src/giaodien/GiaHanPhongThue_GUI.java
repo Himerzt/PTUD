@@ -5,6 +5,7 @@ import entity.DichVu;
 import entity.DichVuPhong;
 import entity.KhachHang;
 import entity.Phong;
+import entity.ThongTinDatThuePhong;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -46,6 +47,10 @@ public class GiaHanPhongThue_GUI extends javax.swing.JDialog {
 	private List<DichVuPhong> danhSachDichVu;
 	private String[] dsPhongDat;
 	List<String> dsTenPhong;
+	private ThongTinDatThuePhongDao ttdtpDao;
+	private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
+	private KhachHangDao khachHangDao;
+	private KhachHang kh;
 
 	/**
 	 * Creates new form DatPhong
@@ -364,6 +369,8 @@ public class GiaHanPhongThue_GUI extends javax.swing.JDialog {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
+        // setall
+        setALL();
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -383,6 +390,8 @@ public class GiaHanPhongThue_GUI extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+	
+
 
     private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         this.hide();
@@ -390,6 +399,23 @@ public class GiaHanPhongThue_GUI extends javax.swing.JDialog {
 
     private void btnGiaHanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiaHanActionPerformed
         
+    	LocalDate ngayNhan = LocalDate.parse(txtNgayNhan.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    	LocalDate ngayTra = LocalDate.parse(txtNgayTra.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    	String maPhong = txtMaPhong.getText();	
+    	String maKH = txtCCCD.getText();
+    	LocalDate ngaygianhan = LocalDate.parse(txtCheckOut1.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+	
+		
+		if (ngaygianhan.isBefore(ngayTra) || ngaygianhan.isBefore(ngayNhan)) {
+			JOptionPane.showMessageDialog(null, "Ngày gia hạn không được nhỏ hơn ngày trả phòng");
+			return;
+		}
+		
+		
+		 ttdtpDao = new ThongTinDatThuePhongDao();
+	ThongTinDatThuePhong maTTDTP = ttdtpDao.timThongTinDatThuePhongTheoMaPhong1(maPhong);
+		    ttdtpDao.capNhatNgayTraPhong(maTTDTP, ngaygianhan);
+		
     }//GEN-LAST:event_btnGiaHanActionPerformed
 
     private void btnNgayGiaHanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNgayGiaHanActionPerformed
@@ -438,6 +464,8 @@ public class GiaHanPhongThue_GUI extends javax.swing.JDialog {
 		else
 			return "Thương gia";
 	}
+	
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -479,6 +507,23 @@ public class GiaHanPhongThue_GUI extends javax.swing.JDialog {
 		});
 
 	}
+	
+	public void setALL() {
+		
+		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
+		;  
+		kh  = new KhachHang();
+		khachHangDao = new KhachHangDao();
+		ThongTinDatThuePhong ttdtp = (ThongTinDatThuePhong) thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong1(txtMaPhong.getText());
+		 kh = khachHangDao.timKhachHangTheoMa(ttdtp.getMaKhachHang());
+		
+		txtTenKH.setText(kh.getHoTenKH());
+		txtCCCD.setText(kh.getCccd_passport());
+		txtNgayNhan.setText(ttdtp.getNgayNhanPhong().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		txtNgayTra.setText(ttdtp.getNgayTraPhong().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		
+		
+	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private giaodien.CustomClass.Button btnGiaHan;
@@ -507,13 +552,4 @@ public class GiaHanPhongThue_GUI extends javax.swing.JDialog {
     private giaodien.CustomClass.TextFieldShadow txtTenKH;
     // End of variables declaration//GEN-END:variables
 
-	private static String[] loadDanhSachDichVu() {
-		DichVuDao dvDao = new DichVuDao();
-		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
-		String[] tenDV = new String[danhSachDV.size()];
-		for (int i = 0; i < danhSachDV.size(); i++) {
-			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
-		}
-		return tenDV;
-	}
 }
