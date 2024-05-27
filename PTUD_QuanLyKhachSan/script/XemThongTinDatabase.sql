@@ -12,6 +12,8 @@ SELECT * FROM HoaDon
 
 SELECT * FROM ChiTietHoaDon
 
+SELECT * FROM KhuyenMai
+
 -- TỔNG  TIỀN , TÊN KHÁCH HÀNG VỚI NGÀY LẬP  , MÃ HÓA ĐƠN
 
 
