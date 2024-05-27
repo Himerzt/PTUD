@@ -29,7 +29,6 @@ import java.awt.Dimension;
  * @author Huynguyen
  */
 public class QuanLyPhong_GUI extends javax.swing.JPanel {
-<<<<<<< HEAD
 
 
 	private String tenphong;
@@ -38,8 +37,8 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
 	 */
 	public QuanLyPhong_GUI() {
 		initComponents();
+	}
 
-=======
 	private NhanVien nv;
     /**
      * Creates new form QuanLyPhong2
@@ -47,7 +46,6 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
     public QuanLyPhong_GUI(NhanVien n) {
         initComponents();
         this.nv = n;
->>>>>>> 7bb1dab74010603c6bf0b45b0c4ded027a92eca8
 //		Gán thời gian cho Jlabel
         datetime();
         times();

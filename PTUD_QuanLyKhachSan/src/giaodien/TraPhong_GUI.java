@@ -442,6 +442,12 @@ public class TraPhong_GUI extends javax.swing.JDialog {
                 JOptionPane.showMessageDialog(null, "Trả phòng thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
             }
         }
+        
+        PhongDao phong = new PhongDao();
+        for (String phongDat : dsPhongDat) {
+			String maPhongDat = phong.timPhongTheoSoPhong(Integer.parseInt(phongDat)).getMaPhong();
+            phong.capNhatTrangThaiPhong(maPhongDat, "Trống");
+        }
 
     }//GEN-LAST:event_btnTraPhongActionPerformed
 
@@ -473,7 +479,7 @@ public class TraPhong_GUI extends javax.swing.JDialog {
         // Tạo hóa đơn
 
         HoaDon hoaDon = new HoaDon(maHoaDon, maNhanVien, maKhachHang, ngayLap, maLSDP, maKhuyenMai, tongGia);
-        this.hoaDonluuTru = hoaDon;
+        hoaDonluuTru = hoaDon;
 
         PhongDao phong = new PhongDao();
         ArrayList<String> dsMaPhong = new ArrayList<>();
@@ -488,7 +494,7 @@ public class TraPhong_GUI extends javax.swing.JDialog {
         }
 
         // Thêm hóa đơn vào database
-        if (!hd.themHoaDon(hoaDon)) {
+        if (!hd.themHoaDon(hoaDonluuTru)) {
             JOptionPane.showMessageDialog(null, "Tạo hóa đơn thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
             return false;
         }
@@ -520,24 +526,6 @@ public class TraPhong_GUI extends javax.swing.JDialog {
             }
 
         }
-        
-
-        // Thay đổi dữ liệu phòng thuê
-        PhongDao phongdaooo = new PhongDao();
-        
-        for (String phongDat : dsMaPhong) {
-        	boolean kq = phongdaooo.capNhatTrangThaiPhong(phongDat, "Trống");
-        	if(kq) {
-        		JOptionPane.showMessageDialog(null, "Cập nhật trạng thái phòng thành công", "Thành công",
-                        JOptionPane.INFORMATION_MESSAGE);
-        	} else {
-				JOptionPane.showMessageDialog(null, "Cập nhật trạng thái phòng thất bại", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-        	}
-        }
-
-        
 
         return true;
     }
