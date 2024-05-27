@@ -1,10 +1,13 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import connectDB.ConnectDB;
@@ -30,10 +33,9 @@ public class ChiTietHoaDonDao {
 				String maChiTietHoaDon = rs.getString(1);
 				String maHoaDon = rs.getString(2);
 				String maTTDTP = rs.getString(3);
-				String maLSDP = rs.getString(4);
-			    String maKhuyenMai = rs.getString(5);
-			    
-			    chiTietHoaDon = new ChiTietHoaDon(maChiTietHoaDon, maHoaDon, maTTDTP, maLSDP, maKhuyenMai);
+				
+				chiTietHoaDon = new ChiTietHoaDon(maChiTietHoaDon, maHoaDon, maTTDTP);
+				
 
 				dsChiTietHoaDon.add(chiTietHoaDon);
 			}
@@ -59,8 +61,7 @@ public class ChiTietHoaDonDao {
 			rs.next();
 			if (rs.getInt(1) == 0) {
 				String sql = "INSERT INTO ChiTietHoaDon VALUES('" + chiTietHoaDon.getMaCTHD() + "', '"
-						+ chiTietHoaDon.getMaHD() + "', '" + chiTietHoaDon.getMaTTDTP() + "', '"
-						+ chiTietHoaDon.getMaLSDP() + "', '" + chiTietHoaDon.getMaKM() + "')";
+						+ chiTietHoaDon.getMaHD() + "', '" + chiTietHoaDon.getMaTTDTP() + "')";
 				stmt = con.createStatement();
 				n = stmt.executeUpdate(sql);
 				return n > 0;
@@ -70,12 +71,40 @@ public class ChiTietHoaDonDao {
 		}
 		return n > 0;
 	}
+	
+	// đếm tổng sô chi tiết hóa đơn trong ngày
+	public int demTongSoChiTietHoaDonTrongNgay(LocalDate date) {
+		Connection con = ConnectDB.getInstance().getConnection();
+		PreparedStatement pstmt = null;
+		int soLuong = 0;
+		try {
+//			SELECT * FROM HoaDon hd JOIN ChiTietHoaDon chd 
+//			ON hd.MaHD = chd.MaHD
+//			WHERE NgayLapHD
+			String sql = "SELECT COUNT(*) FROM HoaDon hd JOIN ChiTietHoaDon chd ON hd.MaHD = chd.MaHD WHERE NgayLapHD >= ? AND NgayLapHD < ? ";
+			pstmt = con.prepareStatement(sql);
+			LocalDateTime ngayBatDau = date.atStartOfDay();
+			LocalDateTime ngayKetThuc = date.plusDays(1).atStartOfDay();
+			pstmt.setTimestamp(1, Timestamp.valueOf(ngayBatDau));
+			pstmt.setTimestamp(2, Timestamp.valueOf(ngayKetThuc));
+			ResultSet rs = pstmt.executeQuery();
+			rs.next();
+			soLuong = rs.getInt(1);
+			rs.close();
+			pstmt.close();	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return soLuong;
+	}
 
 	
 	public static void main(String[] args) {
-		// Test themChiTietHoaDon
+		// Test đếm hóa đơn trong ngày
 		ChiTietHoaDonDao chiTietHoaDonDao = new ChiTietHoaDonDao();
-		ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon("CTHD001", "HD001", "TTDTP001", "LSDP001", "KM001");
-		System.out.println(chiTietHoaDonDao.themChiTietHoaDon(chiTietHoaDon));
+		int soLuong = chiTietHoaDonDao.demTongSoChiTietHoaDonTrongNgay(LocalDate.now());
+		System.out.println(soLuong);
+		
 	}
 }

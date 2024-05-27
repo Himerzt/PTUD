@@ -128,10 +128,17 @@ public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
 		loadDanhSachPhong();
 	}
 
+<<<<<<< HEAD
 	public String[] layDanhSachPhongDat() {
 		return dsPhongDat;
 	}
 
+=======
+//	public String[] layDanhSachPhongDat() {
+//		return dsPhongDat;
+//	}
+//	
+>>>>>>> 7bb1dab74010603c6bf0b45b0c4ded027a92eca8
 	public void loadDanhSachPhong() {
 		PhongDao phongDao = new PhongDao();
 		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
@@ -3014,6 +3021,7 @@ txtTenPhongHienTai1.setText(phong.getMaPhong());
 
 	}
 
+<<<<<<< HEAD
 
 
 
@@ -3333,4 +3341,225 @@ txtTenPhongHienTai1.setText(phong.getMaPhong());
 
 
 
+=======
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private giaodien.CustomClass.Button button1;
+    private giaodien.CustomClass.Button button2;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL1;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL10;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL11;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL12;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL13;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL14;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL15;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL16;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL17;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL18;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL19;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL2;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL20;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL21;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL22;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL23;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL24;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL25;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL26;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL27;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL28;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL29;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL3;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL30;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL31;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL32;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL33;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL34;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL35;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL4;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL5;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL6;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL7;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL8;
+    private giaodien.CustomClass.JCheckBoxCustom checkBoxPhongQL9;
+    private giaodien.CustomClass.DateChooser dateNgayDat;
+    private giaodien.CustomClass.DateChooser dateNgayNhan;
+    private giaodien.CustomClass.DateChooser dateNgaySinh;
+    private giaodien.CustomClass.DateChooser dateNgayTra;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblLoaiPhongQL1;
+    private javax.swing.JLabel lblLoaiPhongQL10;
+    private javax.swing.JLabel lblLoaiPhongQL11;
+    private javax.swing.JLabel lblLoaiPhongQL12;
+    private javax.swing.JLabel lblLoaiPhongQL13;
+    private javax.swing.JLabel lblLoaiPhongQL14;
+    private javax.swing.JLabel lblLoaiPhongQL15;
+    private javax.swing.JLabel lblLoaiPhongQL16;
+    private javax.swing.JLabel lblLoaiPhongQL17;
+    private javax.swing.JLabel lblLoaiPhongQL18;
+    private javax.swing.JLabel lblLoaiPhongQL19;
+    private javax.swing.JLabel lblLoaiPhongQL2;
+    private javax.swing.JLabel lblLoaiPhongQL20;
+    private javax.swing.JLabel lblLoaiPhongQL21;
+    private javax.swing.JLabel lblLoaiPhongQL22;
+    private javax.swing.JLabel lblLoaiPhongQL23;
+    private javax.swing.JLabel lblLoaiPhongQL24;
+    private javax.swing.JLabel lblLoaiPhongQL25;
+    private javax.swing.JLabel lblLoaiPhongQL26;
+    private javax.swing.JLabel lblLoaiPhongQL27;
+    private javax.swing.JLabel lblLoaiPhongQL28;
+    private javax.swing.JLabel lblLoaiPhongQL29;
+    private javax.swing.JLabel lblLoaiPhongQL3;
+    private javax.swing.JLabel lblLoaiPhongQL30;
+    private javax.swing.JLabel lblLoaiPhongQL31;
+    private javax.swing.JLabel lblLoaiPhongQL32;
+    private javax.swing.JLabel lblLoaiPhongQL33;
+    private javax.swing.JLabel lblLoaiPhongQL34;
+    private javax.swing.JLabel lblLoaiPhongQL35;
+    private javax.swing.JLabel lblLoaiPhongQL4;
+    private javax.swing.JLabel lblLoaiPhongQL5;
+    private javax.swing.JLabel lblLoaiPhongQL6;
+    private javax.swing.JLabel lblLoaiPhongQL7;
+    private javax.swing.JLabel lblLoaiPhongQL8;
+    private javax.swing.JLabel lblLoaiPhongQL9;
+    private javax.swing.JLabel lblTenPhongQL1;
+    private javax.swing.JLabel lblTenPhongQL10;
+    private javax.swing.JLabel lblTenPhongQL11;
+    private javax.swing.JLabel lblTenPhongQL12;
+    private javax.swing.JLabel lblTenPhongQL13;
+    private javax.swing.JLabel lblTenPhongQL14;
+    private javax.swing.JLabel lblTenPhongQL15;
+    private javax.swing.JLabel lblTenPhongQL16;
+    private javax.swing.JLabel lblTenPhongQL17;
+    private javax.swing.JLabel lblTenPhongQL18;
+    private javax.swing.JLabel lblTenPhongQL19;
+    private javax.swing.JLabel lblTenPhongQL2;
+    private javax.swing.JLabel lblTenPhongQL20;
+    private javax.swing.JLabel lblTenPhongQL21;
+    private javax.swing.JLabel lblTenPhongQL22;
+    private javax.swing.JLabel lblTenPhongQL23;
+    private javax.swing.JLabel lblTenPhongQL24;
+    private javax.swing.JLabel lblTenPhongQL25;
+    private javax.swing.JLabel lblTenPhongQL26;
+    private javax.swing.JLabel lblTenPhongQL27;
+    private javax.swing.JLabel lblTenPhongQL28;
+    private javax.swing.JLabel lblTenPhongQL29;
+    private javax.swing.JLabel lblTenPhongQL3;
+    private javax.swing.JLabel lblTenPhongQL30;
+    private javax.swing.JLabel lblTenPhongQL31;
+    private javax.swing.JLabel lblTenPhongQL32;
+    private javax.swing.JLabel lblTenPhongQL33;
+    private javax.swing.JLabel lblTenPhongQL34;
+    private javax.swing.JLabel lblTenPhongQL35;
+    private javax.swing.JLabel lblTenPhongQL4;
+    private javax.swing.JLabel lblTenPhongQL5;
+    private javax.swing.JLabel lblTenPhongQL6;
+    private javax.swing.JLabel lblTenPhongQL7;
+    private javax.swing.JLabel lblTenPhongQL8;
+    private javax.swing.JLabel lblTenPhongQL9;
+    private javax.swing.JLabel lblTrangThaiQL1;
+    private javax.swing.JLabel lblTrangThaiQL10;
+    private javax.swing.JLabel lblTrangThaiQL11;
+    private javax.swing.JLabel lblTrangThaiQL12;
+    private javax.swing.JLabel lblTrangThaiQL13;
+    private javax.swing.JLabel lblTrangThaiQL14;
+    private javax.swing.JLabel lblTrangThaiQL15;
+    private javax.swing.JLabel lblTrangThaiQL16;
+    private javax.swing.JLabel lblTrangThaiQL17;
+    private javax.swing.JLabel lblTrangThaiQL18;
+    private javax.swing.JLabel lblTrangThaiQL19;
+    private javax.swing.JLabel lblTrangThaiQL2;
+    private javax.swing.JLabel lblTrangThaiQL20;
+    private javax.swing.JLabel lblTrangThaiQL21;
+    private javax.swing.JLabel lblTrangThaiQL22;
+    private javax.swing.JLabel lblTrangThaiQL23;
+    private javax.swing.JLabel lblTrangThaiQL24;
+    private javax.swing.JLabel lblTrangThaiQL25;
+    private javax.swing.JLabel lblTrangThaiQL26;
+    private javax.swing.JLabel lblTrangThaiQL27;
+    private javax.swing.JLabel lblTrangThaiQL28;
+    private javax.swing.JLabel lblTrangThaiQL29;
+    private javax.swing.JLabel lblTrangThaiQL3;
+    private javax.swing.JLabel lblTrangThaiQL30;
+    private javax.swing.JLabel lblTrangThaiQL31;
+    private javax.swing.JLabel lblTrangThaiQL32;
+    private javax.swing.JLabel lblTrangThaiQL33;
+    private javax.swing.JLabel lblTrangThaiQL34;
+    private javax.swing.JLabel lblTrangThaiQL35;
+    private javax.swing.JLabel lblTrangThaiQL4;
+    private javax.swing.JLabel lblTrangThaiQL5;
+    private javax.swing.JLabel lblTrangThaiQL6;
+    private javax.swing.JLabel lblTrangThaiQL7;
+    private javax.swing.JLabel lblTrangThaiQL8;
+    private javax.swing.JLabel lblTrangThaiQL9;
+    private giaodien.CustomClass.PanelRound panelRound1;
+    private giaodien.CustomClass.PanelRound panelRound2;
+    private giaodien.CustomClass.PanelRound panelRound3;
+    private giaodien.CustomClass.PanelRound panelRound4;
+    private giaodien.CustomClass.PanelRound panelRound5;
+    private giaodien.CustomClass.PanelRound panelRound6;
+    private giaodien.CustomClass.PanelRound panelRound7;
+    private giaodien.CustomClass.PanelRound panelRound8;
+    private giaodien.CustomClass.PanelRound panelRound9;
+    private giaodien.CustomClass.PanelRound phongQuanLy1;
+    private giaodien.CustomClass.PanelRound phongQuanLy10;
+    private giaodien.CustomClass.PanelRound phongQuanLy11;
+    private giaodien.CustomClass.PanelRound phongQuanLy12;
+    private giaodien.CustomClass.PanelRound phongQuanLy13;
+    private giaodien.CustomClass.PanelRound phongQuanLy14;
+    private giaodien.CustomClass.PanelRound phongQuanLy15;
+    private giaodien.CustomClass.PanelRound phongQuanLy16;
+    private giaodien.CustomClass.PanelRound phongQuanLy17;
+    private giaodien.CustomClass.PanelRound phongQuanLy18;
+    private giaodien.CustomClass.PanelRound phongQuanLy19;
+    private giaodien.CustomClass.PanelRound phongQuanLy2;
+    private giaodien.CustomClass.PanelRound phongQuanLy20;
+    private giaodien.CustomClass.PanelRound phongQuanLy21;
+    private giaodien.CustomClass.PanelRound phongQuanLy22;
+    private giaodien.CustomClass.PanelRound phongQuanLy23;
+    private giaodien.CustomClass.PanelRound phongQuanLy24;
+    private giaodien.CustomClass.PanelRound phongQuanLy25;
+    private giaodien.CustomClass.PanelRound phongQuanLy26;
+    private giaodien.CustomClass.PanelRound phongQuanLy27;
+    private giaodien.CustomClass.PanelRound phongQuanLy28;
+    private giaodien.CustomClass.PanelRound phongQuanLy29;
+    private giaodien.CustomClass.PanelRound phongQuanLy3;
+    private giaodien.CustomClass.PanelRound phongQuanLy30;
+    private giaodien.CustomClass.PanelRound phongQuanLy31;
+    private giaodien.CustomClass.PanelRound phongQuanLy32;
+    private giaodien.CustomClass.PanelRound phongQuanLy33;
+    private giaodien.CustomClass.PanelRound phongQuanLy34;
+    private giaodien.CustomClass.PanelRound phongQuanLy35;
+    private giaodien.CustomClass.PanelRound phongQuanLy4;
+    private giaodien.CustomClass.PanelRound phongQuanLy5;
+    private giaodien.CustomClass.PanelRound phongQuanLy6;
+    private giaodien.CustomClass.PanelRound phongQuanLy7;
+    private giaodien.CustomClass.PanelRound phongQuanLy8;
+    private giaodien.CustomClass.PanelRound phongQuanLy9;
+    private javax.swing.JPanel pnBody2;
+    private giaodien.CustomClass.PanelRound pnLayoutQL;
+    private giaodien.CustomClass.ScrollPaneWin11 scrollPaneWin112;
+    private giaodien.CustomClass.TextFieldShadow txtMaKhachHang;
+    private giaodien.CustomClass.TextFieldShadow txtMaKhachHang1;
+    private giaodien.CustomClass.TextFieldShadow txtSoDienThoaiKhachHang;
+    private giaodien.CustomClass.TextFieldShadow txtSoDienThoaiKhachHang1;
+    private giaodien.CustomClass.TextFieldShadow txtTenKhachHang;
+    private giaodien.CustomClass.TextFieldShadow txtTenKhachHang1;
+    private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai;
+    private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai1;
+    // End of variables declaration//GEN-END:variables
+>>>>>>> 7bb1dab74010603c6bf0b45b0c4ded027a92eca8
 }

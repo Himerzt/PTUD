@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package giaodien;
 
 import java.awt.event.ActionEvent;
@@ -18,7 +22,6 @@ import dao.DichVuPhongDao;
 import dao.HoaDonDao;
 import dao.KhachHangDao;
 import dao.KhuyenMaiDao;
-import dao.NhanVienDao;
 import dao.PhongDao;
 import dao.ThongTinDatThuePhongDao;
 import entity.ChiTietHoaDon;
@@ -27,7 +30,6 @@ import entity.DichVuPhong;
 import entity.HoaDon;
 import entity.KhachHang;
 import entity.KhuyenMai;
-import entity.NhanVien;
 import entity.Phong;
 import entity.ThongTinDatThuePhong;
 
@@ -40,52 +42,46 @@ import javax.swing.JButton;
  *
  * @author Huynguyen
  */
-public class TraPhong_GUI extends javax.swing.JDialog {
+public class TraPhong2 extends javax.swing.JDialog {
+	private List<DichVuPhong> danhSachDichVu;
+	private static String[] dsPhongDat;
+	private static List<String> dsTenPhong;
+	private ThongTinDatThuePhongDao thongTinDao;
+	private KhachHangDao khachHangDao;
+	private DichVuDao dichVuDao;
+	private double tongGiaDichVu = 0;
+	private double tongGiaPhong = 0;
+	private double tongGia = 0;
+	private double chietKhau = 0;
+	private double thue = 0;
+	private double tienCanThu = 0;
+	private double tienTraTruoc = 0;
+	private double tongHoaDon = 0;
+	private HoaDon hoaDonluuTru;
+	private String maLSDP;
+	private String maKhuyenMai;
+	/**
+	 * Creates new form DatPhong
+	 */
+	public TraPhong2() {
+		initComponents();
+	}
 
-    private NhanVien nhanvien;
-    private NhanVienDao nvdao;
-    private List<DichVuPhong> danhSachDichVu;
-    private static String[] dsPhongDat;
-    private static List<String> dsTenPhong;
-    private ThongTinDatThuePhongDao thongTinDao;
-    private KhachHangDao khachHangDao;
-    private DichVuDao dichVuDao;
-    private double tongGiaDichVu = 0;
-    private double tongGiaPhong = 0;
-    private double tongGia = 0;
-    private double chietKhau = 0;
-    private double thue = 0;
-    private double tienCanThu = 0;
-    private double tienTraTruoc = 0;
-    private double tongHoaDon = 0;
-    private HoaDon hoaDonluuTru;
-    private String maLSDP;
-    private String maKhuyenMai;
-    private String maNhanVien;
+	public TraPhong2(List<String> dsTenPhong) {
+		dsPhongDat = new String[dsTenPhong.size()];
+		int index = 0;
+		for (String tenPhong : dsTenPhong) {
+			dsPhongDat[index++] = tenPhong;
+		}
+		ConnectDB.getInstance().getConnection();
+		initComponents();
+		loadThongTinTraPhong();
+		loadDanhSachPhong();
+	}
 
-    /**
-     * Creates new form DatPhong
-     */
-    public TraPhong_GUI() {
-        initComponents();
-    }
-
-    public TraPhong_GUI(List<String> dsTenPhong, NhanVien nv) {
-        this.nhanvien = nv;
-        dsPhongDat = new String[dsTenPhong.size()];
-        int index = 0;
-        for (String tenPhong : dsTenPhong) {
-            dsPhongDat[index++] = tenPhong;
-        }
-        ConnectDB.getInstance().getConnection();
-        initComponents();
-        loadThongTinTraPhong();
-        loadDanhSachPhong();
-    }
-
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated
+	@SuppressWarnings("unchecked")
+	// <editor-fold defaultstate="collapsed" desc="Generated
+	// <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -423,329 +419,417 @@ public class TraPhong_GUI extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTraPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraPhongActionPerformed
-
-        // Hỏi nhắc có muốn thực hiện trả phòng và xuất hóa đơn hay không
-        int input = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn trả phòng và xuất hóa đơn không?", "Xác nhận trả phòng",
-                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-
-        if (input == 0) {
-            // Tạo hóa đơn và chi tiết hóa đơn
-            if (taoHoaDonvaCTHDDatabase()) {
-                JOptionPane.showMessageDialog(null, "Trả phòng thành công", "Thành công",
-                        JOptionPane.INFORMATION_MESSAGE);
-                // Thay đổi dữ liệu phòng thuê
-                PhongDao phong = new PhongDao();
-                for (String phongDat : dsPhongDat) {
-                    phong.capNhatTrangThaiPhong(phongDat, "trống");
-                }
-
-                // gọi hóa đơn
-                HoaDonThanhToan_GUI hoaDonThanhToan = new HoaDonThanhToan_GUI(hoaDonluuTru);
-                hoaDonThanhToan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                hoaDonThanhToan.setVisible(true);
-                this.setVisible(false);
-            } else {
-                JOptionPane.showMessageDialog(null, "Trả phòng thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-
+    
+    	// Hỏi nhắc có muốn thực hiện trả phòng và xuất hóa đơn hay không
+    	int input = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn trả phòng và xuất hóa đơn không?", "Xác nhận trả phòng",
+    			                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+    		
+    	if (input == 0) {
+			// Tạo hóa đơn và chi tiết hóa đơn
+			if (taoHoaDonvaCTHDDatabase()) {
+				JOptionPane.showMessageDialog(null, "Trả phòng thành công", "Thành công",
+				JOptionPane.INFORMATION_MESSAGE);
+				// gọi hóa đơn
+				HoaDonThanhToan_GUI hoaDonThanhToan = new HoaDonThanhToan_GUI(hoaDonluuTru); 
+	    		hoaDonThanhToan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	    		hoaDonThanhToan.setVisible(true);
+				this.setVisible(false);
+			} else {
+				JOptionPane.showMessageDialog(null, "Trả phòng thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
+			}
+    	}
+    	
     }//GEN-LAST:event_btnTraPhongActionPerformed
 
+    
     protected boolean taoHoaDonvaCTHDDatabase() {
-        // Tạo mã hóa đơn HD + ngày + tháng + năm + số hóa đơn tự tăng trong ngày tìm trong database
-        LocalDate now = LocalDate.now();
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyy");
-        String ngay = dtf.format(now);
+    	// Tạo mã hóa đơn HD + ngày + tháng + năm + số hóa đơn tự tăng trong ngày tìm trong database
+    	LocalDate now = LocalDate.now();
+    	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyy");
+    	String ngay = dtf.format(now);
+    	
+    	// Định dạng số hóa đơn trong ngày 3 chữ số
+    	// Kiểm tra mã hóa đơn trong database
+    	// Nếu có thì tăng số hóa đơn lên so với số hóa đơn cuối cùng trong ngày
+    	// Nếu không thì tạo hóa đơn mới
+    	HoaDonDao hd = new HoaDonDao();
+    	int orderNumber = hd.demSoHoaDonTrongNgay(now);
+		if (orderNumber == 0) {
+			orderNumber = 1;
+		} else {
+			orderNumber++;
+		}
+    	String formattedOrderNumber = String.format("%03d", orderNumber);
+    	String maHoaDon = "HD" + ngay + formattedOrderNumber;
+    	// Lấy mã nhân viên từ txtNhanVien
+    	String maNhanVien = txtNhanVien.getText();
+    	// Lấy mã khách hàng từ txtMaKhachHang
+    	String maKhachHang = txtMaKhachHang.getText();
+    	// Lấy ngày lập hóa đơn từ ngày giờ hiện tại
+    	LocalDateTime ngayLap = LocalDateTime.now();
+    	// Tạo hóa đơn
+    	
+    	HoaDon hoaDon = new HoaDon(maHoaDon, maNhanVien, maKhachHang, ngayLap,  maLSDP, maKhuyenMai, tongGia);
+    	hoaDonluuTru = hoaDon;
+    	
+    	
 
-        // Định dạng số hóa đơn trong ngày 3 chữ số
-        // Kiểm tra mã hóa đơn trong database
-        // Nếu có thì tăng số hóa đơn lên so với số hóa đơn cuối cùng trong ngày
-        // Nếu không thì tạo hóa đơn mới
-        HoaDonDao hd = new HoaDonDao();
-        int orderNumber = hd.demSoHoaDonTrongNgay(now);
-        if (orderNumber == 0) {
-            orderNumber = 1;
-        } else {
-            orderNumber++;
-        }
-        String formattedOrderNumber = String.format("%03d", orderNumber);
-        String maHoaDon = "HD" + ngay + formattedOrderNumber;
-        // Lấy mã nhân viên từ txtNhanVien
-        String maNhanVien = nhanvien.getMaNV();
-        // Lấy mã khách hàng từ txtMaKhachHang
-        String maKhachHang = txtMaKhachHang.getText();
-        // Lấy ngày lập hóa đơn từ ngày giờ hiện tại
-        LocalDateTime ngayLap = LocalDateTime.now();
-        // Tạo hóa đơn
+		PhongDao phong = new PhongDao();
+    	ArrayList<String> dsMaPhong = new ArrayList<>();
+		for (String phongDat : dsPhongDat) {
+			dsMaPhong.add(phong.timPhongTheoSoPhong(Integer.parseInt(phongDat)).getMaPhong());
+		}
+		// Lấy thông tin đặt thuê phòng và mã khách hàng
+		
+		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<>();
+		for (String maPhong : dsMaPhong) {
+			dsThongTin.addAll(thongTinDao.timThongTinDatThuePhongTheoMaPhong(maPhong));
+		}
+    	
+    	// Thêm hóa đơn vào database
+		if (!hd.themHoaDon(hoaDonluuTru)) {			
+			JOptionPane.showMessageDialog(null, "Tạo hóa đơn thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
+			return false;
+		}    	
+		
+		// Tạo chi tiết hóa đơn tương ứng CTHD - mã hóa đơn -- nhiều chi tiết tương ứng + stt trong db
+		// với thông tin đặt thuê phòng
+		ChiTietHoaDonDao chiTietHoaDonDao = new ChiTietHoaDonDao();
+		for (ThongTinDatThuePhong thongTinDatThuePhong : dsThongTin) {
+			// Xử lý ngày lập hóa đơn của hoaDonluuTru
+			LocalDateTime ngaylaphoaDonns =   hoaDonluuTru.getNgayLap();
+			// Đổi localdatetime sang localdate
+			LocalDate ngayLapHoaDonz = ngaylaphoaDonns.toLocalDate();
+			int stt = 1;
+			if (chiTietHoaDonDao.demTongSoChiTietHoaDonTrongNgay(ngayLapHoaDonz) > 0) {
+				stt = chiTietHoaDonDao.demTongSoChiTietHoaDonTrongNgay(ngayLapHoaDonz) + 1;
+			}
+			
+			String maCTHD = "CTHD-" + hoaDonluuTru.getMaHoaDon() + stt;
+			ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon(maCTHD, hoaDonluuTru.getMaHoaDon(),
+					thongTinDatThuePhong.getMaTTDTP());
+			// Thêm chi tiết hóa đơn vào database
+			
+			if (chiTietHoaDonDao.themChiTietHoaDon(chiTietHoaDon)) {
+				JOptionPane.showMessageDialog(null, "Tạo chi tiết hóa đơn thành công", "Thành công",
+						JOptionPane.INFORMATION_MESSAGE);
+				continue;
+			} else {
+				JOptionPane.showMessageDialog(null, "Tạo chi tiết hóa đơn thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
+				return false;
+			}
 
-        HoaDon hoaDon = new HoaDon(maHoaDon, maNhanVien, maKhachHang, ngayLap, maLSDP, maKhuyenMai, tongGia);
-        hoaDonluuTru = hoaDon;
-
-        PhongDao phong = new PhongDao();
-        ArrayList<String> dsMaPhong = new ArrayList<>();
-        for (String phongDat : dsPhongDat) {
-            dsMaPhong.add(phong.timPhongTheoSoPhong(Integer.parseInt(phongDat)).getMaPhong());
-        }
-        // Lấy thông tin đặt thuê phòng và mã khách hàng
-
-        ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<>();
-        for (String maPhong : dsMaPhong) {
-            dsThongTin.addAll(thongTinDao.timThongTinDatThuePhongTheoMaPhong(maPhong));
-        }
-
-        // Thêm hóa đơn vào database
-        if (!hd.themHoaDon(hoaDonluuTru)) {
-            JOptionPane.showMessageDialog(null, "Tạo hóa đơn thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
-            return false;
-        }
-        // Tạo chi tiết hóa đơn tương ứng CTHD - mã hóa đơn -- nhiều chi tiết tương ứng + stt trong db
-        // với thông tin đặt thuê phòng
-        ChiTietHoaDonDao chiTietHoaDonDao = new ChiTietHoaDonDao();
-        for (ThongTinDatThuePhong thongTinDatThuePhong : dsThongTin) {
-            // Xử lý ngày lập hóa đơn của hoaDonluuTru
-            LocalDateTime ngaylaphoaDonns = hoaDonluuTru.getNgayLap();
-            // Đổi localdatetime sang localdate
-            LocalDate ngayLapHoaDonz = ngaylaphoaDonns.toLocalDate();
-            int stt = 1;
-            if (chiTietHoaDonDao.demTongSoChiTietHoaDonTrongNgay(ngayLapHoaDonz) > 0) {
-                stt = chiTietHoaDonDao.demTongSoChiTietHoaDonTrongNgay(ngayLapHoaDonz) + 1;
-            }
-
-            String maCTHD = "CTHD-" + hoaDonluuTru.getMaHoaDon() + stt;
-            ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon(maCTHD, hoaDonluuTru.getMaHoaDon(),
-                    thongTinDatThuePhong.getMaTTDTP());
-            // Thêm chi tiết hóa đơn vào database
-
-            if (chiTietHoaDonDao.themChiTietHoaDon(chiTietHoaDon)) {
-                JOptionPane.showMessageDialog(null, "Tạo chi tiết hóa đơn thành công", "Thành công",
-                        JOptionPane.INFORMATION_MESSAGE);
-                continue;
-            } else {
-                JOptionPane.showMessageDialog(null, "Tạo chi tiết hóa đơn thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
-                return false;
-            }
-
-        }
-
-        return true;
+		}
+		
+    	return true;
     }
+    
+   
+	private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed
+		this.setVisible(false);
+	}// GEN-LAST:event_btnHuyActionPerformed
 
-    private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed
-        this.setVisible(false);
-    }// GEN-LAST:event_btnHuyActionPerformed
-
-    // Load thông tin vào textfield
-    protected void loadThongTinTraPhong() {
-        // Từ dsPhongDat đặt lấy danh sách mã phòng
-        thongTinDao = new ThongTinDatThuePhongDao();
-        khachHangDao = new KhachHangDao();
-        dichVuDao = new DichVuDao();
-        PhongDao phong = new PhongDao();
-
-        // Lấy mã phòng từ dsPhongDat
-        ArrayList<String> dsMaPhong = new ArrayList<>();
-        for (String phongDat : dsPhongDat) {
-            dsMaPhong.add(phong.timPhongTheoSoPhong(Integer.parseInt(phongDat)).getMaPhong());
-        }
-        // Lấy thông tin đặt thuê phòng và mã khách hàng
-
-        ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<>();
-        for (String maPhong : dsMaPhong) {
-            dsThongTin.addAll(thongTinDao.timThongTinDatThuePhongTheoMaPhong(maPhong));
-        }
-
-        // Lấy mã khách hàng từ thông tin đặt phòng
-        String maKhachHang = dsThongTin.get(0).getMaKhachHang();
-        // Xử lý thông tin khách hàng
-        KhachHang khachHang = khachHangDao.timTheoMaKhachHang(maKhachHang);
-        // Tính tỉ lệ chiết khấu
-        String hangTV = "";
-        double chietKhau = 0;
-        if (khachHang.getMaHangThanhVien().equalsIgnoreCase("hb")) {
-            hangTV = "Hạng Bạc - 3.75%";
-            chietKhau = 0.0375;
-        } else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("hv")) {
-            hangTV = "Hạng Vàng - 7.5%";
-            chietKhau = 0.075;
-        } else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("kc")) {
-            hangTV = "Hạng Kim Cương - 18.75%";
-            chietKhau = 0.1875;
-        } else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("lb")) {
-            hangTV = "Hạng Lục Bảo - 15%";
-            chietKhau = 0.15;
-        } else {
-            hangTV = "Hạng Bạch Kim - 11.25%";
-            chietKhau = 0.1125;
-        }
-        this.chietKhau = chietKhau;
-        // Tính tiền phòng
-        double tongTienPhong = 0;
-        Phong phongThue = new Phong();
-        for (String maPhong : dsMaPhong) {
-            phongThue = phong.timPhongTheoMaPhong(maPhong);
-            if (phongThue.getMaLoaiPhong().equalsIgnoreCase("tc")) {
-                tongTienPhong += 450000;
-            } else if (phongThue.getMaLoaiPhong().equalsIgnoreCase("nc")) {
-                tongTienPhong += 700000;
-            } else if (phongThue.getMaLoaiPhong().equalsIgnoreCase("cc")) {
-                tongTienPhong += 1000000;
-            } else {
-                tongTienPhong += 1500000;
-            }
-        }
-        this.tongGiaPhong = tongTienPhong;
-        // Tính tiền dịch vụ
-        double tongTienDichVu = 0;
-        DichVuPhongDao dichVuPhongDao = new DichVuPhongDao();
+	
+	// Load thông tin vào textfield
+	protected void loadThongTinTraPhong() {
+		// Từ dsPhongDat đặt lấy danh sách mã phòng
+		thongTinDao = new ThongTinDatThuePhongDao();
+		khachHangDao = new KhachHangDao();
+		dichVuDao = new DichVuDao();
+		PhongDao phong = new PhongDao();
+		
+	    // Lấy mã phòng từ dsPhongDat
+		ArrayList<String> dsMaPhong = new ArrayList<>();
+		for (String phongDat : dsPhongDat) {
+			dsMaPhong.add(phong.timPhongTheoSoPhong(Integer.parseInt(phongDat)).getMaPhong());
+		}
+		// Lấy thông tin đặt thuê phòng và mã khách hàng
+		
+		ArrayList<ThongTinDatThuePhong> dsThongTin = new ArrayList<>();
+		for (String maPhong : dsMaPhong) {
+			dsThongTin.addAll(thongTinDao.timThongTinDatThuePhongTheoMaPhong(maPhong));
+		}
+		
+		// Lấy mã khách hàng từ thông tin đặt phòng
+		String maKhachHang = dsThongTin.get(0).getMaKhachHang();		
+		
+		
+	
+	    
+	    // Xử lý thông tin khách hàng
+	    KhachHang khachHang = khachHangDao.timTheoMaKhachHang(maKhachHang);
+	    // Tính tỉ lệ chiết khấu
+	    String hangTV = "";
+	    double chietKhau = 0;
+		if (khachHang.getMaHangThanhVien().equalsIgnoreCase("hb")) {
+			hangTV = "Hạng Bạc - 3.75%";
+			chietKhau = 0.0375;
+		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("hv")) {
+			hangTV = "Hạng Vàng - 7.5%";
+			chietKhau = 0.075;
+		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("kc")) {
+			hangTV = "Hạng Kim Cương - 18.75%";
+			chietKhau = 0.1875;
+		} else if (khachHang.getMaHangThanhVien().equalsIgnoreCase("lb")) {
+			hangTV = "Hạng Lục Bảo - 15%";
+			chietKhau = 0.15;
+		} else {
+			hangTV = "Hạng Bạch Kim - 11.25%";
+			chietKhau = 0.1125;
+		}
+		this.chietKhau = chietKhau;
+		// Tính tiền phòng
+		double tongTienPhong = 0;
+		Phong phongThue = new Phong();
+		for (String maPhong : dsMaPhong) {
+			phongThue = phong.timPhongTheoMaPhong(maPhong);
+			if (phongThue.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+				tongTienPhong += 450000;
+			} else if (phongThue.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+				tongTienPhong += 700000;
+			} else if (phongThue.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+				tongTienPhong += 1000000;
+			} else {
+				tongTienPhong += 1500000;
+			}
+		}
+		this.tongGiaPhong = tongTienPhong;
+		// Tính tiền dịch vụ
+		double tongTienDichVu = 0;
+		DichVuPhongDao dichVuPhongDao = new DichVuPhongDao();
         ArrayList<DichVuPhong> dsDichVu = new ArrayList<>();
         for (String maPhong : dsMaPhong) {
-            dsDichVu.addAll(dichVuPhongDao.timDichVuSuDungTheoMaPhong(maPhong));
-        }
-
+			dsDichVu.addAll(dichVuPhongDao.timDichVuSuDungTheoMaPhong(maPhong));
+		}
+        
         DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
-        model.setRowCount(0);
-        int i = 0;
-        for (DichVuPhong dv : dsDichVu) {
-            // Tạo model cho tableDV STT mã dịch vụ tên dịch vụ số lượng phòng giá
-            i++;
-            String maDV = dv.getMaDichVu();
-            String tenDV = new DichVuDao().timTheoMaDichVu(maDV).getTenDV();
-            int soLuong = dv.getSoLuong();
-            String maPhong = dv.getMaPhong();
-            // Tính giá dịch vụ bằng tìm kiếm theo mã dịch vụ lấy giá thông qua entity dichvuz
-            double gia = new DichVuDao().timTheoMaDichVu(maDV).getGiaDV();
-            model.addRow(new Object[]{i, maDV, tenDV, soLuong, gia, gia * soLuong});
-            tongTienDichVu += gia;
-        }
-        this.tongGiaDichVu = tongTienDichVu;
-        // Tính tiền trả phòng trễ hơn 12h quá 1-3 tiếng 30% 3-6 tiếng 50% hơn 6 tiếng 100% tính vào tiền phòng
-        double tienTraPhongTre = 0;
-        // Lấy giờ hiện tại để trả phòng
-        int gioTraPhong = LocalDate.now().getDayOfMonth();
-        if (gioTraPhong > 12) {
-            if (gioTraPhong <= 13) {
-                tienTraPhongTre += 0;
-            } else if (gioTraPhong <= 15) {
-                tienTraPhongTre = tongTienPhong * 0.3;
-            } else if (gioTraPhong <= 18) {
-                tienTraPhongTre = tongTienPhong * 0.5;
-            } else {
-                tienTraPhongTre = tongTienPhong;
-            }
-        }
-        // Tính tiền đổi phòng nếu có --- CHƯA CÓ DỮ LIỆU
-        double tienDoiPhong = 0;
-        // Tính tổng tiền
-        double tongTien = tongTienPhong + tongTienDichVu + tienTraPhongTre + tienDoiPhong;
-        // Tính chiết khấu
-        tongTien -= tongTien * chietKhau;
-        // Thêm khuyến mãi
-        KhuyenMai khuyenMai = new KhuyenMai();
-        KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
-        //  ngày hiện còn trong khuyến mãi và đủ điều kiện thì áp dụng khuyến mãi tìm tất cả khuyến mãi và kiểm tra lấy giá trị khuyến mãi lớn nhât
-        ArrayList<KhuyenMai> dsKhuyenMai = khuyenMaiDao.timTatCaKhuyenMai();
-        for (KhuyenMai km : dsKhuyenMai) {
-            if (LocalDate.now().isAfter(km.getThoiGianBatDau()) && LocalDate.now().isBefore(km.getThoiGianKetThuc())) {
-                if (tongTien >= km.getDieuKienApDung()) {
-                    if (km.getGiaTriKM() > khuyenMai.getGiaTriKM()) {
-                        khuyenMai = km;
-                        this.maKhuyenMai = km.getMaKM();
-                    }
-                }
-            }
-        }
-        // Áp dụng khuyến mãi
-        tongTien -= khuyenMai.getGiaTriKM();
-        // Tính tiền trả trước thông qua thông tin đặt phòng
-        double tienTraTruoc = 0;
-        for (ThongTinDatThuePhong thongTin : dsThongTin) {
-            tienTraTruoc += thongTin.getTienDaCoc();
-        }
-        // Tính tiền thuế
-        double thue = tongTien * 0.1;
-        tongTien += thue;
-        this.thue = thue;
-        this.tongGia = tongTien;
+		model.setRowCount(0);
+		int i = 0;	
+		for (DichVuPhong dv : dsDichVu) {
+			// Tạo model cho tableDV STT mã dịch vụ tên dịch vụ số lượng phòng giá
+			i++;
+			String maDV = dv.getMaDichVu();
+			String tenDV = new DichVuDao().timTheoMaDichVu(maDV).getTenDV();
+			int soLuong = dv.getSoLuong();
+			String maPhong = dv.getMaPhong();	
+			// Tính giá dịch vụ bằng tìm kiếm theo mã dịch vụ lấy giá thông qua entity dichvuz
+			double gia = new DichVuDao().timTheoMaDichVu(maDV).getGiaDV() * soLuong;
+			model.addRow(new Object[] { i, maDV, tenDV, soLuong, maPhong, gia });
+			tongTienDichVu += gia;
+		}	
+		this.tongGiaDichVu = tongTienDichVu;
+		// Tính tiền trả phòng trễ hơn 12h quá 1-3 tiếng 30% 3-6 tiếng 50% hơn 6 tiếng 100% tính vào tiền phòng
+		double tienTraPhongTre = 0;
+		// Lấy giờ hiện tại để trả phòng
+		int gioTraPhong = LocalDate.now().getDayOfMonth();
+		if (gioTraPhong > 12) {
+			if (gioTraPhong <= 13) {
+				tienTraPhongTre += 0;
+			} else if (gioTraPhong <= 15) {
+				tienTraPhongTre = tongTienPhong * 0.3;
+			} else if (gioTraPhong <= 18) {
+				tienTraPhongTre = tongTienPhong * 0.5;
+			} else {
+				tienTraPhongTre = tongTienPhong;
+			}
+		}
+		// Tính tiền đổi phòng nếu có --- CHƯA CÓ DỮ LIỆU
+		double tienDoiPhong = 0;
+		// Tính tổng tiền
+		double tongTien = tongTienPhong + tongTienDichVu + tienTraPhongTre + tienDoiPhong;
+		// Tính chiết khấu
+		tongTien -= tongTien * chietKhau;
+		// Thêm khuyến mãi
+		KhuyenMai khuyenMai = new KhuyenMai();
+		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
+		//  ngày hiện còn trong khuyến mãi và đủ điều kiện thì áp dụng khuyến mãi tìm tất cả khuyến mãi và kiểm tra lấy giá trị khuyến mãi lớn nhât
+		ArrayList<KhuyenMai> dsKhuyenMai = khuyenMaiDao.timTatCaKhuyenMai();
+		for (KhuyenMai km : dsKhuyenMai) {
+			if (LocalDate.now().isAfter(km.getThoiGianBatDau()) && LocalDate.now().isBefore(km.getThoiGianKetThuc())) {
+				if (tongTien >= km.getDieuKienApDung()) {
+					if (km.getGiaTriKM() > khuyenMai.getGiaTriKM()) {
+						khuyenMai = km;
+						this.maKhuyenMai = km.getMaKM();
+					}
+				}
+			}
+		}
+		// Áp dụng khuyến mãi
+		tongTien -= khuyenMai.getGiaTriKM();
+		// Tính tiền trả trước thông qua thông tin đặt phòng
+		double tienTraTruoc = 0;
+		for (ThongTinDatThuePhong thongTin : dsThongTin) {
+			tienTraTruoc += thongTin.getTienDaCoc();
+		}
+		// Tính tiền thuế
+		double thue = tongTien * 0.1;
+		tongTien += thue;
+		this.thue = thue;
+		this.tongGia = tongTien;
+		
 
-        tongTien -= tienTraTruoc;
-        this.tienTraTruoc = tienTraTruoc;
-        this.tienCanThu = tongTien;
+		tongTien -= tienTraTruoc;
+		this.tienTraTruoc = tienTraTruoc;
+		this.tienCanThu = tongTien;
 
-        // Hiển thị thông tin khách hàng
-        txtTenKH.setText(khachHang.getHoTenKH());
-        txtHangThanhVienKH.setText(hangTV);
-        txtSodienthoaiKH.setText(khachHang.getSoDT());
-        txtNgaySinh.setText(khachHang.getNgaySinh().toString());
-        txtChietKhau.setText(String.valueOf(chietKhau * 100) + "%");
-        txtThue.setText("10% - " + String.valueOf(thue));
-        txtNhanVien.setText(nhanvien.getHoTenNV());
-        txtTongHoaDon.setText(String.valueOf(tongTien));
-        txtTraTruoc.setText("0");
-        txtTienCanThu.setText(String.valueOf(tongTien));
-        txtMaKhachHang.setText(khachHang.getMaKH());
-
-    }
-
-    //load danh sách phòng vào table
-    protected void loadDanhSachPhong() {
-        DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
-        model.setRowCount(0);
-        PhongDao phongDao = new PhongDao();
-        Phong phong = new Phong();
-        int i = 0;
-        for (String phongDat : dsPhongDat) {
-            phong = phongDao.timPhongTheoSoPhong(Integer.parseInt(phongDat));
-            //datta row STT mã phòng tên phòng loại phòng kiểu thuê ngày đặt ngày nhận ngày trả
-            i++;
-            Object[] row = new Object[]{i, phong.getMaPhong(), phong.getSoPhong(), phong.getMaLoaiPhong(), "Thuê theo ngày",
-                LocalDate.now(), LocalDate.now(), LocalDate.now()};
-            model.addRow(row);
-        }
-
-    }
-
-    ;
+		// Hiển thị thông tin khách hàng
+		txtTenKH.setText(khachHang.getHoTenKH());
+		txtHangThanhVienKH.setText(hangTV);
+		txtSodienthoaiKH.setText(khachHang.getSoDT());
+		txtNgaySinh.setText(khachHang.getNgaySinh().toString());
+		txtChietKhau.setText(String.valueOf(chietKhau * 100) + "%");
+		txtThue.setText("10% - " + String.valueOf(thue));
+		txtNhanVien.setText("NV001");
+		txtTongHoaDon.setText(String.valueOf(tongTien));
+		txtTraTruoc.setText("0");
+		txtTienCanThu.setText(String.valueOf(tongTien));
+		txtMaKhachHang.setText(khachHang.getMaKH());
+	
+	}
+	
+	
+	//load danh sách phòng vào table
+	protected void loadDanhSachPhong() {
+		DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
+		model.setRowCount(0);
+		PhongDao phongDao = new PhongDao();
+		Phong phong = new Phong();
+		int i=0;
+		for (String phongDat : dsPhongDat) {
+			phong = phongDao.timPhongTheoSoPhong(Integer.parseInt(phongDat));
+			//datta row STT mã phòng tên phòng loại phòng kiểu thuê ngày đặt ngày nhận ngày trả
+			i++;
+			Object[] row = new Object[] {i, phong.getMaPhong(), phong.getSoPhong(), phong.getMaLoaiPhong(), "Thuê theo ngày",
+					LocalDate.now(), LocalDate.now(), LocalDate.now()};
+			model.addRow(row);
+		}
+		    
+	};
 	
 
+	
 
+	protected void btnCCCDActionPerformed(ActionEvent evt) {
+		// Lỗi nên t comment lại nha
+//		String cccd = txtCCCD.getText();
+//		KhachHangDao khDao = new KhachHangDao();
+//		KhachHang kh = khDao.timTheoCCCD(cccd);
+//		if (kh != null) {
+//			txtCCCD.setText(kh.getHoTenKH());
+//			txtNgaySinh.setText(kh.getNgaySinh().toString());
+//			txtSodienthoaiKH.setText(kh.getSoDT());
+//			String hangTV = "";
+//			double chietKhau = 0;
+//			if (kh.getMaHangThanhVien().equalsIgnoreCase("hb")) {
+//				hangTV = "Hạng Bạc";
+//				chietKhau = 0.0375;
+//			} else if (kh.getMaHangThanhVien().equalsIgnoreCase("hv")) {
+//				hangTV = "Hạng Vàng";
+//				chietKhau = 0.075;
+//			} else if (kh.getMaHangThanhVien().equalsIgnoreCase("kc")) {
+//				hangTV = "Hạng Kim Cương";
+//				chietKhau = 0.1875;
+//			} else if (kh.getMaHangThanhVien().equalsIgnoreCase("lb")) {
+//				hangTV = "Hạng Lục Bảo";
+//				chietKhau = 0.15;
+//			} else {
+//				hangTV = "Hạng Bạch Kim";
+//                chietKhau = 0.1125;				
+//			}
+//			txtHangThanhVienKH.setText(hangTV);
+//			txtChietKhau.setText(String.valueOf(chietKhau));
+//		}
+//		ThongTinDatThuePhongDao thongTinDao = new ThongTinDatThuePhongDao();
+//		ArrayList<ThongTinDatThuePhong> dsThongTin = thongTinDao.timThongTinDatThuePhongTheoMaKhachHang(kh.getMaKH());
+//		ArrayList<String> dsPhong = new ArrayList<>();
+//		dsPhong = thongTinDao.layDanhSachPhongTheoMaKhachHang(kh.getMaKH());
+//		ArrayList<Phong> dsPhongCD = new ArrayList<>();
+//		PhongDao phongDao = new PhongDao();;
+//		dsPhongCD = phongDao.chuyenDoi(dsPhong);
+//		for (ThongTinDatThuePhong thongTin : dsThongTin) {
+//			dsPhong.add(thongTin.getMaPhong());
+//		}
+//		// Lấy ngày đặt phòng và ngày trả phòng
+//		txtCheckIn.setText(dsThongTin.get(1).getNgayDatPhong().toString());
+//		txtCheckOut.setText(dsThongTin.get(1).getNgayTraPhong().toString());
+//		
+//		// Hiển thị danh sách phòng vào table tableDanhSachPhong
+//		String loaiPhong = "";
+//		DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
+//		model.setRowCount(0);
+//		int i = 0;
+//		for (Phong phong : dsPhongCD) {
+//            if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+//                loaiPhong = "Tiêu chuẩn";
+//            } else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+//                loaiPhong = "Nâng cao";
+//            } else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+//                loaiPhong = "Cao cấp";
+//            } else {
+//                loaiPhong = "Thương gia";
+//            }
+//            model.addRow(new Object[] {i+1, phong.getSoPhong(), loaiPhong });
+//            i++;
+//		}
+//		
+//		// Hiển thị danh sách dịch vụ vào table tableDV - chưa xong
+//		DefaultTableModel modelDV = (DefaultTableModel) tableDV.getModel();
+//		modelDV.setRowCount(0);
+//		DichVuPhongDao dvDao = new DichVuPhongDao();
+//		danhSachDichVu = dvDao.timDichVuPhongTheoMaPhong(dsPhong);
+//		i = 0;
+//		for (DichVuPhong dv : danhSachDichVu) {
+//			String maDV = dv.getMaDichVu();
+//			String tenDV = dvDao.timTheoMaDichVu(maDV).getTenDV();
+//			int soLuong = dv.getSoLuong();
+//			String maPhong = dv.getMaPhong();
+//			double gia = dvDao.tinhTienTheoMaDichVu(maDV);
+//			modelDV.addRow(new Object[] { i + 1, maDV, tenDV, soLuong, maPhong, gia });
+//			i++;
+//		}
+//		
+//		// Tính tiền phòng
+//		double tongTienPhong = thongTinDao.tinhTienTheoDanhSachPhong(dsPhongCD);
+//		txtTongHoaDon.setText(String.valueOf(tongTienPhong));
+	}
 
 	/**
 	 * @param args the command line arguments
 	 */
 	public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
-        // (optional) ">
-        /*
+		/* Set the Nimbus look and feel */
+		// <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+		// (optional) ">
+		/*
 		 * If Nimbus (introduced in Java SE 6) is not available, stay with the default
 		 * look and feel. For details see
 		 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        // </editor-fold>
-        // </editor-fold>
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TraPhong_GUI().setVisible(true);
-            }
-        });
-    }
+		 */
+		try {
+			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+				if ("Nimbus".equals(info.getName())) {
+					javax.swing.UIManager.setLookAndFeel(info.getClassName());
+					break;
+				}
+			}
+		} catch (ClassNotFoundException ex) {
+			java.util.logging.Logger.getLogger(TraPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+		} catch (InstantiationException ex) {
+			java.util.logging.Logger.getLogger(TraPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+		} catch (IllegalAccessException ex) {
+			java.util.logging.Logger.getLogger(TraPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+			java.util.logging.Logger.getLogger(TraPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+		}
+		// </editor-fold>
+		// </editor-fold>
+		/* Create and display the form */
+		java.awt.EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				new TraPhong2().setVisible(true);
+			}
+		});
+	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private giaodien.CustomClass.Button btnHuy;
@@ -782,5 +866,7 @@ public class TraPhong_GUI extends javax.swing.JDialog {
     private giaodien.CustomClass.TextFieldShadow txtTongHoaDon;
     private giaodien.CustomClass.TextFieldShadow txtTraTruoc;
     // End of variables declaration//GEN-END:variables
+
+
 
 }

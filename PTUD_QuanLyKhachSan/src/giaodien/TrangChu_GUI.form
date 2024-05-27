@@ -232,6 +232,11 @@
               </Layout>
               <SubComponents>
                 <Container class="giaodien.CustomClass.PanelRound" name="pnLayoutSrool">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                    </Property>
+                  </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -296,7 +301,7 @@
                                 <DimensionLayout dim="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jLabel4" min="-2" pref="71" max="-2" attributes="0"/>
                                               <Component id="jLabel3" min="-2" pref="71" max="-2" attributes="0"/>
@@ -308,7 +313,7 @@
                                               <Component id="jLabel2" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                                               <Component id="panelRound1" alignment="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="60" max="32767" attributes="0"/>
+                                          <EmptySpace pref="45" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -340,11 +345,6 @@
                               </Layout>
                               <SubComponents>
                                 <Container class="javax.swing.JPanel" name="Tang1_TrangChu">
-                                  <Properties>
-                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                    </Property>
-                                  </Properties>
 
                                   <Layout>
                                     <DimensionLayout dim="0">
@@ -363,11 +363,6 @@
                                   </Layout>
                                   <SubComponents>
                                     <Container class="javax.swing.JPanel" name="jPanel2">
-                                      <Properties>
-                                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                        </Property>
-                                      </Properties>
 
                                       <Layout>
                                         <DimensionLayout dim="0">
@@ -469,11 +464,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu1" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu1" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu1" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu1" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu1" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -544,11 +539,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu2" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu2" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu2" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu2" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu2" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -619,11 +614,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu3" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu3" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu3" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu3" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu3" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -694,11 +689,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu4" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu4" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu4" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu4" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu4" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -769,11 +764,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu5" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu5" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu5" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu5" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu5" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -844,11 +839,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu6" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu6" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu6" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu6" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu6" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -919,11 +914,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu7" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu7" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu7" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu7" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu7" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -994,11 +989,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu8" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu8" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu8" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu8" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu8" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1069,11 +1064,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu9" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu9" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu9" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu9" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu9" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1144,11 +1139,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu10" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu10" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu10" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu10" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu10" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1182,11 +1177,6 @@
                                   </SubComponents>
                                 </Container>
                                 <Container class="javax.swing.JPanel" name="Tang1_TrangChu1">
-                                  <Properties>
-                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                    </Property>
-                                  </Properties>
 
                                   <Layout>
                                     <DimensionLayout dim="0">
@@ -1205,11 +1195,6 @@
                                   </Layout>
                                   <SubComponents>
                                     <Container class="javax.swing.JPanel" name="jPanel3">
-                                      <Properties>
-                                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                        </Property>
-                                      </Properties>
 
                                       <Layout>
                                         <DimensionLayout dim="0">
@@ -1311,11 +1296,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu11" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu11" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu11" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu11" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu11" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1386,11 +1371,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu12" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu12" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu12" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu12" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu12" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1461,11 +1446,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu13" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu13" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu13" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu13" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu13" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1536,11 +1521,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu14" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu14" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu14" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu14" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu14" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1611,11 +1596,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu15" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu15" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu15" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu15" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu15" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1686,11 +1671,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu16" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu16" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu16" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu16" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu16" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1761,11 +1746,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu17" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu17" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu17" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu17" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu17" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1836,11 +1821,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu18" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu18" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu18" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu18" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu18" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1911,11 +1896,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu19" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu19" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu19" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu19" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu19" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -1986,11 +1971,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu20" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu20" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu20" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu20" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu20" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -2024,11 +2009,6 @@
                                   </SubComponents>
                                 </Container>
                                 <Container class="javax.swing.JPanel" name="Tang1_TrangChu2">
-                                  <Properties>
-                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                    </Property>
-                                  </Properties>
 
                                   <Layout>
                                     <DimensionLayout dim="0">
@@ -2047,11 +2027,6 @@
                                   </Layout>
                                   <SubComponents>
                                     <Container class="javax.swing.JPanel" name="jPanel4">
-                                      <Properties>
-                                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                        </Property>
-                                      </Properties>
 
                                       <Layout>
                                         <DimensionLayout dim="0">
@@ -2153,11 +2128,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu21" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu21" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu21" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu21" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu21" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -2228,11 +2203,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu22" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu22" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu22" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu22" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu22" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -2303,11 +2278,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu23" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu23" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu23" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu23" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu23" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -2378,11 +2353,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu24" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu24" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu24" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu24" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu24" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -2453,11 +2428,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu25" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu25" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu25" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu25" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu25" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -2528,11 +2503,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu26" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu26" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu26" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu26" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu26" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -2603,11 +2578,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu27" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu27" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu27" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu27" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu27" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -2678,11 +2653,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu28" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu28" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu28" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu28" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu28" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -2753,11 +2728,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu29" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu29" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu29" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu29" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu29" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -2828,11 +2803,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu30" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu30" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu30" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu30" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu30" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -2866,11 +2841,6 @@
                                   </SubComponents>
                                 </Container>
                                 <Container class="javax.swing.JPanel" name="Tang1_TrangChu3">
-                                  <Properties>
-                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                    </Property>
-                                  </Properties>
 
                                   <Layout>
                                     <DimensionLayout dim="0">
@@ -2893,11 +2863,6 @@
                                   </Layout>
                                   <SubComponents>
                                     <Container class="javax.swing.JPanel" name="jPanel6">
-                                      <Properties>
-                                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                        </Property>
-                                      </Properties>
 
                                       <Layout>
                                         <DimensionLayout dim="0">
@@ -2976,11 +2941,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu31" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu31" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu31" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu31" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu31" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -3051,11 +3016,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu32" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu32" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu32" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu32" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu32" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -3126,11 +3091,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu33" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu33" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu33" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu33" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu33" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -3201,11 +3166,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu34" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu34" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu34" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu34" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu34" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -3276,11 +3241,11 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="lblLoaiPhongTrangChu35" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="lblTenPhongTrangChu35" min="-2" pref="25" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                                      <Component id="lblTrangThaiTrangChu35" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTenPhongTrangChu35" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lblTrangThaiTrangChu35" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace pref="18" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>

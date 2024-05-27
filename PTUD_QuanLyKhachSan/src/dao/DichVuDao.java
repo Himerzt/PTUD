@@ -244,6 +244,7 @@ public class DichVuDao {
 		return dsDV;
 	}
 	
+<<<<<<< HEAD
 	// tim kiem dich vu theo ma dich vu
 	public DichVu timDichVuTheoMaDV(String maDV) {
 		try {
@@ -307,4 +308,12 @@ public class DichVuDao {
 	}
 	
 	
+=======
+	public static void main(String[] args) {
+		// test tìm theo mã dịch vụ 
+		DichVuDao dvDao = new DichVuDao();
+		DichVu dv = dvDao.timTheoMaDichVu("DV002");
+		System.out.println(dv.getGiaDV());
+	}
+>>>>>>> 7bb1dab74010603c6bf0b45b0c4ded027a92eca8
 }
