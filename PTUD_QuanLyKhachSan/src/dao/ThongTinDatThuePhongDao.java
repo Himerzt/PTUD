@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -586,39 +587,112 @@ public int demSoLuongPhongTheoNgay(int ngay, int thang, int nam) {
             // Chuyển đổi ngày, tháng, năm thành LocalDateTime
             LocalDateTime ngayNhanPhong = LocalDateTime.of(nam, thang, ngay, 0, 0);
 
-            // Kết nối CSDL
-            Connection con = ConnectDB.getInstance().getConnection();
 
-            // Tạo câu truy vấn SQL
-            String sql = "SELECT COUNT(*) AS SoLuongPhong " +
-                         "FROM ThongTinDatThuePhong " +
-                         "WHERE CAST(NgayNhanPhong AS DATE) <= ? " +
-                         "AND CAST(NgayTraPhong AS DATE) >= ?";
-
-            // Tạo PreparedStatement
-            PreparedStatement pstmt = con.prepareStatement(sql);
-
-            // Đặt các tham số cho câu truy vấn
-            pstmt.setTimestamp(1, Timestamp.valueOf(ngayNhanPhong));
-            pstmt.setTimestamp(2, Timestamp.valueOf(ngayNhanPhong));
-
-            // Thực thi câu truy vấn
-            ResultSet rs = pstmt.executeQuery();
-
-            // Đọc kết quả
-            if (rs.next()) {
-                soLuong = rs.getInt("SoLuongPhong");
-            }
-
-            // Đóng kết nối và tài nguyên
-            rs.close();
-            pstmt.close();
-            con.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return soLuong;
+        }
+
+	// cập nhật ngày trả phòng thông tin truyền vào là mã ttdtp và ngày trả phòng
+	public boolean capNhatNgayTraPhong(ThongTinDatThuePhong maTTDTP, LocalDate ngayTraPhong) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		Statement stmt = null;
+		int n = 0;
+		try {
+			stmt = con.createStatement();
+			String sql = "update ThongTinDatThuePhong set ngayTraPhong = '" + ngayTraPhong + "' where maTTDTP = '"
+					+ maTTDTP + "'";
+			n = stmt.executeUpdate(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return n > 0;
+	}
+	
+	
+	
+	
+	
+	// cập nhật thông tin đặt thuê phòng với mã phòng thay đổi
+	public boolean capNhatThongTinDatThuePhong(String maTTDTP, String maPhong) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		Statement stmt = null;
+		int n = 0;
+		try {
+			stmt = con.createStatement();
+			String sql = "update ThongTinDatThuePhong set phong = '" + maPhong + "' where maTTDTP = '" + maTTDTP + "'";
+			n = stmt.executeUpdate(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return n > 0;
+	}
+	
+// tìm thongtindatthuephong theo mã phòng
+	public ThongTinDatThuePhong timThongTinDatThuePhongTheoMaPhong1(String maPhong) {
+        ThongTinDatThuePhong tt = new ThongTinDatThuePhong();
+        try {
+            Connection con = ConnectDB.getInstance().getConnection();
+            String sql = "Select * from ThongTinDatThuePhong where maPhong = '" + maPhong + "'";
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                String maTTDTP = rs.getString(1);
+                String maKhachHang = rs.getString(2);
+                LocalDateTime ngayDatPhong = rs.getTimestamp(4).toLocalDateTime();
+                LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
+                LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
+                String maLoaiThue = rs.getString(7);
+                double tienDaCoc = rs.getDouble(8);
+                String trangThai = rs.getString(9);
+                tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
+                        maLoaiThue, tienDaCoc, trangThai);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return tt;
     }
+
+
+	
+
+//            // Kết nối CSDL
+//            Connection con = ConnectDB.getInstance().getConnection();
+//
+//            // Tạo câu truy vấn SQL
+//            String sql = "SELECT COUNT(*) AS SoLuongPhong " +
+//                         "FROM ThongTinDatThuePhong " +
+//                         "WHERE CAST(NgayNhanPhong AS DATE) <= ? " +
+//                         "AND CAST(NgayTraPhong AS DATE) >= ?";
+//
+//            // Tạo PreparedStatement
+//            PreparedStatement pstmt = con.prepareStatement(sql);
+//
+//            // Đặt các tham số cho câu truy vấn
+//            pstmt.setTimestamp(1, Timestamp.valueOf(ngayNhanPhong));
+//            pstmt.setTimestamp(2, Timestamp.valueOf(ngayNhanPhong));
+//
+//            // Thực thi câu truy vấn
+//            ResultSet rs = pstmt.executeQuery();
+//
+//            // Đọc kết quả
+//            if (rs.next()) {
+//                soLuong = rs.getInt("SoLuongPhong");
+//            }
+//
+//            // Đóng kết nối và tài nguyên
+//            rs.close();
+//            pstmt.close();
+//            con.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return soLuong;
+//    }
 public int demSoLuongPhongTheoThangNam(int thang, int nam) {
     int soLuong = 0;
     try {
@@ -704,4 +778,5 @@ public int demSoLuongPhongTheoThangNam(int thang, int nam) {
     }
     return soLuong;
 }
+
 }

@@ -83,11 +83,18 @@
           <tags>persp.editorOnboardingCommand:Find Actions$$$Ctrl+3</tags>
           <tags>persp.editorOnboardingCommand:Show Key Assist$$$Ctrl+Shift+L</tags>
           <tags>persp.editorOnboardingCommand:New$$$Ctrl+N</tags>
+<<<<<<< HEAD
+          <children xsi:type="basic:PartSashContainer" xmi:id="_K6hgdf2aEe6N0vNCGOHMiw" selectedElement="_K6hgdv2aEe6N0vNCGOHMiw" horizontal="true">
+            <children xsi:type="basic:PartStack" xmi:id="_K6hgdv2aEe6N0vNCGOHMiw" elementId="topLeft" containerData="1479" selectedElement="_K6hgd_2aEe6N0vNCGOHMiw">
+              <tags>active</tags>
+              <children xsi:type="advanced:Placeholder" xmi:id="_K6hgd_2aEe6N0vNCGOHMiw" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_K6iIrv2aEe6N0vNCGOHMiw" closeable="true">
+=======
           <children xsi:type="basic:PartSashContainer" xmi:id="_GcMZdRviEe-sEK768VXurA" selectedElement="_GcMZghviEe-sEK768VXurA" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_GcMZdhviEe-sEK768VXurA" elementId="topLeft" visible="false" containerData="1714" selectedElement="_GcMZdxviEe-sEK768VXurA">
               <tags>Minimized</tags>
               <tags>MinimizedByZoom</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_GcMZdxviEe-sEK768VXurA" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_GcNBqRviEe-sEK768VXurA" closeable="true">
+>>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397
                 <tags>View</tags>
                 <tags>categoryTag:General</tags>
               </children>
@@ -257,6 +264,83 @@
       <tags>View</tags>
       <tags>categoryTag:Help</tags>
     </sharedElements>
+<<<<<<< HEAD
+    <sharedElements xsi:type="advanced:Area" xmi:id="_GcNBkxviEe-sEK768VXurA" elementId="org.eclipse.ui.editorss" selectedElement="_GcNBlBviEe-sEK768VXurA">
+      <children xsi:type="basic:PartStack" xmi:id="_GcNBlBviEe-sEK768VXurA" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_KBUKYBwAEe-4MMZCQu-YAw">
+        <tags>org.eclipse.e4.primaryDataStack</tags>
+        <tags>EditorStack</tags>
+<<<<<<< HEAD
+        <children xsi:type="basic:Part" xmi:id="_z6pLAArkEe-T5dkQj_3hmg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ThuePhong.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ThuePhong.java&quot; partName=&quot;ThuePhong.java&quot; title=&quot;ThuePhong.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/giaodien/ThuePhong.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/giaodien/ThuePhong.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;42152&quot; selectionTopPixel=&quot;11850&quot;/>&#xD;&#xA;&lt;/editor>"/>
+=======
+        <tags>active</tags>
+        <children xsi:type="basic:Part" xmi:id="_GcNBlRviEe-sEK768VXurA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="HuyDatPhong_GUI.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;HuyDatPhong_GUI.java&quot; partName=&quot;HuyDatPhong_GUI.java&quot; title=&quot;HuyDatPhong_GUI.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/giaodien/HuyDatPhong_GUI.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/giaodien/HuyDatPhong_GUI.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;14015&quot; selectionTopPixel=&quot;5140&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_GcNBmRviEe-sEK768VXurA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="TrangChu_GUI.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;TrangChu_GUI.java&quot; partName=&quot;TrangChu_GUI.java&quot; title=&quot;TrangChu_GUI.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/giaodien/TrangChu_GUI.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/giaodien/TrangChu_GUI.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;39&quot; selectionOffset=&quot;905&quot; selectionTopPixel=&quot;180&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_GcNBnRviEe-sEK768VXurA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="DangNhap_GUI.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;DangNhap_GUI.java&quot; partName=&quot;DangNhap_GUI.java&quot; title=&quot;DangNhap_GUI.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/giaodien/DangNhap_GUI.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/giaodien/DangNhap_GUI.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;12489&quot; selectionTopPixel=&quot;4340&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_GcNBoRviEe-sEK768VXurA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="DichVu_GUI.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;DichVu_GUI.java&quot; partName=&quot;DichVu_GUI.java&quot; title=&quot;DichVu_GUI.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/giaodien/DichVu_GUI.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/giaodien/DichVu_GUI.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2328&quot; selectionTopPixel=&quot;400&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_GcNBpRviEe-sEK768VXurA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="NhanVien.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;NhanVien.java&quot; partName=&quot;NhanVien.java&quot; title=&quot;NhanVien.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/entity/NhanVien.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/entity/NhanVien.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_tCOegBv3Ee-DMeIFht41bQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ThongTinDatThuePhongDao.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ThongTinDatThuePhongDao.java&quot; partName=&quot;ThongTinDatThuePhongDao.java&quot; title=&quot;ThongTinDatThuePhongDao.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/dao/ThongTinDatThuePhongDao.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/dao/ThongTinDatThuePhongDao.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;4154&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_iaQk0Bv4Ee-DMeIFht41bQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="DatPhong_GUI.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;DatPhong_GUI.java&quot; partName=&quot;DatPhong_GUI.java&quot; title=&quot;DatPhong_GUI.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/giaodien/DatPhong_GUI.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/giaodien/DatPhong_GUI.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;44384&quot; selectionTopPixel=&quot;14620&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_lXr_QBv4Ee-DMeIFht41bQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ThuePhong_GUI.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ThuePhong_GUI.java&quot; partName=&quot;ThuePhong_GUI.java&quot; title=&quot;ThuePhong_GUI.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/giaodien/ThuePhong_GUI.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/giaodien/ThuePhong_GUI.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;269&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;38440&quot; selectionTopPixel=&quot;12980&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_KhrXYBv-Ee-4MMZCQu-YAw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="QuanLyPhong_GUI.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;QuanLyPhong_GUI.java&quot; partName=&quot;QuanLyPhong_GUI.java&quot; title=&quot;QuanLyPhong_GUI.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/giaodien/QuanLyPhong_GUI.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/giaodien/QuanLyPhong_GUI.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;210680&quot; selectionTopPixel=&quot;61460&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_KBUKYBwAEe-4MMZCQu-YAw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="NhanPhong_GUI.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;NhanPhong_GUI.java&quot; partName=&quot;NhanPhong_GUI.java&quot; title=&quot;NhanPhong_GUI.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/giaodien/NhanPhong_GUI.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/giaodien/NhanPhong_GUI.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;10510&quot; selectionTopPixel=&quot;4228&quot;/>&#xD;&#xA;&lt;/editor>"/>
+>>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_mrGjYBwCEe-4MMZCQu-YAw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="PhongDao.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;PhongDao.java&quot; partName=&quot;PhongDao.java&quot; title=&quot;PhongDao.java&quot; tooltip=&quot;PTUD_QuanLyKhachSan/src/dao/PhongDao.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PTUD_QuanLyKhachSan/src/dao/PhongDao.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2397&quot; selectionTopPixel=&quot;1100&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+=======
     <sharedElements xsi:type="advanced:Area" xmi:id="_GcNBkxviEe-sEK768VXurA" elementId="org.eclipse.ui.editorss" selectedElement="_tXdTYBwSEe-RA87iAMeqjw">
       <children xsi:type="basic:PartSashContainer" xmi:id="_tXdTYBwSEe-RA87iAMeqjw" selectedElement="_tXdTYRwSEe-RA87iAMeqjw" horizontal="true">
         <children xsi:type="basic:PartStack" xmi:id="_GcNBlBviEe-sEK768VXurA" elementId="org.eclipse.e4.primaryDataStack" containerData="5000" selectedElement="_KhrXYBv-Ee-4MMZCQu-YAw">
@@ -339,6 +423,7 @@
             <tags>active</tags>
             <tags>activeOnClose</tags>
           </children>
+>>>>>>> 8532d1ac1e854017004783a63c7a8396cc0ccc77
         </children>
       </children>
     </sharedElements>
@@ -348,7 +433,13 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1712986050409&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;1&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+<<<<<<< HEAD
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
+      <menus xmi:id="_K6iIr_2aEe6N0vNCGOHMiw" elementId="org.eclipse.ui.navigator.ProjectExplorer">
+=======
       <menus xmi:id="_GcNBqhviEe-sEK768VXurA" elementId="org.eclipse.ui.navigator.ProjectExplorer">
+>>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
@@ -553,7 +644,15 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_GcNChRviEe-sEK768VXurA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Drxk8BqdEe-swMiq4DY_cA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_K6lOeP2aEe6N0vNCGOHMiw"/>
+=======
+        <children xsi:type="menu:HandledToolItem" xmi:id="_q7TjYBv5Ee-4MMZCQu-YAw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_GcO6IRviEe-sEK768VXurA"/>
+>>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397
+=======
         <children xsi:type="menu:HandledToolItem" xmi:id="_WKh5wBwSEe-RA87iAMeqjw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_GcO6IRviEe-sEK768VXurA"/>
+>>>>>>> 8532d1ac1e854017004783a63c7a8396cc0ccc77
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_GcNCkhviEe-sEK768VXurA" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -561,8 +660,18 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_GcNClBviEe-sEK768VXurA" elementId="org.eclipse.ui.workbench.edit">
         <tags>Draggable</tags>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Dr0oQBqdEe-swMiq4DY_cA" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_K6lMS_2aEe6N0vNCGOHMiw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Dr1PUBqdEe-swMiq4DY_cA" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_K6lM9v2aEe6N0vNCGOHMiw"/>
+=======
+        <children xsi:type="menu:HandledToolItem" xmi:id="_q7VYkBv5Ee-4MMZCQu-YAw" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" command="_GcO39BviEe-sEK768VXurA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_q7V_oBv5Ee-4MMZCQu-YAw" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_GcO4nxviEe-sEK768VXurA"/>
+>>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397
+=======
         <children xsi:type="menu:HandledToolItem" xmi:id="_WKju8BwSEe-RA87iAMeqjw" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" command="_GcO39BviEe-sEK768VXurA"/>
         <children xsi:type="menu:HandledToolItem" xmi:id="_WKkWABwSEe-RA87iAMeqjw" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_GcO4nxviEe-sEK768VXurA"/>
+>>>>>>> 8532d1ac1e854017004783a63c7a8396cc0ccc77
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_GcNCmBviEe-sEK768VXurA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -592,7 +701,15 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_GcNC9hviEe-sEK768VXurA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Dr12YBqdEe-swMiq4DY_cA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_K6lOF_2aEe6N0vNCGOHMiw"/>
+=======
+        <children xsi:type="menu:HandledToolItem" xmi:id="_q7Wmshv5Ee-4MMZCQu-YAw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_GcO5wBviEe-sEK768VXurA"/>
+>>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397
+=======
         <children xsi:type="menu:HandledToolItem" xmi:id="_WKlkIBwSEe-RA87iAMeqjw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_GcO5wBviEe-sEK768VXurA"/>
+>>>>>>> 8532d1ac1e854017004783a63c7a8396cc0ccc77
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_GcNDAhviEe-sEK768VXurA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

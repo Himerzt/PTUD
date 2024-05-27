@@ -23,6 +23,15 @@ public class DichVuPhong {
 		this.soLuong = soLuong;
 	}
 	
+	
+	
+	public DichVuPhong(String maPhong, String maDichVu, int soLuong) {
+		super();
+		this.maPhong = maPhong;
+		this.maDichVu = maDichVu;
+		this.soLuong = soLuong;
+	}
+
 	public String getMaDichVu() {
 		return maDichVu;
 	}
@@ -53,6 +62,12 @@ public class DichVuPhong {
 
 	public void setMaDichVuSuDung(String maDichVuSuDung) {
 		this.maDichVuSuDung = maDichVuSuDung;
+	}
+	
+	@Override
+	public String toString() {
+		return "DichVuPhong [maDichVuSuDung=" + maDichVuSuDung + ", maPhong=" + maPhong + ", maDichVu=" + maDichVu
+				+ ", soLuong=" + soLuong + "]";
 	}
 
 }

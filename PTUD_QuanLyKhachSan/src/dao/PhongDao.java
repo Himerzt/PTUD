@@ -293,6 +293,20 @@ public class PhongDao {
 		return dsPhong;
 	}
 	
+	//cập nhật trạng thái phòng
+	public boolean capNhatTrangThaiPhong1(String maPhong, String trangThai) {
+		try {
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = ? where maPhong = ?");
+			stmt.setString(1, trangThai);
+			stmt.setString(2, maPhong);
+			int n = stmt.executeUpdate();
+			return n > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 	// Lấy thông tin phòng đang thuê
 //	-- Tìm phòng đang thuê và thông tin khách hàng
 //	SELECT p.MaPhong, p.TrangThaiPhong, kh.TenKhachHang, kh.CCCD_Passport FROM Phong p JOIN ThongTinDatThuePhong tt 
@@ -313,12 +327,6 @@ public class PhongDao {
 			e.printStackTrace();
 		}
 		return dsPhongDangThue;
-	}
-	
-	public static void main(String[] args) {
-		// test cập nhập trạng thái phòng
-		PhongDao phongDao = new PhongDao();
-		System.out.println(phongDao.capNhatTrangThaiPhong("CC301", "Trống"));
 	}
 
 }
