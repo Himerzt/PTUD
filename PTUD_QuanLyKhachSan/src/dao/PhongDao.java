@@ -74,7 +74,7 @@ public class PhongDao {
 	public boolean capNhatTrangThaiPhong(String maPhong, String trangThai) {
 		try {
 			Connection con = ConnectDB.getConnection();
-			PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = ? where maPhong = ?");
+			PreparedStatement stmt = con.prepareStatement("update Phong set TrangThaiPhong = ? where maPhong = ?");
 			stmt.setString(1, trangThai);
 			stmt.setString(2, maPhong);
 			int n = stmt.executeUpdate();
@@ -268,21 +268,6 @@ public class PhongDao {
 			return false;
 		}
 	}
-	
-	// Cập nhật trạng thái phòng thành trống
-	public boolean capNhatTrangThaiTrong(String maPhong) {
-		try {
-			Connection con = ConnectDB.getConnection();
-			PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = N'Trống' where maPhong = ?");
-			stmt.setString(1, maPhong);
-			int n = stmt.executeUpdate();
-			return n > 0;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-	
 
 	public String timMaLoaiPhongTheoMaPhong(String maPhong) {
 		try {
@@ -343,4 +328,5 @@ public class PhongDao {
 		}
 		return dsPhongDangThue;
 	}
+
 }

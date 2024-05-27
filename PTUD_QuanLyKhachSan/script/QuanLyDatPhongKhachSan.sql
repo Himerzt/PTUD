@@ -348,6 +348,11 @@ VALUES
 ('NV009', N'Nguyễn Văn Khánh', '1989-09-30', N'Nam', '0123456782', 'nguyenvank@email.com', '123456789131', N'Bình Định', 'NV', '2014-05-01'),
 ('NV010', N'Trần Thị Lan', '1994-10-14', N'Nữ', '0123456781', 'tranthil@email.com', '123456789132', N'Hà Tĩnh', 'QL', '2013-04-01');
 
+-- Tạo Tài khoản
+INSERT INTO [dbo].[TaiKhoan] (MaNV, TenDangNhap, MatKhau)
+VALUES 
+('NV001', 'NV001', '123456789')
+
 INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
 VALUES ('HD001', 'NV001', 'KH001', '2024-05-01', NULL, null, 500000, 0.05);
 INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
@@ -368,6 +373,7 @@ INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT
 VALUES ('HD009', 'NV002', 'KH008', '2024-05-05', NULL, NULL, 520000, 0.05);
 INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
 VALUES ('HD010', 'NV003', 'KH009', '2024-05-05', NULL, NULL, 700000, 0.05);
+
 -- Chèn dữ liệu mẫu vào bảng ThongTinDatThuePhong
 INSERT INTO ThongTinDatThuePhong (MaTTDTP, MaKhachHang, MaPhong, NgayDatPhong, NgayNhanPhong, NgayTraPhong, LoaiThue, TienDaCoc)
 VALUES 
