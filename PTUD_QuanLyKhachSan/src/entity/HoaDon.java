@@ -1,9 +1,6 @@
 package entity;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
-
 
 public class HoaDon {
 	private String maHoaDon;
@@ -80,8 +77,4 @@ public class HoaDon {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	
-	
-	
 }

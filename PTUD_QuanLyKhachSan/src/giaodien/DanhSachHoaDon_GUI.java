@@ -36,6 +36,8 @@ import giaodien.CustomClass.DateChooser;
 import connectDB.ConnectDB;
 import dao.PhongDao;
 import dao.TaiKhoanDao;
+import dao.HoaDonDao;
+import entity.HoaDon;
 import entity.ChucVu;
 import entity.DichVu;
 import entity.HangThanhVien;
@@ -44,6 +46,8 @@ import entity.NhanVien;
 import entity.Phong;
 
 import java.text.ParseException;
+import java.time.LocalDateTime;
+import java.util.stream.Collectors;
 
 import javax.swing.JFrame;
 import menu.MenuEvent;
@@ -63,7 +67,7 @@ public class DanhSachHoaDon_GUI extends javax.swing.JFrame {
 
         initComponents();
         txtNgayLapHoaDon.setText(null);
-        
+        loadDanhSachHoaDon();
 
     }
 
@@ -284,7 +288,61 @@ public class DanhSachHoaDon_GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     private DefaultTableModel originalTableModel; 
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
-            
+    loadDanhSachHoaDon();
+        // Lấy dữ liệu từ ô nhập liệu
+    String tenKhachHang = txtHoTen.getText().trim().toLowerCase(); // Chuyển tên khách hàng về chữ thường
+    String ngayNhapVao = txtNgayLapHoaDon.getText().trim();
+
+    // Chuyển định dạng ngày tháng nhập vào về định dạng chuẩn "yyyy-MM-dd"
+  
+
+    // Tạo một list để lưu các hàng cần hiển thị sau khi tìm kiếm
+    List<Object[]> rowsToShow = new ArrayList<>();
+
+    // Lấy model của bảng
+    DefaultTableModel model = (DefaultTableModel) DanhSachHoaDon.getModel();
+
+    // Duyệt qua từng hàng trong bảng
+    for (int i = 0; i < model.getRowCount(); i++) {
+        // Lấy dữ liệu của hàng thứ i
+        Object[] rowData = model.getDataVector().get(i).toArray();
+
+        // Chuyển dữ liệu tên khách hàng trong bảng về chữ thường
+        String tenKhachHangTrongBang = ((String) rowData[2]).toLowerCase();
+
+        // Chuyển định dạng ngày tháng trong bảng về định dạng chuẩn "yyyy-MM-dd"
+        String ngayLapTrongBang = (String) rowData[3];
+
+        // Kiểm tra điều kiện tìm kiếm
+        boolean matchTenKhachHang = tenKhachHang.isEmpty() || tenKhachHangTrongBang.contains(tenKhachHang); // So sánh tên khách hàng với tên nhập vào
+        boolean matchNgayLap = ngayNhapVao == null || ngayLapTrongBang.equals(ngayNhapVao); // So sánh ngày lập với ngày nhập vào
+
+        // Điều kiện tìm kiếm
+        boolean addRow = false;
+        if (!tenKhachHang.isEmpty() && ngayNhapVao.isEmpty()) {
+            // Tìm kiếm theo tên khách hàng
+            addRow = matchTenKhachHang;
+        } else if (tenKhachHang.isEmpty() && !ngayNhapVao.isEmpty()) {
+            // Tìm kiếm theo ngày lập
+            addRow = matchNgayLap;
+        } else if (!tenKhachHang.isEmpty() && !ngayNhapVao.isEmpty()) {
+            // Tìm kiếm theo cả hai
+            addRow = matchTenKhachHang && matchNgayLap;
+        }
+
+        // Thêm hàng nếu điều kiện tìm kiếm thỏa mãn
+        if (addRow) {
+            rowsToShow.add(rowData);
+        }
+    }
+
+    // Xóa tất cả các hàng hiện có trong bảng
+    model.setRowCount(0);
+
+    // Thêm các hàng đã tìm được vào bảng
+    for (Object[] row : rowsToShow) {
+        model.addRow(row);
+    }
     }//GEN-LAST:event_btnTimKiemActionPerformed
 
     private void btnNgayLapHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNgayLapHoaDonActionPerformed
@@ -316,6 +374,39 @@ public class DanhSachHoaDon_GUI extends javax.swing.JFrame {
     // Cập nhật trạng thái sắp xếp
     sortState++;
     }//GEN-LAST:event_btnSapXepActionPerformed
+    private void loadDanhSachHoaDon() {
+    try {
+        // Gọi hàm timDanhSachHoaDon từ HoaDonDao để lấy danh sách hóa đơn
+        HoaDonDao hoaDonDao = new HoaDonDao();
+        List<Object[]> danhSachHoaDon = hoaDonDao.timDanhSachHoaDon();
+
+        // Tạo DefaultTableModel để cập nhật dữ liệu lên bảng DanhSachHoaDon
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("STT");
+        model.addColumn("Mã hóa đơn");
+        model.addColumn("Tên khách hàng");
+        model.addColumn("Ngày lập");
+        model.addColumn("Tổng tiền");
+
+        // Duyệt qua danh sách hóa đơn và cập nhật dữ liệu vào model
+        int stt = 1;
+        for (Object[] hoaDonInfo : danhSachHoaDon) {
+            // Định dạng lại ngày từ LocalDateTime thành chuỗi "yyyy-MM-dd"
+            LocalDateTime ngayLap = (LocalDateTime) hoaDonInfo[2];
+            String formattedNgayLap = ngayLap.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+
+            model.addRow(new Object[]{stt, hoaDonInfo[0], hoaDonInfo[1], formattedNgayLap, hoaDonInfo[3]});
+            stt++;
+        }
+
+        // Đặt model cho bảng DanhSachHoaDon
+        DanhSachHoaDon.setModel(model);
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Đã xảy ra lỗi khi tìm kiếm danh sách hóa đơn.", "Lỗi", JOptionPane.ERROR_MESSAGE);
+    }
+}
 
     public static void main(String args[]) {
 

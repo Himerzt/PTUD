@@ -1,4 +1,3 @@
-
 package giaodien;
 
 import java.awt.Color;
@@ -16,16 +15,17 @@ import entity.TaiKhoan;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
 
 public class DangNhap_GUI extends javax.swing.JFrame implements Serializable {
-	
-	public DangNhap_GUI() throws SQLException {
-		initComponents();
-		ConnectDB.getInstance().getConnection();
-	}
 
-	@SuppressWarnings("unchecked")
-	// <editor-fold defaultstate="collapsed" desc="Generated
+    public DangNhap_GUI() throws SQLException {
+        initComponents();
+        ConnectDB.getInstance().getConnection();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -193,61 +193,70 @@ public class DangNhap_GUI extends javax.swing.JFrame implements Serializable {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-	private void btnDangNhapMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnDangNhapMouseExited
-		btnDangNhap.setBackground(new Color(23, 195, 178));
-	}// GEN-LAST:event_btnDangNhapMouseExited
+    private void btnDangNhapMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnDangNhapMouseExited
+        btnDangNhap.setBackground(new Color(23, 195, 178));
+    }// GEN-LAST:event_btnDangNhapMouseExited
 
-	private void btnDoiMatKhauMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnDoiMatKhauMouseExited
-		btnDoiMatKhau.setBackground(new Color(254, 109, 115));
-	}// GEN-LAST:event_btnDoiMatKhauMouseExited
+    private void btnDoiMatKhauMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnDoiMatKhauMouseExited
+        btnDoiMatKhau.setBackground(new Color(254, 109, 115));
+    }// GEN-LAST:event_btnDoiMatKhauMouseExited
 
-	private void btnDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDoiMatKhauActionPerformed
-		// TODO add your handling code here:
-		try {
-			DoiMatKhau_GUI changePasswordFrame = new DoiMatKhau_GUI();
-			changePasswordFrame.setVisible(true);
-			changePasswordFrame.pack();
-			changePasswordFrame.setLocationRelativeTo(null);
-			this.dispose();
-		} catch (SQLException e) {
-			// TODO: handle exception
-		}
+    private void btnDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDoiMatKhauActionPerformed
+        // TODO add your handling code here:
+        try {
+            DoiMatKhau_GUI changePasswordFrame = new DoiMatKhau_GUI();
+            changePasswordFrame.setVisible(true);
+            changePasswordFrame.pack();
+            changePasswordFrame.setLocationRelativeTo(null);
+            this.dispose();
+        } catch (SQLException e) {
+            // TODO: handle exception
+        }
 
-	}// GEN-LAST:event_btnDoiMatKhauActionPerformed
+    }// GEN-LAST:event_btnDoiMatKhauActionPerformed
 
-	private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDangNhapActionPerformed
+    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {
+        try {
+            // Lấy thông tin từ các trường nhập liệu
+            String tenDangNhap = txtTenDangNhap.getText();
+            String matKhau = new String(txtMatKhau.getPassword());
 
-		try {
-			// Lấy thông tin từ các trường nhập liệu
-			String tenDangNhap = txtTenDangNhap.getText();
-			String matKhau = new String(txtMatKhau.getPassword());
+            // Kiểm tra xác thực đăng nhập
+            if (tenDangNhap.isEmpty() || matKhau.isEmpty()) {
+                // Hiển thị thông báo nếu các trường đăng nhập trống
+                JOptionPane.showMessageDialog(null, "Vui lòng nhập tên đăng nhập và mật khẩu.");
+            } else {
+                // Tạo đối tượng TaiKhoanDao để xác thực đăng nhập
+                TaiKhoanDao taiKhoanDao = new TaiKhoanDao();
+                boolean dangNhapThanhCong = taiKhoanDao.xacThucDangNhap(tenDangNhap, matKhau);
 
-			// Kiểm tra xác thực đăng nhập
-			if (tenDangNhap.isEmpty() || matKhau.isEmpty()) {
-				// Hiển thị thông báo nếu các trường đăng nhập trống
-				JOptionPane.showMessageDialog(null, "Vui lòng nhập tên đăng nhập và mật khẩu.");
-			} else {
-				// Tạo đối tượng TaiKhoanDao để xác thực đăng nhập
-				TaiKhoanDao taiKhoanDao = new TaiKhoanDao();
-				boolean dangNhapThanhCong = taiKhoanDao.xacThucDangNhap(tenDangNhap, matKhau);
+                if (dangNhapThanhCong) {
+                    // In ra log để kiểm tra xem phương thức này được gọi
+                    System.out.println("Đăng nhập thành công!");
 
-				if (dangNhapThanhCong) {
-					dispose(); // Đóng cửa sổ hiện tại
-					TrangChu_GUI trangChuNew2 = new TrangChu_GUI(tenDangNhap); // Tạo cửa sổ mới);
-					trangChuNew2.setVisible(true); // Hiển thị cửa sổ mới
-				} else {
-					// Đăng nhập thất bại
-					JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu.");
-				}
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}// GEN-LAST:event_btnDangNhapActionPerformed
+                    // Đặt trạng thái và hành vi của cửa sổ TrangChu_GUI
+                    TrangChu_GUI trangChu = new TrangChu_GUI(tenDangNhap);
+                    trangChu.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                    trangChu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-	/**
-	 * @param args the command line arguments
-	 */
+                    // Đóng cửa sổ hiện tại (DangNhap_GUI)
+                    dispose();
+
+                    // Mở TrangChu_GUI trong cửa sổ hiện tại
+                    trangChu.setVisible(true);
+                } else {
+                    // Đăng nhập thất bại
+                    JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu.");
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * @param args the command line arguments
+     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Left;
@@ -262,13 +271,13 @@ public class DangNhap_GUI extends javax.swing.JFrame implements Serializable {
     private giaodien.CustomClass.TextField txtTenDangNhap;
     // End of variables declaration//GEN-END:variables
 
-	public static void main(String[] args) {
-		java.awt.EventQueue.invokeLater(() -> {
-			try {
-				new DangNhap_GUI().setVisible(true);
-			} catch (SQLException ex) {
-				ex.printStackTrace();
-			}
-		});
-	}
+    public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(() -> {
+            try {
+                new DangNhap_GUI().setVisible(true);
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        });
+    }
 }

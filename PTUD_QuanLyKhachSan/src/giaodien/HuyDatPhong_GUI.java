@@ -29,8 +29,6 @@ public class HuyDatPhong_GUI extends javax.swing.JDialog {
 	private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
 	private KhachHangDao khachHangDao;
 	private LoaiThueDao loaiThueDao;
-	private PhongDao phongDao;
-
 	/**
 	 * Creates new form DatPhong
 	 */
@@ -90,11 +88,11 @@ public class HuyDatPhong_GUI extends javax.swing.JDialog {
 
             },
             new String [] {
-                "STT", "Tên phòng", "Loại phòng", "Kiểu thuê", "Ngày đặt", "Ngày nhận", "Ngày trả", "Tiền cọc"
+                "STT", "Tên phòng", "Loại phòng", "Kiểu thuê", "Ngày đặt", "Ngày nhận", "Ngày trả", "Tiền cọc", "Trạng thái"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -126,7 +124,7 @@ public class HuyDatPhong_GUI extends javax.swing.JDialog {
         btnThemKhachHang.setRadius(10);
         btnThemKhachHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnThemKhachHangActionPerformed(evt);
+                btnThemKhachHangActionPerformed();
             }
         });
 
@@ -163,21 +161,21 @@ public class HuyDatPhong_GUI extends javax.swing.JDialog {
         btnHuyTatCa.setText("Hủy tất cả");
         btnHuyTatCa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHuyTatCaActionPerformed(evt);
+                btnHuyTatCaActionPerformed();
             }
         });
 
         btnHuy.setText("Hủy");
         btnHuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHuyActionPerformed(evt);
+                btnHuyActionPerformed();
             }
         });
 
         btnHuyPhongChon.setText("Hủy phòng chọn");
         btnHuyPhongChon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHuyPhongChonActionPerformed(evt);
+                btnHuyPhongChonActionPerformed();
             }
         });
 
@@ -233,23 +231,21 @@ public class HuyDatPhong_GUI extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-	private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed
+	private void btnHuyActionPerformed() {// GEN-FIRST:event_btnHuyActionPerformed
 		this.setVisible(false);
 	}// GEN-LAST:event_btnHuyActionPerformed
 
-	private void btnHuyTatCaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyTatCaActionPerformed
+	private void btnHuyTatCaActionPerformed() {// GEN-FIRST:event_btnHuyTatCaActionPerformed
 		// Hiển thị thông báo xác nhận
 		int response = JOptionPane.showConfirmDialog(this,
-				"Bạn có chắc chắn muốn xóa tất cả thông tin đặt phòng không?", "Xác nhận", JOptionPane.YES_NO_OPTION,
+				"Bạn có chắc chắn muốn hủy tất cả thông tin đặt phòng không?", "Xác nhận", JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE);
 		if (response == JOptionPane.YES_OPTION) {
 			KhachHang kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
 			ArrayList<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao
 					.timThongTinDatThuePhongTheoMaKhachHang(kh.getMaKH());
 			int soTienHoanLai = 0;
-
 			long currentTime = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
-
 			for (ThongTinDatThuePhong ttdtp : dsTTDTP) {
 				long ngayNhanPhongMillis = ttdtp.getNgayNhanPhong().toEpochSecond(ZoneOffset.UTC);
 				long diffInSeconds = ngayNhanPhongMillis - currentTime;
@@ -287,7 +283,7 @@ public class HuyDatPhong_GUI extends javax.swing.JDialog {
 		}
 	}// GEN-LAST:event_btnHuyTatCaActionPerformed
 
-	private void btnHuyPhongChonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyPhongChonActionPerformed
+	private void btnHuyPhongChonActionPerformed() {// GEN-FIRST:event_btnHuyPhongChonActionPerformed
 		int selectedRow = tableDanhSachPhong.getSelectedRow();
 		if (selectedRow == -1) {
 			JOptionPane.showMessageDialog(this, "Vui lòng chọn phòng để hủy!", "Thông báo",
@@ -305,7 +301,7 @@ public class HuyDatPhong_GUI extends javax.swing.JDialog {
 					.timThongTinDatThuePhongTheoMaKhachHang(kh.getMaKH());
 
 			ThongTinDatThuePhong ttdtp = dsTTDTP.get(selectedRow);
-			double soTienHoanLai = loaiThueDao.timGiaCocTheoMaThue(ttdtp.getMaLoaiThue());
+			loaiThueDao.timGiaCocTheoMaThue(ttdtp.getMaLoaiThue());
 
 			// Gọi hàm xóa thông tin đặt thuê theo mã thông tin đặt thuê
 			boolean xoaThanhCong = thongTinDatThuePhongDao.xoaThongTinDatThueTheoMa(ttdtp.getMaTTDTP());
@@ -321,7 +317,7 @@ public class HuyDatPhong_GUI extends javax.swing.JDialog {
 		}
 	}// GEN-LAST:event_btnHuyPhongChonActionPerformed
 
-	private void btnThemKhachHangActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemKhachHangActionPerformed
+	private void btnThemKhachHangActionPerformed() {// GEN-FIRST:event_btnThemKhachHangActionPerformed
 		KhachHang kh = new KhachHang();
 		if (regCCCD_Passport(txtCCCD.getText()) == false) {
 			return;
@@ -383,7 +379,7 @@ public class HuyDatPhong_GUI extends javax.swing.JDialog {
 			ThongTinDatThuePhong ttdtp = dsTTDTP.get(i);
 			kieuThue = loaiThueDao.timKieuThueTheoMaLoaiThue(dsTTDTP.get(i).getMaLoaiThue());
 			model.addRow(new Object[] { i + 1, p.getSoPhong(), layTenLoaiPhong(p.getMaLoaiPhong()), kieuThue,
-					ttdtp.getNgayDatPhong(), ttdtp.getNgayNhanPhong(), ttdtp.getNgayTraPhong(), ttdtp.getTienDaCoc() });
+					ttdtp.getNgayDatPhong(), ttdtp.getNgayNhanPhong(), ttdtp.getNgayTraPhong(), ttdtp.getTienDaCoc(), ttdtp.getTrangThai() });
 		}
 	}
 

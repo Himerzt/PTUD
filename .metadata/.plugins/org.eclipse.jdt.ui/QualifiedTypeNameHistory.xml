@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="dao.KhachHangDao"/>
-    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="connectDB.ConnectDB"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
@@ -14,7 +12,6 @@
     <fullyQualifiedTypeName name="dao.ChiTietDonDat_Dao"/>
     <fullyQualifiedTypeName name="entity.DonDat"/>
     <fullyQualifiedTypeName name="entity.ChiTietHoaDon"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.rmi.Remote"/>
     <fullyQualifiedTypeName name="entity.KhachHang"/>
     <fullyQualifiedTypeName name="java.rmi.server.UnicastRemoteObject"/>
@@ -51,13 +48,16 @@
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="dao.ThongTinDatThuePhongDao"/>
-    <fullyQualifiedTypeName name="entity.ThongTinDatThuePhong"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="dao.DichVuPhongDao"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="giaodien.NhanVien"/>
     <fullyQualifiedTypeName name="entity.NhanVien"/>
     <fullyQualifiedTypeName name="dao.NhanVienDao"/>
     <fullyQualifiedTypeName name="giaodien.DanhSachNhanVien"/>
     <fullyQualifiedTypeName name="entity.KhuyenMai"/>
+    <fullyQualifiedTypeName name="giaodien.NhanPhong_GUI"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="entity.ThongTinDatThuePhong"/>
 </qualifiedTypeNameHistroy>
