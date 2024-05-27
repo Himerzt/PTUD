@@ -2868,10 +2868,5 @@ public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
     private giaodien.CustomClass.TextFieldShadow txtTenKhachHang1;
     private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai;
     private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai1;
-    private ArrayList<javax.swing.JPanel> phongQuanLy;
-    private ArrayList<javax.swing.JLabel> loaiPhongQuanLy;
-    private ArrayList<javax.swing.JLabel> tenPhongQuanLy;
-    private ArrayList<javax.swing.JLabel> trangThaiPhongQuanLy;
-    private ArrayList<giaodien.CustomClass.JCheckBoxCustom> checkBoxPhongQuanLy;
     // End of variables declaration//GEN-END:variables
 }
