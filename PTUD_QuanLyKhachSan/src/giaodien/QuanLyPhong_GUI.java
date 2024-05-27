@@ -29,20 +29,14 @@ import java.awt.Dimension;
  */
 public class QuanLyPhong_GUI extends javax.swing.JPanel {
 
-<<<<<<< HEAD:PTUD_QuanLyKhachSan/src/giaodien/QuanLyPhongPannel.java
+
 	private String tenphong;
 	/**
 	 * Creates new form QuanLyPhong2
 	 */
-	public QuanLyPhongPannel() {
+	public QuanLyPhong_GUI() {
 		initComponents();
-=======
-    /**
-     * Creates new form QuanLyPhong2
-     */
-    public QuanLyPhong_GUI() {
-        initComponents();
->>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397:PTUD_QuanLyKhachSan/src/giaodien/QuanLyPhong_GUI.java
+
 //		Gán thời gian cho Jlabel
         datetime();
         times();
@@ -3078,6 +3072,28 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
 
     private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDichVuActionPerformed
         // TODO add your handling code here:
+    	JCheckBox cks;
+		JLabel tenPhong;
+        String tenphongDoi = "";
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			cks = checkBoxPhongQuanLy.get(i);
+			tenPhong = tenPhongQuanLy.get(i);
+			if (cks.isSelected()) {
+				 tenphongDoi = tenPhong.getText();
+				 
+			}
+		}		
+		
+		ThemDichVuPhongDialog_GUI thuePhongFrame = new ThemDichVuPhongDialog_GUI(tenphongDoi);
+		thuePhongFrame.setVisible(true);
+		// reset checkbox
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			cks = checkBoxPhongQuanLy.get(i);
+			if (cks.isSelected()) {
+				cks.setSelected(false);
+			}}
+
+    	
     }//GEN-LAST:event_btnThemDichVuActionPerformed
 
     private void btnTimTheoDieuKienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnFindbyPhoneActionPerformed
@@ -3142,8 +3158,8 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
                 JPanel p = phongQuanLy.get(i);
                 JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
 
-<<<<<<< HEAD:PTUD_QuanLyKhachSan/src/giaodien/QuanLyPhongPannel.java
-	}
+
+	}}}
 /////// oidoioi
 	private void btnHuyDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyDatPhongActionPerformed
 		// TODO add your handling code here:
@@ -3162,14 +3178,9 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
 				 tenphongDoi = tenPhong.getText();
 				 
 			}
-		}
+		}		
 		
-//		if (tenphong.equals("") || tenphong == null) {
-//			JOptionPane.showMessageDialog(null, "Vui lòng chọn phòng", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-//			return;
-//		} 
-		
-		DoiPhongDangThue thuePhongFrame = new DoiPhongDangThue(tenphongDoi);
+		DoiPhongDangThue_GUI thuePhongFrame = new DoiPhongDangThue_GUI(tenphongDoi);
 		thuePhongFrame.setVisible(true);
 		// reset checkbox
 		for (int i = 0; i < phongQuanLy.size(); i++) {
@@ -3177,15 +3188,16 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
 			if (cks.isSelected()) {
 				cks.setSelected(false);
 			}
+
+
 		}
-	}// GEN-LAST:event_btnDoiPhongActionPerformed
-=======
-                if (!trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
-                    p.setVisible(false);
-                }
-            }
+	// GEN-LAST:event_btnDoiPhongActionPerformed
+//=======
+              
+        
+            
         }
-    }// GEN-LAST:event_btnFindbyPhoneActionPerformed
+    // GEN-LAST:event_btnFindbyPhoneActionPerformed
 
     private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
         List<String> dsTenPhong = new ArrayList<>();
@@ -3203,7 +3215,7 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Vui lòng chọn phòng", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
->>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397:PTUD_QuanLyKhachSan/src/giaodien/QuanLyPhong_GUI.java
+//>>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397:PTUD_QuanLyKhachSan/src/giaodien/QuanLyPhong_GUI.java
 
         DatPhong_GUI datPhongFrame = new DatPhong_GUI(dsTenPhong);
         datPhongFrame.setVisible(true);
@@ -3217,13 +3229,13 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
 
     }
 
-    private void btnHuyDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyDatPhongActionPerformed
-        new HuyDatPhong_GUI().setVisible(true);
-    }// GEN-LAST:event_btnHuyDatPhongActionPerformed
-
-    private void btnDoiPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDoiPhongActionPerformed
-
-    }// GEN-LAST:event_btnDoiPhongActionPerformed
+//    private void btnHuyDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyDatPhongActionPerformed
+//        new HuyDatPhong_GUI().setVisible(true);
+//    }// GEN-LAST:event_btnHuyDatPhongActionPerformed
+//
+//    private void btnDoiPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDoiPhongActionPerformed
+//
+//    }// GEN-LAST:event_btnDoiPhongActionPerformed
 
     private void btnTraPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnTraPhongActionPerformed
         // Lưu thông tin phòng đã chọn

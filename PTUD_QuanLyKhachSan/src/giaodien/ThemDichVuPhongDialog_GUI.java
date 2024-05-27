@@ -9,10 +9,17 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+import connectDB.ConnectDB;
 import dao.DichVuDao;
 import dao.DichVuPhongDao;
+import dao.KhachHangDao;
+import dao.PhongDao;
+import dao.ThongTinDatThuePhongDao;
 import entity.DichVu;
 import entity.DichVuPhong;
+import entity.KhachHang;
+import entity.Phong;
+import entity.ThongTinDatThuePhong;
 
 /**
  *
@@ -20,26 +27,34 @@ import entity.DichVuPhong;
  */
 public class ThemDichVuPhongDialog_GUI extends javax.swing.JDialog {
 
-<<<<<<< HEAD:PTUD_QuanLyKhachSan/src/giaodien/ThemDichVuPhongDialog.java
+
 	private DichVu dichvu;
 	private DichVuPhongDao dichVuPhongDao;
-=======
+private String soPhongHienTai;
+private Phong phong;
+private PhongDao phongDao;
+private KhachHang khachHang;
+private KhachHangDao khachHangDao;
+private ThongTinDatThuePhong thongTinDatThuePhong;
+private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
     /**
      * Creates new form ThemDichVuPhongDialog
-     */
+     */public  ThemDichVuPhongDialog_GUI(String soPhongHienTai) {
+			this.soPhongHienTai = soPhongHienTai;
+
+			ConnectDB.getInstance().getConnection();
+			initComponents();
+		}
     public ThemDichVuPhongDialog_GUI(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
->>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397:PTUD_QuanLyKhachSan/src/giaodien/ThemDichVuPhongDialog_GUI.java
+
 
 	/**
 	 * Creates new form ThemDichVuPhongDialog
 	 */
-	public ThemDichVuPhongDialog(java.awt.Frame parent, boolean modal) {
-		super(parent, modal);
-		initComponents();
-	}
+
 
 //load dữ liệu
 	public void loadData() {
@@ -227,7 +242,7 @@ public class ThemDichVuPhongDialog_GUI extends javax.swing.JDialog {
 								.addComponent(btnThemDichVu).addComponent(btnThemDichVu1))
 						.addContainerGap()));
 
-<<<<<<< HEAD:PTUD_QuanLyKhachSan/src/giaodien/ThemDichVuPhongDialog.java
+//
 		jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 		jLabel3.setText("Thêm dịch vụ phòng");
 
@@ -270,50 +285,51 @@ public class ThemDichVuPhongDialog_GUI extends javax.swing.JDialog {
 												javax.swing.GroupLayout.DEFAULT_SIZE,
 												javax.swing.GroupLayout.PREFERRED_SIZE)))
 						.addGap(15, 15, 15)));
-=======
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                ThemDichVuPhongDialog_GUI dialog = new ThemDichVuPhongDialog_GUI(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
->>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397:PTUD_QuanLyKhachSan/src/giaodien/ThemDichVuPhongDialog_GUI.java
+		setALL();
+//=======
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the dialog */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                ThemDichVuPhongDialog_GUI dialog = new ThemDichVuPhongDialog_GUI(new javax.swing.JFrame(), true);
+//                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+//                    @Override
+//                    public void windowClosing(java.awt.event.WindowEvent e) {
+//                        System.exit(0);
+//                    }
+//                });
+//                dialog.setVisible(true);
+//            }
+//        });
+    
+//>>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397:PTUD_QuanLyKhachSan/src/giaodien/ThemDichVuPhongDialog_GUI.java
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
@@ -427,16 +443,17 @@ catch (Exception e) {
 				}
 			}
 		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(ThemDichVuPhongDialog.class.getName())
+			java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI.class.getName())
 					.log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(ThemDichVuPhongDialog.class.getName())
+			java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI.class.getName())
 					.log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(ThemDichVuPhongDialog.class.getName())
+			java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI
+					.class.getName())
 					.log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(ThemDichVuPhongDialog.class.getName())
+			java.util.logging.Logger.getLogger(ThemDichVuPhongDialog_GUI.class.getName())
 					.log(java.util.logging.Level.SEVERE, null, ex);
 		}
 		// </editor-fold>
@@ -444,7 +461,7 @@ catch (Exception e) {
 		/* Create and display the dialog */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				ThemDichVuPhongDialog dialog = new ThemDichVuPhongDialog(new javax.swing.JFrame(), true);
+				ThemDichVuPhongDialog_GUI dialog = new ThemDichVuPhongDialog_GUI(new javax.swing.JFrame(), true);
 				dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 					@Override
 					public void windowClosing(java.awt.event.WindowEvent e) {
@@ -470,7 +487,11 @@ catch (Exception e) {
 	private void loadLenBang() {
 		DichVuPhongDao dichVuDao = new DichVuPhongDao();
 		DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
-		ArrayList<DichVuPhong> danhSachDV = dichVuDao.timTatCacDichVuSuDung();
+		phong = new Phong();
+		phongDao = new PhongDao();
+		phong = phongDao.timPhongTheoSoPhong(Integer.parseInt(soPhongHienTai));
+		
+		ArrayList<DichVuPhong> danhSachDV = dichVuDao.timTatCaDichVuPhongTheoMaPhong(phong.getMaPhong());
 		DichVu dichVu = new DichVu();
 		DichVuDao dichVuDao1 = new DichVuDao();
 		for (DichVuPhong dv : danhSachDV) {
@@ -482,7 +503,27 @@ catch (Exception e) {
 
 		}
 	}
-
+   public void setALL() {
+	   txtTenPhongHienTai.setText(soPhongHienTai);
+	    phong = new Phong();
+	    phongDao = new PhongDao();
+	    khachHang = new KhachHang();
+	    khachHangDao = new KhachHangDao();
+	    thongTinDatThuePhong = new ThongTinDatThuePhong();
+	    thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
+	   
+	   int number = Integer.parseInt(soPhongHienTai);
+	   phong = phongDao.timPhongTheoSoPhong(number);
+	   thongTinDatThuePhong = thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong1(phong.getMaPhong());
+	   khachHang = khachHangDao.timKhachHangTheoMa(thongTinDatThuePhong.getMaKhachHang());
+	   
+	   txtTenKhachHang.setText(khachHang.getHoTenKH());
+	   txtMaKhachHang.setText(khachHang.getMaKH());
+	   txtSoDienThoaiKhachHang.setText(khachHang.getSoDT());
+	   txtTenPhongHienTai.setText(phong.getMaPhong());
+	   
+	   
+   }
 	// Variables declaration - do not modify//GEN-BEGIN:variables
 	private javax.swing.JButton btnThemDichVu;
 	private javax.swing.JButton btnThemDichVu1;

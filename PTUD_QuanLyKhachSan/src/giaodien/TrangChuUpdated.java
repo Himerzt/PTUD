@@ -66,11 +66,11 @@ public class TrangChuUpdated extends javax.swing.JFrame {
 		}
         
 		loadDanhSachPhong();
-        pnedUngDung.addTab("Quản lý phòng", new QuanLyPhongPannel());
-        pnedUngDung.addTab("Quản lý nhân viên", new NhanVienPannel());
-        pnedUngDung.addTab("Quản lý dịch vụ", new DichVuPannel());
-        pnedUngDung.addTab("Quản lý khuyến mãi", new KhuyenMaiPannel());
-        pnedUngDung.addTab("Quản lý khách hàng", new KhachHangPannel());
+        pnedUngDung.addTab("Quản lý phòng", new QuanLyPhong_GUI());
+        pnedUngDung.addTab("Quản lý nhân viên", new QuanLyPhong_GUI());
+        pnedUngDung.addTab("Quản lý dịch vụ", new DichVu_GUI());
+        pnedUngDung.addTab("Quản lý khuyến mãi", new KhuyenMai_GUI());
+        pnedUngDung.addTab("Quản lý khách hàng", new KhachHang_GUI());
         
         Menu.setEvent(new MenuEvent() {
             @Override

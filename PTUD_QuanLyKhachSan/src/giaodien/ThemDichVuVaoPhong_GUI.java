@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+import connectDB.ConnectDB;
 import dao.DichVuDao;
 import dao.DichVuPhongDao;
 import entity.DichVuPhong;
@@ -22,10 +23,17 @@ public class ThemDichVuVaoPhong_GUI extends javax.swing.JFrame {
 	private DichVuPhongDao dsDVPhong;
 	private DichVuDao dsDV;
 	private TableModel tableModel;
-
+private String soPhongHienTai;
 	/**
 	 * Creates new form ThemDichVuVaoPhong
-	 */
+	 * @return 
+	 */public  ThemDichVuVaoPhong_GUI(String soPhongHienTai) {
+			this.soPhongHienTai = soPhongHienTai;
+
+			ConnectDB.getInstance().getConnection();
+			initComponents();
+		}
+	 
 	public ThemDichVuVaoPhong_GUI() {
 		initComponents();
 	}
@@ -277,71 +285,15 @@ public class ThemDichVuVaoPhong_GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD:PTUD_QuanLyKhachSan/src/giaodien/ThemDichVuVaoPhong.java
-    private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDichVuActionPerformed
-    	  // TODO add your handling code here:
-    	String tenDV = comboBoxDichVu.getSelectedItem().toString();
-    	String madv = "";
-//		if (tenDV.equals("Ăn sáng")) {
-//			// Thêm dịch vụ ăn sáng vào phòng
-//			madv = "DV002";
-//			} else if (tenDV.equals("Ăn trưa")) {
-//				madv = "DV002";
-//		}
-//		else if (tenDV.equals("Ăn chiều")) {
-//			madv = "DV002";
-//		}
-//		else if (tenDV.equals("Giặt quần áo")) {
-//				madv = "DV003";
-//		}
-//		else if (tenDV.equals("Đưa đón khách")) {
-//			madv = "DV013";
-//		}
-//		
-//		else if (tenDV.equals("Thêm giường")) {
-//    	            madv = "DV010";
-//        }
-//        else if (tenDV.equals("Thêm gối")) {
-//            madv = "DV012";
-//        }
-//        else if (tenDV.equals("Thêm chăn")) {
-//            madv = "DV011";
-//        }
-//        else if(tenDV.equals("Phòng tập thể dục")) {
-//            madv = "DV009";
-//        }
-        String maPhong = txtTenPhongHienTai.getText();
-        
-=======
+	
+
 	private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemDichVuActionPerformed
 		// TODO add your handling code here:
 		String tenDV = comboBoxDichVu.getSelectedItem().toString();
 		String madv = "";
-		if (tenDV.equals("Ăn sáng")) {
-			// Thêm dịch vụ ăn sáng vào phòng
-			madv = "DV002";
-		} else if (tenDV.equals("Ăn trưa")) {
-			madv = "DV002";
-		} else if (tenDV.equals("Ăn chiều")) {
-			madv = "DV002";
-		} else if (tenDV.equals("Giặt quần áo")) {
-			madv = "DV003";
-		} else if (tenDV.equals("Đưa đón khách")) {
-			madv = "DV013";
-		}
 
-		else if (tenDV.equals("Thêm giường")) {
-			madv = "DV010";
-		} else if (tenDV.equals("Thêm gối")) {
-			madv = "DV012";
-		} else if (tenDV.equals("Thêm chăn")) {
-			madv = "DV011";
-		} else if (tenDV.equals("Phòng tập thể dục")) {
-			madv = "DV009";
-		}
 		String maPhong = txtTenPhongHienTai.getText();
 
->>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397:PTUD_QuanLyKhachSan/src/giaodien/ThemDichVuVaoPhong_GUI.java
 		int soluong = Integer.parseInt(txtSoLuong.getText());
 
 		int soluongDV = dsDVPhong.demSoLuongDichVuSuDungTheoMaPhong(maPhong);
@@ -388,17 +340,17 @@ public class ThemDichVuVaoPhong_GUI extends javax.swing.JFrame {
 				}
 			}
 		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(ThemDichVuVaoPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE,
-					null, ex);
+			java.util.logging.Logger.getLogger(ThemDichVuVaoPhong_GUI.class.getName())
+					.log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(ThemDichVuVaoPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE,
-					null, ex);
+			java.util.logging.Logger.getLogger(ThemDichVuVaoPhong_GUI.class.getName())
+					.log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(ThemDichVuVaoPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE,
-					null, ex);
+			java.util.logging.Logger.getLogger(ThemDichVuVaoPhong_GUI.class.getName())
+					.log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(ThemDichVuVaoPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE,
-					null, ex);
+			java.util.logging.Logger.getLogger(ThemDichVuVaoPhong_GUI.class.getName())
+					.log(java.util.logging.Level.SEVERE, null, ex);
 		}
 		// </editor-fold>
 		// </editor-fold>
@@ -411,27 +363,32 @@ public class ThemDichVuVaoPhong_GUI extends javax.swing.JFrame {
 		});
 	}
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnThemDichVu;
-    private javax.swing.JButton btnThemDichVu1;
-    private javax.swing.JComboBox<String> comboBoxDichVu;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tableDV;
-    private giaodien.CustomClass.TextFieldShadow txtMaKhachHang;
-    private giaodien.CustomClass.TextFieldShadow txtSoDienThoaiKhachHang;
-    private giaodien.CustomClass.TextFieldShadow txtSoLuong;
-    private giaodien.CustomClass.TextFieldShadow txtTenKhachHang;
-    private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai;
-    // End of variables declaration//GEN-END:variables
-}
+	// Variables declaration - do not modify//GEN-BEGIN:variables
+	private javax.swing.JButton btnThemDichVu;
+	private javax.swing.JButton btnThemDichVu1;
+	private javax.swing.JComboBox<String> comboBoxDichVu;
+	private javax.swing.JLabel jLabel1;
+	private javax.swing.JLabel jLabel17;
+	private javax.swing.JLabel jLabel18;
+	private javax.swing.JLabel jLabel19;
+	private javax.swing.JLabel jLabel2;
+	private javax.swing.JLabel jLabel21;
+	private javax.swing.JLabel jLabel3;
+	private javax.swing.JLabel jLabel4;
+	private javax.swing.JPanel jPanel1;
+	private javax.swing.JPanel jPanel2;
+	private javax.swing.JPanel jPanel3;
+	private javax.swing.JScrollPane jScrollPane1;
+	private javax.swing.JTable tableDV;
+	private giaodien.CustomClass.TextFieldShadow txtMaKhachHang;
+	private giaodien.CustomClass.TextFieldShadow txtSoDienThoaiKhachHang;
+	private giaodien.CustomClass.TextFieldShadow txtSoLuong;
+	private giaodien.CustomClass.TextFieldShadow txtTenKhachHang;
+	private giaodien.CustomClass.TextFieldShadow txtTenPhongHienTai;
+	// End of variables declaration//GEN-END:variables
+	
+	
+	public void  setALL()
+{
+		txtTenPhongHienTai.setText(soPhongHienTai);
+}}

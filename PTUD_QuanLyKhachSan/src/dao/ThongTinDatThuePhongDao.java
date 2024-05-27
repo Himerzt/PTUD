@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -579,11 +580,11 @@ public class ThongTinDatThuePhongDao {
 		}
 		return n > 0;
 	}
-<<<<<<< HEAD
+
 	
 
 	// cập nhật ngày trả phòng thông tin truyền vào là mã ttdtp và ngày trả phòng
-	public boolean capNhatNgayTraPhong(String maTTDTP, LocalDate ngayTraPhong) {
+	public boolean capNhatNgayTraPhong(ThongTinDatThuePhong maTTDTP, LocalDate ngayTraPhong) {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
@@ -599,12 +600,7 @@ public class ThongTinDatThuePhongDao {
 		return n > 0;
 	}
 	
-	public static void main(String[] args) {
-		// test tìm mã phòng
-		ThongTinDatThuePhongDao dao = new ThongTinDatThuePhongDao();
-		ThongTinDatThuePhong tt = dao.timThongTinDatThuePhongTheoMaPhong("TC104");
-		System.out.println(tt);
-	}
+	
 	
 	
 	
@@ -624,8 +620,32 @@ public class ThongTinDatThuePhongDao {
 		return n > 0;
 	}
 	
-=======
+// tìm thongtindatthuephong theo mã phòng
+	public ThongTinDatThuePhong timThongTinDatThuePhongTheoMaPhong1(String maPhong) {
+        ThongTinDatThuePhong tt = new ThongTinDatThuePhong();
+        try {
+            Connection con = ConnectDB.getInstance().getConnection();
+            String sql = "Select * from ThongTinDatThuePhong where maPhong = '" + maPhong + "'";
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                String maTTDTP = rs.getString(1);
+                String maKhachHang = rs.getString(2);
+                LocalDateTime ngayDatPhong = rs.getTimestamp(4).toLocalDateTime();
+                LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
+                LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
+                String maLoaiThue = rs.getString(7);
+                double tienDaCoc = rs.getDouble(8);
+                String trangThai = rs.getString(9);
+                tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
+                        maLoaiThue, tienDaCoc, trangThai);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return tt;
+    }
 
->>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397
+
 	
 }

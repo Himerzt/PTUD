@@ -294,7 +294,7 @@ public class PhongDao {
 	}
 	
 	//cập nhật trạng thái phòng
-	public boolean capNhatTrangThaiPhong(String maPhong, String trangThai) {
+	public boolean capNhatTrangThaiPhong1(String maPhong, String trangThai) {
 		try {
 			Connection con = ConnectDB.getConnection();
 			PreparedStatement stmt = con.prepareStatement("update Phong set trangThai = ? where maPhong = ?");

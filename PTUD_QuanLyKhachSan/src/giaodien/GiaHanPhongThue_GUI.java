@@ -412,7 +412,7 @@ public class GiaHanPhongThue_GUI extends javax.swing.JDialog {
 		
 		
 		 ttdtpDao = new ThongTinDatThuePhongDao();
-		 String maTTDTP = ttdtpDao.timThongTinDatThuePhongTheoMaPhong(maPhong).getMaTTDTP();
+	ThongTinDatThuePhong maTTDTP = ttdtpDao.timThongTinDatThuePhongTheoMaPhong1(maPhong);
 		    ttdtpDao.capNhatNgayTraPhong(maTTDTP, ngaygianhan);
 		
     }//GEN-LAST:event_btnGiaHanActionPerformed
@@ -511,7 +511,7 @@ public class GiaHanPhongThue_GUI extends javax.swing.JDialog {
 		
 		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
 		;  
-		ThongTinDatThuePhong ttdtp = thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong(txtMaPhong.getText());
+		ThongTinDatThuePhong ttdtp = (ThongTinDatThuePhong) thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong1(txtMaPhong.getText());
 		KhachHang kh = khachHangDao.timKhachHangTheoMa(ttdtp.getMaKhachHang());
 		
 		txtTenKH.setText(kh.getHoTenKH());

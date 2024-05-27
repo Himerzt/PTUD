@@ -158,11 +158,9 @@ public class DichVuPhongDao {
 	public DichVu timTheoMaDichVu(String maDV) {
 		try {
 			Connection con = ConnectDB.getConnection();
-<<<<<<< HEAD
+
 			String sql = "Select * from DichVu where madichvu = '" + maDV + "'";
-=======
-			String sql = "Select * from DichVu where maDV = '" + maDV + "'";
->>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397
+
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 			if (rs.next()) {
@@ -223,8 +221,7 @@ public class DichVuPhongDao {
 		return count;
 	}
 
-<<<<<<< HEAD
-=======
+
 	// thêm dịch vụ phòng
 	public boolean themDichVuPhongTTK(List<DichVuPhong> dsDVP) {
 		try {
@@ -244,7 +241,7 @@ public class DichVuPhongDao {
 		}
 	}
 	
->>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397
+
 	// thêm dịch vụ phòng
 	public boolean themDichVuPhong(DichVuPhong dvp) {
 		try {
@@ -285,18 +282,16 @@ public class DichVuPhongDao {
 			ConnectDB.getInstance();
 			Connection con = ConnectDB.getConnection();
 			Statement stmt = con.createStatement();
-<<<<<<< HEAD
+
 			String sql = "delete from DichVuSuDung where maPhong = '" + maPhong + "' and maDichVu = '" + maDV + "'";
-=======
-			String sql = "delete from DichVuSuDung where maPhong = '" + maPhong + "' and maDV = '" + maDV + "'";
->>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397
+
 			stmt.executeUpdate(sql);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
-<<<<<<< HEAD
+
 
 	}
 
@@ -400,8 +395,4 @@ public class DichVuPhongDao {
 
 
 }
-=======
-	}
 
-}
->>>>>>> b01a81a34a4f8c5b67c852476876f4be707bd397
