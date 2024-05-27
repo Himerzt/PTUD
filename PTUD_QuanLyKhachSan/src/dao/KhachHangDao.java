@@ -266,4 +266,31 @@ public class KhachHangDao {
 		}
 		return dsKH;
 	}
+	
+	// tìm khách hàng theo mã khách hàng
+	public KhachHang timKhachHangTheoMa(String maKH) {
+		KhachHang kh = null;
+		try {
+			Connection con = ConnectDB.getInstance().getConnection();
+			String sql = "Select * from KhachHang where maKH = '" + maKH + "'";
+			Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			if (rs.next()) {
+				String hoTen = rs.getString(2);
+				String gioiTinh = rs.getString(3);
+				LocalDate ngaySinh = rs.getDate(4).toLocalDate();
+				String soDT = rs.getString(5);
+				String CCCD_Visa = rs.getString(6);
+				double chiTieu = rs.getFloat(7);
+				String maHangThanhVien = rs.getString(8);
+				String quocTich = rs.getString(9);
+				kh = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, soDT, CCCD_Visa, chiTieu, maHangThanhVien,
+						quocTich);
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+			// Đóng kết nối
+		}
+		return kh;
+	}
 }

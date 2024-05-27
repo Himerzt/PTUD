@@ -23,6 +23,15 @@ public class DichVuPhong {
 		this.soLuong = soLuong;
 	}
 	
+	
+	
+	public DichVuPhong(String maPhong, String maDichVu, int soLuong) {
+		super();
+		this.maPhong = maPhong;
+		this.maDichVu = maDichVu;
+		this.soLuong = soLuong;
+	}
+
 	public String getMaDichVu() {
 		return maDichVu;
 	}

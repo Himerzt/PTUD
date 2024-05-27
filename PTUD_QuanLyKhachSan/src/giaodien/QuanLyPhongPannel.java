@@ -28,6 +28,7 @@ import entity.Phong;
  */
 public class QuanLyPhongPannel extends javax.swing.JPanel {
 
+	private String tenphong;
 	/**
 	 * Creates new form QuanLyPhong2
 	 */
@@ -3089,13 +3090,40 @@ public class QuanLyPhongPannel extends javax.swing.JPanel {
 		}
 
 	}
-
+/////// oidoioi
 	private void btnHuyDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyDatPhongActionPerformed
 		// TODO add your handling code here:
 	}// GEN-LAST:event_btnHuyDatPhongActionPerformed
 
 	private void btnDoiPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDoiPhongActionPerformed
 		// TODO add your handling code here:
+		
+		JCheckBox cks;
+		JLabel tenPhong;
+        String tenphongDoi = "";
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			cks = checkBoxPhongQuanLy.get(i);
+			tenPhong = tenPhongQuanLy.get(i);
+			if (cks.isSelected()) {
+				 tenphongDoi = tenPhong.getText();
+				 
+			}
+		}
+		
+//		if (tenphong.equals("") || tenphong == null) {
+//			JOptionPane.showMessageDialog(null, "Vui lòng chọn phòng", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+//			return;
+//		} 
+		
+		DoiPhongDangThue thuePhongFrame = new DoiPhongDangThue(tenphongDoi);
+		thuePhongFrame.setVisible(true);
+		// reset checkbox
+		for (int i = 0; i < phongQuanLy.size(); i++) {
+			cks = checkBoxPhongQuanLy.get(i);
+			if (cks.isSelected()) {
+				cks.setSelected(false);
+			}
+		}
 	}// GEN-LAST:event_btnDoiPhongActionPerformed
 
 	private void btnTraPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnTraPhongActionPerformed

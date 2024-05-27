@@ -155,6 +155,11 @@ public class ThemDichVuPhongDialog extends javax.swing.JDialog {
 				return canEdit[columnIndex];
 			}
 		});
+
+		// load dữ liệu vào bảng
+
+		loadLenBang();
+
 		tableDV.setRowHeight(40);
 		jScrollPane1.setViewportView(tableDV);
 
@@ -274,45 +279,51 @@ public class ThemDichVuPhongDialog extends javax.swing.JDialog {
 
 	private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemDichVuActionPerformed
 		// TODO add your handling code here:
+try {
 	
+
 		dichVuPhongDao1 = new DichVuPhongDao();
 		if (txtSoLuong.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Vui lòng nhập số lượng dịch vụ");
 			return;
 		}
 
-		// load tenDV vào comboBox
-
 		String maDV = null;
 
 		String tenDV = (String) comboBoxDichVu.getSelectedItem();
+		maDV = tenDV.substring(0, 5);
 		int soluong = txtSoLuong.getText().isEmpty() ? 0 : Integer.parseInt(txtSoLuong.getText());
-		//maDV = dichVuPhongDao1.timMaDichVuTheoTen(tenDV);
+
 		String phong = txtTenPhongHienTai.getText();
 
 		DichVuDao dichvuDao = new DichVuDao();
-		double gia = dichvuDao.timDichVuTheoTen1(tenDV).getGiaDV();
+		double gia = dichvuDao.timDichVuTheoMaDV(maDV).getGiaDV();
 
 		double giaTong = gia * soluong;
 
-		// thêm dịch vụ vào bảng
+		
 		DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
 		model.addRow(new Object[] { model.getRowCount() + 1, tenDV, soluong, phong, giaTong });
 
 		String maPhong = txtTenPhongHienTai.getText();
 
-		// đổi int qua String
+	
 
-		String maDVPhong = "DV" + maPhong;
-		DichVuPhong dvp = new DichVuPhong(maDVPhong, maPhong, maDV, soluong);
+		DichVuPhong dvp = new DichVuPhong(maPhong, maDV, soluong);
 
 		dichVuPhongDao1.themDichVuPhong(dvp);
 
-//		dvp = new DichVuPhong(maDV, phong, maDV, soluong);
+		JOptionPane.showMessageDialog(null, "Thêm dịch vụ thành công");}
+catch (Exception e) {
+	// TODO: handle exception
+	e.printStackTrace();
+	
+	JOptionPane.showMessageDialog(null, "Thêm dịch vụ thất bại");
+}
+}// GEN-LAST:event_btnThemDichVuActionPerformed
+	
 
-	}
 
-	// GEN-LAST:event_btnThtemDichVuActionPerformed
 
 	private void btnThemDichVu1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemDichVu1ActionPerformed
 		// TODO add your handling code here
@@ -391,7 +402,6 @@ public class ThemDichVuPhongDialog extends javax.swing.JDialog {
 
 	}
 
-
 	private String[] loadDanhSachDichVu() {
 		DichVuDao dichVuDao = new DichVuDao();
 		ArrayList<DichVu> danhSachDV = dichVuDao.timTatCaDichVu();
@@ -401,6 +411,23 @@ public class ThemDichVuPhongDialog extends javax.swing.JDialog {
 		}
 		return tenDV;
 	}
+
+	private void loadLenBang() {
+		DichVuPhongDao dichVuDao = new DichVuPhongDao();
+		DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
+		ArrayList<DichVuPhong> danhSachDV = dichVuDao.timTatCacDichVuSuDung();
+		DichVu dichVu = new DichVu();
+		DichVuDao dichVuDao1 = new DichVuDao();
+		for (DichVuPhong dv : danhSachDV) {
+			double gia = dichVuDao1.timDichVuTheoMaDV(dv.getMaDichVu()).getGiaDV();
+			String ten = dichVuDao1.timDichVuTheoMaDV(dv.getMaDichVu()).getTenDV();
+			double giatong = gia * dv.getSoLuong();
+
+			model.addRow(new Object[] { model.getRowCount() + 1, ten, dv.getSoLuong(), dv.getMaPhong(), giatong });
+
+		}
+	}
+
 	// Variables declaration - do not modify//GEN-BEGIN:variables
 	private javax.swing.JButton btnThemDichVu;
 	private javax.swing.JButton btnThemDichVu1;

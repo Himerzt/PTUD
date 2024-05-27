@@ -48,6 +48,8 @@ public class GiaHanPhongThue extends javax.swing.JDialog {
 	private String[] dsPhongDat;
 	List<String> dsTenPhong;
 	private ThongTinDatThuePhongDao ttdtpDao;
+	private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
+	private KhachHangDao khachHangDao;
 
 	/**
 	 * Creates new form DatPhong
@@ -366,6 +368,8 @@ public class GiaHanPhongThue extends javax.swing.JDialog {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
+        // setall
+        setALL();
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -385,6 +389,8 @@ public class GiaHanPhongThue extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+	
+
 
     private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         this.hide();
@@ -399,7 +405,7 @@ public class GiaHanPhongThue extends javax.swing.JDialog {
     	LocalDate ngaygianhan = LocalDate.parse(txtCheckOut1.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 	
 		
-		if (ngaygianhan.isBefore(ngayTra)) {
+		if (ngaygianhan.isBefore(ngayTra) || ngaygianhan.isBefore(ngayNhan)) {
 			JOptionPane.showMessageDialog(null, "Ngày gia hạn không được nhỏ hơn ngày trả phòng");
 			return;
 		}
@@ -499,6 +505,21 @@ public class GiaHanPhongThue extends javax.swing.JDialog {
 			}
 		});
 
+	}
+	
+	public void setALL() {
+		
+		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
+		;  
+		ThongTinDatThuePhong ttdtp = thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong(txtMaPhong.getText());
+		KhachHang kh = khachHangDao.timKhachHangTheoMa(ttdtp.getMaKhachHang());
+		
+		txtTenKH.setText(kh.getHoTenKH());
+		txtCCCD.setText(kh.getCccd_passport());
+		txtNgayNhan.setText(ttdtp.getNgayNhanPhong().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		txtNgayTra.setText(ttdtp.getNgayTraPhong().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		
+		
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
