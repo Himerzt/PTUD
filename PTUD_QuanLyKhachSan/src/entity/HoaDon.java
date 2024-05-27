@@ -1,71 +1,80 @@
 package entity;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
-
 
 public class HoaDon {
-	private String maHoaDon;
-	private String maNhanVien;
-	private String maKhachHang;
-	private LocalDateTime ngayLap;
-	private final double VAT = 0.1;
+    private String maHD;
+    private String maNV;
+    private String maKH;
+    private LocalDateTime ngayLapHD;
+    private double tongTien;
+    private double thueVAT;
 
-	public String getMaHoaDon() {
-		return maHoaDon;
-	}
+    public String getMaHD() {
+        return maHD;
+    }
 
-	public void setMaHoaDon(String maHoaDon) {
-		this.maHoaDon = maHoaDon;
-	}
+    public void setMaHD(String maHD) {
+        this.maHD = maHD;
+    }
 
-	public String getMaNhanVien() {
-		return maNhanVien;
-	}
+    public String getMaNV() {
+        return maNV;
+    }
 
-	public void setMaNhanVien(String maNhanVien) {
-		this.maNhanVien = maNhanVien;
-	}
+    public void setMaNV(String maNV) {
+        this.maNV = maNV;
+    }
 
-	public String getMaKhachHang() {
-		return maKhachHang;
-	}
+    public String getMaKH() {
+        return maKH;
+    }
 
-	public void setMaKhachHang(String maKhachHang) {
-		this.maKhachHang = maKhachHang;
-	}
+    public void setMaKH(String maKH) {
+        this.maKH = maKH;
+    }
 
-	public LocalDateTime getNgayLap() {
-		return ngayLap;
-	}
+    public LocalDateTime getNgayLapHD() {
+        return ngayLapHD;
+    }
 
-	public void setNgayLap(LocalDateTime ngayLap) {
-		this.ngayLap = ngayLap;
-	}
+    public void setNgayLapHD(LocalDateTime ngayLapHD) {
+        this.ngayLapHD = ngayLapHD;
+    }
 
-	public double getVAT() {
-		return VAT;
-	}
+    public double getTongTien() {
+        return tongTien;
+    }
 
-	public HoaDon() {
-		super();
-	}
+    public void setTongTien(double tongTien) {
+        this.tongTien = tongTien;
+    }
 
-	@Override
-	public String toString() {
-		return "HoaDon [maHoaDon=" + maHoaDon + ", maNhanVien=" + maNhanVien + ", maKhachHang=" + maKhachHang
-				+ ", ngayLap=" + ngayLap +  ", VAT=" + VAT + "]";
-	}
+    public double getThueVAT() {
+        return thueVAT;
+    }
 
-	public HoaDon(String maHoaDon, String maNhanVien, String maKhachHang, LocalDateTime ngayLap) {
-		super();
-		this.maHoaDon = maHoaDon;
-		this.maNhanVien = maNhanVien;
-		this.maKhachHang = maKhachHang;
-		this.ngayLap = ngayLap;
-	}
+    public void setThueVAT(double thueVAT) {
+        this.thueVAT = thueVAT;
+    }
 
-	
-	
+    public HoaDon() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        return "HoaDon [maHD=" + maHD + ", maNV=" + maNV + ", maKH=" + maKH
+                + ", ngayLapHD=" + ngayLapHD + ", tongTien=" + tongTien + ", thueVAT=" + thueVAT + "]";
+    }
+
+    public HoaDon(String maHD, String maNV, String maKH, LocalDateTime ngayLapHD) {
+        super();
+        this.maHD = maHD;
+        this.maNV = maNV;
+        this.maKH = maKH;
+        this.ngayLapHD = ngayLapHD;
+        this.tongTien = tongTien;
+        this.thueVAT = thueVAT;
+    }
 }

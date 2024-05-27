@@ -86,7 +86,7 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 		Menu.setEvent(new MenuEvent() {
 			@Override
 			public void selected(int index, int subIndex) {
-				if (index == 6) {
+				if (index == 8) {
 					System.exit(0);
 
 				}
