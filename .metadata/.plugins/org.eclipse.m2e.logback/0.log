@@ -2500,3 +2500,4 @@ org.eclipse.core.runtime.CoreException: Launch configuration DangNhap_Gui refere
 >>>>>>> 0590712f3f4b9788d00f274b742f885013eaab6e
 2024-05-28 00:02:21,736 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2024-05-28 00:37:31,493 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-05-28 02:38:09,656 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

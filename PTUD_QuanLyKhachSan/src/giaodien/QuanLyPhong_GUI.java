@@ -29,13 +29,21 @@ import java.awt.Dimension;
  * @author Huynguyen
  */
 public class QuanLyPhong_GUI extends javax.swing.JPanel {
+	private String tenphong;
 	/**
 	 * Creates new form QuanLyPhong2
 	 */
-	private NhanVien nv;
-	public QuanLyPhong_GUI(NhanVien n) {
+	public QuanLyPhong_GUI() {
 		initComponents();
-		this.nv = n;
+	}
+
+	private NhanVien nv;
+    /**
+     * Creates new form QuanLyPhong2
+     */
+    public QuanLyPhong_GUI(NhanVien n) {
+        initComponents();
+        this.nv = n;
 //		Gán thời gian cho Jlabel
 		datetime();
 		times();

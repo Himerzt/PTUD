@@ -443,139 +443,6 @@ public class HoaDonDao {
 		return tienCoc;
 	}
 
-	public static void main(String[] args) {
-		// ttesst tìm tên khách hàng với mã hóa đon HD26052024005
-		HoaDonDao hoaDonDao = new HoaDonDao();
-		HoaDon hd = new HoaDon();
-		hd.setMaHoaDon("HD28052024005");
-		hd.setMaNhanVien("NV001");
-		hd.setMaKhachHang("KH004");
-		hd.setNgayLap(LocalDateTime.now());
-		hd.setMaLSDP(null);
-		hd.setMaKM("KM0001");
-		hd.setTongTien(1000000);
-		boolean check = hoaDonDao.themHoaDon(hd);
-		if (check) {
-			System.out.println("Thêm thành công");
-		} else {
-			System.out.println("Thêm thất bại");
-		}
-		
-
-	}
-
-//
-//    // Tìm hóa đơn theo mã
-//    public HoaDon timHoaDonTheoMa(String maHoaDon) {
-//        HoaDon hd = null;
-//        try {
-//            Connection con = ConnectDB.getInstance().getConnection();
-//            String sql = "SELECT * FROM HoaDon WHERE MaHD = ?";
-//            PreparedStatement pstmt = con.prepareStatement(sql);
-//            pstmt.setString(1, maHoaDon);
-//            ResultSet rs = pstmt.executeQuery();
-//            while (rs.next()) {
-//                String maHD = rs.getString("MaHD");
-//                String maNV = rs.getString("MaNV");
-//                String maKH = rs.getString("MaKH");
-//                LocalDateTime ngayLap = rs.getTimestamp("NgayLapHD").toLocalDateTime();
-//                double tongTien = rs.getDouble("TongTien");
-//                double thueVAT = rs.getDouble("ThueVAT");
-//
-//                hd = new HoaDon(maHD, maNV, maKH, ngayLap);
-//            }
-//            rs.close();
-//            pstmt.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return hd;
-//    }
-
-//    // Tìm hóa đơn theo mã nhân viên
-//    public List<HoaDon> timHoaDonTheoMaNhanVien(String maNhanVien) {
-//        List<HoaDon> dsHoaDon = new ArrayList<>();
-//        try {
-//            Connection con = ConnectDB.getInstance().getConnection();
-//            String sql = "SELECT * FROM HoaDon WHERE MaNV = ?";
-//            PreparedStatement pstmt = con.prepareStatement(sql);
-//            pstmt.setString(1, maNhanVien);
-//            ResultSet rs = pstmt.executeQuery();
-//            while (rs.next()) {
-//                String maHD = rs.getString("MaHD");
-//                String maNV = rs.getString("MaNV");
-//                String maKH = rs.getString("MaKH");
-//                LocalDateTime ngayLap = rs.getTimestamp("NgayLapHD").toLocalDateTime();
-//                double tongTien = rs.getDouble("TongTien");
-//                double thueVAT = rs.getDouble("ThueVAT");
-//
-//                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLap);
-//                dsHoaDon.add(hoaDon);
-//            }
-//            rs.close();
-//            pstmt.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return dsHoaDon;
-//    }
-
-	// Tìm hóa đơn theo mã khách hàng
-//    public List<HoaDon> timHoaDonTheoMaKhachHang(String maKhachHang) {
-//        List<HoaDon> dsHoaDon = new ArrayList<>();
-//        try {
-//            Connection con = ConnectDB.getInstance().getConnection();
-//            String sql = "SELECT * FROM HoaDon WHERE MaKH = ?";
-//            PreparedStatement pstmt = con.prepareStatement(sql);
-//            pstmt.setString(1, maKhachHang);
-//            ResultSet rs = pstmt.executeQuery();
-//            while (rs.next()) {
-//                String maHD = rs.getString("MaHD");
-//                String maNV = rs.getString("MaNV");
-//                String maKH = rs.getString("MaKH");
-//                LocalDateTime ngayLap = rs.getTimestamp("NgayLapHD").toLocalDateTime();
-//                double tongTien = rs.getDouble("TongTien");
-//                double thueVAT = rs.getDouble("ThueVAT");
-//
-//                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLap);
-//                dsHoaDon.add(hoaDon);
-//            }
-//            rs.close();
-//            pstmt.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return dsHoaDon;
-//    }
-
-	// Tìm hóa đơn theo ngày lập
-//    public List<HoaDon> timHoaDonTheoNgayLap(LocalDate ngayLap) {
-//        List<HoaDon> dsHoaDon = new ArrayList<>();
-//        try {
-//            Connection con = ConnectDB.getInstance().getConnection();
-//            String sql = "SELECT * FROM HoaDon WHERE NgayLapHD = ?";
-//            PreparedStatement pstmt = con.prepareStatement(sql);
-//            pstmt.setTimestamp(1, Timestamp.valueOf(ngayLap.atStartOfDay()));
-//            ResultSet rs = pstmt.executeQuery();
-//            while (rs.next()) {
-//                String maHD = rs.getString("MaHD");
-//                String maNV = rs.getString("MaNV");
-//                String maKH = rs.getString("MaKH");
-//                LocalDateTime ngayLapHD = rs.getTimestamp("NgayLapHD").toLocalDateTime();
-//                double tongTien = rs.getDouble("TongTien");
-//                double thueVAT = rs.getDouble("ThueVAT");
-//
-//                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLapHD);
-//                dsHoaDon.add(hoaDon);
-//            }
-//            rs.close();
-//            pstmt.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return dsHoaDon;
-//    }
-
 	// Đếm số hóa đơn trong ngày
 	public int demSoHoaDonTrongNgay(LocalDate ngay) {
 		ConnectDB.getInstance();
@@ -768,5 +635,25 @@ public class HoaDonDao {
 
 		return danhSachNam;
 	}
+	public static void main(String[] args) {
+		// ttesst tìm tên khách hàng với mã hóa đon HD26052024005
+		HoaDonDao hoaDonDao = new HoaDonDao();
+		HoaDon hd = new HoaDon();
+		hd.setMaHoaDon("HD28052024222");
+		hd.setMaNhanVien("NV001");
+		hd.setMaKhachHang("KH004");
+		hd.setNgayLap(LocalDateTime.now());
+		hd.setMaLSDP(null);
+		hd.setMaKM("KM0001");
+		hd.setTongTien(1000000);
+		boolean check = hoaDonDao.themHoaDon(hd);
+		if (check) {
+			System.out.println("Thêm thành công");
+		} else {
+			System.out.println("Thêm thất bại");
+		}
+		
 
+	}
+	
 }
