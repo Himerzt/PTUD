@@ -81,12 +81,12 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 		loadDanhSachPhong();
 		pnedUngDung.addTab("Quản lý phòng", new QuanLyPhong_GUI(nhanVien));
 		pnedUngDung.addTab("Quản lý nhân viên", new DanhSachNhanVien_GUI());
-//		pnedUngDung.addTab("Quản lý dịch vụ", new DichVu_GUI());
-//		pnedUngDung.addTab("Quản lý khuyến mãi", new KhuyenMai_GUI());
+		pnedUngDung.addTab("Quản lý dịch vụ", new DichVu_GUI());
+		pnedUngDung.addTab("Quản lý khuyến mãi", new KhuyenMai_GUI());
 		pnedUngDung.addTab("Quản lý khách hàng", new KhachHang_GUI());
 		pnedUngDung.addTab("Quản lý hóa đơn", new DanhSachHoaDon_GUI());
 		pnedUngDung.addTab("Quản lý thống kê", new ThongKe_GUI());
-//		pnedUngDung.addTab("Quản lý phòng thuê", new QuanLyPhongThue_GUI());
+		pnedUngDung.addTab("Quản lý phòng thuê", new QuanLyPhongThue_GUI());
 
 		Menu.setEvent(new MenuEvent() {
 			@Override
@@ -95,8 +95,6 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 					System.exit(0);
 
 				}
-				
-
 				if (index == 0) {
 					pnedUngDung.setSelectedIndex(0);
 				}
@@ -109,14 +107,12 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 						pnedUngDung.setSelectedIndex(8);
 					}
 				}
-
 				if (index == 2) {
 					pnedUngDung.setSelectedIndex(2);
 				}
 				if (index == 3) {
 					pnedUngDung.setSelectedIndex(3);
 				}
-
 				if (index == 4) {
 					pnedUngDung.setSelectedIndex(4);
 				}

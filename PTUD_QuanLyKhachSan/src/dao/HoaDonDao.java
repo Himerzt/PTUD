@@ -446,20 +446,21 @@ public class HoaDonDao {
 	public static void main(String[] args) {
 		// ttesst tìm tên khách hàng với mã hóa đon HD26052024005
 		HoaDonDao hoaDonDao = new HoaDonDao();
-		String tenKhachHang = hoaDonDao.layTenNhanVienTuMaHoaDon("HD27052024001");
-		System.out.println(tenKhachHang);
-//		ArrayList<String> dsNgayDaatNhanTra = hoaDonDao.layNgayDatNhanTratuMaHoaDon("HD27052024001");
-//		System.out.println(dsNgayDaatNhanTra);
-//		System.out.println(tenKhachHang);
-//		// test tìm dịch vụ
-//		ArrayList<DichVuPhong> dsDichVuPhong = hoaDonDao.layDichPhongSuDung("HD27052024001");
-//		for (DichVuPhong dichVuPhong : dsDichVuPhong) {
-//			System.out.println(dichVuPhong.getMaDichVu() + " " + dichVuPhong.getMaDichVuSuDung() + " "
-//					+ dichVuPhong.getMaPhong() + " " + dichVuPhong.getSoLuong());
-//		}
-//		// Tesst tìm mã phòng đã đặt
-//		ArrayList<String> dsMaPhong = hoaDonDao.layMaPhongDaDat("HD27052024001");
-//		System.out.println(dsMaPhong);
+		HoaDon hd = new HoaDon();
+		hd.setMaHoaDon("HD28052024005");
+		hd.setMaNhanVien("NV001");
+		hd.setMaKhachHang("KH004");
+		hd.setNgayLap(LocalDateTime.now());
+		hd.setMaLSDP(null);
+		hd.setMaKM("KM0001");
+		hd.setTongTien(1000000);
+		boolean check = hoaDonDao.themHoaDon(hd);
+		if (check) {
+			System.out.println("Thêm thành công");
+		} else {
+			System.out.println("Thêm thất bại");
+		}
+		
 
 	}
 
@@ -581,11 +582,16 @@ public class HoaDonDao {
 		Connection con = ConnectDB.getConnection();
 		PreparedStatement pstmt = null;
 		int soLuong = 0;
-
 		try {
-			String sql = "SELECT COUNT(*) FROM HoaDon WHERE NgayLapHD = ?";
+			String sql = "SELECT COUNT(*) FROM HoaDon WHERE NgayLapHD >= ? AND NgayLapHD < ?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setTimestamp(1, Timestamp.valueOf(ngay.atStartOfDay()));
+
+			LocalDateTime ngayBatDau = ngay.atStartOfDay();
+			LocalDateTime ngayKetThuc = ngay.plusDays(1).atStartOfDay();
+
+			pstmt.setTimestamp(1, Timestamp.valueOf(ngayBatDau));
+			pstmt.setTimestamp(2, Timestamp.valueOf(ngayKetThuc));
+
 			ResultSet rs = pstmt.executeQuery();
 			rs.next();
 			soLuong = rs.getInt(1);

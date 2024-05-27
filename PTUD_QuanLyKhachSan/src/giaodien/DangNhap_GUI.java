@@ -26,7 +26,7 @@ public class DangNhap_GUI extends javax.swing.JFrame implements Serializable {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponentsNCNC
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -41,7 +41,7 @@ public class DangNhap_GUI extends javax.swing.JFrame implements Serializable {
         txtTenDangNhap = new giaodien.CustomClass.TextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("LOGIN");
+        setTitle("Đăng nhập");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

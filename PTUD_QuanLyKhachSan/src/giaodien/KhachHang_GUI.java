@@ -115,7 +115,7 @@ public class KhachHang_GUI extends javax.swing.JPanel {
 
         jLabel33.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel33.setText("CCCD/VISA");
+        jLabel33.setText("CCCD/Passport");
         jLabel33.setToolTipText("");
         jLabel33.setPreferredSize(new java.awt.Dimension(120, 21));
 

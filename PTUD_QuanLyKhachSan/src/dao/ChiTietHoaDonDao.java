@@ -98,13 +98,4 @@ public class ChiTietHoaDonDao {
 		}
 		return soLuong;
 	}
-
-	
-	public static void main(String[] args) {
-		// Test đếm hóa đơn trong ngày
-		ChiTietHoaDonDao chiTietHoaDonDao = new ChiTietHoaDonDao();
-		int soLuong = chiTietHoaDonDao.demTongSoChiTietHoaDonTrongNgay(LocalDate.now());
-		System.out.println(soLuong);
-		
-	}
 }

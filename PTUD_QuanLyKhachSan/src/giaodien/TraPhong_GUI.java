@@ -1,7 +1,5 @@
 package giaodien;
 
-import java.awt.event.ActionEvent;
-import java.awt.font.FontRenderContext;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -22,7 +20,6 @@ import dao.NhanVienDao;
 import dao.PhongDao;
 import dao.ThongTinDatThuePhongDao;
 import entity.ChiTietHoaDon;
-import entity.DichVu;
 import entity.DichVuPhong;
 import entity.HoaDon;
 import entity.KhachHang;
@@ -30,11 +27,6 @@ import entity.KhuyenMai;
 import entity.NhanVien;
 import entity.Phong;
 import entity.ThongTinDatThuePhong;
-
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.GroupLayout;
-import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JButton;
 
 /**
  *
@@ -433,12 +425,6 @@ public class TraPhong_GUI extends javax.swing.JDialog {
             if (taoHoaDonvaCTHDDatabase()) {
                 JOptionPane.showMessageDialog(null, "Trả phòng thành công", "Thành công",
                         JOptionPane.INFORMATION_MESSAGE);
-                // Thay đổi dữ liệu phòng thuê
-                PhongDao phong = new PhongDao();
-                for (String phongDat : dsPhongDat) {
-                    phong.capNhatTrangThaiPhong(phongDat, "trống");
-                }
-
                 // gọi hóa đơn
                 HoaDonThanhToan_GUI hoaDonThanhToan = new HoaDonThanhToan_GUI(hoaDonluuTru);
                 hoaDonThanhToan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -447,6 +433,12 @@ public class TraPhong_GUI extends javax.swing.JDialog {
             } else {
                 JOptionPane.showMessageDialog(null, "Trả phòng thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
             }
+        }
+        
+        PhongDao phong = new PhongDao();
+        for (String phongDat : dsPhongDat) {
+			String maPhongDat = phong.timPhongTheoSoPhong(Integer.parseInt(phongDat)).getMaPhong();
+            phong.capNhatTrangThaiPhong(maPhongDat, "Trống");
         }
 
     }//GEN-LAST:event_btnTraPhongActionPerformed
@@ -705,47 +697,6 @@ public class TraPhong_GUI extends javax.swing.JDialog {
     }
 
     ;
-	
-
-
-
-	/**
-	 * @param args the command line arguments
-	 */
-	public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
-        // (optional) ">
-        /*
-		 * If Nimbus (introduced in Java SE 6) is not available, stay with the default
-		 * look and feel. For details see
-		 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        // </editor-fold>
-        // </editor-fold>
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TraPhong_GUI().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private giaodien.CustomClass.Button btnHuy;

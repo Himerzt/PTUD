@@ -322,22 +322,58 @@ VALUES
 ('KH007', N'Đỗ Văn Hải', N'Nam', '1987-07-12', '0123456783', '123456789018', 10000000, 'HV', N'Việt Nam'),
 ('KH008', N'Vũ Thị Hoa', N'Nữ', '1991-08-25', '0123456782', '123456789019', 15000000, 'BK', N'Việt Nam'),
 ('KH009', N'Nguyễn Văn Khoa', N'Nam', '1989-09-30', '0123456781', '123456789020', 25000000, 'LB', N'Việt Nam'),
-('KH010', N'Trần Thị Lan', N'Nữ', '1994-10-14', '0123456780', '123456789021', 35000000, 'KC', N'Việt Nam');
+('KH010', N'Trần Thị Lan', N'Nữ', '1994-10-14', '0123456780', '123456789021', 35000000, 'KC', N'Việt Nam'),
+('KH011', N'Lê Văn Minh', N'Nam', '1986-11-11', '0123456779', '123456789022', 20000000, 'HB', N'Việt Nam'),
+('KH012', N'Trần Thị Ngọc', N'Nữ', '1990-12-05', '0123456778', '123456789023', 30000000, 'HV', N'Việt Nam'),
+('KH013', N'Nguyễn Văn Nghĩa', N'Nam', '1984-01-22', '0123456777', '123456789024', 15000000, 'BK', N'Việt Nam'),
+('KH014', N'Phạm Thị Bình', N'Nữ', '1992-02-28', '0123456776', '123456789025', 25000000, 'LB', N'Việt Nam'),
+('KH015', N'Vũ Văn Sơn', N'Nam', '1989-03-18', '0123456775', '123456789026', 35000000, 'KC', N'Việt Nam'),
+('KH016', N'Hoàng Văn Tùng', N'Nam', '1983-04-19', '0123456774', '123456789027', 5000000, 'HB', N'Việt Nam'),
+('KH017', N'Phan Thị Mai', N'Nữ', '1991-05-25', '0123456773', '123456789028', 10000000, 'HV', N'Việt Nam'),
+('KH018', N'Nguyễn Văn Nam', N'Nam', '1990-06-30', '0123456772', '123456789029', 15000000, 'BK', N'Việt Nam'),
+('KH019', N'Hoàng Thị Thu', N'Nữ', '1988-07-14', '0123456771', '123456789030', 25000000, 'LB', N'Việt Nam'),
+('KH020', N'Lê Văn Hoàng', N'Nam', '1987-08-23', '0123456770', '123456789031', 35000000, 'KC', N'Việt Nam');
 
-DELETE FROM [dbo].[NhanVien]
 -- Tạo 10 nhân viên
 INSERT INTO [dbo].[NhanVien] (MaNV, HoTenNV, NgaySinhNV, GioiTinh, SoDienThoai, Email, CCCD, DiaChi, MaChucVu, NgayVaoLam)
 VALUES 
-('NV001', N'Trần Văn A', '1990-01-01', N'Nam', '0123456790', 'tranvana@email.com', '123456789123', N'Hà Nội', 'NV', '2022-01-01'),
-('NV002', N'Nguyễn Thị B', '1995-02-15', N'Nữ', '0123456789', 'nguyenthib@email.com', '123456789124', N'Hồ Chí Minh', 'NV', '2021-12-01'),
-('NV003', N'Phạm Văn C', '1985-03-20', N'Nam', '0123456788', 'phamvanc@email.com', '123456789125', N'Đà Nẵng', 'QL', '2020-11-01'),
-('NV004', N'Lê Thị D', '1992-04-10', N'Nữ', '0123456787', 'lethid@email.com', '123456789126', N'Hải Phòng', 'NV', '2019-10-01'),
-('NV005', N'Trần Văn D', '1988-05-05', N'Nam', '0123456786', 'trand@email.com', '123456789127', N'Cần Thơ', 'NV', '2018-09-01'),
-('NV006', N'Hoàng Thị H', '1993-06-18', N'Nữ', '0123456785', 'hoangthih@email.com', '123456789128', N'Bình Dương', 'QL', '2017-08-01'),
-('NV007', N'Đỗ Văn H', '1987-07-12', N'Nam', '0123456784', 'dovan@email.com', '123456789129', N'Đà Lạt', 'NV', '2016-07-01'),
-('NV008', N'Vũ Thị H', '1991-08-25', N'Nữ', '0123456783', 'vuthih@email.com', '123456789130', N'Hải Dương', 'QL', '2015-06-01'),
-('NV009', N'Nguyễn Văn K', '1989-09-30', N'Nam', '0123456782', 'nguyenvank@email.com', '123456789131', N'Bình Định', 'NV', '2014-05-01'),
-('NV010', N'Trần Thị L', '1994-10-14', N'Nữ', '0123456781', 'tranthil@email.com', '123456789132', N'Hà Tĩnh', 'QL', '2013-04-01');
+('NV001', N'Trần Văn An', '1990-01-01', N'Nam', '0123456790', 'tranvana@email.com', '123456789123', N'Hà Nội', 'NV', '2022-01-01'),
+('NV002', N'Nguyễn Thị Bình', '1995-02-15', N'Nữ', '0123456789', 'nguyenthib@email.com', '123456789124', N'Hồ Chí Minh', 'NV', '2021-12-01'),
+('NV003', N'Phạm Văn Cường', '1985-03-20', N'Nam', '0123456788', 'phamvanc@email.com', '123456789125', N'Đà Nẵng', 'QL', '2020-11-01'),
+('NV004', N'Lê Thị Diễm', '1992-04-10', N'Nữ', '0123456787', 'lethid@email.com', '123456789126', N'Hải Phòng', 'NV', '2019-10-01'),
+('NV005', N'Trần Văn Đức', '1988-05-05', N'Nam', '0123456786', 'trand@email.com', '123456789127', N'Cần Thơ', 'NV', '2018-09-01'),
+('NV006', N'Hoàng Thị Hà', '1993-06-18', N'Nữ', '0123456785', 'hoangthih@email.com', '123456789128', N'Bình Dương', 'QL', '2017-08-01'),
+('NV007', N'Đỗ Văn Hùng', '1987-07-12', N'Nam', '0123456784', 'dovan@email.com', '123456789129', N'Đà Lạt', 'NV', '2016-07-01'),
+('NV008', N'Vũ Thị Hoa', '1991-08-25', N'Nữ', '0123456783', 'vuthih@email.com', '123456789130', N'Hải Dương', 'QL', '2015-06-01'),
+('NV009', N'Nguyễn Văn Khánh', '1989-09-30', N'Nam', '0123456782', 'nguyenvank@email.com', '123456789131', N'Bình Định', 'NV', '2014-05-01'),
+('NV010', N'Trần Thị Lan', '1994-10-14', N'Nữ', '0123456781', 'tranthil@email.com', '123456789132', N'Hà Tĩnh', 'QL', '2013-04-01');
 
+INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
+VALUES ('HD001', 'NV001', 'KH001', '2024-05-01', NULL, null, 500000, 0.05);
+INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
+VALUES ('HD002', 'NV001', 'KH002', '2024-05-01', NULL, null, 400000, 0.05);
+INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
+VALUES ('HD003', 'NV001', 'KH003', '2024-05-01', NULL, null, 300000, 0.05);
+INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
+VALUES ('HD004', 'NV001', 'KH003', '2024-05-02', NULL, null, 300000, 0.05);
+INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
+VALUES ('HD005', 'NV002', 'KH004', '2024-05-03', NULL, NULL, 600000, 0.05);
+INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
+VALUES ('HD006', 'NV002', 'KH005', '2024-05-03', NULL, NULL, 450000, 0.05);
+INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
+VALUES ('HD007', 'NV002', 'KH006', '2024-05-04', NULL, NULL, 550000, 0.05);
+INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
+VALUES ('HD008', 'NV002', 'KH007', '2024-05-04', NULL, NULL, 480000, 0.05);
+INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
+VALUES ('HD009', 'NV002', 'KH008', '2024-05-05', NULL, NULL, 520000, 0.05);
+INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, MaLSDP, MaKM, TongTien, ThueVAT)
+VALUES ('HD010', 'NV003', 'KH009', '2024-05-05', NULL, NULL, 700000, 0.05);
+-- Chèn dữ liệu mẫu vào bảng ThongTinDatThuePhong
+INSERT INTO ThongTinDatThuePhong (MaTTDTP, MaKhachHang, MaPhong, NgayDatPhong, NgayNhanPhong, NgayTraPhong, LoaiThue, TienDaCoc)
+VALUES 
+    ('TTDTP001', 'KH001', 'TC101', '2024-05-25 08:00:00', '2024-05-25 12:00:00', '2024-05-27 12:00:00', 'NTC', 1000000),
+    ('TTDTP002', 'KH002', 'TC102', '2024-05-26 09:00:00', '2024-05-26 12:00:00', '2024-05-28 12:00:00', 'NNC', 1500000),
+    ('TTDTP003', 'KH003', 'NC201', '2024-05-27 10:00:00', '2024-05-27 12:00:00', '2024-05-29 12:00:00', 'NCC', 2000000),
+    ('TTDTP004', 'KH004', 'CC301', '2024-05-28 11:00:00', '2024-05-28 12:00:00', '2024-05-30 12:00:00', 'NTG', 2500000);
 
 
