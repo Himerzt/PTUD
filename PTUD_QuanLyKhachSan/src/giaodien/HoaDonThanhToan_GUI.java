@@ -9,6 +9,9 @@ import java.awt.ScrollPane;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import javax.swing.BorderFactory;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -30,6 +33,14 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfWriter;
+
+import dao.DichVuDao;
+import dao.HoaDonDao;
+import dao.PhongDao;
+import entity.DichVuPhong;
+import entity.HoaDon;
+import entity.Phong;
+
 import java.awt.Rectangle;
 import java.awt.Dimension;
 /**
@@ -39,7 +50,19 @@ import java.awt.Dimension;
 public class HoaDonThanhToan_GUI extends javax.swing.JFrame {
 
     private PdfWriter writer;
-    private  static int orderNumber = 1; // Ví dụ: số thứ tự là 1
+    private  static int orderNumber = 1;
+    private HoaDon hoadonLuuTru;
+    private HoaDonDao hdDao = new HoaDonDao();
+    
+    
+    public HoaDonThanhToan_GUI(HoaDon hoadon) {
+    	this.hoadonLuuTru = hoadon;
+        initComponents();
+        drawBill();
+        
+    }
+    
+    
     public HoaDonThanhToan_GUI() {
         initComponents();
         drawBill();
@@ -51,103 +74,97 @@ public class HoaDonThanhToan_GUI extends javax.swing.JFrame {
         return orderNumber;
     }
     public void drawBill(){
-        // Lấy ngày hiện tại
-        LocalDate currentDate = LocalDate.now();
-        // Định dạng ngày thành chuỗi "YYYYMMDD"
-        String formattedDate = currentDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
-
-        // Số thứ tự phát sinh hóa đơn (ví dụ: bạn có thể lấy từ cơ sở dữ liệu hoặc tính toán)
-
-        // Định dạng số thứ tự thành chuỗi "xxx" (có thể sử dụng DecimalFormat để thêm số 0 phía trước nếu cần)
-        String formattedOrderNumber = String.format("%03d", orderNumber);
-        maHoaDon.setText("HD" + formattedDate + formattedOrderNumber);
+    	maHoaDon.setText(hoadonLuuTru.getMaHoaDon());        
         gach.setText("--------------------------------------------------------------------------------------------------------------------------------------------------");
-        TraPhong_GUI traPhong = new TraPhong_GUI(); // Tạo một đối tượng TraPhong
-//        tenKhachHang.setText(traPhong.getTxtTenKH());
+//        TraPhong traPhong = new TraPhong();
+
+        String tenKhachHangStr = hdDao.layTenKhachHangTuMaHoaDon(hoadonLuuTru.getMaHoaDon());
+        tenKhachHang.setText("Tên khách hàng: " + tenKhachHangStr);
+        
         gach1.setText("--------------------------------------------------------------------------------------------------------------------------------------------------");
-        ngayDenDi.setText("Ngày đến: " + "" +  "   -    Ngày đi:  "+"");
-        // Lấy thời gian hiện tại
-        LocalDateTime thoiGianHienTai = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        String gioHienTaiFormatted = thoiGianHienTai.format(formatter);
-        // Hiển thị giờ hiện tại trong JTextPane
-        thoiGianDi.setText("Thời gian đi: " + gioHienTaiFormatted);
+        
+        ArrayList<String> dsNgayDatNhanTra = hdDao.layNgayDatNhanTratuMaHoaDon(hoadonLuuTru.getMaHoaDon());
+        
+        
+        
+        
+        String ngayDennnStr = dsNgayDatNhanTra.get(1);
+        String ngayDiiiiStr = dsNgayDatNhanTra.get(2);
+        ngayDenDi.setText("Ngày đến: " + ngayDennnStr + "  ---    Ngày đi: " + ngayDiiiiStr);
+        // Thời gian đi là thời gian tạo hóa đơn
+        LocalDateTime ngayLap = hoadonLuuTru.getNgayLap();
+        thoiGianDi.setText("Ngày lập hóa đơn: " + ngayLap);
+        
         // Tạo một renderer mới
         DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
-
         // Thiết lập màu nền của renderer là màu trong suốt
         headerRenderer.setBackground(null);
-
         // Đặt renderer cho tất cả các cột trong hàng tiêu đề
         for (int i = 0; i < tableHoaDon.getColumnCount(); i++) {
             tableHoaDon.getTableHeader().getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
-    }
+        }
         tableHoaDon.setBackground(Color.WHITE); 
         // Hiển thị đường kẻ giữa các ô và cột
         tableHoaDon.setShowGrid(true);
-
         // Đặt màu của đường kẻ
         tableHoaDon.setGridColor(Color.GRAY);
-
         // Đặt đường viền cho tiêu đề cột
         tableHoaDon.getTableHeader().setBorder(BorderFactory.createLineBorder(Color.GRAY));
         
-        // thêm dữ liệu
-//        JTable tableDanhSachPhong = traPhong.getTableDanhSachPhong();
-//        JTable tableDV = traPhong.getTableDV();
-//        DefaultTableModel model = (DefaultTableModel) tableHoaDon.getModel();
-
-//        // Duyệt qua các hàng của bảng tableDanhSachPhong
-//        for (int i = 0; i < tableDanhSachPhong.getRowCount(); i++) {
-//            Object[] rowData = new Object[5]; // Mảng lưu trữ dữ liệu cho mỗi hàng
-//
-//            // Cột 1: Số thứ tự tự phát sinh
-//            rowData[0] = i + 1;
-//
-//            // Cột 2: Lấy dữ liệu từ cột thứ ba của tableDanhSachPhong
-//            rowData[1] = tableDanhSachPhong.getValueAt(i, 2);
-//
-//            // Cột 3: Ghi là 1
-//            rowData[2] = 1;
-//
-//            // Cột 4: Lấy dữ liệu từ cột thứ năm của bảng tableDanhSachPhong
-//            rowData[3] = tableDanhSachPhong.getValueAt(i, 4);
-//
-//            // Cột 5: Lấy dữ liệu từ cột thứ năm của bảng tableDanhSachPhong
-//            rowData[4] = tableDanhSachPhong.getValueAt(i, 4);
-//
-//            // Thêm hàng vào bảng
-//            model.addRow(rowData);
-//        }
-//        // Duyệt qua các hàng của bảng tableDV
-//        for (int i = 0; i < tableDV.getRowCount(); i++) {
-//            Object[] rowData = new Object[5]; // Mảng lưu trữ dữ liệu cho mỗi hàng
-//
-//            // Cột 1: Số thứ tự tự phát sinh
-//            rowData[0] = i + 1 + tableDanhSachPhong.getRowCount(); // Cộng thêm số lượng hàng đã thêm từ bảng tableDanhSachPhong
-//
-//            // Cột 2: Lấy dữ liệu từ cột thứ ba của tableDV
-//            rowData[1] = tableDV.getValueAt(i, 2);
-//
-//            // Cột 3: Lấy dữ liệu từ cột thứ tư của tableDV
-//            rowData[2] = tableDV.getValueAt(i, 3);
-//
-//            // Cột 4: Lấy dữ liệu từ cột thứ sáu của bảng tableDV
-//            rowData[3] = tableDV.getValueAt(i, 5);
-//
-//            // Cột 5: Lấy dữ liệu từ cột thứ bảy của bảng tableDV
-//            rowData[4] = tableDV.getValueAt(i, 6);
-//
-//            // Thêm hàng vào bảng
-//            model.addRow(rowData);
-//        }
-
-//        tongTien.setText(traPhong.getTongTien());
-//        tienCoc.setText(traPhong.getTienCoc());
-//        tienConLai.setText(traPhong.getTienConLai());
-
+        // Tính thông tin của hóa đơn từ danh sách các dịch vụ và phòng
+        loadDataToTable();
+    
     }
-    @SuppressWarnings("unchecked")
+    private void loadDataToTable() {
+		// Thêm thông tin phòng vào bảng
+    	DefaultTableModel model = (DefaultTableModel) tableHoaDon.getModel();
+    	// Tính tiền từng phòng
+    	ArrayList<String> dsMaPhong = hdDao.layMaPhongDaDat(hoadonLuuTru.getMaHoaDon());
+    	Phong phongThue = new Phong();
+    	PhongDao phongDao = new PhongDao();
+		for (String maPhong : dsMaPhong) { 	
+			double giaPhong = 0;
+			phongThue = phongDao.timPhongTheoMaPhong(maPhong);
+			if (phongThue.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+				giaPhong = 450000;
+			} else if (phongThue.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+				giaPhong = 700000;
+			} else if (phongThue.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+				giaPhong = 1000000;
+			} else {
+				giaPhong = 1500000;
+			}
+			model.addRow(new Object[] { model.getRowCount() + 1, "Phòng " + phongThue.getMaPhong(), 1, giaPhong, giaPhong*1 });
+		}
+		
+		
+		int i = 0;
+		// Thêm thông tin dịch vụ vào bảng
+		ArrayList<DichVuPhong> dsDichVu = hdDao.layDichPhongSuDung(hoadonLuuTru.getMaHoaDon());
+		DichVuDao dvDAO = new DichVuDao();
+		for (DichVuPhong dv : dsDichVu) {
+			// Tạo model cho tableDV STT mã dịch vụ tên dịch vụ số lượng phòng giá
+			i++;
+			String maDV = dv.getMaDichVu();
+			String tenDV = dvDAO.timTheoMaDichVu(maDV).getTenDV();
+			int soLuong = dv.getSoLuong();
+			String maPhong = dv.getMaPhong();	
+			// Tính giá dịch vụ bằng tìm kiếm theo mã dịch vụ lấy giá thông qua entity dichvuz
+			double dongia = dvDAO.timTheoMaDichVu(dv.getMaDichVu()).getGiaDV();
+			double tongGia = dongia * soLuong;
+			// model STT + Phòng/dịch vụ + số lượng + Đơn giá + tổng
+			model.addRow(new Object[] { model.getRowCount() + 1, tenDV , soLuong , dongia , tongGia } );
+		}	
+    	
+		tongTien.setText(hoadonLuuTru.getTongTien() + " VND");
+		lblTenNhanVien.setText(hdDao.layTenNhanVienTuMaHoaDon(hoadonLuuTru.getMaHoaDon()));
+		tienCoc.setText(hdDao.layTienCoc(hoadonLuuTru.getMaHoaDon()) + " VND");
+		tienConLai.setText(hoadonLuuTru.getTongTien() -  hdDao.layTienCoc(hoadonLuuTru.getMaHoaDon()) + " VND");
+		
+	}
+
+
+	@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

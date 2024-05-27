@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package giaodien;
 
 import java.awt.event.ActionEvent;
@@ -19,7 +22,6 @@ import dao.DichVuPhongDao;
 import dao.HoaDonDao;
 import dao.KhachHangDao;
 import dao.KhuyenMaiDao;
-import dao.NhanVienDao;
 import dao.PhongDao;
 import dao.ThongTinDatThuePhongDao;
 import entity.ChiTietHoaDon;
@@ -28,7 +30,6 @@ import entity.DichVuPhong;
 import entity.HoaDon;
 import entity.KhachHang;
 import entity.KhuyenMai;
-import entity.NhanVien;
 import entity.Phong;
 import entity.ThongTinDatThuePhong;
 
@@ -41,9 +42,7 @@ import javax.swing.JButton;
  *
  * @author Huynguyen
  */
-public class TraPhong_GUI extends javax.swing.JDialog {
-	private NhanVien nhanvien;
-	private NhanVienDao nvdao;
+public class TraPhong2 extends javax.swing.JDialog {
 	private List<DichVuPhong> danhSachDichVu;
 	private static String[] dsPhongDat;
 	private static List<String> dsTenPhong;
@@ -61,16 +60,14 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 	private HoaDon hoaDonluuTru;
 	private String maLSDP;
 	private String maKhuyenMai;
-	private String maNhanVien;
 	/**
 	 * Creates new form DatPhong
 	 */
-	public TraPhong_GUI() {
+	public TraPhong2() {
 		initComponents();
 	}
 
-	public TraPhong_GUI(List<String> dsTenPhong , NhanVien nv) {
-		this.nhanvien = nv;
+	public TraPhong2(List<String> dsTenPhong) {
 		dsPhongDat = new String[dsTenPhong.size()];
 		int index = 0;
 		for (String tenPhong : dsTenPhong) {
@@ -432,12 +429,6 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 			if (taoHoaDonvaCTHDDatabase()) {
 				JOptionPane.showMessageDialog(null, "Trả phòng thành công", "Thành công",
 				JOptionPane.INFORMATION_MESSAGE);
-				// Thay đổi dữ liệu phòng thuê
-				PhongDao phong = new PhongDao();
-				for (String phongDat : dsPhongDat) {
-					phong.capNhatTrangThaiPhong(phongDat, "trống");
-				}
-				
 				// gọi hóa đơn
 				HoaDonThanhToan_GUI hoaDonThanhToan = new HoaDonThanhToan_GUI(hoaDonluuTru); 
 	    		hoaDonThanhToan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -471,7 +462,7 @@ public class TraPhong_GUI extends javax.swing.JDialog {
     	String formattedOrderNumber = String.format("%03d", orderNumber);
     	String maHoaDon = "HD" + ngay + formattedOrderNumber;
     	// Lấy mã nhân viên từ txtNhanVien
-    	String maNhanVien = nhanvien.getMaNV();
+    	String maNhanVien = txtNhanVien.getText();
     	// Lấy mã khách hàng từ txtMaKhachHang
     	String maKhachHang = txtMaKhachHang.getText();
     	// Lấy ngày lập hóa đơn từ ngày giờ hiện tại
@@ -499,7 +490,8 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 		if (!hd.themHoaDon(hoaDonluuTru)) {			
 			JOptionPane.showMessageDialog(null, "Tạo hóa đơn thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
 			return false;
-		} 
+		}    	
+		
 		// Tạo chi tiết hóa đơn tương ứng CTHD - mã hóa đơn -- nhiều chi tiết tương ứng + stt trong db
 		// với thông tin đặt thuê phòng
 		ChiTietHoaDonDao chiTietHoaDonDao = new ChiTietHoaDonDao();
@@ -621,8 +613,8 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 			int soLuong = dv.getSoLuong();
 			String maPhong = dv.getMaPhong();	
 			// Tính giá dịch vụ bằng tìm kiếm theo mã dịch vụ lấy giá thông qua entity dichvuz
-			double gia = new DichVuDao().timTheoMaDichVu(maDV).getGiaDV() ;
-			model.addRow(new Object[] { i, maDV, tenDV, soLuong, gia, gia * soLuong });
+			double gia = new DichVuDao().timTheoMaDichVu(maDV).getGiaDV() * soLuong;
+			model.addRow(new Object[] { i, maDV, tenDV, soLuong, maPhong, gia });
 			tongTienDichVu += gia;
 		}	
 		this.tongGiaDichVu = tongTienDichVu;
@@ -687,7 +679,7 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 		txtNgaySinh.setText(khachHang.getNgaySinh().toString());
 		txtChietKhau.setText(String.valueOf(chietKhau * 100) + "%");
 		txtThue.setText("10% - " + String.valueOf(thue));
-		txtNhanVien.setText(nhanvien.getHoTenNV());
+		txtNhanVien.setText("NV001");
 		txtTongHoaDon.setText(String.valueOf(tongTien));
 		txtTraTruoc.setText("0");
 		txtTienCanThu.setText(String.valueOf(tongTien));
@@ -715,7 +707,91 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 	};
 	
 
+	
 
+	protected void btnCCCDActionPerformed(ActionEvent evt) {
+		// Lỗi nên t comment lại nha
+//		String cccd = txtCCCD.getText();
+//		KhachHangDao khDao = new KhachHangDao();
+//		KhachHang kh = khDao.timTheoCCCD(cccd);
+//		if (kh != null) {
+//			txtCCCD.setText(kh.getHoTenKH());
+//			txtNgaySinh.setText(kh.getNgaySinh().toString());
+//			txtSodienthoaiKH.setText(kh.getSoDT());
+//			String hangTV = "";
+//			double chietKhau = 0;
+//			if (kh.getMaHangThanhVien().equalsIgnoreCase("hb")) {
+//				hangTV = "Hạng Bạc";
+//				chietKhau = 0.0375;
+//			} else if (kh.getMaHangThanhVien().equalsIgnoreCase("hv")) {
+//				hangTV = "Hạng Vàng";
+//				chietKhau = 0.075;
+//			} else if (kh.getMaHangThanhVien().equalsIgnoreCase("kc")) {
+//				hangTV = "Hạng Kim Cương";
+//				chietKhau = 0.1875;
+//			} else if (kh.getMaHangThanhVien().equalsIgnoreCase("lb")) {
+//				hangTV = "Hạng Lục Bảo";
+//				chietKhau = 0.15;
+//			} else {
+//				hangTV = "Hạng Bạch Kim";
+//                chietKhau = 0.1125;				
+//			}
+//			txtHangThanhVienKH.setText(hangTV);
+//			txtChietKhau.setText(String.valueOf(chietKhau));
+//		}
+//		ThongTinDatThuePhongDao thongTinDao = new ThongTinDatThuePhongDao();
+//		ArrayList<ThongTinDatThuePhong> dsThongTin = thongTinDao.timThongTinDatThuePhongTheoMaKhachHang(kh.getMaKH());
+//		ArrayList<String> dsPhong = new ArrayList<>();
+//		dsPhong = thongTinDao.layDanhSachPhongTheoMaKhachHang(kh.getMaKH());
+//		ArrayList<Phong> dsPhongCD = new ArrayList<>();
+//		PhongDao phongDao = new PhongDao();;
+//		dsPhongCD = phongDao.chuyenDoi(dsPhong);
+//		for (ThongTinDatThuePhong thongTin : dsThongTin) {
+//			dsPhong.add(thongTin.getMaPhong());
+//		}
+//		// Lấy ngày đặt phòng và ngày trả phòng
+//		txtCheckIn.setText(dsThongTin.get(1).getNgayDatPhong().toString());
+//		txtCheckOut.setText(dsThongTin.get(1).getNgayTraPhong().toString());
+//		
+//		// Hiển thị danh sách phòng vào table tableDanhSachPhong
+//		String loaiPhong = "";
+//		DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
+//		model.setRowCount(0);
+//		int i = 0;
+//		for (Phong phong : dsPhongCD) {
+//            if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+//                loaiPhong = "Tiêu chuẩn";
+//            } else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+//                loaiPhong = "Nâng cao";
+//            } else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+//                loaiPhong = "Cao cấp";
+//            } else {
+//                loaiPhong = "Thương gia";
+//            }
+//            model.addRow(new Object[] {i+1, phong.getSoPhong(), loaiPhong });
+//            i++;
+//		}
+//		
+//		// Hiển thị danh sách dịch vụ vào table tableDV - chưa xong
+//		DefaultTableModel modelDV = (DefaultTableModel) tableDV.getModel();
+//		modelDV.setRowCount(0);
+//		DichVuPhongDao dvDao = new DichVuPhongDao();
+//		danhSachDichVu = dvDao.timDichVuPhongTheoMaPhong(dsPhong);
+//		i = 0;
+//		for (DichVuPhong dv : danhSachDichVu) {
+//			String maDV = dv.getMaDichVu();
+//			String tenDV = dvDao.timTheoMaDichVu(maDV).getTenDV();
+//			int soLuong = dv.getSoLuong();
+//			String maPhong = dv.getMaPhong();
+//			double gia = dvDao.tinhTienTheoMaDichVu(maDV);
+//			modelDV.addRow(new Object[] { i + 1, maDV, tenDV, soLuong, maPhong, gia });
+//			i++;
+//		}
+//		
+//		// Tính tiền phòng
+//		double tongTienPhong = thongTinDao.tinhTienTheoDanhSachPhong(dsPhongCD);
+//		txtTongHoaDon.setText(String.valueOf(tongTienPhong));
+	}
 
 	/**
 	 * @param args the command line arguments
@@ -737,20 +813,20 @@ public class TraPhong_GUI extends javax.swing.JDialog {
 				}
 			}
 		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(TraPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(TraPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(TraPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(TraPhong_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(TraPhong2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
 		// </editor-fold>
 		// </editor-fold>
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				new TraPhong_GUI().setVisible(true);
+				new TraPhong2().setVisible(true);
 			}
 		});
 	}

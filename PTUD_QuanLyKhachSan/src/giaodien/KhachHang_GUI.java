@@ -4,7 +4,7 @@
  */
 package giaodien;
 
-import entity.KhachHang;
+
 import dao.KhachHangDao;
 
 import java.math.BigDecimal;
@@ -385,7 +385,7 @@ public class KhachHang_GUI extends javax.swing.JPanel {
             return;
         }
         //Thêm khách hàng
-        KhachHang kh = new KhachHang(maKH, tenKH, gioiTinh, ngaySinhDate, soDT, cccd, 0, "HB", quocTich);
+        entity.KhachHang kh = new entity.KhachHang(maKH, tenKH, gioiTinh, ngaySinhDate, soDT, cccd, 0, "HB", quocTich);
         khachHangDao.themKhachHang(kh);
         loadTableKhachHang();
         JOptionPane.showMessageDialog(this, "Thêm khách hàng thành công");
@@ -433,7 +433,7 @@ public class KhachHang_GUI extends javax.swing.JPanel {
             return;
         }
         //Cập nhập khách hàng
-        KhachHang kh = new KhachHang(maKH, tenKH, gioiTinh, ngaySinhDate, soDT, cccd, chiTieuDouble, hangThanhVien, quocTich);
+        entity.KhachHang kh = new entity.KhachHang(maKH, tenKH, gioiTinh, ngaySinhDate, soDT, cccd, chiTieuDouble, hangThanhVien, quocTich);
         khachHangDao.suaThongTinKhachHang(kh);
         
         loadTableKhachHang();

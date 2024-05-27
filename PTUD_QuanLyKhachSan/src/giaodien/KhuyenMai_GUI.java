@@ -11,7 +11,6 @@ import javax.swing.table.DefaultTableModel;
 
 import dao.DichVuDao;
 import dao.KhuyenMaiDao;
-import entity.KhuyenMai;
 
 /**
  *
@@ -315,7 +314,7 @@ public class KhuyenMai_GUI extends javax.swing.JPanel {
 			return;
 		}
 		//Thêm vào cơ sở dữ liệu
-		KhuyenMai km = new KhuyenMai(maKM, tenKM, giaTri, batDau, ketThuc, dieuKienApDung);
+		entity.KhuyenMai km = new entity.KhuyenMai(maKM, tenKM, giaTri, batDau, ketThuc, dieuKienApDung);
 		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
 		khuyenMaiDao.themKhuyenMai(km);
 		loadTableKhuyeMai();
@@ -346,7 +345,7 @@ public class KhuyenMai_GUI extends javax.swing.JPanel {
 			return;
 		}
 		// Cập nhập vào cơ sở dữ liệu
-		KhuyenMai km = new KhuyenMai(maKM, tenKM, giaTri, batDau, ketThuc, dieuKienApDung);
+		entity.KhuyenMai km = new entity.KhuyenMai(maKM, tenKM, giaTri, batDau, ketThuc, dieuKienApDung);
 		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
 		khuyenMaiDao.suaKhuyenMai(km);
 		loadTableKhuyeMai();
@@ -372,7 +371,7 @@ public class KhuyenMai_GUI extends javax.swing.JPanel {
 		//Ngày kêt thúc là ngày hiện tại
 		LocalDate ketThuc = LocalDate.parse(LocalDate.now().toString());
 		// Kiểm tra ngày bắt đầu và ngày kết thúc
-		KhuyenMai km = new KhuyenMai(maKM, tenKM, giaTri, batDau, ketThuc, dieuKienApDung);
+		entity.KhuyenMai km = new entity.KhuyenMai(maKM, tenKM, null, batDau, ketThuc, dieuKienApDung);
 		KhuyenMaiDao khuyenMaiDao = new KhuyenMaiDao();
 		if (batDau.isAfter(ketThuc)) {
 			khuyenMaiDao.xoaKhuyenMai(km);

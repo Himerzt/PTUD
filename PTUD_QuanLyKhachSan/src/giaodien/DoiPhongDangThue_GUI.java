@@ -108,10 +108,10 @@ public class DoiPhongDangThue_GUI extends javax.swing.JDialog {
         loadDanhSachPhong();
 	}
 
-	public String[] layDanhSachPhongDat() {
-		return dsPhongDat;
-	}
-	
+//	public String[] layDanhSachPhongDat() {
+//		return dsPhongDat;
+//	}
+//	
 	public void loadDanhSachPhong() {
         PhongDao phongDao = new PhongDao();
         ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();

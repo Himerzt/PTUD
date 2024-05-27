@@ -15,6 +15,7 @@ import entity.LoaiThue;
 import entity.Phong;
 import entity.TaiKhoan;
 import entity.ThongTinDatThuePhong;
+import java.time.LocalDate;
 
 public class ThongTinDatThuePhongDao {
 
@@ -579,6 +580,128 @@ public class ThongTinDatThuePhongDao {
 		}
 		return n > 0;
 	}
+public int demSoLuongPhongTheoNgay(int ngay, int thang, int nam) {
+        int soLuong = 0;
+        try {
+            // Chuyển đổi ngày, tháng, năm thành LocalDateTime
+            LocalDateTime ngayNhanPhong = LocalDateTime.of(nam, thang, ngay, 0, 0);
 
-	
+            // Kết nối CSDL
+            Connection con = ConnectDB.getInstance().getConnection();
+
+            // Tạo câu truy vấn SQL
+            String sql = "SELECT COUNT(*) AS SoLuongPhong " +
+                         "FROM ThongTinDatThuePhong " +
+                         "WHERE CAST(NgayNhanPhong AS DATE) <= ? " +
+                         "AND CAST(NgayTraPhong AS DATE) >= ?";
+
+            // Tạo PreparedStatement
+            PreparedStatement pstmt = con.prepareStatement(sql);
+
+            // Đặt các tham số cho câu truy vấn
+            pstmt.setTimestamp(1, Timestamp.valueOf(ngayNhanPhong));
+            pstmt.setTimestamp(2, Timestamp.valueOf(ngayNhanPhong));
+
+            // Thực thi câu truy vấn
+            ResultSet rs = pstmt.executeQuery();
+
+            // Đọc kết quả
+            if (rs.next()) {
+                soLuong = rs.getInt("SoLuongPhong");
+            }
+
+            // Đóng kết nối và tài nguyên
+            rs.close();
+            pstmt.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return soLuong;
+    }
+public int demSoLuongPhongTheoThangNam(int thang, int nam) {
+    int soLuong = 0;
+    try {
+        // Chuyển đổi tháng và năm thành LocalDate
+        LocalDate ngayBatDau = LocalDate.of(nam, thang, 1);
+        LocalDate ngayKetThuc = ngayBatDau.plusMonths(1).minusDays(1); // Lấy ngày cuối cùng của tháng
+
+        // Kết nối CSDL
+        Connection con = ConnectDB.getInstance().getConnection();
+
+        // Tạo câu truy vấn SQL
+        String sql = "SELECT COUNT(*) AS SoLuongPhong " +
+                     "FROM ThongTinDatThuePhong " +
+                     "WHERE CAST(NgayNhanPhong AS DATE) BETWEEN ? AND ? " +
+                     "AND CAST(NgayTraPhong AS DATE) BETWEEN ? AND ?";
+
+        // Tạo PreparedStatement
+        PreparedStatement pstmt = con.prepareStatement(sql);
+
+        // Đặt các tham số cho câu truy vấn
+        pstmt.setTimestamp(1, Timestamp.valueOf(ngayBatDau.atStartOfDay()));
+        pstmt.setTimestamp(2, Timestamp.valueOf(ngayKetThuc.atTime(23, 59, 59)));
+        pstmt.setTimestamp(3, Timestamp.valueOf(ngayBatDau.atStartOfDay()));
+        pstmt.setTimestamp(4, Timestamp.valueOf(ngayKetThuc.atTime(23, 59, 59)));
+
+        // Thực thi câu truy vấn
+        ResultSet rs = pstmt.executeQuery();
+
+        // Đọc kết quả
+        if (rs.next()) {
+            soLuong = rs.getInt("SoLuongPhong");
+        }
+
+        // Đóng kết nối và tài nguyên
+        rs.close();
+        pstmt.close();
+        con.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return soLuong;
+}
+
+	public int demSoLuongPhongTheoNam(int nam) {
+    int soLuong = 0;
+    try {
+        // Chuyển đổi năm thành LocalDate
+        LocalDate ngayBatDau = LocalDate.of(nam, 1, 1);
+        LocalDate ngayKetThuc = ngayBatDau.plusYears(1).minusDays(1); // Lấy ngày cuối cùng của năm
+
+        // Kết nối CSDL
+        Connection con = ConnectDB.getInstance().getConnection();
+
+        // Tạo câu truy vấn SQL
+        String sql = "SELECT COUNT(*) AS SoLuongPhong " +
+                     "FROM ThongTinDatThuePhong " +
+                     "WHERE CAST(NgayNhanPhong AS DATE) BETWEEN ? AND ? " +
+                     "AND CAST(NgayTraPhong AS DATE) BETWEEN ? AND ?";
+
+        // Tạo PreparedStatement
+        PreparedStatement pstmt = con.prepareStatement(sql);
+
+        // Đặt các tham số cho câu truy vấn
+        pstmt.setTimestamp(1, Timestamp.valueOf(ngayBatDau.atStartOfDay()));
+        pstmt.setTimestamp(2, Timestamp.valueOf(ngayKetThuc.atTime(23, 59, 59)));
+        pstmt.setTimestamp(3, Timestamp.valueOf(ngayBatDau.atStartOfDay()));
+        pstmt.setTimestamp(4, Timestamp.valueOf(ngayKetThuc.atTime(23, 59, 59)));
+
+        // Thực thi câu truy vấn
+        ResultSet rs = pstmt.executeQuery();
+
+        // Đọc kết quả
+        if (rs.next()) {
+            soLuong = rs.getInt("SoLuongPhong");
+        }
+
+        // Đóng kết nối và tài nguyên
+        rs.close();
+        pstmt.close();
+        con.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return soLuong;
+}
 }

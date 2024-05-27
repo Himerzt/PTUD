@@ -243,4 +243,11 @@ public class DichVuDao {
 		}
 		return dsDV;
 	}
+	
+	public static void main(String[] args) {
+		// test tìm theo mã dịch vụ 
+		DichVuDao dvDao = new DichVuDao();
+		DichVu dv = dvDao.timTheoMaDichVu("DV002");
+		System.out.println(dv.getGiaDV());
+	}
 }

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRootPane;
+
 import connectDB.ConnectDB;
 import dao.NhanVienDao;
 import dao.PhongDao;
@@ -77,7 +79,7 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 		repaint();
 
 		loadDanhSachPhong();
-		pnedUngDung.addTab("Quản lý phòng", new QuanLyPhong_GUI());
+		pnedUngDung.addTab("Quản lý phòng", new QuanLyPhong_GUI(nhanVien));
 		pnedUngDung.addTab("Quản lý nhân viên", new DanhSachNhanVien_GUI());
 		pnedUngDung.addTab("Quản lý dịch vụ", new DichVu_GUI());
 		pnedUngDung.addTab("Quản lý khuyến mãi", new KhuyenMai_GUI());

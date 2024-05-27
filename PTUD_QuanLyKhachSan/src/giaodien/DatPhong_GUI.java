@@ -543,6 +543,7 @@ public class DatPhong_GUI extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+
     private boolean btnKTSLPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKTSLPhongActionPerformed
         int soNguoiLon = txtSoNguoiLon.getText().isEmpty() ? 0 : Integer.parseInt(txtSoNguoiLon.getText());
         int soTreEm = txtSoTreEm.getText().isEmpty() ? 0 : Integer.parseInt(txtSoTreEm.getText());
