@@ -12,73 +12,99 @@ import java.util.ArrayList;
 import java.util.List;
 
 import connectDB.ConnectDB;
-import entity.DichVu;
 import entity.HoaDon;
-import entity.KhachHang;
-import entity.NhanVien;
 
 public class HoaDonDao {
-	ArrayList<HoaDon> dsHoaDon = new ArrayList<HoaDon>();
-	HoaDon hoaDon = new HoaDon();
+    ArrayList<HoaDon> dsHoaDon = new ArrayList<HoaDon>();
+    HoaDon hoaDon = new HoaDon();
 
-	public HoaDonDao() {
-		dsHoaDon = new ArrayList<HoaDon>();
-		hoaDon = new HoaDon();
+    public HoaDonDao() {
+        dsHoaDon = new ArrayList<HoaDon>();
+        hoaDon = new HoaDon();
+    }
 
-	}
+    // tìm tất cả hóa đơn
+    public ArrayList<HoaDon> timTatCaHoaDon() {
+        try {
+            Connection con = ConnectDB.getInstance().getConnection();
+            String sql = "SELECT * FROM HoaDon";
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                String maHD = rs.getString("MaHD");
+                String maNV = rs.getString("MaNV");
+                String maKH = rs.getString("MaKH");
+                LocalDateTime ngayLap = rs.getTimestamp("NgayLapHD").toLocalDateTime();
+                double tongTien = rs.getDouble("TongTien");
+                double thueVAT = rs.getDouble("ThueVAT");
 
-	// tìm tất cả hóa đơn
-	public ArrayList<HoaDon> timTatCaHoaDon() {
-		try {
-			// code here
-			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from HoaDon";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
-			while (rs.next()) {
-				String maHoaDon = rs.getString(1);
-				String nhanVien = rs.getString(2);
-				String khachHang = rs.getString(3);
-				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
-				
-				hoaDon = new HoaDon(maHoaDon, nhanVien, khachHang, ngayLap);
-				
-				dsHoaDon.add(hoaDon);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+                HoaDon hd = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, thueVAT);
+                dsHoaDon.add(hd);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return dsHoaDon;
+    }
+// Tìm danh sách hóa đơn với các thông tin như Mã hóa đơn, Tên khách hàng, Ngày lập hóa đơn, Tổng tiền
+public List<Object[]> timDanhSachHoaDon() {
+    List<Object[]> danhSachHoaDon = new ArrayList<>();
+    ConnectDB.getInstance();
+    Connection con = ConnectDB.getConnection();
+    PreparedStatement pstmt = null;
 
-		return dsHoaDon;
-	}
-	
-	// Tìm tất cả hóa đơn có trong ngày
-	public List<HoaDon> timHoaDonTrongNgay(LocalDate ngay) {
+    try {
+        String sql = "SELECT HoaDon.MaHD, KhachHang.TenKhachHang, HoaDon.NgayLapHD, HoaDon.TongTien " +
+                     "FROM HoaDon " +
+                     "INNER JOIN KhachHang ON HoaDon.MaKH = KhachHang.MaKH";
+        pstmt = con.prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
+        while (rs.next()) {
+            String maHD = rs.getString(1);
+            String tenKH = rs.getString(2);
+            LocalDateTime ngayLap = rs.getTimestamp(3).toLocalDateTime();
+            double tongTien = rs.getDouble(4);
+
+            Object[] hoaDonInfo = {maHD, tenKH, ngayLap, tongTien};
+            danhSachHoaDon.add(hoaDonInfo);
+        }
+
+        rs.close();
+        pstmt.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return danhSachHoaDon;
+}
+
+    // Tìm hóa đơn trong ngày
+    public List<HoaDon> timHoaDonTrongNgay(LocalDate ngay) {
         List<HoaDon> danhSachHoaDon = new ArrayList<>();
         ConnectDB.getInstance();
         Connection con = ConnectDB.getConnection();
         PreparedStatement pstmt = null;
 
         try {
-            // Câu lệnh SQL để tìm hóa đơn trong ngày
             String sql = "SELECT * FROM HoaDon WHERE NgayLapHD >= ? AND NgayLapHD < ?";
             pstmt = con.prepareStatement(sql);
 
-            // Thiết lập giá trị cho các tham số
             LocalDateTime ngayBatDau = ngay.atStartOfDay();
             LocalDateTime ngayKetThuc = ngay.plusDays(1).atStartOfDay();
 
             pstmt.setTimestamp(1, Timestamp.valueOf(ngayBatDau));
             pstmt.setTimestamp(2, Timestamp.valueOf(ngayKetThuc));
 
-            // Thực thi câu lệnh và xử lý kết quả
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                HoaDon hoaDon = new HoaDon();
-                hoaDon.setMaHoaDon(rs.getString("MaHD"));
-                hoaDon.setMaNhanVien(rs.getString("MaNV"));
-                hoaDon.setMaKhachHang(rs.getString("MaKH"));
-                hoaDon.setNgayLap(rs.getTimestamp("NgayLapHD").toLocalDateTime());
+                String maHD = rs.getString("MaHD");
+                String maNV = rs.getString("MaNV");
+                String maKH = rs.getString("MaKH");
+                LocalDateTime ngayLap = rs.getTimestamp("NgayLapHD").toLocalDateTime();
+                double tongTien = rs.getDouble("TongTien");
+                double thueVAT = rs.getDouble("ThueVAT");
+
+                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, thueVAT);
                 danhSachHoaDon.add(hoaDon);
             }
 
@@ -91,268 +117,219 @@ public class HoaDonDao {
         return danhSachHoaDon;
     }
 
+    // Thêm hóa đơn
+    public boolean themHoaDon(HoaDon hoaDon) {
+        ConnectDB.getInstance();
+        Connection con = ConnectDB.getConnection();
+        PreparedStatement pstmt = null;
+        int n = 0;
+        try {
+            String sqlCheck = "SELECT COUNT(*) FROM HoaDon WHERE MaHD = ?";
+            pstmt = con.prepareStatement(sqlCheck);
+            pstmt.setString(1, hoaDon.getMaHD());
+            ResultSet rs = pstmt.executeQuery();
+            rs.next();
+            int count = rs.getInt(1);
+            rs.close();
+            pstmt.close();
 
-	// thêm hóa đơn
-	public boolean themHoaDon(HoaDon hoaDon) {
-	    ConnectDB.getInstance();
-	    Connection con = ConnectDB.getConnection();
-	    PreparedStatement pstmt = null;
-	    int n = 0;
-	    try {
-	        // Kiểm tra xem hóa đơn có tồn tại trong CSDL không
-	        String sqlCheck = "SELECT COUNT(*) FROM HoaDon WHERE MaHD = ?";
-	        pstmt = con.prepareStatement(sqlCheck);
-	        pstmt.setString(1, hoaDon.getMaHoaDon());
-	        ResultSet rs = pstmt.executeQuery();
-	        rs.next();
-	        int count = rs.getInt(1);
-	        rs.close();
-	        pstmt.close();
+            if (count == 0) {
+                String sqlInsert = "INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, TongTien, ThueVAT) VALUES (?, ?, ?, ?, ?, ?)";
+                pstmt = con.prepareStatement(sqlInsert);
+                pstmt.setString(1, hoaDon.getMaHD());
+                pstmt.setString(2, hoaDon.getMaNV());
+                pstmt.setString(3, hoaDon.getMaKH());
+                pstmt.setTimestamp(4, Timestamp.valueOf(hoaDon.getNgayLapHD()));
+                pstmt.setDouble(5, hoaDon.getTongTien());
+                pstmt.setDouble(6, hoaDon.getThueVAT());
 
-	        // Nếu hóa đơn không tồn tại, thực hiện thêm mới
-	        if (count == 0) {
-	            // Xử lý ngày lập
-	            Timestamp ngayLapHD = Timestamp.valueOf(hoaDon.getNgayLap());
-	            // Thêm hóa đơn vào CSDL
-	            String sqlInsert = "INSERT INTO HoaDon (MaHD, MaNV, MaKH, NgayLapHD, ThueVAT) VALUES (?, ?, ?, ?, ?)";
-	            pstmt = con.prepareStatement(sqlInsert);
-	            pstmt.setString(1, hoaDon.getMaHoaDon());
-	            pstmt.setString(2, hoaDon.getMaNhanVien());
-	            pstmt.setString(3, hoaDon.getMaKhachHang());
-	            pstmt.setTimestamp(4, ngayLapHD);
-	            pstmt.setDouble(5, hoaDon.getVAT());
+                n = pstmt.executeUpdate();
+                pstmt.close();
+                return n > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
-	            n = pstmt.executeUpdate();
-	            pstmt.close();
-	            return n > 0;
-	        }
-	    } catch (SQLException e) {
-	        e.printStackTrace();
-	    }
-	    return false;
-	}
-	
-//	 public boolean themDichVu(DichVu dv) {
-//         ConnectDB.getInstance();
-//         Connection con = ConnectDB.getConnection();
-//         Statement stmt = null;
-//         int n = 0;
-//         try {
-//             // Kiểm tra xem dịch vụ có tồn tại trong CSDL không
-//             String sqlCheck = "SELECT COUNT(*) FROM DichVu WHERE maDV = '" + dv.getMaDV() + "'";
-//             stmt = con.createStatement();
-//             ResultSet rs = stmt.executeQuery(sqlCheck);
-//             rs.next();
-//             int count = rs.getInt(1);
-//             rs.close();
-//             stmt.close();
-//
-//             // Nếu dịch vụ không tồn tại, thực hiện thêm mới
-//             if (count == 0) {
-//                 stmt = con.createStatement();
-//                 String sqlInsert = "INSERT INTO DichVu VALUES ('" + dv.getMaDV() + "', N'" + dv.getTenDV() + "', " + dv.getGiaDV() + ")";
-//                 n = stmt.executeUpdate(sqlInsert);
-//                 stmt.close();
-//             }
-//         } catch (SQLException e) {
-//             e.printStackTrace();
-//         }
-//         return n > 0;
-//     }
+    // Sửa hóa đơn
+    public boolean suaHoaDon(HoaDon hoaDon) {
+        ConnectDB.getInstance();
+        Connection con = ConnectDB.getConnection();
+        PreparedStatement pstmt = null;
+        int n = 0;
+        try {
+            String sql = "UPDATE HoaDon SET MaNV = ?, MaKH = ?, NgayLapHD = ?, TongTien = ?, ThueVAT = ? WHERE MaHD = ?";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, hoaDon.getMaNV());
+            pstmt.setString(2, hoaDon.getMaKH());
+            pstmt.setTimestamp(3, Timestamp.valueOf(hoaDon.getNgayLapHD()));
+            pstmt.setDouble(4, hoaDon.getTongTien());
+            pstmt.setDouble(5, hoaDon.getThueVAT());
+            pstmt.setString(6, hoaDon.getMaHD());
 
-	// sửa hóa đơn
-	public boolean suaHoaDon(HoaDon hoaDon) {
-		ConnectDB.getInstance();
-		Connection con = ConnectDB.getConnection();
-		Statement stmt = null;
-		int n = 0;
-		if (dsHoaDon.contains(hoaDon)) {
-			try {
-				stmt = con.createStatement();
-				String sql = "update HoaDon set nhanVien = '" + hoaDon.getMaNhanVien() + "', ngayLap = '"
-						+ hoaDon.getNgayLap() + "', khachHang = '" + hoaDon.getMaKhachHang()
-						+ "' where maHoaDon = '" + hoaDon.getMaHoaDon() + "'";
-				n = stmt.executeUpdate(sql);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			return n > 0;
-		}
-		return false;
-	}
+            n = pstmt.executeUpdate();
+            pstmt.close();
+            return n > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
-	// xóa hóa đơn
-	public boolean xoaHoaDon(HoaDon hoaDon) {
-		ConnectDB.getInstance();
-		Connection con = ConnectDB.getConnection();
-		Statement stmt = null;
-		int n = 0;
-		if (dsHoaDon.contains(hoaDon)) {
-			try {
-				stmt = con.createStatement();
-				String sql = "delete from HoaDon where maHoaDon = '" + hoaDon.getMaHoaDon() + "'";
-				n = stmt.executeUpdate(sql);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			return n > 0;
-		}
-		return false;
-	}
+    // Xóa hóa đơn
+    public boolean xoaHoaDon(HoaDon hoaDon) {
+        ConnectDB.getInstance();
+        Connection con = ConnectDB.getConnection();
+        PreparedStatement pstmt = null;
+        int n = 0;
+        try {
+            String sql = "DELETE FROM HoaDon WHERE MaHD = ?";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, hoaDon.getMaHD());
 
-	// tìm hóa đơn theo mã
-	public HoaDon timHoaDonTheoMa(String maHoaDon) {
-		HoaDon hd = null;
-		try {
-			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from HoaDon where maHoaDon = '" + maHoaDon + "'";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
-			while (rs.next()) {
-				String maHD = rs.getString(1);
-				String nhanVien = rs.getString(2);
-				String khachHang = rs.getString(3);
-				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
-				NhanVien nv = new NhanVien(nhanVien);
-				KhachHang kh = new KhachHang(khachHang);
-				
-                hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return hd;
-	}
+            n = pstmt.executeUpdate();
+            pstmt.close();
+            return n > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
-	// tìm hóa đơn theo mã nhân viên
-	public ArrayList<HoaDon> timHoaDonTheoMaNhanVien(String maNhanVien) {
-		ArrayList<HoaDon> dsHoaDon = new ArrayList<HoaDon>();
-		try {
-			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from HoaDon where nhanVien = '" + maNhanVien + "'";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
-			while (rs.next()) {
-				String maHD = rs.getString(1);
-				String nhanVien = rs.getString(2);
-				String khachHang = rs.getString(3);
-				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
-				
-				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
-				
-				dsHoaDon.add(hd);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+    // Tìm hóa đơn theo mã
+    public HoaDon timHoaDonTheoMa(String maHoaDon) {
+        HoaDon hd = null;
+        try {
+            Connection con = ConnectDB.getInstance().getConnection();
+            String sql = "SELECT * FROM HoaDon WHERE MaHD = ?";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, maHoaDon);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                String maHD = rs.getString("MaHD");
+                String maNV = rs.getString("MaNV");
+                String maKH = rs.getString("MaKH");
+                LocalDateTime ngayLap = rs.getTimestamp("NgayLapHD").toLocalDateTime();
+                double tongTien = rs.getDouble("TongTien");
+                double thueVAT = rs.getDouble("ThueVAT");
 
-	    return dsHoaDon;}
-	// tìm hóa đơn theo mã khách hàng
-	public ArrayList<HoaDon> timHoaDonTheoMaKhachHang(String maKhachHang) {
-		ArrayList<HoaDon> dsHoaDon = new ArrayList<HoaDon>();
-		try {
-			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from HoaDon where khachHang = '" + maKhachHang + "'";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
-			while (rs.next()) {
-				String maHD = rs.getString(1);
-				String nhanVien = rs.getString(2);
-				String khachHang = rs.getString(3);
-				LocalDateTime ngayLap = rs.getTimestamp(4).toLocalDateTime();
-				
-				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap);
-				
-				dsHoaDon.add(hd);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+                hd = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, thueVAT);
+            }
+            rs.close();
+            pstmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return hd;
+    }
 
-		return dsHoaDon;
-	}
-	// tìm hóa đơn theo ngày lập
-	public ArrayList<HoaDon> timHoaDonTheoNgayLap(LocalDate ngayLap) {
-		ArrayList<HoaDon> dsHoaDon = new ArrayList<HoaDon>();
-		try {
-			Connection con = ConnectDB.getInstance().getConnection();
-			String sql = "Select * from HoaDon where ngayLap = '" + ngayLap + "'";
-			Statement statement = con.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
-			while (rs.next()) {
-				String maHD = rs.getString(1);
-				String nhanVien = rs.getString(2);
-				String khachHang = rs.getString(3);
-				LocalDateTime ngayLap1 = rs.getTimestamp(4).toLocalDateTime();
-				
-				HoaDon hd = new HoaDon(maHD, nhanVien, khachHang, ngayLap1);
-				
-				dsHoaDon.add(hd);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+    // Tìm hóa đơn theo mã nhân viên
+    public List<HoaDon> timHoaDonTheoMaNhanVien(String maNhanVien) {
+        List<HoaDon> dsHoaDon = new ArrayList<>();
+        try {
+            Connection con = ConnectDB.getInstance().getConnection();
+            String sql = "SELECT * FROM HoaDon WHERE MaNV = ?";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, maNhanVien);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                String maHD = rs.getString("MaHD");
+                String maNV = rs.getString("MaNV");
+                String maKH = rs.getString("MaKH");
+                LocalDateTime ngayLap = rs.getTimestamp("NgayLapHD").toLocalDateTime();
+                double tongTien = rs.getDouble("TongTien");
+                double thueVAT = rs.getDouble("ThueVAT");
 
-		return dsHoaDon;
-	}
-	
-	// Đếm số hóa đơn trong ngày
-	public int demSoHoaDonTrongNgay(LocalDate ngay) {
-		ConnectDB.getInstance();
-		Connection con = ConnectDB.getConnection();
-		PreparedStatement pstmt = null;
-		int soLuong = 0;
+                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, thueVAT);
+                dsHoaDon.add(hoaDon);
+            }
+            rs.close();
+            pstmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return dsHoaDon;
+    }
 
-		try {
-			// Câu lệnh SQL để đếm số hóa đơn trong ngày
-			String sql = "SELECT COUNT(*) FROM HoaDon WHERE NgayLapHD >= ? AND NgayLapHD < ?";
-			pstmt = con.prepareStatement(sql);
+    // Tìm hóa đơn theo mã khách hàng
+    public List<HoaDon> timHoaDonTheoMaKhachHang(String maKhachHang) {
+        List<HoaDon> dsHoaDon = new ArrayList<>();
+        try {
+            Connection con = ConnectDB.getInstance().getConnection();
+            String sql = "SELECT * FROM HoaDon WHERE MaKH = ?";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, maKhachHang);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                String maHD = rs.getString("MaHD");
+                String maNV = rs.getString("MaNV");
+                String maKH = rs.getString("MaKH");
+                LocalDateTime ngayLap = rs.getTimestamp("NgayLapHD").toLocalDateTime();
+                double tongTien = rs.getDouble("TongTien");
+                double thueVAT = rs.getDouble("ThueVAT");
 
-			// Thiết lập giá trị cho các tham số
-			LocalDateTime ngayBatDau = ngay.atStartOfDay();
-			LocalDateTime ngayKetThuc = ngay.plusDays(1).atStartOfDay();
+                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, thueVAT);
+                dsHoaDon.add(hoaDon);
+            }
+            rs.close();
+            pstmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return dsHoaDon;
+    }
 
-			pstmt.setTimestamp(1, Timestamp.valueOf(ngayBatDau));
-			pstmt.setTimestamp(2, Timestamp.valueOf(ngayKetThuc));
+    // Tìm hóa đơn theo ngày lập
+    public List<HoaDon> timHoaDonTheoNgayLap(LocalDate ngayLap) {
+        List<HoaDon> dsHoaDon = new ArrayList<>();
+        try {
+            Connection con = ConnectDB.getInstance().getConnection();
+            String sql = "SELECT * FROM HoaDon WHERE NgayLapHD = ?";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setTimestamp(1, Timestamp.valueOf(ngayLap.atStartOfDay()));
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                String maHD = rs.getString("MaHD");
+                String maNV = rs.getString("MaNV");
+                String maKH = rs.getString("MaKH");
+                LocalDateTime ngayLapHD = rs.getTimestamp("NgayLapHD").toLocalDateTime();
+                double tongTien = rs.getDouble("TongTien");
+                double thueVAT = rs.getDouble("ThueVAT");
 
-			// Thực thi câu lệnh và xử lý kết quả
-			ResultSet rs = pstmt.executeQuery();
-			rs.next();
-			soLuong = rs.getInt(1);
+                HoaDon hoaDon = new HoaDon(maHD, maNV, maKH, ngayLapHD, tongTien, thueVAT);
+                dsHoaDon.add(hoaDon);
+            }
+            rs.close();
+            pstmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return dsHoaDon;
+    }
 
-			rs.close();
-			pstmt.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+    // Đếm số hóa đơn trong ngày
+    public int demSoHoaDonTrongNgay(LocalDate ngay) {
+        ConnectDB.getInstance();
+        Connection con = ConnectDB.getConnection();
+        PreparedStatement pstmt = null;
+        int soLuong = 0;
 
-		return soLuong;
-	}
-	
-	
-	public static void main(String[] args) {
-		// test tìm tất cả hóa đơn
-		HoaDonDao hoaDonDao = new HoaDonDao();
-		
-//		// test thêm hóa đơn
+        try {
+            String sql = "SELECT COUNT(*) FROM HoaDon WHERE NgayLapHD = ?";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setTimestamp(1, Timestamp.valueOf(ngay.atStartOfDay()));
+            ResultSet rs = pstmt.executeQuery();
+            rs.next();
+            soLuong = rs.getInt(1);
 
-		
-		HoaDon hd = new HoaDon("HD123", "NV001", "KH004", LocalDateTime.now());
-		boolean kq = hoaDonDao.themHoaDon(hd);
-		if (kq) {
-			System.out.println("Thêm thành công");
-		} else {
-			System.out.println("Thêm thất bại");
-		}
-		
-		// test tìm hóa đơn trong ngày
-		List<HoaDon> dsHoaDon = hoaDonDao.timHoaDonTrongNgay(LocalDate.now());
-		for (HoaDon hoaDon : dsHoaDon) {
-			System.out.println(hoaDon);
-		}
-		
-		// test đếm số hóa đơn trong ngày
-		int soLuong = hoaDonDao.demSoHoaDonTrongNgay(LocalDate.now());
-		System.out.println("Số lượng hóa đơn trong ngày: " + soLuong);
-	}
+            rs.close();
+            pstmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return soLuong;
+    }
 }
