@@ -332,4 +332,168 @@ public List<Object[]> timDanhSachHoaDon() {
 
         return soLuong;
     }
+    public double tinhTongHoaDonTheoNgay(int ngay, int thang, int nam) {
+    double tongDoanhThu = 0;
+    try {
+        Connection con = ConnectDB.getInstance().getConnection();
+        String sql = "SELECT SUM(TongTien) FROM HoaDon WHERE DAY(NgayLapHD) = ? AND MONTH(NgayLapHD) = ? AND YEAR(NgayLapHD) = ?";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setInt(1, ngay);
+        pstmt.setInt(2, thang);
+        pstmt.setInt(3, nam);
+        ResultSet rs = pstmt.executeQuery();
+        if (rs.next()) {
+            tongDoanhThu = rs.getDouble(1);
+        }
+        rs.close();
+        pstmt.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return tongDoanhThu;
+}
+
+public double tinhTongHoaDonTheoThang(int thang, int nam) {
+    double tongDoanhThu = 0;
+    try {
+        Connection con = ConnectDB.getInstance().getConnection();
+        String sql = "SELECT SUM(TongTien) FROM HoaDon WHERE MONTH(NgayLapHD) = ? AND YEAR(NgayLapHD) = ?";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setInt(1, thang);
+        pstmt.setInt(2, nam);
+        ResultSet rs = pstmt.executeQuery();
+        if (rs.next()) {
+            tongDoanhThu = rs.getDouble(1);
+        }
+        rs.close();
+        pstmt.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return tongDoanhThu;
+}
+
+public double tinhTongHoaDonTheoNam(int nam) {
+    double tongDoanhThu = 0;
+    try {
+        Connection con = ConnectDB.getInstance().getConnection();
+        String sql = "SELECT SUM(TongTien) FROM HoaDon WHERE YEAR(NgayLapHD) = ?";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setInt(1, nam);
+        ResultSet rs = pstmt.executeQuery();
+        if (rs.next()) {
+            tongDoanhThu = rs.getDouble(1);
+        }
+        rs.close();
+        pstmt.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return tongDoanhThu;
+}
+public int demSoLuongKhachHangTrongNgay(int ngay, int thang, int nam) {
+    int soLuong = 0;
+    ConnectDB.getInstance();
+    Connection con = ConnectDB.getConnection();
+    PreparedStatement pstmt = null;
+
+    try {
+        String sql = "SELECT COUNT(DISTINCT MaKH) AS SoLuong " +
+                     "FROM HoaDon " +
+                     "WHERE DAY(NgayLapHD) = ? AND MONTH(NgayLapHD) = ? AND YEAR(NgayLapHD) = ?";
+        pstmt = con.prepareStatement(sql);
+        pstmt.setInt(1, ngay);
+        pstmt.setInt(2, thang);
+        pstmt.setInt(3, nam);
+
+        ResultSet rs = pstmt.executeQuery();
+        if (rs.next()) {
+            soLuong = rs.getInt("SoLuong");
+        }
+
+        rs.close();
+        pstmt.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return soLuong;
+}
+public int demSoLuongKhachHangTrongThang(int thang, int nam) {
+    int soLuong = 0;
+    ConnectDB.getInstance();
+    Connection con = ConnectDB.getConnection();
+    PreparedStatement pstmt = null;
+
+    try {
+        String sql = "SELECT COUNT(DISTINCT MaKH) AS SoLuong " +
+                     "FROM HoaDon " +
+                     "WHERE MONTH(NgayLapHD) = ? AND YEAR(NgayLapHD) = ?";
+        pstmt = con.prepareStatement(sql);
+        pstmt.setInt(1, thang);
+        pstmt.setInt(2, nam);
+
+        ResultSet rs = pstmt.executeQuery();
+        if (rs.next()) {
+            soLuong = rs.getInt("SoLuong");
+        }
+
+        rs.close();
+        pstmt.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return soLuong;
+}
+public int demSoLuongKhachHangTrongNam(int nam) {
+    int soLuong = 0;
+    ConnectDB.getInstance();
+    Connection con = ConnectDB.getConnection();
+    PreparedStatement pstmt = null;
+
+    try {
+        String sql = "SELECT COUNT(DISTINCT MaKH) AS SoLuong " +
+                     "FROM HoaDon " +
+                     "WHERE YEAR(NgayLapHD) = ?";
+        pstmt = con.prepareStatement(sql);
+        pstmt.setInt(1, nam);
+
+        ResultSet rs = pstmt.executeQuery();
+        if (rs.next()) {
+            soLuong = rs.getInt("SoLuong");
+        }
+
+        rs.close();
+        pstmt.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return soLuong;
+}
+public List<Integer> layDanhSachNamHoaDon() {
+    List<Integer> danhSachNam = new ArrayList<>();
+    ConnectDB.getInstance();
+    Connection con = ConnectDB.getConnection();
+    PreparedStatement pstmt = null;
+
+    try {
+        String sql = "SELECT DISTINCT YEAR(NgayLapHD) AS Nam FROM HoaDon";
+        pstmt = con.prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
+        while (rs.next()) {
+            int nam = rs.getInt("Nam");
+            danhSachNam.add(nam);
+        }
+
+        rs.close();
+        pstmt.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return danhSachNam;
+}
+
 }

@@ -12,7 +12,7 @@ public class GiaoCa_GUI extends javax.swing.JPanel {
 
     
 
-    public GiaoCa_GUI(String maNhanVien) throws SQLException {
+    public GiaoCa_GUI() throws SQLException {
      
     }
 
@@ -123,6 +123,7 @@ public class GiaoCa_GUI extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(this, "Giao ca không thành công, vui lòng kiểm tra lại.", "Lỗi", JOptionPane.ERROR_MESSAGE);
         }
+        
     }//GEN-LAST:event_btnGiaoCaActionPerformed
 
 
@@ -135,4 +136,5 @@ public class GiaoCa_GUI extends javax.swing.JPanel {
     private giaodien.CustomClass.TextFieldShadow txtDoanhThuHeThong;
     private giaodien.CustomClass.TextFieldShadow txtDoanhThuThucTe;
     // End of variables declaration//GEN-END:variables
+    
 }
