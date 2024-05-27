@@ -67,3 +67,9 @@ SELECT tt.TienDaCoc  FROM HoaDon hd JOIN ChiTietHoaDon chd
 ON hd.MaHD = chd.MaHD JOIN ThongTinDatThuePhong tt
 ON tt.MaTTDTP = chd.MaTTDTP 
 WHERE hd.MaHD = 'HD27052024001'
+
+
+-- Tìm phòng đang thuê và thông tin khách hàng
+SELECT p.MaPhong, p.TrangThaiPhong, kh.TenKhachHang, kh.CCCD_Passport FROM Phong p JOIN ThongTinDatThuePhong tt 
+ON p.MaPhong = tt.MaPhong JOIN KhachHang kh
+ON tt.MaKhachHang = kh.MaKH WHERE p.TrangThaiPhong = N'Đã thuê'

@@ -292,4 +292,27 @@ public class PhongDao {
 		}
 		return dsPhong;
 	}
+	
+	// Lấy thông tin phòng đang thuê
+//	-- Tìm phòng đang thuê và thông tin khách hàng
+//	SELECT p.MaPhong, p.TrangThaiPhong, kh.TenKhachHang, kh.CCCD_Passport FROM Phong p JOIN ThongTinDatThuePhong tt 
+//	ON p.MaPhong = tt.MaPhong JOIN KhachHang kh
+//	ON tt.MaKhachHang = kh.MaKH WHERE p.TrangThaiPhong = N'Đã thuê'
+	public ArrayList<String> layThongTinPhongDangThue() {
+		ArrayList<String> dsPhongDangThue = new ArrayList<String>();
+		try {
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con.prepareStatement(
+					"select p.MaPhong, p.TrangThaiPhong, kh.TenKhachHang, kh.CCCD_Passport from Phong p join ThongTinDatThuePhong tt on p.MaPhong = tt.MaPhong join KhachHang kh on tt.MaKhachHang = kh.MaKH where p.TrangThaiPhong = N'Đã thuê'");
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				dsPhongDangThue.add(
+						rs.getString(1) + ";" + rs.getString(2) + ";" + rs.getString(3) + ";" + rs.getString(4));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dsPhongDangThue;
+	}
+	
 }

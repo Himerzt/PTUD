@@ -84,6 +84,7 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 		pnedUngDung.addTab("Quản lý dịch vụ", new DichVu_GUI());
 		pnedUngDung.addTab("Quản lý khuyến mãi", new KhuyenMai_GUI());
 		pnedUngDung.addTab("Quản lý khách hàng", new KhachHang_GUI());
+		pnedUngDung.addTab("Quản lý phòng thuê", new QuanLyPhongThue_GUI());
 
 		Menu.setEvent(new MenuEvent() {
 			@Override
@@ -113,6 +114,9 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 				}
 				if (index == 5) {
 					pnedUngDung.setSelectedIndex(5);
+				}
+				if (index == 6) {
+					pnedUngDung.setSelectedIndex(6);
 				}
 
 			}
