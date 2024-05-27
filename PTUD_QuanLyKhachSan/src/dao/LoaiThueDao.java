@@ -89,4 +89,20 @@ public class LoaiThueDao {
         return giaThue;
 		
 	}
+	
+	public String timKieuThueTheoMaLoaiThue(String maLoaiThue) {
+		String kieuThue = "";
+		try {
+			Connection con = ConnectDB.getConnection();
+			PreparedStatement stmt = con.prepareStatement("select kieuThue from LoaiThue where maLoaiThue = ?");
+			stmt.setString(1, maLoaiThue);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				kieuThue = rs.getString("kieuThue");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return kieuThue;
+	}
 }
