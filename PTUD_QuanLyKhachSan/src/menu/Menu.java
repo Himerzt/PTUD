@@ -31,14 +31,13 @@ public class Menu extends  JComponent{
     private String [][] menuItems= new String[][]{
     {"Trang chủ"},
 //    {"Quản lý phòng","Đặt phòng","Thuê phòng","Đổi phòng","Trả phòng","Hủy đặt phòng","Xem chi tiết"},
-    {"Quản lý phòng"},
+    {"Quản lý " ,"Quản lý phòng" ,"Phòng đang thuê"},
     {"Nhân viên"},
     {"Dịch vụ"},
     {"Khuyến mãi"},
     {"Khách hàng"},
 	{ "Hóa đơn" }, 
 	{ "Thống kê" },
-        {"Phòng đang thuê"},
     {"Thoát"}
 };
     public  Menu(){
