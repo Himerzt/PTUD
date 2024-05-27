@@ -103,7 +103,8 @@ CREATE TABLE ThongTinDatThuePhong (
     NgayNhanPhong DATETIME,
     NgayTraPhong DATETIME,
     LoaiThue NVARCHAR(10),
-	TienDaCoc FLOAT
+	TienDaCoc FLOAT,
+	TrangThai NVARCHAR(30)
 ); --check
 
 CREATE TABLE DichVuSuDung (

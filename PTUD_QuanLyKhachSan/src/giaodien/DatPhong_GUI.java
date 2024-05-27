@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -35,46 +36,47 @@ import entity.ThongTinDatThuePhong;
  * @author Huynguyen
  */
 public class DatPhong_GUI extends javax.swing.JDialog {
-	private ArrayList<Phong> dsPhongDat;
-	private DichVuDao dichVuDao;
-	private DichVuPhongDao dichVuPhongDao;
-	private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
-	private KhachHangDao khachHangDao;
-	private LoaiThueDao loaiThueDao;
-	private LoaiPhongDao loaiPhongDao;
-	private PhongDao phongDao;
 
-	/**
-	 * Creates new form DatPhong
-	 */
-	public DatPhong_GUI(List<String> dsTenPhong) {
-		initComponents();
-		dichVuDao = new DichVuDao();
-		thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
-		khachHangDao = new KhachHangDao();
-		loaiThueDao = new LoaiThueDao();
-		loaiPhongDao = new LoaiPhongDao();
-		phongDao = new PhongDao();
-		dichVuPhongDao = new DichVuPhongDao();
-		ConnectDB.getInstance().getConnection();
-		dsPhongDat = new ArrayList<Phong>();
-		for (String tenPhong : dsTenPhong) {
-			dsPhongDat.add(phongDao.timPhongTheoSoPhong(Integer.parseInt(tenPhong)));
-		}
-		loadDanhSachPhongDat();
-	}
+    private ArrayList<Phong> dsPhongDat;
+    private DichVuDao dichVuDao;
+    private DichVuPhongDao dichVuPhongDao;
+    private ThongTinDatThuePhongDao thongTinDatThuePhongDao;
+    private KhachHangDao khachHangDao;
+    private LoaiThueDao loaiThueDao;
+    private LoaiPhongDao loaiPhongDao;
+    private PhongDao phongDao;
 
-	public ArrayList<Phong> getDsPhongDat() {
-		return dsPhongDat;
-	}
+    /**
+     * Creates new form DatPhong
+     */
+    public DatPhong_GUI(List<String> dsTenPhong) {
+        initComponents();
+        dichVuDao = new DichVuDao();
+        thongTinDatThuePhongDao = new ThongTinDatThuePhongDao();
+        khachHangDao = new KhachHangDao();
+        loaiThueDao = new LoaiThueDao();
+        loaiPhongDao = new LoaiPhongDao();
+        phongDao = new PhongDao();
+        dichVuPhongDao = new DichVuPhongDao();
+        ConnectDB.getInstance().getConnection();
+        dsPhongDat = new ArrayList<Phong>();
+        for (String tenPhong : dsTenPhong) {
+            dsPhongDat.add(phongDao.timPhongTheoSoPhong(Integer.parseInt(tenPhong)));
+        }
+        loadDanhSachPhongDat();
+    }
 
-	@SuppressWarnings("unchecked")
-	// <editor-fold defaultstate="collapsed" desc="Generated
-	// <editor-fold defaultstate="collapsed" desc="Generated
-	// <editor-fold defaultstate="collapsed" desc="Generated
-	// <editor-fold defaultstate="collapsed" desc="Generated
-	// <editor-fold defaultstate="collapsed" desc="Generated
-	// <editor-fold defaultstate="collapsed" desc="Generated
+    public ArrayList<Phong> getDsPhongDat() {
+        return dsPhongDat;
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -291,6 +293,11 @@ public class DatPhong_GUI extends javax.swing.JDialog {
         });
 
         btnKTSLPhong.setText("Kiểm tra");
+        btnKTSLPhong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKTSLPhongActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
@@ -408,7 +415,7 @@ public class DatPhong_GUI extends javax.swing.JDialog {
         panelRound3.setRoundTopLeft(15);
         panelRound3.setRoundTopRight(15);
 
-        comboBoxDichVu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ăn sáng", "Ăn trưa", "Ăn chiều", "Giặt quần áo", "Đưa đón khách", "Thêm giường", "Thêm gối", "Thêm chăn", "Nước ngọt", "Nước suối", "Gọi món tại phòng" }));
+        comboBoxDichVu.setModel(loadDanhSachDichVu());
         comboBoxDichVu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         comboBoxDichVu.setLabeText("");
 
@@ -417,8 +424,8 @@ public class DatPhong_GUI extends javax.swing.JDialog {
         panelRound3Layout.setHorizontalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound3Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(comboBoxDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(comboBoxDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         panelRound3Layout.setVerticalGroup(
@@ -433,14 +440,13 @@ public class DatPhong_GUI extends javax.swing.JDialog {
         panelRound2Layout.setHorizontalGroup(
             panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
-                        .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
-                        .addComponent(btnThemDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66))))
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
+            .addGroup(panelRound2Layout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(btnThemDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound2Layout.setVerticalGroup(
             panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -537,373 +543,373 @@ public class DatPhong_GUI extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-	public boolean kiemTraTrungNgayNhan(String maPhong, LocalDateTime ngayNhan) {
-		List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong(maPhong);
-		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
-			if (ngayNhan.isBefore(thongTinDatThuePhong.getNgayTraPhong())
-					&& ngayNhan.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
-				JOptionPane.showMessageDialog(null,
-						"Ngày nhận phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			} else if (ngayNhan.equals(thongTinDatThuePhong.getNgayNhanPhong())) {
-				JOptionPane.showMessageDialog(null, "Ngày nhận phòng trùng với ngày nhận phòng đã có trước đó!", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			}
-		}
-		return true;
-	}
+    private boolean btnKTSLPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKTSLPhongActionPerformed
+        int soNguoiLon = txtSoNguoiLon.getText().isEmpty() ? 0 : Integer.parseInt(txtSoNguoiLon.getText());
+        int soTreEm = txtSoTreEm.getText().isEmpty() ? 0 : Integer.parseInt(txtSoTreEm.getText());
+        if (soNguoiLon <= 0 && soTreEm <= 0) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập số lượng người lớn hoặc trẻ em", "Lỗi",
+                    JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else {
+            int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongDat);
+            if (soNguoiLon > sucChuaToiDa || (soNguoiLon == sucChuaToiDa && soTreEm > soNguoiLon)) {
+                JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            } else if (soNguoiLon < dsPhongDat.size()) {
+                JOptionPane.showMessageDialog(this, "Số lượng người không đủ sức chứa của phòng", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            } else {
+                JOptionPane.showMessageDialog(this, "Số lượng người hợp lệ", "Thông báo",
+                        JOptionPane.INFORMATION_MESSAGE);
+                return true;
+            }
+        }
+    }//GEN-LAST:event_btnKTSLPhongActionPerformed
 
-	public boolean kiemTraTrungNgayTra(String maPhong, LocalDateTime ngayTra) {
-		List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong(maPhong);
-		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
-			if (ngayTra.isBefore(thongTinDatThuePhong.getNgayTraPhong())
-					&& ngayTra.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
-				JOptionPane.showMessageDialog(null,
-						"Ngày trả phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			} else if (ngayTra.equals(thongTinDatThuePhong.getNgayTraPhong())) {
-				JOptionPane.showMessageDialog(null, "Ngày trả phòng trùng với ngày trả phòng đã có trước đó!", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			}
-		}
-		return true;
-	}
+    public boolean kiemTraTrungNgayNhan(String maPhong, LocalDateTime ngayNhan) {
+        List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong(maPhong);
+        for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
+            if (ngayNhan.isBefore(thongTinDatThuePhong.getNgayTraPhong())
+                    && ngayNhan.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
+                JOptionPane.showMessageDialog(null,
+                        "Ngày nhận phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            } else if (ngayNhan.equals(thongTinDatThuePhong.getNgayNhanPhong())) {
+                JOptionPane.showMessageDialog(null, "Ngày nhận phòng trùng với ngày nhận phòng đã có trước đó!", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+        }
+        return true;
+    }
 
-	public boolean kiemTraTrungThoiGianThue(String maPhong, LocalDateTime ngayNhan, LocalDateTime ngayTra) {
-		List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong(maPhong);
-		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
-			LocalDateTime ngayNhanCoSan = thongTinDatThuePhong.getNgayNhanPhong();
-			LocalDateTime ngayTraCoSan = thongTinDatThuePhong.getNgayTraPhong();
-			// Kiểm tra khoảng thời gian từ ngày nhận đến ngày trả có chứa khoảng thời gian
-			// khác có sẵn không
-			if (ngayNhan.isBefore(ngayNhanCoSan) && ngayTra.isAfter(ngayTraCoSan)) {
-				JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");
-				return false;
-			} else if (ngayNhan.isAfter(ngayNhanCoSan) && ngayTra.isBefore(ngayTraCoSan)) {
-				JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");
-				return false;
-			}
-		}
-		return true;
-	}
+    public boolean kiemTraTrungNgayTra(String maPhong, LocalDateTime ngayTra) {
+        List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong(maPhong);
+        for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
+            if (ngayTra.isBefore(thongTinDatThuePhong.getNgayTraPhong())
+                    && ngayTra.isAfter(thongTinDatThuePhong.getNgayNhanPhong())) {
+                JOptionPane.showMessageDialog(null,
+                        "Ngày trả phòng nằm trong khoảng thời gian thuê phòng đã có trước đó!", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            } else if (ngayTra.equals(thongTinDatThuePhong.getNgayTraPhong())) {
+                JOptionPane.showMessageDialog(null, "Ngày trả phòng trùng với ngày trả phòng đã có trước đó!", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+        }
+        return true;
+    }
 
-	private boolean btnKiemTraTrungActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnKiemTraTrungActionPerformed
-		String ngayDatString = String.format("%s %s", txtCheckIn.getText(),
-				LocalTime.now().truncatedTo(ChronoUnit.SECONDS).toString());
-		String ngayNhanString = String.format("%s %s", txtNgayNhan.getText(), "14:00:00".toString());
-		String ngayTraString = String.format("%s %s", txtCheckOut.getText(), "09:00:00".toString());
-		// Chuyển đổi ngày nhận và ngày trả từ String sang LocalDateTime
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-		LocalDateTime ngayDat = LocalDateTime.parse(ngayDatString, formatter);
-		LocalDateTime ngayNhan = LocalDateTime.parse(ngayNhanString, formatter);
-		LocalDateTime ngayTra = LocalDateTime.parse(ngayTraString, formatter);
-		// Thêm thông tin dịch vụ
-		// Thêm thông tin dịch vụ
-		List<DichVuPhong> dsDVP = new ArrayList<>();
-		// Duyệt từng dòng trong bảng dịch vụ
-		for (int i = 0; i < tableDV.getRowCount(); i++) {
-			DichVuPhong dvPhong = new DichVuPhong();
-			dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tableDV.getValueAt(i, 3).toString()));
-			dvPhong.setMaDichVu(tableDV.getValueAt(i, 1).toString().split(" ")[0]);
-			dvPhong.setSoLuong(Integer.parseInt(tableDV.getValueAt(i, 2).toString()));
-			dsDVP.add(dvPhong);
-		}
-		dichVuPhongDao.themDichVuPhongTTK(dsDVP);
-		for (Phong phong : dsPhongDat) {
-			// Kiểm tra trùng ngày nhận
-			if (!kiemTraTrungNgayNhan(phong.getMaPhong(), ngayNhan)) {
-				JOptionPane.showMessageDialog(null, "Ngày nhận phòng trùng với ngày nhận phòng đã có trước đó!", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			} else if (ngayNhan.isBefore(ngayDat) || ngayNhan.equals(ngayDat)) {
-				JOptionPane.showMessageDialog(null, "Ngày nhận phòng phải sau ngày đặt phòng!", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			}
-			// Kiểm tra trùng ngày trả
-			if (!kiemTraTrungNgayTra(phong.getMaPhong(), ngayTra)) {
-				JOptionPane.showMessageDialog(null, "Ngày trả phòng trùng với ngày trả phòng đã có trước đó!", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			} else if (ngayTra.isBefore(ngayNhan) || ngayTra.isBefore(ngayDat) || ngayTra.isEqual(ngayNhan)
-					|| ngayTra.isEqual(ngayDat)) {
-				JOptionPane.showMessageDialog(null, "Ngày trả phòng phải sau ngày đặt phòng và ngày nhận phòng!", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			}
-			// Kiểm tra trùng thời gian thuê
-			if (!kiemTraTrungThoiGianThue(phong.getMaPhong(), ngayNhan, ngayTra)) {
-				JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			}
-			// Nếu kiểu thuê là thuê qua đêm thì thời gian thuê phải là 1 ngày
-			if (cbKieuThue.getSelectedItem().toString().equals("Qua đêm")) {
-				if (ngayTra.minusDays(1).isAfter(ngayNhan)) {
-					JOptionPane.showMessageDialog(null, "Thời gian thuê phòng qua đêm chỉ được tôi đa là 1 ngày!",
-							"Lỗi", JOptionPane.ERROR_MESSAGE);
-					return false;
-				}
-			}
-		}
-		// Nếu không trùng thì thông báo thành công
-		JOptionPane.showMessageDialog(null, "Thời gian thuê không trùng, có thể tiến hành đặt phòng!", "Thông báo",
-				JOptionPane.INFORMATION_MESSAGE);
-		return true;
-	}// GEN-LAST:event_btnKiemTraTrungActionPerformed
+    public boolean kiemTraTrungThoiGianThue(String maPhong, LocalDateTime ngayNhan, LocalDateTime ngayTra) {
+        List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao.timThongTinDatThuePhongTheoMaPhong(maPhong);
+        for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
+            LocalDateTime ngayNhanCoSan = thongTinDatThuePhong.getNgayNhanPhong();
+            LocalDateTime ngayTraCoSan = thongTinDatThuePhong.getNgayTraPhong();
+            // Kiểm tra khoảng thời gian từ ngày nhận đến ngày trả có chứa khoảng thời gian
+            // khác có sẵn không
+            if (ngayNhan.isBefore(ngayNhanCoSan) && ngayTra.isAfter(ngayTraCoSan)) {
+                JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");
+                return false;
+            } else if (ngayNhan.isAfter(ngayNhanCoSan) && ngayTra.isBefore(ngayTraCoSan)) {
+                JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!");
+                return false;
+            }
+        }
+        return true;
+    }
 
-	private boolean btnKTSLPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnKTSLPhongActionPerformed
-		int soNguoiLon = txtSoNguoiLon.getText().isEmpty() ? 0 : Integer.parseInt(txtSoNguoiLon.getText());
-		int soTreEm = txtSoTreEm.getText().isEmpty() ? 0 : Integer.parseInt(txtSoTreEm.getText());
-		if (soNguoiLon <= 0 && soTreEm <= 0) {
-			JOptionPane.showMessageDialog(this, "Vui lòng nhập số lượng người lớn hoặc trẻ em", "Lỗi",
-					JOptionPane.ERROR_MESSAGE);
-			return false;
-		} else {
-			int sucChuaToiDa = tinhSucChuaDanhSachPhong(dsPhongDat);
-			if (soNguoiLon > sucChuaToiDa || (soNguoiLon == sucChuaToiDa && soTreEm > soNguoiLon)) {
-				JOptionPane.showMessageDialog(this, "Số lượng người vượt quá sức chứa của phòng", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			} else if (soNguoiLon < dsPhongDat.size()) {
-				JOptionPane.showMessageDialog(this, "Số lượng người không đủ sức chứa của phòng", "Lỗi",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			} else {
-				JOptionPane.showMessageDialog(this, "Số lượng người hợp lệ", "Thông báo",
-						JOptionPane.INFORMATION_MESSAGE);
-				return true;
-			}
-		}
-	}// GEN-LAST:event_btnKTSLPhongActionPerformed
+    private boolean btnKiemTraTrungActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnKiemTraTrungActionPerformed
+        String ngayDatString = String.format("%s %s", txtCheckIn.getText(),
+                LocalTime.now().truncatedTo(ChronoUnit.SECONDS).toString());
+        String ngayNhanString = String.format("%s %s", txtNgayNhan.getText(), "14:00:00".toString());
+        String ngayTraString = String.format("%s %s", txtCheckOut.getText(), "09:00:00".toString());
+        // Chuyển đổi ngày nhận và ngày trả từ String sang LocalDateTime
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        LocalDateTime ngayDat = LocalDateTime.parse(ngayDatString, formatter);
+        LocalDateTime ngayNhan = LocalDateTime.parse(ngayNhanString, formatter);
+        LocalDateTime ngayTra = LocalDateTime.parse(ngayTraString, formatter);
+        // Thêm thông tin dịch vụ
+        // Thêm thông tin dịch vụ
+        List<DichVuPhong> dsDVP = new ArrayList<>();
+        // Duyệt từng dòng trong bảng dịch vụ
+        for (int i = 0; i < tableDV.getRowCount(); i++) {
+            DichVuPhong dvPhong = new DichVuPhong();
+            dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tableDV.getValueAt(i, 3).toString()));
+            dvPhong.setMaDichVu(tableDV.getValueAt(i, 1).toString().split(" ")[0]);
+            dvPhong.setSoLuong(Integer.parseInt(tableDV.getValueAt(i, 2).toString()));
+            dsDVP.add(dvPhong);
+        }
+        dichVuPhongDao.themDichVuPhongTTK(dsDVP);
+        for (Phong phong : dsPhongDat) {
+            // Kiểm tra trùng ngày nhận
+            if (!kiemTraTrungNgayNhan(phong.getMaPhong(), ngayNhan)) {
+                JOptionPane.showMessageDialog(null, "Ngày nhận phòng trùng với ngày nhận phòng đã có trước đó!", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            } else if (ngayNhan.isBefore(ngayDat) || ngayNhan.equals(ngayDat)) {
+                JOptionPane.showMessageDialog(null, "Ngày nhận phòng phải sau ngày đặt phòng!", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            // Kiểm tra trùng ngày trả
+            if (!kiemTraTrungNgayTra(phong.getMaPhong(), ngayTra)) {
+                JOptionPane.showMessageDialog(null, "Ngày trả phòng trùng với ngày trả phòng đã có trước đó!", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            } else if (ngayTra.isBefore(ngayNhan) || ngayTra.isBefore(ngayDat) || ngayTra.isEqual(ngayNhan)
+                    || ngayTra.isEqual(ngayDat)) {
+                JOptionPane.showMessageDialog(null, "Ngày trả phòng phải sau ngày đặt phòng và ngày nhận phòng!", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            // Kiểm tra trùng thời gian thuê
+            if (!kiemTraTrungThoiGianThue(phong.getMaPhong(), ngayNhan, ngayTra)) {
+                JOptionPane.showMessageDialog(null, "Trùng với thời gian thuê phòng đã có trước đó!", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            // Nếu kiểu thuê là thuê qua đêm thì thời gian thuê phải là 1 ngày
+            if (cbKieuThue.getSelectedItem().toString().equals("Qua đêm")) {
+                if (ngayTra.minusDays(1).isAfter(ngayNhan)) {
+                    JOptionPane.showMessageDialog(null, "Thời gian thuê phòng qua đêm chỉ được tôi đa là 1 ngày!",
+                            "Lỗi", JOptionPane.ERROR_MESSAGE);
+                    return false;
+                }
+            }
+        }
+        // Nếu không trùng thì thông báo thành công
+        JOptionPane.showMessageDialog(null, "Thời gian thuê không trùng, có thể tiến hành đặt phòng!", "Thông báo",
+                JOptionPane.INFORMATION_MESSAGE);
+        return true;
+    }// GEN-LAST:event_btnKiemTraTrungActionPerformed
 
-	private int tinhSucChuaDanhSachPhong(List<Phong> dsPhong) {
-		int suChuaToiDa = 0;
-		for (Phong phong : dsPhong) {
-			suChuaToiDa += loaiPhongDao.timTheoMaLoaiPhong(phong.getMaLoaiPhong()).getSoNguoiToiDa();
-		}
-		return suChuaToiDa;
-	}
+    private int tinhSucChuaDanhSachPhong(List<Phong> dsPhong) {
+        int suChuaToiDa = 0;
+        for (Phong phong : dsPhong) {
+            suChuaToiDa += loaiPhongDao.timTheoMaLoaiPhong(phong.getMaLoaiPhong()).getSoNguoiToiDa();
+        }
+        return suChuaToiDa;
+    }
 
-	// Kiểm tra khách hàng có đang đặt phòng hay không
-	// Nếu có trong danh sách và ngày nhận phòng chưa qua ngày hiện tại hoặc ngày
-	// nhận phòng đã qua và ngày trả phòng chưa qua thì không thể đặt phòng
-	public boolean kiemTraKhachHangDatPhong(String cccd) {
-		List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao
-				.timThongTinTheoMaKhachHang(khachHangDao.timTheoCCCD(cccd).getMaKH());
-		for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
-			if (thongTinDatThuePhong.getNgayNhanPhong().isBefore(LocalDateTime.now())
-					|| (thongTinDatThuePhong.getNgayNhanPhong().isAfter(LocalDateTime.now())
-							&& thongTinDatThuePhong.getNgayTraPhong().isBefore(LocalDateTime.now()))) {
-				JOptionPane.showMessageDialog(null, "Khách hàng đã đặt phòng!", "Lỗi", JOptionPane.ERROR_MESSAGE);
-				return false;
-			}
-		}
-		return true;
-	}
+    // Kiểm tra khách hàng có đang đặt phòng hay không
+    // Nếu có trong danh sách và ngày nhận phòng chưa qua ngày hiện tại hoặc ngày
+    // nhận phòng đã qua và ngày trả phòng chưa qua thì không thể đặt phòng
+    public boolean kiemTraKhachHangDatPhong(String cccd) {
+        List<ThongTinDatThuePhong> dsTTDTP = thongTinDatThuePhongDao
+                .timThongTinTheoMaKhachHang(khachHangDao.timTheoCCCD(cccd).getMaKH());
+        for (ThongTinDatThuePhong thongTinDatThuePhong : dsTTDTP) {
+            if (thongTinDatThuePhong.getNgayNhanPhong().isBefore(LocalDateTime.now())
+                    || (thongTinDatThuePhong.getNgayNhanPhong().isAfter(LocalDateTime.now())
+                    && thongTinDatThuePhong.getNgayTraPhong().isBefore(LocalDateTime.now()))) {
+                JOptionPane.showMessageDialog(null, "Khách hàng đã đặt phòng!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+        }
+        return true;
+    }
 
-	private boolean btnThemKhachHangActionPerformed(ActionEvent evt) {// GEN-FIRST:event_btnThemKhachHangActionPerformed
-		KhachHang kh = new KhachHang();
-		if (regCCCD_Passport(txtCCCD.getText()) == false) {
-			return false;
-		}
-		// Nếu khách hàng đang đặt/thuê phòng thì không thể thuê phòng
-		if (thongTinDatThuePhongDao.timThongTinTheoMaKhachHang(khachHangDao.timTheoCCCD(txtCCCD.getText()).getMaKH())
-				.size() != 0) {
-			JOptionPane.showMessageDialog(this, "Khách hàng đã đặt phòng!");
-			return false;
-		}
-		if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) != null) {
-			kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
-			txtTenKH.setText(kh.getHoTenKH());
-			return true;
-		} else {
-			JOptionPane.showMessageDialog(this, "Khách hàng hiện chưa được thêm!");
-			return false;
-		}
-	}// GEN-LAST:event_btnThemKhachHangActionPerformed
+    private boolean btnThemKhachHangActionPerformed(ActionEvent evt) {// GEN-FIRST:event_btnThemKhachHangActionPerformed
+        KhachHang kh = new KhachHang();
+        if (regCCCD_Passport(txtCCCD.getText()) == false) {
+            return false;
+        }
+        // Nếu khách hàng đang đặt/thuê phòng thì không thể thuê phòng
+        if (thongTinDatThuePhongDao.timThongTinTheoMaKhachHang(khachHangDao.timTheoCCCD(txtCCCD.getText()).getMaKH())
+                .size() != 0) {
+            JOptionPane.showMessageDialog(this, "Khách hàng đã đặt phòng!");
+            return false;
+        }
+        if (khachHangDao.timTheoCCCD(txtCCCD.getText().trim()) != null) {
+            kh = khachHangDao.timTheoCCCD(txtCCCD.getText().trim());
+            txtTenKH.setText(kh.getHoTenKH());
+            return true;
+        } else {
+            JOptionPane.showMessageDialog(this, "Khách hàng hiện chưa được thêm!");
+            return false;
+        }
+    }// GEN-LAST:event_btnThemKhachHangActionPerformed
 
-	private boolean btnGiaCocActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnGiaCocActionPerformed
-		txtGiaCoc.setText(String.valueOf(tinhTienCoc()));
-		return true;
-	}// GEN-LAST:event_btnGiaCocActionPerformed
+    private boolean btnGiaCocActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnGiaCocActionPerformed
+        txtGiaCoc.setText(String.valueOf(tinhTienCoc()));
+        return true;
+    }// GEN-LAST:event_btnGiaCocActionPerformed
 
-	private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed
-		this.setVisible(false);
-	}// GEN-LAST:event_btnHuyActionPerformed
+    private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed
+        this.setVisible(false);
+    }// GEN-LAST:event_btnHuyActionPerformed
 
-	private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
-		ArrayList<Phong> dsPhongDat = getDsPhongDat();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-		LocalDateTime ngayDat = LocalDateTime.parse(
-				String.format("%s %s", txtCheckIn.getText(), LocalTime.now().truncatedTo(ChronoUnit.SECONDS)),
-				formatter);
-		LocalDateTime ngayNhan = LocalDateTime.parse(String.format("%s %s", txtNgayNhan.getText(), "14:00:00"),
-				formatter);
-		LocalDateTime ngayTra = LocalDateTime.parse(String.format("%s %s", txtCheckOut.getText(), "09:00:00"),
-				formatter);
-		String loaiPhong = "";
-		String kieuThue = "";
-		String maLoaiThue = "";
-		if (cbKieuThue.getSelectedItem().toString().equals("Theo ngày")) {
-			kieuThue = "D";
-		} else if (cbKieuThue.getSelectedItem().toString().equals("Theo giờ")) {
-			kieuThue = "H";
-		} else {
-			kieuThue = "N";
-		}
+    private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
+        ArrayList<Phong> dsPhongDat = getDsPhongDat();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        LocalDateTime ngayDat = LocalDateTime.parse(
+                String.format("%s %s", txtCheckIn.getText(), LocalTime.now().truncatedTo(ChronoUnit.SECONDS)),
+                formatter);
+        LocalDateTime ngayNhan = LocalDateTime.parse(String.format("%s %s", txtNgayNhan.getText(), "14:00:00"),
+                formatter);
+        LocalDateTime ngayTra = LocalDateTime.parse(String.format("%s %s", txtCheckOut.getText(), "09:00:00"),
+                formatter);
+        String loaiPhong = "";
+        String kieuThue = "";
+        String maLoaiThue = "";
+        if (cbKieuThue.getSelectedItem().toString().equals("Theo ngày")) {
+            kieuThue = "D";
+        } else if (cbKieuThue.getSelectedItem().toString().equals("Theo giờ")) {
+            kieuThue = "H";
+        } else {
+            kieuThue = "N";
+        }
 
-		for (Phong phong : dsPhongDat) {
-			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
-			if (loaiPhong.equalsIgnoreCase("Tiêu chuẩn")) {
-				loaiPhong = "TC";
-			} else if (loaiPhong.equalsIgnoreCase("Cao cấp")) {
-				loaiPhong = "CC";
-			} else if (loaiPhong.equalsIgnoreCase("Nâng cao")) {
-				loaiPhong = "NC";
-			} else {
-				loaiPhong = "TG";
-			}
-			maLoaiThue = String.format("%s%s", kieuThue, loaiPhong);
-		}
-		// Kiểm tra lại toàn bộ thông tin trước khi đặt phòng
-		// Khách hàng
-		if (!btnThemKhachHangActionPerformed(evt)) {
-			JOptionPane.showMessageDialog(this, "Chưa có thông tin khách hàng", "Lỗi", JOptionPane.ERROR_MESSAGE);
-			return;
-		}
-		// Số người lớn và trẻ em
-		if (!btnKTSLPhongActionPerformed(evt)) {
-			JOptionPane.showMessageDialog(this, "Số lượng người không hợp lệ", "Lỗi", JOptionPane.ERROR_MESSAGE);
-			return;
-		}
-		// Ngày đăt, nhận và trả phòng
-		if (!btnKiemTraTrungActionPerformed(evt)) {
-			JOptionPane.showMessageDialog(this, "Thời gian đặt phòng không hợp lệ", "Lỗi", JOptionPane.ERROR_MESSAGE);
-			return;
-		}
-		// Kiểm tra tiền cọc
-		if (!btnGiaCocActionPerformed(evt)) {
-			JOptionPane.showMessageDialog(this, "Tiền cọc chưa được hiển thị để thông báo cho khách hàng", "Lỗi",
-					JOptionPane.ERROR_MESSAGE);
-			return;
-		}
+        for (Phong phong : dsPhongDat) {
+            loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
+            if (loaiPhong.equalsIgnoreCase("Tiêu chuẩn")) {
+                loaiPhong = "TC";
+            } else if (loaiPhong.equalsIgnoreCase("Cao cấp")) {
+                loaiPhong = "CC";
+            } else if (loaiPhong.equalsIgnoreCase("Nâng cao")) {
+                loaiPhong = "NC";
+            } else {
+                loaiPhong = "TG";
+            }
+            maLoaiThue = String.format("%s%s", kieuThue, loaiPhong);
+        }
+        // Kiểm tra lại toàn bộ thông tin trước khi đặt phòng
+        // Khách hàng
+        if (!btnThemKhachHangActionPerformed(evt)) {
+            JOptionPane.showMessageDialog(this, "Chưa có thông tin khách hàng", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Số người lớn và trẻ em
+        if (!btnKTSLPhongActionPerformed(evt)) {
+            JOptionPane.showMessageDialog(this, "Số lượng người không hợp lệ", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Ngày đăt, nhận và trả phòng
+        if (!btnKiemTraTrungActionPerformed(evt)) {
+            JOptionPane.showMessageDialog(this, "Thời gian đặt phòng không hợp lệ", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        // Kiểm tra tiền cọc
+        if (!btnGiaCocActionPerformed(evt)) {
+            JOptionPane.showMessageDialog(this, "Tiền cọc chưa được hiển thị để thông báo cho khách hàng", "Lỗi",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-		if (thongTinDatThuePhongDao.datPhong(dsPhongDat, khachHangDao.timTheoCCCD(txtCCCD.getText()), ngayDat, ngayNhan,
-				ngayTra, maLoaiThue, tinhTienCoc())) {
-			JOptionPane.showMessageDialog(this, "Đặt phòng thành công");
-			DatPhong_GUI.this.dispose();
-		} else {
-			JOptionPane.showMessageDialog(this, "Đặt phòng thất bại");
-		}
-	}// GEN-LAST:event_btnDatPhongActionPerformed
+        if (thongTinDatThuePhongDao.datPhong(dsPhongDat, khachHangDao.timTheoCCCD(txtCCCD.getText()), ngayDat, ngayNhan,
+                ngayTra, maLoaiThue, tinhTienCoc(), "Đặt")) {
+            JOptionPane.showMessageDialog(this, "Đặt phòng thành công");
+            DatPhong_GUI.this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Đặt phòng thất bại");
+        }
+    }// GEN-LAST:event_btnDatPhongActionPerformed
 
-	private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemDichVuActionPerformed
-		loadDanhSachDichVu();
-		DichVuPhong dvPhong = new DichVuPhong();
-		int selectedPhong = tableDanhSachPhong.getSelectedRow();
-		if (selectedPhong != -1) {
-			String tenPhong = tableDanhSachPhong.getValueAt(selectedPhong, 1).toString();
-			String maDichVu = comboBoxDichVu.getSelectedItem().toString().split(" ")[0];
-			dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tenPhong));
-			dvPhong.setMaDichVu(maDichVu);
-			double giaDichVu = dichVuDao.timTheoMaDichVu(maDichVu).getGiaDV();
-			DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
-			// Kiểm tra và tăng giá trị cột số lượng nếu trùng tên phòng và mã dịch vụ
-			boolean daThem = false;
-			for (int i = 0; i < model.getRowCount(); i++) {
-				String tenPhongTrongBang = model.getValueAt(i, 3).toString();
-				String maDichVuTrongBang = model.getValueAt(i, 1).toString().split(" ")[0];
-				if (tenPhong.equals(tenPhongTrongBang) && maDichVu.equals(maDichVuTrongBang)) {
-					int soLuongHienTai = Integer.parseInt(model.getValueAt(i, 2).toString());
-					int soLuongMoi = soLuongHienTai + 1;
-					model.setValueAt(soLuongMoi, i, 2);
-					dvPhong.setSoLuong(soLuongMoi);
-					// Cập nhật lại giá dịch vụ
-					double giaMoi = giaDichVu * soLuongMoi;
-					model.setValueAt(giaMoi, i, 5);
-					daThem = true;
-					break;
-				}
-			}
-			if (!daThem) {
-				Object[] rowData = { model.getRowCount() + 1, comboBoxDichVu.getSelectedItem().toString(), 1, tenPhong,
-						dichVuDao.timTheoMaDichVu(maDichVu).getGiaDV(), giaDichVu };
-				model.addRow(rowData);
-			}
-		} else {
-			JOptionPane.showMessageDialog(this, "Vui lòng chọn phòng cần thêm dịch vụ");
-		}
-	}// GEN-LAST:event_btnThemDichVuActionPerformed
+    private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemDichVuActionPerformed
+        loadDanhSachDichVu();
+        DichVuPhong dvPhong = new DichVuPhong();
+        int selectedPhong = tableDanhSachPhong.getSelectedRow();
+        if (selectedPhong != -1) {
+            String tenPhong = tableDanhSachPhong.getValueAt(selectedPhong, 1).toString();
+            String maDichVu = comboBoxDichVu.getSelectedItem().toString().split(" ")[0];
+            dvPhong.setMaPhong(phongDao.timMaPhongTheoTenPhong(tenPhong));
+            dvPhong.setMaDichVu(maDichVu);
+            double giaDichVu = dichVuDao.timTheoMaDichVu(maDichVu).getGiaDV();
+            DefaultTableModel model = (DefaultTableModel) tableDV.getModel();
+            // Kiểm tra và tăng giá trị cột số lượng nếu trùng tên phòng và mã dịch vụ
+            boolean daThem = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String tenPhongTrongBang = model.getValueAt(i, 3).toString();
+                String maDichVuTrongBang = model.getValueAt(i, 1).toString().split(" ")[0];
+                if (tenPhong.equals(tenPhongTrongBang) && maDichVu.equals(maDichVuTrongBang)) {
+                    int soLuongHienTai = Integer.parseInt(model.getValueAt(i, 2).toString());
+                    int soLuongMoi = soLuongHienTai + 1;
+                    model.setValueAt(soLuongMoi, i, 2);
+                    dvPhong.setSoLuong(soLuongMoi);
+                    // Cập nhật lại giá dịch vụ
+                    double giaMoi = giaDichVu * soLuongMoi;
+                    model.setValueAt(giaMoi, i, 5);
+                    daThem = true;
+                    break;
+                }
+            }
+            if (!daThem) {
+                Object[] rowData = {model.getRowCount() + 1, comboBoxDichVu.getSelectedItem().toString(), 1, tenPhong,
+                    dichVuDao.timTheoMaDichVu(maDichVu).getGiaDV(), giaDichVu};
+                model.addRow(rowData);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn phòng cần thêm dịch vụ");
+        }
+    }// GEN-LAST:event_btnThemDichVuActionPerformed
 
-	public String layTenLoaiPhong(String maLoai) {
-		if (maLoai.equalsIgnoreCase("tc")) {
-			return "Tiêu chuẩn";
-		} else if (maLoai.equalsIgnoreCase("cc")) {
-			return "Cao cấp";
-		} else if (maLoai.equalsIgnoreCase("nc")) {
-			return "Nâng cao";
-		} else {
-			return "Thương gia";
-		}
-	}
+    public String layTenLoaiPhong(String maLoai) {
+        if (maLoai.equalsIgnoreCase("tc")) {
+            return "Tiêu chuẩn";
+        } else if (maLoai.equalsIgnoreCase("cc")) {
+            return "Cao cấp";
+        } else if (maLoai.equalsIgnoreCase("nc")) {
+            return "Nâng cao";
+        } else {
+            return "Thương gia";
+        }
+    }
 
-	// Check CCCD
-	public boolean regCCCD_Passport(String cccd_passport) {
-		if (cccd_passport.equals("")) {
-			JOptionPane.showMessageDialog(this, "Vui lòng nhập CCCD/Passport");
-			return false;
-		} else {
-			// Regex cho mã số CCCD hoặc Visa
-			String regex = "^(\\d{12}|\\d{16})$";
+    // Check CCCD
+    public boolean regCCCD_Passport(String cccd_passport) {
+        if (cccd_passport.equals("")) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập CCCD/Passport");
+            return false;
+        } else {
+            // Regex cho mã số CCCD hoặc Visa
+            String regex = "^(\\d{12}|\\d{16})$";
 
-			Pattern pattern = Pattern.compile(regex);
-			Matcher matcher = pattern.matcher(cccd_passport);
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(cccd_passport);
 
-			if (!matcher.matches()) {
-				JOptionPane.showMessageDialog(this, "CCCD/Passport không hợp lệ");
-				return false;
-			}
-			return true;
-		}
-	}
+            if (!matcher.matches()) {
+                JOptionPane.showMessageDialog(this, "CCCD/Passport không hợp lệ");
+                return false;
+            }
+            return true;
+        }
+    }
 
-	public void loadDanhSachPhongDat() {
-		// Hiện danh sách phòng vào bảng
-		ArrayList<Phong> dsPhong = getDsPhongDat();
-		DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
-		String loaiPhong = "";
-		for (Phong phong : dsPhong) {
-			loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
-			Object[] rowData = { model.getRowCount() + 1, phong.getSoPhong(), loaiPhong };
-			model.addRow(rowData);
-		}
-	}
+    public void loadDanhSachPhongDat() {
+        // Hiện danh sách phòng vào bảng
+        ArrayList<Phong> dsPhong = getDsPhongDat();
+        DefaultTableModel model = (DefaultTableModel) tableDanhSachPhong.getModel();
+        String loaiPhong = "";
+        for (Phong phong : dsPhong) {
+            loaiPhong = layTenLoaiPhong(phong.getMaLoaiPhong());
+            Object[] rowData = {model.getRowCount() + 1, phong.getSoPhong(), loaiPhong};
+            model.addRow(rowData);
+        }
+    }
 
-	public double tinhTienCoc() {
-		String maLoaiThue = "";
-		double soTienCoc = 0;
-		// Tính tiền cọc
-		for (Phong phong : dsPhongDat) {
-			maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), phong.getMaLoaiPhong());
-			soTienCoc += loaiThueDao.timGiaCocTheoMaThue(maLoaiThue);
-			System.out.println(soTienCoc);
-		}
-		return soTienCoc;
-	}
+    public double tinhTienCoc() {
+        String maLoaiThue = "";
+        double soTienCoc = 0;
+        // Tính tiền cọc
+        for (Phong phong : dsPhongDat) {
+            maLoaiThue = loaiThueDao.timMaLoaiThue(cbKieuThue.getSelectedItem().toString(), phong.getMaLoaiPhong());
+            soTienCoc += loaiThueDao.timGiaCocTheoMaThue(maLoaiThue);
+            System.out.println(soTienCoc);
+        }
+        return soTienCoc;
+    }
 
-	private String[] loadDanhSachDichVu() {
-		DichVuDao dichVuDao = new DichVuDao();
-		ArrayList<DichVu> danhSachDV = dichVuDao.timTatCaDichVu();
+    private static ComboBoxModel loadDanhSachDichVu() {
+		DichVuDao dvDao = new DichVuDao();
+		ArrayList<DichVu> danhSachDV = dvDao.timTatCaDichVu();
 		String[] tenDV = new String[danhSachDV.size()];
 		for (int i = 0; i < danhSachDV.size(); i++) {
 			tenDV[i] = String.format("%s %s", danhSachDV.get(i).getMaDV(), danhSachDV.get(i).getTenDV());
 		}
-		return tenDV;
+		return new javax.swing.DefaultComboBoxModel<>(tenDV);
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

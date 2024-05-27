@@ -21,6 +21,7 @@ import javax.swing.Timer;
 
 import dao.PhongDao;
 import entity.Phong;
+import java.awt.Dimension;
 
 /**
  *
@@ -28,216 +29,218 @@ import entity.Phong;
  */
 public class QuanLyPhong_GUI extends javax.swing.JPanel {
 
-	/**
-	 * Creates new form QuanLyPhong2
-	 */
-	public QuanLyPhong_GUI() {
-		initComponents();
+    /**
+     * Creates new form QuanLyPhong2
+     */
+    public QuanLyPhong_GUI() {
+        initComponents();
 //		Gán thời gian cho Jlabel
-		datetime();
-		times();
+        datetime();
+        times();
 
 //		TTK - Thêm phongQuanLy i chạy từ 1 đến 35 vào list
-		phongQuanLy = new ArrayList<>();
-		for (int i = 1; i <= 35; i++) {
-			try {
-				phongQuanLy.add(
-						(giaodien.CustomClass.PanelRound) getClass().getDeclaredField("phongQuanLy" + i).get(this));
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+        phongQuanLy = new ArrayList<>();
+        for (int i = 1; i <= 35; i++) {
+            try {
+                phongQuanLy.add(
+                        (giaodien.CustomClass.PanelRound) getClass().getDeclaredField("phongQuanLy" + i).get(this));
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
 
-		loaiPhongQuanLy = new ArrayList<>();
-		for (int i = 1; i <= 35; i++) {
-			try {
-				loaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblLoaiPhongQL" + i).get(this));
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+        loaiPhongQuanLy = new ArrayList<>();
+        for (int i = 1; i <= 35; i++) {
+            try {
+                loaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblLoaiPhongQL" + i).get(this));
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
 
-		tenPhongQuanLy = new ArrayList<>();
-		for (int i = 1; i <= 35; i++) {
-			try {
-				tenPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTenPhongQL" + i).get(this));
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+        tenPhongQuanLy = new ArrayList<>();
+        for (int i = 1; i <= 35; i++) {
+            try {
+                tenPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTenPhongQL" + i).get(this));
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
 
-		trangThaiPhongQuanLy = new ArrayList<>();
-		for (int i = 1; i <= 35; i++) {
-			try {
-				trangThaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTrangThaiQL" + i).get(this));
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+        trangThaiPhongQuanLy = new ArrayList<>();
+        for (int i = 1; i <= 35; i++) {
+            try {
+                trangThaiPhongQuanLy.add((JLabel) getClass().getDeclaredField("lblTrangThaiQL" + i).get(this));
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
 
-		checkBoxPhongQuanLy = new ArrayList<>();
-		for (int i = 1; i <= 35; i++) {
-			try {
-				checkBoxPhongQuanLy.add((giaodien.CustomClass.JCheckBoxCustom) getClass()
-						.getDeclaredField("checkBoxPhongQL" + i).get(this));
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+        checkBoxPhongQuanLy = new ArrayList<>();
+        for (int i = 1; i <= 35; i++) {
+            try {
+                checkBoxPhongQuanLy.add((giaodien.CustomClass.JCheckBoxCustom) getClass()
+                        .getDeclaredField("checkBoxPhongQL" + i).get(this));
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
 
-		loadDanhSachPhong();
-		addCheckBoxListeners();
-	}
+        loadDanhSachPhong();
+        addCheckBoxListeners();
+    }
 
-	/**
-	 * Khởi tạo ngày hiện tại để in lên ngày **
-	 * *****************************************
-	 */
-	public void datetime() {
-		Date d = new Date();
+    /**
+     * Khởi tạo ngày hiện tại để in lên ngày **
+     * *****************************************
+     */
+    public void datetime() {
+        Date d = new Date();
 
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MMM-dd");
-		String df = format.format(d);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MMM-dd");
+        String df = format.format(d);
 
-		lblcurrentdate.setText(df);
-	}
+        lblcurrentdate.setText(df);
+    }
 
-	/**
-	 * Khởi tạo giờ hiện tại để in lên giờ **
-	 * *****************************************
-	 */
-	public void times() {
-		Timer time;
+    /**
+     * Khởi tạo giờ hiện tại để in lên giờ **
+     * *****************************************
+     */
+    public void times() {
+        Timer time;
 
-		time = new Timer(0, new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent ae) {
-				Date d = new Date();
+        time = new Timer(0, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                Date d = new Date();
 
-				SimpleDateFormat dformat;
-				dformat = new SimpleDateFormat("hh:mm:ss a");
+                SimpleDateFormat dformat;
+                dformat = new SimpleDateFormat("hh:mm:ss a");
 
-				String timeindate = dformat.format(d);
-				lblcurrentTime.setText(timeindate);
+                String timeindate = dformat.format(d);
+                lblcurrentTime.setText(timeindate);
 
-			}
-		});
+            }
+        });
 
-		time.start();
-	}
+        time.start();
+    }
 
-	private void kiemTraClickCheckBoxPhong() {
-		int status1 = 0;
-		int status2 = 0;
-		int status3 = 0;
-		int status4 = 0;
-		for (int i = 0; i < checkBoxPhongQuanLy.size(); i++) {
-			JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
-			if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Trống")) {
-				btnDatPhong.setEnabled(true);
-				btnThuePhong.setEnabled(true);
-				btnDoiPhong.setEnabled(false);
-				btnTraPhong.setEnabled(false);
-				btnHuyDatPhong.setEnabled(false);
-				status2++;
-				status3++;
-				status4++;
-			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đã đặt")) {
-				btnDatPhong.setEnabled(true);
-				btnThuePhong.setEnabled(true);
-				btnDoiPhong.setEnabled(false);
-				btnTraPhong.setEnabled(false);
-				btnHuyDatPhong.setEnabled(true);
-				status1++;
-				status3++;
-				status4++;
-			} else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
-				btnDatPhong.setEnabled(true);
-				btnThuePhong.setEnabled(false);
-				btnDoiPhong.setEnabled(true);
-				btnHuyDatPhong.setEnabled(true);
-				btnTraPhong.setEnabled(true);
-				status1++;
-				status2++;
-				status4++;
-			}
-		}
+    private void kiemTraClickCheckBoxPhong() {
+        int status1 = 0;
+        int status2 = 0;
+        int status3 = 0;
+        int status4 = 0;
+        for (int i = 0; i < checkBoxPhongQuanLy.size(); i++) {
+            JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+            if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Trống")) {
+                btnDatPhong.setEnabled(true);
+                btnThuePhong.setEnabled(true);
+                btnDoiPhong.setEnabled(false);
+                btnTraPhong.setEnabled(false);
+                btnHuyDatPhong.setEnabled(false);
+                status2++;
+                status3++;
+                status4++;
+            } else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đã đặt")) {
+                btnDatPhong.setEnabled(true);
+                btnThuePhong.setEnabled(true);
+                btnDoiPhong.setEnabled(false);
+                btnTraPhong.setEnabled(false);
+                btnHuyDatPhong.setEnabled(true);
+                status1++;
+                status3++;
+                status4++;
+            } else if (checkBoxPhongQuanLy.get(i).isSelected() && trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
+                btnDatPhong.setEnabled(true);
+                btnThuePhong.setEnabled(false);
+                btnDoiPhong.setEnabled(true);
+                btnHuyDatPhong.setEnabled(true);
+                btnTraPhong.setEnabled(true);
+                status1++;
+                status2++;
+                status4++;
+            }
+        }
 
-		if (status1 != 0 && status2 != 0 && status3 != 0) {
-			btnDatPhong.setEnabled(true);
-			btnThuePhong.setEnabled(false);
-			btnDoiPhong.setEnabled(false);
-			btnTraPhong.setEnabled(false);
-			btnHuyDatPhong.setEnabled(false);
-		}
-		if (status4 == 0) {
-			btnDatPhong.setEnabled(true);
-			btnThuePhong.setEnabled(true);
-			btnDoiPhong.setEnabled(true);
-			btnTraPhong.setEnabled(true);
-			btnHuyDatPhong.setEnabled(true);
-		}
-	}
+        if (status1 != 0 && status2 != 0 && status3 != 0) {
+            btnDatPhong.setEnabled(true);
+            btnThuePhong.setEnabled(false);
+            btnDoiPhong.setEnabled(false);
+            btnTraPhong.setEnabled(false);
+            btnHuyDatPhong.setEnabled(false);
+        }
+        if (status4 == 0) {
+            btnDatPhong.setEnabled(true);
+            btnThuePhong.setEnabled(true);
+            btnDoiPhong.setEnabled(true);
+            btnTraPhong.setEnabled(true);
+            btnHuyDatPhong.setEnabled(true);
+        }
+    }
 
-	private void addCheckBoxListeners() {
-		for (giaodien.CustomClass.JCheckBoxCustom checkBox : checkBoxPhongQuanLy) {
-			checkBox.addItemListener(e -> kiemTraClickCheckBoxPhong());
-		}
-	}
+    private void addCheckBoxListeners() {
+        for (giaodien.CustomClass.JCheckBoxCustom checkBox : checkBoxPhongQuanLy) {
+            checkBox.addItemListener(e -> kiemTraClickCheckBoxPhong());
+        }
+    }
 
-	public void loadDanhSachPhong() {
-		PhongDao phongDao = new PhongDao();
-		ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
-		for (int i = 0; i < phongQuanLy.size(); i++) {
-			Phong phong = dsPhong.get(i);
-			JPanel phongPanel = phongQuanLy.get(i);
-			JLabel loaiPhong = loaiPhongQuanLy.get(i);
-			JLabel soPhong = tenPhongQuanLy.get(i);
-			JLabel trangThai = trangThaiPhongQuanLy.get(i);
+    public void loadDanhSachPhong() {
+        PhongDao phongDao = new PhongDao();
+        ArrayList<Phong> dsPhong = phongDao.timTatCaPhongSapXepTheoSoPhong();
+        for (int i = 0; i < phongQuanLy.size(); i++) {
+            Phong phong = dsPhong.get(i);
+            JPanel phongPanel = phongQuanLy.get(i);
+            JLabel loaiPhong = loaiPhongQuanLy.get(i);
+            JLabel soPhong = tenPhongQuanLy.get(i);
+            JLabel trangThai = trangThaiPhongQuanLy.get(i);
 
-			// Gán thông tin phòng lên label
-			soPhong.setText(Integer.toString(phong.getSoPhong()));
-			if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
-				loaiPhong.setText("Tiêu chuẩn");
-			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
-				loaiPhong.setText("Nâng cao");
-			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
-				loaiPhong.setText("Cao cấp");
-			} else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
-				loaiPhong.setText("Thương gia");
-			}
-			trangThai.setText(phong.getTrangThai());
+            // Gán thông tin phòng lên label
+            soPhong.setText(Integer.toString(phong.getSoPhong()));
+            if (phong.getMaLoaiPhong().equalsIgnoreCase("tc")) {
+                loaiPhong.setText("Tiêu chuẩn");
+            } else if (phong.getMaLoaiPhong().equalsIgnoreCase("nc")) {
+                loaiPhong.setText("Nâng cao");
+            } else if (phong.getMaLoaiPhong().equalsIgnoreCase("cc")) {
+                loaiPhong.setText("Cao cấp");
+            } else if (phong.getMaLoaiPhong().equalsIgnoreCase("tg")) {
+                loaiPhong.setText("Thương gia");
+            }
+            trangThai.setText(phong.getTrangThai());
 
-			if (trangThai.getText().equalsIgnoreCase("Trống")) {
-				phongPanel.setBackground(Color.green);
-			} else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
-				phongPanel.setBackground(Color.yellow);
-			} else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
-				phongPanel.setBackground(Color.red);
-			}
+            if (trangThai.getText().equalsIgnoreCase("Trống")) {
+                phongPanel.setBackground(Color.green);
+            } else if (trangThai.getText().equalsIgnoreCase("Đã đặt")) {
+                phongPanel.setBackground(Color.yellow);
+            } else if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
+                phongPanel.setBackground(Color.red);
+            }
 
-			if (phongPanel.isVisible() == false) {
-				phongPanel.setVisible(true);
-			}
-		}
+            if (phongPanel.isVisible() == false) {
+                phongPanel.setVisible(true);
+            }
+        }
 
-	}
+    }
 
-	/**
-	 * This method is called from within the constructor to initialize the form.
-	 * WARNING: Do NOT modify this code. The content of this method is always
-	 * regenerated by the Form Editor.
-	 */
-	@SuppressWarnings("unchecked")
-	// <editor-fold defaultstate="collapsed" desc="Generated
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnGroupLoaiPhong = new javax.swing.ButtonGroup();
+        btnGroupTrangThai = new javax.swing.ButtonGroup();
         pnQuanLyPhong = new javax.swing.JPanel();
         pnLayoutQuanLyPhong = new giaodien.CustomClass.PanelRound();
         funtionPanel = new javax.swing.JPanel();
@@ -484,24 +487,31 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
         lblcurrentTime.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblcurrentTime.setText("currentTime");
 
+        btnGroupLoaiPhong.add(radPhongTieuChuan);
         radPhongTieuChuan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongTieuChuan.setText("Phòng tiêu chuẩn");
 
+        btnGroupLoaiPhong.add(radPhongNangCao);
         radPhongNangCao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongNangCao.setText("Phòng nâng cao");
 
+        btnGroupLoaiPhong.add(radPhongCaoCap);
         radPhongCaoCap.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongCaoCap.setText("Phòng cao cấp");
 
+        btnGroupLoaiPhong.add(radPhongThuongGia);
         radPhongThuongGia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongThuongGia.setText("Phòng thương gia");
 
+        btnGroupTrangThai.add(radPhongTrong);
         radPhongTrong.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongTrong.setText("Phòng trống");
 
+        btnGroupTrangThai.add(radPhongDaDat);
         radPhongDaDat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongDaDat.setText("Phòng đã đặt");
 
+        btnGroupTrangThai.add(radPhongDangThue);
         radPhongDangThue.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radPhongDangThue.setText("Phòng đang thuê");
 
@@ -519,7 +529,8 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
         });
 
         btnDatPhong.setText("Đặt phòng");
-        btnDatPhong.setPreferredSize(new java.awt.Dimension(110, 23));
+        btnDatPhong.setPreferredSize(new Dimension
+            (120, 30));
         btnDatPhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDatPhongActionPerformed(evt);
@@ -527,6 +538,8 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
         });
 
         btnHuyDatPhong.setText("Hủy đặt phòng");
+        btnHuyDatPhong.setPreferredSize(new Dimension
+            (120, 30));
         btnHuyDatPhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHuyDatPhongActionPerformed(evt);
@@ -534,7 +547,8 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
         });
 
         btnDoiPhong.setText("Đổi phòng");
-        btnDoiPhong.setPreferredSize(new java.awt.Dimension(110, 23));
+        btnDoiPhong.setPreferredSize(new Dimension
+            (120, 30));
         btnDoiPhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDoiPhongActionPerformed(evt);
@@ -542,7 +556,8 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
         });
 
         btnTraPhong.setText("Trả phòng");
-        btnTraPhong.setPreferredSize(new java.awt.Dimension(110, 23));
+        btnTraPhong.setPreferredSize(new Dimension
+            (120, 30));
         btnTraPhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTraPhongActionPerformed(evt);
@@ -550,7 +565,8 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
         });
 
         btnThuePhong.setText("Thuê phòng");
-        btnThuePhong.setPreferredSize(new java.awt.Dimension(110, 23));
+        btnThuePhong.setPreferredSize(new Dimension
+            (120, 30));
         btnThuePhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThuePhongActionPerformed(evt);
@@ -565,7 +581,8 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
         });
 
         btnNhanPhong.setText("Nhận phòng");
-        btnNhanPhong.setPreferredSize(new java.awt.Dimension(110, 23));
+        btnNhanPhong.setPreferredSize(new Dimension
+            (120, 30));
         btnNhanPhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNhanPhongActionPerformed(evt);
@@ -573,6 +590,8 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
         });
 
         btnThemDichVu.setText("Thêm dịch vụ");
+        btnThemDichVu.setPreferredSize(new Dimension
+            (120, 30));
         btnThemDichVu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThemDichVuActionPerformed(evt);
@@ -596,48 +615,46 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
                     .addGroup(funtionPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lbltime, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(funtionPanelLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, funtionPanelLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(btnDoiPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
+                        .addGap(35, 35, 35)
                         .addComponent(btnTraPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(5, 5, 5)
                 .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(funtionPanelLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
+                        .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radPhongTieuChuan)
+                            .addComponent(radPhongNangCao, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radPhongThuongGia)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(115, 115, 115)
+                        .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radPhongDangThue)
+                            .addComponent(radPhongTrong, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(radPhongDaDat, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(funtionPanelLayout.createSequentialGroup()
+                                .addComponent(btnTimTheoDieuKien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnResetTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(funtionPanelLayout.createSequentialGroup()
                         .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(funtionPanelLayout.createSequentialGroup()
-                                .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(radPhongTieuChuan)
-                                    .addComponent(radPhongNangCao, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(radPhongThuongGia)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(115, 115, 115)
-                                .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(radPhongDangThue)
-                                    .addComponent(radPhongTrong, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(radPhongDaDat, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(funtionPanelLayout.createSequentialGroup()
-                                        .addComponent(btnTimTheoDieuKien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnResetTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(radPhongCaoCap, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(271, 271, 271))
                             .addGroup(funtionPanelLayout.createSequentialGroup()
-                                .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(radPhongCaoCap, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(funtionPanelLayout.createSequentialGroup()
-                                        .addGap(36, 36, 36)
-                                        .addComponent(btnHuyDatPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(36, 36, 36)
-                                        .addComponent(btnThemDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(94, 94, 94)
-                                .addComponent(btnDatPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(funtionPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(29, 29, 29)
+                                .addComponent(btnHuyDatPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34)
+                                .addComponent(btnThemDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnDatPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(42, 42, 42)))
                         .addComponent(btnNhanPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
+                        .addGap(47, 47, 47)
                         .addComponent(btnThuePhong, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38))))
+                        .addGap(43, 43, 43))))
         );
         funtionPanelLayout.setVerticalGroup(
             funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -676,15 +693,17 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
                             .addComponent(btnTimTheoDieuKien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnResetTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnThemDichVu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDatPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnNhanPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnThuePhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnHuyDatPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(funtionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnDoiPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnTraPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnNhanPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnThuePhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnThemDichVu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDatPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnHuyDatPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnDoiPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
         );
 
@@ -2821,7 +2840,7 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
         pnBody2Layout.setHorizontalGroup(
             pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBody2Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addGap(120, 120, 120)
                 .addGroup(pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel11)
                     .addComponent(panelRound4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2834,7 +2853,7 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
                     .addComponent(panelRound6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelRound5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelRound3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         pnBody2Layout.setVerticalGroup(
             pnBody2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2861,7 +2880,7 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
                 .addComponent(jLabel21)
                 .addGap(7, 7, 7)
                 .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
         scrollPaneWin112.setViewportView(pnBody2);
@@ -2871,7 +2890,7 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
         pnLayoutQLLayout.setHorizontalGroup(
             pnLayoutQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnLayoutQLLayout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(scrollPaneWin112, javax.swing.GroupLayout.PREFERRED_SIZE, 1138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -3044,259 +3063,261 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNhanPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhanPhongActionPerformed
-        // TODO add your handling code here:
+        NhanPhong_GUI nhanPhongDiaLog = new NhanPhong_GUI();
+        nhanPhongDiaLog.setVisible(true);
     }//GEN-LAST:event_btnNhanPhongActionPerformed
 
     private void btnThemDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDichVuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnThemDichVuActionPerformed
 
-	private void btnTimTheoDieuKienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnFindbyPhoneActionPerformed
-		loadDanhSachPhong();
-		if (radPhongTieuChuan.isSelected()) {
-			for (int i = 0; i < loaiPhongQuanLy.size(); i++) {
-				JPanel p = phongQuanLy.get(i);
-				JLabel loaiP = loaiPhongQuanLy.get(i);
-				if (!loaiP.getText().equalsIgnoreCase("Tiêu chuẩn")) {
-					p.setVisible(false);
-				}
-			}
-		}
-		if (radPhongNangCao.isSelected()) {
-			for (int i = 0; i < phongQuanLy.size(); i++) {
-				JPanel p = phongQuanLy.get(i);
-				JLabel loaiP = loaiPhongQuanLy.get(i);
-				if (!loaiP.getText().equalsIgnoreCase("Nâng cao")) {
-					p.setVisible(false);
-				}
-			}
-		} else if (radPhongCaoCap.isSelected()) {
-			for (int i = 0; i < phongQuanLy.size(); i++) {
-				JPanel p = phongQuanLy.get(i);
-				JLabel loaiP = loaiPhongQuanLy.get(i);
+    private void btnTimTheoDieuKienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnFindbyPhoneActionPerformed
+        loadDanhSachPhong();
+        if (radPhongTieuChuan.isSelected()) {
+            for (int i = 0; i < loaiPhongQuanLy.size(); i++) {
+                JPanel p = phongQuanLy.get(i);
+                JLabel loaiP = loaiPhongQuanLy.get(i);
+                if (!loaiP.getText().equalsIgnoreCase("Tiêu chuẩn")) {
+                    p.setVisible(false);
+                }
+            }
+        }
+        if (radPhongNangCao.isSelected()) {
+            for (int i = 0; i < phongQuanLy.size(); i++) {
+                JPanel p = phongQuanLy.get(i);
+                JLabel loaiP = loaiPhongQuanLy.get(i);
+                if (!loaiP.getText().equalsIgnoreCase("Nâng cao")) {
+                    p.setVisible(false);
+                }
+            }
+        } else if (radPhongCaoCap.isSelected()) {
+            for (int i = 0; i < phongQuanLy.size(); i++) {
+                JPanel p = phongQuanLy.get(i);
+                JLabel loaiP = loaiPhongQuanLy.get(i);
 
-				if (!loaiP.getText().equalsIgnoreCase("Cao cấp")) {
-					p.setVisible(false);
-				}
-			}
-		} else if (radPhongThuongGia.isSelected()) {
-			for (int i = 0; i < phongQuanLy.size(); i++) {
-				JPanel p = phongQuanLy.get(i);
-				JLabel loaiP = loaiPhongQuanLy.get(i);
+                if (!loaiP.getText().equalsIgnoreCase("Cao cấp")) {
+                    p.setVisible(false);
+                }
+            }
+        } else if (radPhongThuongGia.isSelected()) {
+            for (int i = 0; i < phongQuanLy.size(); i++) {
+                JPanel p = phongQuanLy.get(i);
+                JLabel loaiP = loaiPhongQuanLy.get(i);
 
-				if (!loaiP.getText().equalsIgnoreCase("Thương gia")) {
-					p.setVisible(false);
-				}
-			}
-		}
+                if (!loaiP.getText().equalsIgnoreCase("Thương gia")) {
+                    p.setVisible(false);
+                }
+            }
+        }
 
-		if (radPhongTrong.isSelected()) {
-			for (int i = 0; i < phongQuanLy.size(); i++) {
-				JPanel p = phongQuanLy.get(i);
-				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+        if (radPhongTrong.isSelected()) {
+            for (int i = 0; i < phongQuanLy.size(); i++) {
+                JPanel p = phongQuanLy.get(i);
+                JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
 
-				if (!trangThaiP.getText().equalsIgnoreCase("Trống")) {
-					p.setVisible(false);
-				}
-			}
-		} else if (radPhongDaDat.isSelected()) {
-			for (int i = 0; i < phongQuanLy.size(); i++) {
-				JPanel p = phongQuanLy.get(i);
-				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+                if (!trangThaiP.getText().equalsIgnoreCase("Trống")) {
+                    p.setVisible(false);
+                }
+            }
+        } else if (radPhongDaDat.isSelected()) {
+            for (int i = 0; i < phongQuanLy.size(); i++) {
+                JPanel p = phongQuanLy.get(i);
+                JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
 
-				if (!trangThaiP.getText().equalsIgnoreCase("Đã đặt")) {
-					p.setVisible(false);
-				}
-			}
-		} else if (radPhongDangThue.isSelected()) {
-			for (int i = 0; i < phongQuanLy.size(); i++) {
-				JPanel p = phongQuanLy.get(i);
-				JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
+                if (!trangThaiP.getText().equalsIgnoreCase("Đã đặt")) {
+                    p.setVisible(false);
+                }
+            }
+        } else if (radPhongDangThue.isSelected()) {
+            for (int i = 0; i < phongQuanLy.size(); i++) {
+                JPanel p = phongQuanLy.get(i);
+                JLabel trangThaiP = trangThaiPhongQuanLy.get(i);
 
-				if (!trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
-					p.setVisible(false);
-				}
-			}
-		}
-	}// GEN-LAST:event_btnFindbyPhoneActionPerformed
-	private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
-		List<String> dsTenPhong = new ArrayList<>();
-		JCheckBox cks;
-		JLabel tenPhong;
-		for (int i = 0; i < phongQuanLy.size(); i++) {
-			cks = checkBoxPhongQuanLy.get(i);
-			tenPhong = tenPhongQuanLy.get(i);
-			if (cks.isSelected()) {
-				dsTenPhong.add(tenPhong.getText());
-			}
-		}
-		
-		if (dsTenPhong.isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Vui lòng chọn phòng", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-			return;
-		}
+                if (!trangThaiP.getText().equalsIgnoreCase("Đã thuê")) {
+                    p.setVisible(false);
+                }
+            }
+        }
+    }// GEN-LAST:event_btnFindbyPhoneActionPerformed
 
-		DatPhong_GUI datPhongFrame = new DatPhong_GUI(dsTenPhong);
-		datPhongFrame.setVisible(true);
-		// reset checkbox
-		for (int i = 0; i < phongQuanLy.size(); i++) {
-			cks = checkBoxPhongQuanLy.get(i);
-			if (cks.isSelected()) {
-				cks.setSelected(false);
-			}
-		}
+    private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDatPhongActionPerformed
+        List<String> dsTenPhong = new ArrayList<>();
+        JCheckBox cks;
+        JLabel tenPhong;
+        for (int i = 0; i < phongQuanLy.size(); i++) {
+            cks = checkBoxPhongQuanLy.get(i);
+            tenPhong = tenPhongQuanLy.get(i);
+            if (cks.isSelected()) {
+                dsTenPhong.add(tenPhong.getText());
+            }
+        }
 
-	}
+        if (dsTenPhong.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Vui lòng chọn phòng", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
 
-	private void btnHuyDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyDatPhongActionPerformed
-		new HuyDatPhong_GUI().setVisible(true);
-	}// GEN-LAST:event_btnHuyDatPhongActionPerformed
+        DatPhong_GUI datPhongFrame = new DatPhong_GUI(dsTenPhong);
+        datPhongFrame.setVisible(true);
+        // reset checkbox
+        for (int i = 0; i < phongQuanLy.size(); i++) {
+            cks = checkBoxPhongQuanLy.get(i);
+            if (cks.isSelected()) {
+                cks.setSelected(false);
+            }
+        }
 
-	private void btnDoiPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDoiPhongActionPerformed
-		
-	}// GEN-LAST:event_btnDoiPhongActionPerformed
+    }
 
-	private void btnTraPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnTraPhongActionPerformed
-		// Lưu thông tin phòng đã chọn
-		List<String> dsTenPhong = new ArrayList<>();
-		for (int i = 0; i < phongQuanLy.size(); i++) {
-			JCheckBox cks = checkBoxPhongQuanLy.get(i);
-			JLabel tenPhong = tenPhongQuanLy.get(i);
-			if (cks.isSelected()) {
-				dsTenPhong.add(tenPhong.getText());
-			}
-		}
-		if (dsTenPhong.isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Vui lòng chọn phòng", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-			return;
-		}
-		
-		TraPhong_GUI traPhongFrame = new TraPhong_GUI(dsTenPhong);
-		traPhongFrame.setVisible(true);
-		// reset checkbox
-		for (int i = 0; i < phongQuanLy.size(); i++) {
-			JCheckBox cks = checkBoxPhongQuanLy.get(i);
-			if (cks.isSelected()) {
-				cks.setSelected(false);
-			}
-		}
-		
-	}// GEN-LAST:event_btnTraPhongActionPerformed
+    private void btnHuyDatPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyDatPhongActionPerformed
+        new HuyDatPhong_GUI().setVisible(true);
+    }// GEN-LAST:event_btnHuyDatPhongActionPerformed
 
-	private void btnThuePhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThuePhongActionPerformed
-		List<String> dsTenPhong = new ArrayList<>();
-		JCheckBox cks;
-		JLabel tenPhong;
-		for (int i = 0; i < phongQuanLy.size(); i++) {
-			cks = checkBoxPhongQuanLy.get(i);
-			tenPhong = tenPhongQuanLy.get(i);
-			if (cks.isSelected()) {
-				dsTenPhong.add(tenPhong.getText());
-			}
-		}
-		
-		if (dsTenPhong.isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Vui lòng chọn phòng", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-			return;
-		} 
-		
-		ThuePhong_GUI thuePhongFrame = new ThuePhong_GUI(dsTenPhong);
-		thuePhongFrame.setVisible(true);
-		// reset checkbox
-		for (int i = 0; i < phongQuanLy.size(); i++) {
-			cks = checkBoxPhongQuanLy.get(i);
-			if (cks.isSelected()) {
-				cks.setSelected(false);
-			}
-		}
-	}// GEN-LAST:event_btnThuePhongActionPerformed
+    private void btnDoiPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDoiPhongActionPerformed
 
-	private void btnResetTrangThaiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnResetTrangThaiActionPerformed
-		// TODO add your handling code here:
-		loadDanhSachPhong();
-		radPhongTieuChuan.setSelected(false);
-		radPhongNangCao.setSelected(false);
-		radPhongCaoCap.setSelected(false);
-		radPhongTrong.setSelected(false);
-		radPhongDangThue.setSelected(false);
-		radPhongDaDat.setSelected(false);
-		for (int i = 0; i < checkBoxPhongQuanLy.size(); i++) {
-			checkBoxPhongQuanLy.get(i).setSelected(false);
-		}
+    }// GEN-LAST:event_btnDoiPhongActionPerformed
 
-	}// GEN-LAST:event_btnResetTrangThaiActionPerformed
+    private void btnTraPhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnTraPhongActionPerformed
+        // Lưu thông tin phòng đã chọn
+        List<String> dsTenPhong = new ArrayList<>();
+        for (int i = 0; i < phongQuanLy.size(); i++) {
+            JCheckBox cks = checkBoxPhongQuanLy.get(i);
+            JLabel tenPhong = tenPhongQuanLy.get(i);
+            if (cks.isSelected()) {
+                dsTenPhong.add(tenPhong.getText());
+            }
+        }
+        if (dsTenPhong.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Vui lòng chọn phòng", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
 
-	private void btnChonPhongTrongTang1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongTrongTang1ActionPerformed
-		for (int i = 0; i < 10; i++) {
-			JLabel trangThai = trangThaiPhongQuanLy.get(i);
-			if (trangThai.getText().equalsIgnoreCase("Trống")) {
-				checkBoxPhongQuanLy.get(i).setSelected(true);
-			}
-		}
-	}// GEN-LAST:event_btnChonPhongTrongTang1ActionPerformed
+        TraPhong_GUI traPhongFrame = new TraPhong_GUI(dsTenPhong);
+        traPhongFrame.setVisible(true);
+        // reset checkbox
+        for (int i = 0; i < phongQuanLy.size(); i++) {
+            JCheckBox cks = checkBoxPhongQuanLy.get(i);
+            if (cks.isSelected()) {
+                cks.setSelected(false);
+            }
+        }
 
-	private void btnChonPhongThueTang1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongThueTang1ActionPerformed
-		for (int i = 0; i < 10; i++) {
-			JLabel trangThai = trangThaiPhongQuanLy.get(i);
-			if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
-				checkBoxPhongQuanLy.get(i).setSelected(true);
-			}
-		}
-	}// GEN-LAST:event_btnChonPhongThueTang1ActionPerformed
+    }// GEN-LAST:event_btnTraPhongActionPerformed
 
-	private void btnChonPhongThueTang2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongThueTang2ActionPerformed
-		for (int i = 10; i < 20; i++) {
-			JLabel trangThai = trangThaiPhongQuanLy.get(i);
-			if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
-				checkBoxPhongQuanLy.get(i).setSelected(true);
-			}
-		}
-	}// GEN-LAST:event_btnChonPhongThueTang2ActionPerformed
+    private void btnThuePhongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThuePhongActionPerformed
+        List<String> dsTenPhong = new ArrayList<>();
+        JCheckBox cks;
+        JLabel tenPhong;
+        for (int i = 0; i < phongQuanLy.size(); i++) {
+            cks = checkBoxPhongQuanLy.get(i);
+            tenPhong = tenPhongQuanLy.get(i);
+            if (cks.isSelected()) {
+                dsTenPhong.add(tenPhong.getText());
+            }
+        }
 
-	private void btnChonPhongTrongTang2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongTrongTang2ActionPerformed
-		for (int i = 10; i < 20; i++) {
-			JLabel trangThai = trangThaiPhongQuanLy.get(i);
-			if (trangThai.getText().equalsIgnoreCase("Trống")) {
-				checkBoxPhongQuanLy.get(i).setSelected(true);
-			}
-		}
-	}// GEN-LAST:event_btnChonPhongTrongTang2ActionPerformed
+        if (dsTenPhong.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Vui lòng chọn phòng", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
 
-	private void btnChonPhongTrongTang3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongTrongTang3ActionPerformed
-		for (int i = 20; i < 30; i++) {
-			JLabel trangThai = trangThaiPhongQuanLy.get(i);
-			if (trangThai.getText().equalsIgnoreCase("Trống")) {
-				checkBoxPhongQuanLy.get(i).setSelected(true);
-			}
-		}
-	}// GEN-LAST:event_btnChonPhongTrongTang3ActionPerformed
+        ThuePhong_GUI thuePhongFrame = new ThuePhong_GUI(dsTenPhong);
+        thuePhongFrame.setVisible(true);
+        // reset checkbox
+        for (int i = 0; i < phongQuanLy.size(); i++) {
+            cks = checkBoxPhongQuanLy.get(i);
+            if (cks.isSelected()) {
+                cks.setSelected(false);
+            }
+        }
+    }// GEN-LAST:event_btnThuePhongActionPerformed
 
-	private void btnChonPhongThueTang3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongThueTang3ActionPerformed
-		for (int i = 20; i < 30; i++) {
-			JLabel trangThai = trangThaiPhongQuanLy.get(i);
-			if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
-				checkBoxPhongQuanLy.get(i).setSelected(true);
-			}
-		}
-	}// GEN-LAST:event_btnChonPhongThueTang3ActionPerformed
+    private void btnResetTrangThaiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnResetTrangThaiActionPerformed
+        // TODO add your handling code here:
+        loadDanhSachPhong();
+        radPhongTieuChuan.setSelected(false);
+        radPhongNangCao.setSelected(false);
+        radPhongCaoCap.setSelected(false);
+        radPhongTrong.setSelected(false);
+        radPhongDangThue.setSelected(false);
+        radPhongDaDat.setSelected(false);
+        for (int i = 0; i < checkBoxPhongQuanLy.size(); i++) {
+            checkBoxPhongQuanLy.get(i).setSelected(false);
+        }
 
-	private void btnChonPhongThueTang4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongThueTang4ActionPerformed
-		for (int i = 30; i < 35; i++) {
-			JLabel trangThai = trangThaiPhongQuanLy.get(i);
-			if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
-				checkBoxPhongQuanLy.get(i).setSelected(true);
-			}
-		}
-	}// GEN-LAST:event_btnChonPhongThueTang4ActionPerformed
+    }// GEN-LAST:event_btnResetTrangThaiActionPerformed
 
-	private void btnChonPhongTrongTang4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongTrongTang4ActionPerformed
-		for (int i = 30; i < 35; i++) {
-			JLabel trangThai = trangThaiPhongQuanLy.get(i);
-			if (trangThai.getText().equalsIgnoreCase("Trống")) {
-				checkBoxPhongQuanLy.get(i).setSelected(true);
-			}
-		}
-	}// GEN-LAST:event_btnChonPhongTrongTang4ActionPerformed
+    private void btnChonPhongTrongTang1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongTrongTang1ActionPerformed
+        for (int i = 0; i < 10; i++) {
+            JLabel trangThai = trangThaiPhongQuanLy.get(i);
+            if (trangThai.getText().equalsIgnoreCase("Trống")) {
+                checkBoxPhongQuanLy.get(i).setSelected(true);
+            }
+        }
+    }// GEN-LAST:event_btnChonPhongTrongTang1ActionPerformed
+
+    private void btnChonPhongThueTang1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongThueTang1ActionPerformed
+        for (int i = 0; i < 10; i++) {
+            JLabel trangThai = trangThaiPhongQuanLy.get(i);
+            if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
+                checkBoxPhongQuanLy.get(i).setSelected(true);
+            }
+        }
+    }// GEN-LAST:event_btnChonPhongThueTang1ActionPerformed
+
+    private void btnChonPhongThueTang2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongThueTang2ActionPerformed
+        for (int i = 10; i < 20; i++) {
+            JLabel trangThai = trangThaiPhongQuanLy.get(i);
+            if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
+                checkBoxPhongQuanLy.get(i).setSelected(true);
+            }
+        }
+    }// GEN-LAST:event_btnChonPhongThueTang2ActionPerformed
+
+    private void btnChonPhongTrongTang2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongTrongTang2ActionPerformed
+        for (int i = 10; i < 20; i++) {
+            JLabel trangThai = trangThaiPhongQuanLy.get(i);
+            if (trangThai.getText().equalsIgnoreCase("Trống")) {
+                checkBoxPhongQuanLy.get(i).setSelected(true);
+            }
+        }
+    }// GEN-LAST:event_btnChonPhongTrongTang2ActionPerformed
+
+    private void btnChonPhongTrongTang3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongTrongTang3ActionPerformed
+        for (int i = 20; i < 30; i++) {
+            JLabel trangThai = trangThaiPhongQuanLy.get(i);
+            if (trangThai.getText().equalsIgnoreCase("Trống")) {
+                checkBoxPhongQuanLy.get(i).setSelected(true);
+            }
+        }
+    }// GEN-LAST:event_btnChonPhongTrongTang3ActionPerformed
+
+    private void btnChonPhongThueTang3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongThueTang3ActionPerformed
+        for (int i = 20; i < 30; i++) {
+            JLabel trangThai = trangThaiPhongQuanLy.get(i);
+            if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
+                checkBoxPhongQuanLy.get(i).setSelected(true);
+            }
+        }
+    }// GEN-LAST:event_btnChonPhongThueTang3ActionPerformed
+
+    private void btnChonPhongThueTang4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongThueTang4ActionPerformed
+        for (int i = 30; i < 35; i++) {
+            JLabel trangThai = trangThaiPhongQuanLy.get(i);
+            if (trangThai.getText().equalsIgnoreCase("Đã thuê")) {
+                checkBoxPhongQuanLy.get(i).setSelected(true);
+            }
+        }
+    }// GEN-LAST:event_btnChonPhongThueTang4ActionPerformed
+
+    private void btnChonPhongTrongTang4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonPhongTrongTang4ActionPerformed
+        for (int i = 30; i < 35; i++) {
+            JLabel trangThai = trangThaiPhongQuanLy.get(i);
+            if (trangThai.getText().equalsIgnoreCase("Trống")) {
+                checkBoxPhongQuanLy.get(i).setSelected(true);
+            }
+        }
+    }// GEN-LAST:event_btnChonPhongTrongTang4ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private giaodien.CustomClass.Button btnChonPhongThueTang1;
@@ -3309,6 +3330,8 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
     private giaodien.CustomClass.Button btnChonPhongTrongTang4;
     private giaodien.CustomClass.Button btnDatPhong;
     private giaodien.CustomClass.Button btnDoiPhong;
+    private javax.swing.ButtonGroup btnGroupLoaiPhong;
+    private javax.swing.ButtonGroup btnGroupTrangThai;
     private giaodien.CustomClass.Button btnHuyDatPhong;
     private giaodien.CustomClass.Button btnNhanPhong;
     private giaodien.CustomClass.Button btnResetTrangThai;
@@ -3531,8 +3554,8 @@ public class QuanLyPhong_GUI extends javax.swing.JPanel {
     private giaodien.CustomClass.ScrollPaneWin11 scrollPaneWin112;
     // End of variables declaration//GEN-END:variables
 	private ArrayList<javax.swing.JPanel> phongQuanLy;
-	private ArrayList<javax.swing.JLabel> loaiPhongQuanLy;
-	private ArrayList<javax.swing.JLabel> tenPhongQuanLy;
-	private ArrayList<javax.swing.JLabel> trangThaiPhongQuanLy;
-	private ArrayList<giaodien.CustomClass.JCheckBoxCustom> checkBoxPhongQuanLy;
+    private ArrayList<javax.swing.JLabel> loaiPhongQuanLy;
+    private ArrayList<javax.swing.JLabel> tenPhongQuanLy;
+    private ArrayList<javax.swing.JLabel> trangThaiPhongQuanLy;
+    private ArrayList<giaodien.CustomClass.JCheckBoxCustom> checkBoxPhongQuanLy;
 }

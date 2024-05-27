@@ -92,6 +92,41 @@ public class ThongTinDatThuePhongDao {
 		return n > 0;
 	}
 	
+	// Chỉnh sửa trạng thái thông tin đặt thuê phòng theo mã khách hàng
+	public boolean capNhatTrangThaiTheoMaKhachHang(String maKhachHang, String trangThai) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		Statement stmt = null;
+		int n = 0;
+		try {
+			stmt = con.createStatement();
+			String sql = "update ThongTinDatThuePhong set trangThai = N'" + trangThai + "' where maKhachHang = '"
+					+ maKhachHang + "'";
+			n = stmt.executeUpdate(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return n > 0;
+	}
+	
+	// Chỉnh sửa trạng thái thông tin đặt thuê phòng theo mã đặt phòng
+	public boolean capNhatNgayNhanTheoMaKhachHang(String maKH, LocalDateTime ngayNhan) {
+		ConnectDB.getInstance();
+		Connection con = ConnectDB.getConnection();
+		Statement stmt = null;
+		int n = 0;
+		try {
+			stmt = con.createStatement();
+			Timestamp ngayNhanTs = Timestamp.valueOf(ngayNhan);
+			String sql = "update ThongTinDatThuePhong set ngayNhanPhong = '" + ngayNhanTs + "' where maKhachHang = '"
+					+ maKH + "'";
+			n = stmt.executeUpdate(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return n > 0;
+	}
+
 	// Cập nhật là số tiền cọc theo mã khách hàng
 	public boolean capNhatTienCocTheoMaKhachHang(String maKhachHang, double tienDaCoc) {
 		ConnectDB.getInstance();
@@ -108,7 +143,6 @@ public class ThongTinDatThuePhongDao {
 		}
 		return n > 0;
 	}
-	
 
 // tính tổng tiền dịch vụ
 	public double tinhTongTienDichVu(String maDatPhong) {
@@ -179,8 +213,10 @@ public class ThongTinDatThuePhongDao {
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
 
+				String trangThai = rs.getString(9);
+
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maDatPhong, maKhachHang1, maPhong, ngayDatPhong,
-						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
+						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc, trangThai);
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
@@ -192,7 +228,8 @@ public class ThongTinDatThuePhongDao {
 
 	// Đặt phòng
 	public boolean datPhong(ArrayList<Phong> phong, KhachHang kh, LocalDateTime ngayDatPhong,
-			LocalDateTime ngayNhanPhong, LocalDateTime ngayTraPhong, String maLoaiThue, double tienDaCoc) {
+			LocalDateTime ngayNhanPhong, LocalDateTime ngayTraPhong, String maLoaiThue, double tienDaCoc,
+			String trangThai) {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
@@ -205,8 +242,8 @@ public class ThongTinDatThuePhongDao {
 				Timestamp ngayNhanPhongTs = Timestamp.valueOf(ngayNhanPhong);
 				Timestamp ngayTraPhongTs = Timestamp.valueOf(ngayTraPhong);
 				String sql = "insert into ThongTinDatThuePhong values('" + (maDP) + "', '" + kh.getMaKH() + "', '"
-						+ phong2.getMaPhong() + "', '" + ngayDatPhongTs + "', '" + ngayNhanPhongTs + "', '" + ngayTraPhongTs
-						+ "','" + maLoaiThue + "','" + tienDaCoc + "')";
+						+ phong2.getMaPhong() + "', '" + ngayDatPhongTs + "', '" + ngayNhanPhongTs + "', '"
+						+ ngayTraPhongTs + "','" + maLoaiThue + "','" + tienDaCoc + "', N'" + trangThai + "')";
 				stmt.executeUpdate(sql);
 				String sql1 = "UPDATE Phong SET trangThaiPhong = N'Đã đặt' WHERE maPhong = '" + phong2.getMaPhong()
 						+ "'";
@@ -221,7 +258,8 @@ public class ThongTinDatThuePhongDao {
 
 	// Thuê phòng
 	public boolean thuePhong(ArrayList<Phong> phong, KhachHang kh, LocalDateTime ngayDatPhong,
-			LocalDateTime ngayNhanPhong, String maLoaiThue, LocalDateTime ngayTraPhong, double tienDaCoc) {
+			LocalDateTime ngayNhanPhong, String maLoaiThue, LocalDateTime ngayTraPhong, double tienDaCoc,
+			String trangThai) {
 		ConnectDB.getInstance();
 		Connection con = ConnectDB.getConnection();
 		Statement stmt = null;
@@ -238,7 +276,7 @@ public class ThongTinDatThuePhongDao {
 				// Thêm thông tin thuê phòng
 				String sql = "insert into ThongTinDatThuePhong values('" + maDP + "', '" + kh.getMaKH() + "', '"
 						+ phong2.getMaPhong() + "', '" + ngayDatPhongTs + "', '" + ngayNhanPhongTs + "', '"
-						+ ngayTraPhongTs + "','" + maLoaiThue + "','" + tienDaCoc + "')";
+						+ ngayTraPhongTs + "','" + maLoaiThue + "','" + tienDaCoc + "', N'" + trangThai + "')";
 				stmt.executeUpdate(sql);
 
 				// Cập nhật trạng thái phòng
@@ -288,32 +326,15 @@ public class ThongTinDatThuePhongDao {
 				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
+				String trangThai = rs.getString(9);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
-						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
+						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc, trangThai);
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return dsThongTin;
-	}
-
-	// thêm thông tin đặt thuê phòng
-	public boolean themThongTinDatThuePhong(ThongTinDatThuePhong tt) {
-		ConnectDB.getInstance();
-		Connection con = ConnectDB.getConnection();
-		Statement stmt = null;
-		int n = 0;
-		try {
-			stmt = con.createStatement();
-			String sql = "insert into ThongTinDatThuePhong values('" + tt.getMaTTDTP() + "','" + tt.getMaKhachHang()
-					+ "','" + tt.getMaPhong() + "','" + tt.getNgayDatPhong() + "','" + tt.getNgayNhanPhong() + "','"
-					+ tt.getNgayTraPhong() + "','" + tt.getMaLoaiThue() + "','" + tt.getTienDaCoc() + "')";
-			n = stmt.executeUpdate(sql);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return n > 0;
 	}
 
 	// tìm thông tin đặt thuê phòng theo mã
@@ -332,8 +353,9 @@ public class ThongTinDatThuePhongDao {
 				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
+				String trangThai = rs.getString(9);
 				tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong, ngayNhanPhong, ngayTraPhong,
-						maLoaiThue, tienDaCoc);
+						maLoaiThue, tienDaCoc, trangThai);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -357,8 +379,9 @@ public class ThongTinDatThuePhongDao {
 				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
+				String trangThai = rs.getString(9);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
-						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
+						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc, trangThai);
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
@@ -402,8 +425,9 @@ public class ThongTinDatThuePhongDao {
 				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
+				String trangThai = rs.getString(9);
 				dsThongTin.add(new ThongTinDatThuePhong(maTTDTP, maKhachHang, maPhong, ngayDatPhong, ngayNhanPhong,
-						ngayTraPhong, maLoaiThue, tienDaCoc));
+						ngayTraPhong, maLoaiThue, tienDaCoc, trangThai));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -427,8 +451,9 @@ public class ThongTinDatThuePhongDao {
 				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
+				String trangThai = rs.getString(9);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
-						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
+						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc, trangThai);
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
@@ -453,8 +478,9 @@ public class ThongTinDatThuePhongDao {
 				LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
+				String trangThai = rs.getString(9);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
-						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
+						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc, trangThai);
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
@@ -479,8 +505,9 @@ public class ThongTinDatThuePhongDao {
 				LocalDateTime ngayNhanPhong = rs.getTimestamp(5).toLocalDateTime();
 				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				double tienDaCoc = rs.getDouble(8);
+				String trangThai = rs.getString(9);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
-						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
+						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc, trangThai);
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
@@ -505,8 +532,9 @@ public class ThongTinDatThuePhongDao {
 				LocalDateTime ngayTraPhong = rs.getTimestamp(6).toLocalDateTime();
 				String maLoaiThue = rs.getString(7);
 				double tienDaCoc = rs.getDouble(8);
+				String trangThai = rs.getString(9);
 				ThongTinDatThuePhong tt = new ThongTinDatThuePhong(maTTDTP, maKhachHang, phong, ngayDatPhong,
-						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc);
+						ngayNhanPhong, ngayTraPhong, maLoaiThue, tienDaCoc, trangThai);
 				dsThongTin.add(tt);
 			}
 		} catch (Exception e) {
@@ -551,4 +579,6 @@ public class ThongTinDatThuePhongDao {
 		}
 		return n > 0;
 	}
+
+	
 }

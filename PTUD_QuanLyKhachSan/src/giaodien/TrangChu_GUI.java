@@ -166,8 +166,8 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
-		btnGROUPLoaiPhong = new javax.swing.ButtonGroup();
-		btnGROUPTrangThai = new javax.swing.ButtonGroup();
+		new javax.swing.ButtonGroup();
+		new javax.swing.ButtonGroup();
 		jPanel1 = new javax.swing.JPanel();
 		scrollPaneWin112 = new giaodien.CustomClass.ScrollPaneWin11();
 		pnMenu = new javax.swing.JPanel();
@@ -2533,8 +2533,6 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 	private javax.swing.JPanel Tang1_TrangChu1;
 	private javax.swing.JPanel Tang1_TrangChu2;
 	private javax.swing.JPanel Tang1_TrangChu3;
-	private javax.swing.ButtonGroup btnGROUPLoaiPhong;
-	private javax.swing.ButtonGroup btnGROUPTrangThai;
 	private javax.swing.JButton btnLogOut;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JLabel jLabel2;

@@ -732,7 +732,7 @@ public class ThuePhong_GUI extends javax.swing.JDialog {
 		}
 
 		// Tiến hành thuê phòng
-		if (thongTinDatThuePhongDao.thuePhong(dsPhongThue, kh, ngayNhan, ngayNhan, maLoaiThue, ngayTra, 0)) {
+		if (thongTinDatThuePhongDao.thuePhong(dsPhongThue, kh, ngayNhan, ngayNhan, maLoaiThue, ngayTra, 0, "Thuê")) {
 			JOptionPane.showMessageDialog(this, "Thuê phòng thành công");
 			this.setVisible(false);
 			return true;
